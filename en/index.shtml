@@ -1,0 +1,114 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_3columns">
+
+			<div id="columnA_3columns">
+		
+				<h3>the free firewall for your home or SOHO</h3>
+				<img src="../images/pic.gif" class="floatTL" alt="Something scenic" />
+
+				<p>IPFire is a linux based firewall distribution with a lot of extras.
+					The base for the stable version 1.4.9 was the IPCop that has been
+					hardly modified. There were added:
+					<a href="http://www.asterisk.org">Asterisk PBX</a>, 
+					<a href="http://www.samba.org">Samba</a>, 
+					MorningReconnect, 
+					<a href="http://www.lprng.com">LPR-NG</a> and many other things...
+				</p>
+				
+				<p>When the team was refounded to get rid of the old IPCop-code they
+					made a totally new concept of the system including the linux kernel
+					2.6 to support the latest generation of hardware.
+					We are going to make a really nice server for every home.
+				</p>
+				
+				
+				<br class="clear" />
+			
+				<div class="post">
+				
+					<h3>Alpha-Versions available - Alpha #04</h3>
+					<ul class="post_info">
+						<li class="date">Posted by <a href="#">Michael Tremer</a> on 10.07.2007</li>
+						<li class="comments"><a href="#">0 comments</a></li>
+					</ul>					
+					<p>
+						<b>Hello community!</b><br />From now on, there are some builds of our software available for testing. It is still an early version but we hope to get a lot of testers that help to improve the software.<br />I hope you would use our <a href="http://bugtracker.ipfire.org/" target="_blank">bugtracker</a> and the <a href="http://wiki.ipfire.org/index.php/Version_2.0" >wiki</a>.<br/>Alpha-Versions are neither stable nor complete and so you can't use them for the every-day life. They are available for people who want to contribute to the software only. <br />You can find the latest iso image on <a href="http://download.ipfire.org/development/">download.ipfire.org</a>. Best wishes.<br /><br /><b>Update: </b><i>A fresh version is also to find in the build-archives.</i><br /><br /><b>Michael</b> - for the developers from IPFire.org
+						<br />
+						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:01" target=_blank>Alpha 01</a> - 2007/05/07
+						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:02" target=_blank>Alpha 02</a> - 2007/05/22
+						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:03" target=_blank>Alpha 03</a> - 2007/06/11
+						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:04" target=_blank>Alpha 04</a> - 2007/08/08
+						<br />- <a href="ftp://buildserver.ipfire.org/pub/linux/ipfire/buildarchiv/" target=_blank>Buildarchiv</a>
+					</p>
+				</div>
+		
+			</div>
+	
+		</div>
+		
+		<div id="secondaryContent_3columns">
+		
+			<div id="columnB_3columns">
+		
+				<h4><span>Search</span> our forum</h4>
+
+				<form method="post" action="http://forum.ipfire.org/index.php?action=search2">
+				<div id="search">
+					<input name="search" value="" type="text" class="text" />
+					<input type="submit" class="button" value="Go" />
+					<br class="clear" />
+				</div>
+				</form>
+				
+				<h4><span>About</span> Us</h4>
+				<p><strong>IPFire</strong> is a linux-based firewall that has got many nice extras.
+					The code base of version 1.4.9 was the also well-known <a href="http://www.ipcop.org/">IPCop</a>.</p>
+	
+				<h4><span>Download</span> IPFire</h4>
+				<ul class="links">
+				<li class="first"><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mainserver</a></li>
+				<li><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a></li>
+				<li><a href="http://www.rowie.at/ipfire/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 1</a></li>
+				<li>MD5sum:<br />3a75c244791ec2af<br />2349485c8144c465</li>
+				<li><a href="http://forum.ipfire.org/index.php/topic,221.msg1231.html#msg1231">Update: read me!</a></li>
+				</ul>
+
+			</div>
+			
+			<div id="columnC_3columns">
+				<h4><span>Help</span> Me</h4>
+				<ul class="links">
+				<li class="first"><a href="http://forum.ipfire.org/">Forum</a></li>
+				<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
+				</ul>
+				
+				<h4><span>Partners</span> &amp; Friends</h4>
+				<ul class="links">
+				<li class="first"><a href="http://www.firewall-service.com/ipfire.php">www.firewall-service.com</a></li>
+				<li><a href="http://www.fitzenreiter.de/ipfire/">www.fitzenreiter.de/ipfire</a></li>
+				<li><a href="http://www.rowie.at/">www.rowie.at</a></li>
+				</ul>
+	
+				<h4><span>Development</span> Zone</h4>
+				<ul class="links">
+				<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
+				<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
+				<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+</div>
+		
+<!--#include virtual="../footer.shtml" -->
+

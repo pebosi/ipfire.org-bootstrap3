@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.O Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<title>www.ipfire.org</title>
+	<meta name="keywords" content="Linux, Firewall, IPCop, IPFire, Security" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+<body>
+
+<div id="header">
+
+	<div id="header_inner" class="fixed">
+
+		<div id="logo">
+			<h1><span>IPFire</span>.org</h1>
+			<h2>Security for Future</h2>
+		</div>
+		
+		<div id="lang">
+			<a href="/en/" ><img src="/images/en.gif" /></a>
+			<a href="/de/" ><img src="/images/de.gif" /></a>
+		</div>
+		
+		<div id="menu">
+			<ul>
+				<li><a href="index.shtml" class="active">Home</a></li>
+				<li><a href="http://wiki.ipfire.org/">Docs</a></li>
+				<li><a href="http://forum.ipfire.org/">Forum</a></li>
+				<li><a href="imprint.shtml">Imprint</a></li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
