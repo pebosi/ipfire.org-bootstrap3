@@ -31,19 +31,33 @@
 			
 				<div class="post">
 				
-					<h3>Alpha-Status erreicht - Alpha #04</h3>
+					<h3>24. August 2007 - Beta 1</h3>
 					<ul class="post_info">
-						<li class="date">Posted by <a href="#">Michael Tremer</a> on 10.07.2007</li>
-						<li class="comments"><a href="#">0 comments</a></li>
+						<li class="date">Posted by <a href="#">Michael Tremer</a> on 24.08.2007</li>
+						<!-- <li class="comments"><a href="#">0 comments</a></li> -->
 					</ul>					
 					<p>
-						<b>Sehr geehrte Community!</b><br />Von nun an wird es von unserem Projekt in regelmäßigen kurzen Abständen Alpha-Versionen geben.<br />Diese Versionen der zukünftigen Version 2.0 des IPFire dienen dem Zweck den Entwicklern die Fehlersuche abzunehmen. Daher ist es nun an Euch das System weitehend auf Fehler zu durchsuchen. Dazu bieten wir euch die üblichen Methoden wie den <a href="http://bugtracker.ipfire.org/" >Bugtracker</a> und auch das <a href="http://wiki.ipfire.org/index.php/Version_2.0" >Wiki</a>, wo bekannte Fehler zu finden sind. Dies leitet schon gleich die Einschränkung ein, die ich zu machen habe: Alpha-Versionen sind weder als vollständig, noch als stabil zu betrachten und daher noch nicht für den Produktiveinsatz gedacht oder geeignet. Sie richten sich ausschließlich an Benutzer, die Spaß daran haben nach Fehlern zu suchen oder auch schon die neuen Funktionen begutachten wollen. Zu finden ist die letzte Alpha-Version wie immer im <a href="http://download.ipfire.org/development/">Downloadbereich</a>. Ich wünche viel Erfolg und hoffe auf eure Resonanz.<br /><br /><b>Update: </b><i>Eine frische Version findet sich in unserem Buildarchiv. Bitte habt ein Auge darauf.</i><br /><br /><b>Michael</b> - für das Entwicklerteam von IPFire.org
-						<br />
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:01" target=_blank>Alpha 01</a> - 07. Mai 2007
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:02" target=_blank>Alpha 02</a> - 22. Mai 2007
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:03" target=_blank>Alpha 03</a> - 11. Juni 2007
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:04" target=_blank>Alpha 04</a> - 08. August 2007
-						<br />- <a href="ftp://buildserver.ipfire.org/pub/linux/ipfire/buildarchiv/" target=_blank>Buildarchiv</a>
+						<b>Sehr geehrte Community!</b><br />
+							Nach langjähriger Entwicklungszeit sind ich und mein Team froh Ihnen voller Stolz die
+							Version 2.0 unserer Firewall, die sich somit ab dem 24. August 2007 im Beta-Stadium
+							befindet, zu präsentieren.<br/>
+							Basierte die Version 1.4.9, wie die Versionsnummer schon ahnen
+							lässt, noch auf dem IPCop, so handelt es sich nun um eine fast vollständige Neuentwicklung
+							auf Basis des Linux-from-Scratch (LFS) 6.2.<br />
+							Als eine der schwierigsten Aufgaben stellte sich die Integration des Linux-Kernels 2.6, was
+							einige umfassende Änderungen im System nach sich zog. Ähnelt die grafische
+							Weboberfläche noch sehr dem Vorgänger, hat sich aber trotzdem „unter der Haube“ eine
+							kleine Revolution vollzogen. Das Ergebnis ist ein gehärtetes System auf dem allerneuesten
+							Stand mit GCC 4.0.3 und dem stabilen Kernel der Serie 2.6.16.<br />
+							Nachdem dieser maßgebliche Schritt vollzogen war, wurden die bisher zur Ausstattung
+							gehörigen Features wieder integriert. Dazu gehören wichtige Dienste in einem Netzwerk wie
+							ein DHCP- oder NTP-Server, sowie auch DynDNS-Updater um hier nur einige zu nennen.
+							Die vollständige Liste finden Sie in der offiziellen Pressemitteilung.<br /><br />
+							
+							<b>Lesen sie mehr in der offiziellen 
+								<a href="../data/ipfire-press-release-beta-1.pdf" target="_blank">Pressemitteilung</a>!</b>
+							
+							<br /><br /><b>Michael</b> - für das Entwicklerteam von IPFire.org
 					</p>
 				</div>
 		
@@ -66,38 +80,45 @@
 				</form>
 				
 				<h4><span>About</span> Us</h4>
-				<p><strong>IPFire</strong> ist eine Firewall auf Basis von Linux, die mit vielen besonderen Eigenschaften daher kommt. Grundlage der Entwicklung von Version 1.4.9 war der <a href="http://www.ipcop.org/">IPCop</a>.</p>
+				<p><strong>IPFire</strong> ist eine Firewall auf Basis von Linux, die
+					mit vielen besonderen Eigenschaften daher kommt. Grundlage der Entwicklung
+					von Version 1.4.9 war der <a href="http://www.ipcop.org/">IPCop</a>.</p>
 	
-				<h4><span>Download</span> IPFire</h4>
+				<h4><span>Download</span> IPFire <span>STABLE</span></h4>
 				<ul class="links">
-				<li class="first"><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Hauptserver</a></li>
-				<li><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a></li>
-				<li><a href="http://www.rowie.at/ipfire/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 1</a></li>
-				<li>MD5sum:<br />3a75c244791ec2af<br />2349485c8144c465</li>
-				<li><a href="http://forum.ipfire.org/index.php/topic,221.msg1231.html#msg1231">Update: Bitte hier lesen!</a></li>
+					<li class="first"><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 1</a></li>
+					<li><a href="http://www.rowie.at/ipfire/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 2</a></li>
+					<li><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a></li>
 				</ul>
-
+				
+				<h4><span>Download</span> IPFire <span>BETA 1</span></h4>
+				<ul class="links">
+					<li class="first"><a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 1</a></li>
+					<li><a href="http://mirror2.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 2</a></li>
+					<li><a href="http://www.rowie.at/ipfire/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 3</a></li>
+					<li><a href="http://mirror2.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso.torrent">IPFire 2.0 Beta 1 - TORRENT</a></li>
+				</ul>
+				
 			</div>
 			
 			<div id="columnC_3columns">
 				<h4><span>Help</span> Me</h4>
 				<ul class="links">
-				<li class="first"><a href="http://forum.ipfire.org/">Forum</a></li>
-				<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
+					<li class="first"><a href="http://forum.ipfire.org/">Forum</a></li>
+					<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 				</ul>
 				
 				<h4><span>Partners</span> &amp; Friends</h4>
 				<ul class="links">
-				<li class="first"><a href="http://www.firewall-service.com/ipfire.php">www.firewall-service.com</a></li>
-				<li><a href="http://www.fitzenreiter.de/ipfire/">www.fitzenreiter.de/ipfire</a></li>
-				<li><a href="http://www.rowie.at/">www.rowie.at</a></li>
+					<li class="first"><a href="http://www.fitzenreiter.de/ipfire/">www.fitzenreiter.de/ipfire</a></li>
+					<li><a href="http://www.rowie.at/">www.rowie.at</a></li>
 				</ul>
 	
 				<h4><span>Development</span> Zone</h4>
 				<ul class="links">
-				<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
-				<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
-				<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
+					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
+					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
+					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
 				</ul>
 			</div>
 

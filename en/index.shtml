@@ -31,19 +31,27 @@
 			
 				<div class="post">
 				
-					<h3>Alpha-Versions available - Alpha #04</h3>
+					<h3>2007/08/24 - Beta 1</h3>
 					<ul class="post_info">
-						<li class="date">Posted by <a href="#">Michael Tremer</a> on 10.07.2007</li>
+						<li class="date">Posted by <a href="#">Michael Tremer</a> on 2007/08/24</li>
 						<li class="comments"><a href="#">0 comments</a></li>
 					</ul>					
 					<p>
-						<b>Hello community!</b><br />From now on, there are some builds of our software available for testing. It is still an early version but we hope to get a lot of testers that help to improve the software.<br />I hope you would use our <a href="http://bugtracker.ipfire.org/" target="_blank">bugtracker</a> and the <a href="http://wiki.ipfire.org/index.php/Version_2.0" >wiki</a>.<br/>Alpha-Versions are neither stable nor complete and so you can't use them for the every-day life. They are available for people who want to contribute to the software only. <br />You can find the latest iso image on <a href="http://download.ipfire.org/development/">download.ipfire.org</a>. Best wishes.<br /><br /><b>Update: </b><i>A fresh version is also to find in the build-archives.</i><br /><br /><b>Michael</b> - for the developers from IPFire.org
-						<br />
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:01" target=_blank>Alpha 01</a> - 2007/05/07
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:02" target=_blank>Alpha 02</a> - 2007/05/22
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:03" target=_blank>Alpha 03</a> - 2007/06/11
-						<br />- <a href="http://wiki.ipfire.org/index.php/Alpha:04" target=_blank>Alpha 04</a> - 2007/08/08
-						<br />- <a href="ftp://buildserver.ipfire.org/pub/linux/ipfire/buildarchiv/" target=_blank>Buildarchiv</a>
+						<b>Hey Community!</b><br />
+							After a long time of development and testing, me and my team are pround to announce
+							that the first beta version of the IPFire firewall is finished.<br />
+							When version 1.4.9 was based on IPCop, we did a complete rewrite of the
+							distribution and now everything is based on Linux-from-Scratch (LFS) 6.2.<br />
+							One of the hardest tasks to do was the integration of the linux kernel 2.6, what
+							lead to deep changes in the system. The webinterface resembels to the predecessor
+							but we have done a lot of work beyond the cap. I call it "a little revolution".
+							But the result is a current and hardened system with gcc-4.0.3 and the stable kernel
+							tree 2.6.16.<br /><br />
+							
+							<b>You can read more in our 
+								<a href="../data/ipfire-press-release-beta-1.pdf" target="_blank">press release (german)</a>!</b>
+							
+							<br /><br /><b>Michael</b> - for the developers on IPFire.org
 					</p>
 				</div>
 		
@@ -68,40 +76,45 @@
 				<h4><span>About</span> Us</h4>
 				<p><strong>IPFire</strong> is a linux-based firewall that has got many nice extras.
 					The code base of version 1.4.9 was the also well-known <a href="http://www.ipcop.org/">IPCop</a>.</p>
-	
-				<h4><span>Download</span> IPFire</h4>
-				<ul class="links">
-				<li class="first"><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mainserver</a></li>
-				<li><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a></li>
-				<li><a href="http://www.rowie.at/ipfire/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 1</a></li>
-				<li>MD5sum:<br />3a75c244791ec2af<br />2349485c8144c465</li>
-				<li><a href="http://forum.ipfire.org/index.php/topic,221.msg1231.html#msg1231">Update: read me!</a></li>
-				</ul>
 
+				<h4><span>Download</span> IPFire <span>STABLE</span></h4>
+				<ul class="links">
+					<li class="first"><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 1</a></li>
+					<li><a href="http://www.rowie.at/ipfire/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 2</a></li>
+					<li><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a></li>
+				</ul>
+				
+				<h4><span>Download</span> IPFire <span>BETA 1</span></h4>
+				<ul class="links">
+					<li class="first"><a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 1</a></li>
+					<li><a href="http://mirror2.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 2</a></li>
+					<li><a href="http://www.rowie.at/ipfire/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 3</a></li>
+					<li><a href="http://mirror2.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso.torrent">IPFire 2.0 Beta 1 - TORRENT</a></li>
+				</ul>
+				
 			</div>
 			
 			<div id="columnC_3columns">
 				<h4><span>Help</span> Me</h4>
 				<ul class="links">
-				<li class="first"><a href="http://forum.ipfire.org/">Forum</a></li>
-				<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
+					<li class="first"><a href="http://forum.ipfire.org/">Forum</a></li>
+					<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 				</ul>
 				
 				<h4><span>Partners</span> &amp; Friends</h4>
 				<ul class="links">
-				<li class="first"><a href="http://www.firewall-service.com/ipfire.php">www.firewall-service.com</a></li>
-				<li><a href="http://www.fitzenreiter.de/ipfire/">www.fitzenreiter.de/ipfire</a></li>
-				<li><a href="http://www.rowie.at/">www.rowie.at</a></li>
+					<li class="first"><a href="http://www.fitzenreiter.de/ipfire/">www.fitzenreiter.de/ipfire</a></li>
+					<li><a href="http://www.rowie.at/">www.rowie.at</a></li>
 				</ul>
 	
 				<h4><span>Development</span> Zone</h4>
 				<ul class="links">
-				<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
-				<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
-				<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
+					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
+					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
+					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
 				</ul>
 			</div>
-
+			
 		</div>
 
 		<br class="clear" />
