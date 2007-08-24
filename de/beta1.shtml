@@ -1,0 +1,280 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+		
+				<h3>Beta 1</h3>
+
+				<p>
+					Zuerst einmal wollen wir das Webinterface vorstellen, was in einem neuen
+					Style, welcher auch leicht ausgewechselt werden kann, erscheint.<br />
+					Die Startseite wurde umfassend berabeitet und bietet Informationen 
+					über alle Verbindungen sofort auf einen Blick.<br />
+					Zu finden sind hier:</p>
+					
+				<a class="thumbnail">
+					<img class="floatTL" src="../images/screens/de/beta1/thumb/index.png" alt="Startseite" width="210" />
+					<span>
+						<img src="../images/screens/de/beta1/index.png" alt="Startseite" width="650" /><br />
+						Die Startseite des Webinterface
+					</span>
+				</a>
+				<ul>
+					<li class="first">
+						<font color="darkred"><b>Rote Verbindung</b></font> - mit der Dauer der bestehenden Verbindung,
+						wann diese aufgebaut wurde und wie oft die Verbindungen überhaupt schon
+						gestartet wurden (pro Monat). Es werden auch die IP-Adressen des eigenen Hotst,
+						des Gateways und der DNS-Server angezeigt.</li>
+					<li>
+						<font color="darkgreen"><b>Grüne Verbindung</b></font> - Hier wird die IP-Adresse des grünen
+						Interface angezeigt. Weiterhin erlangt man die Information, ob der Proxy auf
+						der Schnittstelle angeschaltet ist oder ob er sich im transparenten Modus befindet.</li>
+					<li>
+						<font color="darkblue"><b>Blaue Verbindung</b></font> - Hier sind ebenfalls die gleichen
+						Informationen wir auf der grünen Schnittstelle zu finden.</li>
+					<li>
+						<font color="orange"><b>Orangene Verbindung</b></font> - Die IP-Adresse können sie
+						in diesem Feld ablesen.</li>
+					<li>
+						<font color="purple"><b>VPN-Verbindungen über IPSec</b></font> - finden sie in diesem Feld
+						aufgelistet. Dabei sehen Sie ebenfalls, ob die Verbindung gerade aufgebaut ist oder getrennt
+						wurde.</li>
+					<li>
+						<font color="cyan"><b>OpenVPN</b></font> - ist das letzte Feld in dieser Tabelle. Es erscheint
+						nur, wenn der OpenVPN-Server läuft.</li>
+				</ul>
+				
+				<br class="clear" />
+				<hr />
+				<br class="clear" />
+				
+				<a class="thumbnail">
+					<img class="floatTL" src="../images/screens/de/beta1/thumb/system.png" alt="Status" width="210" />
+					<span>
+						<img src="../images/screens/de/beta1/system.png" alt="Status" width="640" /><br />
+						Status-Seite
+					</span>
+				</a>
+				<p>
+					Um die Übersicht über die Geschehnisse zu behalten findet sich der Status des System
+					grafisch ausgewertert und präsentiert unter <i>Status</i> im Webinterface.<br />
+					In der gesamten Rubrik finden sie ein Dutzend an Diagrammen, welche den Admin-Alltag
+					immens erleichtern können, da man hier Fehlfunktionen mit ein wenig Übung sofort
+					erkennen kann.<br />
+					Unter <a class="thumbnail">Net-Traffic<span><img src="../images/screens/de/beta1/nettraffic.png" alt="Netttraffic" width="640" /><br />Net-Traffic</span></a>
+					behält man die die Übertragungsvolumina im Auge oder schaut sich
+					die Netzwerkgraphen an um zu erkennen wie die 
+					<a class="thumbnail">Bandbreitenbelastung<span><img src="../images/screens/de/beta1/nw-internal.png" alt="Bandbreitenbelastung" width="640" /><br />Bandbreitenbelastung</span></a> 
+					ausschaut.<br />Für die 
+					<a class="thumbnail">Aktivität der Firewall<span><img src="../images/screens/de/beta1/fwdiag.png" alt="Aktivität der Firewall" width="640" /><br />Aktivität der Firewall</span></a>
+					finden sie ein Diagramm, welches auch Portscans anzeigt.<br />
+					Bedanken möchten wir uns auch bei Arne Fitzenreiter für die Idee die Datenplatten automatisch
+					abzuschalten. Wann eine Festplatte
+					<a class="thumbnail">"geschlafen"<span><img src="../images/screens/de/beta1/disk.png" alt="Disks" width="640" /><br />Festplattenbelastung</span></a>
+					hat sieht man ebenfall in dieser Rubrik.<br />
+					
+					</p>
+				
+				<br class="clear" />
+				<hr />
+				<br class="clear" />
+				
+				<a class="thumbnail">
+					<img class="floatTL" src="../images/screens/de/beta1/thumb/proxy.png" alt="Proxy" width="210" />
+					<span>
+						<img src="../images/screens/de/beta1/proxy.png" alt="Proxy" width="640" /><br />
+						WebProxy-Seite
+					</span>
+				</a>
+				<p>
+					Als nächstes findet man das Register "Netzwerk" im Webinterface. Wo sämtliche 
+					Dienste angeboten werden.<br />
+					Besonders wichtig ist der <b>Web-Proxy</b>, welcher, basierend auf 
+					<a href="http://www.squid-cache.org/" target="_blank">Squid</a>, eins der Herzstücke unserer
+					Firewall ist, auch wenn er schon fast selbstverständlich erscheint. Mit mannigfaltigen
+					Authentifizierungsmöglichkeiten ist er so vielseitig wie kaum ein anderer Proxy.<br />
+					Und durch die Erweiterungen zum Content-Filtering und dem Caching von z.B. Windows-Updates
+					ist er noch attraktiver.<br />
+					Mit dem
+					<a class="thumbnail">Connection Scheduler<span><img src="../images/screens/de/beta1/connsched.png" alt="ConnectionScheduler" width="640" /><br />ConnectionScheduler</span></a>
+					lassen sich Aufgaben für das Verbinden und Trennen der roten Verbindung festlegen. Das ist eine
+					Erweiterung des "MorningReconnects", aber es lassen sich auch zu bestimmten Uhrzeiten die Wähl-Profile
+					auswechseln, sodass es LowCost-Router entsteht.
+					</p>
+				
+				<br class="clear" />
+				<hr />
+				<br class="clear" />
+				
+				<a class="thumbnail">
+					<img class="floatTL" src="../images/screens/de/beta1/thumb/ipsec.png" alt="IPSec" width="210" />
+					<span>
+						<img src="../images/screens/de/beta1/ipsec.png" alt="IPSec" width="640" /><br />
+						IPSec-VPN
+					</span>
+				</a>
+				<p>
+					Die wohl allerwichtigste Komponente, die eine Firewall erbringen muss ist neben
+					der Stabilität auch die Sicherheit, welche man durch IPSec schon fast allein erzielen kann.
+					Hierbei lassen sich zwar keine Angreifer abwehren, aber man kann die Übertragung so gut
+					sichern wie das amerikanische Militär, denn durch diese Tunnel geht nichts verloren.<br />
+					Möchste man dagegen nur Clients von einem entfernten Netzwerk ins eigene einbinden, so
+					ist OpenVPN eine gute Alternative zu IPSec, was wir für die transparente und direkte
+					Vernetzung von 2 Netzwerken verwenden.<br />
+					Besonders praktisch ist, dass man durch beide VPN-Techniken zum absichern von WLANs verwenden kann,
+					da die AccessPoints meist nur eine sehr schwache Verschlüsselung anbieten.
+					<hr /><br />
+					Selbstverständlich finden sich in unserer Firewall auch Dienste für dynamisches DNS und auch
+					einen Zeitserver.<br />
+					<ul>
+						<li class="first">
+							<a class="thumbnail">
+								Dynamischer DNS
+								<span>
+									<img src="../images/screens/de/beta1/dyndns.png" alt="DynDNS" width="640" /><br />
+									DynDNS
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="thumbnail">
+								Intrusion Detection System
+								<span>
+									<img src="../images/screens/de/beta1/ids.png" alt="IDS" width="640" /><br />
+									Intrusion Detection System
+								</span>
+							</a>
+						</li>
+					</ul>
+				</p>
+				
+				<br class="clear" />
+				<hr />
+				<br class="clear" />
+				
+				<a class="thumbnail">
+					<img class="floatTL" src="../images/screens/de/beta1/thumb/qos-2.png" alt="QoS" width="210" />
+					<span>
+						<img src="../images/screens/de/beta1/qos-2.png" alt="QoS" width="640" /><br />
+						QoS
+					</span>
+				</a>
+				<p>Ganz besonders stolz ist das Entwicklerteam auf das frisch erstellte Quality-of-Service, welches
+					Möglichkeiten wie nie zuvor bietet. Die Erkennung und das Setzen von TOS-Bits findet
+					sich kaum in einem anderen QoS. Auch der Layer7-Filter ist eine gute Komponente. Überzeugen Sie sich selbst.
+				<hr /><br />
+					In der Rubrik <i>Firewall</i> finden Sie dann die Portweiterleitung zu internen Hosts oder
+					können im <i>externen Zugang</i> einen Port auf den IPFire selbst freigeben.<br />Die besondere
+					Beschränkung für WLAN-Netze (blau) lässt sich ebenfall hier vornehmen.<br />
+					Ein ganz neues Feature ist die ausgehende Firewall, die es ermöglicht nur Verkehr auf bestimmten
+					Ports zu genehmigen.
+				
+					<ul>
+						<li class="first">
+							<a class="thumbnail">
+								Externer Zugang
+								<span>
+									<img src="../images/screens/de/beta1/xtaccess.png" alt="XTAccess" width="640" /><br />
+									Externer Zugang
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="thumbnail">
+								Ausgehende Firewall - Bild 1
+								<span>
+									<img src="../images/screens/de/beta1/outgoingfw-1.png" alt="Outgoingfw" width="640" /><br />
+									Ausgehende Firewall
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="thumbnail">
+								Ausgehende Firewall - Bild 2
+								<span>
+									<img src="../images/screens/de/beta1/outgoingfw-2.png" alt="Outgoingfw" width="640" /><br />
+									Ausgehende Firewall
+								</span>
+							</a>
+						</li>
+					</ul>
+				</p>
+				
+				<br class="clear" />
+				<hr />
+				<br class="clear" />
+				
+				<a class="thumbnail">
+					<img class="floatTL" src="../images/screens/de/beta1/thumb/pakfire-1.png" alt="Pakfire" width="210" />
+					<span>
+						<img src="../images/screens/de/beta1/pakfire-1.png" alt="Pakfire" width="640" /><br />
+						Pakfire
+					</span>
+				</a>
+				
+				<p>
+					Der Pakfire ist ein Installations- und Softwaredistributionssystem um die Firewall mit weiteren
+					Funktionen anzureichern. Unten findet sich eine Liste mit den bisherigen Addons:
+					<ul>
+						<li class="first">
+							<a class="thumbnail">
+								Pakfire-Log
+								<span>
+									<img src="../images/screens/de/beta1/pakfire-2.png" alt="Pakfire" width="640" /><br />
+									Pakfire
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="thumbnail">
+								Samba
+								<span>
+									<img src="../images/screens/de/beta1/samba.png" alt="Samba" width="640" /><br />
+									Samba
+								</span>
+							</a>
+						</li>
+						<li>Asterisk</li>
+						<li>u.v.a.m.</li>
+					</ul>
+				</p>
+				
+				<br class="clear" />
+				<hr />
+				<br class="clear" />
+				
+				<a class="thumbnail">
+					<img class="floatTL" src="../images/screens/de/beta1/thumb/fwlog-port.png" alt="FWLog" width="210" />
+					<span>
+						<img src="../images/screens/de/beta1/fwlog-port.png" alt="FWLog" width="640" /><br />
+						Firewall-Log (Port)
+					</span>
+				</a>
+				<p>
+					Zuletzt gibt es den Register <i>Log</i>, wo sämtliche Logfiles des Systems ausgewertet oder
+					im Klartext eingesehen werden können. Neben der täglichen Zusammenfassung für das System gibt
+					es noch statistische Erhebungen für den Proxy und nocheinmal Diagramme für die Firewall-Treffer.
+					</p>
+		
+				<br class="clear" />
+				<hr />
+				<br class="clear" />
+		
+				<p>Das Entwicklerteam wünscht viel Spaß beim Testen und hofft auf viel Feedback!</p>
+				
+				<br class="clear" />
+		
+			</div>
+	
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+<!--#include virtual="../footer.shtml" -->
