@@ -19,8 +19,8 @@
 		</div>
 		
 		<div id="lang">
-			<a href="/en/" ><img src="/images/en.gif" /></a>
-			<a href="/de/" ><img src="/images/de.gif" /></a>
+			<a href="/en/" ><img src="/images/en.gif" alt="english" /></a>
+			<a href="/de/" ><img src="/images/de.gif" alt="german" /></a>
 		</div>
 		
 		<div id="menu">
