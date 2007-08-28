@@ -126,6 +126,13 @@
 					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
 					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
 				</ul>
+				
+				<h4><span>Internet Relay</span> Chat</h4>
+				<p>
+					<b>Server:</b> irc.freenode.net<br />
+					<b>Channel:</b> #ipfire<br />
+					<a href="http://irc.ipfire.org/" target="_blank">Webchat</a>
+				</p>
 			</div>
 
 		</div>
