@@ -14,7 +14,7 @@
 					Zuerst einmal wollen wir das Webinterface vorstellen, was in einem neuen
 					Style, welcher auch leicht ausgewechselt werden kann, erscheint.<br />
 					Die Startseite wurde umfassend berabeitet und bietet Informationen 
-					über alle Verbindungen sofort auf einen Blick.<br />
+					Ã¼ber alle Verbindungen sofort auf einen Blick.<br />
 					Zu finden sind hier:</p>
 					
 				<a class="thumbnail">
@@ -27,26 +27,26 @@
 				<ul>
 					<li class="first">
 						<font color="darkred"><b>Rote Verbindung</b></font> - mit der Dauer der bestehenden Verbindung,
-						wann diese aufgebaut wurde und wie oft die Verbindungen überhaupt schon
+						wann diese aufgebaut wurde und wie oft die Verbindungen Ã¼berhaupt schon
 						gestartet wurden (pro Monat). Es werden auch die IP-Adressen des eigenen Hotst,
 						des Gateways und der DNS-Server angezeigt.</li>
 					<li>
-						<font color="darkgreen"><b>Grüne Verbindung</b></font> - Hier wird die IP-Adresse des grünen
+						<font color="darkgreen"><b>GrÃ¼ne Verbindung</b></font> - Hier wird die IP-Adresse des grÃ¼nen
 						Interface angezeigt. Weiterhin erlangt man die Information, ob der Proxy auf
 						der Schnittstelle angeschaltet ist oder ob er sich im transparenten Modus befindet.</li>
 					<li>
 						<font color="darkblue"><b>Blaue Verbindung</b></font> - Hier sind ebenfalls die gleichen
-						Informationen wir auf der grünen Schnittstelle zu finden.</li>
+						Informationen wir auf der grÃ¼nen Schnittstelle zu finden.</li>
 					<li>
-						<font color="orange"><b>Orangene Verbindung</b></font> - Die IP-Adresse können sie
+						<font color="orange"><b>Orangene Verbindung</b></font> - Die IP-Adresse kÃ¶nnen sie
 						in diesem Feld ablesen.</li>
 					<li>
-						<font color="purple"><b>VPN-Verbindungen über IPSec</b></font> - finden sie in diesem Feld
+						<font color="purple"><b>VPN-Verbindungen Ã¼ber IPSec</b></font> - finden sie in diesem Feld
 						aufgelistet. Dabei sehen Sie ebenfalls, ob die Verbindung gerade aufgebaut ist oder getrennt
 						wurde.</li>
 					<li>
 						<font color="cyan"><b>OpenVPN</b></font> - ist das letzte Feld in dieser Tabelle. Es erscheint
-						nur, wenn der OpenVPN-Server läuft.</li>
+						nur, wenn der OpenVPN-Server lÃ¤uft.</li>
 				</ul>
 				
 				<br class="clear" />
@@ -61,19 +61,19 @@
 					</span>
 				</a>
 				<p>
-					Um die Übersicht über die Geschehnisse zu behalten findet sich der Status des System
-					grafisch ausgewertert und präsentiert unter <i>Status</i> im Webinterface.<br />
+					Um die Ãœbersicht Ã¼ber die Geschehnisse zu behalten findet sich der Status des System
+					grafisch ausgewertert und prÃ¤sentiert unter <i>Status</i> im Webinterface.<br />
 					In der gesamten Rubrik finden sie ein Dutzend an Diagrammen, welche den Admin-Alltag
-					immens erleichtern können, da man hier Fehlfunktionen mit ein wenig Übung sofort
+					immens erleichtern kÃ¶nnen, da man hier Fehlfunktionen mit ein wenig Ãœbung sofort
 					erkennen kann.<br />
 					Unter <a class="thumbnail">Net-Traffic<span><img src="../images/screens/de/beta1/nettraffic.png" alt="Netttraffic" width="640" /><br />Net-Traffic</span></a>
-					behält man die die Übertragungsvolumina im Auge oder schaut sich
+					behÃ¤lt man die die Ãœbertragungsvolumina im Auge oder schaut sich
 					die Netzwerkgraphen an um zu erkennen wie die 
 					<a class="thumbnail">Bandbreitenbelastung<span><img src="../images/screens/de/beta1/nw-internal.png" alt="Bandbreitenbelastung" width="640" /><br />Bandbreitenbelastung</span></a> 
-					ausschaut.<br />Für die 
-					<a class="thumbnail">Aktivität der Firewall<span><img src="../images/screens/de/beta1/fwdiag.png" alt="Aktivität der Firewall" width="640" /><br />Aktivität der Firewall</span></a>
+					ausschaut.<br />FÃ¼r die 
+					<a class="thumbnail">AktivitÃ¤t der Firewall<span><img src="../images/screens/de/beta1/fwdiag.png" alt="AktivitÃ¤t der Firewall" width="640" /><br />AktivitÃ¤t der Firewall</span></a>
 					finden sie ein Diagramm, welches auch Portscans anzeigt.<br />
-					Bedanken möchten wir uns auch bei Arne Fitzenreiter für die Idee die Datenplatten automatisch
+					Bedanken mÃ¶chten wir uns auch bei Arne Fitzenreiter fÃ¼r die Idee die Datenplatten automatisch
 					abzuschalten. Wann eine Festplatte
 					<a class="thumbnail">"geschlafen"<span><img src="../images/screens/de/beta1/disk.png" alt="Disks" width="640" /><br />Festplattenbelastung</span></a>
 					hat sieht man ebenfall in dieser Rubrik.<br />
@@ -92,18 +92,18 @@
 					</span>
 				</a>
 				<p>
-					Als nächstes findet man das Register "Netzwerk" im Webinterface. Wo sämtliche 
+					Als nÃ¤chstes findet man das Register "Netzwerk" im Webinterface. Wo sÃ¤mtliche 
 					Dienste angeboten werden.<br />
 					Besonders wichtig ist der <b>Web-Proxy</b>, welcher, basierend auf 
-					<a href="http://www.squid-cache.org/" target="_blank">Squid</a>, eins der Herzstücke unserer
-					Firewall ist, auch wenn er schon fast selbstverständlich erscheint. Mit mannigfaltigen
-					Authentifizierungsmöglichkeiten ist er so vielseitig wie kaum ein anderer Proxy.<br />
+					<a href="http://www.squid-cache.org/" target="_blank">Squid</a>, eins der HerzstÃ¼cke unserer
+					Firewall ist, auch wenn er schon fast selbstverstÃ¤ndlich erscheint. Mit mannigfaltigen
+					AuthentifizierungsmÃ¶glichkeiten ist er so vielseitig wie kaum ein anderer Proxy.<br />
 					Und durch die Erweiterungen zum Content-Filtering und dem Caching von z.B. Windows-Updates
 					ist er noch attraktiver.<br />
 					Mit dem
 					<a class="thumbnail">Connection Scheduler<span><img src="../images/screens/de/beta1/connsched.png" alt="ConnectionScheduler" width="640" /><br />ConnectionScheduler</span></a>
-					lassen sich Aufgaben für das Verbinden und Trennen der roten Verbindung festlegen. Das ist eine
-					Erweiterung des "MorningReconnects", aber es lassen sich auch zu bestimmten Uhrzeiten die Wähl-Profile
+					lassen sich Aufgaben fÃ¼r das Verbinden und Trennen der roten Verbindung festlegen. Das ist eine
+					Erweiterung des "MorningReconnects", aber es lassen sich auch zu bestimmten Uhrzeiten die WÃ¤hl-Profile
 					auswechseln, sodass es LowCost-Router entsteht.
 					</p>
 				
@@ -120,16 +120,16 @@
 				</a>
 				<p>
 					Die wohl allerwichtigste Komponente, die eine Firewall erbringen muss ist neben
-					der Stabilität auch die Sicherheit, welche man durch IPSec schon fast allein erzielen kann.
-					Hierbei lassen sich zwar keine Angreifer abwehren, aber man kann die Übertragung so gut
-					sichern wie das amerikanische Militär, denn durch diese Tunnel geht nichts verloren.<br />
-					Möchste man dagegen nur Clients von einem entfernten Netzwerk ins eigene einbinden, so
-					ist OpenVPN eine gute Alternative zu IPSec, was wir für die transparente und direkte
+					der StabilitÃ¤t auch die Sicherheit, welche man durch IPSec schon fast allein erzielen kann.
+					Hierbei lassen sich zwar keine Angreifer abwehren, aber man kann die Ãœbertragung so gut
+					sichern wie das amerikanische MilitÃ¤r, denn durch diese Tunnel geht nichts verloren.<br />
+					MÃ¶chste man dagegen nur Clients von einem entfernten Netzwerk ins eigene einbinden, so
+					ist OpenVPN eine gute Alternative zu IPSec, was wir fÃ¼r die transparente und direkte
 					Vernetzung von 2 Netzwerken verwenden.<br />
 					Besonders praktisch ist, dass man durch beide VPN-Techniken zum absichern von WLANs verwenden kann,
-					da die AccessPoints meist nur eine sehr schwache Verschlüsselung anbieten.
+					da die AccessPoints meist nur eine sehr schwache VerschlÃ¼sselung anbieten.
 					<hr /><br />
-					Selbstverständlich finden sich in unserer Firewall auch Dienste für dynamisches DNS und auch
+					SelbstverstÃ¤ndlich finden sich in unserer Firewall auch Dienste fÃ¼r dynamisches DNS und auch
 					einen Zeitserver.<br />
 					<ul>
 						<li class="first">
@@ -165,13 +165,13 @@
 					</span>
 				</a>
 				<p>Ganz besonders stolz ist das Entwicklerteam auf das frisch erstellte Quality-of-Service, welches
-					Möglichkeiten wie nie zuvor bietet. Die Erkennung und das Setzen von TOS-Bits findet
-					sich kaum in einem anderen QoS. Auch der Layer7-Filter ist eine gute Komponente. Überzeugen Sie sich selbst.
+					MÃ¶glichkeiten wie nie zuvor bietet. Die Erkennung und das Setzen von TOS-Bits findet
+					sich kaum in einem anderen QoS. Auch der Layer7-Filter ist eine gute Komponente. Ãœberzeugen Sie sich selbst.
 				<hr /><br />
 					In der Rubrik <i>Firewall</i> finden Sie dann die Portweiterleitung zu internen Hosts oder
-					können im <i>externen Zugang</i> einen Port auf den IPFire selbst freigeben.<br />Die besondere
-					Beschränkung für WLAN-Netze (blau) lässt sich ebenfall hier vornehmen.<br />
-					Ein ganz neues Feature ist die ausgehende Firewall, die es ermöglicht nur Verkehr auf bestimmten
+					kÃ¶nnen im <i>externen Zugang</i> einen Port auf den IPFire selbst freigeben.<br />Die besondere
+					BeschrÃ¤nkung fÃ¼r WLAN-Netze (blau) lÃ¤sst sich ebenfall hier vornehmen.<br />
+					Ein ganz neues Feature ist die ausgehende Firewall, die es ermÃ¶glicht nur Verkehr auf bestimmten
 					Ports zu genehmigen.
 				
 					<ul>
@@ -256,16 +256,16 @@
 					</span>
 				</a>
 				<p>
-					Zuletzt gibt es den Register <i>Log</i>, wo sämtliche Logfiles des Systems ausgewertet oder
-					im Klartext eingesehen werden können. Neben der täglichen Zusammenfassung für das System gibt
-					es noch statistische Erhebungen für den Proxy und nocheinmal Diagramme für die Firewall-Treffer.
+					Zuletzt gibt es den Register <i>Log</i>, wo sÃ¤mtliche Logfiles des Systems ausgewertet oder
+					im Klartext eingesehen werden kÃ¶nnen. Neben der tÃ¤glichen Zusammenfassung fÃ¼r das System gibt
+					es noch statistische Erhebungen fÃ¼r den Proxy und nocheinmal Diagramme fÃ¼r die Firewall-Treffer.
 					</p>
 		
 				<br class="clear" />
 				<hr />
 				<br class="clear" />
 		
-				<p>Das Entwicklerteam wünscht viel Spaß beim Testen und hofft auf viel Feedback!</p>
+				<p>Das Entwicklerteam wÃ¼nscht viel SpaÃŸ beim Testen und hofft auf viel Feedback!</p>
 				
 				<br class="clear" />
 		

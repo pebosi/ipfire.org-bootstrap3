@@ -14,16 +14,16 @@
 				<p>
 					IPFire ist eine auf Linux gebaute Firewall-Distribution, die mit einigen 
 					besonderen Funktionen auftrumphen kann.
-					Grundlage für die momentan stabile Version 1.4.9 war der IPCop, der stark modifiziert wurde.
+					Grundlage fÃ¼r die momentan stabile Version 1.4.9 war der IPCop, der stark modifiziert wurde.
 					Hinzugekommen sind: <a href="http://www.asterisk.org">Asterisk PBX</a>, 
 					<a href="http://www.samba.org">Samba</a>, MorningReconnect, <a href="http://www.lprng.com">LPR-NG</a> u.v.a.m.
 				</p>
 				
 				<p>
-					Nun hat sich das Team neu gegründet und den Ballast vom IPCop weitgehend über Board geworfen um
-					das Konzept <strong>IPFire</strong> als Heimserver noch stärker zu verfolgen. Dabei wird es im 
+					Nun hat sich das Team neu gegrÃ¼ndet und den Ballast vom IPCop weitgehend Ã¼ber Board geworfen um
+					das Konzept <strong>IPFire</strong> als Heimserver noch stÃ¤rker zu verfolgen. Dabei wird es im 
 					zweiten Release sehr wichtige Neuerungen geben wie zum Beispiel den Kernel 2.6, mit dem es uns 
-					möglich ist noch mehr Hardware der letzten Generation zu unterstützen.
+					mÃ¶glich ist noch mehr Hardware der letzten Generation zu unterstÃ¼tzen.
 				</p>
 				
 				
@@ -38,26 +38,26 @@
 					</ul>					
 					<p>
 						<b>Sehr geehrte Community!</b><br />
-							Nach langjähriger Entwicklungszeit sind ich und mein Team froh Ihnen voller Stolz die
+							Nach langjÃ¤hriger Entwicklungszeit sind ich und mein Team froh Ihnen voller Stolz die
 							Version 2.0 unserer Firewall, die sich somit ab dem 24. August 2007 im Beta-Stadium
-							befindet, zu präsentieren.<br/>
+							befindet, zu prÃ¤sentieren.<br/>
 							Basierte die Version 1.4.9, wie die Versionsnummer schon ahnen
-							lässt, noch auf dem IPCop, so handelt es sich nun um eine fast vollständige Neuentwicklung
+							lÃ¤sst, noch auf dem IPCop, so handelt es sich nun um eine fast vollstÃ¤ndige Neuentwicklung
 							auf Basis des Linux-from-Scratch (LFS) 6.2.<br />
 							Als eine der schwierigsten Aufgaben stellte sich die Integration des Linux-Kernels 2.6, was
-							einige umfassende Änderungen im System nach sich zog. Ähnelt die grafische
-							Weboberfläche noch sehr dem Vorgänger, hat sich aber trotzdem „unter der Haube“ eine
-							kleine Revolution vollzogen. Das Ergebnis ist ein gehärtetes System auf dem allerneuesten
+							einige umfassende Ã„nderungen im System nach sich zog. Ã„hnelt die grafische
+							WeboberflÃ¤che noch sehr dem VorgÃ¤nger, hat sich aber trotzdem â€unter der Haubeâ€œ eine
+							kleine Revolution vollzogen. Das Ergebnis ist ein gehÃ¤rtetes System auf dem allerneuesten
 							Stand mit GCC 4.0.3 und dem stabilen Kernel der Serie 2.6.16.<br />
-							Nachdem dieser maßgebliche Schritt vollzogen war, wurden die bisher zur Ausstattung
-							gehörigen Features wieder integriert. Dazu gehören wichtige Dienste in einem Netzwerk wie
+							Nachdem dieser maÃŸgebliche Schritt vollzogen war, wurden die bisher zur Ausstattung
+							gehÃ¶rigen Features wieder integriert. Dazu gehÃ¶ren wichtige Dienste in einem Netzwerk wie
 							ein DHCP- oder NTP-Server, sowie auch DynDNS-Updater um hier nur einige zu nennen.
-							Die vollständige Liste finden Sie in der offiziellen Pressemitteilung.<br /><br />
+							Die vollstÃ¤ndige Liste finden Sie in der offiziellen Pressemitteilung.<br /><br />
 							
 							<b>Lesen sie mehr in der offiziellen 
 								<a href="../data/ipfire-press-release-beta-1.pdf" target="_blank">Pressemitteilung</a>!</b>
 							
-							<br /><br /><b>Michael</b> - für das Entwicklerteam von IPFire.org
+							<br /><br /><b>Michael</b> - fÃ¼r das Entwicklerteam von IPFire.org
 					</p>
 				</div>
 		
