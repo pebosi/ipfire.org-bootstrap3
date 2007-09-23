@@ -26,8 +26,8 @@
 		<div id="menu">
 			<ul>
 				<li><a href="index.shtml">Home</a></li>
-				<li><a href="beta1.shtml">Beta 1</a></li>
-				<li><a href="http://wiki.ipfire.org/">Docs</a></li>
+				<li><a href="downloads.shtml">Downloads</a></li>
+				<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 				<li><a href="http://forum.ipfire.org/">Forum</a></li>
 				<li><a href="imprint.shtml">Imprint</a></li>
 			</ul>

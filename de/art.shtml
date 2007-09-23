@@ -1,0 +1,42 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+		
+				<h3>Art</h3>
+
+				<p>
+					Auf dieser Seite werden einige künstlerische Objekte präsentiert.<br />
+					Dazu zählt für den Anfang zunächst nur einmal ein CD-Cover von Maniacikarus.
+				</p>
+				
+				<a href="../images/art/CD1.png"><img src="../images/art/CD1_thumb.png" class="floatTL" alt="CD1" /></a>
+				
+				<p>
+					Eine "Comic"-Version als Cover für eine normale CD.
+				</p>
+				
+				<br class="clear" />
+				
+				<a href="../images/art/CD2.png"><img src="../images/art/CD2_thumb.png" class="floatTL" alt="CD2" /></a>
+				
+				<p>
+					Ein flammender Hintergrund als CD-Cover.
+				</p>
+				
+				<br class="clear" />
+		
+			</div>
+	
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+<!--#include virtual="../footer.shtml" -->

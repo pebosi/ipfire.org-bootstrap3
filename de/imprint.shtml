@@ -14,7 +14,7 @@
 					Dieses Projekt ist ein Open-Source-Projekt und verfolgt keine kommerziellen Ziele.
 				</p>
 				<p>
-					<b>Die Distribution "IPFire" steht unter der GPLv2 zur Verfügung und darf den Bedingung zufolge weitergegeben werden.</b>
+					<b>Die Distribution "IPFire" steht unter der GPLv3 zur Verfügung und darf den Bedingung zufolge weitergegeben werden.</b>
 				</p>
 				<p>
 					<u>Verantwortlich:</u><br />
@@ -90,6 +90,10 @@
 				</p>
 				<p>
 					Dieses Impressum gilt für alle mit dem IPFire-Projekt verbundenen Webseiten (Forum, etc.).
+				</p>
+				
+				<p>
+					Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a>.
 				</p>
 				
 				<br class="clear" />

@@ -33,8 +33,7 @@
 				
 					<h3>24. August 2007 - Beta 1</h3>
 					<ul class="post_info">
-						<li class="date">Posted by <a href="#">Michael Tremer</a> on 24.08.2007</li>
-						<!-- <li class="comments"><a href="#">0 comments</a></li> -->
+						<li class="date">On the way to new goals</li>
 					</ul>					
 					<p>
 						<b>Sehr geehrte Community!</b><br />
@@ -81,22 +80,11 @@
 				
 				<h4><span>About</span> Us</h4>
 				<p><strong>IPFire</strong> ist eine Firewall auf Basis von Linux, die
-					mit vielen besonderen Eigenschaften daher kommt. Grundlage der Entwicklung
-					von Version 1.4.9 war der <a href="http://www.ipcop.org/">IPCop</a>.</p>
+					mit vielen besonderen Eigenschaften daher kommt.</p>
 	
-				<h4><span>Download</span> IPFire <span>STABLE</span></h4>
+				<h4><span>Special</span> Links</h4>
 				<ul class="links">
-					<li class="first"><a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 1</a></li>
-					<li><a href="http://www.rowie.at/ipfire/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 2</a></li>
-					<li><a href="http://download.ipfire.org/torrent/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a></li>
-				</ul>
-				
-				<h4><span>Download</span> IPFire <span>BETA 1</span></h4>
-				<ul class="links">
-					<li class="first"><a href="http://download.ipfire.org/torrent/ipfire-2.0beta1.i586-full.iso.torrent">IPFire 2.0 Beta 1 - TORRENT</a></li>
-					<li><a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 1</a></li>
-					<li><a href="http://mirror2.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 2</a></li>
-					<li><a href="http://www.rowie.at/ipfire/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 3</a></li>
+					<li class="first"><a href="art.shtml">Art</a></li>
 				</ul>
 				
 			</div>
