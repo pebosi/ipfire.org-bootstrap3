@@ -28,6 +28,21 @@
 				
 				
 				<br class="clear" />
+				
+				<div class="post">
+				
+					<h3>2007/09/24 - Beta 2</h3>
+					<ul class="post_info">
+						<li class="date">1:0 ahead - Halftime</li>
+					</ul>					
+					<p>
+						<b>Hey Community!</b><br />
+							We´ve released another BETA version. It´s linked in the download section.<br /><br />
+							<b>You can get some information from the german Changelog 
+								<a href="http://wiki.ipfire.org/index.php/BETA:2" target="_blank">german Changelog</a>!</b>
+							<br /><br /><b>Christian</b> - for the developers on IPFire.org
+					</p>
+				</div>
 			
 				<div class="post">
 				
