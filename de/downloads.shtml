@@ -13,8 +13,9 @@
 
 				<p>
 					Hier findet ihr alle Downloads des IPFire-Projektes.<br />
-					Die gute, stabile Version <a href="#final">1.4.9</a> sowie die <a href="#beta1">Beta 1</a> und
-					<a href="#beta2">Beta 2</a> sind hier zu finden.
+					Die gute, stabile Version <a href="#final">1.4.9</a> sowie die <a href="#beta1">Beta 1</a>,
+					<a href="#beta2">Beta 2</a> und der aktuelle <a href="#rc1">Release Candidate 1</a>
+					sind hier zu finden.
 				</p>
 				
 				<p>
@@ -47,6 +48,31 @@
 						<a href="http://www.pro-linux.de/news/2006/9219.html" target="_blank">Pro-Linux.de - Firewall-Distribution auf neuen Wegen</a>
 					</p>
 					
+				</div>
+				
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="rc1"></a>
+					<h3>IPFire 2.0 Release Candidate 1</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+					<p>
+						Nun steht endlich der lang ersehnte Release Candidate zur Verfügung und wir
+						bitten um reichliches Testen.<br />
+						Den Changelog kann man <a href="http://wiki.ipfire.org/index.php/RC:1" target="_blank">hier</a>
+						oder etwas ausführlicher <a href="http://svn.ipfire.org/log.php?repname=ipfire&path=%2F&rev=0&sc=1&isdir=1" target="_blank">hier</a>
+						einsehen.
+					</p>
+					
+					<div align="right">
+						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc1.i586-full.iso.torrent">IPFire 2.0 RC 1 - TORRENT</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - Mirror 1</a><br />
+						<a href="http://mirror2.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - Mirror 2</a><br />
+						<a href="http://www.rowie.at/ipfire/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - Mirror 3</a>
+					</div>
+
 				</div>
 				
 				<br class="clear" />

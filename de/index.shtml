@@ -25,7 +25,23 @@
 					zweiten Release sehr wichtige Neuerungen geben wie zum Beispiel den Kernel 2.6, mit dem es uns 
 					möglich ist noch mehr Hardware der letzten Generation zu unterstützen.
 				</p>
+
+				<br class="clear" />
 				
+				<div class="post">
+				
+					<h3>14. Oktober 2007 - Release Candidate 1</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>					
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+							Ab sofort steht der Release Candidate 1 im Downloadbereich bereit.<br /><br />
+							<b>Weiters können Sie im Changelog einsehen 
+								<a href="http://wiki.ipfire.org/index.php/RC:1" target="_blank">Changelog</a>!</b>
+							<br /><br /><b>Mitch</b> - für das Entwicklerteam von IPFire.org
+					</p>
+				</div>				
 				
 				<br class="clear" />
 				
@@ -120,6 +136,7 @@
 				<ul class="links">
 					<li class="first"><a href="http://www.fitzenreiter.de/ipfire/" target="_blank">www.fitzenreiter.de/ipfire</a></li>
 					<li><a href="http://www.rowie.at/" target="_blank">www.rowie.at</a></li>
+					<li><a href="http://www.itk-it.de/products_ipfire.shtml" target="_blank">www.itk-it.de</a></li>
 					<li><a href="http://www.firewall-service.com/" target="_blank">www.firewall-service.com</a></li>
 				</ul>
 	
