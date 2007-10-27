@@ -21,6 +21,10 @@
 					Michael Tremer (<a href="mailto:michael@ipfire.org">michael@ipfire.org</a>)<br />
 					Gerhardstraße 8<br />
 					45711 Datteln<br /><br />
+
+					Christian Schmidt (<a href="mailto:maniacikarus@ipfire.org">maniacikarus@ipfire.org</a>)<br />
+					Weißer Weg 32<br />
+					Nürnberg<br /><br />
 				</p>
 				<p>
 					<b>1. Inhalt des Onlineangebotes</b><br />
@@ -105,5 +109,7 @@
 		<br class="clear" />
 
 	</div>
+
+</div>
 
 <!--#include virtual="../footer.shtml" -->
