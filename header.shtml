@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>www.ipfire.org</title>
+	<title><!--#echo var="SERVER_NAME" --></title>
 	<meta name="keywords" content="Linux, Firewall, IPCop, IPFire, Security" />
 	<meta name="description" content="" />
 	<link rel="stylesheet" type="text/css" href="../style.css" />
@@ -20,16 +20,18 @@
 		</div>
 		
 		<div id="lang">
-			<a href="/en/" ><img src="/images/en.gif" alt="english" /></a>
-			<a href="/de/" ><img src="/images/de.gif" alt="german" /></a>
+			<a href="/en/<!--#echo var="DOCUMENT_NAME" -->" ><img src="/images/en.gif" alt="english" /></a>
+			<a href="/de/<!--#echo var="DOCUMENT_NAME" -->" ><img src="/images/de.gif" alt="german" /></a>
 		</div>
 		
 		<div id="menu">
 			<ul>
+				<!--#if expr="$SERVER_NAME != source.ipfire.org" -->
 				<li><a href="index.shtml">Home</a></li>
 				<li><a href="downloads.shtml">Downloads</a></li>
 				<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 				<li><a href="http://forum.ipfire.org/">Forum</a></li>
+				<!--#endif-->
 				<li><a href="imprint.shtml">Imprint</a></li>
 			</ul>
 		</div>
