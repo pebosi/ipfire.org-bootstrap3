@@ -1,12 +1,19 @@
 #!/usr/bin/perl
 
+my $lang = "en";
+
+# Set language to german, else use english site
+if ($ENV{'HTTP_ACCEPT_LANGUAGE'} =~ /^de(.*)/) {
+	$lang = "de";
+}
+
 print "Status: 302 Moved\n";
 print "Pragma: no-cache\n";
 
 if ($ENV{'SERVER_NAME'} eq "source.ipfire.org") {
-	print "Location: /en/source.shtml\n";
+	print "Location: /$lang/source.shtml\n";
 } else {
-	print "Location: /en/index.shtml\n";
+	print "Location: /$lang/index.shtml\n";
 }
 
 # End http header...

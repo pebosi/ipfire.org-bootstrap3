@@ -26,7 +26,9 @@
 		
 		<div id="menu">
 			<ul>
-				<!--#if expr="$SERVER_NAME != source.ipfire.org" -->
+				<!--#if expr="$SERVER_NAME = source.ipfire.org" -->
+				<li><a href="source.shtml">Source</a></li>
+				<!--#else -->
 				<li><a href="index.shtml">Home</a></li>
 				<li><a href="downloads.shtml">Downloads</a></li>
 				<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
