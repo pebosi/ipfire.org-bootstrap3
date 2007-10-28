@@ -1,0 +1,35 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+		
+				<h3>403 - Der Zugang zu dieser Webseite ist nicht gestattet</h3>
+
+				<!-- insert image here -->
+
+				<p>
+					Sie haben nicht die erforderliche Berechtigung um diesen Teil
+					der Webseite zu besuchen.
+					<br />
+					<a href="http://<!--#echo var="SERVER_NAME" -->/">Startseite</a>
+					<a href="javascript:history.go(-1)">Zurück</a>
+				</p>
+				
+				<br class="clear" />
+		
+			</div>
+	
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+</div>
+
+<!--#include virtual="../footer.shtml" -->

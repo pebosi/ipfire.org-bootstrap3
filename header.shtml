@@ -15,6 +15,7 @@
 	<div id="header_inner" class="fixed">
 
 		<div id="logo">
+			<!-- need link back to home here -->
 			<h1><span>IPFire</span>.org</h1>
 			<h2>Security for Future</h2>
 		</div>

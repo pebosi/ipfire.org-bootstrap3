@@ -1,0 +1,37 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+		
+				<h3>500 - Interner Serverfehler</h3>
+
+				<!-- insert image here -->
+
+				<p>
+					Beim Aufruf der Webseite ist auf dem Server ein interner Fehler
+					aufgetreten.<br />
+					Sollte sich dieser Umstand wiederholen, informieren Sie bitte die
+					Betreiber der Webseite.
+					<br />
+					<a href="http://<!--#echo var="SERVER_NAME" -->/">Startseite</a>
+					<a href="javascript:history.go(-1)">Zurück</a>
+				</p>
+				
+				<br class="clear" />
+		
+			</div>
+	
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+</div>
+
+<!--#include virtual="../footer.shtml" -->
