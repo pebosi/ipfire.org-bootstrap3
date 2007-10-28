@@ -14,7 +14,7 @@
 				<p>
 					Hier findet ihr alle Downloads des IPFire-Projektes.<br />
 					Die gute, stabile Version <a href="#final">1.4.9</a> sowie die <a href="#beta1">Beta 1</a>,
-					<a href="#beta2">Beta 2</a> und der aktuelle <a href="#rc1">Release Candidate 1</a>
+					<a href="#beta2">Beta 2</a>, <a href="#rc1">RC1</a> und der aktuelle <a href="#rc2">Release Candidate 2</a>
 					sind hier zu finden.
 				</p>
 				
@@ -22,6 +22,12 @@
 					Besonders freuen würden wir uns darüber, wenn vor allem der Torrent-Download gefördert wird.
 					Daher bitten wir auch nach dem Download unsere ISOs weiter zu seeden.<br />
 					Eine Reihe von Torrent-Clients findet ihr in der Liste rechts.
+				</p>
+				
+				<p>
+					Ebenso möchten wir uns an dieser Stelle bei den Personen bedanken, die die zahlreichen Mirrorserver
+					für das Projekt zur Verfügung stellen. Das erforderliche Übertragungsvolumen ist in den letzten Wochen
+					und Monat drastisch angestiegen und wir hoffen natürlich, dass das so bleibt.
 				</p>
 				
 				<br class="clear" />
@@ -39,9 +45,7 @@
 
 					<div align="right">
 						<a href="http://download.ipfire.org/torrent/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a><br />
-						<a href="http://mirror1.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 1</a><br />
-						<a href="http://www.rowie.at/ipfire/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 2</a><br />
-						<a href="http://ipfire.earl-net.com/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - Mirror 3</a>
+						<a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - HTTP</a>
 					</div>
 					
 					<h4>In der Presse:</h4>
@@ -49,6 +53,26 @@
 						<a href="http://www.pro-linux.de/news/2006/9219.html" target="_blank">Pro-Linux.de - Firewall-Distribution auf neuen Wegen</a>
 					</p>
 					
+				</div>
+
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="rc2"></a>
+					<h3>IPFire 2.0 Release Candidate 2</h3>
+					<ul class="post_info">
+						<li class="date">3, 2, 1 meins...</li>
+					</ul>
+					<p>
+						Nun steht endlich der zweite Release Candidate zur Verfügung und wir
+						bitten um reichliches Testen.
+					</p>
+					
+					<div align="right">
+						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc2.i586-full.iso.torrent">IPFire 2.0 RC 2 - TORRENT</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.0rc2.i586-full.iso">IPFire 2.0 RC 2 - HTTP</a>
+					</div>
+
 				</div>
 				
 				<br class="clear" />
@@ -69,10 +93,7 @@
 					
 					<div align="right">
 						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc1.i586-full.iso.torrent">IPFire 2.0 RC 1 - TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - Mirror 1</a><br />
-						<a href="http://mirror2.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - Mirror 2</a><br />
-						<a href="http://www.rowie.at/ipfire/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - Mirror 3</a><br />
-						<a href="http://ipfire.earl-net.com/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - Mirror 4</a>
+						<a href="http://download.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - HTTP</a>
 					</div>
 
 				</div>
@@ -94,10 +115,7 @@
 					
 					<div align="right">
 						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta2.i586-full.iso.torrent">IPFire 2.0 Beta 2 - TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - Mirror 1</a><br />
-						<a href="http://mirror2.ipfire.org/iso/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - Mirror 2</a><br />
-						<a href="http://www.rowie.at/ipfire/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - Mirror 3</a><br />
-						<a href="http://ipfire.earl-net.com/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - Mirror 4</a>
+						<a href="http://download.ipfire.org/iso/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - HTTP</a>
 					</div>
 
 				</div>
@@ -143,10 +161,7 @@
 					
 					<div align="right">
 						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta1.i586-full.iso.torrent">IPFire 2.0 Beta 1 - TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 1</a><br />
-						<a href="http://mirror2.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 2</a><br />
-						<a href="http://www.rowie.at/ipfire/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 3</a><br />
-						<a href="http://ipfire.earl-net.com/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - Mirror 4</a>
+						<a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - HTTP</a>
 					</div>
 					
 					<h4>In der Presse:</h4>
