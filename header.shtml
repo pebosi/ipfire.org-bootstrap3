@@ -6,6 +6,7 @@
 	<title><!--#echo var="SERVER_NAME" --></title>
 	<meta name="keywords" content="Linux, Firewall, IPCop, IPFire, Security" />
 	<meta name="description" content="" />
+	<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
