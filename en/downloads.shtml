@@ -103,6 +103,13 @@
 					<ul class="post_info">
 						<li class="date">The new one on the way</li>
 					</ul>
+					
+					<p>
+						<strong>
+							The beta 2 is not available on our mirror servers any more!
+						</strong>
+					</p>
+					
 					<p>
 						Exactly one month after the beta 1 the beta 2 is available for download.<br />
 						The changelog is <a href="http://wiki.ipfire.org/index.php/BETA:2" target="_blank">here</a>
@@ -124,6 +131,12 @@
 					<ul class="post_info">
 						<li class="date">The new one on the way</li>
 					</ul>
+					
+					<p>
+						<strong>
+							The beta 1 is not available on our mirror servers any more!
+						</strong>
+					</p>
 
 					<blockquote>
 						Das Entwicklerteam von IPFire.org hat die erste Betaversion von 
@@ -141,7 +154,7 @@
 						4.0.3 eingesetzt. Alle zuvor vorhandenen Dienste sollen auch in 
 						Version 2.0 verfügbar sein. [...]
 					</blockquote>
-						<br />
+					<br />
 						Found on Pro-Linux.de - Link is under "in the press".
 					
 					

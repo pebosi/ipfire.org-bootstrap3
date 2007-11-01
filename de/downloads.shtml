@@ -106,6 +106,14 @@
 					<ul class="post_info">
 						<li class="date">The new one on the way</li>
 					</ul>
+					
+					<p>
+						<strong>
+							Die Version "Beta 2" ist nichtmehr auf den Pakfire-Mirror-Servern
+							verfügbar!
+						</strong>
+					</p>
+					
 					<p>
 						Exakt einen Monat nach der Beta 1 ist die Beta 2 für den Download bereit.<br />
 						Den Changelog kann man <a href="http://wiki.ipfire.org/index.php/BETA:2" target="_blank">hier</a>
@@ -128,6 +136,13 @@
 					<ul class="post_info">
 						<li class="date">The new one on the way</li>
 					</ul>
+					
+					<p>
+						<strong>
+							Die Version "Beta 1" ist nichtmehr auf den Pakfire-Mirror-Servern
+							verfügbar!
+						</strong>
+					</p>
 					
 					<p>
 						Eine Vorstellung mit Screenshots und einer Übersicht der Features findet man
