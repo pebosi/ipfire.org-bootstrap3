@@ -1,0 +1,56 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+		
+				<!--#if expr="$HTTP_ACCEPT_LANGUAGE = /^de(.*)/" -->
+				
+					<h3>500 - Interner Serverfehler</h3>
+	
+					<img class="floatTL" src="/images/error/500.png" alt="Server Error" />
+	
+					<p>
+						Beim Aufruf der Webseite ist auf dem Server ein interner Fehler
+						aufgetreten.<br />
+						Sollte sich dieser Umstand wiederholen, informieren Sie bitte die
+						Betreiber der Webseite.
+						<br />
+						<a href="http://<!--#echo var="SERVER_NAME" -->/">Startseite</a>
+						<a href="javascript:history.go(-1)">Zurück</a>
+					</p>
+			
+				<!--#else -->
+		
+					<h3>500 - internal server error</h3>
+	
+					<img class="floatTL" src="/images/error/500.png" alt="Server Error" />
+	
+					<p>
+						When you requested this website the server produced an internal
+						error.<br />
+						If this happens one more time, please send a mail to the developers.
+						<br />
+						<a href="http://<!--#echo var="SERVER_NAME" -->/">Home</a>
+						<a href="javascript:history.go(-1)">Back</a>
+					</p>
+				
+				<!--#endif -->
+				
+				<br class="clear" />
+		
+			</div>
+	
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+</div>
+
+<!--#include virtual="../footer.shtml" -->

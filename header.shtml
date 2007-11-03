@@ -21,6 +21,7 @@
 			<h2>Security for Future</h2>
 		</div>
 		
+		<!--#if expr="$REQUEST_URI != /^\/error/" -->
 		<div id="lang">
 			<a href="/en/<!--#echo var="DOCUMENT_NAME" -->" ><img src="/images/en.gif" alt="english" /></a>
 			<a href="/de/<!--#echo var="DOCUMENT_NAME" -->" ><img src="/images/de.gif" alt="german" /></a>
@@ -39,6 +40,7 @@
 				<li><a href="imprint.shtml">Imprint</a></li>
 			</ul>
 		</div>
+		<!--#endif -->
 		
 	</div>
 </div>
