@@ -13,9 +13,9 @@
 
 				<p>
 					One can find here all the downloads of the ipfire project.<br />
-					The good old stable <a href="#final">1.4.9</a> as well as the <a href="#beta1">Beta 1</a>,
-					<a href="#beta2">Beta 2</a> and the <a href="#rc1">Release Candidate 1</a>
-					are here, too.
+					There are the brand new release <a href="#final">2.1</a> and the
+					good old stable <a href="#oldfinal">1.4.9</a> as well as a 
+					<a href="#devel">development section</a>.
 				</p>
 				
 				<p>
@@ -33,7 +33,31 @@
 			
 				<div class="post">
 					<a name="final"></a>
-					<h3>IPFire 1.4.9 STABLE</h3>
+					<h3>IPFire 2.1</h3>
+					<ul class="post_info">
+						<li class="date">The brand new stable</li>
+					</ul>
+					<p>
+						This is the very new stable 2.1 with kernel 2.6.16.57.
+					</p>
+
+					<div align="right">
+						<a href="http://download.ipfire.org/torrent/ipfire-2.1.i586-full.iso.torrent">IPFire 2.1 - TORRENT</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso">IPFire 2.1 - HTTP</a>
+					</div>
+					
+					<!-- <h4>in the press:</h4>
+					<p>
+						<a href="http://www.pro-linux.de/news/2006/9219.html" target="_blank">Pro-Linux.de - Firewall-Distribution auf neuen Wegen (german)</a>
+					</p> -->
+					
+				</div>
+				
+				<br class="clear" />
+			
+				<div class="post">
+					<a name="oldfinal"></a>
+					<h3>IPFire 1.4.9 FINAL</h3>
 					<ul class="post_info">
 						<li class="date">The good old stable</li>
 					</ul>
@@ -56,122 +80,31 @@
 				<br class="clear" />
 				
 				<div class="post">
-					<a name="rc2"></a>
-					<h3>IPFire 2.0 Release Candidate 2</h3>
+					<a name="devel"></a>
+					<h3>IPFire 2.0 Development Releases</h3>
 					<ul class="post_info">
-						<li class="date">3, 2, 1, it's mine...</li>
+						<li class="date">Get the code...</li>
 					</ul>
+					
 					<p>
-						We are pround to say that we are on the way to the goal. Please check out this
-						brand new RC!
+						There are the historical download of the project.
+						<br />They all are no longer available on the pakfire mirrors.
 					</p>
 					
 					<div align="right">
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc2.i586-full.iso.torrent">IPFire 2.0 RC 2 - TORRENT</a><br />
 						<a href="http://download.ipfire.org/iso/ipfire-2.0rc2.i586-full.iso">IPFire 2.0 RC 2 - HTTP</a>
-					</div>
-
-				</div>
-				
-				<br class="clear" />
-				
-				<div class="post">
-					<a name="rc1"></a>
-					<h3>IPFire 2.0 Release Candidate 1</h3>
-					<ul class="post_info">
-						<li class="date">Check it out</li>
-					</ul>
-					<p>
-						We are pround to say that we are on the way to the goal. Please check out this
-						brand new RC!<br />
-						The changelog is <a href="http://wiki.ipfire.org/index.php/RC:1" target="_blank">here</a>
-						and a little bit more detailed <a href="http://svn.ipfire.org/log.php?repname=ipfire&amp;path=%2F&amp;rev=0&amp;sc=1&amp;isdir=1" target="_blank">over there</a>.
-					</p>
-					
-					<div align="right">
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc1.i586-full.iso.torrent">IPFire 2.0 RC 1 - TORRENT</a><br />
+						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc2.i586-full.iso.torrent">TORRENT</a><br />
 						<a href="http://download.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - HTTP</a>
-					</div>
-
-				</div>
-				
-				<br class="clear" />
-				
-				<div class="post">
-					<a name="beta2"></a>
-					<h3>IPFire 2.0 BETA 2</h3>
-					<ul class="post_info">
-						<li class="date">The new one on the way</li>
-					</ul>
-					
-					<p>
-						<strong>
-							The beta 2 is not available on our mirror servers any more!
-						</strong>
-					</p>
-					
-					<p>
-						Exactly one month after the beta 1 the beta 2 is available for download.<br />
-						The changelog is <a href="http://wiki.ipfire.org/index.php/BETA:2" target="_blank">here</a>
-						and a little bit more detailed <a href="http://svn.ipfire.org/log.php?repname=ipfire&amp;path=%2F&amp;rev=0&amp;sc=1&amp;isdir=1" target="_blank">over there</a>.
-					</p>
-					
-					<div align="right">
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta2.i586-full.iso.torrent">IPFire 2.0 Beta 2 - TORRENT</a><br />
+						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc1.i586-full.iso.torrent">TORRENT</a><br />
 						<a href="http://download.ipfire.org/iso/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - HTTP</a>
+						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta2.i586-full.iso.torrent">TORRENT</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - HTTP</a>
+						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta1.i586-full.iso.torrent">TORRENT</a><br />
 					</div>
 
 				</div>
 				
 				<br class="clear" />
-				
-				<div class="post">
-					<a name="beta1"></a>
-					<h3>IPFire 2.0 BETA 1</h3>
-					<ul class="post_info">
-						<li class="date">The new one on the way</li>
-					</ul>
-					
-					<p>
-						<strong>
-							The beta 1 is not available on our mirror servers any more!
-						</strong>
-					</p>
-
-					<blockquote>
-						Das Entwicklerteam von IPFire.org hat die erste Betaversion von 
-						Version 2.0 vorgestellt, einer Neuentwicklung auf Basis von Linux From Scratch.
-						Die erste als stabil veröffentlichte Version von IPFire.org beruhte 
-						noch direkt auf IPCop. Diese im Januar 2006 veröffentlichte Version 
-						1.4.9 brachte einige Zusätze gegenüber IPCop, um dem Firewall-Rechner, 
-						der in der Regel pausenlos läuft, weitere nützliche Aufgaben übertragen 
-						zu können.<br />
-						Version 2.0 von IPFire beruht nun nicht mehr auf IPCop. Das Team 
-						entschied sich, auf Kernel 2.6 zu aktualisieren und entwickelte 
-						die Distribution weitgehend neu, wobei der Anleitung »Linux From 
-						Scratch« (LFS) in Version 6.2 gefolgt wurde. Der Pressemitteilung 
-						(PDF) zufolge wird ein Kernel der stabilen Serie 2.6.16 sowie GCC 
-						4.0.3 eingesetzt. Alle zuvor vorhandenen Dienste sollen auch in 
-						Version 2.0 verfügbar sein. [...]
-					</blockquote>
-					<br />
-						Found on Pro-Linux.de - Link is under "in the press".
-					
-					
-					<p>
-						This is the official press release:
-						<a href="../data/ipfire-press-release-beta-1.pdf" target="_blank">(PDF - german)</a>
-					</p>
-					
-					<div align="right">
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta1.i586-full.iso.torrent">IPFire 2.0 Beta 1 - TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - HTTP</a>
-					</div>
-					
-					<h4>in the press:</h4>
-					<p>
-						<a href="http://www.pro-linux.de/news/2007/11633.html" target="_blank">Pro-Linux.de - IPFire.org 2.0 Beta 1 erschienen (german)</a>
-					</p>
 
 				</div>
 		
@@ -185,9 +118,9 @@
 			
 				<h4><span>Other</span> Tools</h4>
 				<ul class="links">
-					<li class="first"><a href="http://wiki.ipfire.org/index.php/Windows">Windows</a></li>
-					<li><a href="http://wiki.ipfire.org/index.php/Linux">Linux</a></li>
-					<li><a href="http://wiki.ipfire.org/index.php/Mac_OS">Mac OS</a></li>
+					<li class="first"><a href="http://wiki.ipfire.org/Tools:Windows">Windows</a></li>
+					<li><a href="http://wiki.ipfire.org/Tools:Linux">Linux</a></li>
+					<li><a href="http://wiki.ipfire.org/Tools:Mac_OS">Mac OS</a></li>
 				</ul>
 				
 				<h4><span>Torrent</span> Clients</h4>

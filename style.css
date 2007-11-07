@@ -82,6 +82,14 @@ margin-bottom: 1.5em;
 margin-top: 0.5em;
 }
 
+img.floatTR
+{
+float: right;
+margin-left: 1.5em;
+margin-bottom: 1.5em;
+margin-top: 0.5em;
+}
+
 a
 {
 text-decoration: underline;

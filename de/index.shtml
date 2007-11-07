@@ -9,34 +9,61 @@
 			<div id="columnA_3columns">
 		
 				<h3>the free firewall for your home or SOHO</h3>
-				<img src="../images/pic.gif" class="floatTL" alt="Something scenic" />
+				<img src="../images/pic.gif" class="floatTL" alt="IPFire Tux" />
 
 				<p>
 					IPFire ist eine auf Linux gebaute Firewall-Distribution, die mit einigen 
 					besonderen Funktionen auftrumphen kann.
-					Grundlage für die momentan stabile Version 1.4.9 war der IPCop, der stark modifiziert wurde.
-					Hinzugekommen sind: <a href="http://www.asterisk.org">Asterisk PBX</a>, 
-					<a href="http://www.samba.org">Samba</a>, MorningReconnect, <a href="http://www.lprng.com">LPR-NG</a> u.v.a.m.
+					Grundlage für die momentan stabile Version 2.1 ist
+					<a href="http://www.linuxfromscratch.org" target="_blank">Linux from Scratch</a>,
+					welches stabil und ultra-flexibel ist. Darauf aufbauend wurden Addons
+					entwickelt, wie zum Beispiel <a href="http://wiki.ipfire.org/Addons:Asterisk">Asterisk PBX</a>, 
+					<a href="http://wiki.ipfire.org/Addons:Samba">Samba</a>,
+					<a href="http://wiki.ipfire.org/Addons:CUPS">CUPS</a> u.v.a.m.
 				</p>
 				
 				<p>
-					Nun hat sich das Team neu gegründet und den Ballast vom IPCop weitgehend über Board geworfen um
-					das Konzept <strong>IPFire</strong> als Heimserver noch stärker zu verfolgen. Dabei wird es im 
-					zweiten Release sehr wichtige Neuerungen geben wie zum Beispiel den Kernel 2.6, mit dem es uns 
-					möglich ist noch mehr Hardware der letzten Generation zu unterstützen.
+					Somit lässt sich aus IPFire viel machen. Zum Beispiel eine sichere und
+					schlanke Firewall ohne irgendwelche Addons, oder auch ein voll ausgestatteter
+					HomeServer, welcher auch in einem kleinen Büro arbeiten kann, welchen
+					manche Personen vielleicht "Eierlegende Wollmichsau" nennen. Es ist also
+					dem Anwender überlassen, was er haben möchte. Also probieren Sie es einfach
+					aus...
 				</p>
 
 				<br class="clear" />
 				
 				<div class="post">
 				
-					<h3>28. Oktober 2007 - Release Candidate 2</h3>
+					<h3>08. November 2007 - IPFire 2.1 FINAL</h3>
 					<ul class="post_info">
-						<li class="date">3, 2, 1, meins...</li>
-					</ul>					
-					<p>
+						<li class="date">It's there...</li>
+					</ul>
+					<img src="../images/pic2.png" class="floatTR" alt="Community Mail" />	
+									
+					<p>	
 						<b>Sehr geehrte Community!</b><br />
-							Ab sofort steht der Release Candidate 2 im Downloadbereich bereit.
+						Ab heute steht die finale Version des IPFire 2.1 zum 
+						<a href="downloads.shtml#final">Download</a> bereit.
+						<br />
+						Nach der ersten Version, vom August 2005 hat das Projekt einmal
+						von neuem begonnen eine hochgradig flexible, stabile und schnelle
+						Firewall auszuliefern, welche nun endlich fertiggestellt wurde.
+						<br /><br />
+						Zu den Highlights dieser Sicherheitslösung zählt die Erweiterung
+						zum HomeServer. Das heißt es lassen sich zusätzliche Module mit
+						nur wenigen Mausklicks auf dem System einrichten. Dazu zählen:
+					</p>
+					<ul class="links">
+						<li class="first"><a href="http://wiki.ipfire.org/Addons:Samba" target="_blank">=> ein schneller Dateiserver für heterogene Netzwerke</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Mail" target="_blank">=> ein lokaler Mailserver mit Virenscanner und Spamfilter</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:MPFire" target="_blank">=> eine Multimedia-Jukebox</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Gnump3d" target="_blank">=> ein MP3- und OGG-Streamingserver</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Guardian" target="_blank">=> Intrusion Prevention System mittels Guardian</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Asterisk" target="_blank">=> Voice over IP-Lösung mittels Asterisk</a></li>
+					</ul>
+					<p>
+							<a href="http://wiki.ipfire.org/Addons" target="blank">Hier finden Sie eine vollständige Liste der Addons.</a>
 							<br /><br /><b>Mitch</b> - für das Entwicklerteam von IPFire.org
 					</p>
 				</div>				
@@ -62,12 +89,16 @@
 				</form>
 				
 				<h4><span>About</span> Us</h4>
-				<p><strong>IPFire</strong> ist eine Firewall auf Basis von Linux, die
-					mit vielen besonderen Eigenschaften daher kommt.</p>
+				<p><strong>IPFire</strong> ist eine Firewall, die neu entwickelt wurde
+					aus aktuellen Komponenten wie dem Linux-Kernel 2.6. Auf diese Basis
+					lassen sich viele nützliche Addons installieren, welche die
+					Firewall zu einem HomeServer werden lässt.
+				</p>
 	
 				<h4><span>Special</span> Links</h4>
 				<ul class="links">
-					<li class="first"><a href="art.shtml">Art</a></li>
+					<li class="first"><a href="http://wiki.ipfire.org/Addons" target="_blank">Addon-Übersicht</a></li>
+					<li><a href="art.shtml">Art</a></li>
 				</ul>
 				
 			</div>

@@ -11,33 +11,60 @@
 				<h3>the free firewall for your home or SOHO</h3>
 				<img src="../images/pic.gif" class="floatTL" alt="Something scenic" />
 
-				<p>IPFire is a linux based firewall distribution with a lot of extras.
-					The base for the stable version 1.4.9 was the IPCop that has been
-					heavily modified. There were added:
-					<a href="http://www.asterisk.org">Asterisk PBX</a>, 
-					<a href="http://www.samba.org">Samba</a>, 
-					MorningReconnect, 
-					<a href="http://www.lprng.com">LPR-NG</a> and many other things...
+				<p>
+					IPFire is a linux based firewall distribution with a lot of extras.
+					Development base of the new release 2.1 was
+					<a href="http://www.linuxfromscratch.org" target="_blank">Linux from Scratch</a>,
+					a stable and flexible guide to build a linux distribution. According to
+					this the system was set up and tighten up with nice extras like
+					<a href="http://wiki.ipfire.org/Addons:Asterisk">Asterisk PBX</a>, 
+					<a href="http://wiki.ipfire.org/Addons:Samba">Samba</a>,
+					<a href="http://wiki.ipfire.org/Addons:CUPS">CUPS</a> and many more...
 				</p>
 				
-				<p>When the team was refounded to get rid of the old IPCop-code they
-					made a totally new concept of the system including the linux kernel
-					2.6 to support the latest generation of hardware.
-					We are going to make a really nice server for every home.
+				<p>
+					So you can get anything out of ipfire you can imagine. Without any
+					addons installed it is an ultra-fast firewall but can also be a
+					full-featured home server. It's up to <strong>you</strong> what
+					<strong>you</strong> want. Check it out...
 				</p>
 
 				<br class="clear" />
 				
 				<div class="post">
 				
-					<h3>2007/10/28 - Release Candidate 2</h3>
+					<h3>2007/11/08 - IPFire 2.1 FINAL</h3>
 					<ul class="post_info">
-						<li class="date">3, 2, 1, it's mine...</li>
+						<li class="date">It's there...</li>
 					</ul>					
-					<p>
+					<img src="../images/pic2.png" class="floatTR" alt="Community Mail" />	
+									
+					<p>	
 						<b>Hey Community!</b><br />
-							We released the first RC today. It's linked in the download section.
-							<br /><br /><b>Mitch</b> - for the developers on IPFire.org
+						Today is the day we release the final version of ipfire.
+						You can get the download of the 2.1
+						<a href="downloads.shtml#final">here</a>.
+						<br />
+						After the first release of august 2005 the project relaunched
+						an extremely flexible, stable and fast firewall, which was
+						finally finished.
+						<br /><br />
+						One of the highlight of this security accessorie are the extensions
+						to make a real home server out of it. You are able to install additional
+						addons to the system with only a few mouse clicks.
+						There are for example:
+					</p>
+					<ul class="links">
+						<li class="first"><a href="http://wiki.ipfire.org/Addons:Samba" target="_blank">=> a fast fileserver for networks with Microsoft Windows</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Mail" target="_blank">=> a local mailserver with virus scanning and spam detection</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:MPFire" target="_blank">=> a multimedia-jukebox</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Gnump3d" target="_blank">=> a mp3- and ogg-streaming server</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Guardian" target="_blank">=> an Intrusion Prevention System plus Guardian</a></li>
+						<li><a href="http://wiki.ipfire.org/Addons:Asterisk" target="_blank">=> voice over ip-solution with asterisk pbx</a></li>
+					</ul>
+					<p>
+							<a href="http://wiki.ipfire.org/Addons" target="blank">Here is the full list of addons.</a>
+							<br /><br /><b>Mitch</b> - for the developers on ipfire.org
 					</p>
 				</div>				
 				
@@ -63,7 +90,10 @@
 				
 				<h4><span>About</span> Us</h4>
 				<p>
-					<strong>IPFire</strong> is a linux-based firewall that has got many nice extras.
+					<strong>IPFire</strong> is new-developed firewall build
+					with the latest releases of linux 2.6 and tools.
+					You are able to install a lot of addons and you will see
+					a firewall can become a home server.
 				</p>
 
 				<h4><span>Special</span> Links</h4>
