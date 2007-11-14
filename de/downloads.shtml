@@ -42,8 +42,10 @@
 					</p>
 
 					<div align="right">
-						<a href="http://download.ipfire.org/torrent/ipfire-2.1.i586-full.iso.torrent">IPFire 2.1 - TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso">IPFire 2.1 - HTTP</a>
+						<a href="http://download.ipfire.org/torrent/ipfire-2.1.i586-full.iso.torrent">IPFire 2.1 - TORRENT - DISK</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso">IPFire 2.1 - HTTP - DISK</a><br /><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-hdd.i586.img.gz">IPFire 2.1 - HTTP - USB (HDD)</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-fdd.i586.img.gz">IPFire 2.1 - HTTP - USB (FDD)</a>
 					</div>
 					
 					<!-- <h4>In der Presse:</h4>
