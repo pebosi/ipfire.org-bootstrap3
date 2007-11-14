@@ -30,7 +30,18 @@
 				</p>
 				
 				<br class="clear" />
-		
+				
+				<a href="../images/art/Banner.png"><img src="../images/art/Banner_thumb.png" class="floatTL" alt="Banner" /></a>
+				<p>
+					A banner.
+				</p>
+				<br class="clear" />
+				
+				<a href="../images/art/Tux.png"><img src="../images/art/Tux_thumb.png" class="floatTL" alt="Flamming Tux" /></a>
+				<p>
+					A burning tux with a shield.
+				</p>
+				<br class="clear" />
 			</div>
 	
 		</div>
