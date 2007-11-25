@@ -8,7 +8,7 @@
 
 			<div id="columnA_columnless">
 		
-				<h3>Beta 1</h3>
+				<h3>IPFire 2.1 Final</h3>
 
 				<p>
 					Zuerst einmal wollen wir das Webinterface vorstellen, was in einem neuen
@@ -18,9 +18,9 @@
 					Zu finden sind hier:</p>
 					
 				<a class="thumbnail">
-					<img class="floatTL" src="../images/screens/de/beta1/thumb/index.png" alt="Startseite" width="210" />
+					<img class="floatTL" src="../images/screens/de/final/thumb/index.png" alt="Startseite" width="210" />
 					<span>
-						<img src="../images/screens/de/beta1/index.png" alt="Startseite" width="650" /><br />
+						<img src="../images/screens/de/final/index.png" alt="Startseite" width="650" /><br />
 						Die Startseite des Webinterface
 					</span>
 				</a>
@@ -54,9 +54,9 @@
 				<br class="clear" />
 				
 				<a class="thumbnail">
-					<img class="floatTL" src="../images/screens/de/beta1/thumb/system.png" alt="Status" width="210" />
+					<img class="floatTL" src="../images/screens/de/final/thumb/system.png" alt="Status" width="210" />
 					<span>
-						<img src="../images/screens/de/beta1/system.png" alt="Status" width="640" /><br />
+						<img src="../images/screens/de/final/system.png" alt="Status" width="640" /><br />
 						Status-Seite
 					</span>
 				</a>
@@ -66,16 +66,16 @@
 					In der gesamten Rubrik finden sie ein Dutzend an Diagrammen, welche den Admin-Alltag
 					immens erleichtern können, da man hier Fehlfunktionen mit ein wenig Übung sofort
 					erkennen kann.<br />
-					Unter <a class="thumbnail">Net-Traffic<span><img src="../images/screens/de/beta1/nettraffic.png" alt="Netttraffic" width="640" /><br />Net-Traffic</span></a>
+					Unter <a class="thumbnail">Net-Traffic<span><img src="../images/screens/de/final/nettraffic.png" alt="Netttraffic" width="640" /><br />Net-Traffic</span></a>
 					behält man die die Übertragungsvolumina im Auge oder schaut sich
 					die Netzwerkgraphen an um zu erkennen wie die 
-					<a class="thumbnail">Bandbreitenbelastung<span><img src="../images/screens/de/beta1/nw-internal.png" alt="Bandbreitenbelastung" width="640" /><br />Bandbreitenbelastung</span></a> 
+					<a class="thumbnail">Bandbreitenbelastung<span><img src="../images/screens/de/final/nw-internal.png" alt="Bandbreitenbelastung" width="640" /><br />Bandbreitenbelastung</span></a> 
 					ausschaut.<br />Für die 
-					<a class="thumbnail">Aktivität der Firewall<span><img src="../images/screens/de/beta1/fwdiag.png" alt="Aktivität der Firewall" width="640" /><br />Aktivität der Firewall</span></a>
+					<a class="thumbnail">Aktivität der Firewall<span><img src="../images/screens/de/final/fwdiag.png" alt="Aktivität der Firewall" width="640" /><br />Aktivität der Firewall</span></a>
 					finden sie ein Diagramm, welches auch Portscans anzeigt.<br />
 					Bedanken möchten wir uns auch bei Arne Fitzenreiter für die Idee die Datenplatten automatisch
 					abzuschalten. Wann eine Festplatte
-					<a class="thumbnail">"geschlafen"<span><img src="../images/screens/de/beta1/disk.png" alt="Disks" width="640" /><br />Festplattenbelastung</span></a>
+					<a class="thumbnail">"geschlafen"<span><img src="../images/screens/de/final/disk.png" alt="Disks" width="640" /><br />Festplattenbelastung</span></a>
 					hat sieht man ebenfall in dieser Rubrik.<br />
 					
 					</p>
@@ -85,9 +85,9 @@
 				<br class="clear" />
 				
 				<a class="thumbnail">
-					<img class="floatTL" src="../images/screens/de/beta1/thumb/proxy.png" alt="Proxy" width="210" />
+					<img class="floatTL" src="../images/screens/de/final/thumb/proxy.png" alt="Proxy" width="210" />
 					<span>
-						<img src="../images/screens/de/beta1/proxy.png" alt="Proxy" width="640" /><br />
+						<img src="../images/screens/de/final/proxy.png" alt="Proxy" width="640" /><br />
 						WebProxy-Seite
 					</span>
 				</a>
@@ -101,7 +101,7 @@
 					Und durch die Erweiterungen zum Content-Filtering und dem Caching von z.B. Windows-Updates
 					ist er noch attraktiver.<br />
 					Mit dem
-					<a class="thumbnail">Connection Scheduler<span><img src="../images/screens/de/beta1/connsched.png" alt="ConnectionScheduler" width="640" /><br />ConnectionScheduler</span></a>
+					<a class="thumbnail">Connection Scheduler<span><img src="../images/screens/de/final/connsched.png" alt="ConnectionScheduler" width="640" /><br />ConnectionScheduler</span></a>
 					lassen sich Aufgaben für das Verbinden und Trennen der roten Verbindung festlegen. Das ist eine
 					Erweiterung des "MorningReconnects", aber es lassen sich auch zu bestimmten Uhrzeiten die Wähl-Profile
 					auswechseln, sodass es LowCost-Router entsteht.
@@ -112,9 +112,9 @@
 				<br class="clear" />
 				
 				<a class="thumbnail">
-					<img class="floatTL" src="../images/screens/de/beta1/thumb/ipsec.png" alt="IPSec" width="210" />
+					<img class="floatTL" src="../images/screens/de/final/thumb/ipsec.png" alt="IPSec" width="210" />
 					<span>
-						<img src="../images/screens/de/beta1/ipsec.png" alt="IPSec" width="640" /><br />
+						<img src="../images/screens/de/final/ipsec.png" alt="IPSec" width="640" /><br />
 						IPSec-VPN
 					</span>
 				</a>
@@ -136,7 +136,7 @@
 							<a class="thumbnail">
 								Dynamischer DNS
 								<span>
-									<img src="../images/screens/de/beta1/dyndns.png" alt="DynDNS" width="640" /><br />
+									<img src="../images/screens/de/final/dyndns.png" alt="DynDNS" width="640" /><br />
 									DynDNS
 								</span>
 							</a>
@@ -145,7 +145,7 @@
 							<a class="thumbnail">
 								Intrusion Detection System
 								<span>
-									<img src="../images/screens/de/beta1/ids.png" alt="IDS" width="640" /><br />
+									<img src="../images/screens/de/final/ids.png" alt="IDS" width="640" /><br />
 									Intrusion Detection System
 								</span>
 							</a>
@@ -158,9 +158,9 @@
 				<br class="clear" />
 				
 				<a class="thumbnail">
-					<img class="floatTL" src="../images/screens/de/beta1/thumb/qos-2.png" alt="QoS" width="210" />
+					<img class="floatTL" src="../images/screens/de/final/thumb/qos-2.png" alt="QoS" width="210" />
 					<span>
-						<img src="../images/screens/de/beta1/qos-2.png" alt="QoS" width="640" /><br />
+						<img src="../images/screens/de/final/qos-2.png" alt="QoS" width="640" /><br />
 						QoS
 					</span>
 				</a>
@@ -179,7 +179,7 @@
 							<a class="thumbnail">
 								Externer Zugang
 								<span>
-									<img src="../images/screens/de/beta1/xtaccess.png" alt="XTAccess" width="640" /><br />
+									<img src="../images/screens/de/final/xtaccess.png" alt="XTAccess" width="640" /><br />
 									Externer Zugang
 								</span>
 							</a>
@@ -188,7 +188,7 @@
 							<a class="thumbnail">
 								Ausgehende Firewall - Bild 1
 								<span>
-									<img src="../images/screens/de/beta1/outgoingfw-1.png" alt="Outgoingfw" width="640" /><br />
+									<img src="../images/screens/de/final/outgoingfw-1.png" alt="Outgoingfw" width="640" /><br />
 									Ausgehende Firewall
 								</span>
 							</a>
@@ -197,7 +197,7 @@
 							<a class="thumbnail">
 								Ausgehende Firewall - Bild 2
 								<span>
-									<img src="../images/screens/de/beta1/outgoingfw-2.png" alt="Outgoingfw" width="640" /><br />
+									<img src="../images/screens/de/final/outgoingfw-2.png" alt="Outgoingfw" width="640" /><br />
 									Ausgehende Firewall
 								</span>
 							</a>
@@ -210,9 +210,9 @@
 				<br class="clear" />
 				
 				<a class="thumbnail">
-					<img class="floatTL" src="../images/screens/de/beta1/thumb/pakfire-1.png" alt="Pakfire" width="210" />
+					<img class="floatTL" src="../images/screens/de/final/thumb/pakfire-1.png" alt="Pakfire" width="210" />
 					<span>
-						<img src="../images/screens/de/beta1/pakfire-1.png" alt="Pakfire" width="640" /><br />
+						<img src="../images/screens/de/final/pakfire-1.png" alt="Pakfire" width="640" /><br />
 						Pakfire
 					</span>
 				</a>
@@ -225,7 +225,7 @@
 							<a class="thumbnail">
 								Pakfire-Log
 								<span>
-									<img src="../images/screens/de/beta1/pakfire-2.png" alt="Pakfire" width="640" /><br />
+									<img src="../images/screens/de/final/pakfire-2.png" alt="Pakfire" width="640" /><br />
 									Pakfire
 								</span>
 							</a>
@@ -234,7 +234,7 @@
 							<a class="thumbnail">
 								Samba
 								<span>
-									<img src="../images/screens/de/beta1/samba.png" alt="Samba" width="640" /><br />
+									<img src="../images/screens/de/final/samba.png" alt="Samba" width="640" /><br />
 									Samba
 								</span>
 							</a>
@@ -249,9 +249,9 @@
 				<br class="clear" />
 				
 				<a class="thumbnail">
-					<img class="floatTL" src="../images/screens/de/beta1/thumb/fwlog-port.png" alt="FWLog" width="210" />
+					<img class="floatTL" src="../images/screens/de/final/thumb/fwlog-port.png" alt="FWLog" width="210" />
 					<span>
-						<img src="../images/screens/de/beta1/fwlog-port.png" alt="FWLog" width="640" /><br />
+						<img src="../images/screens/de/final/fwlog-port.png" alt="FWLog" width="640" /><br />
 						Firewall-Log (Port)
 					</span>
 				</a>

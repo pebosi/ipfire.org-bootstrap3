@@ -63,7 +63,8 @@
 						<li><a href="http://wiki.ipfire.org/Addons:Asterisk" target="_blank">=> Voice over IP-Lösung mittels Asterisk</a></li>
 					</ul>
 					<p>
-							<a href="http://wiki.ipfire.org/Addons" target="blank">Hier finden Sie eine vollständige Liste der Addons.</a>
+							<a href="http://wiki.ipfire.org/Addons" target="blank">Hier finden Sie eine vollständige Liste der Addons.</a><br />
+							<a href="final.shtml">Hier</a> ist eine kurze Einführung in das Webinterface zu finden.
 							<br /><br /><b>Mitch</b> - für das Entwicklerteam von IPFire.org
 					</p>
 				</div>				
