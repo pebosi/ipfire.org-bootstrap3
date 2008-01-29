@@ -128,6 +128,8 @@
 					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
 					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
 					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
+					<li>&nbsp;</li>
+					<li><a href="http://www.ohloh.net/projects/compare?metric=Activity&project_0=IPFire&project_1=Smoothwall&project_2=IPCop+Firewall" target="_blank">IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net</a></li>
 				</ul>
 				
 				<h4><span>Internet Relay</span> Chat</h4>
