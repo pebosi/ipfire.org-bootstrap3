@@ -25,7 +25,7 @@
 						<li class="date">Wie sieht's aus?</li>
 					</ul>					
 					<p>
-<!--#exec cmd="for i in $(ls -1 ../source-3.0); do echo -e \"\t\t\t\t\t\t<a href=\\"/source-3.0/$i\\">$i</a><br />\"; done" -->
+<!--#exec cmd="for i in $(ls -1 --hide=*.md5 ../source-3.0); do echo -e \"\t\t\t\t\t\t<a href=\\"/source-3.0/$i\\">$i</a><br />\"; done" -->
 					</p>
 				</div>
 				
@@ -38,7 +38,7 @@
 						<li class="date">Wie sieht's aus?</li>
 					</ul>					
 					<p>
-<!--#exec cmd="for i in $(ls -1 ../othersrc); do echo -e \"\t\t\t\t\t\t<a href=\\"/othersrc/$i\\">$i</a><br />\"; done" -->
+<!--#exec cmd="for i in $(ls -1 --hide=*.md5 ../othersrc); do echo -e \"\t\t\t\t\t\t<a href=\\"/othersrc/$i\\">$i</a><br />\"; done" -->
 					</p>
 				</div>
 				
