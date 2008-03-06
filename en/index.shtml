@@ -9,7 +9,9 @@
 			<div id="columnA_3columns">
 		
 				<h3>the free firewall for your home or SOHO</h3>
-				<img src="../images/pic.gif" class="floatTL" alt="Something scenic" />
+				
+				<img src="../images/logo.png" class="floatTR" style="border: none;" alt="IPFire Logo" />				
+				<br class="clear" />
 
 				<p>
 					IPFire is a linux based firewall distribution with a lot of extras.
