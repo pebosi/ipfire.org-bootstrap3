@@ -124,6 +124,7 @@
 					<li class="first"><a href="http://www.fitzenreiter.de/ipfire/" target="_blank">www.fitzenreiter.de/ipfire</a></li>
 					<li><a href="http://www.rowie.at/" target="_blank">www.rowie.at</a></li>
 					<li><a href="http://www.firewall-service.com/" target="_blank">www.firewall-service.com</a></li>
+					<li><a href="http://forum.softgil.com/" target="_blank">forum.softgil.com</a></li>
 				</ul>
 	
 				<h4><span>Development</span> Zone</h4>
@@ -131,10 +132,12 @@
 					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
 					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
 					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
-					<li>&nbsp;</li>
+					<!-- <li>&nbsp;</li>
 					<li><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">Comparison of IPFire, Smoothwall &amp; IPCop on ohloh.net</a></li>
+					-->
 				</ul>
-				<script type="text/javascript" src="http://www.ohloh.net/projects/11290/widgets/project_thin_badge"></script>
+				
+				<!-- <script type="text/javascript" src="http://www.ohloh.net/projects/11290/widgets/project_thin_badge"></script> -->
 				
 				<h4><span>Internet Relay</span> Chat</h4>
 				<p>
