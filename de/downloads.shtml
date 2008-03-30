@@ -84,25 +84,19 @@
 				
 				<div class="post">
 					<a name="devel"></a>
-					<h3>IPFire 2.0 Entwicklerversionen</h3>
+					<h3>IPFire 2.x Entwicklerversionen</h3>
 					<ul class="post_info">
 						<li class="date">Get the code...</li>
 					</ul>
 					<p>
-						Hier sind die eher historischen Versionen zum Download.
-						<br />Leider sind diese aber nichtmehr auf den Pakfire-Mirror-Servern
-						verfügbar.
+						Unser Benutzer Ronald Wiesinger baut in regelmäßigen Abständen aus dem Quellcode
+						der Entwicklungsversionen ein installationsfähiges Image, welches man downloaden kann.
+						<br />Diese Versionen dienen dem Test und sind unter Umständen nicht für den
+						Produktiveinsatz geeignet.
 					</p>
 					
 					<div align="right">
-						<a href="http://download.ipfire.org/iso/ipfire-2.0rc2.i586-full.iso">IPFire 2.0 RC 2 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc2.i586-full.iso.torrent">TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc1.i586-full.iso.torrent">TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta2.i586-full.iso.torrent">TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta1.i586-full.iso.torrent">TORRENT</a><br />
+						<a href="http://rowie.at/ipfire/builds" target="_blank">Zu den Nightly-Builds</a>
 					</div>
 					
 					<h4>In der Presse:</h4>

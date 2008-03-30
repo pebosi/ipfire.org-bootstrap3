@@ -83,25 +83,18 @@
 				
 				<div class="post">
 					<a name="devel"></a>
-					<h3>IPFire 2.0 Development Releases</h3>
+					<h3>IPFire 2.x Development Releases</h3>
 					<ul class="post_info">
 						<li class="date">Get the code...</li>
 					</ul>
 					
 					<p>
-						There are the historical download of the project.
-						<br />They all are no longer available on the pakfire mirrors.
+						Our user Ronald Wiesinger builds installation images for testing purposes regularly.
+						These are ready for download, but do not use them for systems in a productive environment.
 					</p>
 					
 					<div align="right">
-						<a href="http://download.ipfire.org/iso/ipfire-2.0rc2.i586-full.iso">IPFire 2.0 RC 2 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc2.i586-full.iso.torrent">TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0rc1.i586-full.iso">IPFire 2.0 RC 1 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0rc1.i586-full.iso.torrent">TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0beta2.i586-full.iso">IPFire 2.0 Beta 2 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta2.i586-full.iso.torrent">TORRENT</a><br />
-						<a href="http://download.ipfire.org/iso/ipfire-2.0beta1.i586-full.iso">IPFire 2.0 Beta 1 - HTTP</a>
-						<a href="http://download.ipfire.org/torrent/ipfire-2.0beta1.i586-full.iso.torrent">TORRENT</a><br />
+						<a href="http://rowie.at/ipfire/builds" target="_blank">Nightly-Build</a>
 					</div>
 
 				</div>
