@@ -130,7 +130,7 @@
 				<h4><span>Development</span> Zone</h4>
 				<ul class="links">
 					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
-					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
+					<li><a href="http://git.ipfire.org">Git</a></li>
 					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
 					<!-- <li>&nbsp;</li>
 					<li><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net</a></li>
