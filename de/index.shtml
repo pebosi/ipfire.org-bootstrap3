@@ -142,7 +142,8 @@
 				<h4><span>Internet Relay</span> Chat</h4>
 				<p>
 					<b>Server:</b> irc.freenode.net<br />
-					<b>Channel:</b> #ipfire
+					<b>Channel:</b> #ipfire<br />
+					<a href="http://embed.mibbit.com/?settings=7ca12664887d4b6e7a0fa6552f9e0de6&amp;server=irc.freenode.net&amp;channel=%23ipfire" target="_blank">Web-Chat</a>
 				</p>
 			</div>
 
