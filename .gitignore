@@ -3,8 +3,12 @@
 /build/tmp
 /forum
 /mirror1
+/pakfire/2.*
+/pakfire/3.*
 /pakfire/version
+/source/othersrc
 /source/source-*
+/source/toolchains
 /svn
 /wiki
 *.py[co]
