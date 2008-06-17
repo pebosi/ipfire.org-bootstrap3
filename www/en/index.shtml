@@ -100,7 +100,8 @@
 
 				<h4><span>Special</span> Links</h4>
 				<ul class="links">
-					<li class="first"><a href="final.shtml">Screenshots</a></li>
+					<li class="first"><a href="tracker.shtml">IPFireTracker</a></li>
+					<li><a href="final.shtml">Screenshots</a></li>
 					<li><a href="art.shtml">Art</a></li>
 				</ul>
 				

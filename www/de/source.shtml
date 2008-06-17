@@ -25,7 +25,7 @@
 						<li class="date">Wie sieht's aus?</li>
 					</ul>					
 					<p>
-<!--#exec cmd="for i in $(ls -1 --hide=*.md5 ../source-3.0); do echo -e \"\t\t\t\t\t\t<a href=\\"/source-3.0/$i\\">$i</a><br />\"; done" -->
+<!--#exec cmd="for i in $(ls -1 --hide=*.md5 ../../source/source-3.x); do echo -e \"\t\t\t\t\t\t<a href=\\"/download/$i\\">$i</a><br />\"; done" -->
 					</p>
 				</div>
 				
@@ -38,7 +38,7 @@
 						<li class="date">Wie sieht's aus?</li>
 					</ul>					
 					<p>
-<!--#exec cmd="for i in $(ls -1 --hide=*.md5 ../othersrc); do echo -e \"\t\t\t\t\t\t<a href=\\"/othersrc/$i\\">$i</a><br />\"; done" -->
+<!--#exec cmd="for i in $(ls -1 --hide=*.md5 ../../source/source-2.x); do echo -e \"\t\t\t\t\t\t<a href=\\"/source-2.x/$i\\">$i</a><br />\"; done" -->
 					</p>
 				</div>
 				
@@ -61,7 +61,7 @@
 				<h4><span>Development</span> Zone</h4>
 				<ul class="links">
 					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
-					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
+					<li><a href="http://git.ipfire.org">Git</a></li>
 					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
 				</ul>
 

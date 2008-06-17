@@ -62,7 +62,7 @@
 				<h4><span>Development</span> Zone</h4>
 				<ul class="links">
 					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
-					<li><a href="http://svn.ipfire.org">WebSubversion</a></li>
+					<li><a href="http://git.ipfire.org">Git</a></li>
 					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
 				</ul>
 
