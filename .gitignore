@@ -3,6 +3,7 @@
 /build/tmp
 /forum
 /mirror1
+/pakfire/version
 /svn
 /wiki
 *.py[co]
