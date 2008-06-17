@@ -1,0 +1,8 @@
+/bugtracker
+/build/db
+/build/tmp
+/forum
+/mirror1
+/svn
+/wiki
+*.py[co]
