@@ -1,0 +1,5 @@
+#mirror1.ipfire.org:3632,lzo
+#mirror2.ipfire.org:3632,lzo
+#mirror3.ipfire.org:3632,lzo
+compiler02.ipfire.org:3630/10,lzo
+compiler02.ipfire.org:3631/10,lzo
