@@ -4,6 +4,7 @@
 /forum
 /mirror1
 /pakfire/version
+/source/source-*
 /svn
 /wiki
 *.py[co]

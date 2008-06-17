@@ -145,6 +145,7 @@ class PatchObject(SourceObject):
 
 		blob._load()
 		self.filedata = blob._contents
+		self.filedata += '\n'
 		return blob
 
 	def mimetype(self):
