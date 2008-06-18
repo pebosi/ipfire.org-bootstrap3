@@ -2,6 +2,7 @@
 /build/db
 /build/tmp
 /forum
+/git
 /mirror1
 /pakfire/2.*
 /pakfire/3.*

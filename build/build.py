@@ -74,6 +74,7 @@ sys2desc = {
 	"CPU_NAME" : "CPU model",
 	"CPU_MIPS" : "Bogomips",
 	"CPU_MHZ"  : "CPU MHz",
+	"CPU_CNT"  : "CPU cores",
 	"MEM_SIZE" : "Memory size",
 } 
 
@@ -276,13 +277,13 @@ class Builder:
 		print "\t\t<td class='state' colspan='2' width='80%'><b>",
 		print stage2desc[self.state],
 		print "</b></td>"
-		print "\t\t<td class='state' rowspan='7' width='20%'>",
+		print "\t\t<td class='state' rowspan='8' width='20%'>",
 		print "<img alt='%s' width='128px' height='128px' src='/images/%s.png' />" % (self.state, self.state,),
 		print "</td>"
 		print "\t</tr>"
 		
 		## give sys info
-		for key in [ "CPU_NAME", "CPU_MHZ", "CPU_MIPS", "MEM_SIZE", ]:
+		for key in ["CPU_NAME", "CPU_MHZ", "CPU_CNT", "CPU_MIPS", "MEM_SIZE"]:
 			print "\t<tr>"
 			print "\t\t<td class='sys' width='60%'><b>",
 			print sys2desc[key]
