@@ -89,8 +89,8 @@
 						<li class="date">Get the code...</li>
 					</ul>
 					<p>
-						Unser Benutzer Ronald Wiesinger baut in regelmäßigen Abständen aus dem Quellcode
-						der Entwicklungsversionen ein installationsfähiges Image, welches man downloaden kann.
+						In regelmäßigen Abständen wird aus dem aktuellen Quellcode
+						der Entwicklungsversionen ein installationsfähiges Image, welches man downloaden kann, erstellt.
 						<br />Diese Versionen dienen dem Test und sind unter Umständen nicht für den
 						Produktiveinsatz geeignet.
 					</p>
