@@ -8,6 +8,36 @@
 	<meta name="description" content="" />
 	<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
 	<link rel="stylesheet" type="text/css" href="../style.css" />
+<!--[if lt IE 7]>
+	<script type="text/javascript">
+		function correctPNG() // correctly handle PNG transparency in Win IE 5.5 or higher.
+		{
+			for(var i=0; i<document.images.length; i++)
+			{
+				var img = document.images[i]
+				var imgName = img.src.toUpperCase()
+				if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+				{
+					var imgID = (img.id) ? "id='" + img.id + "' " : ""
+					var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+					var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+					var imgStyle = "display:inline-block;" + img.style.cssText
+					if (img.align == "left") imgStyle = "float:left;" + imgStyle
+					if (img.align == "right") imgStyle = "float:right;" + imgStyle
+					if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+					var strNewHTML = "<span " + imgID + imgClass + imgTitle
+						+ " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+						+ "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+						+ "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>"
+					img.outerHTML = strNewHTML
+					i = i-1
+				}
+			}
+		}
+		window.attachEvent("onload", correctPNG);
+	</script>
+<![endif]-->
+
 </head>
 <body>
 
@@ -16,9 +46,10 @@
 	<div id="header_inner" class="fixed">
 
 		<div id="logo">
-			<!-- need link back to home here -->
+			<img src="/images/icons/ipfire.png" width="48px" height="48px" class="symbol" alt="IPFire" />
 			<h1><span>IPFire</span>.org</h1>
-			<h2>Security for Future</h2>
+			<br />
+			<h2>Secure your lan</h2>
 		</div>
 		
 		<!--#if expr="$REQUEST_URI != /^\/error/" -->
@@ -36,8 +67,8 @@
 				<li><a href="downloads.shtml">Downloads</a></li>
 				<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 				<li><a href="http://forum.ipfire.org/">Forum</a></li>
+				<li><a href="development.shtml">Development</a></li>
 				<!--#endif-->
-				<li><a href="imprint.shtml">Imprint</a></li>
 			</ul>
 		</div>
 		<!--#endif -->
