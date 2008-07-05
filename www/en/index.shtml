@@ -4,151 +4,92 @@
 
 	<div id="main_inner" class="fixed">
 
-		<div id="primaryContent_3columns">
+		<div id="primaryContent_2columns">
 
-			<div id="columnA_3columns">
-		
-				<h3>the free firewall for your home or SOHO</h3>
-				
-				<img src="../images/logo.png" class="floatTR" style="border: none;" alt="IPFire Logo" />				
+			<div id="columnA_2columns">
+
+				<h3>more security for your network</h3>
+				<p>
+					<strong>IPFire</strong> is a source-based linux firewall distribution
+					that brings additional features with it. The easy-to-set-up system defeats
+					its competitiors like IPCop, Smoothwall and Endian-Firewall potty.
+					A <strong>stateful-inspection-firewall</strong> with a luxuriant
+					<strong>content-filtering</strong>-engine plus
+					<strong>traffic-control (QoS)</strong> rounded with latest
+					<strong>vpn-technology</strong> and a lot of logging is
+					foolproof to administer with just a very few clicks.
+				</p>
+
+				<img src="/images/Network-1.png" alt="IPFire Logo" />
 				<br class="clear" />
 
 				<p>
-					IPFire is a linux based firewall distribution with a lot of extras.
-					Development base of the new release 2.1 was
-					<a href="http://www.linuxfromscratch.org" target="_blank">Linux from Scratch</a>,
-					a stable and flexible guide to build a linux distribution. According to
-					this the system was set up and tighten up with nice extras like
-					<a href="http://wiki.ipfire.org/Addons:Asterisk">Asterisk PBX</a>, 
-					<a href="http://wiki.ipfire.org/Addons:Samba">Samba</a>,
-					<a href="http://wiki.ipfire.org/Addons:CUPS">CUPS</a> and many more...
-				</p>
-				
-				<p>
-					So you can get anything out of ipfire you can imagine. Without any
-					addons installed it is an ultra-fast firewall but can also be a
-					full-featured home server. It's up to <strong>you</strong> what
-					<strong>you</strong> want. Check it out...
+					"Modular system" is the principle of IPFire.<br />
+					There is a big number of addons. See the short list below:
 				</p>
 
+				<ul class="links">
+					<li class="first">- Intrusion-Prevention-System (Guardian) and Tripwire</li>
+					<li>- File- and printserver for heterogeneous networks (Samba, CUPS, FTP &amp; NFS)</li>
+					<li>- Voice-over-IP solution with Asterisk and Teamspeak plus traffic prioritization</li>
+					<li>- Multimedia addons (video- &amp; audio-streaming)</li>
+					<li>- and many more - <a href="http://wiki.ipfire.org/Addons" target="_blank">List of all Addons</a></li>	
+				</ul>
+
 				<br class="clear" />
-				
+
 				<div class="post">
-				
+
 					<h3>2007/11/08 - IPFire 2.1 FINAL</h3>
 					<ul class="post_info">
 						<li class="date">It's there...</li>
-					</ul>					
-					<img src="../images/pic2.png" class="floatTR" alt="Community Mail" />	
-									
-					<p>	
+					</ul>
+
+					<p>
 						<b>Hey Community!</b><br />
 						Today is the day we release the final version of ipfire.
 						You can get the download of the 2.1
 						<a href="downloads.shtml#final">here</a>.
-						<br />
-						After the first release of august 2005 the project relaunched
-						an extremely flexible, stable and fast firewall, which was
-						finally finished.
-						<br /><br />
-						One of the highlight of this security accessorie are the extensions
-						to make a real home server out of it. You are able to install additional
-						addons to the system with only a few mouse clicks.
-						There are for example:
-					</p>
-					<ul class="links">
-						<li class="first"><a href="http://wiki.ipfire.org/Addons:Samba" target="_blank">=> a fast fileserver for networks with Microsoft Windows</a></li>
-						<li><a href="http://wiki.ipfire.org/Addons:Mail" target="_blank">=> a local mailserver with virus scanning and spam detection</a></li>
-						<li><a href="http://wiki.ipfire.org/Addons:MPFire" target="_blank">=> a multimedia-jukebox</a></li>
-						<li><a href="http://wiki.ipfire.org/Addons:Gnump3d" target="_blank">=> a mp3- and ogg-streaming server</a></li>
-						<li><a href="http://wiki.ipfire.org/Addons:Guardian" target="_blank">=> an Intrusion Prevention System plus Guardian</a></li>
-						<li><a href="http://wiki.ipfire.org/Addons:Asterisk" target="_blank">=> voice over ip-solution with asterisk pbx</a></li>
-					</ul>
-					<p>
-							<a href="http://wiki.ipfire.org/Addons" target="blank">Here is the full list of addons.</a>
-							<br /><br /><b>Mitch</b> - for the developers on ipfire.org
 					</p>
 				</div>				
-				
-				<br class="clear" />
-		
-			</div>
-	
-		</div>
-		
-		<div id="secondaryContent_3columns">
-		
-			<div id="columnB_3columns">
-		
-				<h4><span>Search</span> our forum</h4>
 
-				<form method="post" action="http://forum.ipfire.org/index.php?action=search2">
+				<br class="clear" />
+
+			</div>
+
+		</div>
+
+		<div id="secondaryContent_2columns">
+
+			<div id="columnC_2columns">
+
+				<h4><span>search</span> our wiki</h4>
+
+				<form method="post" action="http://wiki.ipfire.org/Spezial:Suche">
 				<div id="search">
 					<input name="search" value="" type="text" class="text" />
-					<input type="submit" class="button" value="Go" />
+					<input type='submit' name="fulltext" class="button" value="Go" />
 					<br class="clear" />
 				</div>
 				</form>
-				
-				<h4><span>About</span> Us</h4>
-				<p>
-					<strong>IPFire</strong> is new-developed firewall build
-					with the latest releases of linux 2.6 and tools.
-					You are able to install a lot of addons and you will see
-					a firewall can become a home server.
+
+				<h4><span>About</span> us</h4>
+				<p><strong>IPFire</strong> is developed by a group
+					of free programmers. They set it as their target
+					to create a secure and easy-going on ressources
+					firewall and a wide-ranging soho-server
+					in one piece.
 				</p>
 
-				<h4><span>Special</span> Links</h4>
-				<ul class="links">
-					<li class="first"><a href="tracker.shtml">IPFireTracker</a></li>
-					<li><a href="final.shtml">Screenshots</a></li>
-					<li><a href="art.shtml">Art</a></li>
-				</ul>
-				
-			</div>
-			
-			<div id="columnC_3columns">
-
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick" />
-					<input type="image" src="/images/x-click-but04.gif" name="submit" alt="Zahlen Sie mit PayPal - schnell, kostenlos und sicher!" />
-					<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----" />
-				</form>
-				<h4><span>Help</span> Me</h4>
-				<ul class="links">
-					<li class="first"><a href="http://forum.ipfire.org/">Forum</a></li>
-					<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
-				</ul>
-				
-				<h4><span>Partners</span> &amp; Friends</h4>
-				<ul class="links">
-					<li class="first"><a href="http://www.fitzenreiter.de/ipfire/" target="_blank">www.fitzenreiter.de/ipfire</a></li>
-					<li><a href="http://www.rowie.at/" target="_blank">www.rowie.at</a></li>
-					<li><a href="http://www.firewall-service.com/" target="_blank">www.firewall-service.com</a></li>
-					<li><a href="http://forum.softgil.com/" target="_blank">forum.softgil.com</a></li>
-					<li><a href="http://www.ohloh.net/projects/ipfire" target="_blank">www.ohloh.net/projects/ipfire</a></li>
-				</ul>
-	
-				<h4><span>Development</span> Zone</h4>
-				<ul class="links">
-					<li class="first"><a href="http://bugtracker.ipfire.org/">Bugtracker</a></li>
-					<li><a href="http://git.ipfire.org">Git</a></li>
-					<li><a href="http://source.ipfire.org">SourceCodeCenter</a></li>
-					<!-- <li>&nbsp;</li>
-					<li><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">Comparison of IPFire, Smoothwall &amp; IPCop on ohloh.net</a></li>
-					-->
-				</ul>
-				
-				<!-- <script type="text/javascript" src="http://www.ohloh.net/projects/11290/widgets/project_thin_badge"></script> -->
-				
 				<h4><span>Internet Relay</span> Chat</h4>
 				<p>
 					<b>Server:</b> irc.freenode.net<br />
 					<b>Channel:</b> #ipfire<br />
 					<a href="http://embed.mibbit.com/?settings=7ca12664887d4b6e7a0fa6552f9e0de6&amp;server=irc.freenode.net&amp;channel=%23ipfire" target="_blank">Web-Chat</a>
 				</p>
+
 			</div>
-			
+
 		</div>
 
 		<br class="clear" />
@@ -156,6 +97,6 @@
 	</div>
 
 </div>
-		
+
 <!--#include virtual="../footer.shtml" -->
 
