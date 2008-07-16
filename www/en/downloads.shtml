@@ -92,7 +92,11 @@
 						One of us builds installation images for testing purposes regularly.
 						These are ready for download, but do not use them for systems in a productive environment.
 					</p>
-					
+
+					<div align="right">
+						<a href="http://www.rowie.at/ipfire/iso/ipfire-2.1.i586-full.iso" target="_blank">IPFire 2.3Beta1</a>
+
+
 					<div align="right">
 						<a href="http://rowie.at/ipfire/builds" target="_blank">Nightly-Build</a>
 					</div>

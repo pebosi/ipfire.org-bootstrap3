@@ -94,6 +94,10 @@
 						<br />Diese Versionen dienen dem Test und sind unter Umständen nicht für den
 						Produktiveinsatz geeignet.
 					</p>
+
+                                        <div align="right">
+						<a href="http://www.rowie.at/ipfire/iso/ipfire-2.1.i586-full.iso" target="_blank">IPFire 2.3Beta1</a>
+
 					
 					<div align="right">
 						<a href="http://rowie.at/ipfire/builds" target="_blank">Zu den Nightly-Builds</a>

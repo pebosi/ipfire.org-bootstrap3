@@ -85,7 +85,7 @@
 						<li class="date">My software never has bugs. It just develops random features.</li>
 					</ul>
 					<p>
-						We manage all issues in our bugtracker.<br />
+						We manage all issues in our <a href="http://bugtracker.ipfire.org" target="_blank">bugtracker0</a>.<br />
 						It is important for development to create detailed bug reports that
 						we can work with them fastly.<br />
 						There is a howto on <a href="http://wiki.ipfire.org/Bugtracker_Howto" target="_blank">this site</a>.

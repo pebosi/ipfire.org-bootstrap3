@@ -87,7 +87,7 @@
 						<li class="date">My software never has bugs. It just develops random features.</li>
 					</ul>
 					<p>
-						Im Bugtracker findet Ihr bekannte Fehler.<br />
+						Im <a href="http://bugtracker.ipfire.org" target="_blank">Bugtracker</a> findet Ihr bekannte Fehler.<br />
 						Für die Entwicklung ist es wichtig, dass es ausführliche Bug-Reports gibt,
 						die dann rasch bearbeitet werden können.<br />
 						Ein Howto gibt es <a href="http://wiki.ipfire.org/Bugtracker_Howto" target="_blank">hier</a>.
