@@ -40,21 +40,42 @@
 				</ul>
 
 				<br class="clear" />
-
+				
 				<div class="post">
 
-					<h3>08. November 2007 - IPFire 2.1 FINAL</h3>
+					<h3>30. Juli 2008 - LUG Lünnen</h3>
 					<ul class="post_info">
-						<li class="date">It's there...</li>
+						<li class="date">Linux User Group Lünen</li>
 					</ul>
 
 					<p>
 						<b>Sehr geehrte Community!</b><br />
-						Ab heute steht die finale Version des IPFire 2.1 zum 
-						<a href="downloads.shtml#final">Download</a> bereit.
+						Am heutigen Tage wurde von der LUG Lünen ein
+						Artikel zu IPFire veröffentlicht.
+						<br />
+						Wir bedanken uns und wünschen viel Spaß beim Lesen!
+						<br />
+						<a href="http://www.linux-luenen.de/?q=node/15" target="_blank">Zum Artikel</a>
 					</p>
 
-				</div>				
+				</div>
+
+				<div class="post">
+					<h3>24. Juli 2008 - Core Update 15</h3>
+					<ul class="post_info">
+						<li class="date">It's update time</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute werden wir das Core Update Nummer 15 veröffentlichen, folgende Änderungen sind enthalten:
+						<br />
+						- Sicherheits-Update aufgrund der seit kurzer Zeit bekannten DNS-Sicherheitsproblemen
+						<br />
+						<span style="color: red;">Wir empfehlen eine unverzügliche Installation!</span>
+					</p>
+
+				</div>
 
 				<br class="clear" />
 
@@ -86,6 +107,8 @@
 				<h4><span>RSS</span> feed</h4>
 				<p>
 					<a class="feed" href="http://www.ipfire.org/data/feeds/main-en.rss">IPFire - News</a>
+					<br />
+					<a href="news.shtml">News-Archiv</a>
 				</p>
 
 				<h4><span>Internet-Relay</span>-Chat</h4>

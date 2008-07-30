@@ -1,0 +1,108 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+		
+				<h3>News</h3>
+
+				<p>
+					Auf dieser Seite findet ihr das News-Archiv des Projektes.
+				</p>
+				<p>
+					<a href="#news-04">30. Juli 2008 - LUG Lünnen</a><br />
+					<a href="#news-03">24. Juli 2008 - Core Update 15</a><br />
+					<a href="#news-02">24. Juli 2008 - RSS Feed</a><br />
+					<a href="#news-01">08. November 2007 - IPFire 2.1 FINAL</a>
+				</p>
+
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="news-04"></a>
+					<h3>30. Juli 2008 - LUG Lünnen</h3>
+					<ul class="post_info">
+						<li class="date">Linux User Group Lünen</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Am heutigen Tage wurde von der LUG Lünen ein
+						Artikel zu IPFire veröffentlicht.
+						<br />
+						Wir bedanken uns und wünschen viel Spaß beim Lesen!
+						<br />
+						<a href="http://www.linux-luenen.de/?q=node/15" target="_blank">Zum Artikel</a>
+					</p>
+
+				</div>
+				
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="news-03"></a>
+					<h3>24. Juli 2008 - Core Update 15</h3>
+					<ul class="post_info">
+						<li class="date">It's update time</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute werden wir das Core Update Nummer 15 veröffentlichen, folgende Änderungen sind enthalten:
+						<br />
+						- Sicherheits-Update aufgrund der seit kurzer Zeit bekannten DNS-Sicherheitsproblemen
+						<br />
+						<span style="color: red;">Wir empfehlen eine unverzügliche Installation!</span>
+					</p>
+
+				</div>
+				
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="news-02"></a>
+					<h3>24. Juli 2008 - RSS Feed</h3>
+					<ul class="post_info">
+						<li class="date">Subscribe...</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Seit heute hat das Projekt einen eigenen RSS-Newsfeed unter
+						<a href="http://www.ipfire.org/data/feeds/main-en.rss" target="_blank">http://www.ipfire.org/data/feeds/main-en.rss</a>.
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-01"></a>
+					<h3>08. November 2007 - IPFire 2.1 FINAL</h3>
+					<ul class="post_info">
+						<li class="date">It's there...</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Ab heute steht die finale Version des IPFire 2.1 zum
+						<a href="downloads.shtml#final">Download</a> bereit.
+					</p>
+
+				</div>
+				
+				<br class="clear" />
+		
+			</div>
+	
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+<!--#include virtual="../footer.shtml" -->

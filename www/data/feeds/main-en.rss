@@ -15,6 +15,22 @@
 		</image> -->
 
 		<item>
+			<title>Article on www.linux-luenen.de</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-04</guid>
+			<pubDate>Thu, 30 Jul 2008 18:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					Today, the linux user group from "Lünen"
+					released an article about ipfire.
+					<a href="http://www.linux-luenen.de/?q=node/15" target="_blank">to the article</a>
+					(german)
+				]]>
+			</description>
+		</item>
+
+		<item>
 			<title>Core Update 15</title>
 			<link>http://www.ipfire.org/#news</link>
 			<author>ms@ipfire.org (Michael Tremer)</author>
