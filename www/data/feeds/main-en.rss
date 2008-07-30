@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+
+	<channel>
+		<title>IPFire.org - News</title>
+		<link>http://www.ipfire.org/</link>
+		<description>Kurze Beschreibung des Feeds</description>
+		<language>en</language>
+		<copyright>Michael Tremer</copyright>
+		<pubDate>Thu, 8 Nov 2007 00:00:00 +0200</pubDate>
+		<!-- <image>
+			<url>URL einer einzubindenden Grafik</url>
+			<title>Bildtitel</title>
+			<link>URL, mit der das Bild verknüpft ist</link>
+		</image> -->
+
+		<item>
+			<title>Core Update 15</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-03</guid>
+			<pubDate>Thu, 24 Jul 2008 15:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					Today, we release the core update number 15.
+					This is an important update because it will fix
+					the latest dns vulnerabilities.
+					<a href="http://www.heise-online.co.uk/news/DNS-security-problem-details-released--/111145">Read this for more information.</a>
+					Please install this update as soon as possible.
+				]]>
+			</description>
+		</item>
+
+		<item>
+			<title>IPFire's first rss feed</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-02</guid>
+			<pubDate>Thu, 24 Jul 2008 12:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					Now, the ipfire project has got it's own rss feed.
+					This feed is for you, to keep you up on latest
+					security updates and releases.
+				]]>
+			</description>
+		</item>
+
+		<item>
+			<title>IPFire 2.1 is out</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-01</guid>
+			<pubDate>Thu, 8 Nov 2007 12:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					Today, we released the final version of
+					"IPFire 2.1".
+				]]>
+			</description>
+		</item>
+
+	</channel>
+
+</rss>

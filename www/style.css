@@ -402,6 +402,12 @@ left: 60px; /*position where enlarged image should offset horizontally */
 
 }
 
+.feed {
+  margin-left: 3px;
+  padding: 0 0 0 19px;
+  background: url("images/feed.png") no-repeat 0 50%;
+}
+
 /* LAYOUT - 3 COLUMNS */
 
 	/* Primary content */

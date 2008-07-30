@@ -83,6 +83,11 @@
 					aus einem Guss zu erstellen.
 				</p>
 
+				<h4><span>RSS</span> feed</h4>
+				<p>
+					<a class="feed" href="http://www.ipfire.org/data/feeds/main-en.rss">IPFire - News</a>
+				</p>
+
 				<h4><span>Internet-Relay</span>-Chat</h4>
 				<p>
 					<b>Server:</b> irc.freenode.net<br />
