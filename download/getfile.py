@@ -11,13 +11,14 @@ debug = None #open("debug.log", "a")
 
 hosts = (
 #			PRIO SCHEME  HOSTNAME               PATH
-			( 2, "http", "mirror1.ipfire.org",  "/",),
-			( 4, "http", "mirror2.ipfire.org",  "/",),
-			( 8, "http", "www.rowie.at",        "/ipfire/",),
-			( 8, "http", "ipfire.earl-net.com", "/",),
-			( 8, "http", "ipfire.kbarthel.de",  "/",),
-			( 8, "http", "ipfire.1l0v3u.com",   "/",),
-			( 4, "http", "hex2.sv-altikon.ch",  "/ipfire/",),
+			( 2, "http", "mirror1.ipfire.org",   "/",),
+			( 4, "http", "mirror2.ipfire.org",   "/",),
+			( 8, "http", "www.rowie.at",         "/ipfire/",),
+			( 8, "http", "ipfire.earl-net.com",  "/",),
+			( 8, "http", "ipfire.kbarthel.de",   "/",),
+			( 8, "http", "ipfire.1l0v3u.com",    "/",),
+			( 4, "http", "hex2.sv-altikon.ch",   "/ipfire/",),
+			( 8, "http", "ipfire.wintertech.de", "/",),
 )
 
 def rnd(servers):
