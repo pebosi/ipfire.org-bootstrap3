@@ -1,6 +1,8 @@
 /bugtracker
 /build/db
 /build/tmp
+/download/development
+/download/iso
 /forum
 /git
 /mirror1
