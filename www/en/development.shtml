@@ -104,7 +104,7 @@
 					<p>
 						Compiled development versions for testing purposes
 						will be built (automatically).<br />
-						Download: <a href="http://www.rowie.at/ipfire/builds/" target="_blank">http://www.rowie.at/ipfire/builds/</a>
+						Download: <a href="ftp://ftp.ipfire.org/pub/nightly-builds/" target="_blank">ftp://ftp.ipfire.org/pub/nightly-builds/</a>
 					</p>
 
 				</div>

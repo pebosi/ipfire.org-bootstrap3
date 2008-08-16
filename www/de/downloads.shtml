@@ -94,17 +94,13 @@
 						<br />Diese Versionen dienen dem Test und sind unter Umständen nicht für den
 						Produktiveinsatz geeignet.
 					</p>
-                                        
-                                        <div align="right">
-                                                <a href="http://www.rowie.at/ipfire/iso/ipfire-2.3-beta2.i586-full.iso" target="_blank">IPFire 2.3 - Beta2</a>
-                                        </div>
 
-                                        <div align="right">
-						<a href="http://www.rowie.at/ipfire/iso/ipfire-2.3-beta1.i586-full.iso" target="_blank">IPFire 2.3 - Beta1</a>
-					</div>
-					
 					<div align="right">
-						<a href="http://rowie.at/ipfire/builds" target="_blank">Zu den Nightly-Builds</a>
+						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta2.i586-full.iso">IPFire 2.3 - Beta2</a>
+						<br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta1.i586-full.iso">IPFire 2.3 - Beta1</a>
+						<br />
+						<a href="ftp://ftp.ipfire.org/pub/nightly-builds/" target="_blank">Zu den Nightly-Builds</a>
 					</div>
 					
 					<h4>In der Presse:</h4>
@@ -129,19 +125,6 @@
 					<li class="first"><a href="http://wiki.ipfire.org/Tools:Windows">Windows</a></li>
 					<li><a href="http://wiki.ipfire.org/Tools:Linux">Linux</a></li>
 					<li><a href="http://wiki.ipfire.org/Tools:Mac_OS">Mac OS</a></li>
-				</ul>
-				
-				<h4><span>Torrent</span> Clients</h4>
-				<ul class="links">
-					<li class="first"><b>Common</b></li>
-					<li><a href="http://azureus.sourceforge.net/" target="_blank">Azureus</a></li>
-					<li><b>Windows</b></li>
-					<li><a href="http://www.utorrent.com/" target="_blank">µtorrent</a></li>
-					<li><a href="http://pingpong-abc.sourceforge.net/" target="_blank">ABC torrent</a></li>
-					<li><b>Linux</b></li>
-					<li><a href="http://ktorrent.org/" target="_blank">ktorrent</a></li>
-					<li><b>MacOS</b></li>
-					<li><a href="http://www.bitsonwheels.com/" target="_blank">Bits on Wheels</a></li>
 				</ul>
 			</div>
 

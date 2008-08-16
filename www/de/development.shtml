@@ -107,7 +107,7 @@
 						Fertig kompilierte Entwicklerversionen der aktuellen
 						Entwicklungszweige werden in kurzen Abständen
 						(automatisch) gebaut.<br />
-						Download: <a href="http://www.rowie.at/ipfire/builds/" target="_blank">http://www.rowie.at/ipfire/builds/</a>
+						Download: <a href="ftp://ftp.ipfire.org/pub/nightly-builds/" target="_blank">ftp://ftp.ipfire.org/pub/nightly-builds/</a>
 					</p>
 
 				</div>
