@@ -40,10 +40,34 @@
 				</ul>
 
 				<br class="clear" />
-				
+
+				<div class="post">
+					<a name="news-05"></a>
+					<h3>16. August 2008 - Core Update 16</h3>
+					<ul class="post_info">
+						<li class="date">It's update time</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute werden wir das Core Update Nummer 16 veröffentlichen, folgende Änderungen sind enthalten:
+						<br />
+						- Squid Initskript wurde angepasst um die Warnung während des Bootprozesses zu vermeiden<br /> 
+						- Das Pingdiagramm zeigte bei manchen Gateways keine Werte an<br />
+						- Ausgehende Firewall loggt im Modus 1 nun auch richtig<br />
+						- Urlfilter Autoupdate url hat sich geändert<br />
+						- Der Redirect Wrapper wurde korrigiert und arbeitet jetzt zuverlässig<br />
+						- Mehrere kleine Korrekturen an diversen CGI - genauere Informationen findet ihr im Git<br />
+						- Ntfs-3g wurde auf die aktuelle Version gebracht<br />
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
 				<div class="post">
 
-					<h3>30. Juli 2008 - LUG Lünnen</h3>
+					<h3>30. Juli 2008 - LUG Lünen</h3>
 					<ul class="post_info">
 						<li class="date">Linux User Group Lünen</li>
 					</ul>
@@ -56,23 +80,6 @@
 						Wir bedanken uns und wünschen viel Spaß beim Lesen!
 						<br />
 						<a href="http://www.linux-luenen.de/?q=node/15" target="_blank">Zum Artikel</a>
-					</p>
-
-				</div>
-
-				<div class="post">
-					<h3>24. Juli 2008 - Core Update 15</h3>
-					<ul class="post_info">
-						<li class="date">It's update time</li>
-					</ul>
-
-					<p>
-						<b>Sehr geehrte Community!</b><br />
-						Heute werden wir das Core Update Nummer 15 veröffentlichen, folgende Änderungen sind enthalten:
-						<br />
-						- Sicherheits-Update aufgrund der seit kurzer Zeit bekannten DNS-Sicherheitsproblemen
-						<br />
-						<span style="color: red;">Wir empfehlen eine unverzügliche Installation!</span>
 					</p>
 
 				</div>

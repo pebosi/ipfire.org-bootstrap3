@@ -37,6 +37,30 @@
 				</ul>
 
 				<br class="clear" />
+				
+				<div class="post">
+					<a name="news-05"></a>
+					<h3>2008/08/16 - Core Update 16</h3>
+					<ul class="post_info">
+						<li class="date">It's update time</li>
+					</ul>
+
+					<p>
+						<b>Hello everybody,</b><br />
+						today we are going to release Core Update number 16, the following changes were made:
+						<br />
+						Fixed Squid init script showing allready started during boot<br />
+						Fixed LineQualitiy Graph not working for some gateways not responding to ping request<br />
+						Fixed Outgoing FW Logging when using Mode 1<br />
+						Fixed Urlfilter autoupdate url has changed<br />
+						Fixed redirect wrapper not working as expected<br />
+						Fixed smaller CGI issues - for detailed informations see git<br />
+						Updated ntfs-3g to current stable<br />
+					</p>
+
+				</div>
+
+				<br class="clear" />
 
 				<div class="post">
 
