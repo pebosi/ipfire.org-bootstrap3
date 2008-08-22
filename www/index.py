@@ -2,10 +2,11 @@
 
 import os
 import re
+import cgi
 
 sites = (
 			("ipfire.org", ("www.ipfire.org", None)),
-			("www.ipfire.org", (None, "index.shtml")),
+			("www.ipfire.org", (None, cgi.FieldStorage().getfirst("file") or "index.shtml")),
 			("source.ipfire.org", (None, "source.shtml")),
 			("tracker.ipfire.org", (None, "tracker.shtml")),
 			("download.ipfire.org", (None, "download.shtml")),
@@ -18,7 +19,6 @@ try:
 		language = "de"
 except KeyError:
 	pass
-	
 
 print "Status: 302 Moved"
 print "Pragma: no-cache"
