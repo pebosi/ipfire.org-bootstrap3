@@ -15,6 +15,73 @@
 		</image> -->
 
 		<item>
+			<title>Presentation of our project on kbarthel.de</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-07</guid>
+			<pubDate>Thu, 22 Aug 2008 10:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					<b>Dear Community!</b><br />
+					Kim Barthel published on his blog a text about the project ipfire itself.
+					<br />
+					You may view the full (german, sorry) article on
+					<a href="http://blog.kbarthel.de/?p=148" target="_blank">blog.kbarthel.de</a>!
+					<br />
+					<br />
+					Thank you, Kim!
+					<br />
+					<br />
+					Michael
+				]]>
+			</description>
+		</item>
+
+		<item>
+			<title>IPFire 2.3 Beta 3</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-06</guid>
+			<pubDate>Thu, 20 Aug 2008 19:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					<b>Dear Community!</b><br />
+					This day, we released the third beta version of IPFire 2.3.
+					<br />
+					Further information and a discussion about that is to find in the forum:
+					<a href="http://forum.ipfire.org/index.php/topic,709.0.html" target="_blank">Click!</a>
+					<br />
+					We hope that many of you will install this new version and give some feedback.
+					<br />
+					<br />
+					Michael for the team of IPFire
+				]]>
+			</description>
+		</item>
+
+		<item>
+			<title>Core Update 16</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-05</guid>
+			<pubDate>Thu, 16 Aug 2008 15:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					<b>Hello everybody,</b><br />
+					today we are going to release Core Update number 16, the following changes were made:
+					<br />
+					- Fixed Squid init script showing allready started during boot<br />
+					- Fixed LineQualitiy Graph not working for some gateways not responding to ping request<br />
+					- Fixed Outgoing FW Logging when using Mode 1<br />
+					- Fixed Urlfilter autoupdate url has changed<br />
+					- Fixed redirect wrapper not working as expected<br />
+					- Fixed smaller CGI issues - for detailed informations see git<br />
+					- Updated ntfs-3g to current stable
+				]]>
+			</description>
+		</item>
+
+		<item>
 			<title>Article on www.linux-luenen.de</title>
 			<link>http://www.ipfire.org/#news</link>
 			<author>ms@ipfire.org (Michael Tremer)</author>

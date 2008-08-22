@@ -42,23 +42,24 @@
 				<br class="clear" />
 
 				<div class="post">
-					<a name="news-05"></a>
-					<h3>16. August 2008 - Core Update 16</h3>
+					<a name="news-07"></a>
+					<h3>22. August 2008 - Projektvorstellung bei kbarthel.de</h3>
 					<ul class="post_info">
-						<li class="date">It's update time</li>
+						<li class="date">"Press-Alt! - Die Zeitung von gestern..." Otto Waalkes</li>
 					</ul>
 
 					<p>
 						<b>Sehr geehrte Community!</b><br />
-						Heute werden wir das Core Update Nummer 16 veröffentlichen, folgende Änderungen sind enthalten:
+						Im Blog von Kim Barthel ist heute ein Text erschienen, der das IPFire-Projekt vorstellt.
 						<br />
-						- Squid Initskript wurde angepasst um die Warnung während des Bootprozesses zu vermeiden<br /> 
-						- Das Pingdiagramm zeigte bei manchen Gateways keine Werte an<br />
-						- Ausgehende Firewall loggt im Modus 1 nun auch richtig<br />
-						- Urlfilter Autoupdate url hat sich geändert<br />
-						- Der Redirect Wrapper wurde korrigiert und arbeitet jetzt zuverlässig<br />
-						- Mehrere kleine Korrekturen an diversen CGI - genauere Informationen findet ihr im Git<br />
-						- Ntfs-3g wurde auf die aktuelle Version gebracht<br />
+						Den vollen Beitrag findet Ihr unter diesem
+						<a href="http://blog.kbarthel.de/?p=148" target="_blank">Link</a>!
+						<br />
+						<br />
+						Wir möchten uns herzlich bei Kim bedanken!
+						<br />
+						<br />
+						Michael für das IPFire-Team
 					</p>
 
 				</div>
@@ -66,20 +67,23 @@
 				<br class="clear" />
 
 				<div class="post">
-
-					<h3>30. Juli 2008 - LUG Lünen</h3>
+					<a name="news-06"></a>
+					<h3>20. August 2008 - IPFire 2.3 Beta 3</h3>
 					<ul class="post_info">
-						<li class="date">Linux User Group Lünen</li>
+						<li class="date">Check it out</li>
 					</ul>
 
 					<p>
 						<b>Sehr geehrte Community!</b><br />
-						Am heutigen Tage wurde von der LUG Lünen ein
-						Artikel zu IPFire veröffentlicht.
+						Heute wurde das dritte Testversion von IPFire 2.3 veröffentlicht.
 						<br />
-						Wir bedanken uns und wünschen viel Spaß beim Lesen!
+						Weitere Informationen und eine Diskussion sind im Forum zu finden:
+						<a href="http://forum.ipfire.org/index.php/topic,709.0.html" target="_blank">Klick!</a>
 						<br />
-						<a href="http://www.linux-luenen.de/?q=node/15" target="_blank">Zum Artikel</a>
+						Wir hoffen, dass viele Leute diese Version installieren und eine Menge Feedback geben.
+						<br />
+						<br />
+						Michael für das IPFire-Team
 					</p>
 
 				</div>

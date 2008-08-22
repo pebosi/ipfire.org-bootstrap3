@@ -14,12 +14,63 @@
 					Auf dieser Seite findet ihr das News-Archiv des Projektes.
 				</p>
 				<p>
+					<a href="#news-07">22. August 2008 - Projektvorstellung bei kbarthel.de</a><br />
+					<a href="#news-06">20. August 2008 - IPFire 2.3 Beta 3</a><br />
 					<a href="#news-05">16. August 2008 - Core Update 16</a><br />
 					<a href="#news-04">30. Juli 2008 - LUG Lünnen</a><br />
 					<a href="#news-03">24. Juli 2008 - Core Update 15</a><br />
 					<a href="#news-02">24. Juli 2008 - RSS Feed</a><br />
 					<a href="#news-01">08. November 2007 - IPFire 2.1 FINAL</a>
 				</p>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-07"></a>
+					<h3>22. August 2008 - Projektvorstellung bei kbarthel.de</h3>
+					<ul class="post_info">
+						<li class="date">"Press-Alt! - Die Zeitung von gestern..." Otto Waalkes</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Im Blog von Kim Barthel ist heute ein Text erschienen, der das IPFire-Projekt vorstellt.
+						<br />
+						Den vollen Beitrag findet Ihr unter diesem
+						<a href="http://blog.kbarthel.de/?p=148" target="_blank">Link</a>!
+						<br />
+						<br />
+						Wir möchten uns herzlich bei Kim bedanken!
+						<br />
+						<br />
+						Michael für das IPFire-Team
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-06"></a>
+					<h3>20. August 2008 - IPFire 2.3 Beta 3</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute wurde das dritte Testversion von IPFire 2.3 veröffentlicht.
+						<br />
+						Weitere Informationen und eine Diskussion sind im Forum zu finden:
+						<a href="http://forum.ipfire.org/index.php/topic,709.0.html" target="_blank">Klick!</a>
+						<br />
+						Wir hoffen, dass viele Leute diese Version installieren und eine Menge Feedback geben.
+						<br />
+						<br />
+						Michael für das IPFire-Team
+					</p>
+
+				</div>
 
 				<br class="clear" />
 

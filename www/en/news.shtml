@@ -1,0 +1,189 @@
+<!--#include virtual="../header.shtml" -->
+
+<div id="main">
+
+	<div id="main_inner" class="fixed">
+
+		<div id="primaryContent_columnless">
+
+			<div id="columnA_columnless">
+		
+				<h3>News</h3>
+
+				<p>
+					This is the news archive of ipfire.org.
+				</p>
+				<p>
+					<a href="#news-07">2008/08/22 - Presentation of our project on kbarthel.de</a><br />
+					<a href="#news-06">2008/08/20 - IPFire 2.3 Beta 3</a><br />
+					<a href="#news-05">2008/08/16 - Core Update 16</a><br />
+					<a href="#news-04">2008/07/30 - LUG Lünnen</a><br />
+					<a href="#news-03">2008/07/24 - Core Update 15</a><br />
+					<a href="#news-02">2008/07/24 - RSS Feed</a><br />
+					<a href="#news-01">2007/11/08 - IPFire 2.1 FINAL</a>
+				</p>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-07"></a>
+					<h3>200/08/22 - Presentation of our project on kbarthel.de</h3>
+					<ul class="post_info">
+						<li class="date">"Press-Alt! - Die Zeitung von gestern..." Otto Waalkes</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						Kim Barthel published on his blog a text about the project ipfire itself.
+						<br />
+						You may view the full (german, sorry) article on
+						<a href="http://blog.kbarthel.de/?p=148" target="_blank">blog.kbarthel.de</a>!
+						<br />
+						<br />
+						Thank you, Kim!
+						<br />
+						<br />
+						Michael
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-06"></a>
+					<h3>2008/08/20 - IPFire 2.3 Beta 3</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						This day, we released the third beta version of IPFire 2.3.
+						<br />
+						Further information and a discussion about that is to find in the forum:
+						<a href="http://forum.ipfire.org/index.php/topic,709.0.html" target="_blank">Click!</a>
+						<br />
+						We hope that many of you will install this new version and give some feedback.
+						<br />
+						<br />
+						Michael for the team of IPFire
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-05"></a>
+					<h3>2008/08/16 - Core Update 16</h3>
+					<ul class="post_info">
+						<li class="date">It's update time</li>
+					</ul>
+
+					<p>
+						<b>Hello everybody,</b><br />
+						today we are going to release Core Update number 16, the following changes were made:
+						<br />
+						Fixed Squid init script showing allready started during boot<br />
+						Fixed LineQualitiy Graph not working for some gateways not responding to ping request<br />
+						Fixed Outgoing FW Logging when using Mode 1<br />
+						Fixed Urlfilter autoupdate url has changed<br />
+						Fixed redirect wrapper not working as expected<br />
+						Fixed smaller CGI issues - for detailed informations see git<br />
+						Updated ntfs-3g to current stable<br />
+					</p>
+
+				</div>
+				
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="news-04"></a>
+					<h3>2008/07/30 - LUG Lünen</h3>
+					<ul class="post_info">
+						<li class="date">Linux User Group Lünen</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						Today, the linux user group from "Lünen"
+						released an article about ipfire.
+						<br />
+						<a href="http://www.linux-luenen.de/?q=node/15" target="_blank">to the article</a>
+						(german)
+					</p>
+
+				</div>
+				
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="news-03"></a>
+					<h3>2008/07/24 - Core Update 15</h3>
+					<ul class="post_info">
+						<li class="date">It's update time</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Today, we release the core update number 15.
+						<br />
+						This is an important update because it will fix
+						the latest dns vulnerabilities.
+						<br />
+						<a href="http://www.heise-online.co.uk/news/DNS-security-problem-details-released--/111145">Read this for more information.</a>
+						<br />
+						<span style="color: red;">Please install this update as soon as possible.</span>
+					</p>
+
+				</div>
+				
+				<br class="clear" />
+				
+				<div class="post">
+					<a name="news-02"></a>
+					<h3>2008/07/24 - RSS Feed</h3>
+					<ul class="post_info">
+						<li class="date">Subscribe...</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						This day is the day when the ipfire-project gets its
+						own rss feed. This feed is for you, to keep you up on latest
+						security updates and releases.
+						<a href="http://www.ipfire.org/data/feeds/main-en.rss" target="_blank">http://www.ipfire.org/data/feeds/main-en.rss</a>.
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-01"></a>
+					<h3>2007/11/08 - IPFire 2.1 FINAL</h3>
+					<ul class="post_info">
+						<li class="date">It's there...</li>
+					</ul>
+
+					<p>
+						<b>Hey Community!</b><br />
+						Today is the day we release the final version of ipfire.
+						You can get the download of the 2.1
+						<a href="downloads.shtml#final">here</a>.
+					</p>
+
+				</div>
+				
+				<br class="clear" />
+		
+			</div>
+	
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+<!--#include virtual="../footer.shtml" -->
