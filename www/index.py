@@ -12,10 +12,13 @@ sites = (
 		)
 
 # Check language...
-if re.search(re.compile("^de(.*)"), os.environ["HTTP_ACCEPT_LANGUAGE"]):
-	language = "de"
-else:
-	language = "en"
+language = "en"
+try:
+	if re.search(re.compile("^de(.*)"), os.environ["HTTP_ACCEPT_LANGUAGE"]):
+		language = "de"
+except KeyError:
+	pass
+	
 
 print "Status: 302 Moved"
 print "Pragma: no-cache"
