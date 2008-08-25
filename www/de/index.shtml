@@ -42,6 +42,37 @@
 				<br class="clear" />
 
 				<div class="post">
+					<a name="news-08"></a>
+					<h3>25. August 2008 - Ein Jahr danach - IPFire 2.1</h3>
+					<ul class="post_info">
+						<li class="date">"Traue keiner Statistik die Du nicht selbst gefälscht hast."</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Es ist fast ein Jahr her, da erblickte die 2.1 zum ersten Mal zaghaft die Welt,
+						damals noch recht schlüpfrig und in einigen BETAs, bis sie dann nach 2 Monaten im
+						November sozusagen 18 geworden war und final alleine in die Welt durfte. Hier nun
+						ein paar Zahlen, welche die Entwicklung des Projektes und das wachsenden Interesse
+						am selbigen sehr gut wiedergeben
+						<br />
+						Die Graphiken findet ihr unter
+						<a href="http://www.ipfire.org/images/Stats1.png" target="_blank">Statistik 1</a>
+						<a href="http://www.ipfire.org/images/Stats2.png" target="_blank">Statistik 2</a>
+						<br />
+						<br />
+						Wir möchten uns herzlich bei euch Allen bedanken, bitte helft weiter IPFire noch
+						bekannter und besser zu machen!
+						<br />
+						<br />
+						Maniacikarus für das IPFire-Team
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
 					<a name="news-07"></a>
 					<h3>22. August 2008 - Projektvorstellung bei kbarthel.de</h3>
 					<ul class="post_info">
