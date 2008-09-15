@@ -37,7 +37,36 @@
 				</ul>
 
 				<br class="clear" />
-				
+
+				<div class="post">
+					<a name="news-08"></a>
+					<h3>2008/08/25 - One year passed - IPFire 2.1</h3>
+					<ul class="post_info">
+						<li class="date">"The best is yet to come."</li>
+					</ul>
+
+					<p>
+						<b>ear Community!</b><br />
+						It is almost a year ago, we´ve finalized the 2.1 and started the BETA process for
+						the final release. After two hard months 2.1 was released in november 2007. Here are
+						some very interisting numbers to show the growing interest for IPFire and its ongoing
+						developement.
+						<br />
+						Stats can be found here
+						<a href="http://www.ipfire.org/images/Stats1.png" target="_blank">Stats 1</a>
+						<a href="http://www.ipfire.org/images/Stats2.png" target="_blank">Stats 2</a>
+						<br />
+						<br />
+						We want to thank all of you and hope IPFire will spread more and more
+						<br />
+						<br />
+						Maniacikarus for the IPFire-Team
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
 				<div class="post">
 					<a name="news-07"></a>
 					<h3>200/08/22 - Presentation of our project on kbarthel.de</h3>
