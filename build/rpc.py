@@ -81,7 +81,7 @@ elif action == "get":
 					while True:
 						if not builders: break
 						rand = random.randint(0, len(builders)-1)
-						string += "%s\n" % builders[rand]
+						string = "%s %s" % (string, builders[rand],)
 						builders.pop(rand)
 					response.set_mesg(string)
 					
