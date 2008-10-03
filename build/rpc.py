@@ -77,7 +77,7 @@ elif action == "get":
 					builders = []
 					for builder in getAllBuilders():
 						builders.append("%s" % builder.distcc)
-					string = ""
+					string = "localhost/1"
 					while True:
 						if not builders: break
 						rand = random.randint(0, len(builders)-1)
