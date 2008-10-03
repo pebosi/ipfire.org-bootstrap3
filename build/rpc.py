@@ -55,9 +55,9 @@ response = Response(config)
 
 data = cgi.FieldStorage()
 
+uuid = data.getfirst("uuid")
 action  = data.getvalue('action')
 if action == "set":
-	uuid = data.getfirst("uuid")
 	if not uuid:
 		response.set_code("406")
 		response.set_mesg("UUID is not valid!")
@@ -76,6 +76,7 @@ elif action == "get":
 				if value == "raw":
 					builders = []
 					for builder in getAllBuilders():
+						if uuid == builder.uuid: continue
 						builders.append("%s" % builder.distcc)
 					string = "localhost/1"
 					while True:
