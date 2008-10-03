@@ -115,7 +115,12 @@ class DurationsConfig:
 	def get(self, sort=0):
 		c = self.db.cursor()
 		c.execute("SELECT duration FROM durations")
-		ret = c.fetchall()
+		ret = []
+		for value in c.fetchall():
+			value = int("%s" % value)
+			if value < 5400: # 1,5h
+				continue
+			ret.append(value)
 		c.close()
 		if sort: ret.sort()
 		return ret
@@ -135,10 +140,7 @@ class DurationsConfig:
 		if not len(durations):
 			return None
 		for value in durations:
-			duration = int("%s" % value)
-			if duration < 3600:
-				continue
-			sum += duration
+			sum += value
 		avg = sum / len(durations)
 		return avg
 	
