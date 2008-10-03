@@ -135,7 +135,10 @@ class DurationsConfig:
 		if not len(durations):
 			return None
 		for value in durations:
-			sum += int("%s" % value)
+			duration = int("%s" % value)
+			if duration < 3600:
+				continue
+			sum += duration
 		avg = sum / len(durations)
 		return avg
 	
