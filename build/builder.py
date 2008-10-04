@@ -157,7 +157,7 @@ class DistccConfig(DatabaseConfig):
 		self.hostname = hostname
 	
 	def __str__(self):
-		if not self.ping():
+		if not self.ping() or self.get() == "0":
 			return ""
 		return "%s:%s/4,lzo" % \
 			(socket.gethostbyname(self.hostname), self.get(),)

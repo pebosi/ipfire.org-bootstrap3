@@ -220,9 +220,13 @@ class Box:
 	
 	def distccinfo(self):
 		state = self.builder.distcc.ping()
+		port = self.builder.distcc()
+		if port == "0":
+			state = False
+			port = "disabled"
 		print """\
 						<p class="%s">Distcc: %s</p>""" \
-				% (ping2class[state], self.builder.distcc.get(),)
+				% (ping2class[state], port,)
 
 site = Site(config)
 
