@@ -78,11 +78,12 @@ elif action == "get":
 					for builder in getAllBuilders():
 						if uuid == builder.uuid: continue
 						builders.append("%s" % builder.distcc)
-					string = "localhost/1"
+					string = "localhost/1\n--randomize\n"
 					while True:
 						if not builders: break
 						rand = random.randint(0, len(builders)-1)
-						string = "%s %s" % (string, builders[rand],)
+						if builders[rand]:
+							string = "%s%s\n" % (string, builders[rand],)
 						builders.pop(rand)
 					response.set_mesg(string)
 					
