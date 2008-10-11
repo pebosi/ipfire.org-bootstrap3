@@ -74,7 +74,7 @@ class Site:
 				}
 				#header {
 					width: 800px;
-					height: 100px;
+					height: 115px;
 					text-align: center;
 					background: #E0E0E0;
 					border: 1px solid #999;
