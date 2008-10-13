@@ -71,40 +71,43 @@ def summurize_addons():
 	oldest="9999999999999"
 	newest="0000000000000"
 	for dir in os.listdir("version/"):
-#		print dir+"<br />"
-		for uuid in os.listdir("version/"+dir):
-#			print uuid+"<br />"
-			f = open("version/"+dir+"/"+uuid)
-			while True:
-				line = f.readline()
-				if len(line) == 0:
-					break # EOF
-				status = ""
-				pak = ""
-				command = ""
-				args = line.split(" ")
-				if oldest > args[1]:
-					oldest = args[1]
-				if newest < args[1]:
-					newest = args[1]
-				if len(args) > 2:
-					command = args[2]
-#					print command
-				if len(args) > 3:
-					pak = args[3]
-#					print pak
-				if len(args) > 4:
-					status = args[4]
-#					print status+"<br />"
-				if (status == "0\n") and (command == "installed") and (dir == "2.1"):
-					addons[pak] = addons.get(pak,0)+1
-					installed[pak] = installed.get(pak,0)+1
-				if (status == "0\n") and (command == "deleted") and (dir == "2.1"):
-					addons[pak] = addons.get(pak,0)-1
-					deleted[pak] = deleted.get(pak,0)+1
-				if (status == "0\n") and (command == "upgraded") and (dir == "2.1"):
-					upgraded[pak] = upgraded.get(pak,0)+1
-			f.close()
+		if (dir == "empty.txt" ):
+		   pass
+		else:
+	#		print dir+"<br />"
+			for uuid in os.listdir("version/"+dir):
+	#			print uuid+"<br />"
+				f = open("version/"+dir+"/"+uuid)
+				while True:
+					line = f.readline()
+					if len(line) == 0:
+						break # EOF
+					status = ""
+					pak = ""
+					command = ""
+					args = line.split(" ")
+					if oldest > args[1]:
+						oldest = args[1]
+					if newest < args[1]:
+						newest = args[1]
+					if len(args) > 2:
+						command = args[2]
+	#					print command
+					if len(args) > 3:
+						pak = args[3]
+	#					print pak
+					if len(args) > 4:
+						status = args[4]
+	#					print status+"<br />"
+					if (status == "0\n") and (command == "installed") and (dir == "2.1" or dir == "2.3" ):
+						addons[pak] = addons.get(pak,0)+1
+						installed[pak] = installed.get(pak,0)+1
+					if (status == "0\n") and (command == "deleted") and (dir == "2.1" or dir == "2.3"):
+						addons[pak] = addons.get(pak,0)-1
+						deleted[pak] = deleted.get(pak,0)+1
+					if (status == "0\n") and (command == "upgraded") and (dir == "2.1" or dir == "2.3"):
+						upgraded[pak] = upgraded.get(pak,0)+1
+				f.close()
 	print "Oldest one installed - %s" % beautify_time(oldest)
 	for x in range(10):
 			print "&nbsp;"
@@ -172,13 +175,20 @@ def summary(type):
 	print "<tr><td class='header' colspan='2'>Summary</td></tr>"
 	if type == "global":
 		print "<tr><td>Versions available:</td><td>",
-		print os.listdir("version/"),
+		for dir in os.listdir("version/"):
+				if (dir == "empty.txt" ):
+				   pass
+				else:
+					print "%s<br>" % dir,
 		print "</td></tr>"
 		
 		print "<tr><td>Number of total hosts:</td><td>",
 		count = 0
 		for dir in os.listdir("version/"):
-			count += len(os.listdir("version/"+dir))
+			if (dir == "empty.txt" ):
+			   pass
+			else:
+				count += len(os.listdir("version/"+dir))
 		print count,
 		print "</td></tr>"
 
@@ -203,14 +213,16 @@ print_header()
 summary("global")
 
 for dir in os.listdir("version/"):
-
-	print "<h2><a href='%s?ver=%s&amp;uuid='>%s</a></h2>" % (os.environ['SCRIPT_NAME'], dir, dir)
-	if ver == dir:
-		for i in os.listdir("version/"+dir):
-			if i == uuid:
-				showdetails(i, dir)
-			else:
-				showuuid(i, dir)
+		if (dir == "empty.txt" ):
+		   pass
+		else:
+			print "<h2><a href='%s?ver=%s&amp;uuid='>%s</a></h2>" % (os.environ['SCRIPT_NAME'], dir, dir)
+			if ver == dir:
+				for i in os.listdir("version/"+dir):
+					if i == uuid:
+						showdetails(i, dir)
+					else:
+						showuuid(i, dir)
 
 summurize_addons()
 

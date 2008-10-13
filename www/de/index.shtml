@@ -42,6 +42,31 @@
 				<br class="clear" />
 
 				<div class="post">
+					<a name="news-09"></a>
+					<h3>11. Oktober 2008 - IPFire 2.3 Beta 4</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute wurde das vierte und wohl letzte Testversion von IPFire 2.3 veröffentlicht.
+						<br />
+						Weitere Informationen und eine Diskussion sind im Forum zu finden:
+						<a href="http://forum.ipfire.org/index.php/topic,783.0.html" target="_blank">Klick!</a>
+						<br />
+						Wir hoffen, dass viele Leute diese Version installieren und eine Menge Feedback geben,
+						damit wir mit einer gut getesteten Version in die Release Candidates gehen können.
+						<br />
+						<br />
+						Maniac für das IPFire-Team
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
 					<a name="news-08"></a>
 					<h3>25. August 2008 - Ein Jahr danach - IPFire 2.1</h3>
 					<ul class="post_info">

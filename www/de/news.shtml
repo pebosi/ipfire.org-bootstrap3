@@ -14,6 +14,7 @@
 					Auf dieser Seite findet ihr das News-Archiv des Projektes.
 				</p>
 				<p>
+					<a href="#news-09">11. Oktober 2008 - IPFire 2.3 Beta 4</a><br />
 					<a href="#news-08">25. August 2008 - Ein Jahr danach - IPFire 2.1</a><br />
 					<a href="#news-07">22. August 2008 - Projektvorstellung bei kbarthel.de</a><br />
 					<a href="#news-06">20. August 2008 - IPFire 2.3 Beta 3</a><br />
@@ -23,6 +24,30 @@
 					<a href="#news-02">24. Juli 2008 - RSS Feed</a><br />
 					<a href="#news-01">08. November 2007 - IPFire 2.1 FINAL</a>
 				</p>
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-09"></a>
+					<h3>11. Oktober 2008 - IPFire 2.3 Beta 4</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute wurde das vierte und wohl letzte Testversion von IPFire 2.3 veröffentlicht.
+						<br />
+						Weitere Informationen und eine Diskussion sind im Forum zu finden:
+						<a href="http://forum.ipfire.org/index.php/topic,783.0.html" target="_blank">Klick!</a>
+						<br />
+						Wir hoffen, dass viele Leute diese Version installieren und eine Menge Feedback geben,
+						damit wir mit einer gut getesteten Version in die Release Candidates gehen können.
+						<br />
+						<br />
+						Maniac für das IPFire-Team
+					</p>
+
+				</div>
 
 				<br class="clear" />
 
