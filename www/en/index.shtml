@@ -39,6 +39,30 @@
 				<br class="clear" />
 
 				<div class="post">
+					<a name="news-10"></a>
+					<h3>2008/10/13 - IPFire 2.3 Beta 5</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						This day, we released the fifth beta version of IPFire 2.3.
+						<br />
+						Further information and a discussion about that is to find in the forum:
+						<a href="http://forum.ipfire.org/index.php/topic,788.0.html" target="_blank">Click!</a>
+						<br />
+						We finally had to do bigger changes and though: This is beta #5!
+						<br />
+						<br />
+						The IPFire Team
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
 					<a name="news-09"></a>
 					<h3>2008/10/11 - IPFire 2.3 Beta 4</h3>
 					<ul class="post_info">
@@ -52,7 +76,7 @@
 						Further information and a discussion about that is to find in the forum:
 						<a href="http://forum.ipfire.org/index.php/topic,783.0.html" target="_blank">Click!</a>
 						<br />
-						We hope that many of you will install this new version and give some feedback, so were able to have
+						We hope that many of you will install this new version and give some feedback, so we're able to have
 						a well tested version and go quickly forward to the Release Candidates.
 						<br />
 						<br />
@@ -86,55 +110,6 @@
 						<br />
 						<br />
 						Maniacikarus for the IPFire-Team
-					</p>
-
-				</div>
-
-				<br class="clear" />
-
-				<div class="post">
-					<a name="news-07"></a>
-					<h3>200/08/22 - Presentation of our project on kbarthel.de</h3>
-					<ul class="post_info">
-						<li class="date">"Press-Alt! - Die Zeitung von gestern..." Otto Waalkes</li>
-					</ul>
-
-					<p>
-						<b>Dear Community!</b><br />
-						Kim Barthel published on his blog a text about the project ipfire itself.
-						<br />
-						You may view the full (german, sorry) article on
-						<a href="http://blog.kbarthel.de/?p=148" target="_blank">blog.kbarthel.de</a>!
-						<br />
-						<br />
-						Thank you, Kim!
-						<br />
-						<br />
-						Michael
-					</p>
-
-				</div>
-
-				<br class="clear" />
-
-				<div class="post">
-					<a name="news-06"></a>
-					<h3>2008/08/20 - IPFire 2.3 Beta 3</h3>
-					<ul class="post_info">
-						<li class="date">Check it out</li>
-					</ul>
-
-					<p>
-						<b>Dear Community!</b><br />
-						This day, we released the third beta version of IPFire 2.3.
-						<br />
-						Further information and a discussion about that is to find in the forum:
-						<a href="http://forum.ipfire.org/index.php/topic,709.0.html" target="_blank">Click!</a>
-						<br />
-						We hope that many of you will install this new version and give some feedback.
-						<br />
-						<br />
-						Michael for the team of IPFire
 					</p>
 
 				</div>

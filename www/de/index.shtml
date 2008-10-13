@@ -42,6 +42,31 @@
 				<br class="clear" />
 
 				<div class="post">
+					<a name="news-10"></a>
+					<h3>13. Oktober 2008 - IPFire 2.3 Beta 5</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute wurde das fünfte und diesmal wohl wirklich letzte Testversion von IPFire 2.3 veröffentlicht.
+						<br />
+						Weitere Informationen und eine Diskussion sind im Forum zu finden:
+						<a href="http://forum.ipfire.org/index.php/topic,788.0.html" target="_blank">Klick!</a>
+						<br />
+						Wir sahen uns gezwungen trotz Beta-Status noch einige größere Änderungen vorzunehmen.
+						Daher: Beta Nummer 5!
+						<br />
+						<br />
+						Das IPFire-Team
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
 					<a name="news-09"></a>
 					<h3>11. Oktober 2008 - IPFire 2.3 Beta 4</h3>
 					<ul class="post_info">
@@ -91,55 +116,6 @@
 						<br />
 						<br />
 						Maniacikarus für das IPFire-Team
-					</p>
-
-				</div>
-
-				<br class="clear" />
-
-				<div class="post">
-					<a name="news-07"></a>
-					<h3>22. August 2008 - Projektvorstellung bei kbarthel.de</h3>
-					<ul class="post_info">
-						<li class="date">"Press-Alt! - Die Zeitung von gestern..." Otto Waalkes</li>
-					</ul>
-
-					<p>
-						<b>Sehr geehrte Community!</b><br />
-						Im Blog von Kim Barthel ist heute ein Text erschienen, der das IPFire-Projekt vorstellt.
-						<br />
-						Den vollen Beitrag findet Ihr unter diesem
-						<a href="http://blog.kbarthel.de/?p=148" target="_blank">Link</a>!
-						<br />
-						<br />
-						Wir möchten uns herzlich bei Kim bedanken!
-						<br />
-						<br />
-						Michael für das IPFire-Team
-					</p>
-
-				</div>
-
-				<br class="clear" />
-
-				<div class="post">
-					<a name="news-06"></a>
-					<h3>20. August 2008 - IPFire 2.3 Beta 3</h3>
-					<ul class="post_info">
-						<li class="date">Check it out</li>
-					</ul>
-
-					<p>
-						<b>Sehr geehrte Community!</b><br />
-						Heute wurde das dritte Testversion von IPFire 2.3 veröffentlicht.
-						<br />
-						Weitere Informationen und eine Diskussion sind im Forum zu finden:
-						<a href="http://forum.ipfire.org/index.php/topic,709.0.html" target="_blank">Klick!</a>
-						<br />
-						Wir hoffen, dass viele Leute diese Version installieren und eine Menge Feedback geben.
-						<br />
-						<br />
-						Michael für das IPFire-Team
 					</p>
 
 				</div>

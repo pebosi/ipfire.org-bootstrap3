@@ -14,6 +14,7 @@
 					This is the news archive of ipfire.org.
 				</p>
 				<p>
+					<a href="#news-10">2008/10/13 - IPFire 2.3 Beta 5</a><br />
 					<a href="#news-09">2008/10/11 - IPFire 2.3 Beta 4</a><br />
 					<a href="#news-08">2008/08/25 - One year passed - IPFire 2.1</a><br />
 					<a href="#news-07">2008/08/22 - Presentation of our project on kbarthel.de</a><br />
@@ -24,6 +25,30 @@
 					<a href="#news-02">2008/07/24 - RSS Feed</a><br />
 					<a href="#news-01">2007/11/08 - IPFire 2.1 FINAL</a>
 				</p>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-10"></a>
+					<h3>2008/10/13 - IPFire 2.3 Beta 5</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						This day, we released the fifth beta version of IPFire 2.3.
+						<br />
+						Further information and a discussion about that is to find in the forum:
+						<a href="http://forum.ipfire.org/index.php/topic,788.0.html" target="_blank">Click!</a>
+						<br />
+						We finally had to do bigger changes and though: This is beta #5!
+						<br />
+						<br />
+						The IPFire Team
+					</p>
+
+				</div>
 
 				<br class="clear" />
 

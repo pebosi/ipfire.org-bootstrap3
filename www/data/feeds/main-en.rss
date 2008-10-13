@@ -15,6 +15,28 @@
 		</image> -->
 
 		<item>
+			<title>IPFire 2.3 Beta 5</title>
+			<link>http://www.ipfire.org/#news</link>
+			<author>ms@ipfire.org (Michael Tremer)</author>
+			<guid>http://www.ipfire.org/#news-10</guid>
+			<pubDate>Mon, 13 Oct 2008 19:00:00 +0200</pubDate>
+			<description>
+				<![CDATA[
+					<b>Dear Community!</b><br />
+					This day, we released the fifth beta version of IPFire 2.3.
+					<br />
+					Further information and a discussion about that is to find in the forum:
+					<a href="http://forum.ipfire.org/index.php/topic,788.0.html" target="_blank">Click!</a>
+					<br />
+					We hope that many of you will install this new version and give some feedback.
+					<br />
+					<br />
+					Michael for the team of IPFire
+				]]>
+			</description>
+		</item>
+
+		<item>
 			<title>Presentation of our project on kbarthel.de</title>
 			<link>http://www.ipfire.org/#news</link>
 			<author>ms@ipfire.org (Michael Tremer)</author>

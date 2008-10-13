@@ -96,9 +96,13 @@
 					</p>
 
 					<div align="right">
+						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta5.i586-full.iso">IPFire 2.3 - Beta5</a>
+						&nbsp;
+						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta5.i586-full.iso.md5">MD5</a>
+						<br />
 						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta4.i586-full.iso">IPFire 2.3 - Beta4</a>
 						&nbsp;
-						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta4.i586-full.md5">MD5</a>
+						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta4.i586-full.iso.md5">MD5</a>
 						<br />
 						<a href="http://download.ipfire.org/iso/ipfire-2.3-beta3.i586-full.iso">IPFire 2.3 - Beta3</a>
 						<br />
