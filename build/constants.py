@@ -24,7 +24,7 @@ import time
 
 config = {
 	"title"       : "IPFire - Builder",
-	"nightly_url" : ("ftp://ftp.ipfire.org/pub/nightly-builds/", "http://www.rowie.at/ipfire/builds/",),
+	"nightly_url" : ("ftp://ftp.ipfire.org/pub/nightly-builds/", "http://www.rowie.at/upload/ipfire/builds/",),
 	"path"        : { "db" : "db", },
 	"script"      : os.environ['SCRIPT_NAME'],
 	"db_name"     : "builder.db",
