@@ -202,5 +202,8 @@ def getAllBuilders():
 	for uuid in os.listdir(config["path"]["db"]):
 		if uuid == "empty.txt":	continue
 		builder = Builder(config, uuid)
+		# If there was no activity since 3 days -> continue...
+		if (time.time() - builder.state.time()) > 3*24*60*60:
+			continue
 		builders.append(builder)
 	return builders
