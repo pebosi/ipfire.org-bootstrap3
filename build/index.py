@@ -231,7 +231,7 @@ class Box:
 site = Site(config)
 
 boxes = []
-for builder in getAllBuilders():
+for builder in getAllBuilders(3):
 	boxes.append(Box(builder))
 
 site(boxes)

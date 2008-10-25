@@ -197,13 +197,13 @@ class Builder:
 	def get(self, key):
 		return eval("self.%s.get()" % (key,))
 
-def getAllBuilders():
+def getAllBuilders(age=0):
 	builders = []
 	for uuid in os.listdir(config["path"]["db"]):
 		if uuid == "empty.txt":	continue
 		builder = Builder(config, uuid)
-		# If there was no activity since 3 days -> continue...
-		if (time.time() - builder.state.time()) > 3*24*60*60:
-			continue
+		# If there was no activity since "age" days -> continue...
+		if age and (time.time() - builder.state.time()) > age*24*60*60:
+				continue
 		builders.append(builder)
 	return builders
