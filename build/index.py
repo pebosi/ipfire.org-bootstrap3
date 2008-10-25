@@ -87,12 +87,21 @@ class Site:
 				div.box {
 					padding: 5px;
 					margin: 10px 0 10px 0;
-					height: 80px;
+					/* height: 80px; */
 					border: 1px solid;
 				}
 				div.infobox {
 					float: right;
 					width: 240px;
+				}
+				div.log {
+					background: #e55;
+					border: 1px dotted;
+					margin-top: 12px;
+					/* visibility: hidden; */
+				}
+				div.log p {
+					font-family: Courier New;
 				}
 				p {
 					margin: 2px;
@@ -176,6 +185,8 @@ class Box:
 		self.header()
 		self.stateinfo()
 		self.durations()
+		if self.builder.state() == "error":
+			self.log()
 		print """\
 				</div>"""
 	
@@ -227,6 +238,19 @@ class Box:
 		print """\
 						<p class="%s">Distcc: %s</p>""" \
 				% (ping2class[state], port,)
+	
+	def log(self):
+		log = self.builder.log()
+		if log:
+			print """\
+					<div class="log">
+						<p>"""
+			for i in log:
+				print "%s<br />" % (i.rstrip("\n"),)
+			print """\
+						</p>
+					</div>
+			"""
 
 site = Site(config)
 

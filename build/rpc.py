@@ -66,7 +66,7 @@ if action == "set":
 	builder = Builder(config, uuid)
 	
 	key = None
-	for key in [ "distcc", "duration", "hostname", "state", "package", ]:
+	for key in [ "distcc", "duration", "hostname", "jobs", "log", "state", "package", ]:
 		for value in data.getlist(key):
 			builder.set(key, value)
 elif action == "get":
@@ -75,10 +75,13 @@ elif action == "get":
 			for value in data.getlist(key):
 				if value == "raw":
 					builders = []
+					jobs = "4"
 					for builder in getAllBuilders():
-						if uuid == builder.uuid: continue
+						if uuid == builder.uuid:
+							jobs = builder.jobs()
+							continue
 						builders.append("%s" % builder.distcc)
-					string = "localhost/1\n--randomize\n"
+					string = "localhost/%s\n--randomize\n" % (jobs or "4",)
 					while True:
 						if not builders: break
 						rand = random.randint(0, len(builders)-1)

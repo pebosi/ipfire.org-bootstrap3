@@ -23,6 +23,7 @@ import os
 import sys
 import time
 import socket
+import base64
 from pysqlite2 import dbapi2 as sqlite
 
 sys.path.append(".")
@@ -152,15 +153,16 @@ class DurationsConfig:
 		return time.ctime(eta)
 
 class DistccConfig(DatabaseConfig):
-	def __init__(self, db, key, hostname):
+	def __init__(self, db, key, hostname, jobs):
 		DatabaseConfig.__init__(self, db, key)
 		self.hostname = hostname
+		self.jobs = jobs
 	
 	def __str__(self):
 		if not self.ping() or self.get() == "0":
 			return ""
-		return "%s:%s/4,lzo" % \
-			(socket.gethostbyname(self.hostname), self.get(),)
+		return "%s:%s/%s,lzo   \t# %s" % \
+			(socket.gethostbyname(self.hostname), self.get(), self.jobs or "4", self.hostname)
 
 	def ping(self):
 		if not self.hostname:
@@ -169,6 +171,33 @@ class DistccConfig(DatabaseConfig):
 
 	def version(self):
 		return os.popen("distcc --version").readlines()
+
+class FileConfig:
+	def __init__(self, path, filetype):
+		self.filename = os.path.join(path, config["path"][filetype])
+
+		# Create the file if not existant
+		if not os.access(self.filename, os.R_OK):
+			f = open(self.filename, "w")
+			f.close()
+
+	def get(self):
+		ret = []
+		try:
+			f = open(self.filename)
+			ret = f.readlines()
+			f.close()
+		except:
+			pass
+		return ret or ["Log is empty."]
+	
+	__call__ = get
+	
+	def set(self, lines):
+		f = open(self.filename, "w")
+		for line in base64.b64decode(lines).split("\n"):
+			f.write("%s\n" % line.rstrip("\n"))
+		f.close()
 
 class Builder:
 	def __init__(self, config, uuid):
@@ -183,13 +212,16 @@ class Builder:
 				pass
 
 		self.db = Database(self.path)
-		
+
 		self.hostname = DatabaseConfig(self.db, "hostname")
 		self.state    = DatabaseConfig(self.db, "state")
 		self.package  = DatabaseConfig(self.db, "package")
-		
+
 		self.duration = DurationsConfig(self.db)
-		self.distcc   = DistccConfig(self.db, "distcc", self.hostname.get())
+		self.jobs     = DatabaseConfig(self.db, "jobs")
+		self.distcc   = DistccConfig(self.db, "distcc", self.hostname(), self.jobs())
+
+		self.log      = FileConfig(self.path, "log")
 
 	def set(self, key, value):
 		eval("self.%s.set(\"%s\")" % (key, value,))

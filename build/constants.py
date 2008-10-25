@@ -25,7 +25,7 @@ import time
 config = {
 	"title"       : "IPFire - Builder",
 	"nightly_url" : ("ftp://ftp.ipfire.org/pub/nightly-builds/", "http://www.rowie.at/upload/ipfire/builds/",),
-	"path"        : { "db" : "db", },
+	"path"        : { "db" : "db", "log" : "error.log", },
 	"script"      : os.environ['SCRIPT_NAME'],
 	"db_name"     : "builder.db",
 }
@@ -47,5 +47,5 @@ state2style = {
 	None        : "",
 	"compiling" : "background: #8C8; border: 1px solid #0e0;",
 	"error"     : "background: #c33; border: 1px solid #e00;",
-	"idle"      : "height: 60px; background: #ddd; border: 1px solid #eee;",
+	"idle"      : "background: #ddd; border: 1px solid #eee;",
 }
