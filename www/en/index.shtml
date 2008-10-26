@@ -39,6 +39,28 @@
 				<br class="clear" />
 
 				<div class="post">
+					<a name="news-11"></a>
+					<h3>2008/10/26 - IPFire 2.3 RC 1</h3>
+					<ul class="post_info">
+						<li class="date">Check it out</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						This day, we released the first Release Candidate of IPFire 2.3.
+						<br />
+						Further information and a discussion about that is to find in the forum:
+						<a href="http://forum.ipfire.org/index.php/topic,812.0.html" target="_blank">Click!</a>
+						<br />
+						<br />
+						The IPFire Team
+					</p>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
 					<a name="news-10"></a>
 					<h3>2008/10/13 - IPFire 2.3 Beta 5</h3>
 					<ul class="post_info">
