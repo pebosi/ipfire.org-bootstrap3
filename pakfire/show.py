@@ -40,7 +40,7 @@ def beautify_ip(ip):
 		error = "Couldn't look up name: %s" % e
 		string = "<b>%s</b> (%s)" % (error, ip)
 	return string
-	
+
 def beautify_time(timestamp):
 	return time.strftime("%d-%m-%Y - %H:%M", time.localtime(float(timestamp)))
 
@@ -62,7 +62,7 @@ def get_attributes(line):
 
 def showuuid(uuid, ver):
 	print "<h3><a href='%s?ver=%s&amp;uuid=%s#%s'>%s</a></h3>" % (os.environ['SCRIPT_NAME'], dir, uuid, uuid, uuid)
-	
+
 def summurize_addons():
 	addons={}
 	installed={}
@@ -143,9 +143,9 @@ def showdetails(uuid, ver):
 		line = f.readline()
 		if len(line) == 0:
 			break # EOF
-		
+
 		ip, timestamp, command, pak, status = get_attributes(line)
-		
+
 		if command == "update\n":
 			last_update = timestamp
 			continue
@@ -154,18 +154,18 @@ def showdetails(uuid, ver):
 		string += beautify_ip(ip)
 
 		timestamp = beautify_time(timestamp)
-		
-		
+
+
 		if command:
 			string += " - <font class='%s'>%s</font> - %s" % (command, command, pak)
 			if not status == "0\n":
 				string += " <font class='error'>%s</font>" % status
-												
+
 		string += "</td><td class='date'>%s</td></tr>" % timestamp
-		
+
 		print string
 
-	print "<tr><td>Last update:</td><td align='center'>%s" % beautify_time(timestamp)			
+	print "<tr><td>Last update:</td><td align='center'>%s" % beautify_time(timestamp)
 	print "</table>"
 	f.close()
 
@@ -179,20 +179,21 @@ def summary(type):
 				if (dir == "empty.txt" ):
 				   pass
 				else:
-					print "%s<br>" % dir,
-		print "</td></tr>"
-		
-		print "<tr><td>Number of total hosts:</td><td>",
-		count = 0
-		for dir in os.listdir("version/"):
-			if (dir == "empty.txt" ):
-			   pass
-			else:
-				count += len(os.listdir("version/"+dir))
-		print count,
+					print "%s (%s)<br>" % (dir, len(os.listdir("version/"+dir))),
 		print "</td></tr>"
 
-		
+		count = 0
+		version={}
+
+		for dir in os.listdir("version/"):
+			if (dir == "empty.txt" ):
+				pass
+			else:
+				count += len(os.listdir("version/"+dir))
+		print "<tr><td>Number of total hosts:</td><td>",count,
+		print "</td></tr>"
+
+
 	print "</table>"
 
 ### HTTP-Header
