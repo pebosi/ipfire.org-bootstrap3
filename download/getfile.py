@@ -7,7 +7,7 @@ import urlparse
 import cgi
 from mimetypes import guess_type
 
-debug = None #open("debug.log", "a")
+debug = open("debug.log", "a") #None
 
 hosts = (
 #			PRIO SCHEME  HOSTNAME               PATH
