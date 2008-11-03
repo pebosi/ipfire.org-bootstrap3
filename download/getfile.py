@@ -8,6 +8,7 @@ import cgi
 from mimetypes import guess_type
 
 debug = open("debug.log", "a") #None
+access = open("access.log", "a")
 
 hosts = (
 #			PRIO SCHEME  HOSTNAME               PATH
@@ -125,12 +126,14 @@ while servers.all():
 	print "Pragma: no-cache"
 	print
 
+	access.write("%s\n" % url)
 	if debug:
 		debug.write("OK  %s\n" % url)
 
 	break
 else:
 	if os.access(file, os.R_OK):
+		access.write("%s\n" % url)
 		servefile(file)
 	else:
 		print "Status: 404 Not Found"
@@ -140,5 +143,6 @@ else:
 		if debug:
 			debug.write("ERR %s wasn't found on any server" % file)
 
+access.close()
 if debug:
 	debug.close()
