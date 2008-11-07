@@ -14,7 +14,8 @@
 					This is the news archive of ipfire.org.
 				</p>
 				<p>
-					<a href="#news-10">2008/10/26 - IPFire 2.3 RC 1</a><br />
+					<a href="#news-12">2008/11/08 - IPFire 2.3 Final</a><br />
+					<a href="#news-11">2008/10/26 - IPFire 2.3 RC 1</a><br />
 					<a href="#news-10">2008/10/13 - IPFire 2.3 Beta 5</a><br />
 					<a href="#news-09">2008/10/11 - IPFire 2.3 Beta 4</a><br />
 					<a href="#news-08">2008/08/25 - One year passed - IPFire 2.1</a><br />
@@ -26,6 +27,49 @@
 					<a href="#news-02">2008/07/24 - RSS Feed</a><br />
 					<a href="#news-01">2007/11/08 - IPFire 2.1 FINAL</a>
 				</p>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-12"></a>
+					<h3>2008/11/08 - IPFire 2.3 Final</h3>
+					<ul class="post_info">
+						<li class="date">Get it quick</li>
+					</ul>
+
+					<p>
+						<b>Dear Community!</b><br />
+						This day, we released the final version of IPFire 2.3.
+						<br />
+						<br />
+						Major changes since the first version 2.1 in Oktober 2007
+						<br />
+						<li class="first">-DNS-Securityupdate and many more packet updates</li>
+						<li>-Enhancement of the packet manager</li>
+						<li>-Improvement of the Quality-of-Service rules - Presets for QoS</li>
+						<li>-Adjustable Firewall Logging</li>
+						<li>-Kernel-Modules for better hardware suport</li>
+						<li>-Change the system statistic to „collectd"</li>
+						<li>-Better disk handling (S.M.A.R.T. and Standby)</li>
+						<li>-Status- and Serviceview in the Webinterface</li>
+						<li>-Proxy and Redirector now work more dynamic</li>
+						<br />
+						<br />
+						In addition the 2.3 will change the following things
+						<br />
+						<li class="first">-Kernel update to Linux-2.6.25.19</li>
+						<li>Update of many more packets (OpenSSL, OpenSSH, Apache, Squid, Snort, collectd, ntfs-3g, Openswan, Updatexlrator, iptables, l7protocols)</li>
+						<li>-With severall Atheros Chips IPFire is able to work as Wireless Access Point</li>
+						<li>-Better support of UMTS-3G-Modems</li>
+						<li>-Use of tmpfs to reduce disk reads and writes</li>
+						<li>-Better hardware monitoring by the use of lmsensors</li>
+						<li>-Vnstat Traffic-Accounting replaces ipac-ng</li>
+						<br />
+						<br />
+						The IPFire Team
+					</p>
+
+				</div>
 
 				<br class="clear" />
 

@@ -8,7 +8,7 @@
 
 			<div id="columnA_2columns">
 
-				<h3>sicherheit für ihr netz</h3>
+				<h3>Sicherheit heute!</h3>
 				<p>
 					<strong>IPFire</strong> ist eine aus den Sourcen gebaute Linux-Firewall-Distribution,
 					die mit zusätzlichen Funktionen aufwarten kann. Das leicht installierte
@@ -32,12 +32,56 @@
 				</p>
 
 				<ul class="links">
-					<li class="first">- Intrusion-Prevention-System (Guardian) und Tripwire</li>
+					<li class="first">- Intrusion-Prevention-System Snort(Guardian), sowie weitere Securtiy Tools wie Tripwire und Lynis</li>
 					<li>- Datei- und Druckserver für heterogene Netzwerke (Samba, CUPS, FTP &amp; NFS)</li>
 					<li>- Voice-over-IP-Lösung mittels Asterisk und Teamspeak, sowie Traffic-Priorisierung</li>
-					<li>- Multimedia-Addons (Video- &amp; Audio-Streaming)</li>
+					<li>- Multimedia-Addons (Video- &amp; Audio-Streaming, Jukebox)</li>
+					<li>- WLan Access Point mittels hostap für viele Atheros Chips</li>
 					<li>- und weiteren Addons - <a href="http://wiki.ipfire.org/Addons" target="_blank">Alle Addons im Wiki</a></li>	
 				</ul>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="news-12"></a>
+					<h3>08. Oktober 2008 - IPFire 2.3 Final1</h3>
+					<ul class="post_info">
+						<li class="date">Get it quick</li>
+					</ul>
+
+					<p>
+						<b>Sehr geehrte Community!</b><br />
+						Heute wurde die Final Version von IPFire 2.3 veröffentlicht.
+						<br />
+						<br />
+						Wesentliche Änderungen seit der ersten Version 2.1 im Oktober 2007
+						<br />
+						<li class="first">-DNS-Sicherheitsupdate und viele weitere Paket-Aktualisierungen</li>
+						<li>-Erweiterung des Paketmanagers</li>
+						<li>-Verfeinerung der Quality-of-Service Regeln - Voreinstellungsmodell für QoS</li>
+						<li>-Feiner einstellbares Firewall Logging</li>
+						<li>-Kernel-Module zur Hardwareunterstützung wurden nachgeliefert</li>
+						<li>-Umstellung der Systemstatistiken auf „collectd"</li>
+						<li>-Verbessertes Festplatten-Handling (S.M.A.R.T. und Standby)</li>
+						<li>-Status- und Serviceübersicht im Webinterface</li>
+						<li>-Proxy und Redirector arbeiten dynamischer zusammen</li>
+						<br />
+						<br />
+						Mit der 2.3 wird sich zusätzlich folgendes ändern
+						<br />
+						<li class="first">-Der Kernel wurde auf Linux-2.6.25.19 aktualisiert</li>
+						<li>Aktualisierungen von weiteren Paketen (OpenSSL, OpenSSH, Apache, Squid, Snort, collectd, ntfs-3g, Openswan, Updatexlrator, iptables, l7protocols)</li>
+						<li>-Mit einer passenden WLAN-Karte kann der IPFire als Access-Point für WLAN-Clients dienen</li>
+						<li>-Bessere Unterstützung für UMTS-3G-Modems</li>
+						<li>-Verwendung von tmpfs zur Reduzierung von Schreibzugriffen</li>
+						<li>-Verbesserte Hardwareüberwachung durch Lmsensors</li>
+						<li>-Vnstat Traffic-Accounting ersetzt ipac-ng</li>
+						<br />
+						<br />
+						Das IPFire-Team
+					</p>
+
+				</div>
 
 				<br class="clear" />
 

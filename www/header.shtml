@@ -50,7 +50,7 @@
 			<img src="/images/icons/ipfire.png" width="48px" height="48px" class="symbol" alt="IPFire" />
 			<h1><span>IPFire</span>.org</h1>
 			<br />
-			<h2>Secure your lan</h2>
+			<h2>Security today!</h2>
 		</div>
 		
 		<!--#if expr="$REQUEST_URI != /^\/error/" -->

@@ -24,18 +24,7 @@
 				</ul>
 
 				<p>
-					Zurzeit gibt es zwei Entwicklungsversionen:<br /><br />
-					<strong>Version 2.x:</strong> Die Version 2.3 steht ab sofort
-					zum Test zur Verfügung (siehe <a href="#nightly">Nightly-Builds</a>)
-					und wird bald die Version 2.1 ablösen.<br />
-					Detaillierte Informationen zu den Änderungen findet ihr
-					in Kürze an dieser Stelle.
-					<!-- <ul class="links">
-						<li class="first">...</li>
-						<li>...</li>
-					</ul> -->
-					<br /><br />
-					
+					Zurzeit gibt eine frühe Entwicklungsversion:<br /><br />
 					<strong>Version 3.x:</strong> Die nächste Major-Version wird
 					in Kürze in den Alpha-Status übergehen und hat seine
 					Roadmap unter

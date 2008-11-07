@@ -13,9 +13,9 @@
 
 				<p>
 					One can find here all the downloads of the ipfire project.<br />
-					There are the brand new release <a href="#final">2.1</a> and the
-					good old stable <a href="#oldfinal">1.4.9</a> as well as a 
-					<a href="#devel">development section</a>.
+					There are the brand new release <a href="#final">2.3</a> and the
+					two good old stables <a href="#oldfinal">1.4.9</a> and
+					<a href="#veryoldfinal">1.4.9</a>
 				</p>
 				
 				<p>
@@ -30,12 +30,33 @@
 				</p>
 				
 				<br class="clear" />
-			
+
 				<div class="post">
 					<a name="final"></a>
-					<h3>IPFire 2.1</h3>
+					<h3>IPFire 2.3</h3>
 					<ul class="post_info">
 						<li class="date">The brand new stable</li>
+					</ul>
+					<p>
+						This is the very new stable 2.3 with kernel 2.6.25.19.
+					</p>
+
+					<div align="right">
+						<a href="http://download.ipfire.org/torrent/ipfire-2.3.i586-full.iso.torrent">IPFire 2.3 - TORRENT - DISK</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.3.i586-full.iso">IPFire 2.3 - HTTP - DISK</a><br /><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-hdd.i586.img.gz">IPFire 2.3 - HTTP - USB (HDD)</a><br />
+						<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-fdd.i586.img.gz">IPFire 2.3 - HTTP - USB (FDD)</a>
+					</div>
+
+				</div>
+
+				<br class="clear" />
+
+				<div class="post">
+					<a name="oldfinal"></a>
+					<h3>IPFire 2.1</h3>
+					<ul class="post_info">
+						<li class="date">The good old stable</li>
 					</ul>
 					<p>
 						This is the very new stable 2.1 with kernel 2.6.16.57.
@@ -58,10 +79,10 @@
 				<br class="clear" />
 			
 				<div class="post">
-					<a name="oldfinal"></a>
+					<a name="veryoldfinal"></a>
 					<h3>IPFire 1.4.9 FINAL</h3>
 					<ul class="post_info">
-						<li class="date">The good old stable</li>
+						<li class="date">The very old stable</li>
 					</ul>
 					<p>
 						The final version was released in August 2005.

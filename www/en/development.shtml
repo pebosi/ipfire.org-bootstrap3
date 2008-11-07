@@ -24,17 +24,7 @@
 				</ul>
 
 				<p>
-					There are two branches of development at the moment:<br /><br />
-					<strong>version 2.x:</strong> Version 2.3 is available for
-					testing purposes right now (see <a href="#nightly">nightly builds</a>)
-					and will replace version 2.1, soon.<br />
-					You will find detailed information at this place, shortly.
-					<!-- <ul class="links">
-						<li class="first">...</li>
-						<li>...</li>
-					</ul> -->
-					<br /><br />
-					
+					There is one early development version at the moment:<br /><br />
 					<strong>version 3.x:</strong> The next major release
 					will be in alpha state, soon. See the roadmap at:
 					<a href="http://wiki.ipfire.org/Version_3.0" target="_blank">http://wiki.ipfire.org/Version_3.0</a>.
