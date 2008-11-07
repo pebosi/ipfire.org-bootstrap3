@@ -7,7 +7,8 @@ import urlparse
 import cgi
 from mimetypes import guess_type
 
-debug = None #open("debug.log", "a")
+access = open("access.log", "a")
+error  = open("error.log",  "a")
 
 hosts = (
 #			PRIO SCHEME  HOSTNAME               PATH
@@ -62,8 +63,8 @@ class Server:
 		try:
 			f = urllib2.urlopen("%s" % urlparse.urljoin(self.url(), file))
 		except (urllib2.HTTPError, urllib2.URLError), e:
-			if debug:
-				debug.write("ERR %s %s\n" % (self.url(), e))
+			if error:
+				error.write("ERR 500 - %s %s\n" % (self.url(), e))
 		else:
 			ret = f.geturl()
 			f.close()
@@ -125,20 +126,21 @@ while servers.all():
 	print "Pragma: no-cache"
 	print
 
-	if debug:
-		debug.write("OK  %s\n" % url)
+	access.write("%s\n" % url)
 
 	break
 else:
 	if os.access(file, os.R_OK):
+		access.write("%s\n" % url)
 		servefile(file)
 	else:
 		print "Status: 404 Not Found"
 		print "Pragma: no-cache"
 		print
 
-		if debug:
-			debug.write("ERR %s wasn't found on any server" % file)
+		if error:
+			error.write("ERR 404 - %s wasn't found on any server" % file)
 
-if debug:
-	debug.close()
+access.close()
+if error:
+	error.close()

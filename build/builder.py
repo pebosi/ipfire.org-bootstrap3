@@ -119,7 +119,7 @@ class DurationsConfig:
 		ret = []
 		for value in c.fetchall():
 			value = int("%s" % value)
-			if value < 5400: # 1,5h
+			if value < 900: # 15min
 				continue
 			ret.append(value)
 		c.close()
