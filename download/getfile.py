@@ -5,6 +5,7 @@ import random
 import urllib2
 import urlparse
 import cgi
+import time
 from mimetypes import guess_type
 
 access = open("access.log", "a")
@@ -64,6 +65,7 @@ class Server:
 			f = urllib2.urlopen("%s" % urlparse.urljoin(self.url(), file))
 		except (urllib2.HTTPError, urllib2.URLError), e:
 			if error:
+				error.write("%s " % time.asctime())
 				error.write("ERR 500 - %s %s\n" % (self.url(), e))
 		else:
 			ret = f.geturl()
@@ -126,6 +128,7 @@ while servers.all():
 	print "Pragma: no-cache"
 	print
 
+	access.write("%s " % time.asctime())
 	access.write("%s\n" % url)
 
 	break
@@ -139,6 +142,7 @@ else:
 		print
 
 		if error:
+			error.write("%s " % time.asctime())
 			error.write("ERR 404 - %s wasn't found on any server" % file)
 
 access.close()
