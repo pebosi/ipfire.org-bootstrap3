@@ -216,6 +216,7 @@ class Builder:
 		self.hostname = DatabaseConfig(self.db, "hostname")
 		self.state    = DatabaseConfig(self.db, "state")
 		self.package  = DatabaseConfig(self.db, "package")
+		self.target   = DatabaseConfig(self.db, "target")
 
 		self.duration = DurationsConfig(self.db)
 		self.jobs     = DatabaseConfig(self.db, "jobs")
