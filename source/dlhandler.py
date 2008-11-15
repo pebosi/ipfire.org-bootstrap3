@@ -23,11 +23,21 @@ import os
 import cgi
 from git import *
 
+def give_403():
+	print "Status: 403 Forbidden"
+	print "Pragma: no-cache"
+	print "Cache-control: no-cache"
+	print "Connection: close"
+	print
+	print
+	os._exit(0)
+
 def give_404():
 	print "Status: 404 Not found"
 	print "Pragma: no-cache"
 	print "Cache-control: no-cache"
 	print "Connection: close"
+	print
 	print
 	os._exit(0)
 
@@ -155,12 +165,14 @@ class PatchObject(SourceObject):
 path = cgi.FieldStorage().getfirst('path')
 ver = cgi.FieldStorage().getfirst('ver')
 
+if not os.environ["HTTP_USER_AGENT"].startswith("IPFireSourceGrabber"):
+	give_403()
+
 if not path:
 	give_302()
 
 if not ver:
 	ver = "3.x"
-
 
 # At first, we assume that the requested object is a plain file:
 try:
