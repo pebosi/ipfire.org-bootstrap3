@@ -66,7 +66,7 @@ if action == "set":
 	builder = Builder(config, uuid)
 	
 	key = None
-	for key in [ "distcc", "duration", "hostname", "jobs", "log", "state", "package", ]:
+	for key in [ "distcc", "duration", "hostname", "jobs", "log", "state", "package", "target" ]:
 		for value in data.getlist(key):
 			builder.set(key, value)
 elif action == "get":

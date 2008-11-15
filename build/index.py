@@ -103,6 +103,12 @@ class Site:
 				div.log p {
 					font-family: Courier New;
 				}
+				div.footer {
+				}
+				div.footer p {
+					text-align: center;
+					font-size: 5px;
+				}
 				p {
 					margin: 2px;
 				}
@@ -187,6 +193,7 @@ class Box:
 		self.durations()
 		if self.builder.state() == "error":
 			self.log()
+		self.footer()
 		print """\
 				</div>"""
 	
@@ -251,6 +258,13 @@ class Box:
 						</p>
 					</div>
 			"""
+
+	def footer(self):
+		print """\
+					<div class="footer">
+						<p>target: %s - jobs: %s</p>
+					</div>
+			""" % (self.builder.target(), self.builder.jobs(),)
 
 site = Site(config)
 
