@@ -24,6 +24,7 @@ import sys
 import time
 import socket
 import base64
+import shutil
 from pysqlite2 import dbapi2 as sqlite
 
 sys.path.append(".")
@@ -223,6 +224,31 @@ class Builder:
 		self.distcc   = DistccConfig(self.db, "distcc", self.hostname(), self.jobs())
 
 		self.log      = FileConfig(self.path, "log")
+		
+		# If host was longer than 3 days in state compiling we set it as idle.
+		if self.state() == "compiling" and \
+				(time.time() - self.state.time()) > 3*24*60*60:
+			self.state.set("idle")
+		
+		# If host is idle and distcc is not disabled we set it as distcc host.
+		if self.state() == "idle" and self.distcc() != "0":
+			self.state.set("distcc")
+
+		# If host is longer than 24h in error state we set it as distcc host.
+		if self.state() == "error" and \
+				(time.time() - self.state.time()) > 24*60*60:
+			self.state.set("distcc")
+		
+		# If host was longer than two weeks in distcc state we set it as unknown.
+		if self.state() == "error" and \
+				(time.time() - self.state.time()) > 2*7*24*60*60:
+			self.state.set("unknown")
+
+		# If host was longer than four weels in distcc state we delete it.
+		if self.state() == "unknown" and \
+				(time.time() - self.state.time()) > 4*7*24*60*60:
+			del self.db
+			shutil.rmtree(self.path)
 
 	def set(self, key, value):
 		eval("self.%s.set(\"%s\")" % (key, value,))

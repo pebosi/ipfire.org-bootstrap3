@@ -143,14 +143,6 @@ class Site:
 		<body>
 			<div id="header">
 				<h1>IPFire Builder</h1>""" % self.config
-		if self.builders:
-			print """\
-				<p>
-					""",
-			for builder in self.builders:
-				print builder,
-			print """
-				</p>"""
 		for i in self.config["nightly_url"]:
 			print """\
 				<p><a href="%s" target="_blank">%s</a></p>""" % (i, i,)
@@ -163,52 +155,46 @@ class Site:
 
 	def content(self):
 		if self.builders:
-			count = 0
 			print """\
 			<div id="content">"""
 			for builder in self.builders:
-				builder(count)
-				count += 1
+				builder()
 			print """\
 			</div>"""
 
 class Box:
 	def __init__(self, builder):
-		self.builder =  builder
+		self.builder = builder
+		self.points = POINTS_UNKNOWN
 	
-	def __call__(self, count):
-		print """\
-				<a name="%s"></a>
-				<div class="box" style="%s">"""\
-				% (self.builder.hostname(), state2style[self.builder.state()],)
-		print """\
-					<div class="infobox">"""
-		self.distccinfo()
-		self.package()
-		self.time()
-		print """\
-					</div>"""
-		self.header()
-		self.stateinfo()
-		self.durations()
-		if self.builder.state() == "error":
-			self.log()
-		self.footer()
-		print """\
-				</div>"""
-	
+	def __cmp__(self, other):
+		if self.points > other.points:
+			return -1
+		elif self.points == other.points:
+			return 0
+		elif self.points < other.points:
+			return 1
+
 	def __str__(self):
 		return """<a href="#%(hostname)s">%(hostname)s</a>""" % { "hostname" : self.builder.hostname(), }
 
+	def open_bigbox(self):
+		print """<a name="%s"></a><div class="box" style="%s">""" \
+			% (self.builder.hostname(), state2style[self.builder.state()],)
+
+	def open_infobox(self):
+		print """<div class="infobox">"""
+
+	def close_bigbox(self):
+		print """</div>"""
+
+	close_infobox = close_bigbox
+
 	def header(self):
-		print """\
-					<p class="boxheader">
-						%(hostname)s <span>[%(uuid)s]</span>
-					</p>
-					<!-- <img class="right" src="/images/%(state)s.png" /> -->""" \
-				% { "hostname" : self.builder.hostname(),
-					"state"    : self.builder.state(),
-					"uuid"     : self.builder.uuid, }
+		print """<p class="boxheader">%(hostname)s <span>[%(uuid)s]</span></p>""" \
+			% { "hostname" : self.builder.hostname(),
+				"state"    : self.builder.state(),
+				"uuid"     : self.builder.uuid, }
 	
 	def package(self):
 		if self.builder.state() in [ "compiling", "error", ]:
@@ -217,23 +203,18 @@ class Box:
 				% self.builder.package()
 	
 	def time(self):
-		print """\
-						<p>%s</p>""" \
-				% time.ctime(float(self.builder.state.time()))
+		print """<p>%s</p>""" \
+			% time.ctime(float(self.builder.state.time()))
 	
 	def stateinfo(self):
-		if self.builder.state() in [ "compiling", "error", "idle", ]:
-			print """\
-					<p class="desc">%s</p>""" \
-				 % statedesc[self.builder.state()]
+		print """<p class="desc">%s</p>""" \
+			% statedesc[self.builder.state()]
 	
 	def durations(self):
-		print """\
-					<p>Average Build Duration: %s</p>""" \
-				% format_time(self.builder.duration.get_avg())
+		print """<p>Average Build Duration: %s</p>""" \
+			% format_time(self.builder.duration.get_avg())
 		if self.builder.state() == "compiling":
-			print """\
-					<p>ETA: %s</p>""" \
+			print """<p>ETA: %s</p>""" \
 				% self.builder.duration.get_eta(self.builder.state.time())
 	
 	def distccinfo(self):
@@ -242,34 +223,109 @@ class Box:
 		if port == "0":
 			state = False
 			port = "disabled"
-		print """\
-						<p class="%s">Distcc: %s</p>""" \
+		print """<p class="%s">Distcc: %s</p>""" \
 				% (ping2class[state], port,)
 	
 	def log(self):
 		log = self.builder.log()
 		if log:
-			print """\
-					<div class="log">
-						<p>"""
+			print """<div class="log"><p>"""
 			for i in log:
 				print "%s<br />" % (i.rstrip("\n"),)
-			print """\
-						</p>
-					</div>
-			"""
+			print """</p></div>"""
 
 	def footer(self):
-		print """\
-					<div class="footer">
-						<p>target: %s - jobs: %s</p>
-					</div>
-			""" % (self.builder.target(), self.builder.jobs(),)
+		print """<div class="footer"><p>target: %s - jobs: %s</p></div>""" \
+			% (self.builder.target(), self.builder.jobs(),)
+
+class BoxCompiling(Box):
+	def __init__(self, builder):
+		Box.__init__(self, builder)
+		self.points = POINTS_COMPILING
+
+	def __call__(self):
+		self.open_bigbox()
+		self.open_infobox()
+		self.distccinfo()
+		self.package()
+		self.time()
+		self.close_infobox()
+		self.header()
+		self.stateinfo()
+		self.durations()
+		self.footer()
+		self.close_bigbox()
+
+class BoxError(Box):
+	def __init__(self, builder):
+		Box.__init__(self, builder)
+		self.points = POINTS_ERROR
+
+	def __call__(self):
+		self.open_bigbox()
+		self.open_infobox()
+		self.distccinfo()
+		self.package()
+		self.time()
+		self.close_infobox()
+		self.header()
+		self.stateinfo()
+		self.durations()
+		self.log()
+		self.footer()
+		self.close_bigbox()
+
+class BoxDistcc(Box):
+	def __init__(self, builder):
+		Box.__init__(self, builder)
+		self.points = POINTS_DISTCC
+
+	def __call__(self):
+		self.open_bigbox()
+		self.open_infobox()
+		self.distccinfo()
+		self.time()
+		self.close_infobox()
+		self.header()
+		self.stateinfo()
+		self.durations()
+		self.footer()
+		self.close_bigbox()
+
+class BoxIdle(Box):
+	def __init__(self, builder):
+		Box.__init__(self, builder)
+		self.points = POINTS_IDLE
+
+	def __call__(self):
+		self.open_bigbox()
+		self.open_infobox()
+		self.distccinfo()
+		self.time()
+		self.close_infobox()
+		self.header()
+		self.stateinfo()
+		self.durations()
+		self.footer()
+		self.close_bigbox()
 
 site = Site(config)
 
 boxes = []
-for builder in getAllBuilders(3):
-	boxes.append(Box(builder))
+for builder in getAllBuilders():
+	box = None
+	if builder.state() == "compiling":
+		box = BoxCompiling(builder)
+	elif builder.state() == "error":
+		box = BoxError(builder)
+	elif builder.state() == "idle":
+		box = BoxIdle(builder)
+	elif builder.state() == "distcc":
+		if builder.distcc() == "0":
+			continue
+		box = BoxDistcc(builder)
+	if box:
+		boxes.append(box)
 
+boxes.sort()
 site(boxes)

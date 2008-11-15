@@ -22,6 +22,12 @@
 import os
 import time
 
+POINTS_UNKNOWN   = 0
+POINTS_IDLE      = 1
+POINTS_DISTCC    = 2
+POINTS_ERROR     = 4
+POINTS_COMPILING = 8
+
 config = {
 	"title"       : "IPFire - Builder",
 	"nightly_url" : ("ftp://ftp.ipfire.org/pub/nightly-builds/", "http://www.rowie.at/upload/ipfire/builds/",),
@@ -36,6 +42,7 @@ statedesc = {
 	"compiling" : "The host is really hard working at the moment...",
 	"error" : "Oops! The host had an error...",
 	"idle" : "The host is idle at the moment...",
+	"distcc" : "This host is waiting for distcc requests...",
 }
 
 ping2class = {
@@ -46,6 +53,7 @@ ping2class = {
 state2style = {
 	None        : "",
 	"compiling" : "background: #8C8; border: 1px solid #0e0;",
+	"distcc"    : "background: #58c; border: 1px solid #8ac;",
 	"error"     : "background: #c33; border: 1px solid #e00;",
 	"idle"      : "background: #ddd; border: 1px solid #eee;",
 }
