@@ -9,6 +9,14 @@
 			<div id="columnA_2columns">
 
 				<h3>more security for your network</h3>
+
+				<p style="border: 1px solid #f60; background: #fee; padding: 5px;">
+					<b>Dear users!</b><br /><br />
+					At the moment, there are a lot updates to do for our serverfarm.
+					Though, some services could be down. We are looking forward
+					to bring everything back online as fast as possible.
+				</p>
+
 				<p>
 					<strong>IPFire</strong> is a source-based linux firewall distribution
 					that brings additional features with it. The easy-to-set-up system defeats

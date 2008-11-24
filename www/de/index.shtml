@@ -9,6 +9,15 @@
 			<div id="columnA_2columns">
 
 				<h3>Sicherheit heute!</h3>
+
+				<p style="border: 1px solid #f60; background: #fee; padding: 5px;">
+					<b>Sehr geehrte User!</b><br /><br />
+					Im Augenblick sind aufgrund von Updates auf der Serverfarm
+					nicht alle Dienst erreichbar. Wir bitten dies zu entschuldigen
+					und hoffen, dass wir alle Dienst bald wieder zu Verfügung stellen
+					können.
+				</p>
+
 				<p>
 					<strong>IPFire</strong> ist eine aus den Sourcen gebaute Linux-Firewall-Distribution,
 					die mit zusätzlichen Funktionen aufwarten kann. Das leicht installierte
