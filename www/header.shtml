@@ -68,28 +68,28 @@
 					<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 					<li><a href="http://forum.ipfire.org/">Forum</a></li>
 					<li><a href="development.shtml">Development</a></li>
-					<!--#else-->
+					<!--#else -->
 						<!--#if expr="$DOCUMENT_NAME = development.shtml" -->
 						<li><a href="index.shtml">Home</a></li>
 						<li><a href="downloads.shtml">Downloads</a></li>
 						<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 						<li><a href="http://forum.ipfire.org/">Forum</a></li>
 						<li><a class="active" href="development.shtml">Development</a></li>
-						<!--#else-->
+						<!--#else -->
 							<li><a class="active" href="index.shtml">Home</a></li>
 							<li><a href="downloads.shtml">Downloads</a></li>
 							<li><a href="http://wiki.ipfire.org/">Wiki</a></li>
 							<li><a href="http://forum.ipfire.org/">Forum</a></li>
 							<li><a href="development.shtml">Development</a></li>
-						<!--#endif-->
-					<!--#endif-->
-				<!--#endif-->
+						<!--#endif -->
+					<!--#endif -->
+				<!--#endif -->
 				<!--#if expr="$SERVER_NAME = source.ipfire.org" -->
 				<li><a class="active" href="source.shtml">Source</a></li>
-				<!--#endif-->
+				<!--#endif -->
 				<!--#if expr="$SERVER_NAME = tracker.ipfire.org" -->
 				<li><a class="active" href="tracker.shtml">Tracker</a></li>
-				<!--#endif-->
+				<!--#endif -->
 			</ul>
 		</div>
 		<!--#endif -->
