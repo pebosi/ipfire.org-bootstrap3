@@ -1,6 +1,12 @@
 #!/usr/bin/python
 
-import cgitb, os, time, socket, cgi, DNS, GeoIP
+import cgitb
+import os
+import time
+import socket
+import cgi
+#import DNS
+import GeoIP
 cgitb.enable()
 
 #gi = GeoIP.new(GeoIP.GEOIP_STANDARD)
@@ -31,6 +37,7 @@ def print_header():
 	<body>
 		<h1>IPFire Distribution</h1>
 		<p>Made: %s</p>''' % (os.environ['SCRIPT_NAME'], ver, uuid, time.ctime())
+	print "</table>"
 
 def beautify_ip(ip):
 	try:
