@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site>
+	<Config>
+		<Title lang="en">Welcome</Title>
+		<Title lang="de">Willkommen</Title>
+	</Config>
+	<Paragraphs>
+		<Paragraph>
+			<Heading lang="en">more security for your network</Heading>
+			<Heading lang="de">Sicherheit heute!</Heading>
+
+			<Content lang="en"><![CDATA[
+				<strong>IPFire</strong> is a source-based linux firewall distribution
+				that brings additional features with it. The easy-to-set-up system defeats
+				its competitiors like IPCop, Smoothwall and Endian-Firewall potty.
+				A <strong>stateful-inspection-firewall</strong> with a luxuriant
+				<strong>content-filtering</strong>-engine plus
+				<strong>traffic-control (QoS)</strong> rounded with latest
+				<strong>vpn-technology</strong> and a lot of logging is
+				foolproof to administer with just a very few clicks.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				<strong>IPFire</strong> ist eine aus den Sourcen gebaute Linux-Firewall-Distribution,
+				die mit zusätzlichen Funktionen aufwarten kann. Das leicht installierte
+				Grundsystem, kann es an sich mit Konkurrenten wie
+				z.B. IPCop, Smoothwall oder der Endian-Firewall aufnehmen.
+				Die <strong>Stateful-Inspection-Firewall</strong> mit üppigen
+				<strong>Content-Filtering</strong>-Funktionen, sowie
+				<strong>Traffic-Kontrolle (QoS)</strong>, abgerundet durch
+				<strong>VPN-Technologie</strong> und breitbandigem Logging,
+				kann der Administrator umfassend und mit wenigen Knopfdrücken
+				konfigurieren.
+				]]></Content>
+
+			<Content><![CDATA[
+				<img src="/images/Network-1.png" alt="IPFire Logo" />
+				<br class="clear" />
+				]]></Content>
+			
+			<Content lang="en"><![CDATA["Modular system" is the principle of IPFire.<br />
+				There is a big number of addons. See the short list below:
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Nach dem "Baukastenprinzip" lässt sich der IPFire
+				durch diverse Addons erweitern.<br />
+				Zu diesen Addons gehören:
+				]]></Content>
+			
+			<Content lang="en" raw="1"><![CDATA[
+				<ul class="links">
+					<li class="first">- Intrusion-Prevention-System Snort(Guardian) and more security tools Tripwire and Lynis</li>
+					<li>- File- and printserver for heterogeneous networks (Samba, CUPS, FTP &amp; NFS)</li>
+					<li>- Voice-over-IP solution with Asterisk and Teamspeak plus traffic prioritization</li>
+					<li>- Multimedia addons (video- &amp; audio-streaming, jukebox)</li>
+					<li>- WLan Access Point with hostap and many Atheros Chips</li>
+					<li>- and many more - <a href="http://wiki.ipfire.org/Addons" target="_blank">List of all Addons</a></li>	
+				</ul>
+				]]></Content>
+			<Content lang="de" raw="1"><![CDATA[
+				<ul class="links">
+					<li class="first">- Intrusion-Prevention-System Snort(Guardian), sowie weitere Securtiy Tools wie Tripwire und Lynis</li>
+					<li>- Datei- und Druckserver für heterogene Netzwerke (Samba, CUPS, FTP &amp; NFS)</li>
+					<li>- Voice-over-IP-Lösung mittels Asterisk und Teamspeak, sowie Traffic-Priorisierung</li>
+					<li>- Multimedia-Addons (Video- &amp; Audio-Streaming, Jukebox)</li>
+					<li>- WLan Access Point mittels hostap für viele Atheros Chips</li>
+					<li>- und weiteren Addons - <a href="http://wiki.ipfire.org/Addons" target="_blank">Alle Addons im Wiki</a></li>	
+				</ul>
+				]]></Content>	
+
+		</Paragraph>
+	</Paragraphs>
+	
+	<Sidebar>
+		<Paragraph>
+			<Heading lang="en"><![CDATA[<span>search</span> our wiki]]></Heading>
+			<Heading lang="de"><![CDATA[<span>Suche</span> im Wiki]]></Heading>
+
+			<Content raw="1"><![CDATA[
+				<form method="post" action="http://wiki.ipfire.org/Spezial:Suche">
+				<div id="search">
+					<input name="search" value="" type="text" class="text" />
+					<input type='submit' name="fulltext" class="button" value="Go" />
+					<br class="clear" />
+				</div>
+				</form>
+				]]></Content>
+		</Paragraph>
+		
+		<Paragraph>
+			<Heading lang="en"><![CDATA[About</span> us]]></Heading>
+			<Heading lang="de"><![CDATA[<span>Über</span> uns]]></Heading>
+
+			<Content lang="en"><![CDATA[
+				<strong>IPFire</strong> is developed by a group
+				of free programmers. They set it as their target
+				to create a secure and easy-going on ressources
+				firewall and a wide-ranging soho-server
+				in one piece.]]></Content>
+			<Content lang="de"><![CDATA[
+				<strong>IPFire</strong> wird von einer Gruppe von
+				freien Personen programmiert. Diese haben sich
+				zum Ziel gesetzt eine sichere und ressourcenschonende
+				Firewall und einen breit gefächerten SOHO-Server
+				aus einem Guss zu erstellen.
+				]]></Content>
+		</Paragraph>
+		
+		<Paragraph>
+			<Heading><![CDATA[<span>RSS</span> feed]]></Heading>
+
+			<Content lang="en"><![CDATA[
+				<a class="feed" href="http://www.ipfire.org/data/feeds/main-en.rss">IPFire - News</a>
+				<br />
+				<a href="news.shtml">news archive</a>]]></Content>
+			<Content lang="de"><![CDATA[
+				<a class="feed" href="http://www.ipfire.org/data/feeds/main-en.rss">IPFire - News</a>
+				<br />
+				<a href="news.shtml">News-Archiv</a>
+				]]></Content>
+		</Paragraph>
+		
+		<Paragraph>
+			<Heading><![CDATA[<span>Internet Relay</span> Chat]]></Heading>
+			<Content><![CDATA[
+				<b>Server:</b> irc.freenode.net<br />
+				<b>Channel:</b> #ipfire<br />
+				<a href="http://embed.mibbit.com/?settings=7ca12664887d4b6e7a0fa6552f9e0de6&amp;server=irc.freenode.net&amp;channel=%23ipfire&noServerNotices=true&forcePrompt=true&charset=ISO-8859-2" target="_blank">Web-Chat</a>
+				]]></Content>
+		</Paragraph>
+	</Sidebar>
+</Site>

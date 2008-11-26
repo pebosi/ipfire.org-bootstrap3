@@ -6,7 +6,7 @@ import cgi
 
 sites = (
 			("ipfire.org", ("www.ipfire.org", None)),
-			("www.ipfire.org", (None, cgi.FieldStorage().getfirst("file") or "index.shtml")),
+			("www.ipfire.org", (None, cgi.FieldStorage().getfirst("file") or "index")),
 			("source.ipfire.org", (None, "source.shtml")),
 			("tracker.ipfire.org", (None, "tracker.shtml")),
 			("download.ipfire.org", (None, "download.shtml")),
@@ -30,7 +30,7 @@ for (servername, destination) in sites:
 		if destination[0]:
 			location = "http://%s" % destination[0]
 		if destination[1]:
-			location += "/%s/%s" % (language, destination[1])
+			location += "/%s/%s" % (destination[1], language,)
 		break
 
 print "Location: %s" % location
