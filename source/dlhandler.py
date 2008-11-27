@@ -162,6 +162,9 @@ class PatchObject(SourceObject):
 		return "text/plain" #self.blob.mime_type
 
 # main()
+os.environ["QUERY_STRING"] = \
+	os.environ["QUERY_STRING"].replace("+", "%2b")
+
 path = cgi.FieldStorage().getfirst('path')
 ver = cgi.FieldStorage().getfirst('ver')
 
