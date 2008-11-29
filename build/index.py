@@ -231,12 +231,13 @@ class Box:
 		if log:
 			print """<div class="log"><p>"""
 			for i in log:
-				print "%s<br />" % (i.rstrip("\n"),)
+				if i:
+					print "%s<br />" % (i.rstrip("\n"),)
 			print """</p></div>"""
 
 	def footer(self):
-		print """<div class="footer"><p>target: %s - jobs: %s</p></div>""" \
-			% (self.builder.target(), self.builder.jobs(),)
+		print """<div class="footer"><p>cpu: %s (%s) - target: %s - jobs: %s</p></div>""" \
+			% (self.builder.cpu(), self.builder.machine(), self.builder.target(), self.builder.jobs(),)
 
 class BoxCompiling(Box):
 	def __init__(self, builder):

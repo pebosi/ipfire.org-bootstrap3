@@ -55,11 +55,12 @@ class Database:
 		self.db.commit()
 
 class DatabaseConfig:
-	def __init__(self, db, key):
+	def __init__(self, db, key, base64=0):
 		self.db = db
 		self.key = key
 		self.data = None
 		self.date = None
+		self.base64 = base64
 
 	def get(self):
 		if not self.data:
@@ -90,6 +91,8 @@ class DatabaseConfig:
 		return self.date or float(0)
 
 	def set(self, value):
+		if self.base64:
+			value = base64.b64decode(value)
 		#value = (value,)
 		c = self.db.cursor()
 		if not self.get():
@@ -222,6 +225,8 @@ class Builder:
 		self.duration = DurationsConfig(self.db)
 		self.jobs     = DatabaseConfig(self.db, "jobs")
 		self.distcc   = DistccConfig(self.db, "distcc", self.hostname(), self.jobs())
+		self.cpu      = DatabaseConfig(self.db, "cpu", base64=1)
+		self.machine  = DatabaseConfig(self.db, "machine")
 
 		self.log      = FileConfig(self.path, "log")
 		
