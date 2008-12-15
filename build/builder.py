@@ -112,6 +112,7 @@ class DatabaseConfig:
 		c.close()
 		self.data = value
 		self.db.commit()
+		return """Set "%s" to "%s".""" % (self.key, self.data,)
 
 class DurationsConfig:
 	def __init__(self, db):
@@ -138,6 +139,7 @@ class DurationsConfig:
 						"value" : value, })
 		c.close()
 		self.db.commit()
+		return """Accepted build duration of %s seconds.""" % (value,)
 
 	def get_avg(self):
 		sum = 0
@@ -202,6 +204,7 @@ class FileConfig:
 		for line in base64.b64decode(lines).split("\n"):
 			f.write("%s\n" % line.rstrip("\n"))
 		f.close()
+		return """Saved file content to %s.""" % (self.filename,)
 
 class Builder:
 	def __init__(self, config, uuid):
@@ -250,13 +253,13 @@ class Builder:
 			self.state.set("unknown")
 
 		# If host was longer than four weels in distcc state we delete it.
-		if self.state() == "unknown" and \
+		if self.state() in ("distcc", "unknown",) and \
 				(time.time() - self.state.time()) > 4*7*24*60*60:
 			del self.db
 			shutil.rmtree(self.path)
 
 	def set(self, key, value):
-		eval("self.%s.set(\"%s\")" % (key, value,))
+		return eval("self.%s.set(\"%s\")" % (key, value,))
 
 	def get(self, key):
 		return eval("self.%s.get()" % (key,))

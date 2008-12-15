@@ -35,7 +35,7 @@ class Response:
 		self.config = config
 		
 		self.code = "200"
-		self.mesg = "OK"
+		self.mesg = ""
 	
 	def __call__(self, exit=0):
 		print "Status: %s" % self.code
@@ -50,6 +50,11 @@ class Response:
 	
 	def set_mesg(self, mesg):
 		self.mesg = mesg
+	
+	def write(self, s):
+		if self.mesg:
+			self.mesg += "\n"
+		self.mesg += "[%s] - %s" % (time.ctime(), s,)
 
 response = Response(config)
 
@@ -68,7 +73,9 @@ if action == "set":
 	key = None
 	for key in [ "distcc", "duration", "hostname", "jobs", "log", "state", "package", "target", "cpu", "machine" ]:
 		for value in data.getlist(key):
-			builder.set(key, value)
+			ret = builder.set(key, value)
+			if ret:
+				response.write(ret)
 elif action == "get":
 	for key in [ "distcc", ]:
 		if key == "distcc":
