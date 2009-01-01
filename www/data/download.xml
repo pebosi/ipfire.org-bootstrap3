@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site>
 	<Config>
-		<Title>Downloads</Title>
+		<Title lang="en">Downloads</Title>
+                <Title lang="de">Downloads</Title>
 	</Config>
 	<Paragraphs>
 		<Paragraph>
