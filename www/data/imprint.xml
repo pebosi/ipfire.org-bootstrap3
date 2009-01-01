@@ -1,24 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site>
 	<Config>
-		<Title >Imprint</Title>
+		<Title lang="en">Imprint</Title>
+		<Title lang="de">Imprint</Title>
 	</Config>
 	<Paragraphs>
 		<Paragraph>
 			<Heading>IPFire is OpenSource</Heading>
 
-			<Content ><![CDATA[
-				        Dieses Projekt ist ein Open-Source-Projekt und verfolgt keine kommerziellen Ziele.
-				     <b>Die Distribution "IPFire" steht unter der GPLv3 zur Verfügung und darf den Bedingung zufolge weitergegeben werden.</b>
-					Michael Tremer (<a href="mailto:michael@ipfire.org">michael@ipfire.org</a>)<br />
+			<Content lang="en"><![CDATA[
+				Because of the fact that the people who started this project are living
+				in Germany, see the <a href="/imprint/de">german legal notes</a>.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Dieses Projekt ist ein Open-Source-Projekt und verfolgt keine kommerziellen Ziele.
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				<b>Die Distribution "IPFire" steht unter der GPLv3 zur Verfügung und darf den Bedingung zufolge weitergegeben werden.</b>
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
+									Michael Tremer (<a href="mailto:michael@ipfire.org">michael@ipfire.org</a>)<br />
 					Gerhardstrasse 8<br />
 					45711 Datteln<br /><br />
 
 					Christian Schmidt (<a href="mailto:maniacikarus@ipfire.org">maniacikarus@ipfire.org</a>)<br />
 					Mathildenstr. 25<br />
 					90489 Nürnberg<br /><br />
+				]]></Content>
 			
-			        <b>1. Inhalt des Onlineangebotes</b><br />
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				<b>1. Inhalt des Onlineangebotes</b><br />
 					Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit 
 					oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, 
 					welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung 
@@ -29,7 +48,11 @@
 					Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, 
 					Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, 
 					zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
-
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
 				<b>2. Verweise und Links</b><br />
 					Bei direkten oder indirekten Verweisen auf fremde Internetseiten ("Links"), 
 					die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine 
@@ -48,7 +71,11 @@
 					die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, 
 					haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, 
 					der über Links auf die jeweilige Veröffentlichung lediglich verweist.
-
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
 				<b>3. Urheber- und Kennzeichenrecht </b><br />
 					Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Grafiken, 
 					Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Grafiken, 
@@ -61,7 +88,11 @@
 					Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. 
 					Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in 
 					anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.
-
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
 				<b>4. Datenschutz </b><br />
 					Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten 
 					(Emailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens 
@@ -72,17 +103,23 @@
 					Telefon- und Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht ausdrücklich 
 					angeforderten Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender von 
 					sogenannten Spam- Mails bei Verstössen gegen dieses Verbot sind ausdrücklich vorbehalten.
-
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
 				<b>5. Rechtswirksamkeit dieses Haftungsausschlusses </b><br />
 					Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese 
 					Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden 
 					Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen 
 					Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.
-
-				        Dieses Impressum gilt für alle mit dem IPFire-Projekt verbundenen Webseiten (Forum, etc.).
+				]]></Content>
+				
+			<Content lang="en"><![CDATA[
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Dieses Impressum gilt für alle mit dem IPFire-Projekt verbundenen Webseiten (Forum, etc.).
 				]]></Content>
 		</Paragraph>
   </Paragraphs>
-<Sidebar>
- </Sidebar>
 </Site>
