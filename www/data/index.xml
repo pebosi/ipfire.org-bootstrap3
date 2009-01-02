@@ -48,22 +48,22 @@
 			
 			<Content lang="en" raw="1"><![CDATA[
 				<ul class="links">
-					<li class="first">- Intrusion-Prevention-System Snort(Guardian) and more security tools Tripwire and Lynis</li>
-					<li>- File- and printserver for heterogeneous networks (Samba, CUPS, FTP &amp; NFS)</li>
-					<li>- Voice-over-IP solution with Asterisk and Teamspeak plus traffic prioritization</li>
-					<li>- Multimedia addons (video- &amp; audio-streaming, jukebox)</li>
-					<li>- WLan Access Point with hostap and many Atheros Chips</li>
-					<li>- and many more - <a href="http://wiki.ipfire.org/Addons" target="_blank">List of all Addons</a></li>	
+					<li class="first">Intrusion-Prevention-System Snort(Guardian) and more security tools Tripwire and Lynis</li>
+					<li>File- and printserver for heterogeneous networks (Samba, CUPS, FTP &amp; NFS)</li>
+					<li>Voice-over-IP solution with Asterisk and Teamspeak plus traffic prioritization</li>
+					<li>Multimedia addons (video- &amp; audio-streaming, jukebox)</li>
+					<li>WLan Access Point with hostap and many Atheros Chips</li>
+					<li>and many more - <a href="http://wiki.ipfire.org/Addons" target="_blank">List of all Addons</a></li>	
 				</ul>
 				]]></Content>
 			<Content lang="de" raw="1"><![CDATA[
 				<ul class="links">
-					<li class="first">- Intrusion-Prevention-System Snort(Guardian), sowie weitere Securtiy Tools wie Tripwire und Lynis</li>
-					<li>- Datei- und Druckserver für heterogene Netzwerke (Samba, CUPS, FTP &amp; NFS)</li>
-					<li>- Voice-over-IP-Lösung mittels Asterisk und Teamspeak, sowie Traffic-Priorisierung</li>
-					<li>- Multimedia-Addons (Video- &amp; Audio-Streaming, Jukebox)</li>
-					<li>- WLan Access Point mittels hostap für viele Atheros Chips</li>
-					<li>- und weiteren Addons - <a href="http://wiki.ipfire.org/Addons" target="_blank">Alle Addons im Wiki</a></li>	
+					<li class="first">Intrusion-Prevention-System Snort(Guardian), sowie weitere Securtiy Tools wie Tripwire und Lynis</li>
+					<li>Datei- und Druckserver für heterogene Netzwerke (Samba, CUPS, FTP &amp; NFS)</li>
+					<li>Voice-over-IP-Lösung mittels Asterisk und Teamspeak, sowie Traffic-Priorisierung</li>
+					<li>Multimedia-Addons (Video- &amp; Audio-Streaming, Jukebox)</li>
+					<li>WLan Access Point mittels hostap für viele Atheros Chips</li>
+					<li>und weiteren Addons - <a href="http://wiki.ipfire.org/Addons" target="_blank">Alle Addons im Wiki</a></li>	
 				</ul>
 				]]></Content>	
 
