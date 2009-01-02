@@ -137,12 +137,12 @@
 					Download: <a href="ftp://ftp.ipfire.org/pub/nightly-builds/" target="_blank">ftp://ftp.ipfire.org/pub/nightly-builds/</a>
 				]]></Content>
 		</Paragraph>
-  </Paragraphs>
-  <Sidebar>
+	</Paragraphs>
+	<Sidebar>
 		<Paragraph>
 			<Heading lang="en"><![CDATA[<span>Development</span> Zone]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Development</span> Zone]]></Heading>
-	
+			
 			<Content><![CDATA[
 				<ul class="links">
 					<li class="first"><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net</a></li>
