@@ -14,28 +14,28 @@
 				Major changes since the first version 2.1 in Oktober 2007
 				<br />
 				<ul>
-					<li class="first">-DNS-Securityupdate and many more packet updates</li>
-					<li>-Enhancement of the packet manager</li>
-					<li>-Improvement of the Quality-of-Service rules - Presets for QoS</li>
-					<li>-Adjustable Firewall Logging</li>
-					<li>-Kernel-Modules for better hardware suport</li>
-					<li>-Change the system statistic to „collectd"</li>
-					<li>-Better disk handling (S.M.A.R.T. and Standby)</li>
-					<li>-Status- and Serviceview in the Webinterface</li>
-					<li>-Proxy and Redirector now work more dynamic</li>
+					<li class="first">DNS-Securityupdate and many more packet updates</li>
+					<li>Enhancement of the packet manager</li>
+					<li>Improvement of the Quality-of-Service rules - Presets for QoS</li>
+					<li>Adjustable Firewall Logging</li>
+					<li>Kernel-Modules for better hardware suport</li>
+					<li>Change the system statistic to „collectd"</li>
+					<li>Better disk handling (S.M.A.R.T. and Standby)</li>
+					<li>Status- and Serviceview in the Webinterface</li>
+					<li>Proxy and Redirector now work more dynamic</li>
 				</ul>
 				<br />
 				<br />
 				In addition the 2.3 will change the following things
 				<br />
 				<ul>
-					<li class="first">-Kernel update to Linux-2.6.25.19</li>
+					<li class="first">Kernel update to Linux-2.6.25.19</li>
 					<li>Update of many more packets (OpenSSL, OpenSSH, Apache, Squid, Snort, collectd, ntfs-3g, Openswan, Updatexlrator, iptables, l7protocols)</li>
-					<li>-With severall Atheros Chips IPFire is able to work as Wireless Access Point</li>
-					<li>-Better support of UMTS-3G-Modems</li>
-					<li>-Use of tmpfs to reduce disk reads and writes</li>
-					<li>-Better hardware monitoring by the use of lmsensors</li>
-					<li>-Vnstat Traffic-Accounting replaces ipac-ng</li>
+					<li>With severall Atheros Chips IPFire is able to work as Wireless Access Point</li>
+					<li>Better support of UMTS-3G-Modems</li>
+					<li>Use of tmpfs to reduce disk reads and writes</li>
+					<li>Better hardware monitoring by the use of lmsensors</li>
+					<li>Vnstat Traffic-Accounting replaces ipac-ng</li>
 				</ul>
 				<br />
 				<br />
@@ -49,28 +49,28 @@
 				Wesentliche Änderungen seit der ersten Version 2.1 im Oktober 2007
 				<br />
 				<ul>
-					<li class="first">-DNS-Sicherheitsupdate und viele weitere Paket-Aktualisierungen</li>
-					<li>-Erweiterung des Paketmanagers</li>
-					<li>-Verfeinerung der Quality-of-Service Regeln - Voreinstellungsmodell für QoS</li>
-					<li>-Feiner einstellbares Firewall Logging</li>
-					<li>-Kernel-Module zur Hardwareunterstützung wurden nachgeliefert</li>
-					<li>-Umstellung der Systemstatistiken auf „collectd"</li>
-					<li>-Verbessertes Festplatten-Handling (S.M.A.R.T. und Standby)</li>
-					<li>-Status- und Serviceübersicht im Webinterface</li>
-					<li>-Proxy und Redirector arbeiten dynamischer zusammen</li>
+					<li class="first">DNS-Sicherheitsupdate und viele weitere Paket-Aktualisierungen</li>
+					<li>Erweiterung des Paketmanagers</li>
+					<li>Verfeinerung der Quality-of-Service Regeln - Voreinstellungsmodell für QoS</li>
+					<li>Feiner einstellbares Firewall Logging</li>
+					<li>Kernel-Module zur Hardwareunterstützung wurden nachgeliefert</li>
+					<li>Umstellung der Systemstatistiken auf „collectd"</li>
+					<li>Verbessertes Festplatten-Handling (S.M.A.R.T. und Standby)</li>
+					<li>Status- und Serviceübersicht im Webinterface</li>
+					<li>Proxy und Redirector arbeiten dynamischer zusammen</li>
 				</ul>
 				<br />
 				<br />
 				Mit der 2.3 wird sich zusätzlich folgendes ändern
 				<br />
 				<ul>
-					<li class="first">-Der Kernel wurde auf Linux-2.6.25.19 aktualisiert</li>
+					<li class="first">Der Kernel wurde auf Linux-2.6.25.19 aktualisiert</li>
 					<li>Aktualisierungen von weiteren Paketen (OpenSSL, OpenSSH, Apache, Squid, Snort, collectd, ntfs-3g, Openswan, Updatexlrator, iptables, l7protocols)</li>
-					<li>-Mit einer passenden WLAN-Karte kann der IPFire als Access-Point für WLAN-Clients dienen</li>
-					<li>-Bessere Unterstützung für UMTS-3G-Modems</li>
-					<li>-Verwendung von tmpfs zur Reduzierung von Schreibzugriffen</li>
-					<li>-Verbesserte Hardwareüberwachung durch Lmsensors</li>
-					<li>-Vnstat Traffic-Accounting ersetzt ipac-ng</li>
+					<li>Mit einer passenden WLAN-Karte kann der IPFire als Access-Point für WLAN-Clients dienen</li>
+					<li>Bessere Unterstützung für UMTS-3G-Modems</li>
+					<li>Verwendung von tmpfs zur Reduzierung von Schreibzugriffen</li>
+					<li>Verbesserte Hardwareüberwachung durch Lmsensors</li>
+					<li>Vnstat Traffic-Accounting ersetzt ipac-ng</li>
 				</ul>
 				<br />
 				<br />
