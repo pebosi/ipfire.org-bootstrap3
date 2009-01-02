@@ -6,12 +6,9 @@
 	</Config>
 	<Paragraphs>
 		<Paragraph>
-			<Heading>IPFire is OpenSource</Heading>
+			<Heading>Development</Heading>
 			
-			<Content lang="en">
-				<img src="../images/development.png" class="floatTR" alt="Download" />
-			</Content>
-			<Content lang="de">
+			<Content raw="1">
 				<img src="../images/development.png" class="floatTR" alt="Download" />
 			</Content>
 			
