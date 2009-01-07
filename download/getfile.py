@@ -16,7 +16,7 @@ hosts = (
 			( 2, "http", "mirror1.ipfire.org",   "/",),
 			( 4, "http", "mirror2.ipfire.org",   "/",),
 			( 4, "http", "mirror5.ipfire.org",   "/",),
-			( 2, "http", "www.rowie.at",         "/ipfire/",),
+			(10, "http", "www.rowie.at",         "/ipfire/",),
 			( 8, "http", "ipfire.earl-net.com",  "/",),
 			( 8, "http", "ipfire.kbarthel.de",   "/",),
 			( 8, "http", "ipfire.1l0v3u.com",    "/",),
