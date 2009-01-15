@@ -9,6 +9,7 @@
 /pakfire/2.*
 /pakfire/3.*
 /pakfire/version
+/people/*
 /source/hashes.db
 /source/source-*
 /source/toolchains
