@@ -4,14 +4,6 @@ import os
 import re
 import cgi
 
-sites = (
-			("ipfire.org", ("www.ipfire.org", None)),
-			("www.ipfire.org", (None, cgi.FieldStorage().getfirst("file") or "index")),
-			("source.ipfire.org", ("www.ipfire.org", "source")),
-			("tracker.ipfire.org", ("www.ipfire.org", "tracker")),
-			("download.ipfire.org", ("www.ipfire.org", "download")),
-		)
-
 # Check language...
 language = "en"
 try:
@@ -19,6 +11,17 @@ try:
 		language = "de"
 except KeyError:
 	pass
+
+index = cgi.FieldStorage().getfirst("file") or "index"
+
+sites = (
+			("ipfire.org", ("www.ipfire.org", None)),
+			("www.ipfire.org", (None, index + "/%s" % language)),
+			("source.ipfire.org", ("www.ipfire.org", "source/" + language)),
+			("tracker.ipfire.org", ("www.ipfire.org", "tracker/" + language)),
+			("download.ipfire.org", ("www.ipfire.org", "download/" + language)),
+			("people.ipfire.org", ("wiki.ipfire.org", language + "/people/start")),
+		)
 
 print "Status: 302 Moved"
 print "Pragma: no-cache"
@@ -30,7 +33,7 @@ for (servername, destination) in sites:
 		if destination[0]:
 			location = "http://%s" % destination[0]
 		if destination[1]:
-			location += "/%s/%s" % (destination[1], language,)
+			location += "/%s" % destination[1]
 		break
 
 print "Location: %s" % location
