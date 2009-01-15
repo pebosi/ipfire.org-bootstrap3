@@ -9,7 +9,7 @@
 /pakfire/2.*
 /pakfire/3.*
 /pakfire/version
-/source/othersrc
+/source/hashes.db
 /source/source-*
 /source/toolchains
 /svn
