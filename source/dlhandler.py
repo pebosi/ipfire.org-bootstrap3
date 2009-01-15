@@ -164,7 +164,7 @@ def main():
 	if not file:
 		give_302()
 
-	if not path:
+	if not path or path == "download":
 		path = "source-3.x"
 
 	# At first, we assume that the requested object is a plain file:
