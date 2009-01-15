@@ -21,6 +21,12 @@
 
 import os
 import cgi
+import sys
+import sha
+from pysqlite2 import dbapi2 as sqlite
+
+sys.path.append(".")
+
 from git import *
 
 def give_403():
@@ -30,7 +36,7 @@ def give_403():
 	print "Connection: close"
 	print
 	print
-	os._exit(0)
+	sys.exit()
 
 def give_404():
 	print "Status: 404 Not found"
@@ -39,7 +45,7 @@ def give_404():
 	print "Connection: close"
 	print
 	print
-	os._exit(0)
+	sys.exit()
 
 def give_302():
 	print "Status: 302 Moved"
@@ -49,62 +55,58 @@ def give_302():
 	print "Connection: close"
 	print
 	print
-	os._exit(0)
+	sys.exit()
 
 class NotFoundError(Exception):
 	pass
 
 class SourceObject:
-	def __init__(self, path):
-		self.path = path
+	def __init__(self, file):
+		self.file = file
 
-		self.object_type = None
+		self.db = sqlite.connect("hashes.db")
+		c = self.db.cursor()
+		c.execute("CREATE TABLE IF NOT EXISTS hashes(file, sha1)")
+		c.close()
 
-		# Init hashes
-		self.hash_md5 = None
-		self.hash_sha1 = None
+	def getHash(self, type="sha1"):
+		hash = None
+		c = self.db.cursor()
+		c.execute("SELECT %s FROM hashes WHERE file = '%s'" % (type, self.file,))
+		try:
+			hash = c.fetchone()[0]
+		except TypeError:
+			pass
+		c.close()
 
-	def hash(self):
-		## This is for python 2.4.
-		#import md5
-		#self.hash_md5 = md5.new(self.data()).hexdigest()
+		if not hash:
+			hash = sha.new(self.filedata).hexdigest()
+			c = self.db.cursor()
+			c.execute("INSERT INTO hashes(file, sha1) VALUES('%s', '%s')" % \
+				(self.file, hash,))
+			c.close()
+			self.db.commit()
+		return hash
 
-		import sha
-		self.hash_sha1 = sha.new(self.data()).hexdigest()
-
-	def data(self):
-		return self.filedata
-
-	def run(self):
-		self.hash()
-		self.showhttpheaders()
-		print self.data()
-
-	def showhttpheaders(self):
+	def __call__(self):
+		print "Status: 200 - OK"
 		print "Pragma: no-cache"
 		print "Cache-control: no-cache"
 		print "Connection: close"
-		print "Content-type:" + self.mimetype()
-		print "Content-length: %s" % len(self.data())
-		if self.object_type:
-			print "X-Object:" + self.object_type
-		if self.hash_md5:
-			print "X-MD5:" + self.hash_md5
-		if self.hash_sha1:
-			print "X-SHA1:" + self.hash_sha1
-		print
-		# An empty line ends the header
+		print "Content-type: " + self.getMimetype()
+		print "Content-length: %s" % len(self.filedata)
+		print "X-SHA1: " + self.getHash("sha1")
+		print "X-Object: %s" % str(self.__class__).split(".")[1]
+		print # An empty line ends the header
+		print self.filedata
+
 
 class FileObject(SourceObject):
-	def __init__(self, path, version, url="/srv/www/ipfire.org/source/"):
-		SourceObject.__init__(self, path)
-		self.url= os.path.join(url, "source-%s" % version)
-		self.filepath = os.path.join(self.url, path)
-		self.init_file()
-		
-		self.object_type = "FileObject"
+	def __init__(self, path, file):
+		SourceObject.__init__(self, file)
+		self.path = path
+		self.filepath = "/%s/%s/%s" % (os.getcwd(), path, file,)
 
-	def init_file(self):
 		try:
 			f = open(self.filepath, "rb")
 		except:
@@ -113,80 +115,73 @@ class FileObject(SourceObject):
 		self.filedata = f.read()
 		f.close()
 
-	def mimetype(self):
+	def getMimetype(self):
 		default_mimetype = "text/plain"
 		from mimetypes import guess_type
 		return guess_type(self.filepath)[0] or default_mimetype
 
+
 class PatchObject(SourceObject):
-	def __init__(self, path, url="/srv/git/patches.git"):
-		SourceObject.__init__(self, path)
-
-		self.object_type = "PatchObject"
-
+	def __init__(self, file, url="/srv/git/patches.git"):
+		SourceObject.__init__(self, file)
 		self.url = url
-		self.init_repo()
 
-	def init_repo(self):
-		# init the repo
 		self.repo = Repository(self.url)
-
-		# head, tree & blob
-		#self.head = self.repo.head()
-		self.tree = self.repo.head.tree
-
-		self.blob = self.set_blob()
-
-	def set_blob(self):
+		tree = self.repo.head.tree
 		blob = None
- 
-		for directory in self.tree.keys():
-			if isinstance(self.tree[directory], Blob):
+
+		for directory in tree.keys():
+			if isinstance(tree[directory], Blob):
 				continue
 			try:
-				blob = self.tree[directory][path]
+				blob = tree[directory][self.file]
 				if blob:
 					break
 			except KeyError:
 				pass
-		
+
 		if not blob:
 			raise NotFoundError
 
 		blob._load()
 		self.filedata = blob._contents
 		self.filedata += '\n'
-		return blob
 
-	def mimetype(self):
-		return "text/plain" #self.blob.mime_type
+	def getMimetype(self):
+		return "text/plain"
 
-# main()
-os.environ["QUERY_STRING"] = \
-	os.environ["QUERY_STRING"].replace("+", "%2b")
 
-path = cgi.FieldStorage().getfirst('path')
-ver = cgi.FieldStorage().getfirst('ver')
+def main():
+	os.environ["QUERY_STRING"] = \
+		os.environ["QUERY_STRING"].replace("+", "%2b")
 
-if not os.environ["HTTP_USER_AGENT"].startswith("IPFireSourceGrabber"):
-	give_403()
+	file = cgi.FieldStorage().getfirst("file")
+	path = cgi.FieldStorage().getfirst("path")
 
-if not path:
-	give_302()
+	if not os.environ["HTTP_USER_AGENT"].startswith("IPFireSourceGrabber"):
+		give_403()
 
-if not ver:
-	ver = "3.x"
+	if not file:
+		give_302()
 
-# At first, we assume that the requested object is a plain file:
-try:
-	object = FileObject(path=path, version=ver)
-except NotFoundError:
-	# Second, we assume that the requestet object is in the patch repo:
+	if not path:
+		path = "source-3.x"
+
+	# At first, we assume that the requested object is a plain file:
 	try:
-		object = PatchObject(path=path)
+		object = FileObject(path=path, file=file)
 	except NotFoundError:
-		give_404()
+		# Second, we assume that the requestet object is in the patch repo:
+		try:
+			object = PatchObject(file=file)
+		except NotFoundError:
+			give_404()
+		else:
+			object()
 	else:
-		object.run()
-else:
-	object.run()
+		object()
+
+try:
+	main()
+except SystemExit:
+	pass
