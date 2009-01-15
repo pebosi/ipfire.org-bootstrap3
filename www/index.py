@@ -7,9 +7,9 @@ import cgi
 sites = (
 			("ipfire.org", ("www.ipfire.org", None)),
 			("www.ipfire.org", (None, cgi.FieldStorage().getfirst("file") or "index")),
-			("source.ipfire.org", (None, "source.shtml")),
-			("tracker.ipfire.org", (None, "tracker.shtml")),
-			("download.ipfire.org", (None, "download.shtml")),
+			("source.ipfire.org", ("www.ipfire.org", "source")),
+			("tracker.ipfire.org", ("www.ipfire.org", "tracker")),
+			("download.ipfire.org", ("www.ipfire.org", "download")),
 		)
 
 # Check language...
