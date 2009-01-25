@@ -167,8 +167,8 @@ class DistccConfig(DatabaseConfig):
 	def __str__(self):
 		if not self.ping() or self.get() == "0":
 			return ""
-		return "%s:%s/%s,lzo   \t# %s" % \
-			(socket.gethostbyname(self.hostname), self.get(), self.jobs or "4", self.hostname)
+		return "%s:%s/%s,lzo" % \
+			(socket.gethostbyname(self.hostname), self.get(), self.jobs or "4",)
 
 	def ping(self):
 		if not self.hostname:
@@ -224,6 +224,7 @@ class Builder:
 		self.state    = DatabaseConfig(self.db, "state")
 		self.package  = DatabaseConfig(self.db, "package")
 		self.target   = DatabaseConfig(self.db, "target")
+		self.toolchain= DatabaseConfig(self.db, "toolchain")
 
 		self.duration = DurationsConfig(self.db)
 		self.jobs     = DatabaseConfig(self.db, "jobs")

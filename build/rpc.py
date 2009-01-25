@@ -2,7 +2,7 @@
 ###############################################################################
 #                                                                             #
 # IPFire.org - A linux based firewall                                         #
-# Copyright (C) 2008  Michael Tremer & Christian Schmidt                      #
+# Copyright (C) 2008,2009 Michael Tremer & Christian Schmidt                  #
 #                                                                             #
 # This program is free software: you can redistribute it and/or modify        #
 # it under the terms of the GNU General Public License as published by        #
@@ -22,84 +22,48 @@
 import os
 import sys
 import cgi
-import time
-import random
 
 sys.path.append(".")
 
 from builder import Builder, getAllBuilders
 from constants import config
 
-class Response:
-	def __init__(self, config):
-		self.config = config
-		
-		self.code = "200"
-		self.mesg = ""
-	
-	def __call__(self, exit=0):
-		print "Status: %s" % self.code
-		print "Content-type: text/plain"
-		print
-		print "%s" % self.mesg
-		if exit:
-			os._exit(0)
-	
-	def set_code(self, code):
-		self.code = code
-	
-	def set_mesg(self, mesg):
-		self.mesg = mesg
-	
-	def write(self, s):
-		if self.mesg:
-			self.mesg += "\n"
-		self.mesg += "[%s] - %s" % (time.ctime(), s,)
+ALLOWED_ACTIONS_SET = (	"distcc", "duration", "hostname", "jobs", "log", "state",
+						"package", "target", "toolchain", "cpu", "machine",)
+ALLOWED_ACTIONS_GET = ( "distcc",)
 
-response = Response(config)
+def run(uuid, action):
+	myself = Builder(config, uuid)
+
+	if action == "get":
+		for key in ALLOWED_ACTIONS_GET:
+			if key == "distcc":
+				for value in data.getlist(key):
+					if value == "raw":
+						builders = getAllBuilders()
+						print "--randomize"
+						for builder in builders:
+							# Print "localhost" for ourself
+							if myself.uuid == builder.uuid:
+								print "localhost/%s" % (builder.jobs() or "4")
+							else:
+								if myself.toolchain() == builder.toolchain():
+									print "%s" % (builder.distcc,)
+
+	elif action == "set":
+		for key in ALLOWED_ACTIONS_SET:
+			for value in data.getlist(key):
+				print myself.set(key, value)
 
 data = cgi.FieldStorage()
 
-uuid = data.getfirst("uuid")
-action  = data.getvalue('action')
-if action == "set":
-	if not uuid:
-		response.set_code("406")
-		response.set_mesg("UUID is not valid!")
-		response(1)
-	
-	builder = Builder(config, uuid)
-	
-	key = None
-	for key in [ "distcc", "duration", "hostname", "jobs", "log", "state", "package", "target", "cpu", "machine" ]:
-		for value in data.getlist(key):
-			ret = builder.set(key, value)
-			if ret:
-				response.write(ret)
-elif action == "get":
-	for key in [ "distcc", ]:
-		if key == "distcc":
-			for value in data.getlist(key):
-				if value == "raw":
-					builders = []
-					jobs = "4"
-					for builder in getAllBuilders():
-						if uuid == builder.uuid:
-							jobs = builder.jobs()
-							continue
-						builders.append("%s" % builder.distcc)
-					string = "localhost/%s\n--randomize\n" % (jobs or "4",)
-					while True:
-						if not builders: break
-						rand = random.randint(0, len(builders)-1)
-						if builders[rand]:
-							string = "%s%s\n" % (string, builders[rand],)
-						builders.pop(rand)
-					response.set_mesg(string)
-					
-else:
-	response.set_code("501")
-	response.set_mesg("Don't know what to do with command \"%s\"" % action)
-	response(1)
+print "Status: 200 - OK" # We always send okay.
+print
 
-response()
+try:
+	uuid   = data.getfirst("uuid")
+	action = data.getfirst("action")
+	if uuid and action:
+		run(uuid, action)
+except SystemExit:
+	pass
