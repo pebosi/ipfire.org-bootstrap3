@@ -182,17 +182,17 @@ class Xml:
 
 	def load(self):
 		self.path = \
-			os.path.join(os.environ['DOCUMENT_ROOT'], "data/%s.xml" % self.page)
+			os.path.join(os.path.dirname(os.environ['SCRIPT_FILENAME']), "data/%s.xml" % self.page)
 		try:
 			f = open(self.path)
 			self.data = f.read()
 			f.close()
 			self.dom = \
 				xml.dom.minidom.parseString(self.data).getElementsByTagName("Site")[0]
-		except IOError:
+		#except IOError:
 			#self.page = "404"
 			#self.load()
-			raise Error404
+		#	raise Error404
 		except:
 			#self.page = "500"
 			#self.load()

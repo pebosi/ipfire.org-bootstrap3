@@ -18,4 +18,9 @@
 		<Name lang="en">Development</Name>
 		<Name lang="de">Entwicklung</Name>
 	</Item>
+	<Item uri="links">
+		<Name lang="en">Links</Name>
+		<Name lang="de">Links</Name>
+	</Item>
+
 </Site>
