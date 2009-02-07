@@ -1,6 +1,0 @@
-DirectoryIndex index.py index.shtml
-
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*).shtml$ index.py?file=$1.shtml
