@@ -1,0 +1,163 @@
+<?xmlversion="1.0"encoding="UTF-8"?>
+<Site>
+	<Config>
+		<Title lang="en">Funktionen</Title>
+		<Title lang="de">Functions</Title>
+	</Config>
+	<Paragraphs>
+		<Paragraph>
+			<Heading>Sicherheitseinrichtungen:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>Stateful Inspection Firewall basierend auf der Linux Netfilter-Architektur</li>
+					<li>Intrusion Detection System mit Guardian Addons Erweiterung zum IPS System</li>
+					<li>Filter für ungültige/nicht standardgerechte Pakete</li>
+					<li>Eigene Netzwerksegmente für Server(DMZ) und Wireless Lan mit angepassten Policies</li>
+					<li>DoS- und DDoS-Schutz</li>
+					<li>Application Proxies für HTTP und FTP (mit Zugangskontrolle und Content-Filter) und DNS</li>
+					<li>Eingehende sowie Ausgehende Paketfilterung</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>Netzwerkdienste:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>DHCP-Server</li>
+					<li>Dynamischer DNS-Dienst</li>
+					<li>NTP-Server</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>HTTP-Proxy:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>Zwischenspeicherung von Web-Inhalten</li>
+					<li>Inhaltsfilter auf Basis von Blocklisten und manuell festlegbaren Listen</li>
+					<li>Zeitgesteuerte Sperrung des Zugangs für einzelne Nutzer oder ganze Gruppen</li>
+					<li>Vereinfachte Verwaltung für Klassen oder Konferenzräume</li>
+					<li>Erweiterte Speicherung von Updates für Microsoft® Windows®, Symantec Antivirus, Adobe-Produkten, Avira Antivir und Avast Antivirus</li>
+					<li>Authentifizierung am LDAP-, identd-, Radius- oder Windows-Server oder einer lokalen Nutzerdatenbank</li>
+					<li>Transfer-Limitierung(Geschwindigkeit und/oder Volumen)</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>Virtuelle Private Netzwerke(VPN):</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>IPSec/OpenSwan 2
+						<ul>
+							<li>Netz-zu-Netz oder Netz-zu-Host(Roadwarrior)</li>
+							<li>IKE - PreSharedKey oder</li>
+							<li>X.509-Zertifikate aus integrierter oder externer CA</li>
+							<li>Automatische Erkennung mit nötigem Wiederaufbau der Tunnel-Verbindung und Dead-Peer-Detection</li>
+							<li>NAT-Traversal</li>
+							<li>Verschlüsselung durch AES, 3DES, Blowfish, Serpent oder Twofish</li>
+							<li>HMAC: SHA1, SHA256, SHA384, SHA512</li>
+							<li>Echtzeit-Kompression</li>
+						</ul>
+					</li>
+					<li>OpenVPN
+						<ul>
+							<li>Host-zu-Netz(Roadwarrior)</li>
+							<li>SSL-basierte Verschlüsselung: AES, Blowfish, Twofish, 3DES, ...</li>
+							<li>Echtzeit-Kompression</li>
+							<li>Fertige Clientpakete damit eine Konfiguration am Client vereinfacht wird</li>
+							<li>Tunnel über multiples NAT</li>
+							<li>PPTP-Passthrough</li>
+						</ul>
+					</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>Network Address Translation(NAT):</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>Portweiterleitung</li>
+					<li>NATz wischen den voneinander getrennten Subnetzen</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>UnterstützteVerbindungstypen:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>Ethernet-Verbindungen mit 10, 100 oder 1000MBit mit statischer IP Adresse oder über das DHCP Protokoll konfiguriert</li>
+					<li>ADSL/SDSL mit PPPoE</li>
+					<li>Automatische Wiederverbindung nach Trennung durch den Provider</li>
+					<li>Wiederverbindung nach Zeitplan steuerbar</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>Traffic-Priorisierung:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>Quality of Service</li>
+					<li>Level7-Filterung</li>
+					<li>Setzen und erkennen von Type-of-Service-Bits</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>Konfiguration:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>SSL-verschlüsseltes Web-Administrations-Interface</li>
+					<li>SSH-Server</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>Monitoring/Logging:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>Grafische Überwachung des Systems im Webinterface</li>
+					<li>Einsehbare Log-Dateien mit automatischer Zusammenfassung der wichtigsten Ereignisse</li>
+					<li>Exportfunktion der Logdateien(einzeln oder als gesamtes Backup)</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>DNS-Proxy:</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>DNS-Forwarding</li>
+					<li>lokale Host-/Zonen-Konfiguration</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading>Addons(imBeta-Stadium):</Heading>
+			<Content lang="de"><![CDATA[
+				<ul>
+					<li>Samba Dateiserver</li>
+					<li>Tripwire</li>
+					<li>MPFire – Mp3 Jukebox</li>
+					<li>Asterisk Voice-over-IP Server</li>
+					<li>Gnump3d – Mp3 Streaming Daemon</li>
+					<li>Appeljuice und Rtorrent</li>
+					<li>cftp und ncftp</li>
+					<li>Clamav</li>
+					<li>Ethereal</li>
+					<li>uvm.</li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+	</Paragraphs>
+		<Sidebar>
+		<Paragraph>
+			<Heading lang="en"><![CDATA[<span>Wiki]]></Heading>
+			<Heading lang="de"><![CDATA[<span>Wiki]]></Heading>
+			
+			<Content><![CDATA[
+				<ul class="links">
+					<li class="first"><a href="http://wiki.ipfire.org" target="_blank">Wiki</a></li>
+				</ul>
+			]]></Content>
+		</Paragraph>
+	</Sidebar>
+</Site>
