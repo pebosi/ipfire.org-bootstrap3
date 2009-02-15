@@ -1,12 +1,12 @@
-<?xmlversion="1.0"encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Site>
 	<Config>
-		<Title lang="en">Funktionen</Title>
-		<Title lang="de">Functions</Title>
+		<Title lang="en">Functions</Title>
+		<Title lang="de">Features</Title>
 	</Config>
 	<Paragraphs>
 		<Paragraph>
-			<Heading>Sicherheitseinrichtungen:</Heading>
+			<Heading lang="de">Sicherheitseinrichtungen:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Stateful Inspection Firewall basierend auf der Linux Netfilter-Architektur</li>
@@ -20,7 +20,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>Netzwerkdienste:</Heading>
+			<Heading lang="de">Netzwerkdienste:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>DHCP-Server</li>
@@ -30,7 +30,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>HTTP-Proxy:</Heading>
+			<Heading lang="de">HTTP-Proxy:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Zwischenspeicherung von Web-Inhalten</li>
@@ -44,7 +44,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>Virtuelle Private Netzwerke(VPN):</Heading>
+			<Heading lang="de">Virtuelle Private Netzwerke(VPN):</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>IPSec/OpenSwan 2
@@ -73,7 +73,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>Network Address Translation(NAT):</Heading>
+			<Heading lang="de">Network Address Translation(NAT):</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Portweiterleitung</li>
@@ -82,7 +82,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>UnterstützteVerbindungstypen:</Heading>
+			<Heading lang="de">Unterstützte Verbindungstypen:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Ethernet-Verbindungen mit 10, 100 oder 1000MBit mit statischer IP Adresse oder über das DHCP Protokoll konfiguriert</li>
@@ -93,7 +93,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>Traffic-Priorisierung:</Heading>
+			<Heading lang="de">Traffic-Priorisierung:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Quality of Service</li>
@@ -103,7 +103,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>Konfiguration:</Heading>
+			<Heading lang="de">Konfiguration:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>SSL-verschlüsseltes Web-Administrations-Interface</li>
@@ -112,7 +112,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>Monitoring/Logging:</Heading>
+			<Heading lang="de">Monitoring/Logging:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Grafische Überwachung des Systems im Webinterface</li>
@@ -122,7 +122,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>DNS-Proxy:</Heading>
+			<Heading lang="de">DNS-Proxy:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>DNS-Forwarding</li>
@@ -131,7 +131,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading>Addons(imBeta-Stadium):</Heading>
+			<Heading lang="de">Addons(im Beta-Stadium):</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Samba Dateiserver</li>
@@ -150,10 +150,9 @@
 	</Paragraphs>
 		<Sidebar>
 		<Paragraph>
-			<Heading lang="en"><![CDATA[<span>Wiki]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Wiki]]></Heading>
 			
-			<Content><![CDATA[
+			<Content lang="de"><![CDATA[
 				<ul class="links">
 					<li class="first"><a href="http://wiki.ipfire.org" target="_blank">Wiki</a></li>
 				</ul>
