@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="../style.css" />
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.ipfire.org/data/feeds/main-en.rss" />
 	<!--[if lt IE 7]>
+		<link rel="stylesheet" type="text/css" href="./ie6.css" />
 		<script type="text/javascript">
 			function correctPNG() // correctly handle PNG transparency in Win IE 5.5 or higher.
 			{
@@ -43,17 +44,33 @@
 		<div id="header">
 			<div id="header_inner" class="fixed">
 				<div id="logo">
-					<img src="/images/icons/ipfire.png" width="48px" height="48px" class="symbol" alt="IPFire" />
+					<img src="/ipfire3/tux2.png" width="102px" height="102px" class="symbol" alt="IPFire" />
+				</div>
+				<div id="line1">
+					%(menu)s
+					<div id="lang">
+						<a href="/%(document_name)s/en" ><img src="/images/en.gif" alt="english" /></a>
+						<a href="/%(document_name)s/de" ><img src="/images/de.gif" alt="german" /></a>
+					</div>
+				</div> <!-- Line 1 -->
+				<div id="line2">
 					<h1><span>IPFire</span>.org</h1>
-					<br />
+				</div> <!-- Line 2 -->
+				<div id="line3">
 					<h2>Security today!</h2>
-				</div>
-				<div id="lang">
-					<a href="/%(document_name)s/en" ><img src="/images/en.gif" alt="english" /></a>
-					<a href="/%(document_name)s/de" ><img src="/images/de.gif" alt="german" /></a>
-				</div>
-				%(menu)s
+				</div> <!-- Line 3 -->
+				
 			</div>
 		</div>
 		<div id="main">
-			<div id="main_inner" class="fixed">
+		    <div id="main_inner" class="fixed">
+			<table>
+			    <tr>
+				<td id="sh-tl"></td>
+				<td id="sh-top"></td>
+				<td id="sh-tr"></td>
+			    </tr>
+			    <tr>
+				<td id="sh-lft"></td>
+				<td id="no-sh">
+

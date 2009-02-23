@@ -1,0 +1,23 @@
+/* Settings for IE6 and older */
+body
+{
+    background: #f5f5f5;
+}
+
+#header h1
+{
+    margin-left: 52px;
+}
+
+#header h2
+{
+    margin-left: 52px;
+}
+#menu li
+{
+    width: 1em;
+}
+p
+{
+padding-right: 1.5em;
+}
