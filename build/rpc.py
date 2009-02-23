@@ -47,7 +47,8 @@ def run(uuid, action):
 							if myself.uuid == builder.uuid:
 								print "localhost/%s" % (builder.jobs() or "4")
 							else:
-								if myself.toolchain() == builder.toolchain():
+								if ((myself.toolchain() == builder.toolchain()) and \
+									(myself.target() == builder.target())):
 									print "%s" % (builder.distcc,)
 
 	elif action == "set":
