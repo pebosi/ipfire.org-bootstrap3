@@ -70,7 +70,7 @@ class Body(SItem):
 		for paragraph in self.paragraphs:
 			for heading in paragraph.childs("Heading"):
 				if heading.attr("lang") in (self.lang, ""):
-					self.write("<h3>" + heading.text() + "</h3>")	
+					self.write('<h3>' + heading.text() + '</h3><a name="' + heading.text() +'"></a>')
 			for content in paragraph.childs("Content"):
 				if content.attr("lang") in (self.lang, ""):
 					if content.attr("raw"):

@@ -17,7 +17,7 @@ width: 90% !important;
 
 div.fixed
 {
-width: 965px !important;
+width: 970px !important;
 margin: 0;
 }
 
@@ -382,13 +382,13 @@ table {
   width: 980px;
 }
 #sh-tl {
-  background: url(ipfire3/sh-tl.png) right bottom;
+  background: url(ipfire3/sh-tl.png) no-repeat right bottom;
 }
 #sh-top {
   background: url(ipfire3/sh-top.png) repeat-x bottom;
 }
 #sh-tr {
-  background: url(ipfire3/sh-tr.png) left bottom;
+  background: url(ipfire3/sh-tr.png) no-repeat left bottom;
 }
 #sh-lft {
   background: url(ipfire3/sh-lft.png) repeat-y right;
@@ -397,13 +397,13 @@ table {
   background: url(ipfire3/sh-rgt.png) repeat-y left;
 }
 #sh-bl {
-  background: url(ipfire3/sh-bl.png) right top;
+  background: url(ipfire3/sh-bl.png) no-repeat right top;
 }
 #sh-btn {
   background: url(ipfire3/sh-btn.png) repeat-x top;
 }
 #sh-br {
-  background: url(ipfire3/sh-br.png) left top;
+  background: url(ipfire3/sh-br.png) no-repeat left top;
 }
 #no-sh {
 /*  background: url(ipfire3/sh-br.png) left top; */
@@ -411,8 +411,8 @@ background-color: #f5f5f5;
 padding: 1.5em;
 }
 #sh-tl, #sh-top, #sh-tr, #sh-lft, #sh-rgt, #sh-bl, #sh-btn, #sh-br {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   padding: 0px;
   border-width: 0px;
   border-style: none;
