@@ -168,7 +168,7 @@ class DistccConfig(DatabaseConfig):
 		if not self.ping() or self.get() == "0":
 			return ""
 		return "%s:%s/%s,lzo" % \
-			(socket.gethostbyname(self.hostname), self.get(), self.jobs or "4",)
+			(self.hostname, self.get(), self.jobs or "4",)
 
 	def ping(self):
 		if not self.hostname:
