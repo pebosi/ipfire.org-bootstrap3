@@ -29,7 +29,7 @@ from builder import Builder, getAllBuilders
 from constants import config
 
 ALLOWED_ACTIONS_SET = (	"distcc", "duration", "hostname", "jobs", "log", "state",
-						"package", "target", "toolchain", "cpu", "machine",)
+						"package", "target", "toolchain", "cpu", "machine", "system",)
 ALLOWED_ACTIONS_GET = ( "distcc",)
 
 def run(uuid, action):
@@ -45,7 +45,7 @@ def run(uuid, action):
 						for builder in builders:
 							# Print "localhost" for ourself
 							if myself.uuid == builder.uuid:
-								print "localhost/%s" % (builder.jobs() or "4")
+								print "localhost"
 							else:
 								if ((myself.toolchain() == builder.toolchain()) and \
 									(myself.target() == builder.target())):

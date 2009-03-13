@@ -231,6 +231,7 @@ class Builder:
 		self.distcc   = DistccConfig(self.db, "distcc", self.hostname(), self.jobs())
 		self.cpu      = DatabaseConfig(self.db, "cpu", base64=1)
 		self.machine  = DatabaseConfig(self.db, "machine")
+		self.system   = DatabaseConfig(self.db, "system", base64=1)
 
 		self.log      = FileConfig(self.path, "log")
 		

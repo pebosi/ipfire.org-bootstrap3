@@ -236,8 +236,8 @@ class Box:
 			print """</p></div>"""
 
 	def footer(self):
-		print """<div class="footer"><p>cpu: %s - target: %s - jobs: %s - toolchain: %s</p></div>""" \
-			% (self.builder.cpu(), self.builder.target(), self.builder.jobs(), self.builder.toolchain(),)
+		print """<div class="footer"><p>system: %s - cpu: %s <br /> target: %s - jobs: %s - toolchain: %s</p></div>""" \
+			% (self.builder.system(), self.builder.cpu(), self.builder.target(), self.builder.jobs(), self.builder.toolchain(),)
 
 class BoxCompiling(Box):
 	def __init__(self, builder):
