@@ -14,7 +14,6 @@ error  = open("error.log",  "a")
 hosts = (
 #			PRIO SCHEME  HOSTNAME               PATH
 			( 2, "http", "mirror1.ipfire.org",   "/",),
-			( 4, "http", "mirror2.ipfire.org",   "/",),
 			( 4, "http", "mirror3.ipfire.org",   "/",),
 			( 4, "http", "mirror5.ipfire.org",   "/",),
 			(10, "http", "www.rowie.at",         "/ipfire/",),
@@ -23,6 +22,7 @@ hosts = (
 			( 8, "http", "ipfire.1l0v3u.com",    "/",),
 			( 4, "http", "hex2.sv-altikon.ch",   "/ipfire/",),
 			( 8, "http", "ipfire.wintertech.de", "/",),
+			( 8, "http", "kraefte.org",          "/ipfire",),
 )
 
 def rnd(servers):
@@ -134,9 +134,13 @@ while servers.all():
 
 	break
 else:
-	if os.access(file, os.R_OK):
-		access.write("%s\n" % url)
-		servefile(file)
+	error.write("%s " % time.asctime())
+	error.write("%s was not found on mirror servers. Trying local.\n" % file)
+	filename = ".%s" % file
+	if os.access(filename, os.R_OK):
+		access.write("%s " % time.asctime())
+		access.write("(local) %s\n" % filename)
+		servefile(filename)
 	else:
 		print "Status: 404 Not Found"
 		print "Pragma: no-cache"
