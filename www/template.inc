@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="../style.css" />
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.ipfire.org/data/feeds/main-en.rss" />
 	<!--[if lt IE 7]>
-		<link rel="stylesheet" type="text/css" href="./ie6.css" />
+		<link rel="stylesheet" type="text/css" href="../ie6.css" />
 		<script type="text/javascript">
 			function correctPNG() // correctly handle PNG transparency in Win IE 5.5 or higher.
 			{
