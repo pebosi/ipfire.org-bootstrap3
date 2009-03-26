@@ -49,28 +49,54 @@
 				<div id="line1">
 					%(menu)s
 					<div id="lang">
-						<a href="/%(document_name)s/en" ><img src="/images/en.gif" alt="english" /></a>
-						<a href="/%(document_name)s/de" ><img src="/images/de.gif" alt="german" /></a>
+						%(languages)s
 					</div>
-				</div> <!-- Line 1 -->
+				</div>
 				<div id="line2">
-					<h1><span>IPFire</span>.org</h1>
-				</div> <!-- Line 2 -->
+					<h1>%(server)s</h1>
+				</div>
 				<div id="line3">
-					<h2>Security today!</h2>
-				</div> <!-- Line 3 -->
+					<h2>%(slogan)s</h2>
+				</div>
 				
 			</div>
 		</div>
 		<div id="main">
 		    <div id="main_inner" class="fixed">
-			<table>
-			    <tr>
-				<td id="sh-tl"></td>
-				<td id="sh-top"></td>
-				<td id="sh-tr"></td>
-			    </tr>
-			    <tr>
-				<td id="sh-lft"></td>
-				<td id="no-sh">
-
+				<table>
+	    			<tr>
+						<td id="sh-tl"></td>
+						<td id="sh-top"></td>
+						<td id="sh-tr"></td>
+					</tr>
+					<tr>
+						<td id="sh-lft"></td>
+						<td id="no-sh">
+							<div id="primaryContent_2columns">
+								<div id="columnA_2columns">
+									%(content)s
+									<br class="clear" />
+								</div>
+							</div>
+							<div id="secondaryContent_2columns">
+								<div id="columnC_2columns">
+									%(sidebar)s
+									<br class="clear" />
+								</div>
+							</div>
+						</td>
+						<td id="sh-rgt"></td>
+					</tr>
+					<tr>
+						<td id="sh-bl"></td>
+						<td id="sh-btn"></td>
+						<td id="sh-br"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="footer" class="fixed2">
+			Copyright &copy; %(year)s IPFire.org. All rights reserved. <a href="/%(lang)s/imprint">Imprint</a>
+		</div>
+	</body>
+</html>

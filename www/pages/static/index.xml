@@ -53,7 +53,7 @@
 					<li>Voice-over-IP solution with Asterisk and Teamspeak plus traffic prioritization</li>
 					<li>Multimedia addons (video- &amp; audio-streaming, jukebox)</li>
 					<li>WLan Access Point with hostap and many Atheros Chips</li>
-					<li>and many more - <a href="http://wiki.ipfire.org/Addons" target="_blank">List of all Addons</a></li>	
+					<li>and many more - <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">List of all Addons</a></li>	
 				</ul>
 				]]></Content>
 			<Content lang="de" raw="1"><![CDATA[
@@ -63,11 +63,12 @@
 					<li>Voice-over-IP-Lösung mittels Asterisk und Teamspeak, sowie Traffic-Priorisierung</li>
 					<li>Multimedia-Addons (Video- &amp; Audio-Streaming, Jukebox)</li>
 					<li>WLan Access Point mittels hostap für viele Atheros Chips</li>
-					<li>und weiteren Addons - <a href="http://wiki.ipfire.org/Addons" target="_blank">Alle Addons im Wiki</a></li>	
+					<li>und weiteren Addons - <a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Alle Addons im Wiki</a></li>	
 				</ul>
-				]]></Content>	
-
+				]]></Content>
 		</Paragraph>
+
+		<Paragraph news="1" count="3" />
 	</Paragraphs>
 	
 	<Sidebar>
@@ -85,7 +86,10 @@
 				</form>
 				]]></Content>
 		</Paragraph>
+
+		<Paragraph banner="1" />
 		
+		<!-- 
 		<Paragraph>
 			<Heading lang="en"><![CDATA[About</span> us]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Über</span> uns]]></Heading>
@@ -104,6 +108,7 @@
 				aus einem Guss zu erstellen.
 				]]></Content>
 		</Paragraph>
+		-->
 		
 		<Paragraph>
 			<Heading><![CDATA[<span>RSS</span> feed]]></Heading>

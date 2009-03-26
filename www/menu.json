@@ -1,0 +1,14 @@
+{
+	"10" : { "uri"  : "/index",
+			 "name" : "Home" },
+	"20" : { "uri"  : "/download",
+			 "name" : "Downloads" },
+	"30" : { "uri"  : "http://wiki.ipfire.org/",
+			 "name" : { "de" : "Wiki", "en" : "Docs" }},
+	"40" : { "uri"  : "http://forum.ipfire.org/",
+			 "name" : "Forum" },
+	"50" : { "uri"  : "/development",
+			 "name" : { "de" : "Entwicklung", "en" : "Development" }},
+	"60" : { "uri"  : "/links",
+			 "name" : "Links" }
+}
