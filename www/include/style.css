@@ -404,7 +404,6 @@ table {
 /*  background: url(/images/sh-br.png) left top; */
 background-color: #f5f5f5;
 padding: 1.5em;
-width: 500px;
 }
 #sh-tl, #sh-top, #sh-tr, #sh-lft, #sh-rgt, #sh-bl, #sh-btn, #sh-br {
   width: 16px;
