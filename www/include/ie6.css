@@ -21,3 +21,31 @@ p
 {
 padding-right: 1.5em;
 }
+
+#sh-tl {
+  background: url(/images/sh-tl.png) no-repeat right bottom;
+  background:none;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/logo.png');
+
+}
+#sh-top {
+  background: url(/images/sh-top.png) repeat-x bottom;
+}
+#sh-tr {
+  background: url(/images/sh-tr.png) no-repeat left bottom;
+}
+#sh-lft {
+  background: url(/images/sh-lft.png) repeat-y right;
+}
+#sh-rgt {
+  background: url(/images/sh-rgt.png) repeat-y left;
+}
+#sh-bl {
+  background: url(/images/sh-bl.png) no-repeat right top;
+}
+#sh-btn {
+  background: url(/images/sh-btn.png) repeat-x top;
+}
+#sh-br {
+  background: url(/images/sh-br.png) no-repeat left top;
+}
