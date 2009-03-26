@@ -1,5 +1,8 @@
 {
 	"01" : { "uri"   : "/images/sponsors/isp42.png",
 			 "title" : "<span>Hosting</span>-Sponsor",
+			 "link"  : "http://www.isp42.de/" },
+	"02" : { "uri"   : "/images/sponsors/isp42_2.png",
+			 "title" : "<span>Hosting</span>-Sponsor",
 			 "link"  : "http://www.isp42.de/" }
 }
