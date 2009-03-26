@@ -72,7 +72,7 @@ class Sidebar(Xml):
 			if self.getAttribute(paragraph, "banner") == "1":
 				b = web.Banners()
 				ret += """<h4>%(title)s</h4><a href="%(link)s" target="_blank">
-						<img src="%(uri)s" /></a>""" % b.random()
+						<img class="banner" src="%(uri)s" /></a>""" % b.random()
 				continue
 
 			# Heading

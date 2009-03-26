@@ -177,7 +177,7 @@ class Sidebar(Data):
 			duo dolores et ea rebum.</p>""")
 		banners = Banners()
 		self.w("""<h4>%(title)s</h4><a href="%(link)s" target="_blank">
-			<img src="%(uri)s" /></a>""" % banners.random())
+			<img class="banner" src="%(uri)s" /></a>""" % banners.random())
 
 	def __call__(self, lang):
 		self.content(lang)
