@@ -7,10 +7,10 @@
 		<meta name="keywords" content="Linux, Firewall, IPCop, IPFire, Security" />
 		<meta name="description" content="" />
 		<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
-		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<link rel="stylesheet" type="text/css" href="/include/style.css" />
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.ipfire.org/data/feeds/main-en.rss" />
 	<!--[if lt IE 7]>
-		<link rel="stylesheet" type="text/css" href="../ie6.css" />
+		<link rel="stylesheet" type="text/css" href="/include/ie6.css" />
 		<script type="text/javascript">
 			function correctPNG() // correctly handle PNG transparency in Win IE 5.5 or higher.
 			{
@@ -44,7 +44,7 @@
 		<div id="header">
 			<div id="header_inner" class="fixed">
 				<div id="logo">
-					<img src="/ipfire3/tux2.png" width="102px" height="102px" class="symbol" alt="IPFire" />
+					<img src="/images/tux2.png" width="102px" height="102px" class="symbol" alt="IPFire" />
 				</div>
 				<div id="line1">
 					%(menu)s
