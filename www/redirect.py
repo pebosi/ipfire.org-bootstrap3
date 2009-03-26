@@ -11,7 +11,7 @@ for language in ("de", "en",):
 
 site = cgi.FieldStorage().getfirst("site") or "index"
 
-sites = {	"ipfire.org"			: "www.ipfire.org",
+sites = {	"ipfire.org"			: "http://www.ipfire.org",
 			"www.ipfire.org"		: "/%s/%s" % (language, site,),
 			"source.ipfire.org"		: "http://www.ipfire.org/%s/source" % language,
 			"tracker.ipfire.org"	: "http://www.ipfire.org/%s/tracker" % language,
