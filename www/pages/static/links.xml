@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site>
+        <Config>
+                <Title lang="en">Links</Title>
+                <Title lang="de">Links</Title>
+        </Config>
+        <Paragraphs>
+                <Paragraph>
+                        <Heading>Links</Heading>
+                        
+                        <Content lang="en"><![CDATA[
+                        											On this page, one can find a lot of external information about the <strong>IPFire-Project</strong>.
+                        											There are some links to our partners, friends or sponsors and of course references to articles by
+                        											some magazines.
+                                ]]></Content>
+                        <Content lang="de"><![CDATA[
+																	Hier findet ihr alle relevanten Links zum Projekt IPFire. Neben Partnerseiten, Freunden und
+																	Sponsoren findet ihr auch Artikel über IPFire die von Benutzern oder anderen Projektseiten
+																	und Zeitschriften verfasst wurden.
+                                ]]></Content>
+                </Paragraph>
+                <Paragraph>
+                        <Heading>Friends of IPFire</Heading>
+                        <Content lang="en"><![CDATA[
+                        											The following users do great jobs in this project. They support us by giving servers to us or
+                        											they do mirror the web pages on their own server. Because IPFire is growing fast, we need much
+                        											of such capacity.
+                                ]]></Content>
+                        <Content lang="de"><![CDATA[
+																	Folgende unter aufgelistete User ermöglichen dem Projekt die Nutzung ihrer Server (Mirror, Build
+																	und Root Server). An dieser Stelle noch mal ein großes Dankeschön für euren Beitrag. Die ständig
+																	steigende Benutzerzahl verlangt immer schnellere Anbindungen und Datenvolumina.
+                                ]]></Content>
+                        <Content><![CDATA[
+																	<table width="100%" cellspacing="20px">
+																	  <tr>
+																	    <td><a href="http://www.firewall-service.com" target="_blank">http://www.firewall-service.com</a></td>
+																	    <td>Rene Zingel</td>
+																	  </tr>
+																	  <tr>
+																	    <td><a href="http://www.rowie.at" target="_blank">http://www.rowie.at</a></td>
+																	    <td>Ronald Wiesinger</td>
+																	  </tr>
+																	  <tr>
+																	    <td><a href="http://www.scp-systems.ch" target="_blank">http://www.scp-systems.ch</a></td>
+																	    <td>Peter Schaelchli</td>
+																	  </tr>
+																	  <tr>
+																	    <td><a href="http://www.kbarthel.de" target="_blank">http://www.kbarthel.de</a></td>
+																	    <td>Kim Barthel</td>
+																	  </tr>
+																	  <tr>
+																	    <td><a href="http://ipfire.earl-net.com" target="_blank">http://ipfire.earl-net.com</a></td>
+																	    <td>Jan Paul Tücking</td>
+																	  </tr>
+																	  <tr>
+																	    <td>Seite im Aufbau</td>
+																	    <td>Sebastian Winter</td>
+																	  </tr>
+																	</table>
+                                ]]></Content>
+
+                </Paragraph>
+                <Paragraph>
+                		<Heading lang="en">IPFire in Media</Heading>
+                        <Heading lang="de">IPFire in den Medien (diverse Zeitschriften)</Heading>
+                        <Content lang="en"><![CDATA[
+                        					Often, there are some magazines publishing articles about IPFire.
+											This is a short list to online-versions of them (Mostly in German):
+                              	]]></Content>
+                        <Content lang="de"><![CDATA[
+				                        	Immer öfter berichten uns User und Teammitglieder von diversen Zeitschriften in denen IPFire
+																	erwähnt wird. Hier sind Einige davon:
+                                ]]></Content>
+                        <Content><![CDATA[
+																	<a href="http://linuxmini.blogspot.com/2007/10/ipfire-free-firewall-for-your-home-or.html">http://linuxmini.blogspot.com/2007/10/ipfire-free-firewall-for-your-home-or.html</a><br />
+																	<a href="http://www.pro-linux.de/news/2006/9219.html">http://www.pro-linux.de/news/2006/9219.html</a><br />
+																	<a href="http://www.kriptopolis.org/ipfire">http://www.kriptopolis.org/ipfire</a><br />
+																	<a href="http://www.pcmagazine.com.tr/dow71,17@2500.html">http://www.pcmagazine.com.tr/dow71,17@2500.html</a><br />
+																	<a href="http://freedommafia.net/main/index.php?option=com_content&task=view&id=103&Itemid=47">http://freedommafia.net/main/index.php?option=com_content&task=view&id=103&Itemid=47</a><br />
+																	<a href="http://www.lintelligence.de/news/1026">http://www.lintelligence.de/news/1026</a><br />
+																	<a href="http://www.techmonkey.de/2008/09/15/ipfire-der-nachste-star-am-soho-himmel/">http://www.techmonkey.de/2008/09/15/ipfire-der-nachste-star-am-soho-himmel/</a><br />
+                                ]]></Content>
+                </Paragraph>
+                <Paragraph>
+                		<Heading lang="en">Discussion about IPFire</Heading>
+                        <Heading lang="de">Boards und Foren (Diskussionen über IPFire)</Heading>
+                        <Content lang="en"><![CDATA[
+                        											Users' recommendations do best! - This are links to threads in boards where users talk about IPFire:
+                                ]]></Content>
+                        <Content lang="de"><![CDATA[
+																	Mundpropaganda sagt man, ist die beste Werbung! Hier ein paar Boards und Foren, wo man sich
+																	gepflegt über IPFire unterhält und Erfahrungen austauscht.
+                                ]]></Content>
+                        <Content><![CDATA[
+																	<a href="http://forum.linuxcast.eu/viewtopic.php?f=13&p=438">http://forum.linuxcast.eu/viewtopic.php?f=13&p=438</a><br />
+																	<a href="http://forum.golem.de/read.php?26129,1364598,1364598#msg-1364598">http://forum.golem.de/read.php?26129,1364598,1364598#msg-1364598</a><br />
+																	<a href="http://www.ipcop-forum.de/forum/viewtopic.php?f=28&t=21055&hilit=IPFire">http://www.ipcop-forum.de/forum/viewtopic.php?f=28&t=21055&hilit=IPFire</a><br />
+																	<a href="http://forum.cdrinfo.pl/f102/jaki-dysk-sieciowy-78524/">http://forum.cdrinfo.pl/f102/jaki-dysk-sieciowy-78524/</a><br />
+																	<a href="http://forum.mini-pc-pro.de/projekt-forum/3681-epia-ipcop-router-projekt-wirft-mir-diverse-fragen-auf.html">http://forum.mini-pc-pro.de/projekt-forum/3681-epia-ipcop-router-projekt-wirft-mir-diverse-fragen-auf.html</a><br />
+																	<a href="http://nachtwandler.blogage.de/entries/2008/10/4/IPFire">http://nachtwandler.blogage.de/entries/2008/10/4/IPFire</a><br />
+																	<a href="http://zahlenzerkleinerer.de/1085/der-erste-ipfire-test.html">http://zahlenzerkleinerer.de/1085/der-erste-ipfire-test.html</a><br />
+                                ]]></Content>
+                </Paragraph>
+                <Paragraph>
+                		<Heading lang="en">Sites that link to here</Heading>
+                        <Heading lang="de">Nach IPFire verlinkende Seiten</Heading>
+                        <Content lang="en"><![CDATA[
+                        											We are glad to give a list of sites that link to us. So, we would do this back again:
+                        				]]></Content>
+                        <Content lang="de"><![CDATA[
+																	Am meisten Freuen wir uns aber über Seitenbetreiber die einen Link auf unsere Projektseite setzen,
+																	um auch andere User auf uns hinzuweisen. Hier ein paar davon:
+                                ]]></Content>
+                        <Content><![CDATA[
+																	<a href="http://www.linux-luenen.de/?q=node/9">http://www.linux-luenen.de/?q=node/9</a><br />
+																	<a href="http://www.ohloh.net/projects/ipfire">http://www.ohloh.net/projects/ipfire</a><br />
+																	<a href="http://forum.softgil.com/weblinks.php?cat_id=1">http://forum.softgil.com/weblinks.php?cat_id=1</a><br />
+                                ]]></Content>
+                        <Content lang="en"><![CDATA[
+                        											If there are links on site that are not known to the project, yet, please get in touch with us!
+                        		]]></Content>
+                        <Content lang="de"><![CDATA[
+																	Solltet ihr weitere relevante Links zum Projekt IPFire irgendwo entdecken, lasst es und bitte
+																	wissen (post im Forum oder IRC). Für jede Hilfe sind wir dankbar!
+                                ]]></Content>
+                </Paragraph>
+        </Paragraphs>
+        <Sidebar>
+                <Paragraph>
+                        <Heading><![CDATA[]]></Heading>
+
+                        <Content lang="en"><![CDATA[
+																]]></Content>
+
+                        <Content lang="de"><![CDATA[
+                        				]]></Content>
+                </Paragraph>
+        </Sidebar>
+</Site>
