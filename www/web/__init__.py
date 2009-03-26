@@ -115,8 +115,8 @@ class Menu(Json):
 			if item["uri"].startswith("/"):
 				item["uri"] = "/%s%s" % (self.lang, item["uri"],)
 
-			#if item["uri"].find(os.environ["SCRIPT_NAME"]):
-			#	item["active"] = "class=\"active\""
+			if os.environ["REQUEST_URI"].endswith(item["uri"]):
+				item["active"] = "class=\"active\""
 
 			s += """<li><a href="%(uri)s" %(active)s>%(name)s</a></li>\n""" % item
 		s += "</ul></div>"
