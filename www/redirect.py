@@ -14,8 +14,8 @@ site = cgi.FieldStorage().getfirst("site") or "index"
 sites = {	"ipfire.org"			: "http://www.ipfire.org",
 			"www.ipfire.org"		: "/%s/%s" % (language, site,),
 			"source.ipfire.org"		: "http://www.ipfire.org/%s/source" % language,
-			"tracker.ipfire.org"	: "http://www.ipfire.org/%s/tracker" % language,
-			"torrent.ipfire.org"	: "http://www.ipfire.org/%s/tracker" % language,
+			"tracker.ipfire.org"	: "http://www.ipfire.org/%s/torrent" % language,
+			"torrent.ipfire.org"	: "http://www.ipfire.org/%s/torrent" % language,
 			"download.ipfire.org"	: "http://www.ipfire.org/%s/download" % language,
 			"people.ipfire.org"		: "http://wiki.ipfire.org/%s/people/start" % language, }
 
