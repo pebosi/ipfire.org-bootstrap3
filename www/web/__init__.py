@@ -170,11 +170,11 @@ class Sidebar(Data):
 		Data.__init__(self)
 
 	def content(self, lang):
-		self.w("""<h4>Test Page</h4>
-			<p>Lorem ipsum dolor sit amet, consectetuer sadipscing elitr,
-			sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-			aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-			duo dolores et ea rebum.</p>""")
+		#self.w("""<h4>Test Page</h4>
+		#	<p>Lorem ipsum dolor sit amet, consectetuer sadipscing elitr,
+		#	sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+		#	aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+		#	duo dolores et ea rebum.</p>""")
 		banners = Banners()
 		self.w("""<h4>%(title)s</h4><a href="%(link)s" target="_blank">
 			<img class="banner" src="%(uri)s" /></a>""" % banners.random())
