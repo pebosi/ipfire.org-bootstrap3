@@ -1,1 +1,1 @@
-../www/index.py
+../www/redirect.py

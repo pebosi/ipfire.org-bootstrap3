@@ -29,6 +29,8 @@ sys.path.append(".")
 
 from git import *
 
+SOURCE_BASE = "/srv/sources"
+
 def give_403():
 	print "Status: 403 Forbidden"
 	print "Pragma: no-cache"
@@ -105,7 +107,7 @@ class FileObject(SourceObject):
 	def __init__(self, path, file):
 		SourceObject.__init__(self, file)
 		self.path = path
-		self.filepath = "/%s/%s/%s" % (os.getcwd(), path, file,)
+		self.filepath = "/%s/%s/%s" % (SOURCE_BASE, path, file,)
 
 		try:
 			f = open(self.filepath, "rb")
