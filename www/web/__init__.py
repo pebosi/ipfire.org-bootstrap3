@@ -25,7 +25,7 @@ class Json:
 		f = open(file)
 		data = f.read()
 		data = data.replace('\n', '') # Remove all \n
-		data = data.replace('\t', '') # Remove all \t
+		data = data.replace('\t', ' ') # Remove all \t
 		self.json = json.loads(data)
 		f.close()
 
@@ -43,6 +43,7 @@ class Page(Data):
 
 	def __init__(self, title, content, sidebar=None):
 		self.output  = ""
+		self.title   = title
 		self.langs   = Languages()
 		self.data    = {"server": os.environ["SERVER_NAME"].replace("ipfire", "<span>ipfire</span>"),
 						"title" : "%s - %s" % (os.environ["SERVER_NAME"], title,),
@@ -58,22 +59,28 @@ class Page(Data):
 			self.data["sidebar"] = sidebar(self.langs.current)
 
 	def __call__(self):
+		type = "text/html"
 		try:
-			self.include("template.inc")
+			if self.title.endswith(".rss"):
+				self.include("rss.inc")
+				type = "application/rss+xml"
+			else:
+				self.include("template.inc")
 			code = 200
 		except WebError:
 			code = 500
-		h = HTTPResponse(code)
+		h = HTTPResponse(code, type=type)
 		h.execute(self.output)
 
 
 class News(Json):
 	def __init__(self, limit=3):
 		Json.__init__(self, "news.json")
-		self.news = self.json.values()
+		self.news = []
+		for key in sorted(self.json.keys()):
+			self.news.insert(0, self.json[key])
 		if limit:
 			self.news = self.news[:limit]
-		self.news.reverse()
 
 	def html(self, lang="en"):
 		s = ""
@@ -81,8 +88,13 @@ class News(Json):
 			for i in ("content", "subject",):
 				if type(item[i]) == type({}):
 					item[i] = item[i][lang]
-			b = Box(item["date"] + " - " + item["subject"], "by %s" % item["author"])
+			b = Box(item["subject"], "%(date)s - by %(author)s" % item)
 			b.w(item["content"])
+			if item["link"]:
+				if lang == "en":
+					b.w("""<p><a href="%(link)s" target="_blank">Read more.</a></p>""" % item)
+				elif lang == "de":
+					b.w("""<p><a href="%(link)s" target="_blank">Mehr Informationen.</a></p>""" % item)
 			s += b()
 		return s
 
@@ -95,6 +107,9 @@ class News(Json):
 				item["subject"] = item["subject"][lang]
 			headlines.append((item["subject"],))
 		return headlines
+
+	def items(self):
+		return self.news
 
 
 class Menu(Json):

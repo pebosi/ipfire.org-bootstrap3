@@ -114,14 +114,13 @@
 			<Heading><![CDATA[<span>RSS</span> feed]]></Heading>
 
 			<Content lang="en"><![CDATA[
-				<a class="feed" href="http://www.ipfire.org/data/feeds/main-en.rss">IPFire - News</a>
+				<a class="feed" href="news.rss">IPFire - News</a>
 				<br />
-				<a href="news.shtml">news archive</a>]]></Content>
+				<a href="news">news archive</a>]]></Content>
 			<Content lang="de"><![CDATA[
-				<a class="feed" href="http://www.ipfire.org/data/feeds/main-en.rss">IPFire - News</a>
+				<a class="feed" href="news.rss">IPFire - News</a>
 				<br />
-				<a href="news.shtml">News-Archiv</a>
-				]]></Content>
+				<a href="news">News-Archiv</a>]]></Content>
 		</Paragraph>
 		
 		<Paragraph>

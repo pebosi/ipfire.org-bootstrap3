@@ -1,56 +1,152 @@
 {
-	  "1" : {	"author"   : "Michael Tremer",
+		"01" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "IPFire 2.1 Final",
+				"date"     : "2007-08-11",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today, we released the final version of <strong>IPFire 2.1</strong>.</p>",
+					  "de" : "<p>Heute wurde die finale Version von <strong>IPFire 2.1</strong> herausgegeben.</p>"}},
+
+		"02" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : { "en" : "IPFire's first rss feed", "de" : "IPFires RSS-Feed" },
+				"date"     : "2008-07-24",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Now, the ipfire project has got it's own rss feed. This feed is for you, to keep you up on latest
+								security updates and releases.</strong>.</p>",
+					  "de" : "<p>Ab heute hat das IPFire-Projekt seinen eigenen RSS-Feed. Dieser soll die Möglichkeit bieten
+								auf dem Stand der Dinge zu bleiben.</p>"}},
+
+		"03" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Core Update 15",
+				"date"     : "2008-07-24",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today, we released the <strong>core update number #15</strong>.<br />
+								This is an important update because it will fix
+								the latest dns vulnerabilities.<br />
+								<a href=\"http://www.heise-online.co.uk/news/DNS-security-problem-details-released--/111145\">Read this for more information.</a><br />
+								Please install this update as soon as possible.</p>",
+					  "de" : "<p>Heute wurde das <strong>Core Update #15</strong> herausgegeben.<br />
+								Dieses Update wird als kritisch eingestuft, da es die Sicherheitslücke des
+								DNS behebt.<br />
+								<a href=\"http://www.heise-online.co.uk/news/DNS-security-problem-details-released--/111145\">Nähere Informationen dazu gibt es hier.</a><br />
+								Bitte installieren Sie dieses Update möglichst schnell.</p>"}},
+
+		"04" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "LUG Lünen",
+				"date"     : "2008-07-30",
+				"link"     : "http://www.linux-luenen.de/?q=node/15",
+				"content"  :
+					{ "en" : "<p>The linux user group from Lünen
+								released an article about ipfire.</p>",
+					  "de" : "<p>Die Linux-User-Group aus Lünen hat einen Artikel
+								über IPFire auf ihrer Webseite veröffentlicht.</p>"}},
+
+		"05" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Core Update 16",
+				"date"     : "2008-08-17",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today, we released the <strong>core update number #16</strong>.</p>",
+					  "de" : "<p>Heute wurde das <strong>Core Update #16</strong> herausgegeben.</p>"}},
+
+		"06" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "IPFire 2.3 Beta 3",
+				"date"     : "2008-08-20",
+				"link"     : "http://forum.ipfire.org/index.php/topic,709.0.html",
+				"content"  :
+					{ "en" : "<p>Today, we released the beta version of <strong>IPFire 2.3</strong>.</p>",
+					  "de" : "<p>Heute wurde die Beta-Version von <strong>IPFire 2.3</strong> herausgegeben.</p>"}},
+
+		"07" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : { "en" : "Presentation of our project on kbarthel.de",
+							   "de" : "Projektpräsentation auf kbarthel.de" },
+				"date"     : "2008-08-22",
+				"link"     : "http://blog.kbarthel.de/?p=148",
+				"content"  :
+					{ "en" : "<p>Kim Barthel published on his blog a text about the project ipfire itself.</p>",
+					  "de" : "<p>Kim Barthel veröffentlichte in seinem Blog einen umfassenden Bericht über IPFire.</p>"}},
+
+		"08" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "IPFire 2.3 Beta 5",
+				"date"     : "2008-10-13",
+				"link"     : "http://forum.ipfire.org/index.php/topic,788.0.html",
+				"content"  :
+					{ "en" : "<p>Today, we released the beta version of <strong>IPFire 2.3</strong>.</p>",
+					  "de" : "<p>Heute wurde die Beta-Version von <strong>IPFire 2.3</strong> herausgegeben.</p>"}},
+
+		"09" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
 				"subject"  : "IPFire 2.3 Final",
 				"date"     : "2008-11-08",
+				"link"     : "",
 				"content"  :
-					{ "en" : "<p><strong>Dear Community!</strong></p>
-						<p>This day, we released the final version of IPFire 2.3.</p>
-						<p>Major changes since the first version 2.1 in Oktober 2007:</p>
-						<ul>
-							<li class=\"first\">DNS-Securityupdate and many more packet updates</li>
-							<li>Enhancement of the packet manager</li>
-							<li>Improvement of the Quality-of-Service rules - Presets for QoS</li>
-							<li>Adjustable Firewall Logging</li>
-							<li>Kernel-Modules for better hardware suport</li>
-							<li>Change the system statistic to collectd</li>
-							<li>Better disk handling (S.M.A.R.T. and Standby)</li>
-							<li>Status- and Serviceview in the Webinterface</li>
-							<li>Proxy and Redirector now work more dynamic</li>
-						</ul>
-						<p>In addition, release 2.3 will change the following things:</p>
-						<ul>
-							<li class=\"first\">Kernel update to Linux-2.6.25.19</li>
-							<li>Update of many more packages (OpenSSL, OpenSSH, Apache, Squid, Snort, collectd, ntfs-3g, Openswan, Updatexlrator, iptables, l7protocols)</li>
-							<li>With several Atheros Chips IPFire is able to work as Wireless Access Point</li>
-							<li>Better support of UMTS-3G-Modems</li>
-							<li>Use of tmpfs to reduce disk reads and writes</li>
-							<li>Better hardware monitoring by the use of lmsensors</li>
-							<li>Vnstat Traffic-Accounting replaces ipac-ng</li>
-						</ul>
-						<p>The IPFire Team</p>",
-					  "de" : "<strong>Sehr geehrte Community!</strong><br />
-						<p>Heute wurde die Final Version von IPFire 2.3 veröffentlicht.</p>
-						<p>Wesentliche Änderungen seit der ersten Version 2.1 im Oktober 2007:</p>
-						<ul>
-							<li class=\"first\">DNS-Sicherheitsupdate und viele weitere Paket-Aktualisierungen</li>
-							<li>Erweiterung des Paketmanagers</li>
-							<li>Verfeinerung der Quality-of-Service Regeln - Voreinstellungsmodell für QoS</li>
-							<li>Feiner einstellbares Firewall Logging</li>
-							<li>Kernel-Module zur Hardwareunterstützung wurden nachgeliefert</li>
-							<li>Umstellung der Systemstatistiken auf collectd</li>
-							<li>Verbessertes Festplatten-Handling (S.M.A.R.T. und Standby)</li>
-							<li>Status- und Serviceübersicht im Webinterface</li>
-							<li>Proxy und Redirector arbeiten dynamischer zusammen</li>
-						</ul>
-						<p>Mit der 2.3 wird sich zusätzlich folgendes ändern:</p>
-						<ul>
-							<li class=\"first\">Der Kernel wurde auf Linux-2.6.25.19 aktualisiert</li>
-							<li>Aktualisierungen von weiteren Paketen (OpenSSL, OpenSSH, Apache, Squid, Snort, collectd, ntfs-3g, Openswan, Updatexlrator, iptables, l7protocols)</li>
-							<li>Mit einer passenden WLAN-Karte kann der IPFire als Access-Point für WLAN-Clients dienen</li>
-							<li>Bessere Unterstützung für UMTS-3G-Modems</li>
-							<li>Verwendung von tmpfs zur Reduzierung von Schreibzugriffen</li>
-							<li>Verbesserte Hardwareüberwachung durch Lmsensors</li>
-							<li>Vnstat Traffic-Accounting ersetzt ipac-ng</li>
-						</ul>
-						<p>Das IPFire-Team</p>" }}
+					{ "en" : "<p>Today, we released the final version of <strong>IPFire 2.3</strong>.</p>",
+					  "de" : "<p>Heute wurde die finale Version von <strong>IPFire 2.3</strong> herausgegeben.</p>"}},
+
+		"10" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Core Update 24",
+				"date"     : "2008-12-12",
+				"link"     : "http://forum.ipfire.org/index.php?topic=882.0",
+				"content"  :
+					{ "en" : "<p>Today, we released the <strong>core update number #24</strong>.</p>",
+					  "de" : "<p>Heute wurde das <strong>Core Update #24</strong> herausgegeben.</p>"}},
+
+		"11" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Core Update 25",
+				"date"     : "2008-12-21",
+				"link"     : "http://forum.ipfire.org/index.php?topic=951.0",
+				"content"  :
+					{ "en" : "<p>Today, we released the <strong>core update number #25</strong>.</p>",
+					  "de" : "<p>Heute wurde das <strong>Core Update #25</strong> herausgegeben.</p>"}},
+
+		"12" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Core Update 26",
+				"date"     : "2009-02-11",
+				"link"     : "http://forum.ipfire.org/index.php?topic=991.0",
+				"content"  :
+					{ "en" : "<p>Today, we released the <strong>core update number #26</strong>.</p>",
+					  "de" : "<p>Heute wurde das <strong>Core Update #26</strong> herausgegeben.</p>"}},
+
+		"13" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Core Update 27",
+				"date"     : "2009-03-10",
+				"link"     : "http://forum.ipfire.org/index.php?topic=1018.0",
+				"content"  :
+					{ "en" : "<p>Today, we released the <strong>core update number #27</strong>.</p>",
+					  "de" : "<p>Heute wurde das <strong>Core Update #27</strong> herausgegeben.</p>"}},
+
+		"14" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Hosting Partner",
+				"date"     : "2009-03-28",
+				"link"     : "http://wiki.ipfire.org/de/project/contribute",
+				"content"  :
+					{ "en" : "<p>We would like to welcome to our hosting partner <strong>ISP42</strong> that
+								has given a server to the project for free.</p>",
+					  "de" : "<p>Wir möchten unseren neuen Hosting-Partner <strong>ISP42</strong>
+								willkommen heißen, der uns einen Server konstenfrei zu Verfügung stellt.</p>"}},
+
+		"15" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : { "en" : "rss feed url changed", "de" : "RSS-Feed-URL geändert" },
+				"date"     : "2009-03-28",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>The url of our rss feed has changed. Please re-add it from the link in the sidebar.</p>",
+					  "de" : "<p>Wir möchten darauf hinweisen, dass sich die URL des RSS-Feeds geändert hat. Es ist nötig
+								den Feed neu hinzuzufügen von dem Link in der Sidebar.</p>"}}
 }
