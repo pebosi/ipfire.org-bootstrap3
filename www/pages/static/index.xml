@@ -73,43 +73,22 @@
 	
 	<Sidebar>
 		<Paragraph>
-			<Heading lang="en"><![CDATA[<span>search</span> our wiki]]></Heading>
-			<Heading lang="de"><![CDATA[<span>Suche</span> im Wiki]]></Heading>
+			<Heading><![CDATA[<span>info</span>rmation]]></Heading>
 
-			<Content raw="1"><![CDATA[
-				<form method="post" action="http://wiki.ipfire.org/Spezial:Suche">
-				<div id="search">
-					<input name="search" value="" type="text" class="text" />
-					<input type='submit' name="fulltext" class="button" value="Go" />
-					<br class="clear" />
-				</div>
-				</form>
+			<Content lang="en" raw="1"><![CDATA[
+				<p><strong>Current release:</strong><br />IPFire 2.3</p>
+				<p><strong>Current update level:</strong><br />Core 27</p>
+				<p><strong>Current unstables:</strong><br />IPFire 2.4 (Core 28)<br />IPFire 3.0 alpha 1</p>
+				]]></Content>
+			<Content lang="de" raw="1"><![CDATA[
+				<p><strong>Aktuelle Version:</strong><br />IPFire 2.3</p>
+				<p><strong>Aktuelles Update-Level:</strong><br />Core 27</p>
+				<p><strong>Testversionen:</strong><br />IPFire 2.4 (Core 28)<br />IPFire 3.0 alpha 1</p>
 				]]></Content>
 		</Paragraph>
 
 		<Paragraph banner="1" />
-		
-		<!-- 
-		<Paragraph>
-			<Heading lang="en"><![CDATA[About</span> us]]></Heading>
-			<Heading lang="de"><![CDATA[<span>Über</span> uns]]></Heading>
 
-			<Content lang="en"><![CDATA[
-				<strong>IPFire</strong> is developed by a group
-				of free programmers. They set it as their target
-				to create a secure and easy-going on ressources
-				firewall and a wide-ranging soho-server
-				in one piece.]]></Content>
-			<Content lang="de"><![CDATA[
-				<strong>IPFire</strong> wird von einer Gruppe von
-				freien Personen programmiert. Diese haben sich
-				zum Ziel gesetzt eine sichere und ressourcenschonende
-				Firewall und einen breit gefächerten SOHO-Server
-				aus einem Guss zu erstellen.
-				]]></Content>
-		</Paragraph>
-		-->
-		
 		<Paragraph>
 			<Heading><![CDATA[<span>RSS</span> feed]]></Heading>
 
