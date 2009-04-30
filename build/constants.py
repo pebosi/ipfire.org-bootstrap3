@@ -30,7 +30,7 @@ POINTS_COMPILING = 8
 
 config = {
 	"title"       : "IPFire - Builder",
-	"nightly_url" : ("ftp://ftp.ipfire.org/pub/nightly-builds/", "http://www.rowie.at/upload/ipfire/builds/",),
+	"nightly_url" : ("http://ftp.ipfire.org/pub/nightly-builds/", "http://www.rowie.at/upload/ipfire/builds/",),
 	"path"        : { "db" : "db", "log" : "error.log", },
 	"script"      : os.environ['SCRIPT_NAME'],
 	"db_name"     : "builder.db",
