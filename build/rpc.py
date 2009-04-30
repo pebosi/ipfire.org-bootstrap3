@@ -48,6 +48,7 @@ def run(uuid, action):
 								print "localhost"
 							else:
 								if ((myself.toolchain() == builder.toolchain()) and \
+									(myself.machine() == builder.machine()) and \
 									(myself.target() == builder.target())):
 									print "%s" % (builder.distcc,)
 
