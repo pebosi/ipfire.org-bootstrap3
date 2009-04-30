@@ -99,6 +99,8 @@ class Site:
 					border: 1px dotted;
 					margin-top: 12px;
 					/* visibility: hidden; */
+					height: 150px;
+					overflow: auto;
 				}
 				div.log p {
 					font-family: Courier New;
@@ -230,14 +232,12 @@ class Box:
 		log = self.builder.log()
 		if log:
 			print """<div class="log"><p>"""
-			for i in log:
-				if i:
-					print "%s<br />" % (i.rstrip("\n"),)
+			print "<br />".join(log)
 			print """</p></div>"""
 
 	def footer(self):
-		print """<div class="footer"><p>system: %s - cpu: %s <br /> target: %s - jobs: %s - toolchain: %s</p></div>""" \
-			% (self.builder.system(), self.builder.cpu(), self.builder.target(), self.builder.jobs(), self.builder.toolchain(),)
+		print """<div class="footer"><p>system: %s - cpu: %s <br /> machine: %s - target: %s - jobs: %s - toolchain: %s</p></div>""" \
+			% (self.builder.system(), self.builder.cpu(), self.builder.machine(), self.builder.target(), self.builder.jobs(), self.builder.toolchain(),)
 
 class BoxCompiling(Box):
 	def __init__(self, builder):
