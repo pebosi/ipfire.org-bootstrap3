@@ -9,6 +9,9 @@ import simplejson as json
 
 from http import HTTPResponse, WebError
 
+import cgitb
+cgitb.enable()
+
 class Data:
 	def __init__(self):
 		self.output = ""
@@ -171,7 +174,7 @@ class Languages:
 class Box(Data):
 	def __init__(self, headline, subtitle=""):
 		Data.__init__(self)
-		self.w("""<div class="post"><h3>%s</h3>""" % (headline,))
+		self.w("""<div class="post"><h3>%s</h3><a name="%s"></a>""" % (headline,headline,))
 		if subtitle:
 			self.w("""<ul class="post_info"><li class="date">%s</li></ul>""" % (subtitle,))
 
