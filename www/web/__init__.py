@@ -173,7 +173,7 @@ class Box(Data):
 		Data.__init__(self)
 		self.w("""<div class="post"><h3>%s</h3>""" % (headline,))
 		if subtitle:
-			self.w("""<ul class="post_info"><li class="date">%s</li></ul>""" % (subtitle,))
+			self.w("""<div class="post_info">%s</div>""" % (subtitle,))
 
 	def __call__(self):
 		self.w("""<br class="clear" /></div>""")
