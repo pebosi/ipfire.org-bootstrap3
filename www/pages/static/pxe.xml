@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site>
+	<Config>
+		<Title>PXE</Title>
+	</Config>
+	<Paragraphs>
+		<Paragraph>
+			<Heading>Preboot Execution Environment</Heading>
+			
+			<Content raw="1"><![CDATA[
+				<img src="/images/pxe.png" class="floatTR" />
+				]]>
+			</Content>
+
+			<Content lang="en"><![CDATA[
+				Since IPFire 3.x the distribution is installable via network.
+				<br /><br />
+				On <em>pxe.ipfire.org</em>, there are several files hosted, that are loaded
+				when booting from PXE.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Ab IPFire 3.x ist die Distribution über das Netzwerk installierbar.
+				<br /><br />
+				Auf <em>pxe.ipfire.org</em> sind nur einige Daten gehostet, die während
+				der Installation geladen werden.
+				]]></Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading lang="en">How to install?</Heading>
+			<Heading lang="de">Wie funktioniert's?</Heading>
+
+			<Content lang="en"><![CDATA[
+				Installation is really easy. Just follow these instructions in the wiki:
+				<a href="http://wiki.ipfire.org/en/installation/pxe" target="_blank">PXE installation guide</a>.
+				]]>
+			</Content>
+			<Content lang="de"><![CDATA[
+				Die Installation ist in unserem Wiki erklärt:
+				<a href="http://wiki.ipfire.org/de/installation/pxe" target="_blank">PXE-Installationsanleitung</a>.
+				]]>
+			</Content>
+		</Paragraph>
+
+	</Paragraphs>
+	
+	<Sidebar>
+		<Paragraph banner="1" />
+	</Sidebar>
+</Site>

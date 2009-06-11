@@ -10,6 +10,7 @@
 /pakfire/3.*
 /pakfire/version
 /people/*
+/pxe/*.iso
 /source/hashes.db
 /source/source-*
 /source/toolchains
