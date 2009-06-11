@@ -12,12 +12,14 @@ for language in ("de", "en",):
 site = cgi.FieldStorage().getfirst("site") or "index"
 
 sites = {	"ipfire.org"			: "http://www.ipfire.org",
+            "admin.ipfire.org"		: "/%s/%s" % (language, site,),
 			"www.ipfire.org"		: "/%s/%s" % (language, site,),
 			"source.ipfire.org"		: "http://www.ipfire.org/%s/source" % language,
 			"tracker.ipfire.org"	: "http://www.ipfire.org/%s/torrent" % language,
 			"torrent.ipfire.org"	: "http://www.ipfire.org/%s/torrent" % language,
 			"download.ipfire.org"	: "http://www.ipfire.org/%s/download" % language,
-			"people.ipfire.org"		: "http://wiki.ipfire.org/%s/people/start" % language, }
+			"people.ipfire.org"		: "http://wiki.ipfire.org/%s/people/start" % language,
+			"pxe.ipfire.org"		: "http://www.ipfire.org/%s/pxe" % language, }
 
 httpheader = []
 
