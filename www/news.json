@@ -148,5 +148,18 @@
 				"content"  :
 					{ "en" : "<p>The url of our rss feed has changed. Please re-add it from the link in the sidebar.</p>",
 					  "de" : "<p>Wir möchten darauf hinweisen, dass sich die URL des RSS-Feeds geändert hat. Es ist nötig
-								den Feed neu hinzuzufügen von dem Link in der Sidebar.</p>"}}
+								den Feed neu hinzuzufügen von dem Link in der Sidebar.</p>"}},
+
+		"16" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : { "en" : "experimental xen-images", "de" : "Experimentelle Xen-Images verfügbar" },
+				"date"     : "2009-06-11",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Ben Schweikert has published an experimental xen-image. See
+								<a href=\"http://people.ipfire.org/~trikolon/\" target=\"_blank\">http://people.ipfire.org/~trikolon/</a>
+								for more information.</p><p>Instructions are included in the tarball.</p>",
+					  "de" : "<p>Ben Schweikert hat ein experimentelles Image für IPFire als Gast in Xen erstellt.</p>
+					  			<p>Der Download ist auf <a href=\"http://people.ipfire.org/~trikolon/\" target=\"_blank\">http://people.ipfire.org/~trikolon/</a>
+								zu finden. Installationsanweisungen sind in dem Tarball enthalten.</p>"}}
 }
