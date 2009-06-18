@@ -153,8 +153,8 @@
 			<Content><![CDATA[
 				<ul class="links">
 					<li class="first"><a href="http://wiki.ipfire.org/de/tools/start">Windows</a></li>
-					<li><a href="http://wiki.ipfire.org/Tools:Linux">Linux</a></li>
-					<li><a href="http://wiki.ipfire.org/Tools:Mac_OS">Mac OS</a></li>
+					<li><a href="http://wiki.ipfire.org/de/tools/linux">Linux</a></li>
+					<li><a href="http://wiki.ipfire.org/de/tools/mac_os">Mac OS</a></li>
 				</ul>
 				]]></Content>
 		</Paragraph>
