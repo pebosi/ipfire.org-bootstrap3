@@ -150,9 +150,16 @@
 			<Heading lang="en"><![CDATA[<span>Other</span> Tools]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Andere</span> Tools]]></Heading>
 
-			<Content><![CDATA[
+			<Content lang="en"><![CDATA[
 				<ul class="links">
-					<li class="first"><a href="http://wiki.ipfire.org/de/tools/start">Windows</a></li>
+					<li class="first"><a href="http://wiki.ipfire.org/en/tools/windows">Windows</a></li>
+					<li><a href="http://wiki.ipfire.org/en/tools/linux">Linux</a></li>
+					<li><a href="http://wiki.ipfire.org/en/tools/mac_os">Mac OS</a></li>
+				</ul>
+				]]></Content>
+		    <Content lang="de"><![CDATA[
+				<ul class="links">
+					<li class="first"><a href="http://wiki.ipfire.org/de/tools/windows">Windows</a></li>
 					<li><a href="http://wiki.ipfire.org/de/tools/linux">Linux</a></li>
 					<li><a href="http://wiki.ipfire.org/de/tools/mac_os">Mac OS</a></li>
 				</ul>
