@@ -86,7 +86,16 @@
 				<p><strong>Testversionen:</strong><br />IPFire 2.5 RC 1 (Core 28)<br />IPFire 3.0 alpha 1</p><br />
 				]]></Content>
 		</Paragraph>
-
+		
+		<Paragraph>
+			<Heading><![CDATA[<span>Internet Relay</span> Chat]]></Heading>
+			<Content><![CDATA[
+				<b>Server:</b> irc.freenode.net<br />
+				<b>Channel:</b> #ipfire<br />
+				<a href="http://embed.mibbit.com/?settings=7ca12664887d4b6e7a0fa6552f9e0de6&amp;server=irc.freenode.net&amp;channel=%23ipfire&noServerNotices=true&forcePrompt=true&charset=ISO-8859-2" target="_blank">Web-Chat</a>
+				]]></Content>
+		</Paragraph>
+		
 		<Paragraph banner="1" />
 
 		<Paragraph>
@@ -102,13 +111,5 @@
 				<a href="news">News-Archiv</a><br /><br />]]></Content>
 		</Paragraph>
 		
-		<Paragraph>
-			<Heading><![CDATA[<span>Internet Relay</span> Chat]]></Heading>
-			<Content><![CDATA[
-				<b>Server:</b> irc.freenode.net<br />
-				<b>Channel:</b> #ipfire<br />
-				<a href="http://embed.mibbit.com/?settings=7ca12664887d4b6e7a0fa6552f9e0de6&amp;server=irc.freenode.net&amp;channel=%23ipfire&noServerNotices=true&forcePrompt=true&charset=ISO-8859-2" target="_blank">Web-Chat</a>
-				]]></Content>
-		</Paragraph>
 	</Sidebar>
 </Site>
