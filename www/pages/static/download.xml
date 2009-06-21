@@ -58,14 +58,18 @@
 			<Content raw="1"><![CDATA[
 				<div align="right">
 					<a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core28.iso.torrent">IPFire 2.5 - TORRENT - DISK</a><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a><br />
+					MD5: a7c8c07246ddb0c7b97bee54791901b9<br /><br />
 					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (HDD)</a><br />
+					MD5: 636db56e28329367bb45bf2e15abbd7a<br />
 					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (FDD)</a><br />
+					MD5: 0157f109e2f2a839fd4d00b42411b466<br />
 				</div>
 				]]></Content>
 			<Content lang="en"><![CDATA[
 				<div align="right">
-					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
+					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a><br />
+					MD5: dab63afb406ee24fa0acba6f83cabbc9
 				</div>
 				]]></Content>
 			<Content lang="de"><![CDATA[
