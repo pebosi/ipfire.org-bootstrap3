@@ -65,12 +65,12 @@
 				]]></Content>
 			<Content lang="en"><![CDATA[
 				<div align="right">
-					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
+					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
 				</div>
 				]]></Content>
 			<Content lang="de"><![CDATA[
 				<div align="right">
-					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
+					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
 				</div>
 				]]></Content>
 				
@@ -184,8 +184,8 @@
 			
 			<Content raw="1"><![CDATA[
 				<ul class="links">
-					<li class="first"><img src="/images/win_icon.png" alt="Windows" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.utorrent.com/" target="_blank"> utorrent</a></li>
-					<li><img src="/images/linux_icon.png" alt="Linux" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.transmissionbt.com/">Transmission</a></li>
+					<li class="first"><img src="/images/win_icon.png" alt="Windows" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.utorrent.com/" target="_blank"> &micro;torrent</a></li>
+					<li><img src="/images/linux_icon.png" alt="Linux" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.transmissionbt.com/" target="_blank">Transmission</a></li>
 				</ul>
 				]]></Content>
 		</Paragraph>
