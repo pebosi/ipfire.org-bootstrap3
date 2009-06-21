@@ -95,9 +95,12 @@
 			<Content raw="1"><![CDATA[
 				<div align="right">
 					<a href="http://download.ipfire.org/torrent/ipfire-2.3.i586-full.iso.torrent">IPFire 2.3 - TORRENT - DISK</a><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.3.i586-full.iso">IPFire 2.3 - HTTP - DISK</a><br /><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-hdd.i586.img.gz">IPFire 2.3 - HTTP - USB (HDD)</a><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-fdd.i586.img.gz">IPFire 2.3 - HTTP - USB (FDD)</a>
+					<a href="http://download.ipfire.org/iso/ipfire-2.3.i586-full.iso">IPFire 2.3 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.3.i586-full.iso.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-hdd.i586.img.gz">IPFire 2.3 - HTTP - USB (HDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-hdd.i586.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-fdd.i586.img.gz">IPFire 2.3 - HTTP - USB (FDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-fdd.i586.img.gz.md5">MD5</a>
 				</div>
 				]]></Content>	
 		</Paragraph>
@@ -121,9 +124,12 @@
 			<Content raw="1"><![CDATA[
 				<div align="right">
 					<a href="http://download.ipfire.org/torrent/ipfire-2.1.i586-full.iso.torrent">IPFire 2.1 - TORRENT - DISK</a><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso">IPFire 2.1 - HTTP - DISK</a><br /><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-hdd.i586.img.gz">IPFire 2.1 - HTTP - USB (HDD)</a><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-fdd.i586.img.gz">IPFire 2.1 - HTTP - USB (FDD)</a>
+					<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso">IPFire 2.1 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-hdd.i586.img.gz">IPFire 2.1 - HTTP - USB (HDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-hdd.i586.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-fdd.i586.img.gz">IPFire 2.1 - HTTP - USB (FDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-fdd.i586.img.gz.md5">MD5</a>
 				</div>
 				]]></Content>	
 		</Paragraph>
@@ -149,7 +155,8 @@
 			<Content raw="1"><![CDATA[
 				<div align="right">
 					<a href="http://download.ipfire.org/torrent/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a><br />
-					<a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - HTTP</a>
+					<a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - HTTP</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso.md5">MD5</a>
 				</div>
 				]]></Content>	
 		</Paragraph>
