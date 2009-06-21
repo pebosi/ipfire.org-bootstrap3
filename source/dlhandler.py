@@ -160,9 +160,6 @@ def main():
 	file = cgi.FieldStorage().getfirst("file")
 	path = cgi.FieldStorage().getfirst("path")
 
-	if not os.environ["HTTP_USER_AGENT"].startswith("IPFireSourceGrabber"):
-		give_403()
-
 	if not file:
 		give_302()
 
