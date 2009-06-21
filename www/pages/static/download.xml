@@ -44,15 +44,37 @@
 				und Monat drastisch angestiegen und wir hoffen natürlich, dass das so bleibt.
 				]]></Content>
 		</Paragraph>
-		
+
 		<Paragraph>
-			<Heading>IPFire 2.3 (Stable)</Heading>
+			<Heading>IPFire 2.5 (Stable)</Heading>
 
 			<Content lang="en"><![CDATA[
-				This is the very new stable 2.3 with kernel 2.6.25.19.
+				This is the very new stable 2.5 with kernel 2.6.27.25.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Die neue stabile Version vom 8. November 2008 mit Kernel 2.6.25.19.
+				Die neue stabile Version vom 22. Juni 2009 mit Kernel 2.6.27.25.
+				]]></Content>
+			
+			<Content raw="1"><![CDATA[
+				<div align="right">
+					<a href="http://download.ipfire.org/torrent/iipfire-2.5.i586-full-core28.iso.torrent">IPFire 2.5 - TORRENT - DISK</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (HDD)</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (FDD)</a><br />
+					<br />
+					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
+				</div>
+				]]></Content>	
+		</Paragraph>
+
+		<Paragraph>
+			<Heading>IPFire 2.3 (Old-Stable)</Heading>
+
+			<Content lang="en"><![CDATA[
+				This is the old stable 2.3 with kernel 2.6.25.19.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Die stabile Version vom 8. November 2008 mit Kernel 2.6.25.19.
 				]]></Content>
 			
 			<Content raw="1"><![CDATA[
@@ -69,10 +91,10 @@
 			<Heading>IPFire 2.1</Heading>
 
 			<Content lang="en"><![CDATA[
-				This is the very new stable 2.1 with kernel 2.6.16.57.
+				This is the old stable 2.1 with kernel 2.6.16.57.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Die neue stabile Version vom 8. November 2007 mit Kernel 2.6.16.57.
+				Die stabile Version vom 8. November 2007 mit Kernel 2.6.16.57.
 				]]></Content>
                         <Content lang="en"><![CDATA[
                                 <b>The team recommends using IPFire 2.3.</b>
