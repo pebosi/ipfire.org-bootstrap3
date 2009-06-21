@@ -57,28 +57,13 @@
 			
 			<Content raw="1"><![CDATA[
 				<div align="right">
-				 <table border="0">
-				  <tr>
-				    <td><a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core28.iso.torrent">IPFire 2.5 - TORRENT - DISK</a></td>
-				    <td>&nbsp;</td>
-				  </tr>
-				  <tr>
-				    <td><a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a></td>
-				    <td>MD5: a7c8c07246ddb0c7b97bee54791901b9</td>
-				  </tr>
-				  <tr>
-				    <td>&nbsp;</td>
-				    <td>&nbsp;</td>
-				  </tr>
-				  <tr>
-				    <td><a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (HDD)</a></td>
-				    <td>MD5: 636db56e28329367bb45bf2e15abbd7a</td>
-				  </tr>
-				  <tr>
-				    <td><a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (FDD)</a></td>
-				    <td>MD5: 0157f109e2f2a839fd4d00b42411b466</td>
-				  </tr>
-				  </table>
+					<a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core28.iso.torrent">IPFire 2.5 - TORRENT - DISK</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a><br />
+					MD5: a7c8c07246ddb0c7b97bee54791901b9<br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (HDD)</a><br />
+					MD5: 636db56e28329367bb45bf2e15abbd7a<br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (FDD)</a><br />
+					MD5: 0157f109e2f2a839fd4d00b42411b466<br />
 				</div>
 				]]></Content>
 			<Content lang="en"><![CDATA[
