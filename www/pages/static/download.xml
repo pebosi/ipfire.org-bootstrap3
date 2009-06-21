@@ -184,12 +184,13 @@
 			
 			<Content raw="1"><![CDATA[
 				<ul class="links">
-					<li class="first"><img src="/images/win_icon.png" alt="Windows"><a href="http://www.utorrent.com/">utorrent</a></li>
-					<li><img src="/images/linux_icon.png" alt="Linux"><a href="http://www.transmissionbt.com/">Transmission</a></li>
-					<li><img src="/images/mac_icon.png" alt="Mac OS"><a href="http://www.transmissionbt.com/">Transmission</a></li>
+					<li class="first"><img src="/images/win_icon.png" alt="Windows" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.utorrent.com/" target="_blank"> utorrent</a></li>
+					<li><img src="/images/linux_icon.png" alt="Linux" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.transmissionbt.com/">Transmission</a></li>
 				</ul>
 				]]></Content>
+		</Paragraph>
 		
+		<Paragraph>
 			<Heading lang="en"><![CDATA[<span>Other</span> Tools]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Andere</span> Tools]]></Heading>
 
