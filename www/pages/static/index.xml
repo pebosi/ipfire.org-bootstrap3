@@ -76,14 +76,14 @@
 			<Heading><![CDATA[<span>info</span>rmation]]></Heading>
 
 			<Content lang="en" raw="1"><![CDATA[
-				<p><strong>Current release:</strong><br />IPFire 2.3</p>
-				<p><strong>Current update level:</strong><br />Core 27</p>
-				<p><strong>Current unstables:</strong><br />IPFire 2.5 RC 1 (Core 28)<br />IPFire 3.0 alpha 1</p>
+				<p><strong>Current release:</strong><br />IPFire 2.5</p>
+				<p><strong>Current update level:</strong><br />Core 28</p>
+				<p><strong>Current unstables:</strong><br />IPFire 3.0 alpha 1</p>
 				]]></Content>
 			<Content lang="de" raw="1"><![CDATA[
-				<p><strong>Aktuelle Version:</strong><br />IPFire 2.3</p>
-				<p><strong>Aktuelles Update-Level:</strong><br />Core 27</p>
-				<p><strong>Testversionen:</strong><br />IPFire 2.5 RC 1 (Core 28)<br />IPFire 3.0 alpha 1</p>
+				<p><strong>Aktuelle Version:</strong><br />IPFire 2.5</p>
+				<p><strong>Aktuelles Update-Level:</strong><br />Core 28</p>
+				<p><strong>Testversionen:</strong><br />IPFire 3.0 alpha 1</p>
 				]]></Content>
 		</Paragraph>
 		
