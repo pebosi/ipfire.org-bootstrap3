@@ -167,7 +167,7 @@
 				"mail"     : "michael.tremer@ipfire.org",
 				"subject"  : { "en" : "IPFire 2.5 has arrived! - Core 28", "de" : "IPFire 2.5 - Core 28" },
 				"date"     : "2009-06-22",
-				"link"     : "release_25",
+				"link"     : "",
 				"content"  :
 					{ "en" : "<p>Finally, <strong>IPFire 2.5</strong> has arrived! With this release,
 								there are several new features:</p>
