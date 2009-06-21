@@ -161,5 +161,25 @@
 								for more information.</p><p>Instructions are included in the tarball.</p>",
 					  "de" : "<p>Ben Schweikert hat ein experimentelles Image für IPFire als Gast in Xen erstellt.</p>
 					  			<p>Der Download ist auf <a href=\"http://people.ipfire.org/~trikolon/\" target=\"_blank\">http://people.ipfire.org/~trikolon/</a>
-								zu finden. Installationsanweisungen sind in dem Tarball enthalten.</p>"}}
+								zu finden. Installationsanweisungen sind in dem Tarball enthalten.</p>"},
+
+		"17" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.5 has arrived! - Core 28", "de" : "IPFire 2.5 - Core 28" },
+				"date"     : "2009-06-22",
+				"link"     : "release_25",
+				"content"  :
+					{ "en" : "<p>Finally, <strong>IPFire 2.5</strong> has arrived! With this release,
+								there are several new features:</p>
+								<ul><li>More/better hardware support (with Linux kernel 2.6.27.25 LTS)</li>
+									<li>Dial-in via PPTP and VDSL</li>
+									<li>A lot of minor updates: openssl, dnsmasq, iptables, snort.</li>
+								</ul>
+								<p>There is also an experimental <strong>Xen</strong>-kernel available.</p>",
+					  "de" : "<p>Ab heute ist <strong>IPFire 2.5</strong> verfügbar. Es gibt folgende Änderungen:</p>
+					  			<ul><li>Bessere Hardwareunterstützung (Linux 2.6.27.25 LTS).</li>
+								  	<li>Einwahl über PPTP und VDSL möglich.</li>
+									<li>Eine Zahl kleinerer Updates: openssl, dnsmasq, iptables, snort.</li>
+								</ul>
+								<p>Ein experimenteller <strong>Xen</strong>-Kernel ist verfügbar.</p>"}}
 }
