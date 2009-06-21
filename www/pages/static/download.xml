@@ -61,10 +61,20 @@
 					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a><br /><br />
 					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (HDD)</a><br />
 					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (FDD)</a><br />
-					<br />
+				</div>
+				]]></Content>
+			<Content lang="en"><![CDATA[
+				<div align="right">
 					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
 				</div>
-				]]></Content>	
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				<div align="right">
+					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>
+				</div>
+				]]></Content>
+				
+					
 		</Paragraph>
 
 		<Paragraph>
@@ -74,7 +84,7 @@
 				This is the old stable 2.3 with kernel 2.6.25.19.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Die stabile Version vom 8. November 2008 mit Kernel 2.6.25.19.
+				Die alte stabile Version vom 8. November 2008 mit Kernel 2.6.25.19.
 				]]></Content>
 			
 			<Content raw="1"><![CDATA[
@@ -169,6 +179,17 @@
 
 	<Sidebar>
 		<Paragraph>
+		    <Heading lang="en"><![CDATA[<span>Torrent</span> clients]]></Heading>
+			<Heading lang="de"><![CDATA[<span>Torrent</span> Clients]]></Heading>	
+			
+			<Content raw="1"><![CDATA[
+				<ul class="links">
+					<li class="first"><img src="/images/win_icon.png" alt="Windows"><a href="http://www.utorrent.com/">utorrent</a></li>
+					<li><img src="/images/linux_icon.png" alt="Linux"><a href="http://www.transmissionbt.com/">Transmission</a></li>
+					<li><img src="/images/mac_icon.png" alt="Mac OS"><a href="http://www.transmissionbt.com/">Transmission</a></li>
+				</ul>
+				]]></Content>
+		
 			<Heading lang="en"><![CDATA[<span>Other</span> Tools]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Andere</span> Tools]]></Heading>
 
