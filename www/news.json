@@ -161,7 +161,7 @@
 								for more information.</p><p>Instructions are included in the tarball.</p>",
 					  "de" : "<p>Ben Schweikert hat ein experimentelles Image für IPFire als Gast in Xen erstellt.</p>
 					  			<p>Der Download ist auf <a href=\"http://people.ipfire.org/~trikolon/\" target=\"_blank\">http://people.ipfire.org/~trikolon/</a>
-								zu finden. Installationsanweisungen sind in dem Tarball enthalten.</p>"},
+								zu finden. Installationsanweisungen sind in dem Tarball enthalten.</p>"}},
 
 		"17" : {"author"   : "Michael Tremer",
 				"mail"     : "michael.tremer@ipfire.org",
