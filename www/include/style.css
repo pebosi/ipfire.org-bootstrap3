@@ -415,7 +415,15 @@ background-color: #f5f5f5;
   border: 0;
 }
 
-
+#nodes {
+  width: 720px;
+}
+#nodes th, #nodes td {
+  text-align: left;
+}
+#nodes td {
+  width: 50px;
+}
 /* Footer */
 
 #footer
