@@ -9,6 +9,9 @@
 		<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
 		<link rel="stylesheet" type="text/css" href="/include/style.css" />
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.ipfire.org/data/feeds/main-en.rss" />
+		<script src="/include/jquery.js" type="text/javascript"></script>
+		<script src="/include/jquery-ui.js" type="text/javascript"></script>
+		<script src="/include/jquery.progressbar.min.js" type="text/javascript"></script>
 	<!--[if lt IE 7]>
 		<link rel="stylesheet" type="text/css" href="/include/ie6.css" />
 		<script src="/include/correctpng.js" type="text/javascript"></script>
