@@ -6,7 +6,8 @@ import cgi
 from web.http import HTTPResponse
 
 for language in ("de", "en",):
-	if os.environ["HTTP_ACCEPT_LANGUAGE"].startswith(language):
+	if os.environ.has_key("HTTP_ACCEPT_LANGUAGE") and \
+			os.environ["HTTP_ACCEPT_LANGUAGE"].startswith(language):
 		break
 
 site = cgi.FieldStorage().getfirst("site") or "index"
