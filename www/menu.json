@@ -4,7 +4,7 @@
 	"20" : { "uri"  : "/download",
 			 "name" : "Downloads" },
 	"30" : { "uri"  : "http://wiki.ipfire.org/",
-			 "name" : { "de" : "Wiki", "en" : "Docs" }},
+			 "name" : { "de" : "Wiki", "en" : "Wiki" }},
 	"40" : { "uri"  : "http://forum.ipfire.org/",
 			 "name" : "Forum" },
 	"50" : { "uri"  : "/development",
