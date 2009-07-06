@@ -116,24 +116,21 @@
 																	<a href="http://www.ohloh.net/projects/ipfire">http://www.ohloh.net/projects/ipfire</a><br />
 																	<a href="http://forum.softgil.com/weblinks.php?cat_id=1">http://forum.softgil.com/weblinks.php?cat_id=1</a><br />
                                 ]]></Content>
-                        <Content lang="en"><![CDATA[
-                        											If there are links on site that are not known to the project, yet, please get in touch with us!
-                        		]]></Content>
-                        <Content lang="de"><![CDATA[
-																	Solltet ihr weitere relevante Links zum Projekt IPFire irgendwo entdecken, lasst es und bitte
-																	wissen (post im Forum oder IRC). Für jede Hilfe sind wir dankbar!
-                                ]]></Content>
+                        
                 </Paragraph>
         </Paragraphs>
         <Sidebar>
                 <Paragraph>
-                        <Heading><![CDATA[]]></Heading>
+                        <Heading lang="en"><span>more</span> links</Heading>
+                        <Heading lang="de"><span>mehr</span> links</Heading>
 
                         <Content lang="en"><![CDATA[
-																]]></Content>
-
+                        											If there are relevant links on sites that are not known to the IPFire project, please let us know! 																		(via forum or irc)<br />We are grateful for any assistance!
+                        		]]></Content>
                         <Content lang="de"><![CDATA[
-                        				]]></Content>
+																	Solltet ihr weitere relevante Links zum Projekt IPFire irgendwo entdecken, lasst es uns bitte
+																	wissen! (via Forum oder IRC)<br />Für jede Hilfe sind wir dankbar!
+                                ]]></Content>
                 </Paragraph>
         </Sidebar>
 </Site>
