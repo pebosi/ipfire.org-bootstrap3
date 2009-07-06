@@ -373,11 +373,11 @@ table {
   padding: 0em;
   width: 980px;
   max-width: 980px;
-  font-size: 0.9em;
 }
 .post table {
   width: 900px;
   max-width: 900px;
+  font-size: 0.9em;
 }
 #sh-tl {
   background: url(/images/sh-tl.png) no-repeat right bottom;
