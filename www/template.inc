@@ -8,7 +8,7 @@
 		<meta name="description" content="" />
 		<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
 		<link rel="stylesheet" type="text/css" href="/include/style.css" />
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.ipfire.org/data/feeds/main-en.rss" />
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="feed://www.ipfire.org/de/news.rss" />
 		<script src="/include/jquery.js" type="text/javascript"></script>
 		<script src="/include/jquery-ui.js" type="text/javascript"></script>
 		<script src="/include/jquery.progressbar.min.js" type="text/javascript"></script>
