@@ -121,8 +121,8 @@
         </Paragraphs>
         <Sidebar>
                 <Paragraph>
-                        <Heading lang="en"><span>more</span> links</Heading>
-                        <Heading lang="de"><span>mehr</span> links</Heading>
+                		<Heading lang="en"><![CDATA[<span>more</span> links]]></Heading>
+						<Heading lang="de"><![CDATA[<span>mehr</span> links]]></Heading>
 
                         <Content lang="en"><![CDATA[
                         											If there are relevant links on sites that are not known to the IPFire project, please let us know! 																		(via forum or irc)<br />We are grateful for any assistance!
