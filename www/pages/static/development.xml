@@ -23,13 +23,13 @@
 				]]></Content>
 
 			<Content lang="en"><![CDATA[
-					There is one early development version at the moment:<br /><br />
+					<br />There is one early development version at the moment:<br />
 					<strong>version 3.0</strong>, the next major release, has
 					reached alpha state. See the roadmap at:
 					<a href="http://wiki.ipfire.org/en/development/3.0" target="_blank">http://wiki.ipfire.org/en/development/3.0</a>.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-					Zurzeit gibt eine frühe Entwicklungsversion:<br /><br />
+					<br />Zurzeit gibt eine frühe Entwicklungsversion:<br />
 					<strong>Version 3.0</strong>, die nächste Major-Version, hat
 					den Alpha-Status erreicht. Ein Roadmap findet sich unter
 					<a href="http://wiki.ipfire.org/de/development/3.0" target="_blank">http://wiki.ipfire.org/de/development/3.0</a>.
