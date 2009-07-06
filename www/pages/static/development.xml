@@ -21,24 +21,7 @@
 					Hier habt Ihr Zugriff auf alle Ressourcen für die Entwicklung.<br />
 					Die nötigen Howtos entnehmt bitte dem Wiki.
 				]]></Content>
-			
-			<Content lang="en"><![CDATA[
-				<ul class="links">
-					<li class="first"><a href="#git">git</a></li>
-					<li><a href="#source-code">sourcecode</a></li>
-					<li><a href="#bugtracker">bugtracker</a></li>
-					<li><a href="#nightly-builds">nighty builds</a></li>
-				</ul>
-				]]></Content>
-			<Content lang="de"><![CDATA[
-				<ul class="links">
-					<li class="first"><a href="#git">Git</a></li>
-					<li><a href="#source-code">Sourcecode</a></li>
-					<li><a href="#bugtracker">Bugtracker</a></li>
-					<li><a href="#nightly-builds">Nighty-Builds</a></li>
-				</ul>
-				]]></Content>
-			
+
 			<Content lang="en"><![CDATA[
 					There is one early development version at the moment:<br /><br />
 					<strong>version 3.0</strong>, the next major release, has
@@ -50,7 +33,15 @@
 					<strong>Version 3.0</strong>, die nächste Major-Version, hat
 					den Alpha-Status erreicht. Ein Roadmap findet sich unter
 					<a href="http://wiki.ipfire.org/de/development/3.0" target="_blank">http://wiki.ipfire.org/de/development/3.0</a>.
+				]]></Content>	
+						
+			<Content lang="en"><![CDATA[
+				<br /><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">Comparison of IPFire to IPCop and Smoothwall on ohloh.net</a>
 				]]></Content>
+
+			<Content lang="de"><![CDATA[
+				<br /><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net</a>
+				]]></Content>				
 		</Paragraph>
 		<Paragraph>
 			<Heading>git</Heading>
@@ -123,12 +114,21 @@
 			<Heading><![CDATA[<span>Development</span> Zone]]></Heading>
 			
 			<Content lang="en"><![CDATA[
-				<a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">Comparison of IPFire to IPCop and Smoothwall on ohloh.net</a>
-			]]></Content>
-
+				<ul class="links">
+					<li class="first"><a href="#git">git</a></li>
+					<li><a href="#source-code">sourcecode</a></li>
+					<li><a href="#bugtracker">bugtracker</a></li>
+					<li><a href="#nightly-builds">nighty builds</a></li>
+				</ul>
+				]]></Content>				
 			<Content lang="de"><![CDATA[
-				<a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net</a>
-			]]></Content>
+				<ul class="links">
+					<li class="first"><a href="#git">Git</a></li>
+					<li><a href="#source-code">Sourcecode</a></li>
+					<li><a href="#bugtracker">Bugtracker</a></li>
+					<li><a href="#nightly-builds">Nighty-Builds</a></li>
+				</ul>
+				]]></Content>
 		</Paragraph>
 	</Sidebar>
 </Site>
