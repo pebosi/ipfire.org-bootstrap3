@@ -8,7 +8,12 @@ class Node(object):
 		self.address = address
 		self.arch = arch
 		self.speed = speed
-		self.jobs = jobs
+
+		(jobs_cur, jobs_max) = jobs.split("/")
+		if jobs_cur > jobs_max:
+			jobs_cur = jobs_max
+		self.jobs = "%s/%s" % (jobs_cur, jobs_max)
+
 		self.load = int(load) / 10 # in percent
 	
 	def __str__(self):
@@ -53,6 +58,7 @@ class Cluster(object):
 		ret = []
 		data = self.command("listcs")
 		for line in data:
+			if line.startswith("  "): continue
 			if not line.startswith(" "): continue
 			(a, hostname, address, arch, speed, jobs, load) = line.split(" ")
 			address = address.strip("()")
