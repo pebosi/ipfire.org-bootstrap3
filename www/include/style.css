@@ -31,11 +31,10 @@ padding: 0em;
 
 body
 {
-background-color: #fff;
-color: #585858;
   font-family: "Verdana", "Deja-Vu Sans", "Bitstream Vera Sans", sans-serif;
-font-size: 0.9em;
-background: #f0f0f0 url(/images/bg.png) repeat;
+  font-size: 0.9em;
+  background: #880400; /* url(/images/bg.png) repeat;*/
+  color: #585858;
 }
 
 h1,h2,h3,h4,h5,h6
@@ -138,7 +137,7 @@ line-height: 1.5em;
 {
 width:100%;
 height:102px;
-background: #440000 url('/images/bg1.png') repeat-x;
+background: url('/images/bg-menu99.png') repeat-x;
 }
 
 #header_inner
@@ -409,7 +408,8 @@ table {
   background: url(/images/sh-br.png) no-repeat left top;
 }
 #no-sh {
-background-color: #f5f5f5;
+  background-color: #f5f5f5;
+  width: 980px;
 }
 #sh-tl, #sh-top, #sh-tr, #sh-lft, #sh-rgt, #sh-bl, #sh-btn, #sh-br {
   width: 16px;
@@ -431,19 +431,20 @@ background-color: #f5f5f5;
 #nodes td {
   width: 50px;
 }
+
 /* Footer */
 
 #footer
 {
 clear: both;
-width: 100%;
 height: 26px;
 color: #ddd;
 text-align: center;
 background: url(/images/ft.png) left top;
 margin-top: 0em;
 margin-bottom: 0em;
-padding-top: 1.0em;
+padding-top: 0.5em;
+padding-bottom: 0.5em;
 text-transform: lowercase;
 }
 

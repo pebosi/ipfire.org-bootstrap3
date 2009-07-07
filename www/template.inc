@@ -8,10 +8,7 @@
 		<meta name="description" content="" />
 		<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
 		<link rel="stylesheet" type="text/css" href="/include/style.css" />
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="feed://www.ipfire.org/de/news.rss" />
-		<script src="/include/jquery.js" type="text/javascript"></script>
-		<script src="/include/jquery-ui.js" type="text/javascript"></script>
-		<script src="/include/jquery.progressbar.min.js" type="text/javascript"></script>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.ipfire.org/data/feeds/main-en.rss" />
 	<!--[if lt IE 7]>
 		<link rel="stylesheet" type="text/css" href="/include/ie6.css" />
 		<script src="/include/correctpng.js" type="text/javascript"></script>
@@ -21,7 +18,7 @@
 		<div id="header">
 			<div id="header_inner" class="fixed">
 				<div id="logo">
-					<a href="/" accesskey="h" title="[ALT+H]"><img src="/images/tux2.png" width="102px" height="102px" class="symbol" alt="IPFire" /></a>
+					<a href="/" accesskey="h" title="[ALT+H]"><img src="/images/tux2-99.png" width="100px" height="102px" class="symbol" alt="IPFire" /></a>
 				</div>
 				<div id="line1">
 					%(menu)s
@@ -64,6 +61,15 @@
 						</td>
 						<td id="sh-rgt"></td>
 					</tr>
+					
+					<tr>
+						<td id="sh-lft"></td>
+						<td id="footer" class="fixed2">
+							Copyright &copy; %(year)s IPFire.org. All rights reserved. <a href="/%(lang)s/imprint">Imprint</a>
+						</td>
+						<td id="sh-rgt"></td>
+					</tr>
+					
 					<tr>
 						<td id="sh-bl"></td>
 						<td id="sh-btn"></td>
@@ -71,9 +77,6 @@
 					</tr>
 				</table>
 			</div>
-		</div>
-		<div id="footer" class="fixed2">
-			Copyright &copy; %(year)s IPFire.org. All rights reserved. <a href="/%(lang)s/imprint">Imprint</a>
 		</div>
 	</body>
 </html>
