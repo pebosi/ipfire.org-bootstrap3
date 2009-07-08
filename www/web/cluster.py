@@ -45,6 +45,8 @@ class Cluster(object):
 
 	@property
 	def load(self):
+		if not self.nodes:
+			return 0
 		load = 0
 		for node in self.nodes:
 			load += node.load
