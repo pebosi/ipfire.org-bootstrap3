@@ -51,8 +51,8 @@ class SourceObject:
 
 
 class Content(web.Content):
-	def __init__(self, name):
-		web.Content.__init__(self, name)
+	def __init__(self):
+		web.Content.__init__(self)
 		
 		self.dirs = []
 
@@ -85,5 +85,6 @@ class Content(web.Content):
 			ret += b()
 		return ret
 
-Sidebar = web.Sidebar
-
+page = web.Page()
+page.content = Content()
+page.sidebar = web.Sidebar()

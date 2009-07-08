@@ -1,22 +1,43 @@
 #!/usr/bin/python
 
 import web
-import web.cluster
+import web.elements
+from web.javascript import Javascript
 
 class Content(web.Content):
-	def __init__(self, name):
-		web.Content.__init__(self, name)
-		
-		self.cluster = web.cluster.Cluster("minerva.ipfire.org")
+	def __init__(self):
+		web.Content.__init__(self)
 
 	def __call__(self, lang):
-		ret = "<h3>Icecream Cluster Monitoring</h4>"
+		ret = """<h3>Icecream Cluster Monitoring</h4>
+			<p>Cluster's load: <span id="loadbar"></span>  - Number of nodes: <span id="count">-</span></p>
+				<table id="nodes">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Arch</th>
+							<th>Load</th>
+							<th>Jobs</th>
+							<th>Speed</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>"""
 
-		ret += """<script type="text/javascript">
+		return ret
+
+page = web.Page()
+page.content = Content()
+page.sidebar = web.elements.Sidebar()
+
+page.javascript = Javascript(jquery=1)
+page.javascript.jquery_plugin("progressbar")
+page.javascript.write("""<script type="text/javascript">
 				nodes = new Array();
 
 				update = function() {
-					$.getJSON("http://www.ipfire.org/rpc.py", { type: "cluster" },
+					$.getJSON("/rpc.py", { type: "cluster" },
 						function(data) {
 							var count = 0;
 							$.each(data.nodes, function(i, node) {
@@ -60,23 +81,4 @@ class Content(web.Content):
 					update();
 					setInterval("update()", 2000);
 				})
-			</script>"""		
-
-		ret += """<p>Cluster's load: <span id="loadbar"></span>  - Number of nodes: <span id="count">-</span></p>
-				<table id="nodes">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Arch</th>
-							<th>Load</th>
-							<th>Jobs</th>
-							<th>Speed</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>"""
-
-		return ret
-
-Sidebar = web.Sidebar
+			</script>""")

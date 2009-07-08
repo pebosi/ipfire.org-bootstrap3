@@ -190,6 +190,8 @@
 	</Paragraphs>
 
 	<Sidebar>
+		<Paragraph releases="1" />
+
 		<Paragraph>
 		    <Heading lang="en"><![CDATA[<span>Torrent</span> clients]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Torrent</span> Clients]]></Heading>	
@@ -202,7 +204,7 @@
 				]]></Content>
 		</Paragraph>
 		
-		<Paragraph>
+		<!-- <Paragraph>
 			<Heading lang="en"><![CDATA[<span>Other</span> Tools]]></Heading>
 			<Heading lang="de"><![CDATA[<span>Andere</span> Tools]]></Heading>
 
@@ -220,7 +222,7 @@
 					<li><a href="http://wiki.ipfire.org/de/tools/mac_os">Mac OS</a></li>
 				</ul>
 				]]></Content>
-		</Paragraph>
+		</Paragraph> -->
 
 		<Paragraph banner="1" />
 

@@ -5,12 +5,13 @@ import time
 from urllib import quote
 
 import web
+import web.news
 
 class Content(web.Content):
-	def __init__(self, name):
-		web.Content.__init__(self, name)
+	def __init__(self):
+		web.Content.__init__(self)
 		
-		self.news = web.News(15)
+		self.news = web.news.News(15)
 
 	def __call__(self, lang="en"):
 		s = ""
@@ -36,9 +37,5 @@ class Content(web.Content):
 			</item>\n""" % item
 		return s
 
-class Sidebar(web.Sidebar):
-	def __init__(self, name):
-		web.Sidebar.__init__(self, name)
-	
-	def content(self, lang):
-		pass
+page = web.Page()
+page.content = Content()

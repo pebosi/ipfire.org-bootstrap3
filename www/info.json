@@ -1,0 +1,7 @@
+{
+	"name"     : "IPFire",
+	"sname"    : "ipfire",
+	"slogan"   : "Security now!",
+	"releases" : { "stable"  : "IPFire 2.5 - Core 28",
+				   "testing" : "IPFire 3.0 alpha 1" }
+}
