@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from . import Data
+from web import Data
 from banners import Banners
 from info import Info
 
