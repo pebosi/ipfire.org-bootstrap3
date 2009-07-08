@@ -5,7 +5,19 @@
 		<Title lang="de">Funktionen</Title>
 	</Config>
 	<Paragraphs>
-		<Paragraph>
+		<Paragraph><Heading>Features</Heading>
+			<Content raw="1"><![CDATA[
+				<img src="../images/pic.gif" class="floatTR" alt="Features" />
+			]]></Content>
+			
+			<Content lang="en"><![CDATA[
+					Here you will find an overview of all currently available features. <br />
+				]]></Content>
+			<Content lang="de"><![CDATA[
+					Hier findet Ihr einen Überblick über alle derzeitig verfügbaren Funktionen.<br />
+				]]></Content>
+			
+			
 			<Heading lang="en">Safety Installations:</Heading>
 			<Heading lang="de">Sicherheitseinrichtungen:</Heading>
 			<Content lang="en"><![CDATA[
@@ -90,7 +102,7 @@
 							<li>encryption with AES, 3DES, Blowfish, Serpent and Twofish</li> 
 							<li>HMAC: SHA1, SHA256, SHA384, SHA512</li> 
 							<li>real time compression</li>
-													</ul>
+						</ul>
 					</li>
 					<li>OpenVPN
 						<ul>
@@ -188,6 +200,12 @@
 		<Paragraph>
 		    <Heading lang="en">Configuration:</Heading>
 			<Heading lang="de">Konfiguration:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>SSL-encrypted web interface</li> 
+					<li>SSH server</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>SSL-verschlüsseltes Web-Administrations-Interface</li>
@@ -310,6 +328,7 @@
 				    </ul>
 				  </li>
 				</ul>
+				<br />Descriptions of the various addons you can find in the <a href="http://wiki.ipfire.org/">wiki</a>.<br />
 			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -389,6 +408,7 @@
 				    </ul>
 				  </li>
 				</ul>
+				<br />Beschreibungen zu den unterschiedlichen Addons findet Ihr im <a href="http://wiki.ipfire.org/">Wiki</a>.<br />
 			]]></Content>
 		</Paragraph>
 	</Paragraphs>
