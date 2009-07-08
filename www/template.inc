@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="/include/ie6.css" />
 		<script src="/include/correctpng.js" type="text/javascript"></script>
 	<![endif]-->
+		%(javascript)s
 	</head>
 	<body>
 		<div id="header">

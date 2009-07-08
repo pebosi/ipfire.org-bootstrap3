@@ -5,8 +5,11 @@ import os
 from xml.dom.minidom import parseString
 
 import web
+from web.banners import Banners
+from web.elements import Box, Releases
+from web.news import News
 
-class Xml:
+class Xml(object):
 	def __init__(self, file):
 		file = "%s/pages/static/%s.xml" % (os.getcwd(), file,)
 		f = open(file)
@@ -14,10 +17,10 @@ class Xml:
 		f.close()
 
 		self.xml = parseString(data).getElementsByTagName("Site")[0]
-	
+
 	def getAttribute(self, node, attr):
 		return node.getAttribute(attr).strip()
-	
+
 	def getText(self, node):
 		ret = ""
 		for i in node.childNodes:
@@ -34,7 +37,7 @@ class Content(Xml):
 		for paragraphs in self.xml.getElementsByTagName("Paragraphs"):
 			for paragraph in paragraphs.getElementsByTagName("Paragraph"):
 				if self.getAttribute(paragraph, "news") == "1":
-					news = web.News(int(self.getAttribute(paragraph, "count")))
+					news = News(int(self.getAttribute(paragraph, "count")))
 					ret += news(lang).encode("utf-8")
 					continue
 
@@ -45,7 +48,7 @@ class Content(Xml):
 						heading = self.getText(heading)
 						break
 
-				b = web.Box(heading)
+				b = Box(heading)
 
 				# Content
 				for content in paragraph.getElementsByTagName("Content"):
@@ -70,9 +73,13 @@ class Sidebar(Xml):
 		sidebar = self.xml.getElementsByTagName("Sidebar")[0]
 		for paragraph in sidebar.getElementsByTagName("Paragraph"):
 			if self.getAttribute(paragraph, "banner") == "1":
-				b = web.Banners()
+				b = Banners()
 				ret += """<h4>%(title)s</h4><a href="%(link)s" target="_blank">
 						<img class="banner" src="%(uri)s" /></a>""" % b.random()
+				continue
+			elif self.getAttribute(paragraph, "releases") == "1":
+				r = Releases()
+				ret += r(lang)
 				continue
 
 			# Heading
@@ -95,3 +102,7 @@ class Sidebar(Xml):
 					ret += s
 
 		return ret
+
+page = web.Page()
+page.content = Content(page.site)
+page.sidebar = Sidebar(page.site)
