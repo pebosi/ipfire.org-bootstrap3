@@ -8,6 +8,17 @@
 		<Paragraph>
 			<Heading lang="en">Safety Installations:</Heading>
 			<Heading lang="de">Sicherheitseinrichtungen:</Heading>
+			<Content lang="en"><![CDATA[
+					<ul>		
+						<li>stateful inspection firewall based on linux netfilter architecture </li> 
+						<li>intrusion detection system with Guardian addons as extension to the IPS system </li> 
+						<li>filter for invalid / non-standard packages </li> 
+						<li>separate network segments for server (DMZ) and wireless LAN with custom policies </li> 
+						<li>DoS and DDoS protection </li> 
+						<li>application proxies for HTTP and FTP (with access control and content filtering) and DNS </li> 
+						<li>incoming and outgoing packet filtering </li>		
+					</ul>
+			]]></Content>		
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Stateful Inspection Firewall basierend auf der Linux Netfilter-Architektur</li>
@@ -23,6 +34,13 @@
 		<Paragraph>
 		    <Heading lang="en">Network Services:</Heading>
 			<Heading lang="de">Netzwerkdienste:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>DHCP server</li> 
+					<li>Dynamic DNS service</li> 
+					<li>NTP Server</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>DHCP-Server</li>
@@ -34,6 +52,17 @@
 		<Paragraph>
 		    <Heading lang="en">HTTP-Proxy:</Heading>
 			<Heading lang="de">HTTP-Proxy:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>caching of web content</li> 
+					<li>content filtering based on blocking lists and manually define lists</li> 
+					<li>time based disabling of access for individual users or entire groups</li> 
+					<li>simplified management for classes or conference rooms</li> 
+					<li>advanced storage of updates for Microsoft® Windows®, Symantec Antivirus, Adobe products, Avira Antivir and Avast Antivirus</li> 
+					<li>authentication to LDAP, identd, radius or Windows server or a local user database</li> 
+					<li>transfer limitation (speed and/or volume)</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Zwischenspeicherung von Web-Inhalten</li>
@@ -49,11 +78,37 @@
 		<Paragraph>
 		    <Heading lang="de">Virtual Private Network (VPN):</Heading>
 			<Heading lang="de">Virtuelle Private Netzwerke (VPN):</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>IPSec/OpenSwan 2
+						<ul>
+							<li>network-to-network or network-to-host (roadwarrior)</li> 
+							<li>IKE - PreSharedKey or</li> 
+							<li>X.509 certificates from an integrated or external CA</li> 
+							<li>automatic detection with the necessary reconnection of the tunnel connection and dead-peer-detection</li> 
+							<li>NAT traversal</li> 
+							<li>encryption with AES, 3DES, Blowfish, Serpent and Twofish</li> 
+							<li>HMAC: SHA1, SHA256, SHA384, SHA512</li> 
+							<li>real time compression</li>
+													</ul>
+					</li>
+					<li>OpenVPN
+						<ul>
+							<li>host-to-network (roadwarrior)</li> 
+							<li>SSL-based encryption: AES, Blowfish, Twofish, 3DES, ...</ li> 
+							<li>real time compression</li> 
+							<li>automatically generated packages for clients so that there configuration is more simplified</li> 
+							<li>tunnel across multiple NAT</li> 
+							<li>PPTP passthrough</li>
+						</ul>
+					</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>IPSec/OpenSwan 2
 						<ul>
-							<li>Netz-zu-Netz oder Netz-zu-Host(Roadwarrior)</li>
+							<li>Netz-zu-Netz oder Netz-zu-Host (Roadwarrior)</li>
 							<li>IKE - PreSharedKey oder</li>
 							<li>X.509-Zertifikate aus integrierter oder externer CA</li>
 							<li>Automatische Erkennung mit nötigem Wiederaufbau der Tunnel-Verbindung und Dead-Peer-Detection</li>
@@ -65,7 +120,7 @@
 					</li>
 					<li>OpenVPN
 						<ul>
-							<li>Host-zu-Netz(Roadwarrior)</li>
+							<li>Host-zu-Netz (Roadwarrior)</li>
 							<li>SSL-basierte Verschlüsselung: AES, Blowfish, Twofish, 3DES, ...</li>
 							<li>Echtzeit-Kompression</li>
 							<li>Fertige Clientpakete damit eine Konfiguration am Client vereinfacht wird</li>
@@ -79,6 +134,12 @@
 		<Paragraph>
 		    <Heading lang="en">Network Address Translation (NAT):</Heading>
 			<Heading lang="de">Network Address Translation (NAT):</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>port forwarding</li> 
+					<li>NAT between separate subnets</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Portweiterleitung</li>
@@ -89,6 +150,14 @@
 		<Paragraph>
 		    <Heading lang="en">Supported Connection Types:</Heading>
 			<Heading lang="de">Unterstützte Verbindungstypen:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>ethernet links with 10, 100 or 1000MBit with a static ip address or via the DHCP protocol configured</li> 
+					<li>ADSL/SDSL with PPPoE</li> 
+					<li>automatic reconnect after disconnection by the provider</li> 
+					<li>reconnect with time based schedule</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Ethernet-Verbindungen mit 10, 100 oder 1000MBit mit statischer IP Adresse oder über das DHCP Protokoll konfiguriert</li>
@@ -101,6 +170,13 @@
 		<Paragraph>
 			<Heading lang="en">Traffic Prioritization:</Heading>
 			<Heading lang="de">Traffic-Priorisierung:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>quality of service</li> 
+					<li>level7 filtering</li> 
+					<li>setting and recognize of type-of-service-bits</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Quality of Service</li>
@@ -122,6 +198,13 @@
 		<Paragraph>
 		    <Heading lang="en">Monitoring/Logging:</Heading>
 			<Heading lang="de">Monitoring/Logging:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>graphical monitoring of the system with the web interface</li> 
+					<li>accessible log files with automatic summary of key events</li> 
+					<li>export function of log files (individually or as a full backup)</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Grafische Überwachung des Systems im Webinterface</li>
@@ -133,6 +216,12 @@
 		<Paragraph>
 		    <Heading lang="en">DNS-Proxy:</Heading>
 			<Heading lang="de">DNS-Proxy:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+					<li>DNS forwarding</li> 
+					<li>local host-/zonen-configuration</li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>DNS-Forwarding</li>
@@ -143,6 +232,85 @@
 		<Paragraph>
 			<Heading lang="en">Addons:</Heading>
 			<Heading lang="de">Addons:</Heading>
+			<Content lang="en"><![CDATA[
+				<ul>
+				  <li>file server
+				    <ul>
+				      <li>Samba</li>
+				    </ul>
+				  </li>
+				  <li>for mail server
+				    <ul>
+				      <li>Cyrus-IMAPd </li>
+				      <li>Postfix </li>
+				      <li>Openmailadmin </li>
+				      <li>fetchmail </li>
+				      <li>Spamassassin</li>
+				      <li>ClamAV</li>
+				    </ul>
+				  </li>
+				  <li>multimedia
+				    <ul>
+				      <li>MPFire</li>
+				      <li>Icecast</li>
+				      <li>Gnump3d</li>
+				      <li>VDR</li>
+				    </ul>
+				  </li>
+				  <li>voice over ip
+				    <ul>
+				      <li>Asterisk</li>
+				      <li>Teamspeak</li>
+				    </ul>
+				  </li>
+				  <li>security
+				    <ul>
+				      <li>Guardian</li>
+				      <li>Tripwire</li>
+				      <li>Lynis</li>
+				      <li>Cryptsetup</li>
+				    </ul>
+				  </li>
+				  <li>p2p-clients
+				    <ul>
+				      <li>Applejuice</li>
+				      <li>MLDonkey</li>
+				      <li>RTorrent</li>
+				    </ul>
+				  </li>
+				  <li>others
+				    <ul>
+				      <li>Sane</li>
+				      <li>Qemu</li>
+				      <li>esniper</li>
+				      <li>TinyWebGalerie</li>
+				      <li>apcupsd</li>
+				      <li>miau</li>
+				      <li>xen</li>
+				      <li>Cacti</li>
+				    </ul>
+				  </li>
+				  <li>binaries
+				    <ul>
+				      <li>bwm-ng</li>
+				      <li>centerim</li>
+				      <li>htop</li>
+				      <li>mc</li>
+				      <li>nano</li>
+				      <li>ncftp</li>
+				      <li>net-snmp</li>
+				      <li>nmap</li>
+				      <li>rsync</li>
+				      <li>tcpdump</li>
+				      <li>tcptrack</li>
+				      <li>traceroute</li>
+				      <li>videolan</li>
+				      <li>vsftpd</li>
+				      <li>igmpproxy</li>
+				    </ul>
+				  </li>
+				</ul>
+			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
 				  <li>Dateiserver
@@ -150,7 +318,7 @@
 				      <li>Samba</li>
 				    </ul>
 				  </li>
-				  <li>Mailserver
+				  <li>für Mailserver
 				    <ul>
 				      <li>Cyrus-IMAPd </li>
 				      <li>Postfix </li>
@@ -231,32 +399,32 @@
 			
 			<Content lang="en"><![CDATA[
 				<ul class="links">		
-					<li class="first"><a href="#Safety Installations">Safety Installations</a></li>
-					<li><a href="#Network Services">Network Services</a></li>
-					<li><a href="#HTTP-Proxy">HTTP-Proxy</a></li>
-					<li><a href="#Virtual Private Network (VPN)">VPN</a></li>
-					<li><a href="#Network Address Translation (NAT)">NAT</a></li>
-					<li><a href="#Supported Connection Types">Supported Connection Types</a></li>
-					<li><a href="#Traffic Prioritization">Traffic Prioritization</a></li>
-					<li><a href="#Configuration">Configuration</a></li>
-					<li><a href="#Monitoring/Logging">Monitoring/Logging</a></li>
-					<li><a href="#DNS-Proxy">DNS-Proxy</a></li>
-					<li><a href="#Addons">Addons</a></li>
+					<li class="first"><a href="#Safety Installations:">Safety Installations</a></li>
+					<li><a href="#Network Services:">Network Services</a></li>
+					<li><a href="#HTTP-Proxy:">HTTP-Proxy</a></li>
+					<li><a href="#Virtual Private Network (VPN):">VPN</a></li>
+					<li><a href="#Network Address Translation (NAT):">NAT</a></li>
+					<li><a href="#Supported Connection Types:">Supported Connection Types</a></li>
+					<li><a href="#Traffic Prioritization:">Traffic Prioritization</a></li>
+					<li><a href="#Configuration:">Configuration</a></li>
+					<li><a href="#Monitoring/Logging:">Monitoring/Logging</a></li>
+					<li><a href="#DNS-Proxy:">DNS-Proxy</a></li>
+					<li><a href="#Addons:">Addons</a></li>
 				</ul>
 			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul class="links">		
-					<li class="first"><a href="#Sicherheitseinrichtungen">Sicherheitseinrichtungen</a></li>
-					<li><a href="#Netzwerkdienste">Netzwerkdienste</a></li>
-					<li><a href="#HTTP-Proxy">HTTP-Proxy</a></li>
-					<li><a href="#Virtuelle Private Netzwerke (VPN)">VPN</a></li>
-					<li><a href="#Network Address Translation (NAT)">NAT</a></li>
-					<li><a href="#Unterstützte Verbindungstypen">Unterstützte Verbindungstypen</a></li>
-					<li><a href="#Traffic-Priorisierungons">Traffic-Priorisierung</a></li>
-					<li><a href="#Konfiguration">Konfiguration</a></li>
-					<li><a href="#Monitoring/Logging">Monitoring/Logging</a></li>
-					<li><a href="#DNS-Proxy">DNS-Proxy</a></li>
-					<li><a href="#Addons">Addons</a></li>
+					<li class="first"><a href="#Sicherheitseinrichtungen:">Sicherheitseinrichtungen</a></li>
+					<li><a href="#Netzwerkdienste:">Netzwerkdienste</a></li>
+					<li><a href="#HTTP-Proxy:">HTTP-Proxy</a></li>
+					<li><a href="#Virtuelle Private Netzwerke (VPN):">VPN</a></li>
+					<li><a href="#Network Address Translation (NAT):">NAT</a></li>
+					<li><a href="#Unterstützte Verbindungstypen:">Unterstützte Verbindungstypen</a></li>
+					<li><a href="#Traffic-Priorisierungons:">Traffic-Priorisierung</a></li>
+					<li><a href="#Konfiguration:">Konfiguration</a></li>
+					<li><a href="#Monitoring/Logging:">Monitoring/Logging</a></li>
+					<li><a href="#DNS-Proxy:">DNS-Proxy</a></li>
+					<li><a href="#Addons:">Addons</a></li>
 				</ul>
 			]]></Content>
 			
