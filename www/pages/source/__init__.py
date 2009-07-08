@@ -10,6 +10,7 @@ import sha
 from pysqlite2 import dbapi2 as sqlite
 
 import web
+import web.elements
 
 class SourceObject:
 	def __init__(self, db, file):
@@ -73,7 +74,7 @@ class Content(web.Content):
 		ret = ""
 		self.w("<h3>IPFire Source Base</h3>")
 		for dir, files in self.dirs:
-			b = web.Box(dir)
+			b = web.elements.Box(dir)
 			b.w("<ul>")
 			for file in files:
 				b.w("""<li style="font-family: courier;">%(hash)s | <a href="%(url)s/%(dir)s/%(file)s">%(file)s</a></li>""" % \
@@ -87,4 +88,4 @@ class Content(web.Content):
 
 page = web.Page()
 page.content = Content()
-page.sidebar = web.Sidebar()
+page.sidebar = web.elements.Sidebar()
