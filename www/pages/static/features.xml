@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site>
 	<Config>
-		<Title lang="en">Functions</Title>
-		<Title lang="de">Features</Title>
+		<Title lang="en">Features</Title>
+		<Title lang="de">Funktionen</Title>
 	</Config>
 	<Paragraphs>
 		<Paragraph>
+			<Heading lang="en">Safety Installations:</Heading>
 			<Heading lang="de">Sicherheitseinrichtungen:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -20,6 +21,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
+		    <Heading lang="en">Network Services:</Heading>
 			<Heading lang="de">Netzwerkdienste:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -30,6 +32,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
+		    <Heading lang="en">HTTP-Proxy:</Heading>
 			<Heading lang="de">HTTP-Proxy:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -44,7 +47,8 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading lang="de">Virtuelle Private Netzwerke(VPN):</Heading>
+		    <Heading lang="de">Virtual Private Network (VPN):</Heading>
+			<Heading lang="de">Virtuelle Private Netzwerke (VPN):</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>IPSec/OpenSwan 2
@@ -73,15 +77,17 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading lang="de">Network Address Translation(NAT):</Heading>
+		    <Heading lang="en">Network Address Translation (NAT):</Heading>
+			<Heading lang="de">Network Address Translation (NAT):</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
 					<li>Portweiterleitung</li>
-					<li>NATz wischen den voneinander getrennten Subnetzen</li>
+					<li>NAT zwischen den voneinander getrennten Subnetzen</li>
 				</ul>
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
+		    <Heading lang="en">Supported Connection Types:</Heading>
 			<Heading lang="de">Unterstützte Verbindungstypen:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -93,6 +99,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
+			<Heading lang="en">Traffic Prioritization:</Heading>
 			<Heading lang="de">Traffic-Priorisierung:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -103,6 +110,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
+		    <Heading lang="en">Configuration:</Heading>
 			<Heading lang="de">Konfiguration:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -112,6 +120,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
+		    <Heading lang="en">Monitoring/Logging:</Heading>
 			<Heading lang="de">Monitoring/Logging:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -122,6 +131,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
+		    <Heading lang="en">DNS-Proxy:</Heading>
 			<Heading lang="de">DNS-Proxy:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -131,32 +141,125 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading lang="de">Addons(im Beta-Stadium):</Heading>
+			<Heading lang="en">Addons:</Heading>
+			<Heading lang="de">Addons:</Heading>
 			<Content lang="de"><![CDATA[
 				<ul>
-					<li>Samba Dateiserver</li>
-					<li>Tripwire</li>
-					<li>MPFire – Mp3 Jukebox</li>
-					<li>Asterisk Voice-over-IP Server</li>
-					<li>Gnump3d – Mp3 Streaming Daemon</li>
-					<li>Appeljuice und Rtorrent</li>
-					<li>cftp und ncftp</li>
-					<li>Clamav</li>
-					<li>Ethereal</li>
-					<li>uvm.</li>
+				  <li>Dateiserver
+				    <ul>
+				      <li>Samba</li>
+				    </ul>
+				  </li>
+				  <li>Mailserver
+				    <ul>
+				      <li>Cyrus-IMAPd </li>
+				      <li>Postfix </li>
+				      <li>Openmailadmin </li>
+				      <li>fetchmail </li>
+				      <li>Spamassassin</li>
+				      <li>ClamAV</li>
+				    </ul>
+				  </li>
+				  <li>Multimedia
+				    <ul>
+				      <li>MPFire</li>
+				      <li>Icecast</li>
+				      <li>Gnump3d</li>
+				      <li>VDR</li>
+				    </ul>
+				  </li>
+				  <li>Voice over IP
+				    <ul>
+				      <li>Asterisk</li>
+				      <li>Teamspeak</li>
+				    </ul>
+				  </li>
+				  <li>Sicherheit
+				    <ul>
+				      <li>Guardian</li>
+				      <li>Tripwire</li>
+				      <li>Lynis</li>
+				      <li>Cryptsetup</li>
+				    </ul>
+				  </li>
+				  <li>P2P-Clients
+				    <ul>
+				      <li>Applejuice</li>
+				      <li>MLDonkey</li>
+				      <li>RTorrent</li>
+				    </ul>
+				  </li>
+				  <li>Sonstiges
+				    <ul>
+				      <li>Sane</li>
+				      <li>Qemu</li>
+				      <li>esniper</li>
+				      <li>TinyWebGalerie</li>
+				      <li>apcupsd</li>
+				      <li>miau</li>
+				      <li>xen</li>
+				      <li>Cacti</li>
+				    </ul>
+				  </li>
+				  <li>Binaries
+				    <ul>
+				      <li>bwm-ng</li>
+				      <li>centerim</li>
+				      <li>htop</li>
+				      <li>mc</li>
+				      <li>nano</li>
+				      <li>ncftp</li>
+				      <li>net-snmp</li>
+				      <li>nmap</li>
+				      <li>rsync</li>
+				      <li>tcpdump</li>
+				      <li>tcptrack</li>
+				      <li>traceroute</li>
+				      <li>videolan</li>
+				      <li>vsftpd</li>
+				      <li>igmpproxy</li>
+				    </ul>
+				  </li>
 				</ul>
 			]]></Content>
 		</Paragraph>
 	</Paragraphs>
 		<Sidebar>
 		<Paragraph>
-			<Heading lang="de"><![CDATA[<span>Wiki]]></Heading>
+			<Heading lang="en"><![CDATA[<span>Feature</span> list]]></Heading>
+			<Heading lang="de"><![CDATA[<span>Funktions</span>liste]]></Heading>
 			
-			<Content lang="de"><![CDATA[
-				<ul class="links">
-					<li class="first"><a href="http://wiki.ipfire.org" target="_blank">Wiki</a></li>
+			<Content lang="en"><![CDATA[
+				<ul class="links">		
+					<li class="first"><a href="#Safety Installations">Safety Installations</a></li>
+					<li><a href="#Network Services">Network Services</a></li>
+					<li><a href="#HTTP-Proxy">HTTP-Proxy</a></li>
+					<li><a href="#Virtual Private Network (VPN)">VPN</a></li>
+					<li><a href="#Network Address Translation (NAT)">NAT</a></li>
+					<li><a href="#Supported Connection Types">Supported Connection Types</a></li>
+					<li><a href="#Traffic Prioritization">Traffic Prioritization</a></li>
+					<li><a href="#Configuration">Configuration</a></li>
+					<li><a href="#Monitoring/Logging">Monitoring/Logging</a></li>
+					<li><a href="#DNS-Proxy">DNS-Proxy</a></li>
+					<li><a href="#Addons">Addons</a></li>
 				</ul>
 			]]></Content>
+			<Content lang="de"><![CDATA[
+				<ul class="links">		
+					<li class="first"><a href="#Sicherheitseinrichtungen">Sicherheitseinrichtungen</a></li>
+					<li><a href="#Netzwerkdienste">Netzwerkdienste</a></li>
+					<li><a href="#HTTP-Proxy">HTTP-Proxy</a></li>
+					<li><a href="#Virtuelle Private Netzwerke (VPN)">VPN</a></li>
+					<li><a href="#Network Address Translation (NAT)">NAT</a></li>
+					<li><a href="#Unterstützte Verbindungstypen">Unterstützte Verbindungstypen</a></li>
+					<li><a href="#Traffic-Priorisierungons">Traffic-Priorisierung</a></li>
+					<li><a href="#Konfiguration">Konfiguration</a></li>
+					<li><a href="#Monitoring/Logging">Monitoring/Logging</a></li>
+					<li><a href="#DNS-Proxy">DNS-Proxy</a></li>
+					<li><a href="#Addons">Addons</a></li>
+				</ul>
+			]]></Content>
+			
 		</Paragraph>
 	</Sidebar>
 </Site>
