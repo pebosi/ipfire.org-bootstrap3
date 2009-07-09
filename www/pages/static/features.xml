@@ -50,7 +50,7 @@
 				<ul>
 					<li>DHCP server</li> 
 					<li>Dynamic DNS service</li> 
-					<li>NTP Server</li>
+					<li>NTP server</li>
 				</ul>
 			]]></Content>
 			<Content lang="de"><![CDATA[
@@ -67,12 +67,12 @@
 			<Content lang="en"><![CDATA[
 				<ul>
 					<li>caching of web content</li> 
-					<li>content filtering based on blocking lists and manually define lists</li> 
+					<li>content filtering based on blocking lists and manually defined lists</li> 
 					<li>time based disabling of access for individual users or entire groups</li> 
 					<li>simplified management for classes or conference rooms</li> 
 					<li>advanced storage of updates for Microsoft® Windows®, Symantec Antivirus, Adobe products, Avira Antivir and Avast Antivirus</li> 
 					<li>authentication to LDAP, identd, radius or Windows server or a local user database</li> 
-					<li>transfer limitation (speed and/or volume)</li>
+					<li>transfer limitation (speed and/or traffic)</li>
 				</ul>
 			]]></Content>
 			<Content lang="de"><![CDATA[
@@ -88,7 +88,7 @@
 			]]></Content>
 		</Paragraph>
 		<Paragraph>
-		    <Heading lang="de">Virtual Private Network (VPN):</Heading>
+		    <Heading lang="en">Virtual Private Network (VPN):</Heading>
 			<Heading lang="de">Virtuelle Private Netzwerke (VPN):</Heading>
 			<Content lang="en"><![CDATA[
 				<ul>
@@ -97,7 +97,7 @@
 							<li>network-to-network or network-to-host (roadwarrior)</li> 
 							<li>IKE - PreSharedKey or</li> 
 							<li>X.509 certificates from an integrated or external CA</li> 
-							<li>automatic detection with the necessary reconnection of the tunnel connection and dead-peer-detection</li> 
+							<li>tunnel reconnection on disconnection and dead-peer-detection</li> 
 							<li>NAT traversal</li> 
 							<li>encryption with AES, 3DES, Blowfish, Serpent and Twofish</li> 
 							<li>HMAC: SHA1, SHA256, SHA384, SHA512</li> 
@@ -164,7 +164,8 @@
 			<Heading lang="de">Unterstützte Verbindungstypen:</Heading>
 			<Content lang="en"><![CDATA[
 				<ul>
-					<li>ethernet links with 10, 100 or 1000MBit with a static ip address or via the DHCP protocol configured</li> 
+					<li>ethernet links with 10, 100 or 1000MBit</li>
+					<li>with static ip address or via the DHCP protocol configured</li> 
 					<li>ADSL/SDSL with PPPoE</li> 
 					<li>automatic reconnect after disconnection by the provider</li> 
 					<li>reconnect with time based schedule</li>
@@ -172,7 +173,8 @@
 			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
-					<li>Ethernet-Verbindungen mit 10, 100 oder 1000MBit mit statischer IP Adresse oder über das DHCP Protokoll konfiguriert</li>
+					<li>Ethernet-Verbindungen mit 10, 100 oder 1000MBit</li>
+					<li>mit statischer IP Adresse oder über das DHCP Protokoll konfiguriert</li>
 					<li>ADSL/SDSL mit PPPoE</li>
 					<li>Automatische Wiederverbindung nach Trennung durch den Provider</li>
 					<li>Wiederverbindung nach Zeitplan steuerbar</li>
@@ -237,7 +239,7 @@
 			<Content lang="en"><![CDATA[
 				<ul>
 					<li>DNS forwarding</li> 
-					<li>local host-/zonen-configuration</li>
+					<li>local host-/zone-configuration</li>
 				</ul>
 			]]></Content>
 			<Content lang="de"><![CDATA[
@@ -251,7 +253,7 @@
 			<Heading lang="en">Addons:</Heading>
 			<Heading lang="de">Addons:</Heading>
 			<Content lang="en"><![CDATA[
-				Descriptions of the various addons you can find in the <a href="http://wiki.ipfire.org/">wiki</a>.<br />
+				You can find descriptions of the various addons in the <a href="http://wiki.ipfire.org/">wiki</a>.<br />
 				<ul>
 				  <li>file server
 				    <ul>
