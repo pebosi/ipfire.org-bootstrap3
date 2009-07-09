@@ -7,7 +7,7 @@
 	<Paragraphs>
 		<Paragraph><Heading>Features</Heading>
 			<Content raw="1"><![CDATA[
-				<img src="../images/pic.gif" class="floatTR" alt="Features" />
+				<img src="../images/features.png" class="floatTR" alt="Features" />
 			]]></Content>
 			
 			<Content lang="en"><![CDATA[
@@ -328,7 +328,7 @@
 				    </ul>
 				  </li>
 				</ul>
-				<br />Descriptions of the various addons you can find in the <a href="http://wiki.ipfire.org/">wiki</a>.<br />
+				Descriptions of the various addons you can find in the <a href="http://wiki.ipfire.org/">wiki</a>.<br />
 			]]></Content>
 			<Content lang="de"><![CDATA[
 				<ul>
@@ -408,7 +408,7 @@
 				    </ul>
 				  </li>
 				</ul>
-				<br />Beschreibungen zu den unterschiedlichen Addons findet Ihr im <a href="http://wiki.ipfire.org/">Wiki</a>.<br />
+				Beschreibungen zu den unterschiedlichen Addons findet Ihr im <a href="http://wiki.ipfire.org/">Wiki</a>.<br />
 			]]></Content>
 		</Paragraph>
 	</Paragraphs>
