@@ -7,7 +7,7 @@ from info import Info
 class Box(Data):
 	def __init__(self, headline, subtitle=""):
 		Data.__init__(self)
-		self.w("""<div class="post"><h3>%s</h3><a name="%s"></a>""" % (headline,headline,))
+		self.w("""<div class="post"><a name="%s"></a><h3>%s</h3>""" % (headline,headline,))
 		if subtitle:
 			self.w("""<div class="post_info">%s</div>""" % (subtitle,))
 
