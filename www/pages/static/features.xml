@@ -251,6 +251,7 @@
 			<Heading lang="en">Addons:</Heading>
 			<Heading lang="de">Addons:</Heading>
 			<Content lang="en"><![CDATA[
+				Descriptions of the various addons you can find in the <a href="http://wiki.ipfire.org/">wiki</a>.<br />
 				<ul>
 				  <li>file server
 				    <ul>
@@ -328,9 +329,9 @@
 				    </ul>
 				  </li>
 				</ul>
-				Descriptions of the various addons you can find in the <a href="http://wiki.ipfire.org/">wiki</a>.<br />
 			]]></Content>
 			<Content lang="de"><![CDATA[
+				Beschreibungen zu den unterschiedlichen Addons findet Ihr im <a href="http://wiki.ipfire.org/">Wiki</a>.<br />
 				<ul>
 				  <li>Dateiserver
 				    <ul>
@@ -408,7 +409,6 @@
 				    </ul>
 				  </li>
 				</ul>
-				Beschreibungen zu den unterschiedlichen Addons findet Ihr im <a href="http://wiki.ipfire.org/">Wiki</a>.<br />
 			]]></Content>
 		</Paragraph>
 	</Paragraphs>
