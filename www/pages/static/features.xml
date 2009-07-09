@@ -440,7 +440,7 @@
 					<li><a href="#Virtuelle Private Netzwerke (VPN):">VPN</a></li>
 					<li><a href="#Network Address Translation (NAT):">NAT</a></li>
 					<li><a href="#Unterstützte Verbindungstypen:">Unterstützte Verbindungstypen</a></li>
-					<li><a href="#Traffic-Priorisierungons:">Traffic-Priorisierung</a></li>
+					<li><a href="#Traffic-Priorisierung:">Traffic-Priorisierung</a></li>
 					<li><a href="#Konfiguration:">Konfiguration</a></li>
 					<li><a href="#Monitoring/Logging:">Monitoring/Logging</a></li>
 					<li><a href="#DNS-Proxy:">DNS-Proxy</a></li>
