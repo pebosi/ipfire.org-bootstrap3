@@ -7,6 +7,9 @@
         <Paragraphs>
                 <Paragraph>
                         <Heading>Links</Heading>
+                        <Content raw="1"><![CDATA[
+							<img src="../images/links.png" class="floatTR" alt="Links" />
+								]]></Content>
                         
                         <Content lang="en"><![CDATA[
                         											On this page, one can find a lot of external information about the <strong>IPFire-Project</strong>.
