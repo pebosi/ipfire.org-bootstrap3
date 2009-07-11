@@ -281,7 +281,7 @@ font-size: 0.9em;
 
 #main_inner .post a
 {
-font-size: 0.9em;
+font-size: 1em;
 }
 
 #main_inner ul
@@ -312,7 +312,7 @@ margin-bottom: 0.5em;
 
 #main_inner h4
 {
-font-size: 1.2em;
+font-size: 1.1em;
 padding-bottom: 0.175em;
 margin-bottom: 0.25em;
 margin-top: 0.95em;
@@ -327,7 +327,7 @@ margin-bottom: 2.0em;
 #main_inner .post h3
 {
 position: relative;
-font-size: 1.7em;
+font-size: 1.4em;
 padding-bottom: 0.25em;
 }
 
@@ -336,7 +336,7 @@ padding-bottom: 0.25em;
 list-style: none;
 position: absolute;
 top: 3em;
-font-size: 0.8em;
+font-size: 0.7em;
 }
 
 #main_inner .post .post_info
@@ -600,9 +600,9 @@ left: 60px; /*position where enlarged image should offset horizontally */
 	
 	#columnC_2columns
 	{
-	width: 13.0em;
+	width: 12.0em;
 	float: left;
-	padding: 0em 0.5em 0.5em 0.5em;
+	padding: 0em 1em 0.5em 1em;
 	border-left: dotted 1px #E1E1E1;
 	}
 

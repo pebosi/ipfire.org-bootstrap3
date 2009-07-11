@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 		<title>%(title)s</title>
 		<meta name="keywords" content="Linux, Firewall, IPCop, IPFire, Security" />
 		<meta name="description" content="" />
