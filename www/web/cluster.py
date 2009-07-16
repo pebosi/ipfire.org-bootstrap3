@@ -2,6 +2,8 @@
 
 import telnetlib
 
+import simplejson as json
+
 class Node(object):
 	def __init__(self, hostname, address, arch, speed, jobs, load):
 		self.hostname = hostname
@@ -52,6 +54,14 @@ class Cluster(object):
 			load += node.load
 		load /= len(self.nodes)
 		return load
+	
+	@property
+	def jobs(self):
+		jobs_cur = jobs_max = 0
+		for node in self.nodes:
+			jobs_cur += int(node.jobs.split("/")[0])
+			jobs_max += int(node.jobs.split("/")[1])
+		return "%s/%s" % (jobs_cur, jobs_max)
 
 	@property
 	def nodes(self):
@@ -71,6 +81,25 @@ class Cluster(object):
 			ret.append(Node(hostname, address, arch, speed, jobs, load))
 		self._nodes = ret
 		return ret
+
+	@property
+	def json(self, *args):
+		nodes = []
+		ret = {}
+		for node in self.nodes:
+			tmp = { "hostname" : node.hostname,
+					"address"  : node.address,
+					"arch"     : node.arch,
+					"jobs"     : node.jobs,
+					"load"     : node.load,
+					"speed"    : node.speed, }
+			nodes.append(tmp)
+		ret["nodes"] = nodes
+		ret["cluster"] = { "load"  : self.load,
+						   "jobs"  : self.jobs, }
+		#return json.dumps(ret)
+		return ret
+
 
 if __name__ == "__main__":		
 	cluster = Cluster("minerva.ipfire.org")

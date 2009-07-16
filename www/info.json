@@ -3,5 +3,6 @@
 	"sname"    : "ipfire",
 	"slogan"   : "Security now!",
 	"releases" : { "stable"  : "IPFire 2.5 - Core 28",
-				   "testing" : "IPFire 3.0 alpha 1" }
+				   "testing" : "IPFire 3.0 alpha 1" },
+	"hosting"  : { "cluster" : "minerva.ipfire.org" }
 }

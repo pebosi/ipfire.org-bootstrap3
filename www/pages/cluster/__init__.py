@@ -10,7 +10,8 @@ class Content(web.Content):
 
 	def __call__(self, lang):
 		ret = """<h3>Icecream Cluster Monitoring</h4>
-			<p>Cluster's load: <span id="loadbar"></span>  - Number of nodes: <span id="count">-</span></p>
+			<p>Cluster's load: <span id="loadbar"></span> <span id="jobbar"></span> -
+				Number of nodes: <span id="count">-</span></p>
 				<table id="nodes">
 					<thead>
 						<tr>
@@ -35,12 +36,16 @@ page.javascript = Javascript(jquery=1)
 page.javascript.jquery_plugin("progressbar")
 page.javascript.write("""<script type="text/javascript">
 				nodes = new Array();
+				id = 0;
 
 				update = function() {
-					$.getJSON("/rpc.py", { type: "cluster" },
+					$.getJSON("/rpc.py", { method: "cluster_get_info", id : id++ },
 						function(data) {
 							var count = 0;
-							$.each(data.nodes, function(i, node) {
+
+							if (data.error != "null") return;
+
+							$.each(data.result.nodes, function(i, node) {
 								var nodeid = node.hostname.replace(/\./g, "");
 								count++;
 
@@ -61,7 +66,9 @@ page.javascript.write("""<script type="text/javascript">
 								$("#" + nodeid + "_loadbar").progressBar(node.load, {showText: false});
 								$("#" + nodeid + "_jobs").progressBar(node.jobs.split("/")[0], { max: node.jobs.split("/")[1], textFormat: 'fraction'}); 
 							});
-							$("#loadbar").progressBar(data.cluster.load);
+
+							$("#loadbar").progressBar(data.result.cluster.load);
+							$("#jobbar").progressBar(data.result.cluster.jobs.split("/")[0], { max: data.result.cluster.jobs.split("/")[1], textFormat: 'fraction'});
 							for (var nodeid in nodes) {
 								if (nodes[nodeid] == false) {
 									$("#" + nodeid).remove();
