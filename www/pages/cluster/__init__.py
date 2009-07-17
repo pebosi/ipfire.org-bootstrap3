@@ -10,7 +10,7 @@ class Content(web.Content):
 
 	def __call__(self, lang):
 		ret = """<h3>Icecream Cluster Monitoring</h4>
-			<p>Cluster's load: <span id="loadbar"></span> <span id="jobbar"></span> -
+			<p>Cluster's CPU load: <span id="loadbar"></span> Job load: <span id="jobbar"></span> -
 				Number of nodes: <span id="count">-</span></p>
 				<table id="nodes">
 					<thead>
