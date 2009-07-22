@@ -429,7 +429,8 @@ table {
 }
 
 #nodes {
-  width: 720px;
+  width: 100%;
+  font-size: 0.9em;
 }
 #nodes th, #nodes td {
   text-align: left;
