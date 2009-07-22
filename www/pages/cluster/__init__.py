@@ -9,7 +9,7 @@ class Content(web.Content):
 		web.Content.__init__(self)
 
 	def __call__(self, lang):
-		ret = """<h3>Icecream Cluster Monitoring</h4>
+		ret = """<h3>Icecream Cluster Monitoring</h3>
 			<p>Cluster's CPU load: <span id="loadbar"></span> - Job load: <span id="jobbar"></span></p>
 				<table id="nodes">
 					<thead>
