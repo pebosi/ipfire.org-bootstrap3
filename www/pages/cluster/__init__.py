@@ -10,8 +10,7 @@ class Content(web.Content):
 
 	def __call__(self, lang):
 		ret = """<h3>Icecream Cluster Monitoring</h4>
-			<p>Cluster's CPU load: <span id="loadbar"></span> Job load: <span id="jobbar"></span> -
-				Number of nodes: <span id="count">-</span></p>
+			<p>Cluster's CPU load: <span id="loadbar"></span> - Job load: <span id="jobbar"></span></p>
 				<table id="nodes">
 					<thead>
 						<tr>
@@ -24,7 +23,8 @@ class Content(web.Content):
 					</thead>
 					<tbody>
 					</tbody>
-				</table>"""
+				</table>
+				<p>&nbsp;<br />Number of nodes: <span id="count">-</span></p>"""
 
 		return ret
 
@@ -55,7 +55,7 @@ page.javascript.write("""<script type="text/javascript">
 									$("#" + nodeid + "_speed").html(node.speed);
 								} else {
 									row  = "<tr id=\\"" + nodeid + "\\" class=\\"node\\">";
-									row += "  <td id=\\"" + nodeid + "_hostname\\">" + node.hostname + "</td>";
+									row += "  <td id=\\"" + nodeid + "_hostname\\"></td>";
 									row += "  <td id=\\"" + nodeid + "_arch\\">" + node.arch + "</td>";
 									row += "  <td><span id=\\"" + nodeid + "_loadbar\\"></span></td>";
 									row += "  <td><span id=\\"" + nodeid + "_jobs\\"></span></td>";
@@ -64,11 +64,16 @@ page.javascript.write("""<script type="text/javascript">
 									$("#nodes").append(row);
 								}
 								$("#" + nodeid + "_loadbar").progressBar(node.load, {showText: false});
-								$("#" + nodeid + "_jobs").progressBar(node.jobs.split("/")[0], { max: node.jobs.split("/")[1], textFormat: 'fraction'}); 
+								$("#" + nodeid + "_jobs").progressBar(node.jobcount.split("/")[0], { max: node.jobcount.split("/")[1], textFormat: 'fraction'});
+								if (node.installing == true) {
+									$("#" + nodeid + "_hostname").html(node.hostname + " *");
+								} else {
+									$("#" + nodeid + "_hostname").html(node.hostname);
+								}
 							});
 
 							$("#loadbar").progressBar(data.result.cluster.load);
-							$("#jobbar").progressBar(data.result.cluster.jobs.split("/")[0], { max: data.result.cluster.jobs.split("/")[1], textFormat: 'fraction'});
+							$("#jobbar").progressBar(data.result.cluster.jobcount.split("/")[0], { max: data.result.cluster.jobcount.split("/")[1], textFormat: 'fraction'});
 							for (var nodeid in nodes) {
 								if (nodes[nodeid] == false) {
 									$("#" + nodeid).remove();
