@@ -14,11 +14,11 @@ class Content(web.Content):
 				<table id="nodes">
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Arch</th>
-							<th>Load</th>
-							<th>Jobs</th>
-							<th>Speed</th>
+							<th width="39%">Name</th>
+							<th width="8%">Arch</th>
+							<th width="20%">Load</th>
+							<th width="25%">Jobs</th>
+							<th width="8%">Speed</th>
 						</tr>
 					</thead>
 					<tbody>
