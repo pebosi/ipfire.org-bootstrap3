@@ -37,13 +37,19 @@ page.javascript.jquery_plugin("progressbar")
 page.javascript.write("""<script type="text/javascript">
 				nodes = new Array();
 				id = 0;
+				busy = false;
 
 				update = function() {
 					$.getJSON("/rpc.py", { method: "cluster_get_info", id : id++ },
 						function(data) {
+							// If we are already busy then exit
+							if (busy == true) return;
+
 							var count = 0;
 
 							if (data.error != "null") return;
+							
+							busy = true;
 
 							$.each(data.result.nodes, function(i, node) {
 								var nodeid = node.hostname.replace(/\./g, "");
@@ -83,6 +89,7 @@ page.javascript.write("""<script type="text/javascript">
 								}
 							}
 							$("#count").html(count);
+							busy = false;
 					});
 				}
 
