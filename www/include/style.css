@@ -439,6 +439,24 @@ table {
   width: 50px;
 }
 
+#builds {
+  width: 100%;
+  font-size: 0.9em;
+}
+#builds img {
+	border: 0;
+}
+#builds td {
+  text-align: left;
+}
+#builds tr.headline td {
+	text-align: center;
+	font-weight: bold;
+}
+#builds td.packages {
+	text-align: right;
+}
+
 /* Footer */
 
 #footer
