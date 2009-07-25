@@ -30,7 +30,7 @@ class Content(web.Content):
 
 page = web.Page()
 page.content = Content()
-page.sidebar = web.elements.Sidebar()
+page.sidebar = web.elements.DevelopmentSidebar()
 
 page.javascript = Javascript(jquery=1)
 page.javascript.jquery_plugin("progressbar")

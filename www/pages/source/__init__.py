@@ -88,4 +88,4 @@ class Content(web.Content):
 
 page = web.Page()
 page.content = Content()
-page.sidebar = web.elements.Sidebar()
+page.sidebar = web.elements.DevelopmentSidebar()

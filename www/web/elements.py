@@ -48,3 +48,17 @@ class Releases(Data):
 	def __call__(self, lang):
 		self.content(lang)
 		return Data.__call__(self)
+
+class DevelopmentSidebar(Sidebar):
+	def __init__(self):
+		Sidebar.__init__(self)
+
+	def __call__(self, lang):
+		return Sidebar.__call__(self, lang)
+
+	def content(self, lang):
+		self.w("""<h4>Development Ressources</h4>
+				<p> - <a href="cluster">Cluster</a> Monitoring<br />
+					- Nightly <a href="builds">Builds</a><br />
+					- <a href="source">Source</a> Code</p>
+		""")
