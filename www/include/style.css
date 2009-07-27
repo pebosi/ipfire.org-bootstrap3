@@ -438,7 +438,7 @@ table {
   text-align: left;
 }
 #nodes th.hostname {
-  width: 30px;
+  width: 39%;
 }
 #nodes th.arch {
   width: 8%;
