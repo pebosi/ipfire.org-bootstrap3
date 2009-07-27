@@ -435,8 +435,20 @@ table {
 #nodes th, #nodes td {
   text-align: left;
 }
-#nodes td {
-  width: 50px;
+#nodes td.hostname {
+  width: 30px;
+}
+#nodes td.arch {
+  width: 20px;
+}
+#nodes td.speed {
+  width: 20px;
+}
+#nodes td.load {
+  width: 30px;
+}
+#nodes td.jobs {
+  width: 70px;
 }
 
 #builds {
