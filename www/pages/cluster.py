@@ -14,11 +14,11 @@ class Content(web.Content):
 				<table id="nodes">
 					<thead>
 						<tr>
-							<th width="39%">Name</th>
-							<th width="8%">Arch</th>
-							<th width="20%">Load</th>
-							<th width="25%">Jobs</th>
-							<th width="8%">Speed</th>
+							<th class="hostname">Name</th>
+							<th class="arch">Arch</th>
+							<th class="load">Load</th>
+							<th class="jobs">Jobs</th>
+							<th class="speed">Speed</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -61,11 +61,11 @@ page.javascript.write("""<script type="text/javascript">
 									$("#" + nodeid + "_speed").html(node.speed);
 								} else {
 									row  = "<tr id=\\"" + nodeid + "\\" class=\\"node\\">";
-									row += "  <td class=\\"hostname\\" id=\\"" + nodeid + "_hostname\\"></td>";
-									row += "  <td class=\\"arch\\" id=\\"" + nodeid + "_arch\\">" + node.arch + "</td>";
-									row += "  <td class=\\"load\\"><span id=\\"" + nodeid + "_loadbar\\"></span></td>";
-									row += "  <td class=\\"jobs\\"><span id=\\"" + nodeid + "_jobs\\"></span></td>";
-									row += "  <td class=\\"speed\\" id=\\"" + nodeid + "_speed\\">" + node.speed + "</td>";
+									row += "  <td id=\\"" + nodeid + "_hostname\\"></td>";
+									row += "  <td id=\\"" + nodeid + "_arch\\">" + node.arch + "</td>";
+									row += "  <td><span id=\\"" + nodeid + "_loadbar\\"></span></td>";
+									row += "  <td><span id=\\"" + nodeid + "_jobs\\"></span></td>";
+									row += "  <td id=\\"" + nodeid + "_speed\\">" + node.speed + "</td>";
 									row += "</tr>";
 									$("#nodes").append(row);
 								}

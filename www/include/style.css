@@ -428,6 +428,8 @@ table {
   border: 0;
 }
 
+/* Cluster */
+
 #nodes {
   width: 100%;
   font-size: 0.9em;
@@ -435,21 +437,23 @@ table {
 #nodes th, #nodes td {
   text-align: left;
 }
-#nodes td.hostname {
+#nodes th.hostname {
   width: 30px;
 }
-#nodes td.arch {
-  width: 20px;
+#nodes th.arch {
+  width: 8%;
 }
-#nodes td.speed {
-  width: 20px;
+#nodes th.jobs  {
+  width: 8%;
 }
-#nodes td.load {
-  width: 30px;
+#nodes th.speed {
+  width: 25%;
 }
-#nodes td.jobs {
-  width: 70px;
+#nodes th.load {
+  width: 20%;
 }
+
+/* Builds */
 
 #builds {
   width: 100%;
