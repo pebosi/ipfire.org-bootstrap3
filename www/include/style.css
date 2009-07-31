@@ -669,6 +669,9 @@ table.uriel {
 	/* border: 1px solid #880400; */
 	font-size: 0.9em;
 }
+table.uriel td.header {
+	width: 80px;	
+}
 table.uriel td {
 	padding: 4px;
 }
