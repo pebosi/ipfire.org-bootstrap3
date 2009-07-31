@@ -662,29 +662,148 @@ left: 60px; /*position where enlarged image should offset horizontally */
 	width: 100%;
 	}
 
-.ui-tabs .ui-tabs-hide {
-     display: none;
-}
 
+/* URIEL */
 table.uriel {
 	width: 100%;
-	border: 1px solid #880400;
+	/* border: 1px solid #880400; */
+	font-size: 0.9em;
 }
-
 table.uriel td {
 	padding: 4px;
 }
-
 table.uriel td.item {
-	font-weight: bold;
+	/* font-weight: bold; */
 }
-
 table.uriel td.value {
 	text-align: right;
 }
-
 table.uriel td.footer {
 	text-align: right;
 	background-color: #ddd;
-	border-top: 1px solid #666;
+	border: 1px solid #666;
+}
+/* Tabs */
+.ui-tabs {
+	padding: .2em;
+	zoom: 1;
+}
+.ui-tabs .ui-tabs-nav {
+	list-style: none;
+	position: relative;
+	padding: .2em .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+	position: relative;
+	float: left;
+	border-bottom-width: 0 !important;
+	margin: 0 .2em -1px 0;
+	padding: 0;
+}
+.ui-tabs .ui-tabs-nav li a {
+	float: left;
+	text-decoration: none;
+	padding: .5em .3em;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	padding-bottom: 1px;
+	border-bottom-width: 0;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+	cursor: text;
+}
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+	cursor: pointer;
+} /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel {
+	padding: 1em 0.6em;
+	display: block;
+	border-width: 0;
+	background: none;
+}
+.ui-tabs .ui-tabs-hide {
+	display: none !important;
+}
+/* Component containers */
+.ui-widget-content {
+	border: 1px solid #880400/*{borderColorContent}*/;
+	background: #ffffff/*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
+	color: #222222/*{fcContent}*/;
+}
+.ui-widget-content a {
+	color: #222222/*{fcContent}*/;
+}
+.ui-widget-header {
+	border: 1px solid #aaaaaa/*{borderColorHeader}*/;
+	background: #cccccc/*{bgColorHeader}*/ url(images/ui-bg_highlight-soft_75_cccccc_1x100.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
+	color: #222222/*{fcHeader}*/;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #222222/*{fcHeader}*/;
+}
+/* Interaction states */
+.ui-state-default, .ui-widget-content .ui-state-default {
+	border: 1px solid #d3d3d3/*{borderColorDefault}*/;
+	background: #e6e6e6/*{bgColorDefault}*/ url(images/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #555555/*{fcDefault}*/;
+	outline: none;
+}
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+	color: #555555/*{fcDefault}*/;
+	text-decoration: none;
+	outline: none;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus {
+	border: 1px solid #999999/*{borderColorHover}*/;
+	background: #dadada/*{bgColorHover}*/ url(/images/ui-bg_glass_75_dadada_1x400.png)/*{bgImgUrlHover}*/ 50%/*{bgHoverXPos}*/ 50%/*{bgHoverYPos}*/ repeat-x/*{bgHoverRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #212121/*{fcHover}*/;
+	outline: none;
+}
+.ui-state-hover a, .ui-state-hover a:hover {
+	color: #212121/*{fcHover}*/;
+	text-decoration: none;
+	outline: none;
+}
+.ui-state-active, .ui-widget-content .ui-state-active {
+	border: 1px solid #aaaaaa/*{borderColorActive}*/;
+	background: #ffffff/*{bgColorActive}*/ url(/images/ui-bg_glass_65_ffffff_1x400.png)/*{bgImgUrlActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #212121/*{fcActive}*/;
+	outline: none;
+}
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+	color: #212121/*{fcActive}*/;
+	outline: none;
+	text-decoration: none;
+}
+/* Layout helpers */
+.ui-helper-clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.ui-helper-clearfix {
+	display: inline-block;
+}
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix {
+	height:1%;
+}
+.ui-helper-clearfix {
+	display:block;
+}
+/* end clearfix */
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	filter:Alpha(Opacity=0);
 }
