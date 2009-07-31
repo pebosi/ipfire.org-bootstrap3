@@ -32,7 +32,7 @@ class Content(web.Content):
 							<td class="header">Total hosts:</td>
 							<td>""" + "%s" % self.db.count() + """</td>
 						</tr>
-					</table>"""
+					</table><br />"""
 
 		ret +=	"""<div id="tabs">
 					<ul>"""

@@ -683,8 +683,8 @@ table.uriel td.value {
 }
 table.uriel td.footer {
 	text-align: right;
-	background-color: #ddd;
-	border: 1px solid #666;
+	background-color: #dedede;
+	border: 1px solid #999;
 }
 /* Tabs */
 .ui-tabs {
@@ -729,8 +729,8 @@ table.uriel td.footer {
 }
 /* Component containers */
 .ui-widget-content {
-	border: 1px solid #880400/*{borderColorContent}*/;
-	background: #ffffff/*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
+    border: 1px solid #999/*{borderColorContent}*/;
+	background: #F5F5F5/*{bgColorContent}*/ 50%/*{bgContentXPos}*/ url(/images/ui-bg_flat_75_f5f5f5_40x100.png)/*{bgImgUrlDefault}*/50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
 	color: #222222/*{fcContent}*/;
 }
 .ui-widget-content a {
@@ -738,7 +738,7 @@ table.uriel td.footer {
 }
 .ui-widget-header {
 	border: 1px solid #aaaaaa/*{borderColorHeader}*/;
-	background: #cccccc/*{bgColorHeader}*/ url(images/ui-bg_highlight-soft_75_cccccc_1x100.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
+	background: #cccccc/*{bgColorHeader}*/ url(/images/ui-bg_highlight-soft_75_cccccc_1x100.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
 	color: #222222/*{fcHeader}*/;
 	font-weight: bold;
 }
@@ -748,7 +748,7 @@ table.uriel td.footer {
 /* Interaction states */
 .ui-state-default, .ui-widget-content .ui-state-default {
 	border: 1px solid #d3d3d3/*{borderColorDefault}*/;
-	background: #e6e6e6/*{bgColorDefault}*/ url(images/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
+	background: #e6e6e6/*{bgColorDefault}*/ url(/images/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
 	font-weight: normal/*{fwDefault}*/;
 	color: #555555/*{fcDefault}*/;
 	outline: none;
@@ -772,7 +772,7 @@ table.uriel td.footer {
 }
 .ui-state-active, .ui-widget-content .ui-state-active {
 	border: 1px solid #aaaaaa/*{borderColorActive}*/;
-	background: #ffffff/*{bgColorActive}*/ url(/images/ui-bg_glass_65_ffffff_1x400.png)/*{bgImgUrlActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/;
+	background: #F5F5F5/*{bgColorActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/;
 	font-weight: normal/*{fwDefault}*/;
 	color: #212121/*{fcActive}*/;
 	outline: none;
