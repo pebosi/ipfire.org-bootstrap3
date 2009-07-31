@@ -15,9 +15,9 @@ class Content(web.Content):
 		# ID, function, lang tuple
 		self.tabs = [ ("tab-os",     self.tab_os,     { "en" : "OS", "de" : "System",},),
 					  ("tab-arch",   self.tab_arch,   { "en" : "Architecture", "de": "Architektur",},),
-					  ("tab-lang",   self.tab_lang,   { "en" : "Languages", "de" : "Spracheinstellung",},),
+					  ("tab-lang",   self.tab_lang,   { "en" : "Languages", "de" : "Sprache",},),
 					  ("tab-cpu",    self.tab_cpu,    { "en" : "CPU", "de" : "Prozessor",},),
-					  ("tab-ram",    self.tab_ram,    { "en" : "RAM", "de" : "Hauptspeicher",},),
+					  ("tab-ram",    self.tab_ram,    { "en" : "RAM", "de" : "RAM",},),
 					  ("tab-vendor", self.tab_vendor, { "en" : "Vendor", "de" : "Hersteller",},),
 					  ("tab-model",  self.tab_model,  { "en" : "Model", "de" : "Modell",},),
 					  ("tab-formfactor", self.tab_formfactor, { "en" : "Formfactor", "de" : "Formfaktor",},),
@@ -29,7 +29,7 @@ class Content(web.Content):
 		ret = """<h3>IPFire Uriel</h3>
 					<table class="uriel">
 						<tr>
-							<td>Total hosts:</td>
+							<td class="header">Total hosts:</td>
 							<td>""" + "%s" % self.db.count() + """</td>
 						</tr>
 					</table>"""
