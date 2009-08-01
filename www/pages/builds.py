@@ -138,7 +138,7 @@ class Content(web.Content):
 					last_day = day
 
 				ret += """<tr class="build">
-							<td><a href="%(url)s" target="_blank">"""
+							<td><a href="%s" target="_blank">""" % build.url
 
 				if day == today:
 					ret += """<img src="/images/icons/ipfire.png" alt="IPFire" /></a></td>"""
