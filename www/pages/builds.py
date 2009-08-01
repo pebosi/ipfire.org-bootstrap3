@@ -5,6 +5,7 @@ import time
 
 import web
 import web.elements
+import web.javascript
 
 from web.info import Info
 info = Info()
@@ -136,14 +137,15 @@ class Content(web.Content):
 						ret += """<tr class="headline"><td colspan="5">&nbsp;<br />&nbsp;<br />%s</td></tr>""" % day
 					last_day = day
 
+				ret += """<tr class="build">
+							<td><a href="%(url)s" target="_blank">"""
+
 				if day == today:
-					ret += "<tr>"
+					ret += """<img src="/images/icons/ipfire.png" alt="IPFire" /></a></td>"""
 				else:
-					ret += """<tr class="outdated">"""
+					ret += """<img src="/images/icons/ipfire_sw.png" alt="IPFire" /></a></td>"""
 
 				ret += """\
-							<td><a href="%(url)s" target="_blank">
-								<img src="/images/icons/ipfire.png" alt="IPFire" /></a></td>
 							<td>&nbsp;<br />
 								<strong>%(release)s</strong> (%(arch)s) %(pxe)s<br />
 								<a href="%(url)s/%(iso)s">%(iso)s</a> %(size_iso)s</td>
@@ -172,3 +174,14 @@ class Content(web.Content):
 page = web.Page()
 page.content = Content()
 page.sidebar = web.elements.DevelopmentSidebar()
+
+### Disabled because it looks awful
+#page.javascript = web.javascript.Javascript(jquery=1)
+#page.javascript.jquery_plugin("alternate")
+#page.javascript.write("""
+#	<script type="text/javascript">
+#		$(function() {
+#			$("#builds tbody tr.build").alternate({odd:'odd', even:'even'});
+#		});
+#	</script>
+#""")
