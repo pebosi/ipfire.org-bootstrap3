@@ -668,6 +668,7 @@ table.uriel {
 	width: 100%;
 	/* border: 1px solid #880400; */
 	font-size: 0.9em;
+	
 }
 table.uriel td.header {
 	width: 80px;	
@@ -809,4 +810,12 @@ table.uriel td.footer {
 	position: absolute;
 	opacity: 0;
 	filter:Alpha(Opacity=0);
+}
+
+/* alternate */
+.odd {
+	background-color: #F9F9F9;
+}
+.even { 
+	background-color: #F1F1F1;
 }

@@ -141,10 +141,12 @@ page = web.Page()
 page.content = Content()
 page.sidebar = web.elements.DevelopmentSidebar()
 page.javascript = Javascript(1, 1)
+page.javascript.jquery_plugin("alternate")
 page.javascript.write("""
 	<script type="text/javascript">
 		$(function() {
 			$("#tabs").tabs();
+			$("#tabs tbody tr").alternate({odd:'odd', even:'even'});
 		});
 	</script>
 """)
