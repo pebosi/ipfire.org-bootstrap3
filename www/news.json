@@ -183,7 +183,7 @@
 								</ul>
 								<p>Ein experimenteller <strong>Xen</strong>-Kernel ist verfügbar.</p>"}}
 								
-		"17" : {"author"   : "Jan Paul T&uuml;cking",
+		"18" : {"author"   : "Jan Paul T&uuml;cking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 29", "de" : "Core Update 29" },
 				"date"     : "2009-08-05",
