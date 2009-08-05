@@ -181,7 +181,7 @@
 								  	<li>Einwahl über PPTP und VDSL möglich.</li>
 									<li>Eine Zahl kleinerer Updates: openssl, dnsmasq, iptables, snort.</li>
 								</ul>
-								<p>Ein experimenteller <strong>Xen</strong>-Kernel ist verfügbar.</p>"}}
+								<p>Ein experimenteller <strong>Xen</strong>-Kernel ist verfügbar.</p>"}},
 								
 		"18" : {"author"   : "Jan Paul T&uuml;cking",
 				"mail"     : "earl@ipfire.org",
@@ -189,10 +189,10 @@
 				"date"     : "2009-08-05",
 				"link"     : "",
 				"content"  :
-					{ "en" : "<p>From today, <strong>Core 29</ strong> will be available. 
+					{ "en" : "<p>From today, <strong>Core 29</strong> will be available. 
 								It comes with the following Changes:</p>
 								<ul>
-									<li>Deleted not needed collectd partition data.</li>
+									<li>Deleted unneeded collectd partition data.</li>
 									<li>Removed networks CGI page.</li>
 									<li>Deleted all snort community rules, because they are no longer maintained.</li>
 									<li>There were updates for: compat wireless, fcron, kudzu, iw</li>
@@ -204,7 +204,7 @@
 									<li>Added iptables CGI to firewall menu.</li>
 								</ul><br />",
 								
-					  "de" : "<p>Ab heute ist <strong>Core 29</strong> verfügbar. Es kommt mit folgende Änderungen:</p>
+					  "de" : "<p>Ab heute ist <strong>Core 29</strong> verfügbar. Es kommt mit folgenden Änderungen:</p>
 					  			<ul>
 									<li>Nicht benötigte Partitionsstatistiken wurden gelöscht.</li>
 									<li>Die networks.cgi wurde entfernt.</li>
