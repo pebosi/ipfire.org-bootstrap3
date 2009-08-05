@@ -72,7 +72,10 @@ class Build(object):
 	
 	@property
 	def packages(self):
-		return os.listdir("%s/packages_%s" % (self.path, self.arch,))
+		path = "%s/packages_%s" % (self.path, self.arch,)
+		if not os.path.exists(path):
+			return []
+		return os.listdir(path)
 	
 	@property
 	def pxe(self):
