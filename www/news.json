@@ -182,4 +182,39 @@
 									<li>Eine Zahl kleinerer Updates: openssl, dnsmasq, iptables, snort.</li>
 								</ul>
 								<p>Ein experimenteller <strong>Xen</strong>-Kernel ist verfügbar.</p>"}}
+								
+		"17" : {"author"   : "Jan Paul T&uuml;cking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 29", "de" : "Core Update 29" },
+				"date"     : "2009-08-05",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>From today, <strong>Core 29</ strong> will be available. 
+								It comes with the following Changes:</p>
+								<ul>
+									<li>Deleted not needed collectd partition data.</li>
+									<li>Removed networks CGI page.</li>
+									<li>Deleted all snort community rules, because they are no longer maintained.</li>
+									<li>There were updates for: compat wireless, fcron, kudzu, iw</li>
+									<li>Changed visual style and made some bugfixes for some CGIs.</li>
+									<li>Added ability to change red mac address.</li>
+									<li>Added ability to change red dns servers for dhcp.</li>
+									<li>Added av7110 firmware.</li>
+									<li>Added nsupdate from bind package.</li>
+									<li>Added iptables CGI to firewall menu.</li>
+								</ul><br />",
+								
+					  "de" : "<p>Ab heute ist <strong>Core 29</strong> verfügbar. Es kommt mit folgende Änderungen:</p>
+					  			<ul>
+									<li>Nicht benötigte Partitionsstatistiken wurden gelöscht.</li>
+									<li>Die networks.cgi wurde entfernt.</li>
+									<li>Snort Community Rules wurden gelöscht, da diese teilweise inkompatibel mit der aktuellen Snort Version waren.</li>
+									<li>Updates gab es unter anderem für: compat wireless, fcron, kudzu, iw.</li>
+									<li>Es wurden einige Fehler und kosmetische Korrekturen/Verbesserungen and den CGIs vorgenommen.</li>
+									<li>Die MAC Adresse des roten Interfaces kann ab sofort per Webinterface geändert werden.</li>
+									<li>Die DNS Server für DHCP auf rot können nun statisch gesetzt werden.</li>
+									<li>Die Firmware für av7110 wurde hinzugefügt.</li>
+									<li>nsupdate aus dem Bind Paket wurde hinzugefügt.</li>
+									<li>Die vorhandene IPTables CGI wurde in das Network Menu eingehangen.</li>
+								</ul><br />"}}
 }
