@@ -9,6 +9,7 @@ import urllib2
 
 from client.bencode import bencode, bdecode
 import web
+import web.elements
 
 class TrackerInfo:
 	def __init__(self, url):
@@ -58,9 +59,9 @@ for file in os.listdir(TORRENT_BASE):
 
 tracker = TrackerInfo(TRACKER_URL)
 
-class TorrentBox(web.Box):
+class TorrentBox(web.elements.Box):
 	def __init__(self, file):
-		web.Box.__init__(self, file.name, file.get_hash())
+		web.elements.Box.__init__(self, file.name, file.get_hash())
 		self.w("""
 			<p>
 				<strong>Seeders:</strong> %s<br />
@@ -73,8 +74,8 @@ class TorrentBox(web.Box):
 		
 
 class Content(web.Content):
-	def __init__(self, name):
-		web.Content.__init__(self, name)
+	def __init__(self):
+		web.Content.__init__(self)
 	
 	def content(self):
 		self.w("<h3>IPFire Torrent Tracker</h3>")
@@ -82,4 +83,6 @@ class Content(web.Content):
 			b = TorrentBox(t)
 			self.w(b())
 
-Sidebar = web.Sidebar
+page = web.Page()
+page.content = Content()
+page.sidebar = web.elements.Sidebar()
