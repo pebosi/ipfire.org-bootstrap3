@@ -217,4 +217,51 @@
 									<li>nsupdate aus dem Bind Paket wurde hinzugefügt.</li>
 									<li>Die vorhandene IPTables CGI wurde in das Network Menu eingehangen.</li>
 								</ul><br />"}}
+
+
+		"19" : {"author"   : "Jan Paul T&uuml;cking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 30", "de" : "Core Update 30" },
+				"date"     : "2009-08-30",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release <strong>Core 30</strong>. 
+								It comes with the following Changes:</p>
+								<ul>
+									<li>Added a warning that qos rules are deleted if you go back without saving</li>
+									<li>Added a question if you really want to shutdown/reboot</li>
+									<li>New: Added support for Vodafone K3565-Z umts stick</li>
+									<li>New: Added support for Installation on virtio block devices</li>
+									<li>Updated driver for: Intel e1000e and High-Speed-Option 3g Driver</li>
+									<li>Fixed pakfire configuration settings</li>
+									<li>Fixed pakfire install dependencies more than once</li>
+									<li>Fixed /etc/host gateway setup</li>
+								</ul><br />
+								<p>Special fixes for c't-Server:</p>
+								<ul>
+									<li>Fixed network card assignment (setup corrupted it)</li>
+									<li>Fixed empty pakfire uuid</li>
+									<li>Removed autoload of acpi modules</li>
+									<li>Switched pakfire trunk to 2.5-ct</li>								
+								</ul><br />",
+											
+					  "de" : "<p>Heute werden wir <strong>Core 30</strong> veröffentlichen. 
+					  			Es kommt mit folgenden Änderungen:</p>
+					  			<ul>
+									<li>Warnung hinzugefügt das QoS regeln bei "zurück" gelöscht werden</li>
+									<li>Sicherheitsabfrage ob man wirklich Runterfahren/Neustarten will</li>
+									<li>Neu: Unterstützung für Vodafone K3565-Z Umts Stick</li>
+									<li>Neu: Installation auf "virtio block devices"</li>
+									<li>Treiberupdate für Intel e1000e und High-Speed-Option Umts</li>
+									<li>Fix: pakfire Einstellungsdialog</li>
+									<li>Fix: pakfire installiert abhängigkeiten mehrfach</li>
+									<li>Fix: /etc/host gateway Eintrag</li>
+								</ul><br />
+								<p>Spezielle korrekturen für den c't-Server:</p>
+								<ul>
+									<li>Fix: Netwerkarten Zuordnung (setup zerstörte diese)</li>
+									<li>Fix: pakfire uuid ist leer</li>
+									<li>Acpi Module werden nicht mehr versucht zu laden</li>
+									<li>Pakfire trunk nach 2.5-ct gewechselt</li>
+								</ul><br />"}}
 }
