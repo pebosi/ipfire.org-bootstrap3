@@ -44,15 +44,33 @@
 				und Monat drastisch angestiegen und wir hoffen natürlich, dass das so bleibt.
 				]]></Content>
 		</Paragraph>
-
+		
 		<Paragraph>
-			<Heading>IPFire 2.5 (Stable)</Heading>
+			<Heading>IPFire 2.5 (latest Core)</Heading>
 
 			<Content lang="en"><![CDATA[
-				This is the very new stable 2.5 with kernel 2.6.27.25.
+				This is the ISO, including the latest core update <strong>30</strong>.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Die neue stabile Version vom 22. Juni 2009 mit Kernel 2.6.27.25.
+				Das ist das ISO, inklusive dem letzten Core Update <strong>30</strong>.
+				]]></Content>
+			
+			<Content raw="1"><![CDATA[
+				<div align="right">
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core30.iso">IPFire 2.5 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core30.iso.md5">MD5</a><br />
+				</div>
+				]]></Content>
+		</Paragraph>
+		
+		<Paragraph>
+			<Heading>IPFire 2.5</Heading>
+
+			<Content lang="en"><![CDATA[
+				This is the very new <strong>stable</strong> 2.5 with kernel 2.6.27.25.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Die neue <strong>stabile</strong> Version vom 22. Juni 2009 mit Kernel 2.6.27.25.
 				]]></Content>
 			
 			<Content raw="1"><![CDATA[
@@ -77,19 +95,17 @@
 					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>&nbsp;
 					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz.md5">MD5</a>
 				</div>
-				]]></Content>
-				
-					
+				]]></Content>					
 		</Paragraph>
 
 		<Paragraph>
-			<Heading>IPFire 2.3 (Old-Stable)</Heading>
+			<Heading>IPFire 2.3</Heading>
 
 			<Content lang="en"><![CDATA[
-				This is the old stable 2.3 with kernel 2.6.25.19.
+				This is the <strong>old stable</strong> 2.3 with kernel 2.6.25.19.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Die alte stabile Version vom 8. November 2008 mit Kernel 2.6.25.19.
+				Die alte <strong>stabile</strong> Version vom 8. November 2008 mit Kernel 2.6.25.19.
 				]]></Content>
 			
 			<Content raw="1"><![CDATA[
@@ -148,8 +164,8 @@
 				<b>After 4 years, the team has decided to cease support for this release.</b>
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				<b>Nach 4 Jahren produktivem Einsatz hat das Team sich entschlossen den Support für
-				diese Version einzustellen.</b>
+				<b>Nach 4 Jahren produktivem Einsatz hat das Team sich entschlossen<br />
+				   den Support für diese Version einzustellen.</b>
 				]]></Content>
 			
 			<Content raw="1"><![CDATA[
