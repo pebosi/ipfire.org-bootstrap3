@@ -20,7 +20,7 @@
 		<div id="header">
 			<div id="header_inner" class="fixed">
 				<div id="logo">
-					<a href="/" accesskey="h" title="[ALT+H]"><img src="/images/tux2-99.png" width="100px" height="102px" class="symbol" alt="IPFire" /></a>
+					<a href="/" accesskey="h" title="[ALT+H]"><img src="/images/tux2-99.png" width="100px" height="99px" class="symbol" alt="IPFire" /></a>
 				</div>
 				<div id="line1">
 					%(menu)s
