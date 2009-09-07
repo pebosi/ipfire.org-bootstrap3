@@ -246,7 +246,7 @@
 								</ul><br />",
 											
 					  "de" : "<p>Heute werden wir <strong>Core 30</strong> veröffentlichen. 
-					  			Es kommt mit folgenden Aenderungen:</p>
+					  			Es kommt mit folgenden Änderungen:</p>
 					  			<ul>
 									<li>Warnung hinzugefügt, dass QoS-Regeln bei \"zurück\" gelöscht werden</li>
 									<li>Sicherheitsabfrage, ob man wirklich herunterfahren/neustarten will</li>
