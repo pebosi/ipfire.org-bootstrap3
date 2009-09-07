@@ -22,6 +22,7 @@ hosts = (
 			( 8, "http", "ipfire.kbarthel.de",   "/",),
 			( 8, "http", "ipfire.1l0v3u.com",    "/",),
 			( 8, "http", "kraefte.org",          "/ipfire",),
+			( 8, "http", "ipfiremirror.wintertech.de", "/",),
 )
 
 def rnd(servers):
