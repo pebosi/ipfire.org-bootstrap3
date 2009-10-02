@@ -60,5 +60,7 @@ class DevelopmentSidebar(Sidebar):
 		self.w("""<h4>Development Ressources</h4>
 				<p> - <a href="cluster">Cluster</a> Monitoring<br />
 					- Nightly <a href="builds">Builds</a><br />
-					- <a href="source">Source</a> Code</p>
+					- <a href="source">Source</a> Code<br />
+					- Pakfire <a href="pakfire3">Repositories</a><br />
+					- <a href="translate">Localization</a> Status</p>
 		""")
