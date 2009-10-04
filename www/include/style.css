@@ -687,6 +687,39 @@ table.uriel td.footer {
 	background-color: #dedede;
 	border: 1px solid #999;
 }
+
+/* TRANSLATION */
+table.translate {
+	width: 100%;
+	/* border: 1px solid #880400; */
+	font-size: 0.9em;
+}
+
+table.translate td {
+	padding: 4px;
+	text-align: center;
+}
+
+table.translate td.lang {
+	text-align: left;
+}
+
+/* pakfire3 */
+#repos .leaf {
+	border: 1px solid #000;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+#repos .leaf p.header {
+	background-color: #E1E1E1;
+	padding-left: 5px;
+}
+
+#repos .leaf p.footer {
+	text-align: right;
+}
+
 /* Tabs */
 .ui-tabs {
 	padding: .2em;
