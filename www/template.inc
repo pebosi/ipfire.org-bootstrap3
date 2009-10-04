@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 		<title>%(title)s</title>
-		<meta name="keywords" content="Linux, Firewall, IPCop, IPFire, Security" />
+		<meta name="keywords" content="Linux, Firewall, IPFire, Security" />
 		<meta name="description" content="" />
 		<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
 		<link rel="stylesheet" type="text/css" href="/include/style.css" />
@@ -20,7 +20,7 @@
 		<div id="header">
 			<div id="header_inner" class="fixed">
 				<div id="logo">
-					<a href="/" accesskey="h" title="[ALT+H]"><img src="/images/tux2-99.png" width="100px" height="99px" class="symbol" alt="IPFire" /></a>
+					<a href="/" accesskey="h" title="[ALT+H]"><img src="/images/tux_menu_99x100.png" width="100px" height="99px" class="symbol" alt="IPFire" /></a>
 				</div>
 				<div id="line1">
 					%(menu)s
