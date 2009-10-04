@@ -263,6 +263,42 @@
 									<li>Fix: Pakfire UUID ist leer</li>
 									<li>ACPI Module werden nicht mehr versucht zu laden</li>
 									<li>Pakfire-Trunk nach 2.5-ct gewechselt</li>
-								</ul><br />"}}
+								</ul><br />"}},
+								
+								
+										"20" : {"author"   : "Jan Paul T&uuml;cking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 31", "de" : "Core Update 31" },
+				"date"     : "2009-10-04",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today was published <strong>Core 31</strong>. It implicates following changes:</p>
+								<ul>
+									<li>Upgrade Kernel to stable 2.6.27.31 due to a security vulnerability</li>
+									<li>Added drivers for alix led support</li>
+									<li>Updated openswan to 2.6.23</li>
+									<li>Updated smartctl to latest svn r2877 (usb support)</li>
+									<li>Updated openvpn to 2.9 rc19</li>
+									<li>The mac address und dns server adjustments can now be deleted</li>
+									<li>Fixed a few bugs on some cgi: urlfilter.cgi constraints, chpasswd.cgi</li>
+								</ul>
+								<p>Because of the security vulnerability in the old kernel, we recommend all users 
+								<br />to install this core update!</p>
+								<br />",
+											
+					  "de" : "<p>Heute wurde <strong>Core 31</strong> veröffentlicht. Es bringt die folgenden Änderungen mit sich:</p>
+					  			
+					  			<ul>					  			
+					  				<li>Kernel Update auf 2.6.27.31 wegen einer Sicherheitslücke</li>
+									<li>Treiber für Alix Led's unterstützung hinzugefügt</li>
+									<li>Update von Openswan auf 2.6.23</li>
+									<li>Update von smartctl auf SVN r2877 (USB-Support)</li>
+									<li>Update von Openvpn auf 2.9 rc19</li>
+									<li>Die MAC Adresse und DNS Server Einstellungen können nun auch gelöscht werden</li>
+									<li>Es wurden ein paar Fehler an CGIs behoben: urlfilter.cgi constraints, chpasswd.cgi</li>		
+								</ul>
+								<p>Aufgrund der Sicherheitslücke im alten Kernel empfehlen wir allen Benutzern
+								<br />dieses Core-Update zu installieren!</p>
+								<br />"}}
 }
 
