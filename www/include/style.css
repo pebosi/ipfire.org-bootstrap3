@@ -852,3 +852,25 @@ table.translate td.lang {
 .even { 
 	background-color: #F1F1F1;
 }
+
+/* IPFire Download Button */
+.button {
+    background: url(/images/buttons/download_core_96x320.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 700px;
+    height: 96px;
+}
+.button a, .button a:link, .button  a:visited {
+	color:#333;
+	text-decoration:none;
+}
+.button a:hover {
+	text-decoration: underline;
+}
+.button_text {
+	color:#333; 
+	font-size: 20px !important;
+	text-shadow: #666 1px 2px 2px;
+    padding: 51px 0px 0px 430px;
+}
