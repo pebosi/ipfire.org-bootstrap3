@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site>
+	<Config>
+		<Title lang="en">Downloads</Title>
+                <Title lang="de">Downloads</Title>
+	</Config>
+	<Paragraphs>
+		<Paragraph>
+			<Heading lang="en">ancient Downloads</Heading>
+			<Heading lang="de">ältere Downloads</Heading>
+
+			<Content raw="1"><![CDATA[
+				<img src="/images/box_ipfire.png" class="floatTL" alt="Download" />
+				]]></Content>
+
+			<Content lang="en"><![CDATA[
+				Here you can find all the old downloads of the ipfire project.<br />
+				The brand new release <b>2.5</b> and the
+				good old stables <b>2.3</b>, <b>2.1</b> and	<b>1.4.9</b>.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Hier findet ihr alle alten Downloads des IPFire-Projektes.<br />
+				Die stabile Version <b>2.5</b> sowie die guten alten
+				Versionen <b>2.3</b>, <b>2.1</b> und <b>1.4.9</b>.
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				We would like to say thanks to all the people that support this project by
+				lending their bandwidth.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Ebenso möchten wir uns an dieser Stelle bei den Personen bedanken, die die zahlreichen Mirrorserver
+				für das Projekt zur Verfügung stellen.
+				]]></Content>
+		</Paragraph>
+				
+		<Paragraph>
+			<Heading>IPFire 2.5</Heading>
+
+			<Content lang="en"><![CDATA[
+				This is the <strong>stable</strong> 2.5 with kernel 2.6.27.25.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Die <strong>stabile</strong> Version vom 22. Juni 2009 mit Kernel 2.6.27.25.
+				]]></Content>
+			
+			<Content raw="1"><![CDATA[
+				<div align="right">
+					<a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core28.iso.torrent">IPFire 2.5 - TORRENT - DISK</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (HDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (FDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz.md5">MD5</a><br /><br />
+				</div>
+				]]></Content>
+			<Content lang="en"><![CDATA[
+				<div align="right">
+					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz.md5">MD5</a>
+				</div>
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				<div align="right">
+					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz">IPFire 2.5 - HTTP - FLASH 1G</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core28.img.gz.md5">MD5</a>
+				</div>
+				]]></Content>					
+		</Paragraph>
+
+		<Paragraph>
+			<Heading>IPFire 2.3</Heading>
+
+			<Content lang="en"><![CDATA[
+				This is the <strong>old stable</strong> 2.3 with kernel 2.6.25.19.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Die alte <strong>stabile</strong> Version vom 8. November 2008 mit Kernel 2.6.25.19.
+				]]></Content>
+			
+			<Content raw="1"><![CDATA[
+				<div align="right">
+					<a href="http://download.ipfire.org/torrent/ipfire-2.3.i586-full.iso.torrent">IPFire 2.3 - TORRENT - DISK</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.3.i586-full.iso">IPFire 2.3 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.3.i586-full.iso.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-hdd.i586.img.gz">IPFire 2.3 - HTTP - USB (HDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-hdd.i586.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-fdd.i586.img.gz">IPFire 2.3 - HTTP - USB (FDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.3-install-usb-fdd.i586.img.gz.md5">MD5</a>
+				</div>
+				]]></Content>	
+		</Paragraph>
+		
+		<Paragraph>
+			<Heading>IPFire 2.1</Heading>
+
+			<Content lang="en"><![CDATA[
+				This is the old stable 2.1 with kernel 2.6.16.57.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Die stabile Version vom 8. November 2007 mit Kernel 2.6.16.57.
+				]]></Content>
+                        <Content lang="en"><![CDATA[
+                                <b>The team recommends using IPFire 2.3.</b>
+                                ]]></Content>
+                        <Content lang="de"><![CDATA[
+                                <b>Das Team empfielt den Einsatz von IPFire 2.3.</b>
+                                ]]></Content>
+			
+			<Content raw="1"><![CDATA[
+				<div align="right">
+					<a href="http://download.ipfire.org/torrent/ipfire-2.1.i586-full.iso.torrent">IPFire 2.1 - TORRENT - DISK</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso">IPFire 2.1 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.1.i586-full.iso.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-hdd.i586.img.gz">IPFire 2.1 - HTTP - USB (HDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-hdd.i586.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-fdd.i586.img.gz">IPFire 2.1 - HTTP - USB (FDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.1-install-usb-fdd.i586.img.gz.md5">MD5</a>
+				</div>
+				]]></Content>	
+		</Paragraph>
+		
+		<Paragraph>
+			<Heading>IPFire 1.4.9</Heading>
+
+			<Content lang="en"><![CDATA[
+				The final version was released in August 2005.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Die finale Version des IPFire wurde im August 2005 veröffentlicht.
+				]]></Content>
+			
+			<Content lang="en"><![CDATA[
+				<b>After 4 years, the team has decided to cease support for this release.</b>
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				<b>Nach 4 Jahren produktivem Einsatz hat das Team sich entschlossen<br />
+				   den Support für diese Version einzustellen.</b>
+				]]></Content>
+			
+			<Content raw="1"><![CDATA[
+				<div align="right">
+					<a href="http://download.ipfire.org/torrent/IPFire-1.4.9-FINAL.iso.torrent">IPFire 1.4.9 - TORRENT</a><br />
+					<a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso">IPFire 1.4.9 - HTTP</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/IPFire-1.4.9-FINAL.iso.md5">MD5</a>
+				</div>
+				]]></Content>	
+		</Paragraph>
+		
+	</Paragraphs>
+
+	<Sidebar>
+		<Paragraph releases="1" />
+
+		<Paragraph>
+		    <Heading lang="en"><![CDATA[<span>Torrent</span> clients]]></Heading>
+			<Heading lang="de"><![CDATA[<span>Torrent</span> Clients]]></Heading>	
+			
+			<Content raw="1"><![CDATA[
+				<ul class="links">
+					<li class="first"><img src="/images/win_icon.png" alt="Windows" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.utorrent.com/" target="_blank"> &micro;torrent</a></li>
+					<li><img src="/images/linux_icon.png" alt="Linux" align="absmiddle"><img src="/images/mac_icon.png" alt="Mac OS" align="absmiddle"> <a href="http://www.transmissionbt.com/" target="_blank">Transmission</a></li>
+				</ul>
+				]]></Content>
+		</Paragraph>
+		
+		<Paragraph banner="1" />
+
+	</Sidebar>
+</Site>
