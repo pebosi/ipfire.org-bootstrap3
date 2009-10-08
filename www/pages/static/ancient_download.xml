@@ -49,8 +49,12 @@
 					<a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core28.iso.torrent">IPFire 2.5 - TORRENT - DISK</a><br />
 					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso">IPFire 2.5 - HTTP - DISK</a>&nbsp;
 					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core28.iso.md5">MD5</a><br /><br />
+					
+<!-- DIESE DATEI IST FEHLERHAFT				
 					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (HDD)</a>&nbsp;
-					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core28.img.gz.md5">MD5</a><br /> 
+-->
+					
 					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz">IPFire 2.5 - HTTP - USB (FDD)</a>&nbsp;
 					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core28.img.gz.md5">MD5</a><br /><br />
 				</div>
