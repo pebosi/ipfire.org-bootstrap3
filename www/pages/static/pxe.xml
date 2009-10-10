@@ -17,12 +17,18 @@
 				<br /><br />
 				On <em>pxe.ipfire.org</em>, there are several files hosted, that are loaded
 				when booting from PXE.
+				<br /><br />
+				A TFTP server is running on <em>pxe.ipfire.org</em> and can be used
+				for installation of IPFire.
 				]]></Content>
 			<Content lang="de"><![CDATA[
 				Ab IPFire 3.x ist die Distribution über das Netzwerk installierbar.
 				<br /><br />
 				Auf <em>pxe.ipfire.org</em> sind nur einige Daten gehostet, die während
 				der Installation geladen werden.
+				<br /><br />
+				Weiterhin ist unter <em>pxe.ipfire.org</em> ein TFTP-Server zu finden,
+				der für die Installation von IPFire genutzt werden kann.
 				]]></Content>
 		</Paragraph>
 		<Paragraph>
