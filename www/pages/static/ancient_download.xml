@@ -15,7 +15,7 @@
 
 			<Content lang="en"><![CDATA[
 				Here you can find all the old downloads of the ipfire project.<br />
-				The brand new release <b>2.5</b> and the
+				The release of <b>2.5</b> and the
 				good old stables <b>2.3</b>, <b>2.1</b> and	<b>1.4.9</b>.
 				]]></Content>
 			<Content lang="de"><![CDATA[
@@ -33,6 +33,44 @@
 				für das Projekt zur Verfügung stellen.
 				]]></Content>
 		</Paragraph>
+		
+		<Paragraph>
+			<Heading>IPFire 2.5 Core 31</Heading>
+
+			<Content lang="en"><![CDATA[
+				This is the ISO of core update <strong>31</strong>.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Das ist das ISO vom Core Update <strong>31</strong>.
+				]]></Content>		
+			
+			<Content raw="1"><![CDATA[
+				<div align="right">
+					<a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core31.iso.torrent">IPFire 2.5 Core31 - TORRENT - DISK</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core31.iso">IPFire 2.5 Core31 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core31.iso.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core31.img.gz">IPFire 2.5 Core31 - HTTP - USB (HDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core31.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core31.img.gz">IPFire 2.5 Core31 - HTTP - USB (FDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core31.img.gz.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.xen.i586-full-core31.tar.bz2">IPFire 2.5 Core31 - XEN </a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.xen.i586-full-core31.tar.bz2.md5">MD5</a><br /><br />
+				</div>
+				]]></Content>
+				<Content lang="en"><![CDATA[
+				<div align="right">
+					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core31.img.gz">IPFire 2.5 Core31 - HTTP - FLASH 1G</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core31.img.gz.md5">MD5</a>
+				</div>
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				<div align="right">
+					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core31.img.gz">IPFire 2.5 Core31 - HTTP - FLASH 1G</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core31.img.gz.md5">MD5</a>
+				</div>
+				]]></Content>					
+		</Paragraph>
+
 				
 		<Paragraph>
 			<Heading>IPFire 2.5</Heading>

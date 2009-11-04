@@ -266,13 +266,14 @@
 								</ul><br />"}},
 								
 								
-										"20" : {"author"   : "Jan Paul T&uuml;cking",
+		"20" : {"author"   : "Jan Paul T&uuml;cking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 31", "de" : "Core Update 31" },
 				"date"     : "2009-10-04",
 				"link"     : "",
 				"content"  :
-					{ "en" : "<p>Today was published <strong>Core 31</strong>. It implicates following changes:</p>
+					{ "en" : "<p>Today we are going to release <strong>Core 31</strong>. 
+									It implicates following changes:</p>
 								<ul>
 									<li>Upgrade Kernel to stable 2.6.27.31 due to a security vulnerability</li>
 									<li>Added drivers for alix led support</li>
@@ -299,6 +300,61 @@
 								</ul>
 								<p>Aufgrund der Sicherheitslücke im alten Kernel empfehlen wir allen Benutzern
 								<br />dieses Core-Update zu installieren!</p>
+								<br />"}},
+								
+		"21" : {"author"   : "Jan Paul T&uuml;cking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 32", "de" : "Core Update 32" },
+				"date"     : "2009-11-04",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release <strong>Core 32</strong>. 
+									It implicates following changes:</p>
+								<ul>			
+							      	    <li>Update of openvpn to version 2.1rc20</li>
+								    <li>Update of setdns.pl now it updates correctly regfish.de accounts</li>
+								    <li>Update of squid to version 2.7.STABLE7</li>
+								    <li>Update of ntfs3g, maybe this fixes some mount problems</li>
+								    <li>Update of hardware database</li>
+								    <li>Update of realtek network drivers</li>  
+								    <li>Update of GeoIP database</li>
+								    <li>Update of Net::SSLeay</li>
+								    <li>Downgrade dnsmasq to version 2.45</li>
+								    <li>Fix on logrotate the postrotate script of snort logs</li>
+								    <li>Fix tmpfs backup cronjob entry</li>
+								    <li>Fix dhcpclient for IPTV</li>
+								    <li>Add vdsl-iptv mac address change</li>
+								    <li>Add 'all option' to outgoing firewall</li>
+								    <li>Add S.M.A.R.T. fail warning to index.cgi</li>
+								    <li>Add a core-update notification to index.cgi when there will be available</li>
+								    <li>Changed probenic.sh to detect virtio and ssb interfaces</li>
+								    <li>Translated some german phrases on en.pl</li>
+								    <li>Prepared PPTP over DHCP internet connection support</li>
+								</ul>
+								<br />",
+											
+					  "de" : "<p>Heute werden wir <strong>Core 32</strong> veröffentlichen. Es bringt die folgenden Änderungen mit sich:</p>				  			
+					  			<ul>					  			
+					  			    <li>Update von openvpn auf Version 2.1rc20</li>
+								    <li>Update von setdns.pl nun werden auch regfish.de Account richtig aktuallisiert</li>
+								    <li>Update von squid auf Version 2.7.STABLE7</li>
+								    <li>Update von ntfs3g, vielleicht behebt dieses ein paar mount Probleme</li>
+								    <li>Update der Hardware Datenbank</li>
+								    <li>Update von Realtek Netzwerkkartentreibern</li>  
+								    <li>Update der GeoIP Datenbank</li>
+								    <li>Update von Net::SSLeay</li>
+								    <li>Downgrade dnsmasq auf Version 2.45</li>
+								    <li>Beim Logrotate wurden am postrotate Script von den Snort Logs Fehler behoben</li>
+								    <li>Fix tmpfs Backup Cronjob Eintrag</li>
+								    <li>Fix dhcpclient für IPTV</li>
+								    <li>Es gibt nun die Möglichkeit bei vdsl-iptv die Mac Adresse zu ändern</li>
+								    <li>Der Ausgehenden Firewall wurde die Option 'all options' hinzugefügt</li>
+								    <li>Eine S.M.A.R.T. Fehlerwarung wurder der index.cgi hinzugefügt</li>
+								    <li>Eine Core-Update Meldung wird nun auf der index.cgi angezeigt wenn Updates vorhanden sind</li>
+								    <li>Änderungen an der probenic.sh um Virtio und SSB Interfaces zu erkennen</li>
+								    <li>Überseztung von ein paar deutschen Sätze in der en.pl</li>
+								    <li>Vorbereitung für die Unterstützung von PPTP over DHCP Internetverbindungen</li>	
+								</ul>
 								<br />"}}
 }
 
