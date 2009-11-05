@@ -311,7 +311,7 @@
 					{ "en" : "<p>Today we are going to release <strong>Core 32</strong>. 
 									It implicates following changes:</p>
 								<ul>			
-							      	    <li>Update of openvpn to version 2.1rc20</li>
+							      	<li>Update of openvpn to version 2.1rc20</li>
 								    <li>Update of setdns.pl now it updates correctly regfish.de accounts</li>
 								    <li>Update of squid to version 2.7.STABLE7</li>
 								    <li>Update of ntfs3g, maybe this fixes some mount problems</li>
@@ -354,6 +354,38 @@
 								    <li>Änderungen an der probenic.sh um Virtio und SSB Interfaces zu erkennen</li>
 								    <li>Überseztung von ein paar deutschen Sätze in der en.pl</li>
 								    <li>Vorbereitung für die Unterstützung von PPTP over DHCP Internetverbindungen</li>	
+								</ul>
+								<br />"}},
+				
+				"22" : {"author"   : "Jan Paul T&uuml;cking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 33", "de" : "Core Update 33" },
+				"date"     : "2009-11-05",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p><strong>Due to a security reason</strong> we are going to release <strong>Core 33</strong> today. 
+								</p>
+					  			<ul>					  			
+					  			    <li>Set vm.mmap_min_addr to 4096 to workaround 
+					  			    <a href=\"http://www.h-online.com/open/news/item/Hole-in-the-Linux-kernel-allows-root-access-850016.html\" 
+					  			    target=\"_blank\">this security issue</a>.</li>
+					  			    <li>Fix some typos (Device xxx reports S.M.A.R.T. etc.)</li>
+					  			    <li>Update Net-Server to 0.97</li>
+  									<li>Pakfire: Update also the meta db at package list update.<br />
+    								    This prevent using old dependencies at package update.</li>
+								</ul>
+								<br />",
+											
+					  "de" : "<p><strong>Aus sicherheitstechnischen Gründen</strong> werden wir heute direkt den <strong>Core 33</strong> 
+					  			veröffentlichen:</p>				  			
+					  			<ul>					  			
+					  			    <li>Wert in vm.mmap_min_addr auf 4096 gesetzt, um 
+					  			    <a href=\"http://www.heise.de/security/meldung/Luecke-im-Linux-Kernel-erlaubt-Root-Zugriff-Update-849799.html\"
+					  			    target=\"_blank\">dieses Sicherheitsproblem</a> zu blockieren.</li>
+					  			    <li>Fix von einigen Tippfehler (Device xxx reports S.M.A.R.T. etc.)</li>
+					  			    <li>Update Net-Server auf Version 0.97</li>
+  									<li>Pakfire: Aktualisiert nun auch die meta db beim \"package list\" Update.<br />
+    								    Dieses verhindert die Benutzung von alten Abhängigkeiten bei der Paketaktualisierung.</li>
 								</ul>
 								<br />"}}
 }

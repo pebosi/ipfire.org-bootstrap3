@@ -2,7 +2,7 @@
 	"name"     : "IPFire",
 	"sname"    : "ipfire",
 	"slogan"   : "Security now!",
-	"releases" : { "stable"  : "IPFire 2.5 - Core 32",
+	"releases" : { "stable"  : "IPFire 2.5 - Core 33",
 				   "testing" : "IPFire 3.0 alpha 1" },
 	"hosting"  : { "cluster" : "minerva.ipfire.org" },
 	"nightly_builds" : [{ "url" : "http://ftp.ipfire.org/pub/nightly-builds/",
