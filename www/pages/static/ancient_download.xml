@@ -71,19 +71,6 @@
 				]]></Content>
 		</Paragraph>
 
-		
-		<Paragraph>
-			<Heading>IPFire 2.5 Core 31</Heading>
-
-			<Content lang="en"><![CDATA[
-				This is the ISO of core update <strong>31</strong>.
-				]]></Content>
-			<Content lang="de"><![CDATA[
-				Das ist das ISO vom Core Update <strong>31</strong>.
-				]]></Content>						
-		</Paragraph>
-
-				
 		<Paragraph>
 			<Heading>IPFire 2.5</Heading>
 
