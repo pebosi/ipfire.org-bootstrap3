@@ -7,69 +7,65 @@
 	<Paragraphs>
 		<Paragraph>
 			<Heading lang="en">more security for your network</Heading>
-			<Heading lang="de">Sicherheit heute!</Heading>
+			<Heading lang="de">mehr Sicherheit für Ihr Netzwerk</Heading>
 
 			<Content lang="en"><![CDATA[
-				<strong>IPFire</strong> is a source-based linux firewall distribution
-				that brings additional features with it. The easy-to-set-up system defeats
-				its competitiors like IPCop, Smoothwall and Endian-Firewall potty.
-				A <strong>stateful-inspection-firewall</strong> with a luxuriant
-				<strong>content-filtering</strong>-engine plus
-				<strong>traffic-control (QoS)</strong> rounded with latest
-				<strong>vpn-technology</strong> and a lot of logging is
-				foolproof to administer with just a very few clicks.
+				<strong>IPFire</strong> is a linux-distribution that focusses on easy setup, good handling and a 
+				<strong>high niveau of security</strong>.<br /> It is operable via an intuitive webinterface, which offers a
+				 lot of playground for <strong>beginners</strong> and even experienced <strong>administrators</strong>.
+				 <strong>IPFire</strong> is maintained by experienced developers, who are really concerned about security and regulary 
+				 updates to <strong>keep it secure</strong>.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				<strong>IPFire</strong> ist eine aus den Sourcen gebaute Linux-Firewall-Distribution,
-				die mit zusätzlichen Funktionen aufwarten kann. Das leicht installierte
-				Grundsystem, kann es an sich mit Konkurrenten wie
-				z.B. IPCop, Smoothwall oder der Endian-Firewall aufnehmen.
-				Die <strong>Stateful-Inspection-Firewall</strong> mit üppigen
-				<strong>Content-Filtering</strong>-Funktionen, sowie
-				<strong>Traffic-Kontrolle (QoS)</strong>, abgerundet durch
-				<strong>VPN-Technologie</strong> und breitbandigem Logging,
-				kann der Administrator umfassend und mit wenigen Knopfdrücken
-				konfigurieren.
+				Das <strong>IPFire</strong>-System ist eine Linux-Distribution, welche die Zielsetzung hat ein einfach zu 
+				installierendes Grundsystem zu bieten und dabei ein <strong>hohes Sicherheitsniveau</strong> zu gewährleisten.
+				<strong>IPFire</strong> ist komplett über sein intuitiv zu bedienendes Webinterface zu konfigurieren 
+				und bietet sowohl <strong>Anfängern</strong>, als auch erfahrenen <strong>Administratoren</strong> eine Fülle von 
+				Einstellungsmöglichkeiten. Ein <strong>Schwerpunkt</strong> bei der Weiterentwickling legen die erfahrenen Entwickler 
+				klar auf regelmäßige System und vor allem <strong>Sicherheitsupdates</strong>.<br /><br />
 				]]></Content>
-
-			<Content><![CDATA[
+			
+			<Content lang="en"><![CDATA[
+				<strong>IPFire</strong> ships with a custom built paket-manager called <strong>Pakfire</strong>, so the system can be 
+				expanded with various <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">addons</a>.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Durch den integrierten Paketmanager <strong>Pakfire</strong> lässt sich der <strong>IPFire</strong> mit diversen 
+				<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>, 
+				bishin zu einem Server-System erweitern.
+				]]></Content>
+				
+			<Content raw="1"><![CDATA[
+				<!-- <div class="button">
+					<div class="button_text">
+						<a href="download">Download&nbsp;&nbsp;IPFire 2.5</a>
+					</div>
+				</div> -->
 				<img src="/images/Network-1.png" alt="IPFire Logo" />
-				<br class="clear" />
 				]]></Content>
-			
-			<Content lang="en"><![CDATA["Modular system" is the principle of IPFire.<br />
-				There is a big number of addons. See the short list below:
+				
+			<Content lang="en"><![CDATA[
+				<br /><strong>IPFire</strong> is a <strong>GPLv3</strong>-licensed project developed and maintained by 
+				an open <strong>community</strong> of developers.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Nach dem "Baukastenprinzip" lässt sich der IPFire
-				durch diverse Addons erweitern.<br />
-				Zu diesen Addons gehören:
+				<br /><strong>IPFire</strong> ist eine freie Software, die unter der <strong>GPLv3</strong> lizensiert ist und 
+				von einer offenen <strong>Community</strong> entwickelt wird.
 				]]></Content>
-			
-			<Content lang="en" raw="1"><![CDATA[
-				<ul class="links">
-					<li class="first">Intrusion-Prevention-System Snort(Guardian) and more security tools Tripwire and Lynis</li>
-					<li>File- and printserver for heterogeneous networks (Samba, CUPS, FTP &amp; NFS)</li>
-					<li>Voice-over-IP solution with Asterisk and Teamspeak plus traffic prioritization</li>
-					<li>Multimedia addons (video- &amp; audio-streaming, jukebox)</li>
-					<li>WLan Access Point with hostap and many Atheros Chips</li>
-					<li>and many more - <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">List of all Addons</a></li>	
-				</ul>
-				]]></Content>
-			<Content lang="de" raw="1"><![CDATA[
-				<ul class="links">
-					<li class="first">Intrusion-Prevention-System Snort(Guardian), sowie weitere Securtiy Tools wie Tripwire und Lynis</li>
-					<li>Datei- und Druckserver für heterogene Netzwerke (Samba, CUPS, FTP &amp; NFS)</li>
-					<li>Voice-over-IP-Lösung mittels Asterisk und Teamspeak, sowie Traffic-Priorisierung</li>
-					<li>Multimedia-Addons (Video- &amp; Audio-Streaming, Jukebox)</li>
-					<li>WLan Access Point mittels hostap für viele Atheros Chips</li>
-					<li>und weiteren Addons - <a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Alle Addons im Wiki</a></li>	
-				</ul>
-				]]></Content>
-		</Paragraph>
+				
+			<Content raw="1"><![CDATA[
+				<div class="button">
+					<div class="button_text">
+						<a href="download">Download&nbsp;&nbsp;IPFire 2.5</a>
+					</div>
+				</div> 
+				<!-- <img src="/images/Network-1.png" alt="IPFire Logo" /> -->
+			]]></Content>
 
+		</Paragraph>
+		
 		<Paragraph news="1" count="3" />
-	</Paragraphs>
+		</Paragraphs>
 	
 	<Sidebar>
 		<Paragraph releases="1" />
