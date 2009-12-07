@@ -61,8 +61,18 @@
 																	    <td>Sebastian Winter</td>
 																	  </tr>
 																	</table>
+											<br />
                                 ]]></Content>
-
+                                <Content lang="en"><![CDATA[
+                        					Marcus Scholz (Commander1024) did a <strong>talk</strong> about IPFire at the 
+                        					<em>Warpzone</em>,
+                        					a <a href="http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf">draft</a> is available as well as a <a href="http://qik.com/video/3807703">video</a>.
+                              	]]></Content>
+                                <Content lang="de"><![CDATA[
+                        					Marcus Scholz (Commander1024) hat einen <strong>Vortrag</strong> über IPFire in der 
+                        					<em>Warpzone</em>
+                        					gehalten, wer will kann sich das <a href="http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf">Paper</a> wie auch das <a href="http://qik.com/video/3807703">Video</a> des Vortrags anschauen.
+                              	]]></Content>
                 </Paragraph>
                 <Paragraph>
                 		<Heading lang="en">IPFire in Media</Heading>

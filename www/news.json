@@ -407,6 +407,27 @@
 								nun an Teil des Teams aufgrund ihrer beständigen und langen Mitarbeit am Projekt.</p>
 								<p>
 									<a href=\"http://wiki.ipfire.org/de/project/contribute\" target=\"_blank\">Wie kann ich selber zum Projekt beitragen?</a>
+								</p>"}},
+										
+		"24" : {"author"   : "Jan Paul Tücking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "talk about IPFire", "de" : "Vortrag über IPFire" },
+				"date"     : "2009-12-06",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Marcus Scholz did a <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\">talk</a> about
+							 IPFire at the <a href=\"warpzone.ms/\">Warpzone</a>, a 
+							 <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\">draft</a> 
+							 is available as well as a <a href=\"http://qik.com/video/3807703\">video</a>.
+							  </p>",
+
+					  "de" : "<p>Marcus Scholz hat einen <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\">Vortrag</a> über
+					  		  IPFire in der <a href=\"warpzone.ms/\">Warpzone</a> gehalten. Die dazugehörigen  
+					  		  <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\">Folien</a> 
+					  		  so wie ein <a href=\"http://qik.com/video/3807703\">Video</a> von seiner Presentation stehen zur Verfügung.
 								</p>"}}
+								
+								
+
 }
 
