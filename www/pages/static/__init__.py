@@ -103,6 +103,21 @@ class Sidebar(Xml):
 
 		return ret
 
+class Javascript(Xml):
+	def __init__(self, file):
+		Xml.__init__(self, file)
+
+	def __call__(self, lang="en"):
+		ret = ""
+		scripts = self.xml.getElementsByTagName("Script")
+		for script in scripts:
+			ret += self.getText(script)
+
+		return ret
+
+
+
 page = web.Page()
 page.content = Content(page.site)
 page.sidebar = Sidebar(page.site)
+page.javascript = Javascript(page.site)
