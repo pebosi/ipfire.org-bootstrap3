@@ -416,15 +416,15 @@
 				"link"     : "",
 				"content"  :
 					{ "en" : "<p>Marcus Scholz did a <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\">talk</a> about
-							 IPFire at the <a href=\"warpzone.ms/\">Warpzone</a>, a 
-							 <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\">draft</a> 
-							 is available as well as a <a href=\"http://qik.com/video/3807703\">video</a>.
+							 IPFire at the <a href=\"http://warpzone.ms/\" target=\"_blank\">Warpzone</a>, a 
+							 <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\" target=\"_blank\">draft</a> 
+							 is available as well as a <a href=\"http://qik.com/video/3807703\" target=\"_blank\">video</a>.
 							  </p>",
 
-					  "de" : "<p>Marcus Scholz hat einen <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\">Vortrag</a> über
-					  		  IPFire in der <a href=\"warpzone.ms/\">Warpzone</a> gehalten. Die dazugehörigen  
-					  		  <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\">Folien</a> 
-					  		  so wie ein <a href=\"http://qik.com/video/3807703\">Video</a> von seiner Presentation stehen zur Verfügung.
+					  "de" : "<p>Marcus Scholz hat einen <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\" target=\"_blank\">Vortrag</a> über
+					  		  IPFire in der <a href=\"http://warpzone.ms/\" target=\"_blank\">Warpzone</a> gehalten. Die dazugehörigen  
+					  		  <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\" target=\"_blank\">Folien</a> 
+					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Presentation stehen zur Verfügung.
 								</p>"}}
 								
 								
