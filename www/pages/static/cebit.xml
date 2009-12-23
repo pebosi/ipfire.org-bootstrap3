@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site>
+	<Config>
+		<Title>CeBIT-Special</Title>
+	</Config>
+	<Paragraphs>
+		<Paragraph>
+			<Heading lang="en">IPFire on CeBIT 2010</Heading>
+			<Heading lang="de">IPFire auf der CeBIT 2010</Heading>
+			
+			<Content><![CDATA[
+				<img class="floatTR" src="/images/cebit-171px.png" alt="CeBIT" />
+			]]>			
+			</Content>
+
+			<Content lang="en"><![CDATA[
+					In 2010, the <strong>CeBIT</strong> will take place from march 2nd until march 6th in Hannover, Germany.
+					The special thing about the event next year is: <strong>IPFire</strong> will take part in with a small stand
+					within the <strong>OpenSource forum</strong>.
+				</p>
+				
+				<p>
+					First of all, our very special thanks go out to the
+					<a href="http://www.linuxnewmedia.de/Produkte/Events" target="_blank">Linux New Media AG</a> and the
+					<a href="http://www.cebit.de/opensource_d" target="_blank">Messegesellschaft</a>,
+					who offer a free stands to selected OpenSource projects.
+					The CeBIT is the biggest computer- and telecommunications - exhibition in the
+					world, so that this is quite a big chance for <strong>IPFire</strong> to become
+					well-known, get in touch with users and developers, and possibly find sponsors and forge alliances.
+				</p>
+				<p>
+					And: It is a chance for all of you to meet some people of the <strong>IPFire</strong> community
+					in person.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+					Vom <em>2. bis 6. März 2010</em> findet die <strong>CeBIT</strong> in Hannover statt.
+					Das Besondere in diesem Jahr: <strong>IPFire</strong> wird mit einem
+					kleinen Stand im <strong>OpenSource-Forum</strong> auf der Messe vertreten sein.
+				</p>
+
+				<p>
+					Zuallererst gebührt unser Dank der
+					<a href="http://www.linuxnewmedia.de/Produkte/Events" target="_blank">Linux New Media AG</a>
+					und der <a href="http://www.cebit.de/opensource_d" target="_blank">Messegesellschaft</a>,
+					welche für ausgewählte OpenSource-Pprojekte einige kostenlose Stände zur Verfügung stellen.
+					Die <strong>CeBIT</strong> ist immernoch die weltgrößte Computer- und Telekommunikationsmesse,
+					und diese Präsentationsmöglichkeit ist natürlich eine riesige Chance, das Projekt bekannter
+					zu machen, mehr Nutzer und Entwickler zu erreichen, bzw. Kontakte zu knüpfen und Allianzen
+					zu schmieden. 
+				</p>
+				
+				<p>
+					Ebenfalls erhaltet Ihr die einmalige Chance die Entwickler einmal persönlich kennen zu lernen,
+					Ideen auszutauschen, und und und...
+				</p>]]>
+			</Content>
+		</Paragraph>
+		<Paragraph>
+			<Heading lang="en">Please Donate!</Heading>
+			<Heading lang="de">Spendenaufruf</Heading>
+			
+			<Content lang="en"><![CDATA[
+					This project is driven and maintained by volunteers in their free time.
+					Same to the booth. Even though it is for free there are a lot of things
+					to pay like flyers, discs, posters and other merchandising things.
+				</p>
+				<p>
+					As we want to represent the <strong>IPFire</strong> project as professional
+					as possible we need to fundraising. <strong>That's why we request everybody to
+					donate a small amount of money.</strong> This is a unique chance to get
+					the project better known.
+				</p>
+				<p>
+					The given money is spend for:
+				</p>
+				<p>
+					<ul>
+						<li>posters</li>
+						<li>flyers</li>
+						<li>discs (pressed)</li>
+						<li>some t-shirts, etc.</li>
+					</ul>
+				</p>
+				
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="10718640">
+					<input type="image" src="https://www.paypal.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+				</form>
+					
+			]]></Content>
+
+			<Content lang="de"><![CDATA[
+					Dieses Projekt wird von Freiwilligen in ihrer Freizeit betrieben und betreut, was auch
+					für den Stand zutrifft. Man glaubt es kaum, aber selbst, wenn man einen kostenlosen
+					Stand zur Verfügung gestellt bekommt, entstehen hohe Kosten für Flyer, CDs, Poster und
+					sonstige Merchandise-Artikel.
+				</p>
+				<p>
+					Wir möchten jedoch <strong>IPFire</strong> so professioniell wie möglich präsentieren, daher ergeht
+					an euch Alle ein <strong>Spenden- und Mitmachaufruf</strong>.<br />
+					Wir möchten diese einmalige Chance nutzen und <strong>IPFire</strong> noch bekannter machen.
+				</p>
+				<p>
+					Spenden müssen nicht unbedingt finanzieller Natur sein. Es wird auch folgendes benötigt:
+				</p>
+
+				<p>
+					<ul>
+						<li>Poster</li>
+						<li>Flyer</li>
+						<li>CD-ROMs (bedruckt) in großer Auflage</li>
+						<li>Textilien mit Aufdruck</li>
+					</ul>
+				</p>
+				
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="10718640">
+					<input type="image" src="https://www.paypal.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+				</form>
+
+				]]></Content>
+		</Paragraph>
+		
+		<Paragraph>
+			<Heading lang="en">Sponsors</Heading>
+			<Heading lang="de">Sponsoren</Heading>
+
+			<Content><![CDATA[
+				<img src="/images/linux_new_media_ag.jpg" alt="Linux New Media AG" />
+			]]></Content>
+		</Paragraph>
+	</Paragraphs>
+
+	<Sidebar>
+		<Paragraph banner="1" />
+	</Sidebar>
+</Site>
