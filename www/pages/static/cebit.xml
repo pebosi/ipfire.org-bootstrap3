@@ -14,23 +14,25 @@
 			</Content>
 
 			<Content lang="en"><![CDATA[
-					In 2010, the <strong>CeBIT</strong> will take place from march 2nd until march 6th in Hannover, Germany.
-					The special thing about the event next year is: <strong>IPFire</strong> will take part in with a small stand
-					within the <strong>OpenSource forum</strong>.
+					<strong>CeBIT</strong> 2010 will be here soon, beginning March 2nd and lasting until
+					March 6th in Hannover, Germany. This year will prove to be a special
+					one, as <strong>IPFire</strong> will be represented by its very own booth! 
 				</p>
 				
 				<p>
-					First of all, our very special thanks go out to the
-					<a href="http://www.linuxnewmedia.de/Produkte/Events" target="_blank">Linux New Media AG</a> and the
+					First of all, our very special thanks go out to
+					<a href="http://www.linuxnewmedia.de/Produkte/Events" target="_blank">Linux New Media AG</a> and
 					<a href="http://www.cebit.de/opensource_d" target="_blank">Messegesellschaft</a>,
-					who offer a free stands to selected OpenSource projects.
-					The CeBIT is the biggest computer- and telecommunications - exhibition in the
-					world, so that this is quite a big chance for <strong>IPFire</strong> to become
-					well-known, get in touch with users and developers, and possibly find sponsors and forge alliances.
+					who offer free booths to selected Open Source
+					projects. <strong>CeBIT</strong> (a German acronym for the Center for Office and
+					Information Technology) is the biggest computer and telecommunications
+					exhibition in the world. This an excellent chance for IPFire to gain
+					recognition, get in touch with users and developers, and possibly find
+					sponsors and forge alliances. 
 				</p>
 				<p>
-					And: It is a chance for all of you to meet some people of the <strong>IPFire</strong> community
-					in person.
+					And, it is also a chance for all of you to meet the members of the
+					<strong>IPFire</strong> community in person.
 				]]></Content>
 			<Content lang="de"><![CDATA[
 					Vom <em>2. bis 6. März 2010</em> findet die <strong>CeBIT</strong> in Hannover statt.
@@ -56,29 +58,31 @@
 			</Content>
 		</Paragraph>
 		<Paragraph>
-			<Heading lang="en">Please Donate!</Heading>
+			<Heading lang="en">Your Donations are Needed!</Heading>
 			<Heading lang="de">Spendenaufruf</Heading>
 			
 			<Content lang="en"><![CDATA[
 					This project is driven and maintained by volunteers in their free time.
-					Same to the booth. Even though it is for free there are a lot of things
-					to pay like flyers, discs, posters and other merchandising things.
+					The same goes to the booth. Even though it is being donated there are
+					still many costs associated with running a booth, such as flyers, CDs,
+					posters and other merchandise.
 				</p>
 				<p>
-					As we want to represent the <strong>IPFire</strong> project as professional
-					as possible we need to fundraising. <strong>That's why we request everybody to
-					donate a small amount of money.</strong> This is a unique chance to get
-					the project better known.
+					As we strive to represent <strong>IPFire</strong> as professionally,
+					we are asking for some extra help to take advantage o fthis opportunity.
+					All we ask is a small donation, as every little bit helps. This is a unique
+					opportunity to gain international recognition for the project, so your
+					money will be well spent.
 				</p>
 				<p>
-					The given money is spend for:
+					Materials we will be purchasing:
 				</p>
 				<p>
 					<ul>
-						<li>posters</li>
-						<li>flyers</li>
-						<li>discs (pressed)</li>
-						<li>some t-shirts, etc.</li>
+						<li>Posters</li>
+						<li>Flyers</li>
+						<li>Discs (pressed)</li>
+						<li>T-Shirts, etc.</li>
 					</ul>
 				</p>
 				
@@ -121,7 +125,6 @@
 					<input type="image" src="https://www.paypal.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
 					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 				</form>
-
 				]]></Content>
 		</Paragraph>
 		
