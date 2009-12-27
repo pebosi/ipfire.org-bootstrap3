@@ -982,3 +982,25 @@ table.translate td.lang {
 	text-shadow: #666 1px 2px 2px;
     padding: 51px 0px 0px 430px;
 }
+
+/* CeBIT Button */
+.cebit_button {
+    background: url(/images/buttons/cebit_96x320.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 700px;
+    height: 96px;
+}
+.cebit_button a, .cebit_button a:link, .cebit_button  a:visited {
+	color:#333;
+	text-decoration:none;
+}
+.cebit_button a:hover {
+	text-decoration: underline;
+}
+.cebit_button_text {
+	color:#333; 
+	font-size: 20px !important;
+	text-shadow: #666 1px 2px 2px;
+    padding: 51px 0px 0px 472px;
+}
