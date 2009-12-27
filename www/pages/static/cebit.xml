@@ -9,7 +9,7 @@
 			<Heading lang="de">IPFire auf der CeBIT 2010</Heading>
 			
 			<Content><![CDATA[
-				<img class="floatTR" src="/images/cebit-171px.png" alt="CeBIT" />
+				<img class="floatTR" src="/images/cebit-177px_schatten.png" alt="CeBIT" />
 			]]>			
 			</Content>
 
@@ -62,6 +62,10 @@
 			<Heading lang="en">Your Donations are Needed!</Heading>
 			<Heading lang="de">Spendenaufruf</Heading>
 			
+			<Content><![CDATA[
+				<img class="floatTL" src="/images/paypal-folder.png" alt="Paypal" />
+			]]>						
+			</Content>
 			<Content lang="en"><![CDATA[
 					This project is driven and maintained by volunteers in their free time.
 					The same goes to the booth. Even though it is being donated there are
@@ -93,14 +97,14 @@
 					us a short <a href="mailto:&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;" class="mail JSnocheck" title="&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;">request</a>
 					for our bank account number.
 				</p>
-				
+				<div align="center">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="10718640">
 					<input type="image" src="https://www.paypal.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
 					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 				</form>
-					
+				</div>
 			]]></Content>
 
 			<Content lang="de"><![CDATA[
@@ -132,13 +136,14 @@
 					Auf <a href="mailto:&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;" class="mail JSnocheck" title="&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;">Anfrage</a>
 					kann eine Überweisung auch per Kontonummer erfolgen.
 				</p>
-				
+				<div align="center">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="10718640">
 					<input type="image" src="https://www.paypal.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
 					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 				</form>
+				</div>
 				]]></Content>
 		</Paragraph>
 		
@@ -147,12 +152,31 @@
 			<Heading lang="de">Sponsoren</Heading>
 
 			<Content><![CDATA[
-				<img src="/images/linux_new_media_ag.jpg" alt="Linux New Media AG" />
+				<a href="http://www.linuxnewmedia.de/" target="_blank"><img src="/images/linux_new_media_ag.jpg" alt="Linux New Media AG" /></a>
 			]]></Content>
 		</Paragraph>
 	</Paragraphs>
-
+	
 	<Sidebar>
+		<Paragraph>
+			<Heading><![CDATA[<span>Ce</span>BIT]]></Heading>			
+			<Content lang="en"><![CDATA[
+				<ul class="links">		
+					<li class="first"><a href="#IPFire on CeBIT 2010:">CeBIT 2010</a></li>
+					<li><a href="#Your Donations are Needed!">Donation!</a></li>
+					<li><a href="#Sponsors">Sponsors</a></li>
+				</ul>
+			]]></Content>
+			<Content lang="de"><![CDATA[
+				<ul class="links">		
+					<li class="first"><a href="#IPFire auf der CeBIT 2010">CeBIT 2010</a></li>
+					<li><a href="#Spendenaufruf">Spenden!</a></li>
+					<li><a href="#Sponsoren">Sponsoren</a></li>
+				</ul>
+			]]></Content>
+			
+		</Paragraph>
+		
 		<Paragraph banner="1" />
 	</Sidebar>
 </Site>
