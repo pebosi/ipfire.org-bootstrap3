@@ -12,5 +12,7 @@
 	"60" : { "uri"  : "/development",
 			 "name" : { "de" : "Entwicklung", "en" : "Development" }},
 	"70" : { "uri"  : "/links",
-			 "name" : "Links" }
+			 "name" : "Links" },
+	"80" : { "uri"  : "/cebit",
+			 "name" : "CeBIT" }
 }
