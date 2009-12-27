@@ -26,6 +26,21 @@
 				]]></Content>
 			
 			<Content lang="en"><![CDATA[
+				<div class="cebit_button">
+					<div class="cebit_button_text">						
+						<a href="cebit">CeBIT-Donation</a>
+					</div>
+				</div> 
+			]]></Content>
+			<Content lang="de"><![CDATA[
+				<div class="cebit_button">
+					<div class="cebit_button_text">						
+						<a href="cebit">CeBIT-Spende</a>
+					</div>
+				</div>
+			]]></Content>
+			
+			<Content lang="en"><![CDATA[
 				<strong>IPFire</strong> ships with a custom built paket-manager called <strong>Pakfire</strong>, so the system can be 
 				expanded with various <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">addons</a>.
 				]]></Content>
@@ -36,11 +51,6 @@
 				]]></Content>
 				
 			<Content raw="1"><![CDATA[
-				<!-- <div class="button">
-					<div class="button_text">
-						<a href="download">Download&nbsp;&nbsp;IPFire 2.5</a>
-					</div>
-				</div> -->
 				<img src="/images/Network-1.png" alt="IPFire Logo" />
 				]]></Content>
 				
@@ -52,20 +62,19 @@
 				<br /><strong>IPFire</strong> ist eine freie Software, die unter der <strong>GPLv3</strong> lizensiert ist und 
 				von einer offenen <strong>Community</strong> entwickelt wird.
 				]]></Content>
-				
-			<Content raw="1"><![CDATA[
+			
+		<!--	<Content raw="1"><![CDATA[
 				<div class="button">
 					<div class="button_text">
 						<a href="download">Download&nbsp;&nbsp;IPFire 2.5</a>
 					</div>
-				</div> 
-				<!-- <img src="/images/Network-1.png" alt="IPFire Logo" /> -->
-			]]></Content>
-
+				</div>
+			]]></Content> -->
+					
 		</Paragraph>
 		
 		<Paragraph news="1" count="3" />
-		</Paragraphs>
+	</Paragraphs>
 	
 	<Sidebar>
 		<Paragraph releases="1" />
