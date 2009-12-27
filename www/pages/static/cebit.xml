@@ -16,7 +16,8 @@
 			<Content lang="en"><![CDATA[
 					<strong>CeBIT</strong> 2010 will be here soon, beginning March 2nd and lasting until
 					March 6th in Hannover, Germany. This year will prove to be a special
-					one, as <strong>IPFire</strong> will be represented by its very own booth! 
+					one, as <strong>IPFire</strong> will be represented by its very own booth in
+					the <strong>Open Source Project Lounge</strong>.
 				</p>
 				
 				<p>
@@ -37,7 +38,7 @@
 			<Content lang="de"><![CDATA[
 					Vom <em>2. bis 6. März 2010</em> findet die <strong>CeBIT</strong> in Hannover statt.
 					Das Besondere in diesem Jahr: <strong>IPFire</strong> wird mit einem
-					kleinen Stand im <strong>OpenSource-Forum</strong> auf der Messe vertreten sein.
+					kleinen Stand in der <strong>Open Source Project Lounge</strong> auf der Messe vertreten sein.
 				</p>
 
 				<p>
@@ -86,6 +87,13 @@
 					</ul>
 				</p>
 				
+				<p>
+					Our favorite way for a donation is <strong>PayPal</strong> because
+					it is fast and easy. If you prefer a bank donation, please send
+					us a short <a href="mailto:&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;" class="mail JSnocheck" title="&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;">request</a>
+					for our bank account number.
+				</p>
+				
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="10718640">
@@ -117,6 +125,12 @@
 						<li>CD-ROMs (bedruckt) in großer Auflage</li>
 						<li>Textilien mit Aufdruck</li>
 					</ul>
+				</p>
+				
+				<p>
+					Wegen des einfachen Ablaufs der Spende bevorzugen wir <strong>PayPal</strong>.
+					Auf <a href="mailto:&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;" class="mail JSnocheck" title="&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x2e;&#x74;&#x72;&#x65;&#x6d;&#x65;&#x72;&#x40;&#x69;&#x70;&#x66;&#x69;&#x72;&#x65;&#x2e;&#x6f;&#x72;&#x67;">Anfrage</a>
+					kann eine Überweisung auch per Kontonummer erfolgen.
 				</p>
 				
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
