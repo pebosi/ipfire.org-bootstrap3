@@ -24,7 +24,17 @@
 				Einstellungsmöglichkeiten. Ein <strong>Schwerpunkt</strong> bei der Weiterentwickling legen die erfahrenen Entwickler 
 				klar auf regelmäßige System und vor allem <strong>Sicherheitsupdates</strong>.<br /><br />
 				]]></Content>
-			
+
+			<Content lang="en"><![CDATA[
+				<strong>IPFire</strong> ships with a custom built paket-manager called <strong>Pakfire</strong>, so the system can be 
+				expanded with various <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">addons</a>.
+				]]></Content>
+			<Content lang="de"><![CDATA[
+				Durch den integrierten Paketmanager <strong>Pakfire</strong> lässt sich der <strong>IPFire</strong> mit diversen 
+				<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>, 
+				bishin zu einem Server-System erweitern.
+				]]></Content>
+	
 			<Content lang="en"><![CDATA[
 				<div class="cebit_button">
 					<div class="cebit_button_text">						
@@ -39,17 +49,7 @@
 					</div>
 				</div>
 			]]></Content>
-			
-			<Content lang="en"><![CDATA[
-				<strong>IPFire</strong> ships with a custom built paket-manager called <strong>Pakfire</strong>, so the system can be 
-				expanded with various <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">addons</a>.
-				]]></Content>
-			<Content lang="de"><![CDATA[
-				Durch den integrierten Paketmanager <strong>Pakfire</strong> lässt sich der <strong>IPFire</strong> mit diversen 
-				<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>, 
-				bishin zu einem Server-System erweitern.
-				]]></Content>
-				
+
 			<Content raw="1"><![CDATA[
 				<img src="/images/Network-1.png" alt="IPFire Logo" />
 				]]></Content>
