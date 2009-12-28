@@ -14,5 +14,5 @@
 	"70" : { "uri"  : "/links",
 			 "name" : "Links" },
 	"80" : { "uri"  : "/cebit",
-			 "name" : "CeBIT 2010" }
+			 "name" : "<div style=\"color:#f90;\">CeBIT 2010</div>" }
 }
