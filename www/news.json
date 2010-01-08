@@ -396,14 +396,14 @@
 				"link"     : "",
 				"content"  :
 					{ "en" : "<p>The IPFire Core Developers are proud to announce to new members of them.
-								<strong>Stefan Schantl</strong> and <strong>Jan Paul Tuecking</strong> were incorporated
+								<strong>Stefan Schantl</strong> and <strong>Jan Paul Tücking</strong> were incorporated
 								into the group to honour their continuous contribution and giving their support to the project.</p>
 								<p>To get out how you can join the project have a look at:
 								  <a href=\"http://wiki.ipfire.org/en/project/join\" target=\"_blank\">http://wiki.ipfire.org/en/project/join</a>.
 								</p>",
 
 					  "de" : "<p>Das IPFire Core Development Team ist stolz zwei neue Mitglieder vorzustellen.
-								<strong>Stefan Schantl</strong> und <strong>Jan Paul Tuecking</strong> sind von
+								<strong>Stefan Schantl</strong> und <strong>Jan Paul Tücking</strong> sind von
 								nun an Teil des Teams aufgrund ihrer beständigen und langen Mitarbeit am Projekt.</p>
 								<p>
 									<a href=\"http://wiki.ipfire.org/de/project/contribute\" target=\"_blank\">Wie kann ich selber zum Projekt beitragen?</a>
