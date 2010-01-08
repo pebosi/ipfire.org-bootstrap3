@@ -425,7 +425,27 @@
 					  		  IPFire in der <a href=\"http://warpzone.ms/\" target=\"_blank\">Warpzone</a> gehalten. Die dazugehörigen  
 					  		  <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\" target=\"_blank\">Folien</a> 
 					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Presentation stehen zur Verfügung.
-								</p>"}}
+								</p>"}},
+
+		"25" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : { "en" : "IPFire on CeBIT 2010", "de" : "IPFire auf der CeBIT 2010" },
+				"date"     : "2009-12-28",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>At next year's CeBIT, the world's largest computer expo, <strong>IPFire</strong> will,
+								for the first time, get its own booth in the <strong>Open Source Project Lounge</strong>.</p>
+								<p>That's why we need your <a href=\"cebit#Your%20Donations%20are%20Needed!\">donations!</a><br />
+								We would like to say thanks to all the people who have already donated.</p>
+								<p>For further information: Read our <a href=\"cebit\">CeBIT Special</a>.</p>",
+
+					  "de" : "<p>Dank der <strong>Linux New Media AG</strong> wird das <strong>IPFire</strong>-Projekt auf der CeBIT,
+								der weltweit größten Messe für Informationstechnik, im nächsten Jahr mit einem eigenen Stand
+								in der <strong>Open Source Project Lounge</strong> vertreten sein.</p>
+								<p>
+								Daher möchten wir hiermit einen <strong>Spendenaufruf</strong> starten und bedanken uns schon
+								im Voraus bei der Vielzahl an freiwilligen Helfern.</p>
+								<p>Weitere Informationen zum Thema gibt es auf der <a href=\"cebit\">CeBIT-Special-Seite</a>.</p>"}}
 								
 								
 
