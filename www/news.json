@@ -409,9 +409,9 @@
 									<a href=\"http://wiki.ipfire.org/de/project/contribute\" target=\"_blank\">Wie kann ich selber zum Projekt beitragen?</a>
 								</p>"}},
 										
-		"24" : {"author"   : "Jan Paul Tücking",
+		"24" : {"author"   : "Jan Paul T&uuml;cking",
 				"mail"     : "earl@ipfire.org",
-				"subject"  : { "en" : "talk about IPFire", "de" : "Vortrag über IPFire" },
+				"subject"  : { "en" : "talk about IPFire", "de" : "Vortrag &uuml;ber IPFire" },
 				"date"     : "2009-12-06",
 				"link"     : "",
 				"content"  :
