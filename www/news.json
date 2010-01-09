@@ -445,8 +445,139 @@
 								<p>
 								Daher möchten wir hiermit einen <strong>Spendenaufruf</strong> starten und bedanken uns schon
 								im Voraus bei der Vielzahl an freiwilligen Helfern.</p>
-								<p>Weitere Informationen zum Thema gibt es auf der <a href=\"cebit\">CeBIT-Special-Seite</a>.</p>"}}
+								<p>Weitere Informationen zum Thema gibt es auf der <a href=\"cebit\">CeBIT-Special-Seite</a>.</p>"}},
 								
+		"26" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 34", "de" : "Core Update 34" },
+				"date"     : "2010-01-09",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release the first update in 2010. 
+								  <strong>Core 34</strong> comes with the following changes:</p>
+								<p>
+								<ul>
+								  <li><strong>Kernel update to 2.6.27.42</strong></li>
+								  <ul>
+								    <li>Update of mISDN, mISDNuser</li>
+								    <li>Update of alsa to 1.0.22(.1)</li>
+								    <li>Update of v4l-dvb</li>
+								    <li>Update of compat-wireless to 2.6.32.2</li>
+								    <li>Switch of atheros default driver to ath5k</li>
+								    <li>Add kvm-kmod to update the kvm api for qemu</li>
+								    <li>Add Atheros/Attansic atl1c ethernet driver</li>
+								    <li>Add patches to detect Realtek 8102/8103 to r8101 driver</li>
+								    <li>Add a patch to fix Intel E100 wake-on-lan problems</li>
+								  </ul>
+								</ul>
+								<ul>
+								  <li>Add usb_modeswitch 1.0.6</li>
+								  <li>Add compile options for DCF77-clocks</li>
+								  <li>Update of smartmontools to 5.39 stable</li>
+								  <li>Ensure that ehci_hci module are loading at first (fix USB2.0 detection)</li>
+								</ul>
+								<ul>
+								  <li>IPSEC:</li>
+								  <ul>
+								    <li>Make ipsec peers reachable from the IPFire</li>
+								    <li>Remove not working cryptomodes from ipsec config</li>
+								  </ul>
+								  <li>IPTV Fixes:</li>
+								  <ul>
+								    <li>Update of dhcpcd</li>
+								    <li>Fix the iqmpproxy install check (pppsetup.cgi)</li>
+								    <li>Improve the mac.cgi page. Fixed table and added some comments.</li>
+								  </ul>
+								  <li>CGI Fixes:</li>
+								  <ul>
+								    <li>Add a donation button to credit page</li>
+								    <li>Add a patch to change oinkmaster tmp to /var/tmp</li>
+								    <li>Add time constraints feature and local port adressing to outgoing firewall</li>
+								    <li>Redesign of chpasswd.cgi</li>
+								    <li>Improve the pakfire \"ping\" message on pakfire.cgi</li>
+								    <li>ExtraHD page is now multilingual</li>
+								    <li>Fix that crontab was replaced at ramdisk restore</li>
+								  </ul>
+								  <li>Installer:</li>
+								  <ul>
+								    <li>Change installer device from /dev/tty1 to /dev/console</li>
+								    <li>Update of memtest86+ to 4.00</li>
+								  </ul>
+								  <li>Languages:</li>
+								  <ul>
+								   <li>Add french language support to installer</li>
+								  </ul>
+								</ul>
+								</p>
+								<p>
+								Due to the <strong>kernel update</strong> a <strong>reboot</strong> of IPFire is necessary!<br />
+								<strong>Warning</strong>: Grub is being reinstalled during the update. If you have applied manual 
+								changes, you have to reapply them first!<br />
+								<strong>Xen</strong> user have to update linux-xen bevor the reboot of the machine!
+								</p>",
+
+					  "de" : "<p>Heute werden wir das erste Update im Jahr 2010 veröffentlichen.  
+								  Das <strong>Core 34</strong> Update kommt mit folgenden Änderungen:</p>
+								<p>
+								<ul>
+								  <li><strong>Kernel Update auf 2.6.27.42</strong></li>
+								  <ul>
+								    <li>Update von mISDN, mISDNuser</li>
+								    <li>Update von alsa auf 1.0.22(.1)</li>
+								    <li>Update von v4l-dvb</li>
+								    <li>Update von compat-wireless auf 2.6.32.2</li>
+								    <li>Standardtreiber von atheros auf ath5k getauscht</li>
+								    <li>kvm-kmod hinzugefügt um die kvm api für qemu zu aktualliesieren</li>
+								    <li>Atheros/Attansic atl1c Netzwerktreiber hinzugefügt</li>
+								    <li>Patches für die Erkennung von Realtek 8102/8103 zu r8101 Treibern hinzugefügt</li>
+								    <li>Patch für die Wake-on-Lan Probleme des Intel E100 zu beheben hinzugefügt</li>
+								  </ul>
+								</ul>
+								<ul>
+								  <li>usb_modeswitch 1.0.6 hinzugefügt</li>
+								  <li>compile-Option für die DCF77-clocks hinzugefügt</li>
+								  <li>Update von smartmontools auf 5.39 stable</li>
+								  <li>Sicherstellung, dass das ehci_hci Modul zu erst geladen wird (behebt USB2.0-Erkennung)</li>
+								</ul>
+								<ul>
+								  <li>IPSEC:</li>
+								  <ul>
+								    <li>Nun sind IPSec Peers auch durch IPFire erreichbar</li>
+								    <li>Nicht funktionerende Crytomodule wurden aus der IPSec-Konfiguration gelöscht</li>
+								  </ul>
+								  <li>IPTV Verbesserungen:</li>
+								  <ul>
+								    <li>Update von dhcpcd</li>
+								    <li>Fix für den iqmpproxy Installationscheck (pppsetup.cgi)</li>
+								    <li>Verbesserung an der mac.cgi Seite, Änderungen am Tabellenlayout und Beschreibungen hinzugefügt.</li>
+								  </ul>
+								  <li>CGI Verbesserungen:</li>
+								  <ul>
+								    <li>Spendenbutton auf der Credits Seite hinzugefügt</li>
+								    <li>Es wurde ein Patch hinzugefügt um das oinkmaster Verzeichniss tmp auf /var/tmp zu ändern</li>
+								    <li>\"time constraints feature\" und \"local port adressing\" zur ausgehenden Firewall hinzugefügt</li>
+								    <li>Neugestaltung der chpasswd.cgi</li>
+								    <li>Verbesserung der Pakfire \"Ping\" Beschreibung auf der pakfire.cgi</li>
+								    <li>ExtraHD-Seite ist nun mehrsprachig</li>
+								    <li>Behoben, dass crontab beim ramdisk restore ersetzt wurde</li>
+								  </ul>
+								  <li>Installer:</li>
+								  <ul>
+								    <li>Installer device von /dev/tty1 nach /dev/console geändert</li>
+								    <li>Update von memtest86+ auf 4.00</li>
+								  </ul>
+								  <li>Sprachen:</li>
+								  <ul>
+								   <li>Die Unterstützung von französisch dem Installer hinzugefügt</li>
+								  </ul>
+								</ul>
+								</p>
+								<p>
+								Durch den <strong>Kernelupdate</strong> ist ein <strong>Neustart</strong> von IPFire nötig! <br/>
+								<strong>Achtung</strong>: Grub wird neu installiert, wenn die Konfiguration manuell geändert 
+								wurde muss diese zuerst wieder hergestellt werden!<br />
+								<strong>Xen</strong> User müssen vor dem Neustart der Machine auch linux-xen updaten!
+								</p>"}}								
 								
 
 }

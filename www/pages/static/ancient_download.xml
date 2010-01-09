@@ -35,38 +35,38 @@
 		</Paragraph>
 		
 		<Paragraph>
-			<Heading>IPFire 2.5 Core 32</Heading>
+			<Heading>IPFire 2.5 Core 33</Heading>
 
 			<Content lang="en"><![CDATA[
-				This is the ISO of core update <strong>32</strong>.
+				This is the ISO of core update <strong>33</strong>.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Das ist das ISO vom Core Update <strong>32</strong>.
+				Das ist das ISO vom Core Update <strong>33</strong>.
 				]]></Content>
 			
 			<Content raw="1"><![CDATA[
 				<div align="right">
-					<a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core32.iso.torrent">IPFire 2.5 Core32 - TORRENT - DISK</a><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core32.iso">IPFire 2.5 Core32 - HTTP - DISK</a>&nbsp;
-					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core32.iso.md5">MD5</a><br /><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core32.img.gz">IPFire 2.5 Core32 - HTTP - USB (HDD)</a>&nbsp;
-					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core32.img.gz.md5">MD5</a><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core32.img.gz">IPFire 2.5 Core32 - HTTP - USB (FDD)</a>&nbsp;
-					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core32.img.gz.md5">MD5</a><br /><br />
-					<a href="http://download.ipfire.org/iso/ipfire-2.5.xen.i586-full-core32.tar.bz2">IPFire 2.5 Core32 - XEN </a>&nbsp;
-					<a href="http://download.ipfire.org/iso/ipfire-2.5.xen.i586-full-core32.tar.bz2.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/torrent/ipfire-2.5.i586-full-core33.iso.torrent">IPFire 2.5 core33 - TORRENT - DISK</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core33.iso">IPFire 2.5 core33 - HTTP - DISK</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.i586-full-core33.iso.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core33.img.gz">IPFire 2.5 core33 - HTTP - USB (HDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-hdd.i586-full-core33.img.gz.md5">MD5</a><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core33.img.gz">IPFire 2.5 core33 - HTTP - USB (FDD)</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5-install-usb-fdd.i586-full-core33.img.gz.md5">MD5</a><br /><br />
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.xen.i586-full-core33.tar.bz2">IPFire 2.5 core33 - XEN </a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.xen.i586-full-core33.tar.bz2.md5">MD5</a><br /><br />
 				</div>
 				]]></Content>
 				<Content lang="en"><![CDATA[
 				<div align="right">
-					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core32.img.gz">IPFire 2.5 Core32 - HTTP - FLASH 1G</a>&nbsp;
-					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core32.img.gz.md5">MD5</a>
+					For <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core33.img.gz">IPFire 2.5 core33 - HTTP - FLASH 1G</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core33.img.gz.md5">MD5</a>
 				</div>
 				]]></Content>
 			<Content lang="de"><![CDATA[
 				<div align="right">
-					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core32.img.gz">IPFire 2.5 Core32 - HTTP - FLASH 1G</a>&nbsp;
-					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core32.img.gz.md5">MD5</a>
+					F&uuml;r <a href="http://www.pcengines.ch" target="_blank" >Alix Boards</a>: <a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core33.img.gz">IPFire 2.5 core33 - HTTP - FLASH 1G</a>&nbsp;
+					<a href="http://download.ipfire.org/iso/ipfire-2.5.1gb-ext2-scon.i586-full-core33.img.gz.md5">MD5</a>
 				</div>
 				]]></Content>
 		</Paragraph>
