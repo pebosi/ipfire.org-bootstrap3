@@ -482,13 +482,13 @@
 								    <li>Make ipsec peers reachable from the IPFire</li>
 								    <li>Remove not working cryptomodes from ipsec config</li>
 								  </ul>
-								  <li>IPTV Fixes:</li>
+								  <li>IPTV fixes:</li>
 								  <ul>
 								    <li>Update of dhcpcd</li>
 								    <li>Fix the iqmpproxy install check (pppsetup.cgi)</li>
 								    <li>Improve the mac.cgi page. Fixed table and added some comments.</li>
 								  </ul>
-								  <li>CGI Fixes:</li>
+								  <li>CGI changes:</li>
 								  <ul>
 								    <li>Add a donation button to credit page</li>
 								    <li>Add a patch to change oinkmaster tmp to /var/tmp</li>
@@ -551,7 +551,7 @@
 								    <li>Fix für den iqmpproxy Installationscheck (pppsetup.cgi)</li>
 								    <li>Verbesserung an der mac.cgi Seite, Änderungen am Tabellenlayout und Beschreibungen hinzugefügt.</li>
 								  </ul>
-								  <li>CGI Verbesserungen:</li>
+								  <li>CGI Änderugen:</li>
 								  <ul>
 								    <li>Spendenbutton auf der Credits Seite hinzugefügt</li>
 								    <li>Es wurde ein Patch hinzugefügt um das oinkmaster Verzeichniss tmp auf /var/tmp zu ändern</li>
