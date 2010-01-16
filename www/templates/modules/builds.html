@@ -1,0 +1,15 @@
+<tr>
+	<td>
+		<img src="{{ static_url("images/icons/ipfire.png") }}" alt="IPFire" />
+	</td>
+	<td>
+		&nbsp;<br />
+		<strong>{{ build.release }}</strong> ({{ build.arch }})<br />
+		{{ build.date }}
+	</td>
+	<td>
+		&nbsp;<br />
+		<a href="#">{{ build.iso }}</a> | {{ build.size }}<br />
+		{{ build.pxe }}&nbsp;
+	</td>
+</tr>

@@ -1,0 +1,5 @@
+<h4>{{ item.title }}</h4>
+
+<a href="{{ item.link }}" {% if item.link.startswith("http://") %}target="_blank"{% end %}>
+	<img src="{{ static_url(item.uri) }}" alt="{{ _("Banner") }}" />
+</a>

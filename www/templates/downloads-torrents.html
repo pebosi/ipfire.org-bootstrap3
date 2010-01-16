@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="post">
+		<a name="latest"></a>
+		<h3>{{ _("IPFire Torrent Tracker") }}</h3>
+
+		<p>
+			{{ _("This is the latest version of the IPFire firewall distribution.") }}
+			Need to fill in some more text at this place.
+		</p>
+		
+		<table class="download-torrents">
+			<tr>
+				<th>{{ _("Release") }}</th>
+				<th>{{ _("File") }}</th>
+				<th>S</th>
+				<th>P</th>
+				<th>&nbsp;</th>
+			</tr>
+			{% for release in releases %}
+				<tr>
+					<td>{{ release.name }}</td>
+					<td>{{ release.torrent.file }}</td>
+					<td>{{ hashes[release.torrent.hash].get("seeds", _("N/A")) }}</td>
+					<td>{{ hashes[release.torrent.hash].get("peers", _("N/A")) }}</td>
+					<td>
+						<a href="{{ release.torrent.url }}">
+							<img src="{{ static_url("images/download_torrent.png") }}" alt="{{ _("Download") }}" />
+						</a>
+					</td>
+				</tr>
+			{% end %}
+		</table>
+		
+		<p class="right">
+			{{ _("Got that information from <em>%s</em> within %.2f second(s).") % (tracker, request_time) }}
+		</p>
+
+		<br class="clear" />
+	</div>
+
+{% end block %}

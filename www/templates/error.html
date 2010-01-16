@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Error") }} {{ code }}{% end block %}
+
+{% block content %}
+	<h3>{{ code }} - {{ message }}</h3>
+	<img class="floatTL" src="{{ static_url("images/error/%s.png" % code) }}"
+		alt="{{ _("Error") }} {{ code }}" />
+
+	{% if lang == "de" %}
+		Leider ist ein unerwarteter Fehler beim Laden der Seite aufgetreten.
+		<br /><br />
+		Das ist erstmal kein Grund zur Panik.
+		<br /><br />
+		Sollte dies das erstmalige Auftreten des Fehlers sein, so bitten wir
+		einige Zeit abzuwarten.	Sollte der Fehler jedoch an dieser Stelle
+		regelmäßig auftreten, so würden sich die Webmaster über eine kleine
+		Benachrichtigung freuen.
+	{% else %}
+		en 404
+	{% end %}
+	
+	{% block explanation %}{% end block %}
+	
+	{% if exception %}
+		<pre>{{ exception }}</pre>
+	{% end %}
+{% end block %}

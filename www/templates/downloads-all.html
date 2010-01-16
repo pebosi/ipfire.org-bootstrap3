@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="post">
+		<h3>{{ _("Download IPFire") }}</h3>
+
+		<p>
+			{{ _("These are the ancient downloads of IPFire. They are just saved for historical reasons and should not be used in a productive environment.") }}
+		</p>
+		
+		<p>
+			<a href="{{ link("downloads") }}">{{ _("Get back to latest downloads.") }}</a>
+		</p>
+
+		<br class="clear" />
+	</div>
+	
+	{% for release in releases.stable %}
+		{% if not release == releases.latest %}
+			{{ modules.ReleaseItem(release) }}
+		{% end %}
+	{% end %}
+{% end block %}

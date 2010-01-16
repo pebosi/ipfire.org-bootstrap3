@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="post">
+		<a name="latest"></a>
+		<h3>{{ _("Download IPFire") }}</h3>
+
+		<p>
+			{{ _("This is the latest version of the IPFire firewall distribution.") }}
+			Need to fill in some more text at this place.
+		</p>
+
+		<div class="bigdownload">
+			<span>{{ _("Begin download") }}</span>
+
+		</div>
+
+		<table class="download">
+			{% for download in release.downloads %}
+				<tr>
+					<td class="{{ download.type }}">
+						<a href="{{ download.url }}">{{ _(download.desc) }}</a>
+					</td>
+				</tr>
+			{% end %}
+		</table>
+
+		<br class="clear" />
+	</div>
+
+	<div class="post">
+		<a name="other"></a>
+		<h3>{{ _("Other download options") }}</h3>
+		
+		<ul class="otherdownloads">
+			<li><a href="{{ link("downloads/all") }}">{{ _("See older downloads...") }}</a></li>
+			<li><a href="{{ link("downloads/development") }}">{{ _("See development releases...") }}</a></li>
+			<li><a href="{{ link("downloads/torrents") }}">{{ _("See all torrents...") }}</a></li>
+		</ul>
+		<br class="clear" />
+	</div>
+{% end block %}

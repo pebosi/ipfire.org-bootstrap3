@@ -1,0 +1,35 @@
+{% extends "../base.html" %}
+
+{% block title %}{{ _("Cluster") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Icecream Cluster Monitoring") }}</h3>
+
+	<p>{{ _("Cluster's CPU load") }}:
+		<span id="loadbar"></span>
+		- {{ _("Job load") }}:
+		<span id="jobbar"></span>
+	</p>
+
+	<table id="nodes">
+		<thead>
+			<tr>
+				<th class="hostname">{{ _("Name") }}</th>
+				<th class="arch">{{ _("Arch") }}</th>
+				<th class="load">{{ _("CPU-Load") }}</th>
+				<th class="jobs">{{ _("Jobs") }}</th>
+				<th class="speed">{{ _("Speed") }}</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<p class="right">&nbsp;<br />{{ _("Number of nodes") }}: <span id="count">-</span></p>
+
+{% end block %}
+
+{% block javascript %}
+	<script type="text/javascript" src="{{ static_url("js/jquery.progressbar.js") }}"></script>
+	<script type="text/javascript" src="{{ static_url("js/cluster.js") }}"></script>
+{% end block %}

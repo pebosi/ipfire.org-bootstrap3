@@ -1,0 +1,87 @@
+[
+	{ "name" : "IPFire 2.5 - Core 34",
+	  "status"    : "stable",
+	  "online"    : 1,
+	  "files" : [
+	  	{
+		  "type" : "alix",
+	  	  "name" : "ipfire-2.5.1gb-ext2-scon.i586-full-core34.img.gz",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+		  "type" : "iso",
+	  	  "name" : "ipfire-2.5.i586-full-core34.iso",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+	  	  "type" : "torrent",
+	  	  "name" : "ipfire-2.5.i586-full-core34.iso.torrent",
+	  	  "hash" : "50DC8E935D63ACAC02E5A3C21477EE59D7F1A06D"
+	  	},
+	  	{
+		  "type" : "usbfdd",
+	  	  "name" : "ipfire-2.5-install-usb-fdd.i586-full-core34.img.gz",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+		  "type" : "usbhdd",
+	  	  "name" : "ipfire-2.5-install-usb-hdd.i586-full-core34.img.gz",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+		  "type" : "xen",
+	  	  "name" : "ipfire-2.5.xen.i586-full-core34.tar.bz2",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	}
+	  ]
+	},
+
+{ "name" : "IPFire 2.5 - Core 33",
+	  "status"    : "stable",
+	  "online"    : 1,
+	  "files" : [
+	  	{
+		  "type" : "alix",
+	  	  "name" : "ipfire-2.5.1gb-ext2-scon.i586-full-core33.img.gz",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+		  "type" : "iso",
+	  	  "name" : "ipfire-2.5.i586-full-core33.iso",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+	  	  "type" : "torrent",
+	  	  "name" : "ipfire-2.5.i586-full-core33.iso.torrent",
+	  	  "hash" : "D9992ED673EC9D92774452962F4445993ECA730E"
+	  	},
+	  	{
+		  "type" : "usbfdd",
+	  	  "name" : "ipfire-2.5-install-usb-fdd.i586-full-core33.img.gz",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+		  "type" : "usbhdd",
+	  	  "name" : "ipfire-2.5-install-usb-hdd.i586-full-core33.img.gz",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	},
+	  	{
+		  "type" : "xen",
+	  	  "name" : "ipfire-2.5.xen.i586-full-core33.tar.bz2",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	}
+	  ]
+	},
+
+	{ "name" : "IPFire 3.0 alpha 1",
+	  "status"    : "development",
+	  "online"    : 1,
+	  "files" : [
+	  	{
+		  "type" : "iso",
+	  	  "name" : "ipfire-3.0-alpha1.i686.iso",
+	  	  "sha1" : "0000000000000000000000000000000000000000"
+	  	}
+	  ]
+	}
+]

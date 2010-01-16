@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="post">
+		<h3>{{ _("Development Downloads") }}</h3>
+
+		<p>
+			NEED TO FILL IN TEXT
+		</p>
+		
+		<p>
+			<a href="{{ link("downloads") }}">{{ _("Get back to latest stable downloads.") }}</a>
+		</p>
+
+		<br class="clear" />
+	</div>
+	
+	{% for release in releases.development %}
+		{{ modules.ReleaseItem(release) }}
+	{% end %}
+{% end block %}

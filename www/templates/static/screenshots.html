@@ -1,0 +1,28 @@
+{% extends "../base.html" %}
+
+{% block title %}{{ _("Screenshots") }}{% end block %}
+
+{% block content %}
+	<img src="{{ static_url("images/screenshots/monitor.png") }}"
+		class="floatTR" alt="{{ _("Screenshots") }}" />
+	
+	<p>
+	{% if lang == "de" %}
+		Hier findet Ihr einen keinen Einblick in das IPFire Webinterface.
+	
+	{% else %}
+		Here you will find an insight into the IPFire webinterface.
+	
+	{% end %}
+	<p>
+	
+	<br class="clear" />
+
+	<h3>{{ _("System") }}</h3>
+	<div class="screenshots">
+		&nbsp;&nbsp;&nbsp;
+		<a href="{{ static_url("images/screenshots/index_%s.png" % lang) }}" title="{{ _("Home") }}"><img src="{{ static_url("images/screenshots/index_%s_tn.png" % lang) }}" border="0" alt="{{ _("Home") }}" /></a>
+		&nbsp;&nbsp;&nbsp;
+		<a href="{{ static_url("images/screenshots/backup_%s.png" % lang) }}" title="{{ _("Backup") }}"><img src="{{ static_url("images/screenshots/backup_%s_tn.png" % lang) }}" border="0" alt="{{ _("Backup") }}" /></a>
+	</div>
+{% end block %}
