@@ -148,16 +148,6 @@ class NewsHandler(BaseHandler):
 		self.render("news.html", news=news)
 
 
-class RedirectHandler(BaseHandler):
-	redirects = {
-		"www.ipfire.org" : (
-			(r"", "")
-		)
-	}
-	def get(self):
-		pass
-
-
 class BuildHandler(BaseHandler):
 	def prepare(self):
 		self.builds = {
