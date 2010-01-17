@@ -55,3 +55,32 @@ class Application(tornado.web.Application):
 			xsrf_cookies = True,
 		)
 		tornado.web.Application.__init__(self, handlers, **settings)
+
+		# ipfire.org
+		self.add_handlers("ipfire.org", [
+			(r"/", tornado.web.RedirectHandler, { "url" : "http://www.ipfire.org" })
+		])
+
+		# download.ipfire.org
+		self.add_handlers("download.ipfire.org", [
+			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/index", DownloadHandler),
+		])
+
+		# source.ipfire.org
+		self.add_handlers("source.ipfire.org", [
+			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/index", SourceHandler),
+		])
+
+		# torrent.ipfire.org
+		self.add_handlers("torrent.ipfire.org", [
+			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/index", DownloadTorrentHandler),
+		])
+
+		# tracker.ipfire.org
+		self.add_handlers("tracker.ipfire.org", [
+			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/index", DownloadTorrentHandler),
+		])
