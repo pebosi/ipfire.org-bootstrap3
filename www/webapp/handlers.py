@@ -11,6 +11,7 @@ import tornado.locale
 import tornado.web
 
 from banners import banners
+from info import info
 from news import news
 from releases import releases
 
@@ -193,7 +194,7 @@ class ApiClusterInfoHandler(BaseHandler):
 	def get(self):
 		id = self.get_argument("id", "null")
 
-		c = cluster.Cluster("minerva.ipfire.org")
+		c = cluster.Cluster(info["cluster"]["hostname"])
 
 		self.write(simplejson.dumps({
 			"version": "1.1",
