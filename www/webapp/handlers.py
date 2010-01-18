@@ -1,8 +1,10 @@
 #!/usr/bin/python
 
 import httplib
+import operator
 import os
 import simplejson
+import sqlite3
 import time
 import urlparse
 
@@ -11,6 +13,7 @@ import tornado.locale
 import tornado.web
 
 from banners import banners
+from helpers import size
 from info import info
 from news import news
 from releases import releases
@@ -197,3 +200,43 @@ class ApiClusterInfoHandler(BaseHandler):
 class TranslationHandler(BaseHandler):
 	def get(self):
 		self.render("translations.html", projects=translations.projects)
+
+
+class SourceHandler(BaseHandler):
+	def prepare(self):
+		if not hasattr(self, "db"):
+			self.db = sqlite3.connect("/srv/www/ipfire.org/source/hashes.db")
+			c = self.db.cursor()
+			c.execute("CREATE TABLE IF NOT EXISTS hashes(file, sha1)")
+			c.close()
+
+	def get(self):
+		source_path = "/srv/sources"
+		fileobjects = []
+
+		for dir, subdirs, files in os.walk(source_path):
+			if not files:
+				continue
+			for file in files:
+				if file in [f["name"] for f in fileobjects]:
+					continue
+
+				c = self.db.cursor()
+				c.execute("SELECT sha1 FROM hashes WHERE file = '%s'" % file)
+				hash = "%s" % c.fetchone()
+
+				if hash == "None":
+					hash = "0000000000000000000000000000000000000000"
+
+				fileobjects.append({
+					"dir"  : dir[len(source_path)+1:],
+					"name" : file,
+					"hash" : hash,
+					"size" : size(os.path.getsize(os.path.join(source_path, dir, file))),
+				})
+
+				c.close()
+
+		fileobjects.sort(key=operator.itemgetter("name"))
+
+		self.render("sources.html", files=fileobjects)
