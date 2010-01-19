@@ -20,6 +20,7 @@ from releases import releases
 
 import builds
 import cluster
+import menu
 import translations
 #import uriel
 

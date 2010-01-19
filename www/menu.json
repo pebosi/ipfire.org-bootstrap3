@@ -1,21 +1,18 @@
 [
-	{ "name" : "Home",
-	  "link" : "/",
-	  "desc" : "The place where we start." },
-
-	{ "name" : "Support",
-	  "subs" : [
-	  	{ "name" : "Forum",
-	  	  "link" : "http://forum.ipfire.org/",
-	  	  "desc" : "The IPFire Forum." },
-
-	  	{ "name" : "Wiki",
-	  	  "link" : "http://wiki.ipfire.org/",
-	  	  "desc" : "Documentation" },
-
-		{ "name" : "IRC",
-	  	  "link" : "/irc",
-	  	  "desc" : "Get help in a chat" }
-	  ]
-	}
+	{ "uri"  : "/index",
+	  "name" : "Home" },
+	{ "uri"  : "/download",
+	  "name" : "Downloads" },
+	{ "uri"  : "/screenshots",
+	  "name" : "Screenshots" },
+	{ "uri"  : "http://wiki.ipfire.org/",
+	  "name" : { "de" : "Wiki", "en" : "Wiki" }},
+	{ "uri"  : "http://forum.ipfire.org/",
+	  "name" : "Forum" },
+	{ "uri"  : "/development",
+	  "name" : { "de" : "Entwicklung", "en" : "Development" }},
+	{ "uri"  : "/links",
+	  "name" : "Links" },
+	{ "uri"  : "/cebit",
+	  "name" : "<div style=\"color:#f90;\">CeBIT 2010</div>" }
 ]
