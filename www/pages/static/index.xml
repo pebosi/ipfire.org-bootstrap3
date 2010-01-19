@@ -17,12 +17,12 @@
 				 updates to <strong>keep it secure</strong>.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-				Das <strong>IPFire</strong>-System ist eine Linux-Distribution, welche die Zielsetzung hat ein einfach zu 
+				Das <strong>IPFire</strong>-System ist eine Linux-Distribution, mit der Zielsetzung ein einfach zu 
 				installierendes Grundsystem zu bieten und dabei ein <strong>hohes Sicherheitsniveau</strong> zu gewährleisten.
 				<strong>IPFire</strong> ist komplett über sein intuitiv zu bedienendes Webinterface zu konfigurieren 
 				und bietet sowohl <strong>Anfängern</strong>, als auch erfahrenen <strong>Administratoren</strong> eine Fülle von 
-				Einstellungsmöglichkeiten. Ein <strong>Schwerpunkt</strong> bei der Weiterentwickling legen die erfahrenen Entwickler 
-				klar auf regelmäßige System und vor allem <strong>Sicherheitsupdates</strong>.<br /><br />
+				Einstellungsmöglichkeiten. Einen <strong>Schwerpunkt</strong> bei der Weiterentwicklung legen die erfahrenen Entwickler 
+				 auf regelmäßige System- und vor allem <strong>Sicherheitsupdates</strong>.<br /><br />
 				]]></Content>
 
 			<Content lang="en"><![CDATA[
@@ -32,7 +32,7 @@
 			<Content lang="de"><![CDATA[
 				Durch den integrierten Paketmanager <strong>Pakfire</strong> lässt sich der <strong>IPFire</strong> mit diversen 
 				<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>, 
-				bishin zu einem Server-System erweitern.
+				 zu einem Server-System erweitern.
 				]]></Content>
 	
 			<Content lang="en"><![CDATA[

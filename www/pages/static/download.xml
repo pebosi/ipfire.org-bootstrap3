@@ -96,7 +96,7 @@
 				]]></Content>
 			<Content lang="de"><![CDATA[
 				In regelmäßigen Abständen wird aus dem aktuellen Quellcode
-				der Entwicklungsversionen ein installationsfähiges Image, welches man downloaden kann, erstellt.
+				der Entwicklungsversionen ein installationsfähiges Image erstellt, welches man downloaden kann.
 				<br />Diese Versionen dienen dem Test und sind unter Umständen nicht für den
 				Produktiveinsatz geeignet.
 				]]></Content>

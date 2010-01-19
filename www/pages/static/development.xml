@@ -30,7 +30,7 @@
 				]]></Content>
 			<Content lang="de"><![CDATA[
 					<br />Zurzeit gibt eine frühe Entwicklungsversion:<br />
-					<strong>Version 3.0</strong>, die nächste Major-Version, hat
+					<strong>Version 3.0</strong>. Die nächste Major-Version, hat
 					den Alpha-Status erreicht. Ein Roadmap findet sich unter
 					<a href="http://wiki.ipfire.org/de/development/3.0" target="_blank">http://wiki.ipfire.org/de/development/3.0</a>.
 				]]></Content>	
@@ -65,15 +65,15 @@
 		<Paragraph>
 			<Heading>source-code</Heading>
 			<Content lang="en"><![CDATA[
-						The source code tarballs of the in ipfire used tools are on
-						<a href="http://source.ipfire.org/" target="_target">http://source.ipfire.org/</a>.<br />
-						All patches that are used in our distribution are stored in a git repository.
-						Therefore see "git" on this site.
+					The source code tarballs of the in ipfire used tools are on
+					<a href="http://source.ipfire.org/" target="_target">http://source.ipfire.org/</a>.<br />
+					All patches that are used in our distribution are stored in a git repository.
+					Therefore see "git" on this site.
 				]]></Content>
 			<Content lang="de"><![CDATA[
-					Die Sourcecode-Tarballs der im IPFire verwendeten Tools findet Ihr unter
+					Die Sourcecode-Tarballs der im IPFire verwendeten Tools findet ihr unter
 					<a href="http://source.ipfire.org/" target="_target">http://source.ipfire.org/</a><br />
-					Alle Patches, die in der Distribution Verwendung finden werden in einem
+					Alle Patches, die in der Distribution Verwendung finden, werden in einem
 					Git-Repository verwaltet. Siehe dazu Git.
 				]]></Content>
 		</Paragraph>

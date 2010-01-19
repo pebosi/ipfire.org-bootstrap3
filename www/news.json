@@ -424,7 +424,7 @@
 					  "de" : "<p>Marcus Scholz hat einen <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\" target=\"_blank\">Vortrag</a> über
 					  		  IPFire in der <a href=\"http://warpzone.ms/\" target=\"_blank\">Warpzone</a> gehalten. Die dazugehörigen  
 					  		  <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\" target=\"_blank\">Folien</a> 
-					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Presentation stehen zur Verfügung.
+					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Präsentation stehen zur Verfügung.
 								</p>"}},
 
 		"25" : {"author"   : "Michael Tremer",
@@ -517,7 +517,7 @@
 								</p>",
 
 					  "de" : "<p>Heute werden wir das erste Update im Jahr 2010 veröffentlichen.  
-								  Das <strong>Core 34</strong> Update kommt mit folgenden Änderungen:</p>
+								  Das <strong>Core 34</strong> Update weißt folgende Änderungen auf:</p>
 								<p>
 								<ul>
 								  <li><strong>Kernel Update auf 2.6.27.42</strong></li>
@@ -526,55 +526,55 @@
 								    <li>Update von alsa auf 1.0.22(.1)</li>
 								    <li>Update von v4l-dvb</li>
 								    <li>Update von compat-wireless auf 2.6.32.2</li>
-								    <li>Standardtreiber von atheros auf ath5k getauscht</li>
-								    <li>kvm-kmod hinzugefügt um die kvm api für qemu zu aktualliesieren</li>
-								    <li>Atheros/Attansic atl1c Netzwerktreiber hinzugefügt</li>
-								    <li>Patches für die Erkennung von Realtek 8102/8103 zu r8101 Treibern hinzugefügt</li>
-								    <li>Patch für die Wake-on-Lan Probleme des Intel E100 zu beheben hinzugefügt</li>
+								    <li>Wechsel von Standardtreiber von atheros auf ath5k</li>
+								    <li>Ergänzung von kvm-kmod zwecks Aktualisierung der kvm api für qemu</li>
+								    <li>Erweiterung um Atheros/Attansic atl1c Netzwerktreiber</li>
+								    <li>Ergänzung um Patches für die Erkennung von Realtek 8102/8103 zu r8101 Treibern</li>
+								    <li>Hinzugefügt von Patches zwecks Behebung der Wake-on-Lan Probleme des Intel E100</li>
 								  </ul>
 								</ul>
 								<ul>
-								  <li>usb_modeswitch 1.0.6 hinzugefügt</li>
-								  <li>compile-Option für die DCF77-clocks hinzugefügt</li>
+								  <li>Erweiterung um usb_modeswitch 1.0.6</li>
+								  <li>Ergänzung der compile-Option für die DCF77-clocks</li>
 								  <li>Update von smartmontools auf 5.39 stable</li>
-								  <li>Sicherstellung, dass das ehci_hci Modul zu erst geladen wird (behebt USB2.0-Erkennung)</li>
+								  <li>Sicherstellung, dass das ehci_hci Modul zuerst geladen wird (behebt USB2.0-Erkennung)</li>
 								</ul>
 								<ul>
-								  <li>IPSEC:</li>
+								  <li>IPSEC-Verbesserungen:</li>
 								  <ul>
-								    <li>Nun sind IPSec Peers auch durch IPFire erreichbar</li>
-								    <li>Nicht funktionerende Crytomodule wurden aus der IPSec-Konfiguration gelöscht</li>
+								    <li>IPSec Peers sind nun ebenfalls druch IPFire erreichbar</li>
+								    <li>Nicht funktionierende Crytomodule wurden aus der IPSec-Konfiguration gelöscht.</li>
 								  </ul>
 								  <li>IPTV Verbesserungen:</li>
 								  <ul>
 								    <li>Update von dhcpcd</li>
 								    <li>Fix für den iqmpproxy Installationscheck (pppsetup.cgi)</li>
-								    <li>Verbesserung an der mac.cgi Seite, Änderungen am Tabellenlayout und Beschreibungen hinzugefügt.</li>
+								    <li>Verbesserung an der mac.cgi Seite, Änderungen am Tabellenlayout und Ergänzungen von Beschreibungen.</li>
 								  </ul>
-								  <li>CGI Änderugen:</li>
+								  <li>CGI Änderungen:</li>
 								  <ul>
-								    <li>Spendenbutton auf der Credits Seite hinzugefügt</li>
-								    <li>Es wurde ein Patch hinzugefügt um das oinkmaster Verzeichniss tmp auf /var/tmp zu ändern</li>
-								    <li>\"time constraints feature\" und \"local port adressing\" zur ausgehenden Firewall hinzugefügt</li>
+								    <li>Hinzugefügen eines Spendenbutton auf der Credits Seite</li>
+								    <li>Erweiterung um ein Patch, zwecks Änderung des oinkmaster Verzeichnisses tmp auf /var/tmp</li>
+								    <li>Erweiterung um ein \"time constraints feature\" und \"local port adressing\" zur ausgehenden Firewall</li>
 								    <li>Neugestaltung der chpasswd.cgi</li>
 								    <li>Verbesserung der Pakfire \"Ping\" Beschreibung auf der pakfire.cgi</li>
-								    <li>ExtraHD-Seite ist nun mehrsprachig</li>
+								    <li>Erweiterung auf eine mehrsprachige ExtraHD-Seite</li>
 								    <li>Behoben, dass crontab beim ramdisk restore ersetzt wurde</li>
 								  </ul>
 								  <li>Installer:</li>
 								  <ul>
-								    <li>Installer device von /dev/tty1 nach /dev/console geändert</li>
+								    <li>Änderung des Installer device von /dev/tty1 nach /dev/console geändert</li>
 								    <li>Update von memtest86+ auf 4.00</li>
 								  </ul>
 								  <li>Sprachen:</li>
 								  <ul>
-								   <li>Die Unterstützung von französisch dem Installer hinzugefügt</li>
+								   <li>Unterstützung der französisch Sprache beim Installer</li>
 								  </ul>
 								</ul>
 								</p>
 								<p>
 								Durch den <strong>Kernelupdate</strong> ist ein <strong>Neustart</strong> von IPFire nötig! <br/>
-								<strong>Achtung</strong>: Grub wird neu installiert, wenn die Konfiguration manuell geändert 
+								<strong>Achtung</strong>: Grub wird neu installiert. Wenn die Konfiguration manuell geändert 
 								wurde muss diese zuerst wieder hergestellt werden!<br />
 								<strong>Xen</strong> User müssen vor dem Neustart der Machine auch linux-xen updaten!
 								</p>"}}								
