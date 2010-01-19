@@ -3,54 +3,51 @@
 {% block title %}{{ _("Home") }}{% end block %}
 
 {% block content %}
-	<h3>{{ _("More security for your network") }}</h3>
-
-	<p>
-	{% if lang == "de" %}
-		Das <strong>IPFire</strong>-System ist eine Linux-Distribution, welche
-		die Zielsetzung hat ein einfach zu installierendes Grundsystem zu bieten
-		und dabei ein <strong>hohes Sicherheitsniveau</strong> zu gewährleisten.
-		<br />
-		<strong>IPFire</strong> ist komplett über sein intuitiv zu bedienendes
-		Webinterface zu konfigurieren und bietet sowohl <strong>Anfängern</strong>,
-		als auch erfahrenen <strong>Administratoren</strong> eine Fülle von 
-		Einstellungsmöglichkeiten. Ein <strong>Schwerpunkt</strong> bei der
-		Weiterentwickling legen die erfahrenen Entwickler klar auf regelmäßige
-		System und vor allem <strong>Sicherheitsupdates</strong>.
-
-		Durch den integrierten Paketmanager <strong>Pakfire</strong> lässt sich
-		der <strong>IPFire</strong> mit diversen
-		<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>, 
-		bishin zu einem Server-System erweitern.
-	{% else %}
-		<strong>IPFire</strong> is a linux-distribution	that focusses on easy
-		setup, good handling and a <strong>high niveau of security</strong>.
-		<br />
-		It is operable via an intuitive webinterface, which offers a lot of
-		playground for <strong>beginners</strong> and even experienced
-		<strong>administrators</strong>.
-		<strong>IPFire</strong> is maintained by experienced developers, who
-		are really concerned about security and	regulary updates to
-		<strong>keep it secure</strong>.
-
-		<strong>IPFire</strong> ships with a custom built paket-manager called
-		<strong>Pakfire</strong>, so the system can be expanded with various
-		<a href="http://wiki.ipfire.org/en/addons/start" target="_blank">addons</a>.
-	{% end %}
-	</p>
-
-	<div class="cebit_button">
-		<div class="cebit_button_text">						
-			<a href="cebit">{{ _("CeBIT-Donation") }}</a>
+	<div class=post>
+		<h3>{{ _("More security for your network") }}</h3>
+		<p>
+			{% if lang == "de" %}
+				Das <strong>IPFire</strong>-System ist eine Linux-Distribution, mit der Zielsetzung ein einfach zu 
+				installierendes Grundsystem zu bieten und dabei ein <strong>hohes Sicherheitsniveau</strong> zu gewährleisten.
+				<strong>IPFire</strong> ist komplett über sein intuitiv zu bedienendes Webinterface zu konfigurieren 
+				und bietet sowohl <strong>Anfängern</strong>, als auch erfahrenen <strong>Administratoren</strong> eine Fülle von 
+				Einstellungsmöglichkeiten. Einen <strong>Schwerpunkt</strong> bei der Weiterentwicklung legen die erfahrenen Entwickler 
+				auf regelmäßige System- und vor allem <strong>Sicherheitsupdates</strong>.<br /><br />			 
+				Durch den integrierten Paketmanager <strong>Pakfire</strong> lässt sich der <strong>IPFire</strong> mit diversen 
+				<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>, 
+				zu einem Server-System erweitern.
+			{% else %}
+				<strong>IPFire</strong> is a linux-distribution that focusses on easy setup, good handling and a 
+				<strong>high niveau of security</strong>.<br /> It is operable via an intuitive webinterface, which offers a
+				lot of playground for <strong>beginners</strong> and even experienced <strong>administrators</strong>.
+				<strong>IPFire</strong> is maintained by experienced developers, who are really concerned about security and regulary 
+				updates to <strong>keep it secure</strong>.<br /><br />			 
+				<strong>IPFire</strong> ships with a custom built paket-manager called <strong>Pakfire</strong>, so the system can be 
+				expanded with various <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">addons</a>.				 
+			{% end %}
+		</p>
+		<div class="cebit_button">
+			<div class="cebit_button_text">						
+				<a href="cebit">{{ _("CeBIT-Donation") }}</a>
+			</div>
+		</div>	
+		<!-- 
+		<div class="button">
+			<div class="button_text">
+					<a href="download">Download&nbsp;&nbsp;IPFire 2.5</a>
+			</div>
 		</div>
+		-->		
+		<img src="{{ static_url("images/Network-1.png") }}") }}" alt="IPFire Network" />	
 	</div>
-
-	<h3>{{ _("News") }}</h3>
-
-	{% for item in news.get(2) %}
-		{{ modules.NewsItem(item) }}
-	{% end %}
-
+	
+	<div class=post>
+		<h3>{{ _("News") }}</h3>
+	
+		{% for item in news.get(2) %}
+			{{ modules.NewsItem(item) }}
+		{% end %}
+	</div>
 	<p class="right">
 		<a href="{{ link("news") }}">{{ _("Previous posts >>") }}</a>
 	</p>
