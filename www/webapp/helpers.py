@@ -22,4 +22,4 @@ def size(s):
 		s /= 1024
 		idx += 1
 	
-	return "%.2f %s" % (s, suffixes[idx])
+	return "%.0f%s" % (s, suffixes[idx])

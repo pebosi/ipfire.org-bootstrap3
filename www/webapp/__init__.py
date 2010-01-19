@@ -72,7 +72,7 @@ class Application(tornado.web.Application):
 		# source.ipfire.org
 		self.add_handlers(r"source\.ipfire\.org", [
 			(r"/", MainHandler),
-#			(r"/[A-Za-z]{2}/index", SourceHandler),
+			(r"/[A-Za-z]{2}/index", SourceHandler),
 		] + static_handlers)
 
 		# torrent.ipfire.org

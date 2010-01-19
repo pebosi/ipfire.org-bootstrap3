@@ -15,27 +15,20 @@ class UIModule(tornado.web.UIModule):
 
 class MenuItemModule(UIModule):
 	def render(self, item):
-		if self.request.uri.endswith(item.link):
+		if self.request.uri.endswith(item.uri):
 			item.active = True
-		
+
+		if not item.uri.startswith("http://"):
+			item.uri = "/%s%s" % (self.locale.code[:2], item.uri,)
+
 		if type(item.name) == type({}):
 			item.name = item.name[self.locale.code[:2]]
-			
+
 		return self.render_string("modules/menu-item.html", item=item)
 
 
 class MenuModule(UIModule):
-	#def javascript_files(self):
-	#	return ["js/jquery.megamenu.js",]
-	#
-	#def embedded_javascript(self):
-	#	return """
-	#		$(document).ready(function(){
-	#			$(".MegaMenuLink").megamenu(".MegaMenuContent");
-	#		});"""
-
 	def render(self, menuclass=None):
-		return "" # XXX
 		if not menuclass:
 			menuclass = menu.Menu("menu.json")
 		return self.render_string("modules/menu.html", menuitems=menuclass.items)
