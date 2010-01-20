@@ -1,0 +1,189 @@
+{% extends "../base.html" %}
+		
+{% block title %}{{ _("Public Relations") }}{% end block %}
+ 
+
+{% block content %}
+	
+	
+	<div class=post>
+		<h3>{{ _("Public Relations") }}</h3>
+		<img src="{{ static_url("images/pr.png") }}") }}" class="floatTR" alt="{{ _("Public Relations") }}" />
+		<p>
+			{% if lang == "de" %}
+			Euer Ansprechpartner für die Bereiche Presse, allgemeine Öffentlichkeitsarbeit und Sponsoring:
+			{% else %}
+			Your contact person for the fields press, general public relations and sponsorship:
+			{% end %}
+			<br /><br />
+			Markus Krüger
+			 <img src="http://wiki.ipfire.org/lib/tpl/ipfire3-1/images/mail_icon.gif"  align="absmiddle"/><a href="mailto:&#109;&#97;&#114;&#107;&#117;&#115;&#46;&#107;&#114;&#117;&#101;&#103;&#101;&#114;&#64;&#105;&#112;&#102;&#105;&#114;&#101;&#46;&#111;&#114;&#103;">&#101;&#77;&#97;&#105;&#108;</a><br />
+			Kollegstraße 2 / 432<br />
+			44801 Bochum<br />
+			{% if lang != "de" %}
+			West Germany
+			{% end %}
+		</p>
+	</div>
+
+	<br class="clear" />
+
+	<div class=post>
+		<h3>{{ _("Press") }}</h3>
+		<p>
+			<h4>{{ _("Press kit") }}</h4>
+
+			{% if lang == "de" %}
+			<p>
+				<em>eigene Texte für die Presse - bitte hier rein schreiben</em>
+			</p>
+			{% else %}
+			<p>
+				<em>our own texts for the press - put in here</em>
+			</p>
+			{% end %}
+			<br />
+			
+			<h4>{{ _("Logos and print artworks") }}</h4>
+			<p>
+				<div class=pr_li>
+				<ul>
+					<li>{{ _("<strong>Print</strong> media") }}:</li>
+				  		<ul>
+				  			{% if lang == "de" %}
+							<p>
+								<em>Bilder von Tim -  hier rein</em>
+							</p>
+							{% else %}
+							<p>
+								<em>Picture made by Tim - put in here</em>
+							</p>
+							{% end %}
+				  		</ul>
+					<li>{{ _("<strong>Online</strong> media") }}:</li>
+					<ul>
+						 <li><img src="{{ static_url("images/tux/ipfire_tux_16x16.png") }}" align="bottom" border= "0"/>
+						 <img src="{{ static_url("images/tux/ipfire_tux_32x32.png") }}" align="bottom" border= "0"/>
+						 <img src="{{ static_url("images/tux/ipfire_tux_64x64.png") }}" align="bottom" border= "0"/>
+						 <img src="{{ static_url("images/tux/ipfire_tux_128x128.png") }}" align="bottom" border= "0"/>
+						 <br /><a href="{{ static_url("images/tux/ipfire_tux_16x16.png") }}") }}" target="_blank" border="0">
+						 ipfire.png (16 x 16)</a>
+						 <br /><a href="{{ static_url("images/tux/ipfire_tux_32x32.png") }}") }}" target="_blank" border="0">
+						 ipfire.png (32 x 32)</a>
+						 <br /><a href="{{ static_url("images/tux/ipfire_tux_64x64.png") }}") }}" target="_blank" border="0">
+						 ipfire.png (64 x 64)</a>
+						 <br /><a href="{{ static_url("images/tux/ipfire_tux_128x128.png") }}") }}" target="_blank" border="0">
+						 ipfire.png (128 x 128)</a>
+						 <br /><a href="{{ static_url("images/tux/ipfire_tux_256x256.png") }}") }}" target="_blank" border="0">
+						 ipfire.png (256 x 256)</a>
+						 <br /><a href="{{ static_url("images/tux/ipfire_tux_512x512.png") }}") }}" target="_blank" border="0">
+						 ipfire.png (512 x 512)</a></li>
+				  	</ul>
+				</ul>
+				</div>
+			</p>
+		</p>
+	</div>
+	
+	<div class=post>
+		<h3>{{ _("IPFire in the press") }}</h3>
+		<p>
+			{% if lang == "de" %}
+			Hier findet ihr einige Artikel über IPFire in der internationalen Presse.<br />
+			Wenn ihr neue Artikel über IPFire kennt die hier noch nicht aufgelistet sind, sendet uns diese an die oben angegeben Adresse, 
+			damit diese hinzugefügt werden können.
+			{% else %}
+			Below are recent articles about IPFire in the international press.<br />
+			If you know of any news stories featuring IPFire that we have not listed here, please send details to the contact given above 
+			so that we can include them.
+			{% end %}
+		</p>
+		<br />
+		<div class=pr_li>
+			<ul>
+				<li>{{ _("Press") }}:</li>
+				<ul>
+					<li>www.pro-linux.de: <a href="http://www.pro-linux.de/NB3/artikel/2/613/ipfire.html" target="_blank">
+					Vorstellung von IPFire</a>,
+					&nbsp;<a href="http://www.pro-linux.de/NB3/news/1/14360/1,ipfire-25-freigegeben.html" target="_blank">
+					IPFire 2.5 freigegeben</a>,
+					&nbsp;<a href="http://www.pro-linux.de/NB3/news/1/13436/1,ipfire-23-freigegeben.html" target="_blank">
+					IPFire 2.3 freigegeben</a></li>				
+					<li>www.heise.de: <a href="http://www.heise.de/software/download/ipfire/47736a" target="_blank">
+					Artikel aus c't 20/2009</a></li>
+					<li>www.securebase.at: <a href="http://www.securebase.at/software/application-gateways/ipfire-schutz-gegen-jegliche-art-von-spyware-malware-und-sonstigen-hacker-aktivitaten" target="_blank">Schutz gegen jegliche Art von Spyware, Malware...</a></li>
+					<li>www.techmonkey.de: <a href="http://www.techmonkey.de/2008/09/15/ipfire-der-nachste-star-am-soho-himmel/" target="_blank">
+					Der nächste Star am SOHO Himmel?</a>,
+					&nbsp;<a href="http://www.techmonkey.de/2009/06/24/endlich-ipfire-2-5-erschien" target="_blank">Endlich! 
+					IPFire 2.5 erschienen</a>
+					<li>www.pcwelt.de: <a href="http://www.pcwelt.de/start/sicherheit/firewall/news/187759/ipfire_auf_version_23_aktualisiert/"
+					 target="_blank">IPFire auf Version 2.3 aktualisiert</a></li>
+					<li>www.lintelligence.de: <a href="http://www.lintelligence.de/news/1026" target="_blank">IPFire 2.1</a></li>
+					<li>www.h-online.com: <a href="http://www.h-online.com/newsticker/news/item/IPFire-the-Lean-Linux-firewall-738055.html"
+				 	target="_blank">IPFire, the Lean Linux firewall</a></li>
+				 	<li>www.4reackt.net: <a href="http://www.4reackt.net/programas-linux-rpms/5303-ipfire-v2-1-a.html"
+				 	target="_blank">IPFire v2.1</a></li>
+				</ul>
+				<li>Blogs:</li>
+				<ul>
+					<li>linuxmini.blogspot.com: <a href="http://linuxmini.blogspot.com/2007/10/ipfire-free-firewall-for-your-home-or.html"
+					 target="_blank">Free firewall for your home or SOHO</a></li>
+					<li>www.ffoutpost.net: <a href="http://www.ffoutpost.net/2009/09/01/ipfire-initial-setup" target="_blank">
+					IPFire Initial Setup</a>,
+					&nbsp;<a href="http://www.ffoutpost.net/2009/09/15/ipfire-wireless-blue-access-setup" target="_blank">IPFire 
+					Wireless (Blue Access) Setup</a></li>
+				</ul>	
+			<ul>
+		</div>		
+	</div>
+
+	<div class=post>
+		<h3>{{ _("Sponsoring") }}</h3>
+		{% if lang == "de" %}
+		<p>
+			<em>Allgemeine Informationen über Sponsoring und Partner -  hier rein</em>
+		</p>
+		{% else %}
+		<p>
+			<em>General information about sponsorshop and partners - put in here</em>
+		</p>
+		{% end %}
+		<br />
+		
+		<h4>{{ _("friends of ipfire") }}</h4>
+			<p>
+				{% if lang == "de" %}
+					Die folgenden User ermöglichen dem Projekt die Nutzung ihrer persönlichen Server (Mirror, Build und Root Server).
+					An dieser Stelle möchten wir uns bei Allen für ihre Unterstützung bedanken. (Liste in alphabetischer Reihenfolge.)
+				{% else %}
+					The following users are supporting the project by sharing their personal server (mirror, build, and root servers).
+					At this point we would like to thank all for their help. (List in alphabetical order.)
+				{% end %}
+				<div class=pr_li>
+				<ul>
+					<li>Kim Barthel: <a href="http://www.kbarthel.de" target="_blank">www.kbarthel.de</a></li>
+				  	<li>Peter Schaelchli: <a href="http://www.scp-systems.ch" target="_blank">www.scp-systems.ch</a></li>
+					<li>Jan Paul Tücking: <a href="http://ipfire.earl-net.com" target="_blank">ipfire.earl-net.com</a></li>
+					<li>Ronald Wiesinger: <a href="http://www.rowie.at" target="_blank">www.rowie.at</a></li>
+					<li>Sebastian Winter</li>
+				 	<li>Rene Zingel: <a href="http://www.firewall-service.com" target="_blank">www.firewall-service.com</a></li>
+				 </ul>
+				 </div>
+			 </p>		
+	</div>
+
+
+
+{% end block %}
+
+{% block sidebar %}
+		<h4>Public <span>relations</span></h4>
+		<ul class="links">		
+			<li class="first"><a href="#{{ _("Press") }}">{{ _("Press") }}</a></li>
+				<li><a href="#{{ _("Press kit") }}">{{ _("Press kit") }}</a></li>
+				<li><a href="#{{ _("Logos and print artworks") }}">{{ _("Logos and print artworks") }}</a></li>
+			<li class="first"><a href="#{{ _("IPFire in the press") }}">{{ _("IPFire in the press") }}</a></li>
+			<li><a href="#{{ _("Sponsoring") }}">{{ _("Sponsoring") }}</a></li>
+				<li><a href="#{{ _("friends of ipfire") }}">{{ _("friends of ipfire") }}</a></li>
+		</ul>
+{% end block %}
