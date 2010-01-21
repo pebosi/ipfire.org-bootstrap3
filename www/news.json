@@ -183,7 +183,7 @@
 								</ul>
 								<p>Ein experimenteller <strong>Xen</strong>-Kernel ist verfügbar.</p>"}},
 								
-		"18" : {"author"   : "Jan Paul T&uuml;cking",
+		"18" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 29", "de" : "Core Update 29" },
 				"date"     : "2009-08-05",
@@ -219,7 +219,7 @@
 								</ul><br />"}},
 
 
-		"19" : {"author"   : "Jan Paul T&uuml;cking",
+		"19" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 30", "de" : "Core Update 30" },
 				"date"     : "2009-08-30",
@@ -266,7 +266,7 @@
 								</ul><br />"}},
 								
 								
-		"20" : {"author"   : "Jan Paul T&uuml;cking",
+		"20" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 31", "de" : "Core Update 31" },
 				"date"     : "2009-10-04",
@@ -302,7 +302,7 @@
 								<br />dieses Core-Update zu installieren!</p>
 								<br />"}},
 								
-		"21" : {"author"   : "Jan Paul T&uuml;cking",
+		"21" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 32", "de" : "Core Update 32" },
 				"date"     : "2009-11-04",
@@ -357,7 +357,7 @@
 								</ul>
 								<br />"}},
 				
-		"22" : {"author"   : "Jan Paul T&uuml;cking",
+		"22" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 33", "de" : "Core Update 33" },
 				"date"     : "2009-11-05",
@@ -396,22 +396,22 @@
 				"link"     : "",
 				"content"  :
 					{ "en" : "<p>The IPFire Core Developers are proud to announce to new members of them.
-								<strong>Stefan Schantl</strong> and <strong>Jan Paul T&uuml;cking</strong> were incorporated
+								<strong>Stefan Schantl</strong> and <strong>Jan Paul Tücking</strong> were incorporated
 								into the group to honour their continuous contribution and giving their support to the project.</p>
 								<p>To get out how you can join the project have a look at:
 								  <a href=\"http://wiki.ipfire.org/en/project/join\" target=\"_blank\">http://wiki.ipfire.org/en/project/join</a>.
 								</p>",
 
 					  "de" : "<p>Das IPFire Core Development Team ist stolz zwei neue Mitglieder vorzustellen.
-								<strong>Stefan Schantl</strong> und <strong>Jan Paul T&uuml;cking</strong> sind von
+								<strong>Stefan Schantl</strong> und <strong>Jan Paul Tücking</strong> sind von
 								nun an Teil des Teams aufgrund ihrer beständigen und langen Mitarbeit am Projekt.</p>
 								<p>
 									<a href=\"http://wiki.ipfire.org/de/project/contribute\" target=\"_blank\">Wie kann ich selber zum Projekt beitragen?</a>
 								</p>"}},
 										
-		"24" : {"author"   : "Jan Paul Tücking",
+		"24" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
-				"subject"  : { "en" : "talk about IPFire", "de" : "Vortrag über IPFire" },
+				"subject"  : { "en" : "talk about IPFire", "de" : "Vortrag zum IPFire" },
 				"date"     : "2009-12-06",
 				"link"     : "",
 				"content"  :
@@ -424,9 +424,160 @@
 					  "de" : "<p>Marcus Scholz hat einen <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\" target=\"_blank\">Vortrag</a> über
 					  		  IPFire in der <a href=\"http://warpzone.ms/\" target=\"_blank\">Warpzone</a> gehalten. Die dazugehörigen  
 					  		  <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\" target=\"_blank\">Folien</a> 
-					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Presentation stehen zur Verfügung.
-								</p>"}}
+					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Präsentation stehen zur Verfügung.
+								</p>"}},
+
+		"25" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : { "en" : "IPFire on CeBIT 2010", "de" : "IPFire auf der CeBIT 2010" },
+				"date"     : "2009-12-28",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>At next year's CeBIT, the world's largest computer expo, <strong>IPFire</strong> will,
+								for the first time, get its own booth in the <strong>Open Source Project Lounge</strong>.</p>
+								<p>That's why we need your <a href=\"cebit#Your%20Donations%20are%20Needed!\">donations!</a><br />
+								We would like to say thanks to all the people who have already donated.</p>
+								<p>For further information: Read our <a href=\"cebit\">CeBIT Special</a>.</p>",
+
+					  "de" : "<p>Dank der <strong>Linux New Media AG</strong> wird das <strong>IPFire</strong>-Projekt auf der CeBIT,
+								der weltweit größten Messe für Informationstechnik, im nächsten Jahr mit einem eigenen Stand
+								in der <strong>Open Source Project Lounge</strong> vertreten sein.</p>
+								<p>
+								Daher möchten wir hiermit einen <strong>Spendenaufruf</strong> starten und bedanken uns schon
+								im Voraus bei der Vielzahl an freiwilligen Helfern.</p>
+								<p>Weitere Informationen zum Thema gibt es auf der <a href=\"cebit\">CeBIT-Special-Seite</a>.</p>"}},
 								
+		"26" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 34", "de" : "Core Update 34" },
+				"date"     : "2010-01-09",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release the first update in 2010. 
+								  <strong>Core 34</strong> comes with the following changes:</p>
+								<p>
+								<ul>
+								  <li><strong>Kernel update to 2.6.27.42</strong></li>
+								  <ul>
+								    <li>Update of mISDN, mISDNuser</li>
+								    <li>Update of alsa to 1.0.22(.1)</li>
+								    <li>Update of v4l-dvb</li>
+								    <li>Update of compat-wireless to 2.6.32.2</li>
+								    <li>Switch of atheros default driver to ath5k</li>
+								    <li>Add kvm-kmod to update the kvm api for qemu</li>
+								    <li>Add Atheros/Attansic atl1c ethernet driver</li>
+								    <li>Add patches to detect Realtek 8102/8103 to r8101 driver</li>
+								    <li>Add a patch to fix Intel E100 wake-on-lan problems</li>
+								  </ul>
+								</ul>
+								<ul>
+								  <li>Add usb_modeswitch 1.0.6</li>
+								  <li>Add compile options for DCF77-clocks</li>
+								  <li>Update of smartmontools to 5.39 stable</li>
+								  <li>Ensure that ehci_hci module are loading at first (fix USB2.0 detection)</li>
+								</ul>
+								<ul>
+								  <li>IPSEC:</li>
+								  <ul>
+								    <li>Make ipsec peers reachable from the IPFire</li>
+								    <li>Remove not working cryptomodes from ipsec config</li>
+								  </ul>
+								  <li>IPTV fixes:</li>
+								  <ul>
+								    <li>Update of dhcpcd</li>
+								    <li>Fix the iqmpproxy install check (pppsetup.cgi)</li>
+								    <li>Improve the mac.cgi page. Fixed table and added some comments.</li>
+								  </ul>
+								  <li>CGI changes:</li>
+								  <ul>
+								    <li>Add a donation button to credit page</li>
+								    <li>Add a patch to change oinkmaster tmp to /var/tmp</li>
+								    <li>Add time constraints feature and local port adressing to outgoing firewall</li>
+								    <li>Redesign of chpasswd.cgi</li>
+								    <li>Improve the pakfire \"ping\" message on pakfire.cgi</li>
+								    <li>ExtraHD page is now multilingual</li>
+								    <li>Fix that crontab was replaced at ramdisk restore</li>
+								  </ul>
+								  <li>Installer:</li>
+								  <ul>
+								    <li>Change installer device from /dev/tty1 to /dev/console</li>
+								    <li>Update of memtest86+ to 4.00</li>
+								  </ul>
+								  <li>Languages:</li>
+								  <ul>
+								   <li>Add french language support to installer</li>
+								  </ul>
+								</ul>
+								</p>
+								<p>
+								Due to the <strong>kernel update</strong> a <strong>reboot</strong> of IPFire is necessary!<br />
+								<strong>Warning</strong>: Grub is being reinstalled during the update. If you have applied manual 
+								changes, you have to reapply them first!<br />
+								<strong>Xen</strong> user have to update linux-xen bevor the reboot of the machine!
+								</p>",
+
+					  "de" : "<p>Heute werden wir das erste Update im Jahr 2010 veröffentlichen.  
+								  Das <strong>Core 34</strong> Update weißt folgende Änderungen auf:</p>
+								<p>
+								<ul>
+								  <li><strong>Kernel Update auf 2.6.27.42</strong></li>
+								  <ul>
+								    <li>Update von mISDN, mISDNuser</li>
+								    <li>Update von alsa auf 1.0.22(.1)</li>
+								    <li>Update von v4l-dvb</li>
+								    <li>Update von compat-wireless auf 2.6.32.2</li>
+								    <li>Wechsel von Standardtreiber von atheros auf ath5k</li>
+								    <li>Ergänzung von kvm-kmod zwecks Aktualisierung der kvm api für qemu</li>
+								    <li>Erweiterung um Atheros/Attansic atl1c Netzwerktreiber</li>
+								    <li>Ergänzung um Patches für die Erkennung von Realtek 8102/8103 zu r8101 Treibern</li>
+								    <li>Hinzugefügt von Patches zwecks Behebung der Wake-on-Lan Probleme des Intel E100</li>
+								  </ul>
+								</ul>
+								<ul>
+								  <li>Erweiterung um usb_modeswitch 1.0.6</li>
+								  <li>Ergänzung der compile-Option für die DCF77-clocks</li>
+								  <li>Update von smartmontools auf 5.39 stable</li>
+								  <li>Sicherstellung, dass das ehci_hci Modul zuerst geladen wird (behebt USB2.0-Erkennung)</li>
+								</ul>
+								<ul>
+								  <li>IPSEC-Verbesserungen:</li>
+								  <ul>
+								    <li>IPSec Peers sind nun ebenfalls druch IPFire erreichbar</li>
+								    <li>Nicht funktionierende Crytomodule wurden aus der IPSec-Konfiguration gelöscht.</li>
+								  </ul>
+								  <li>IPTV Verbesserungen:</li>
+								  <ul>
+								    <li>Update von dhcpcd</li>
+								    <li>Fix für den iqmpproxy Installationscheck (pppsetup.cgi)</li>
+								    <li>Verbesserung an der mac.cgi Seite, Änderungen am Tabellenlayout und Ergänzungen von Beschreibungen.</li>
+								  </ul>
+								  <li>CGI Änderungen:</li>
+								  <ul>
+								    <li>Hinzugefügen eines Spendenbutton auf der Credits Seite</li>
+								    <li>Erweiterung um ein Patch, zwecks Änderung des oinkmaster Verzeichnisses tmp auf /var/tmp</li>
+								    <li>Erweiterung um ein \"time constraints feature\" und \"local port adressing\" zur ausgehenden Firewall</li>
+								    <li>Neugestaltung der chpasswd.cgi</li>
+								    <li>Verbesserung der Pakfire \"Ping\" Beschreibung auf der pakfire.cgi</li>
+								    <li>Erweiterung auf eine mehrsprachige ExtraHD-Seite</li>
+								    <li>Behoben, dass crontab beim ramdisk restore ersetzt wurde</li>
+								  </ul>
+								  <li>Installer:</li>
+								  <ul>
+								    <li>Änderung des Installer device von /dev/tty1 nach /dev/console geändert</li>
+								    <li>Update von memtest86+ auf 4.00</li>
+								  </ul>
+								  <li>Sprachen:</li>
+								  <ul>
+								   <li>Unterstützung der französisch Sprache beim Installer</li>
+								  </ul>
+								</ul>
+								</p>
+								<p>
+								Durch den <strong>Kernelupdate</strong> ist ein <strong>Neustart</strong> von IPFire nötig! <br/>
+								<strong>Achtung</strong>: Grub wird neu installiert. Wenn die Konfiguration manuell geändert 
+								wurde muss diese zuerst wieder hergestellt werden!<br />
+								<strong>Xen</strong> User müssen vor dem Neustart der Machine auch linux-xen updaten!
+								</p>"}}								
 								
 
 }

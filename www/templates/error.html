@@ -3,26 +3,39 @@
 {% block title %}{{ _("Error") }} {{ code }}{% end block %}
 
 {% block content %}
+<div class=post>
 	<h3>{{ code }} - {{ message }}</h3>
 	<img class="floatTL" src="{{ static_url("images/error/%s.png" % code) }}"
 		alt="{{ _("Error") }} {{ code }}" />
-
-	{% if lang == "de" %}
-		Leider ist ein unerwarteter Fehler beim Laden der Seite aufgetreten.
-		<br /><br />
-		Das ist erstmal kein Grund zur Panik.
-		<br /><br />
-		Sollte dies das erstmalige Auftreten des Fehlers sein, so bitten wir
-		einige Zeit abzuwarten.	Sollte der Fehler jedoch an dieser Stelle
-		regelmäßig auftreten, so würden sich die Webmaster über eine kleine
-		Benachrichtigung freuen.
-	{% else %}
-		en 404
-	{% end %}
-	
+	<p>
+		{% if lang == "de" %}
+			Leider ist ein unerwarteter Fehler beim Laden der Seite aufgetreten.
+			<br /><br />
+			Das ist erstmal kein Grund zur Panik.
+			<br /><br />
+			Sollte dies das erstmalige Auftreten des Fehlers sein, so bitten wir
+			einige Zeit abzuwarten.	Sollte der Fehler jedoch an dieser Stelle
+			regelmäßig auftreten, so würden sich die Webmaster über eine kleine
+			Benachrichtigung freuen.
+		{% else %}
+			Unfortunately, an unexpected error has occurred during page load.
+			<br /><br />
+			At first this is no reason to panic.
+			<br /><br />
+			If this is the first occurrence of the error, please wait a little bit
+			and try again. If the error occurres anyway the webmaster would be happy
+			to get a notification about this.
+		{% end %}
+	</p>
+</div>
+<div class=post>
 	{% block explanation %}{% end block %}
-	
+</div>
 	{% if exception %}
-		<pre>{{ exception }}</pre>
+		<div class=post>
+			<p>
+				<pre>{{ exception }}</pre>
+			</p>
+		</div>
 	{% end %}
 {% end block %}

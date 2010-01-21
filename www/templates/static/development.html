@@ -1,0 +1,159 @@
+{% extends "../base.html" %}
+		
+{% block title %}{{ _("Development") }}{% end block %}
+
+{% block content %}
+	
+	
+	<div class=post>
+		<h3>{{ _("Development") }}</h3>
+		<img src="{{ static_url("images/page_icons/development.png") }}" class="floatTR" border="0" alt="{{ _("Development") }}" />
+		<p>
+			{% if lang == "de" %}
+				Willkommen im Entwicklungsbereich des IPFire Projektes.<br />
+				Hier habt Ihr Zugriff auf alle Ressourcen für die Entwicklung.<br />
+			{% else %}
+				Welcome to the development area of the ipfire project.<br />
+				These are the development ressources.
+			{% end %}
+		</p>
+	</div>
+	<br class="clear" />	
+
+	<div class=post>
+		<h3>{{ _("git") }}</h3>
+		<img src="	http://git.ipfire.org/git-logo.png" class="floatTL" alt="{{ _("git") }}" />
+		<p>
+			{% if lang == "de" %}
+				Das Quellcode-Repository wird durch
+				<a href="http://git.or.cz" target="_blank">Git</a>
+				verwaltet. Ein Howto zum Arbeiten mit Git findet ihr
+				in unserem <a href="http://wiki.ipfire.org/de/development/git" target="_blank">Wiki</a>.
+				<br />
+				Den Source-Code findet ihr unter: <a href="http://git.ipfire.org/" target="_blank">http://git.ipfire.org/</a>
+			{% else %}	
+				Our source code repository is managed by
+				<a href="http://git.or.cz" target="_blank">git</a>.
+				Your will find a howto to work with git in our
+				<a href="http://wiki.ipfire.org/en/development/git" target="_blank">wiki</a>.
+				<br />
+				You may find our source code on: <a href="http://git.ipfire.org/" target="_blank">http://git.ipfire.org/</a>
+			{% end %}
+		</p>
+	</div>
+	<br class="clear" />
+
+
+	<div class=post>
+		<h3>{{ _("source-code") }}</h3>
+		<p>
+			{% if lang == "de" %}
+				Die Sourcecode-Tarballs der im IPFire verwendeten Tools findet ihr unter
+				<a href="http://source.ipfire.org/" target="_target">http://source.ipfire.org/</a><br />
+				Alle Patches, die in der Distribution Verwendung finden, werden in einem
+				Git-Repository verwaltet (siehe oben).
+			{% else %}	
+				The source code tarballs of the tools used in IPFire are available on
+				<a href="http://source.ipfire.org/" target="_target">http://source.ipfire.org/</a>.<br />
+				All patches that are used in our distribution are stored in a git repository (see above).
+			{% end %}			
+		</p>
+	</div>
+	
+	
+	<div class=post>
+		<h3>{{ _("bugtracker") }}</h3>
+		<img src="http://bugtracker.ipfire.org/images/mantis_logo.gif" class="floatTL" width="80" alt="{{ _("bugtracker") }}" />
+		<p>
+			{% if lang == "de" %}
+					Im <a href="http://bugtracker.ipfire.org" target="_blank">Bugtracker</a> findet Ihr bekannte Fehler.<br />
+					Solltet ihr also einen Fehler oder auch Funktionsvorschlag haben so könnt ihr uns über den Bugtracker 
+					dies mitteilen. Für die Entwicklung ist es wichtig, dass es ausführliche Bug-Reports gibt,
+					die dann rasch bearbeitet werden können. 
+			{% else %}	
+					We manage all issues in our <a href="http://bugtracker.ipfire.org" target="_blank">bugtracker</a>.<br />
+					Should you have a bug or feature proposal you can tell us about it by posting 
+					to the bugtracker. It is important for development to create a detailed bug reports so that
+					we can fix them fastly. 
+			{% end %}		
+		</p>
+	</div>
+	<br class="clear" />
+	
+	
+	<div class=post>
+		<h3>{{ _("HowTos") }}</h3>
+		<p>
+		{% if lang == "de" %}
+			Im Wiki befinden sich viele weitere Howtos hier einmal die wichtigsten rund ums entwickeln.
+			<div class=pr_li>
+				<ul>
+					<li><a href="http://wiki.ipfire.org/de/development/build" target="_blank">Building IPFire</a></li>
+					<li><a href="http://wiki.ipfire.org/de/development/addon" target="_blank">Building Addon</a></li>
+					<li><a href="http://wiki.ipfire.org/de/development/addon" target="_blank">Creating language file</a></li>
+				</ul>
+			</div>
+		{% else %}	
+			In the wiki there are many other howtos here folowing the important ons for development.
+			<div class=pr_li>
+				<ul>
+					<li><a href="http://wiki.ipfire.org/en/development/build" target="_blank">Building IPFire</a></li>
+					<li><a href="http://wiki.ipfire.org/en/development/addon" target="_blank">Building Addon</a></li>
+					<li><a href="http://wiki.ipfire.org/en/development/addon" target="_blank">Creating language file</a></li>
+				</ul>
+			</div>
+		{% end %}
+		</p>
+	</div>
+	
+	
+	<div class=post>
+		<h3>{{ _("IPFire 3.x") }}</h3>
+		<p>
+		{% if lang == "de" %}
+			Unser nächstes Ziel ist die Entwicklung einer völlig neuen und komplett redesignten IPFire Version 3.<br />
+			In der <a href="downloads/development" target="_blank">Download-Sektion</a> 
+			findet ihr die erste preAlpha Version zum herunterladen.
+			<div class=pr_li>
+				<ul>
+					<li><a href="http://wiki.ipfire.org/de/development/3.0" target="_blank">Roadmap von IPFire 3.x</a></li>
+				</ul>
+			</div>
+		{% else %}	
+			Our next goal is to develop a completely new and redesigned IPFire version 3.<br />
+			In the <a href="downloads/development" target="_blank">download section</a> 
+			you will find the first pre alpha version.			
+			<div class=pr_li>
+				<ul>
+					<li><a href="http://wiki.ipfire.org/en/development/3.0" target="_blank">Roadmap of IPFire 3.x</a></li>
+				</ul>
+			</div>
+		{% end %}
+	</div>
+	
+			
+{% end block %}
+
+{% block sidebar %}
+		<h4>{{ _("Development") }}{% if lang == "de" %}s{% end %} <span>{{ _("Area") }}</span></h4>
+		<ul class="links">		
+			<li class="first"><a href="#{{ _("git") }}">{{ _("git") }}</a></li>
+			<li><a href="#{{ _("source-code") }}">{{ _("source-code") }}</a></li>
+			<li><a href="#{{ _("bugtracker") }}">{{ _("bugtracker") }}</a></li>
+			<ul><li><a href="#{{ _("IPFire 3.x") }}">{{ _("IPFire 3.x") }}</a></li></ul>	
+		<ul>
+			<li><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">		
+				{% if lang == "de" %}
+					IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net
+				{% else %}	
+					Comparison of IPFire to IPCop and Smoothwall on ohloh.net
+				{% end %}
+			</a></li>
+		</ul>
+		</ul>
+
+		
+	
+ {{ modules.SidebarBanner(banner) }}
+
+{% end block %}

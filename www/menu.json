@@ -11,8 +11,8 @@
 	  "name" : "Forum" },
 	{ "uri"  : "/development",
 	  "name" : { "de" : "Entwicklung", "en" : "Development" }},
-	{ "uri"  : "/links",
-	  "name" : "Links" },
+	{ "uri"  : "/pr",
+	  "name" : "Public Relations" },
 	{ "uri"  : "/cebit",
 	  "name" : "<div style=\"color:#f90;\">CeBIT 2010</div>" }
 ]

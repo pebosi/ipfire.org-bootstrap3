@@ -46,7 +46,7 @@ class Application(tornado.web.Application):
 			(r"/(robots\.txt)", tornado.web.StaticFileHandler, dict(path = static_path)),
 		]
 
-		self.add_handlers(r"www\.ipfire\.org", [
+		self.add_handlers(r"(dev|www)\.ipfire\.(at|org)", [
 			# Entry sites that lead the user to index
 			(r"/", MainHandler),
 			(r"/[A-Za-z]{2}/?", MainHandler),

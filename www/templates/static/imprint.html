@@ -3,8 +3,11 @@
 {% block title %}{{ _("Imprint") }}{% end block %}
 
 {% block content %}
+
+	<div class=post>
 	<h3>{{ _("Imprint") }}</h3>
-	
+	<img src="{{ static_url("images/page_icons/imprint.png") }}" class="floatTR" border="0" alt="{{ _("Imprint") }}" />
+
 	{% if lang == "de" %}
 		<p>
 			Dieses Projekt ist ein Open-Source-Projekt und verfolgt keine kommerziellen Ziele.
@@ -101,9 +104,13 @@
 		</p>
 		
 	{% else %}
-		Because of the fact that the people who started this project are living
-		in Germany, see the <a href="{{ lang_link("de") }}">german legal notes</a>.
-	
+		<p>
+			Because of the fact that the people who started this project are living
+			in Germany and the German law demands it. This side is only available in german language, 
+			so please have a look at the <a href="{{ lang_link("de") }}">german legal notes</a>.
+		</p>
 	{% end %}
+	</div>
+	<br class="clear" />
 
 {% end block %}
