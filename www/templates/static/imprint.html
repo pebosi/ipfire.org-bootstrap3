@@ -6,7 +6,8 @@
 
 	<div class=post>
 	<h3>{{ _("Imprint") }}</h3>
-	
+	<img src="{{ static_url("images/page_icons/imprint.png") }}" class="floatTR" border="0" alt="{{ _("Imprint") }}" />
+
 	{% if lang == "de" %}
 		<p>
 			Dieses Projekt ist ein Open-Source-Projekt und verfolgt keine kommerziellen Ziele.
@@ -110,5 +111,6 @@
 		</p>
 	{% end %}
 	</div>
+	<br class="clear" />
 
 {% end block %}
