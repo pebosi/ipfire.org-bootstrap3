@@ -1,13 +1,16 @@
 #/usr/bin/python
 
 import os.path
+import simplejson
+
+simplejson._default_decoder = simplejson.JSONDecoder(encoding="latin-1")
 
 import tornado.locale
 import tornado.options
 import tornado.web
 
-from .handlers import *
-from .ui_modules import *
+from handlers import *
+from ui_modules import *
 
 BASEDIR = os.path.join(os.path.dirname(__file__), "..")
 

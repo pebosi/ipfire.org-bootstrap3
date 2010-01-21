@@ -2,7 +2,7 @@
 
 import simplejson
 
-from helpers import Item
+from helpers import Item, _stringify
 
 class ReleaseItem(Item):
 	options = {
@@ -105,7 +105,7 @@ class Releases(object):
 		f.close()
 		
 		for item in simplejson.loads(data):
-			self.items.append(ReleaseItem(**item))
+			self.items.append(ReleaseItem(**_stringify(item)))
 
 	@property
 	def all(self):

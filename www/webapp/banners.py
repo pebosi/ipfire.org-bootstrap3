@@ -3,7 +3,7 @@
 import random
 import simplejson
 
-from helpers import Item
+from helpers import Item, _stringify
 
 class Banners(object):
 	def __init__(self, filename=None):
@@ -18,7 +18,7 @@ class Banners(object):
 		f.close()
 		
 		for item in simplejson.loads(data):
-			self.items.append(Item(**item))
+			self.items.append(Item(**_stringify(item)))
 
 	def get(self):
 		return random.choice(self.items)

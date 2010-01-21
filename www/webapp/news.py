@@ -2,7 +2,7 @@
 
 import simplejson
 
-from .helpers import Item
+from .helpers import Item, _stringify
 
 class News(object):
 	def __init__(self, filename=None):
@@ -20,7 +20,7 @@ class News(object):
 
 		json = simplejson.loads(data)
 		for key in sorted(json.keys()):
-			self.items.append(NewsItem(**json[key]))
+			self.items.append(NewsItem(**_stringify(json[key])))
 
 	def get(self, limit=None):
 		ret = self.items[:]

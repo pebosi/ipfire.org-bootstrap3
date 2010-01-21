@@ -23,3 +23,10 @@ def size(s):
 		idx += 1
 	
 	return "%.2f %s" % (s, suffixes[idx])
+
+def _stringify(d):
+	ret = {}
+	for key in d.keys():
+		ret[str(key)] = d[key]
+	return ret
+
