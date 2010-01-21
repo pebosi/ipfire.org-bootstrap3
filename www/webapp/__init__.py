@@ -69,24 +69,28 @@ class Application(tornado.web.Application):
 		# download.ipfire.org
 		self.add_handlers(r"download\.ipfire\.org", [
 			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/?", MainHandler),
 			(r"/[A-Za-z]{2}/index", DownloadHandler),
 		] + static_handlers)
 
 		# source.ipfire.org
 		self.add_handlers(r"source\.ipfire\.org", [
 			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/?", MainHandler),
 			(r"/[A-Za-z]{2}/index", SourceHandler),
 		] + static_handlers)
 
 		# torrent.ipfire.org
 		self.add_handlers(r"torrent\.ipfire\.org", [
 			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/?", MainHandler),
 			(r"/[A-Za-z]{2}/index", DownloadTorrentHandler),
 		] + static_handlers)
 
 		# tracker.ipfire.org
 		self.add_handlers(r"tracker\.ipfire\.org", [
 			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/?", MainHandler),
 			(r"/[A-Za-z]{2}/index", DownloadTorrentHandler),
 		] + static_handlers)
 
