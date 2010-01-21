@@ -30,7 +30,8 @@
 "DHCP Server","DHCP Server"
 "IPSec","IPSec"
 "Quality of Service","Quality of Service"
-"Firewall",""
+"Firewall","Firewall"
+"System","System"
 "Outgoing Firewall","Ausgehende Firewall"
 "Pakfire","Pakfire"
 "Samba","Samba"
@@ -47,3 +48,6 @@
 "<strong>Print</strong> media","<strong>Print</strong>medien"
 "<strong>Online</strong> media","<strong>Online</strong>medien"
 "CeBIT-Donation","CeBIT-Spende"
+"Development","Entwicklung"
+"Area","Bereich"
+
