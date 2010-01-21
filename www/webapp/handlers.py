@@ -1,8 +1,10 @@
 #!/usr/bin/python
 
 import httplib
+import operator
 import os
 import simplejson
+import sqlite3
 import time
 import urlparse
 
@@ -11,11 +13,14 @@ import tornado.locale
 import tornado.web
 
 from banners import banners
+from helpers import size
+from info import info
 from news import news
 from releases import releases
 
 import builds
 import cluster
+import menu
 import translations
 #import uriel
 
@@ -147,16 +152,6 @@ class NewsHandler(BaseHandler):
 		self.render("news.html", news=news)
 
 
-class RedirectHandler(BaseHandler):
-	redirects = {
-		"www.ipfire.org" : (
-			(r"", "")
-		)
-	}
-	def get(self):
-		pass
-
-
 class BuildHandler(BaseHandler):
 	def prepare(self):
 		self.builds = {
@@ -193,7 +188,7 @@ class ApiClusterInfoHandler(BaseHandler):
 	def get(self):
 		id = self.get_argument("id", "null")
 
-		c = cluster.Cluster("minerva.ipfire.org")
+		c = cluster.Cluster(info["cluster"]["hostname"])
 
 		self.write(simplejson.dumps({
 			"version": "1.1",
@@ -206,3 +201,43 @@ class ApiClusterInfoHandler(BaseHandler):
 class TranslationHandler(BaseHandler):
 	def get(self):
 		self.render("translations.html", projects=translations.projects)
+
+
+class SourceHandler(BaseHandler):
+	def prepare(self):
+		if not hasattr(self, "db"):
+			self.db = sqlite3.connect("/srv/www/ipfire.org/source/hashes.db")
+			c = self.db.cursor()
+			c.execute("CREATE TABLE IF NOT EXISTS hashes(file, sha1)")
+			c.close()
+
+	def get(self):
+		source_path = "/srv/sources"
+		fileobjects = []
+
+		for dir, subdirs, files in os.walk(source_path):
+			if not files:
+				continue
+			for file in files:
+				if file in [f["name"] for f in fileobjects]:
+					continue
+
+				c = self.db.cursor()
+				c.execute("SELECT sha1 FROM hashes WHERE file = '%s'" % file)
+				hash = "%s" % c.fetchone()
+
+				if hash == "None":
+					hash = "0000000000000000000000000000000000000000"
+
+				fileobjects.append({
+					"dir"  : dir[len(source_path)+1:],
+					"name" : file,
+					"hash" : hash,
+					"size" : size(os.path.getsize(os.path.join(source_path, dir, file))),
+				})
+
+				c.close()
+
+		fileobjects.sort(key=operator.itemgetter("name"))
+
+		self.render("sources.html", files=fileobjects)

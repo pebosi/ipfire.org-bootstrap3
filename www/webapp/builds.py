@@ -4,14 +4,18 @@ import os
 import time
 
 from helpers import size
-
-BUILD_HOME = "/srv/anonftp/pub/nightly-builds"
+from info import info
 
 def find():
 	ret = []
-	for host in os.listdir(BUILD_HOME):
-		for build in os.listdir(os.path.join(BUILD_HOME, host)):
-			ret.append(Build(os.path.join(BUILD_HOME, host, build)))
+	for item in info["nightly_builds"]:
+		path = item.get("path", None)
+		if not path or not os.path.exists(path):
+			continue
+
+		for host in os.listdir(path):
+			for build in os.listdir(os.path.join(path, host)):
+				ret.append(Build(os.path.join(path, host, build)))
 
 	return ret
 

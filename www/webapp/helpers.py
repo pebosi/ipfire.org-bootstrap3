@@ -21,12 +21,11 @@ def size(s):
 	while s >= 1024 and idx < len(suffixes):
 		s /= 1024
 		idx += 1
-	
-	return "%.2f %s" % (s, suffixes[idx])
 
+	return "%.0f%s" % (s, suffixes[idx])
+	
 def _stringify(d):
 	ret = {}
 	for key in d.keys():
 		ret[str(key)] = d[key]
 	return ret
-
