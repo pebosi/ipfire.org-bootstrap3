@@ -2,7 +2,7 @@
 
 import simplejson
 
-from helpers import Item
+from helpers import Item, _stringify
 
 class Menu(object):
 	def __init__(self, filename=None):
@@ -17,7 +17,7 @@ class Menu(object):
 		f.close()
 		
 		for item in simplejson.loads(data):
-			self.items.append(MenuItem(**item))
+			self.items.append(MenuItem(**_stringify(item)))
 
 
 class MenuItem(Item):
@@ -29,7 +29,7 @@ class MenuItem(Item):
 		if self.args.has_key("subs"):
 			self.args["items"] = []
 			for sub in self.args["subs"]:
-				self.args["items"].append(MenuItem(**sub))
+				self.args["items"].append(MenuItem(**_stringify(sub)))
 			del self.args["subs"]
 
 
