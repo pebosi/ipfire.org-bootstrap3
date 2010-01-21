@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
+import datetime
 import httplib
+import mimetypes
 import operator
 import os
 import simplejson
+import stat
 import sqlite3
 import time
 import urlparse
@@ -241,3 +244,49 @@ class SourceHandler(BaseHandler):
 		fileobjects.sort(key=operator.itemgetter("name"))
 
 		self.render("sources.html", files=fileobjects)
+
+
+class SourceDownloadHandler(BaseHandler):
+	def prepare(self):
+		if not hasattr(self, "db"):
+			self.db = sqlite3.connect("/srv/www/ipfire.org/source/hashes.db")
+			c = self.db.cursor()
+			c.execute("CREATE TABLE IF NOT EXISTS hashes(file, sha1)")
+			c.close()
+
+	def head(self, path):
+		self.get(path, include_body=False)
+
+	def get(self, path, include_body=True):
+		source_path = "/srv/sources"
+
+		path = os.path.abspath(os.path.join(source_path, path[1:]))
+
+		if not path.startswith(source_path):
+			raise tornado.web.HTTPError(403)
+		if not os.path.exists(path):
+			raise tornado.web.HTTPError(404)
+
+		stat_result = os.stat(path)
+		modified = datetime.datetime.fromtimestamp(stat_result[stat.ST_MTIME])
+
+		self.set_header("Last-Modified", modified)
+		self.set_header("Content-Length", stat_result[stat.ST_SIZE])
+
+		mime_type, encoding = mimetypes.guess_type(path)
+		if mime_type:
+			self.set_header("Content-Type", mime_type)
+
+		c = self.db.cursor()
+		c.execute("SELECT sha1 FROM hashes WHERE file = '%s'" % os.path.basename(path))
+		hash = c.fetchone()
+		if hash:
+			self.set_header("X-Hash-Sha1", "%s" % hash)
+
+		if not include_body:
+			return
+		file = open(path, "r")
+		try:
+			self.write(file.read())
+		finally:
+			file.close()
