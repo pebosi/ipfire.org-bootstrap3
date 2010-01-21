@@ -167,9 +167,9 @@ class BuildHandler(BaseHandler):
 		}
 
 		for build in builds.find():
-			if (time.time() - float(build.get("date"))) < 12*60:
+			if (time.time() - float(build.get("date"))) < 12*60*60:
 				self.builds["<12h"].append(build)
-			elif (time.time() - float(build.get("date"))) < 24*60:
+			elif (time.time() - float(build.get("date"))) < 24*60*60:
 				self.builds[">12h"].append(build)
 			else:
 				self.builds[">24h"].append(build)
