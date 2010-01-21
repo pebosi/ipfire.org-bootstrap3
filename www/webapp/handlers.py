@@ -73,6 +73,9 @@ class BaseHandler(tornado.web.RequestHandler):
 		else:
 			return tornado.web.RequestHandler.get_error_html(self, status_code, **kwargs)
 
+	@property
+	def hash_db(self):
+		return self.application.hash_db
 
 class MainHandler(BaseHandler):
 	def get(self):
@@ -207,13 +210,6 @@ class TranslationHandler(BaseHandler):
 
 
 class SourceHandler(BaseHandler):
-	def prepare(self):
-		if not hasattr(self, "db"):
-			self.db = sqlite3.connect("/srv/www/ipfire.org/source/hashes.db")
-			c = self.db.cursor()
-			c.execute("CREATE TABLE IF NOT EXISTS hashes(file, sha1)")
-			c.close()
-
 	def get(self):
 		source_path = "/srv/sources"
 		fileobjects = []
@@ -225,11 +221,9 @@ class SourceHandler(BaseHandler):
 				if file in [f["name"] for f in fileobjects]:
 					continue
 
-				c = self.db.cursor()
-				c.execute("SELECT sha1 FROM hashes WHERE file = '%s'" % file)
-				hash = "%s" % c.fetchone()
+				hash = self.hash_db.get_hash(file)
 
-				if hash == "None":
+				if not hash:
 					hash = "0000000000000000000000000000000000000000"
 
 				fileobjects.append({
@@ -239,21 +233,12 @@ class SourceHandler(BaseHandler):
 					"size" : size(os.path.getsize(os.path.join(source_path, dir, file))),
 				})
 
-				c.close()
-
 		fileobjects.sort(key=operator.itemgetter("name"))
 
 		self.render("sources.html", files=fileobjects)
 
 
 class SourceDownloadHandler(BaseHandler):
-	def prepare(self):
-		if not hasattr(self, "db"):
-			self.db = sqlite3.connect("/srv/www/ipfire.org/source/hashes.db")
-			c = self.db.cursor()
-			c.execute("CREATE TABLE IF NOT EXISTS hashes(file, sha1)")
-			c.close()
-
 	def head(self, path):
 		self.get(path, include_body=False)
 
@@ -277,9 +262,7 @@ class SourceDownloadHandler(BaseHandler):
 		if mime_type:
 			self.set_header("Content-Type", mime_type)
 
-		c = self.db.cursor()
-		c.execute("SELECT sha1 FROM hashes WHERE file = '%s'" % os.path.basename(path))
-		hash = c.fetchone()
+		hash = self.hash_db.get_hash(path)
 		if hash:
 			self.set_header("X-Hash-Sha1", "%s" % hash)
 

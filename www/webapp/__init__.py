@@ -9,6 +9,7 @@ import tornado.locale
 import tornado.options
 import tornado.web
 
+from db import HashDatabase
 from handlers import *
 from ui_modules import *
 
@@ -38,6 +39,9 @@ class Application(tornado.web.Application):
 		)
 
 		tornado.web.Application.__init__(self, **settings)
+
+		# Initialize database connections
+		self.hash_db = HashDatabase()
 
 		self.settings["static_path"] = static_path = os.path.join(BASEDIR, "static")
 		static_handlers = [
