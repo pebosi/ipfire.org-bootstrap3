@@ -5,6 +5,8 @@ import tornado.web
 import menu
 import releases
 
+from helpers import Item
+
 class UIModule(tornado.web.UIModule):
 	def render_string(self, *args, **kwargs):
 		kwargs.update({
@@ -36,6 +38,7 @@ class MenuModule(UIModule):
 
 class NewsItemModule(UIModule):
 	def render(self, item):
+		item = Item(**item.args.copy())
 		for attr in ("subject", "content"):
 			if type(item[attr]) != type({}):
 				continue
