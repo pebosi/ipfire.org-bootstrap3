@@ -10,31 +10,37 @@ class ReleaseItem(Item):
 			"prio" : 10,
 			"desc" : "Installable CD image",
 			"url"  : "http://download.ipfire.org/iso/",
+			"rem"  : "Use this image to burn a CD and install IPFire from it.",
 		},
 		"torrent" : {
 			"prio" : 20,
 			"desc" : "Torrent file",
 			"url"  : "http://download.ipfire.org/torrent/",
+			"rem"  : "Download the CD image from the torrent network.",
 		},
 		"alix" : {
 			"prio" : 40,
 			"desc" : "Alix image",
 			"url"  : "http://download.ipfire.org/iso/",
+			"rem"  : "An image that is meant to run on embedded devices.",
 		},
 		"usbfdd" : {
 			"prio" : 30,
 			"desc" : "USB FDD Image",
 			"url"  : "http://download.ipfire.org/iso/",
+			"rem"  : "Install IPFire from a floppy-formated USB key.",
 		},
 		"usbhdd" : {
 			"prio" : 30,
 			"desc" : "USB HDD Image",
 			"url"  : "http://download.ipfire.org/iso/",
+			"rem"  : "If the floppy image doesn't work, use this image instead.",
 		},
 		"xen" : {
 			"prio" : 50,
 			"desc" : "Pregenerated Xen Image",
 			"url"  : "http://download.ipfire.org/iso/",
+			"rem"  : "A ready-to-run image for Xen.",
 		},
 	}
 
@@ -48,6 +54,7 @@ class ReleaseItem(Item):
 				file = fileitem["name"],
 				hash = fileitem.get("hash", None),
 				prio = self.options[filetype]["prio"],
+				rem  = self.options[filetype]["rem"],
 				sha1 = fileitem.get("sha1", None),
 				type = filetype,
 				url  = self.options[filetype]["url"] + fileitem["name"],

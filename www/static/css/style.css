@@ -1014,3 +1014,37 @@ table.translate td.lang {
     padding: 0px 0px 0px 20px;
  	line-height: 1.2em;  
 }
+
+div.bigdownload {
+	margin-top: 50px;
+	margin-left: 100px;
+	padding-top: 15px;
+	background: url(../images/download_button.png) no-repeat;
+	height: 84px;
+	width: 255px;
+	text-align: center;
+}
+
+div.bigdownload a {
+	color: white;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.bigdownload a:hover {
+	text-decoration: underline;
+}
+
+table.download {
+	width: 660px;
+	margin-left: 75px;
+}
+
+table.download td.icon {
+	width: 50px;
+}
+
+table.download td.link {
+	width: 180px;
+}
