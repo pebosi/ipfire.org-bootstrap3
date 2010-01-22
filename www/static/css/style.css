@@ -1048,3 +1048,22 @@ table.download td.icon {
 table.download td.link {
 	width: 180px;
 }
+
+table.download-torrents {
+	margin-bottom: 25px;
+	margin-left: 50px;
+	margin-top: 25px;
+	width: 600px;
+}
+
+table.download-torrents tr {
+	height: 24px;
+}
+
+table.download-torrents td {
+	text-align: center;
+}
+
+table.download-torrents td.seeds,td.peers {
+	text-align: right;
+}

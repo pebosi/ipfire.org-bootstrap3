@@ -5,10 +5,40 @@
 		<a name="latest"></a>
 		<h3>{{ _("IPFire Torrent Tracker") }}</h3>
 
-		<p>
-			{{ _("This is the latest version of the IPFire firewall distribution.") }}
-			Need to fill in some more text at this place.
-		</p>
+		<img class="floatTR" src="{{ static_url("images/bittorrent.png") }}"
+			alt="Bittorrent" />
+
+		{% if lang == "de" %}
+			<p>
+				Auf dieser Seite finden sie eine Liste fast aller Dateien, die
+				über den IPFire-Torrent-Tracker verteilt werden.
+			<p>
+			<p>
+				Das Torrentnetz ist ein Netzwerk, welches Dateien durch verteilte
+				Downloads schnell verbreitet. IPFire nutzt dieses System um
+				Downloads der Distributionsimages bereitzustellen.
+			</p>
+			<p>
+				Mehr Informationen zu Torrent-Netzwerken finden sie in der
+				<a href="http://de.wikipedia.org/wiki/BitTorrent"
+				target="_blank">Wikipedia</a>.
+			</p>
+		{% else %}
+			<p>
+				This page displays a list of files that are tracked by the
+				IPFire torrent tracker.
+			<p>
+			<p>
+				The bittorrent protocol transfers large files by a distributed
+				technology. IPFire uses this system to spread the distribution's
+				files.
+			</p>
+			<p>
+				Get more information on the bittorrent protocol on
+				<a href="http://en.wikipedia.org/wiki/BitTorrent_(protocol)"
+				target="_blank">Wikipedia</a>.
+			</p>
+		{% end %}
 		
 		<table class="download-torrents">
 			<tr>
@@ -21,13 +51,11 @@
 			{% for release in releases %}
 				<tr>
 					<td>{{ release.name }}</td>
-					<td>{{ release.torrent.file }}</td>
-					<td>{{ hashes[release.torrent.hash].get("seeds", _("N/A")) }}</td>
-					<td>{{ hashes[release.torrent.hash].get("peers", _("N/A")) }}</td>
-					<td>
-						<a href="{{ release.torrent.url }}">
-							<img src="{{ static_url("images/download_torrent.png") }}" alt="{{ _("Download") }}" />
-						</a>
+					<td>{{ release.torrent.file[:-8] }}</td>
+					<td class="seeds">{{ hashes[release.torrent.hash]["seeds"] }}</td>
+					<td class="peers">{{ hashes[release.torrent.hash]["peers"] }}</td>
+					<td class="download">
+						<a href="{{ release.torrent.url }}">{{ _("Download file") }}</a>
 					</td>
 				</tr>
 			{% end %}
@@ -39,5 +67,4 @@
 
 		<br class="clear" />
 	</div>
-
 {% end block %}
