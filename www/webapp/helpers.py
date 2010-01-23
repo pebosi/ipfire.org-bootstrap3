@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import simplejson
 import subprocess
 
 class Item(object):
@@ -15,7 +16,6 @@ class Item(object):
 	def __setitem__(self, key, val):
 		self.args[key] = val
 
-
 def size(s):
 	suffixes = ["B", "K", "M", "G", "T",]
 	
@@ -25,7 +25,10 @@ def size(s):
 		idx += 1
 
 	return "%.0f%s" % (s, suffixes[idx])
-	
+
+def json_loads(s):
+	return simplejson.loads(s.decode("utf-8"))
+
 def _stringify(d):
 	ret = {}
 	for key in d.keys():

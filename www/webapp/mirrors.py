@@ -3,11 +3,10 @@
 import tornado.httpclient
 
 import random
-import simplejson
 import threading
 import time
 
-from helpers import Item, _stringify, ping
+from helpers import Item, _stringify, ping, json_loads
 
 class Mirrors(threading.Thread):
 	def __init__(self, filename):
@@ -25,7 +24,7 @@ class Mirrors(threading.Thread):
 		data = f.read()
 		f.close()
 		
-		for item in simplejson.loads(data):
+		for item in json_loads(data):
 			self.items.append(MirrorItem(**_stringify(item)))
 
 	@property

@@ -1,9 +1,8 @@
 #!/usr/bin/python
 
 import random
-import simplejson
 
-from helpers import Item, _stringify
+from helpers import Item, _stringify, json_loads
 
 class Banners(object):
 	def __init__(self, filename=None):
@@ -17,7 +16,7 @@ class Banners(object):
 		data = f.read()
 		f.close()
 		
-		for item in simplejson.loads(data):
+		for item in json_loads(data):
 			self.items.append(Item(**_stringify(item)))
 
 	def get(self):

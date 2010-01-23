@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
-import simplejson
-
-from .helpers import Item, _stringify
+from helpers import Item, _stringify, json_loads
 
 class News(object):
 	def __init__(self, filename=None):
@@ -18,7 +16,7 @@ class News(object):
 
 		data = data.replace("\n", "").replace("\t", " ")
 
-		json = simplejson.loads(data)
+		json = json_loads(data)
 		for key in sorted(json.keys()):
 			self.items.append(NewsItem(**_stringify(json[key])))
 

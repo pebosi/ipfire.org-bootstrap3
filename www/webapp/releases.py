@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
-import simplejson
-
-from helpers import Item, _stringify
+from helpers import Item, _stringify, json_loads
 
 class ReleaseItem(Item):
 	options = {
@@ -111,7 +109,7 @@ class Releases(object):
 		data = f.read()
 		f.close()
 		
-		for item in simplejson.loads(data):
+		for item in json_loads(data):
 			self.items.append(ReleaseItem(**_stringify(item)))
 
 	@property
