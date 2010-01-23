@@ -1102,3 +1102,8 @@ table.download-mirrors td.latency {
 	width: 70px;
 	text-align: right;
 }
+
+ul.sources li {
+	font-family: courier;
+	list-style-type: none;
+}
