@@ -1,0 +1,161 @@
+[
+	{
+		"name" : "IPFire Project",
+		"location" : {
+			"city" : "Cologne",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "mirror1.ipfire.org",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : true,
+			"pakfire3" : true
+		}
+	},
+
+	{
+		"name" : "Ronald Wiesinger",
+		"location" : {
+			"city" : "Vienna",
+			"country" : "Austria",
+			"country_code" : "at"
+		},
+		"hostname" : "www.rowie.at",
+		"path" : "/ipfire",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "Jan Paul Tücking",
+		"location" : {
+			"city" : "Karlsruhe",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "ipfire.earl-net.com",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "Markus Villwock",
+		"location" : {
+			"city" : "Hannover",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "kraefte.net",
+		"path" : "/ipfire",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : true,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "ISP42",
+		"location" : {
+			"city" : "Hannover",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "mirror2.ipfire.org",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : true,
+			"pakfire3" : true
+		}
+	},
+
+	{
+		"name" : "Peter Schälchli",
+		"location" : {
+			"city" : "Paris",
+			"country" : "France",
+			"country_code" : "fr"
+		},
+		"hostname" : "mirror3.ipfire.org",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : true,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "Peter Schälchli",
+		"location" : {
+			"city" : "Cologne",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "mirror5.ipfire.org",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : true,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "Kim Barthel",
+		"location" : {
+			"city" : "Stuttgart",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "ipfire.kbarthel.de",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "Kim Barthel",
+		"location" : {
+			"city" : "Stuttgart",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "ipfire.1l0v3u.com",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "Sebastian Winter",
+		"location" : {
+			"city" : "Minden",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "ipfiremirror.wintertech.de",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
+	}
+]

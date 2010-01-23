@@ -63,6 +63,7 @@ class Application(tornado.web.Application):
 			(r"/[A-Za-z]{2}/downloads?", DownloadHandler),
 			(r"/[A-Za-z]{2}/downloads?/all", DownloadAllHandler),
 			(r"/[A-Za-z]{2}/downloads?/development", DownloadDevelopmentHandler),
+			(r"/[A-Za-z]{2}/downloads?/mirrors", DownloadMirrorHandler),
 			(r"/[A-Za-z]{2}/downloads?/torrents", DownloadTorrentHandler),
 			# API
 			(r"/api/cluster_info", ApiClusterInfoHandler),
@@ -72,10 +73,10 @@ class Application(tornado.web.Application):
 
 		# download.ipfire.org
 		self.add_handlers(r"download\.ipfire\.org", [
-			(r"/", MainHandler),
-			(r"/[A-Za-z]{2}/?", MainHandler),
-			(r"/[A-Za-z]{2}/index", DownloadHandler),
-		] + static_handlers)
+			(r"/", tornado.web.RedirectHandler, { "url" : "http://www.ipfire.org/" }),
+			(r"/(favicon\.ico)", tornado.web.StaticFileHandler, dict(path = static_path)),
+			(r"/(.*)", DownloadFileHandler),
+		])
 
 		# source.ipfire.org
 		self.add_handlers(r"source\.ipfire\.org", [
@@ -100,6 +101,10 @@ class Application(tornado.web.Application):
 		] + static_handlers)
 
 		# ipfire.org
-		self.add_handlers(r"ipfire\.org", [
+		self.add_handlers(r".*", [
 			(r".*", tornado.web.RedirectHandler, { "url" : "http://www.ipfire.org" })
 		])
+
+	def __del__(self):
+		from mirrors import mirrors
+		mirrors.stop()

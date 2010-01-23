@@ -1067,3 +1067,38 @@ table.download-torrents td {
 table.download-torrents td.seeds,td.peers {
 	text-align: right;
 }
+
+table.download-mirrors {
+	margin-bottom: 25px;
+	margin-left: 15px;
+	margin-top: 25px;
+	width: 700px;
+}
+
+table.download-mirrors tr {
+	height: 32px;
+}
+
+table.download-mirrors tr.legend {
+	text-align: right;
+}
+
+table.download-mirrors td {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+table.download-mirrors tr.unreachable, td.unreachable {
+	border: 1px solid #f55;
+	background-color: #f99;
+}
+
+table.download-mirrors tr.reachable, td.reachable {
+	border: 1px solid #5f5;
+	background-color: #9f9;
+}
+
+table.download-mirrors td.latency {
+	width: 70px;
+	text-align: right;
+}
