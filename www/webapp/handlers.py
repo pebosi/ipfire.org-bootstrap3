@@ -18,6 +18,7 @@ import tornado.web
 from banners import banners
 from helpers import size
 from info import info
+from mirrors import mirrors
 from news import news
 from releases import releases
 
@@ -124,6 +125,11 @@ class DownloadTorrentHandler(BaseHandler):
 			releases=torrents,
 			request_time=response.request_time,
 			tracker=urlparse.urlparse(response.request.url).netloc)
+
+
+class DownloadMirrorHandler(BaseHandler):
+	def get(self):
+		self.render("downloads-mirrors.html", mirrors=mirrors)
 
 
 class StaticHandler(BaseHandler):
@@ -273,3 +279,18 @@ class SourceDownloadHandler(BaseHandler):
 			self.write(file.read())
 		finally:
 			file.close()
+
+
+class DownloadFileHandler(BaseHandler):
+	def get(self, path):
+		for mirror in mirrors.with_file(path):
+			if not mirror.reachable:
+				continue
+
+			self.redirect(mirror.url + path)
+			return
+
+		raise tornado.web.HTTPError(404)
+
+	def get_error_html(self, status_code, **kwargs):
+		return tornado.web.RequestHandler.get_error_html(self, status_code, **kwargs)

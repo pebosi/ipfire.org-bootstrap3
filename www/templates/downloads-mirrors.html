@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="post">
+		<a name="latest"></a>
+		<h3>{{ _("IPFire Mirrors") }}</h3>
+		
+		{% if lang == "de" %}
+			<p>
+				Diese Seite zeigt eine Liste der Mirror-Server des IPFire-Projektes.
+			</p>
+
+			<p>
+				Bei einem Download wird einer der Server zufällig aus der Liste
+				gewählt und der User umgeleitet.
+			</p>
+			
+			<ul>
+				<li>
+					<a href="http://wiki.ipfire.org/{{ lang }}/project/web"
+						target="_blank">Wie stelle ich selbst einen Mirror-Server bereit?</a>
+				</li>
+			</ul>
+		{% else %}
+			<p>
+				This page is an overview about our mirror servers.
+			</p>
+
+			<p>
+				When a user downloads a file, one of the servers is arbitrarily
+				choosen und the user gets reditected.
+			</p>
+			
+			<ul>
+				<li>
+					<a href="http://wiki.ipfire.org/{{ lang }}/project/web"
+						target="_blank">How do I contribute a mirror server?</a>
+				</li>
+			</ul>
+		{% end %}
+		
+		<table class="download-mirrors">
+			<tr>
+				<th>{{ _("Owner (Hostname)") }}</th>
+				<th>{{ _("Location") }}</th>
+				<th>{{ _("Latency") }}</th>
+			</tr>
+			{% for mirror in mirrors.all %}
+				<tr class="{% if not mirror.reachable %}un{% end %}reachable">
+					<td>{{ mirror.name }} ({{ mirror.hostname }})</td>
+					<td>
+						<img src="{{ static_url("images/flags/%s.png" % mirror.location["country_code"]) }}"
+							alt="{{ mirror.location["country_code"] }}" />
+						{{ mirror.location["country"] }}, {{ mirror.location["city"] }}
+					</td>
+					<td class="latency">{{ mirror.latency }} ms</td>
+				</tr>
+			{% end %}
+			<tr class="legend">
+				<td colspan="3">&nbsp;</td>
+			</tr>
+			<tr class="legend">
+				<td><strong>{{ _("Legend") }}:</strong></td>
+				<td colspan="2" class="reachable">{{ _("Server is reachable") }}</td>
+			</tr>
+			<tr class="legend">
+				<td>&nbsp;</td>
+				<td colspan="2" class="unreachable">{{ _("Server is unreachable") }}</td>
+			</tr>
+		</table>
+
+		<br class="clear" />
+	</div>
+
+{% end block %}
