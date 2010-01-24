@@ -1064,8 +1064,12 @@ table.download-torrents td {
 	text-align: center;
 }
 
-table.download-torrents td.seeds,td.peers {
+table.download-torrents th.seeds, th.peers, td.seeds, td.peers {
 	text-align: right;
+}
+
+table.download-torrents th.peers,td.peers {
+	padding-left: 5px;
 }
 
 table.download-mirrors {
