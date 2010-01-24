@@ -16,11 +16,17 @@ class ReleaseItem(Item):
 			"url"  : "http://download.ipfire.org/torrent/",
 			"rem"  : "Download the CD image from the torrent network.",
 		},
-		"alix" : {
+		"flash" : {
 			"prio" : 40,
-			"desc" : "Alix image",
+			"desc" : "Flash image",
 			"url"  : "http://download.ipfire.org/iso/",
 			"rem"  : "An image that is meant to run on embedded devices.",
+		},
+		"alix" : {
+			"prio" : 41,
+			"desc" : "Alix image",
+			"url"  : "http://download.ipfire.org/iso/",
+			"rem"  : "Flash image where a serial console is enabled by default.",
 		},
 		"usbfdd" : {
 			"prio" : 30,
