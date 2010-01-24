@@ -4,13 +4,11 @@
 	<div class="post">
 		<a name="latest"></a>
 		<h3>{{ _("IPFire Torrent Tracker") }}</h3>
-
-		<img class="floatTR" src="{{ static_url("images/bittorrent.png") }}"
-			alt="Bittorrent" />
+		<img src="{{ static_url("images/page_icons/download-torrents.png") }}" class="floatTR" border="0" alt="{{ _("IPFire Torrent Tracker") }}" />
 
 		{% if lang == "de" %}
 			<p>
-				Auf dieser Seite finden sie eine Liste fast aller Dateien, die
+				Auf dieser Seite finden Sie eine Liste fast aller Dateien, die
 				über den IPFire-Torrent-Tracker verteilt werden.
 			<p>
 			<p>
@@ -19,7 +17,7 @@
 				Downloads der Distributionsimages bereitzustellen.
 			</p>
 			<p>
-				Mehr Informationen zu Torrent-Netzwerken finden sie in der
+				Mehr Informationen zu Torrent-Netzwerken finden Sie in der
 				<a href="http://de.wikipedia.org/wiki/BitTorrent"
 				target="_blank">Wikipedia</a>.
 			</p>
@@ -39,6 +37,9 @@
 				target="_blank">Wikipedia</a>.
 			</p>
 		{% end %}
+		
+				<br class="clear" />
+
 		
 		<table class="download-torrents">
 			<tr>
@@ -67,4 +68,14 @@
 
 		<br class="clear" />
 	</div>
+{% end block %}
+
+{% block sidebar %}
+		<h4><span>{{ _("Torrent") }}</span> Clients</h4>
+		<ul class="links">
+			<li class="first"><img src="{{ static_url("images/win_icon.png") }}" alt="Windows" align="absmiddle"><img src="{{ static_url("images/mac_icon.png") }}" alt="Mac OS" align="absmiddle"> <a href="http://www.utorrent.com/" target="_blank"> &micro;torrent</a></li>
+			<li><img src="{{ static_url("images/linux_icon.png") }}" alt="Linux" align="absmiddle"><img src="{{ static_url("images/mac_icon.png") }}" alt="Mac OS" align="absmiddle"> <a href="http://www.transmissionbt.com/" target="_blank">Transmission</a></li>
+		</ul>
+ {{ modules.SidebarBanner(banner) }}
+
 {% end block %}
