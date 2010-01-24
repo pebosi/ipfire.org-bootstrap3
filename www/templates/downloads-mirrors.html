@@ -4,6 +4,7 @@
 	<div class="post">
 		<a name="latest"></a>
 		<h3>{{ _("IPFire Mirrors") }}</h3>
+		<img src="{{ static_url("images/page_icons/download-mirrors.png") }}" class="floatTR" border="0" alt="{{ _("IPFire Torrent Tracker") }}" />
 		
 		{% if lang == "de" %}
 			<p>
@@ -38,6 +39,7 @@
 				</li>
 			</ul>
 		{% end %}
+		<br class="clear" />
 		
 		<table class="download-mirrors">
 			<tr>
@@ -50,7 +52,7 @@
 					<td>{{ mirror.name }} ({{ mirror.hostname }})</td>
 					<td>
 						<img src="{{ static_url("images/flags/%s.png" % mirror.location["country_code"]) }}"
-							alt="{{ mirror.location["country_code"] }}" />
+							 align="absmiddle" alt="{{ mirror.location["country_code"] }}" />
 						{{ mirror.location["country"] }}, {{ mirror.location["city"] }}
 					</td>
 					<td class="latency">{{ mirror.latency }} ms</td>

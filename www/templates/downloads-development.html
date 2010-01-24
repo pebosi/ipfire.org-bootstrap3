@@ -3,15 +3,18 @@
 {% block content %}
 	<div class="post">
 		<h3>{{ _("Development Downloads") }}</h3>
-
+		<img src="{{ static_url("images/page_icons/download-developmemt.png") }}" class="floatTR" border="0" alt="{{ _("Development Downloads") }}" />
 		<p>
-			NEED TO FILL IN TEXT
-		</p>
-		
-		<p>
+			{% if lang == "de" %}
+			In regelmäßigen Abständen wird aus dem aktuellen Quellcode der Entwicklungsversion ein installationsfähiges Image erstellt.						Diese Versionen dienen dem Test und sind <strong>nicht</strong> für den Produktiveinsatz geeignet!
+            {% else %}
+            In regular intervals an image will be created from the current source of the development.
+			These versions are only for testing and are <strong>not</strong> for the productive use suitable!
+			{% end %}		
+			<br /><br />
 			<a href="{{ link("downloads") }}">{{ _("Get back to latest stable downloads.") }}</a>
 		</p>
-
+				
 		<br class="clear" />
 	</div>
 	

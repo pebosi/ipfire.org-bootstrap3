@@ -45,7 +45,7 @@
 					{ "en" : "<p>The linux user group from Lünen
 								released an article about ipfire.</p>",
 					  "de" : "<p>Die Linux-User-Group aus Lünen hat einen Artikel
-								über IPFire auf ihrer Webseite veröffentlicht.</p>"}},
+								über IPFire auf Ihrer Webseite veröffentlicht.</p>"}},
 
 		"05" : {"author"   : "Michael Tremer",
 				"mail"     : "michael.tremer@ipfire.org",
@@ -336,7 +336,7 @@
 					  "de" : "<p>Heute werden wir <strong>Core 32</strong> veröffentlichen. Es bringt die folgenden Änderungen mit sich:</p>				  			
 					  			<ul>					  			
 					  			    <li>Update von openvpn auf Version 2.1rc20</li>
-								    <li>Update von setdns.pl nun werden auch regfish.de Account richtig aktuallisiert</li>
+								    <li>Update von setdns.pl nun werden auch regfish.de Account richtig aktualliSiert</li>
 								    <li>Update von squid auf Version 2.7.STABLE7</li>
 								    <li>Update von ntfs3g, vielleicht behebt dieses ein paar mount Probleme</li>
 								    <li>Update der Hardware Datenbank</li>
@@ -384,8 +384,8 @@
 					  			    target=\"_blank\">dieses Sicherheitsproblem</a> zu blockieren.</li>
 					  			    <li>Fix von einigen Tippfehler (Device xxx reports S.M.A.R.T. etc.)</li>
 					  			    <li>Update Net-Server auf Version 0.97</li>
-  									<li>Pakfire: Aktualisiert nun auch die meta db beim \"package list\" Update.<br />
-    								    Dieses verhindert die Benutzung von alten Abhängigkeiten bei der Paketaktualisierung.</li>
+  									<li>Pakfire: AktualiSiert nun auch die meta db beim \"package list\" Update.<br />
+    								    Dieses verhindert die Benutzung von alten Abhängigkeiten bei der PaketaktualiSierung.</li>
 								</ul>
 								<br />"}},
 
@@ -404,7 +404,7 @@
 
 					  "de" : "<p>Das IPFire Core Development Team ist stolz zwei neue Mitglieder vorzustellen.
 								<strong>Stefan Schantl</strong> und <strong>Jan Paul Tücking</strong> sind von
-								nun an Teil des Teams aufgrund ihrer beständigen und langen Mitarbeit am Projekt.</p>
+								nun an Teil des Teams aufgrund Ihrer beständigen und langen Mitarbeit am Projekt.</p>
 								<p>
 									<a href=\"http://wiki.ipfire.org/de/project/contribute\" target=\"_blank\">Wie kann ich selber zum Projekt beitragen?</a>
 								</p>"}},
@@ -517,7 +517,7 @@
 								</p>",
 
 					  "de" : "<p>Heute werden wir das erste Update im Jahr 2010 veröffentlichen.  
-								  Das <strong>Core 34</strong> Update weißt folgende Änderungen auf:</p>
+								  Das <strong>Core 34</strong> Update weist folgende Änderungen auf:</p>
 								<p>
 								<ul>
 								  <li><strong>Kernel Update auf 2.6.27.42</strong></li>
@@ -526,11 +526,11 @@
 								    <li>Update von alsa auf 1.0.22(.1)</li>
 								    <li>Update von v4l-dvb</li>
 								    <li>Update von compat-wireless auf 2.6.32.2</li>
-								    <li>Wechsel von Standardtreiber von atheros auf ath5k</li>
-								    <li>Ergänzung von kvm-kmod zwecks Aktualisierung der kvm api für qemu</li>
+								    <li>Wechsel des Standardtreibers von atheros auf ath5k</li>
+								    <li>Ergänzung von kvm-kmod zwecks AktualiSierung der kvm api für qemu</li>
 								    <li>Erweiterung um Atheros/Attansic atl1c Netzwerktreiber</li>
 								    <li>Ergänzung um Patches für die Erkennung von Realtek 8102/8103 zu r8101 Treibern</li>
-								    <li>Hinzugefügt von Patches zwecks Behebung der Wake-on-Lan Probleme des Intel E100</li>
+								    <li>Behebung der Wake-on-Lan Probleme der Intel E100 NIC durch das Hinzufügen eines Patches</li>
 								  </ul>
 								</ul>
 								<ul>
@@ -542,8 +542,8 @@
 								<ul>
 								  <li>IPSEC-Verbesserungen:</li>
 								  <ul>
-								    <li>IPSec Peers sind nun ebenfalls druch IPFire erreichbar</li>
-								    <li>Nicht funktionierende Crytomodule wurden aus der IPSec-Konfiguration gelöscht.</li>
+								    <li>IPSec Peers sind nun ebenfalls durch IPFire erreichbar</li>
+								    <li>Nicht funktionierende Cryptomodule wurden aus der IPSec-Konfiguration gelöscht.</li>
 								  </ul>
 								  <li>IPTV Verbesserungen:</li>
 								  <ul>
@@ -553,13 +553,13 @@
 								  </ul>
 								  <li>CGI Änderungen:</li>
 								  <ul>
-								    <li>Hinzugefügen eines Spendenbutton auf der Credits Seite</li>
+								    <li>Hinzufügen eines Spendenbuttons auf der Credits Seite</li>
 								    <li>Erweiterung um ein Patch, zwecks Änderung des oinkmaster Verzeichnisses tmp auf /var/tmp</li>
 								    <li>Erweiterung um ein \"time constraints feature\" und \"local port adressing\" zur ausgehenden Firewall</li>
 								    <li>Neugestaltung der chpasswd.cgi</li>
 								    <li>Verbesserung der Pakfire \"Ping\" Beschreibung auf der pakfire.cgi</li>
 								    <li>Erweiterung auf eine mehrsprachige ExtraHD-Seite</li>
-								    <li>Behoben, dass crontab beim ramdisk restore ersetzt wurde</li>
+								    <li>Beseitigung des Fehlers, dass beim RAM-Disk Restore Crontab ersetzt wurde</li>
 								  </ul>
 								  <li>Installer:</li>
 								  <ul>
@@ -573,10 +573,12 @@
 								</ul>
 								</p>
 								<p>
-								Durch den <strong>Kernelupdate</strong> ist ein <strong>Neustart</strong> von IPFire nötig! <br/>
+								Durch das <strong>Update</strong> des <strong>Kernels</strong> ist ein <strong>Neustart</strong> 
+								von IPFire nötig! <br/>
 								<strong>Achtung</strong>: Grub wird neu installiert. Wenn die Konfiguration manuell geändert 
 								wurde muss diese zuerst wieder hergestellt werden!<br />
-								<strong>Xen</strong> User müssen vor dem Neustart der Machine auch linux-xen updaten!
+								<strong>Xen</strong> User müssen vor dem Neustart der Maschine zuerst linux-xen updaten, 
+								da es sonst zu Fehlern kommt!
 								</p>"}}								
 								
 
