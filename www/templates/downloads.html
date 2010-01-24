@@ -81,17 +81,9 @@
 				<li><a href="{{ link("downloads/all") }}">{{ _("See older downloads...") }}</a></li>
 				<li><a href="{{ link("downloads/development") }}">{{ _("See development releases...") }}</a></li>
 				<li><a href="{{ link("downloads/torrents") }}">{{ _("See all torrents...") }}</a></li>
+				<li><a href="{{ link("downloads/mirrors") }}">{{ _("See a list of mirrors...") }}</a></li>
 			</ul>
 		</div>
 		<br class="clear" />
 	</div>
-{% end block %}
-
-{% block sidebar %}
-		<h4><span>IPFire</span> Mirrors</h4>
-		<ul class="links">
-			<li class="first"><img src="{{ static_url("images/page_icons/download-mirrors_16.png") }}" alt="{{ _("IPFire Mirrors") }}" align="absmiddle"> <a href="{{ link("downloads/mirrors") }}" target="_blank">Mirror-Server</a></li>
-		</ul>
- {{ modules.SidebarBanner(banner) }}
-
 {% end block %}
