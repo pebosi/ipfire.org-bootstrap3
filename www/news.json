@@ -336,7 +336,7 @@
 					  "de" : "<p>Heute werden wir <strong>Core 32</strong> veröffentlichen. Es bringt die folgenden Änderungen mit sich:</p>				  			
 					  			<ul>					  			
 					  			    <li>Update von openvpn auf Version 2.1rc20</li>
-								    <li>Update von setdns.pl nun werden auch regfish.de Account richtig aktualliSiert</li>
+								    <li>Update von setdns.pl nun werden auch regfish.de Account richtig aktualisiert</li>
 								    <li>Update von squid auf Version 2.7.STABLE7</li>
 								    <li>Update von ntfs3g, vielleicht behebt dieses ein paar mount Probleme</li>
 								    <li>Update der Hardware Datenbank</li>
@@ -535,7 +535,7 @@
 								</ul>
 								<ul>
 								  <li>Erweiterung um usb_modeswitch 1.0.6</li>
-								  <li>Ergänzung der compile-Option für die DCF77-clocks</li>
+								  <li>NTP: Unterstützung für DCF77-Uhren</li>
 								  <li>Update von smartmontools auf 5.39 stable</li>
 								  <li>Sicherstellung, dass das ehci_hci Modul zuerst geladen wird (behebt USB2.0-Erkennung)</li>
 								</ul>
@@ -568,7 +568,7 @@
 								  </ul>
 								  <li>Sprachen:</li>
 								  <ul>
-								   <li>Unterstützung der französisch Sprache beim Installer</li>
+								   <li>Unterstützung der französischen Sprache beim Installer</li>
 								  </ul>
 								</ul>
 								</p>

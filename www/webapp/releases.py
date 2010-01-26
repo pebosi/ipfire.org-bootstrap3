@@ -30,19 +30,19 @@ class ReleaseItem(Item):
 		},
 		"usbfdd" : {
 			"prio" : 30,
-			"desc" : "USB FDD Image",
+			"desc" : "USB FDD image",
 			"url"  : "http://download.ipfire.org/iso/",
 			"rem"  : "Install IPFire from a floppy-formated USB key.",
 		},
 		"usbhdd" : {
 			"prio" : 30,
-			"desc" : "USB HDD Image",
+			"desc" : "USB HDD image",
 			"url"  : "http://download.ipfire.org/iso/",
 			"rem"  : "If the floppy image doesn't work, use this image instead.",
 		},
 		"xen" : {
 			"prio" : 50,
-			"desc" : "Pregenerated Xen Image",
+			"desc" : "Pregenerated Xen image",
 			"url"  : "http://download.ipfire.org/iso/",
 			"rem"  : "A ready-to-run image for Xen.",
 		},
