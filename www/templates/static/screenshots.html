@@ -107,3 +107,12 @@
  {{ modules.SidebarBanner(banner) }}
 
 {% end block %}
+
+{% block javascript %}
+	<script type="text/javascript" src="{{ static_url("js/jquery.lightbox.min.js") }}"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#screenshots a").lightBox();
+		});
+	</script>
+{% end block %}
