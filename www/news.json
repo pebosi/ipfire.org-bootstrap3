@@ -584,7 +584,7 @@
 		"27" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 35", "de" : "Core Update 35" },
-				"date"     : "2010-01-09",
+				"date"     : "2010-01-28",
 				"link"     : "",
 				"content"  :
 					{ "en" : "<p>Today we are going to release <strong>Core 35</strong>. 
