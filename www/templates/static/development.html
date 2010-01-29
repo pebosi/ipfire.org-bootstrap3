@@ -21,7 +21,7 @@
 	<br class="clear" />	
 
 	<div class=post>
-		<h3>{{ _("git") }}</h3>
+		<a name="{{ _("git") }}"></a><h3>{{ _("git") }}</h3>
 		<img src="	http://git.ipfire.org/git-logo.png" class="floatTL" alt="{{ _("git") }}" />
 		<p>
 			{% if lang == "de" %}
@@ -45,7 +45,7 @@
 
 
 	<div class=post>
-		<h3>{{ _("source-code") }}</h3>
+		<a name="{{ _("source-code") }}"></a><h3>{{ _("source-code") }}</h3>
 		<p>
 			{% if lang == "de" %}
 				Die Sourcecode-Tarballs der im IPFire verwendeten Tools findet man unter
@@ -62,7 +62,7 @@
 	
 	
 	<div class=post>
-		<h3>{{ _("bugtracker") }}</h3>
+		<a name="{{ _("bugtracker") }}"></a><h3>{{ _("bugtracker") }}</h3>
 		<img src="http://bugtracker.ipfire.org/images/mantis_logo.gif" class="floatTL" width="80" alt="{{ _("bugtracker") }}" />
 		<p>
 			{% if lang == "de" %}
@@ -82,7 +82,7 @@
 	
 	
 	<div class=post>
-		<h3>{{ _("HowTos") }}</h3>
+		<a name="{{ _("HowTos") }}"></a><h3>{{ _("HowTos") }}</h3>
 		<p>
 		{% if lang == "de" %}
 			Im Wiki befinden sich viele weitere Howtos hier einmal die wichtigsten rund ums Entwickeln.
@@ -108,7 +108,7 @@
 	
 	
 	<div class=post>
-		<h3>{{ _("IPFire 3.x") }}</h3>
+		<a name="{{ _("IPFire 3.x") }}"></a><h3>{{ _("IPFire 3.x") }}</h3>
 		<p>
 		{% if lang == "de" %}
 			Unser nächstes Ziel ist die Entwicklung einer völlig neuen und komplett redesignten IPFire Version 3.<br />
@@ -136,21 +136,21 @@
 
 {% block sidebar %}
 		<h4>{{ _("Development Area") }}</h4>
-		<ul class="links">		
-			<li class="first"><a href="#{{ _("git") }}">{{ _("git") }}</a></li>
-			<li><a href="#{{ _("source-code") }}">{{ _("source-code") }}</a></li>
-			<li><a href="#{{ _("bugtracker") }}">{{ _("bugtracker") }}</a></li>
-			<li><a href="#{{ _("IPFire 3.x") }}">{{ _("IPFire 3.x") }}</a></li>	
-			<li>
-				<a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">		
-				{% if lang == "de" %}
-					IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net
-				{% else %}	
-					Comparison of IPFire to IPCop and Smoothwall on ohloh.net
-				{% end %}
-				</a>
-			</li>
-		</ul>
+        <ul class="links">              
+                         <li class="first"><a href="#{{ _("git") }}">{{ _("git") }}</a></li>
+                         <li><a href="#{{ _("source-code") }}">{{ _("source-code") }}</a></li>
+                         <li><a href="#{{ _("bugtracker") }}">{{ _("bugtracker") }}</a></li>
+                         <li><a href="#{{ _("IPFire 3.x") }}">{{ _("IPFire 3.x") }}</a></li>   
+                 <ul>
+                         <li><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">         
+                                 {% if lang == "de" %}
+                                         IPFire im Vergleich mit IPCop und Smoothwall auf ohloh.net
+                                 {% else %}      
+                                         Comparison of IPFire to IPCop and Smoothwall on ohloh.net
+                                 {% end %}
+                         </a></li>
+                 </ul>
+                 </ul>
 
 		
 	
