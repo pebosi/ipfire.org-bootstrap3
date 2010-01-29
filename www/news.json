@@ -579,8 +579,80 @@
 								wurde muss diese zuerst wieder hergestellt werden!<br />
 								<strong>Xen</strong> User müssen vor dem Neustart der Maschine zuerst linux-xen updaten, 
 								da es sonst zu Fehlern kommt!
-								</p>"}}								
+								</p>"}},
 								
+		"27" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 35", "de" : "Core Update 35" },
+				"date"     : "2010-01-28",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release <strong>Core 35</strong>. 
+									It implicates following changes:</p>	
+								<p>
+								<ul>
+							      <li>Applied the latest <strong>security patches</strong> to squidGuard to prevent buffer overflows and 
+							         from going into emergency mode when overlong URLs are encountered</li>
+							      <li>Add missing modules for intersil/prism (disabled) </li>
+							      <li>Disabled connscheduler on general (*)</li>
+							      <li>Add zerofree to cleanup flash and xenimages (*)</li>
+							      <li>Fix for countrycode list (thx to m.a.d)</li>
+								</ul>
+								<ul>
+								  <li>Webinterface:</li>
+								  <ul>
+								    <li>Fix the link to external Snort SID page</li>
+								  </ul>
+								  <li>Outgoing Firewall:</li>
+								  <ul>
+								    <li>Parse pre Core34 rules correct and enabled change logging in mode 1</li>
+								    <li>Added GRE and ESP protocol to outgoing firewall</li>
+								  </ul>
+								  <li>Xen:</li>
+								  <ul>
+								    <li>Fix klogd fails on xen-kernel</li>
+								    <li>Disabled start of console initscript on xen-image (*)</li>
+								    <li>Change xen-image boot fstype to ext2 (*)</li>
+								  </ul>
+								</ul>
+								</p>
+								<p>
+								(*) These changes have only effect on new installations of IPFire.
+							</p>",
 
+
+					  "de" : "<p>Heute werden wir <strong>Core 35</strong> veröffentlichen. 
+					  				Es bringt die folgenden Änderungen mit sich:</p>	
+								<p>
+								<ul>
+							      <li>Die neuesten <strong>Sicherheitspatches</strong> für squidGuard wurden eingespielt, 
+							      	diese beheben ein Pufferüberlauf und verhindert das squidGuard in den 
+							      	\"Emergency-Mode\" bei überlangen URLs geht</li>
+							      <li>Fehlende Module für intersil/prism wurden hinzugefügt.</li>
+							      <li>Der connscheduler ist nun immer zuerst abgeschaltet (*)</li>
+							      <li>Unbenutzte Blöcke in den Flash und Xen-Images vor dem komprimieren gelöscht (*)</li>
+							      <li>Korrektur der Ländercodeliste (Danke m.a.d)</li>
+								</ul>
+								<ul>
+								  <li>Webinterface:</li>
+								  <ul>
+								    <li>Der Link für die externe Snort SID Seite wurde korrigiert</li>
+								  </ul>
+								  <li>Ausgehende Firewall:</li>
+								  <ul>
+								    <li>Alte Regeln (vor Core34) werden nun korrekt geparst und für den Modus 1 wurde das Logging aktiviert</li>
+								    <li>Die Protokolle GRE und ESP wurden der Ausgehenden Firewall hinzugefügt</li>
+								  </ul>
+								  <li>Xen:</li>
+								  <ul>
+								    <li>Die Fehler vom klogd Demon im Xen-Kernel wurden behoben</li>
+								    <li>Der Start der Konsolen Initskripten auf dem Xen-Image wurde herausgenommen (*)</li>
+								    <li>Filesystemtyp der Bootpartition des Xen-Images wurde auf ext2 geändert (*)</li>
+								  </ul>
+								</ul>
+								</p>
+								<p>
+								(*) Diese Änderungen betreffen nur Neuinstallationen von IPFire.
+						</p>"}}
 }
 
