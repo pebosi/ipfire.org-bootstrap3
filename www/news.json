@@ -404,11 +404,7 @@
 
 					  "de" : "<p>Das IPFire Core Development Team ist stolz zwei neue Mitglieder vorzustellen.
 								<strong>Stefan Schantl</strong> und <strong>Jan Paul Tücking</strong> sind von
-<<<<<<< HEAD:www/news.json
-								nun an Teil des Teams aufgrund ihrer beständigen und langen Mitarbeit am Projekt.</p>
-=======
 								nun an Teil des Teams aufgrund Ihrer beständigen und langen Mitarbeit am Projekt.</p>
->>>>>>> next:www/news.json
 								<p>
 									<a href=\"http://wiki.ipfire.org/de/project/contribute\" target=\"_blank\">Wie kann ich selber zum Projekt beitragen?</a>
 								</p>"}},
@@ -428,11 +424,7 @@
 					  "de" : "<p>Marcus Scholz hat einen <a href=\"http://www.commander1024.de/wordpress/2009/12/ipfire-talk-in-der-warpzone/\" target=\"_blank\">Vortrag</a> über
 					  		  IPFire in der <a href=\"http://warpzone.ms/\" target=\"_blank\">Warpzone</a> gehalten. Die dazugehörigen  
 					  		  <a href=\"http://www.commander1024.de/wordpress/wp-content/uploads/2009/12/IPFire-Talk.pdf\" target=\"_blank\">Folien</a> 
-<<<<<<< HEAD:www/news.json
-					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Presentation stehen zur Verfügung.
-=======
 					  		  so wie ein <a href=\"http://qik.com/video/3807703\" target=\"_blank\">Video</a> von seiner Präsentation stehen zur Verfügung.
->>>>>>> next:www/news.json
 								</p>"}},
 
 		"25" : {"author"   : "Michael Tremer",
