@@ -1,0 +1,14 @@
+<div class="post">
+	<h3>{{ item.name }}</h3>
+	<p>	
+		{{ _("Here you will find the downloads for the version") }} {{ item.name }}:
+	</p>
+
+	<div align="right">
+		{% for download in item.downloads %}
+			<a class="{{ download.type }}" href="{{ download.url }}">{{ _(download.desc) }}</a><br />
+		{% end %}
+	</div>
+
+	<br class="clear" />
+</div>

@@ -1,0 +1,18 @@
+{% extends "error.html" %}
+
+{% block explanation %}
+	<br class="clear" />
+
+	<h4>{{ _("Detailed information") }}</h4>
+	<p>
+		{% if lang == "de" %}
+			Bei der Verarbeitung der Anfrage kam es zu einem internen Problem
+			des Webservers.<br />Sollten nähere Informationen verfügbar sein, so
+			sind diese untenstehend angehangen.
+		{% else %}
+			While processing the request, there was an internal problem
+			of the web server. <br /> If there are more information available,
+			they would be appended below.
+		{% end %}
+	</p>
+{% end block %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Downloads") }}{% end block %}
+
+{% block content %}
+	<div class="post">
+		<a name="latest"></a>
+		<h3>{{ _("Download IPFire") }}</h3>
+
+		<img src="{{ static_url("images/box_ipfire.png") }}" alt="{{ _("CD-Box") }}" class="floatTR" />
+
+		{% if lang == "de" %}
+			<p>
+				Auf dieser Seite können Sie <strong>kostenlos</strong> die neueste
+				Version von IPFire herunterladen. Ältere Versionen oder
+				andere Downloadoptionen finden Sie weiter unten auf der Seite.
+			</p>
+
+			<p>
+				IPFire ist innerhalb von 15 bis 20 Minuten eingerichtet.
+				Eine <a href="http://wiki.ipfire.org/{{ lang }}/installation/start"
+				target="_blank">Installationsanleitung</a>
+				ist in unserem Wiki zu finden.
+			</p>
+
+			<p>
+				Sollte Ihnen diese Software gefallen, würden sich die Betreiber
+				über ein kleines Dankeschön freuen.
+			</p>
+		{% else %}
+			<p>
+				On this page one can download the latest version of IPFire
+				<strong>for free</strong>. Older versions and other downloads
+				can be retrieved on the linked pages below.
+			</p>
+
+			<p>
+				IPFire can be installed within 15 to 20 minutes. An
+				<a href="http://wiki.ipfire.org/{{ lang }}/installation/start"
+				target="_blank">installation guide</a> can be found on our wiki.
+			</p>
+
+			<p>
+				If you like this piece of software, developers appreciate your
+				donations.
+			</p>
+		{% end %}
+
+		<div class="bigdownload">
+			<a href="{{ release.iso.url }}">
+				{{ _("Begin download") }}<br />
+				{{ release.name }}
+			</a>
+		</div>
+
+		<table class="download">
+			{% for download in release.downloads %}
+				<tr class="{{ download.type }}">
+					<td class="icon">
+						<img src="{{ static_url("images/download_type_%s.png" % download.type) }}"
+							alt="{{ download.type }}" />
+					</td>
+					<td class="link">
+						<a href="{{ download.url }}">{{ _(download.desc) }}</a>
+					</td>
+					<td>
+						{{ _(download.rem) }}
+					</td>
+				</tr>
+			{% end %}
+		</table>
+
+		<br class="clear" />
+	</div>
+
+	<div class="post">
+		<a name="other"></a>
+		<h3>{{ _("Other download options") }}</h3>
+		<div class=pr_li>
+			<ul>
+				<li><a href="{{ link("downloads/all") }}">{{ _("See older downloads...") }}</a></li>
+				<li><a href="{{ link("downloads/development") }}">{{ _("See development releases...") }}</a></li>
+				<li><a href="{{ link("downloads/torrents") }}">{{ _("See all torrents...") }}</a></li>
+				<li><a href="{{ link("downloads/mirrors") }}">{{ _("See a list of mirrors...") }}</a></li>
+			</ul>
+		</div>
+		<br class="clear" />
+	</div>
+{% end block %}

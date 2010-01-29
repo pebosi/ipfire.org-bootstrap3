@@ -1,0 +1,118 @@
+{% extends "../base.html" %}
+		
+{% block title %}{{ _("Screenshots") }}{% end block %}
+
+{% block content %}
+	
+	
+	<div class=post>
+		<h3>{{ _("Sceenshots") }}</h3>
+		<img src="{{ static_url("images/page_icons/screenshots.png") }}" class="floatTR" border="0" alt="{{ _("Sceenshots") }}" />
+		<p>
+			{% if lang == "de" %}
+				Hier findet ihr einen Einblick in das IPFire Webinterface.	
+			{% else %}
+				Here you will find an insight into the IPFire webinterface.
+			{% end %}
+		</p>
+	</div>
+	
+	<br class="clear" />
+	<div class=post>
+		<h3>{{ _("System") }}</h3>
+		<div id="screenshots">
+			&nbsp;&nbsp;&nbsp;
+			<a href="{{ static_url("images/screenshots/index_%s.png" % lang) }}" title="{{ _("Home") }}"><img src="{{ static_url("images/screenshots/index_%s_tn.png" % lang) }}" border="0" alt="{{ _("Home") }}" /></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="{{ static_url("images/screenshots/backup_%s.png" % lang) }}" title="{{ _("Backup") }}"><img src="{{ static_url("images/screenshots/backup_%s_tn.png" % lang) }}" border="0" alt="{{ _("Backup") }}" /></a>
+		</div>
+	</div>
+	
+	<div class=post>
+		<h3>{{ _("Status") }}</h3>
+		<div id="screenshots">
+			&nbsp;&nbsp;&nbsp;				
+			<a href={{ static_url("images/screenshots/services_%s.png" % lang) }}" title="{{ _("Services") }}"><img src={{ static_url("images/screenshots/services_%s_tn.png" % lang) }}" border="0" alt="{{ _("Services") }}"></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href={{ static_url("images/screenshots/networkother_%s.png" % lang) }}" title="{{ _("Network (other)") }}"><img src={{ static_url("images/screenshots/networkother_%s_tn.png" % lang) }}" border="0" alt="Network (other)"></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href={{ static_url("images/screenshots/connections_%s.png" % lang) }}" title="{{ _("Connections") }}"><img src={{ static_url("images/screenshots/connections_%s_tn.png" % lang) }}" border="0" alt="{{ _("Connections") }}"></a>
+		</div>
+	</div>		
+
+
+	<div class=post>
+		<h3>{{ _("Network") }}</h3>
+		<div id="screenshots">
+			&nbsp;&nbsp;&nbsp;				
+			<a href={{ static_url("images/screenshots/dhcp_%s.png" % lang) }}" title="{{ _("DHCP Server") }}"><img src={{ static_url("images/screenshots/dhcp_%s_tn.png" % lang) }}" border="0" alt="{{ _("DHCP Server") }}"></a>
+		</div>		
+	</div>
+
+	
+	<div class=post>
+		<h3>{{ _("Services") }}</h3>
+		<div id="screenshots">
+			&nbsp;&nbsp;&nbsp;			
+			<a href={{ static_url("images/screenshots/ipsec_%s.png" % lang) }}" title="{{ _("IPSec") }}"><img src={{ static_url("images/screenshots/ipsec_%s_tn.png" % lang) }}" border="0" alt="{{ _("IPSec") }}"></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href={{ static_url("images/screenshots/qos_%s.png" % lang) }}" title="{{ _("Quality of Service") }}"><img src={{ static_url("images/screenshots/qos_%s_tn.png" % lang) }}" border="0" alt="{{ _("Quality of Service") }}"></a>
+		</div>	
+	</div>
+
+
+	<div class=post>
+		<h3>{{ _("Firewall") }}</h3>
+		<div id="screenshots">
+			&nbsp;&nbsp;&nbsp;				
+			<a href={{ static_url("images/screenshots/outgoing_fw_%s.png" % lang) }}" title="{{ _("Outgoing Firewall") }}"><img src={{ static_url("images/screenshots/outgoing_fw_%s_tn.png" % lang) }}" border="0" alt="{{ _("Outgoing Firewall") }}"></a>
+		</div>			
+	</div>
+
+
+	<div class=post>
+		<h3>{{ _("IPFire") }}</h3>
+		<div id="screenshots">
+			&nbsp;&nbsp;&nbsp;				
+			<a href={{ static_url("images/screenshots/pakfire_%s.png" % lang) }}" title="{{ _("Pakfire") }}"><img src={{ static_url("images/screenshots/pakfire_%s_tn.png" % lang) }}" border="0" alt="{{ _("Pakfire") }}"></a>								
+			&nbsp;&nbsp;&nbsp;
+			<a href={{ static_url("images/screenshots/samba_%s.png" % lang) }}" title="{{ _("Samba") }}"><img src={{ static_url("images/screenshots/samba_%s_tn.png" % lang) }}" border="0" alt="{{ _("Samba") }}"></a>
+		</div>	
+	</div>
+
+
+	<div class=post>
+		<h3>{{ _("Logs") }}</h3>
+		<div id="screenshots">
+			&nbsp;&nbsp;&nbsp;			
+			<a href={{ static_url("images/screenshots/fwlog_ip_%s.png" % lang) }}" title="{{ _("Fw-Logdgraphs (IP)") }}"><img src={{ static_url("images/screenshots/fwlog_ip_%s_tn.png" % lang) }}" border="0" alt="{{ _("Fw-Logdgraphs (IP)") }}"></a>
+			&nbsp;&nbsp;&nbsp;
+			<a href={{ static_url("images/screenshots/proxy_%s.png" % lang) }}" title="{{ _("Proxy Reports") }}"><img src={{ static_url("images/screenshots/proxy_%s_tn.png" % lang) }}" border="0" alt="{{ _("Proxy Reports") }}"></a>
+		</div>
+	</div>
+	
+{% end block %}
+
+{% block sidebar %}
+		<h4><span>{{ _("Screenshot") }}</span> list</h4>
+		<ul class="links">		
+			<li class="first"><a href="#{{ _("System") }}">{{ _("System") }}</a></li>
+			<li><a href="#{{ _("Status") }}">{{ _("Status") }}</a></li>
+			<li><a href="#{{ _("Network") }}">{{ _("Network") }}</a></li>
+			<li><a href="#{{ _("Services") }}">{{ _("Services") }}</a></li>
+			<li><a href="#{{ _("Firewall") }}">{{ _("Firewall") }}</a></li>
+			<li><a href="#{{ _("IPFire") }}">{{ _("IPFire") }}</a></li>
+			<li><a href="#{{ _("Logs") }}">{{ _("Logs") }}</a></li>
+		</ul>
+ {{ modules.SidebarBanner(banner) }}
+
+{% end block %}
+
+{% block javascript %}
+	<script type="text/javascript" src="{{ static_url("js/jquery.lightbox.min.js") }}"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#screenshots a").lightBox();
+		});
+	</script>
+{% end block %}

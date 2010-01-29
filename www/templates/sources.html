@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Sources") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Source Code") }}</h3>
+
+	<p>
+		{{ _("There are %s source files on the server.") % len(files) }}
+	</p>
+
+	<br class="clear" />
+
+	<ul class="sources">
+		{% for file in files %}
+			<li>
+				{{ file["hash"] }} |
+				<a href="/{{ file["dir"] }}/{{ file["name"] }}">{{ file["name"] }}</a>
+				({{ file["size"] }})
+			</li>
+		{% end %}
+	</ul>
+{% end block %}

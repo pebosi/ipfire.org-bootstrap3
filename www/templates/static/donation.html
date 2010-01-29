@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+		
+{% block title %}{{ _("Donation") }}{% end block %}
+ 
+
+{% block content %}
+	
+	
+	<div class=post>
+		<h3>{{ _("Donation") }}</h3>
+		<img src="{{ static_url("images/page_icons/donation.png") }}") }}" class="floatTR" border="0" alt="{{ _("Donation") }}" />
+		<p>
+			{% if lang == "de" %}
+			Mit jeder Spende und sei sie noch so klein unterstützen sie dieses Projekt sehr.
+			{% else %}
+			With each donation, and if with small ones you support this project.	
+			{% end %}
+		</p>
+	</div>
+	<br class="clear" />
+
+	{% end block %}
