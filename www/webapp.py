@@ -7,8 +7,8 @@ from webapp import Application
 application = Application()
 
 if __name__ == "__main__":
-	http_server = tornado.httpserver.HTTPServer(application)
-	http_server.listen(8080)
+	http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
+	http_server.listen(8001)
 
 	try:
 		tornado.ioloop.IOLoop.instance().start()
