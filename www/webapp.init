@@ -1,0 +1,28 @@
+#!/bin/bash
+
+HOMEDIR=$(dirname $(readlink $0))
+LOGFILE=/srv/logs/www/webapp.error.log
+
+case "$1" in
+	start)
+		cd ${HOMEDIR} && ./webapp.py >>${LOGFILE} 2>&1 &
+		;;
+
+	stop)
+		killall webapp.py
+		;;
+
+	restart)
+		$0 stop
+		sleep 2
+		$0 start
+		;;
+
+	check)
+		if (ps aux | grep -q webapp.py); then
+			: # Process is running...
+		else
+			$0 restart
+		fi
+		;;
+esac
