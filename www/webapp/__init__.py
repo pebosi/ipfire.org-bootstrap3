@@ -83,7 +83,7 @@ class Application(tornado.web.Application):
 			(r"/", MainHandler),
 			(r"/[A-Za-z]{2}/?", MainHandler),
 			(r"/[A-Za-z]{2}/index", SourceHandler),
-			(r"(/source.*)", SourceDownloadHandler),
+			(r"(/source.*|/toolchains/.*)", SourceDownloadHandler),
 		] + static_handlers)
 
 		# torrent.ipfire.org
