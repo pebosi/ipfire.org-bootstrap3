@@ -653,6 +653,75 @@
 								</p>
 								<p>
 								(*) Diese Änderungen betreffen nur Neuinstallationen von IPFire.
-						</p>"}}
+						</p>"}},
+						
+						
+		"28" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 36", "de" : "Core Update 36" },
+				"date"     : "2010-02-01",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release <strong>Core 36</strong>. 
+								It implicates following changes:</p>	
+								<p>
+									<ul>
+										<li>Update of openssh to 5.3p1</li>
+										<li>Update of openssl to 0.9.8l</li>
+										<li>Change cyrus-sasl from package to common</li>
+									</ul>
+									<ul>
+										<li>Webinterface:</li>
+										<ul>
+											<li>Fixed some typos (thx to lavaguy)</li>
+											<li>Add a delay to pakfire.cgi to prevent pakfire run's twice.</li>
+										</ul>
+										<li>IPTV:</li>
+										<ul>
+											<li>Add IPTV chains for IGMPPROXY to firewall.</li>
+										</ul>
+										<li>Addon:</li>
+										<ul>
+											<li>Update of nmap to 5.20</li>
+											<li>Update of rsync to 3.0.7</li>
+										</ul>
+									</ul>
+								</p>
+								<p>
+									Because of the security updates of ssh and ssl, we 
+									recommend all users to install this core update!
+								</p>",
+
+
+						"de" : "<p>Heute werden wir <strong>Core 36</strong> veröffentlichen. 
+								Es bringt die folgenden Änderungen mit sich:</p>
+								<p>
+									<ul>
+										<li>Update von openssh auf 5.3p1</li>
+										<li>Update von openssl auf 0.9.8l</li>
+										<li>Cyrus-sasl ist nun direkt integriert und kein extra Paket mehr</li>
+									</ul>
+									<ul>
+										<li>Webinterface:</li>
+										<ul>
+											<li>Einige Tippfehler wurden korrigiert (Danke lavaguy)</li>
+											<li>Es wurde eine Verzögerung der pakfire.cgi Seite hinzugefügt, 
+											welche verhindern soll das Pakfire zwei mal gestartet wird</li>
+										</ul>
+										<li>IPTV:</li>
+										<ul>
+											<li>Extra IPTV Chains für den IGMPPROXY wurden der Firewall hinzugefügt</li>
+										</ul>
+										<li>Addon:</li>
+										<ul>
+											<li>Update von nmap auf 5.20</li>
+											<li>Update von rsync auf 3.0.7 </li>
+										</ul>
+									</ul>
+								</p>
+								<p>
+									Auf Grund der Sicheitsupdates von ssh und ssl, empfehlen wir allen Benutzern dieses 
+									Core Update zu installieren!
+								</p>"}}
 }
 
