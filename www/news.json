@@ -722,6 +722,41 @@
 								<p>
 									Auf Grund der Sicheitsupdates von ssh und ssl, empfehlen wir allen Benutzern dieses 
 									Core Update zu installieren!
-								</p>"}}
-}
+								</p>"}},
 
+		"29" : {"author"   : "Michael Tremer",
+				"mail"     : "ms@ipfire.org",
+				"subject"  : "CeBIT Update #1",
+				"date"     : "2010-02-24",
+				"link"     : "",
+				"content"  :
+					{ "en" : "
+						<p>I would like you to get a short update for our plannings on CeBIT 2010.</p>
+						<p>
+							There are only a few days left and we are quite finished. But
+							as an exhibitor, we got a bunch of free tickets. If you would like
+							to get one, please send an email to
+							<a href=\"mailto:tickets@ipfire.org\">tickets@ipfire.org</a>.
+						</p>
+						<p>
+							We hope to see you at the IPFire booth in
+							<strong>Hall 2 - F34</strong>.
+						</p>",
+
+					  "de" : "
+						<p>Dies ist ein kleines Update zur CeBIT:</p>
+						<p>
+							Die Vorbereitungen sind weitestgehend beendet und wir
+							bedanken uns bei allen Helfern.
+						</p>
+						<p>
+							Als Austeller haben wir eine Zahl kostenloser Tickets bekommen,
+							die wir nun an die Community (vorrangig die Spender)
+							verteilen möchten. Bitte sendet dazu eine kurze Email
+							an <a href=\"mailto:tickets@ipfire.org\">tickets@ipfire.org</a>.
+						</p>
+						<p>
+							Wir hoffen euch begrüßen zu dürfen in der <strong>Halle 2,
+							Stand F34</strong>.
+						</p>"}}
+}
