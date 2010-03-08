@@ -4,8 +4,5 @@
 	  "link"  : "http://www.isp42.de/" },
 	{ "uri"   : "images/sponsors/isp42_2.png",
 	  "title" : "<span>Hosting</span>-Sponsor",
-	  "link"  : "http://www.isp42.de/" },
-	{ "uri"   : "images/cebit2010_logo_en.png",
-	  "title" : "<span>CeBIT</span> 2010",
-	  "link"  : "cebit" }
+	  "link"  : "http://www.isp42.de/" }
 ]
