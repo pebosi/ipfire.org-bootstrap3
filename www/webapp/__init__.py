@@ -65,6 +65,9 @@ class Application(tornado.web.Application):
 			(r"/[A-Za-z]{2}/downloads?/development", DownloadDevelopmentHandler),
 			(r"/[A-Za-z]{2}/downloads?/mirrors", DownloadMirrorHandler),
 			(r"/[A-Za-z]{2}/downloads?/torrents", DownloadTorrentHandler),
+			# RSS feed
+			(r"/([A-Za-z]{2})/news.rss", RSSHandler),
+			(r"/data/feeds/main-([A-Za-z]{2}).rss", RSSHandler),
 			# API
 			(r"/api/cluster_info", ApiClusterInfoHandler),
 			# Always the last rule

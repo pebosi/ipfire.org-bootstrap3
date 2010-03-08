@@ -16,7 +16,7 @@ import tornado.locale
 import tornado.web
 
 from banners import banners
-from helpers import size
+from helpers import size, Item
 from info import info
 from mirrors import mirrors
 from news import news
@@ -294,3 +294,17 @@ class DownloadFileHandler(BaseHandler):
 
 	def get_error_html(self, status_code, **kwargs):
 		return tornado.web.RequestHandler.get_error_html(self, status_code, **kwargs)
+
+
+class RSSHandler(BaseHandler):
+	def get(self, lang):
+		items = []
+		for item in news.get(15):
+			item = Item(**item.args.copy())
+			for attr in ("subject", "content"):
+				if type(item[attr]) == type({}):
+					item[attr] = item[attr][lang]
+			items.append(item)
+
+		self.set_header("Content-Type", "application/rss+xml")
+		self.render("rss.xml", items=items, lang=lang)

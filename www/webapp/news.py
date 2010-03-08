@@ -18,6 +18,7 @@ class News(object):
 
 		json = json_loads(data)
 		for key in sorted(json.keys()):
+			json[key]["id"] = key
 			self.items.append(NewsItem(**_stringify(json[key])))
 
 	def get(self, limit=None):
