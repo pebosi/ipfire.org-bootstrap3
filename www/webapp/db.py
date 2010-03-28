@@ -8,6 +8,9 @@ import os.path
 class HashDatabase(object):
 	def __init__(self):
 		self.conn = sqlite3.connect("/srv/www/ipfire.org/source/hashes.db")
+		self.conn.isolation_level = None # autocommit mode
+
+		self.prepare()
 
 	def __del__(self):
 		self.conn.close()
