@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
 	try:
 		tornado.ioloop.IOLoop.instance().start()
-	except KeyboardInterrupt:
+	except:
 		# Shutdown mirror monitoring
 		from webapp.mirrors import mirrors
 		mirrors.shutdown()
