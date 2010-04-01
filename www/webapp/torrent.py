@@ -32,7 +32,7 @@ class Tracker(object):
 			user="tracker",
 		)
 
-	def _fetch(self, hash, limit=None, random=False, completed=False):
+	def _fetch(self, hash, limit=None, random=False, completed=False, no_peer_id=False):
 		query = "SELECT * FROM peers WHERE last_update >= %d" % self.since
 
 		if hash:
@@ -52,11 +52,15 @@ class Tracker(object):
 			if not peer.ip or not peer.port:
 				continue
 
-			peers.append({
-				"peer id" : str(peer.id),
+			peer_dict = {
 				"ip" : str(peer.ip),
 				"port" : int(peer.port),
-			})
+			}
+
+			if not no_peer_id:
+				peer_dict["peer id"] = str(peer.id),
+
+			peers.append(peer_dict)
 
 		return peers
 
@@ -86,6 +90,22 @@ class Tracker(object):
 
 	def event_completed(self, hash, peer_id):
 		self.db.execute("UPDATE hashes SET completed=completed+1 WHERE hash = '%s'" % hash)
+
+	def scrape(self, hashes=[]):
+		ret = {}
+		for hash in self.db.query("SELECT hash, completed FROM hashes"):
+			hash, completed = hash.hash, hash.completed
+
+			if hashes and hash not in hashes:
+				continue
+
+			ret[hash] = {
+				"complete" : self.complete(hash),
+				"downloaded" : completed or 0,
+				"incomplete" : self.incomplete(hash),
+			}
+
+		return ret
 
 	def update(self, hash, id, ip=None, port=None, downloaded=None, uploaded=None, left=None):
 		args = [ "last_update = '%s'" % self.now ]

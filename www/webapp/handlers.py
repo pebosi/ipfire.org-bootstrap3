@@ -312,13 +312,22 @@ class RSSHandler(BaseHandler):
 
 
 class TrackerBaseHandler(tornado.web.RequestHandler):
-	def get_hexencoded_argument(self, name):
+	def get_hexencoded_argument(self, name, all=False):
 		try:
-			info_hash = self.request.arguments[name][0]
+			arguments = self.request.arguments[name]
 		except KeyError:
 			return None
 
-		return decode_hex(info_hash)
+		arguments_new = []
+		for argument in arguments:
+			arguments_new.append(decode_hex(argument))
+
+		arguments = arguments_new
+
+		if all:
+			return arguments
+
+		return arguments[0]
 
 	def send_tracker_error(self, error_message):
 		self.write(bencode({"failure reason" : error_message }))
@@ -333,7 +342,6 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 			self.send_tracker_error("Your client forgot to send your torrent's info_hash.")
 			return
 
-		compact = self.get_argument("compact", "0")
 		peer = {
 			"id" : self.get_hexencoded_argument("peer_id"),
 			"ip" : self.get_argument("ip", None),
@@ -372,14 +380,24 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 
 		tracker.update(hash=info_hash, **peer)
 
+		no_peer_id = self.get_argument("no_peer_id", False)
 		numwant = self.get_argument("numwant", tracker.numwant)
 
 		self.write(bencode({
 			"tracker id" : tracker.id,
 			"interval" : tracker.interval,
 			"min interval" : tracker.min_interval,
-			"peers" : tracker.get_peers(info_hash, limit=numwant, random=True),
+			"peers" : tracker.get_peers(info_hash, limit=numwant,
+				random=True, no_peer_id=no_peer_id),
 			"complete" : tracker.complete(info_hash),
 			"incomplete" : tracker.incomplete(info_hash),
 		}))
+		self.finish()
+
+
+class TrackerScrapeHandler(TrackerBaseHandler):
+	def get(self):
+		info_hashes = self.get_hexencoded_argument("info_hash", all=True)
+
+		self.write(bencode(tracker.scrape(hashes=info_hashes)))
 		self.finish()

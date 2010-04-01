@@ -102,6 +102,7 @@ class Application(tornado.web.Application):
 			(r"/[A-Za-z]{2}/?", MainHandler),
 			(r"/[A-Za-z]{2}/index", DownloadTorrentHandler),
 			(r"/a.*", TrackerAnnounceHandler),
+			(r"/scrape", TrackerScrapeHandler),
 		] + static_handlers)
 
 		# ipfire.org
