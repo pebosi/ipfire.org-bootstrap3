@@ -227,7 +227,7 @@ class SourceHandler(BaseHandler):
 				if file in [f["name"] for f in fileobjects]:
 					continue
 
-				hash = self.hash_db.get_hash(file)
+				hash = self.hash_db.get_hash(os.path.join(dir, file)
 
 				if not hash:
 					hash = "0000000000000000000000000000000000000000"
