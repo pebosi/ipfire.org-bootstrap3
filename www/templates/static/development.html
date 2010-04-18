@@ -131,6 +131,17 @@
 		{% end %}
 	</div>
 	
+	<div class=post>
+		<a name="{{ _("Artwork") }}"></a><h3>{{ _("Artwork") }}</h3>
+		<p>
+		{% if lang == "de" %}
+			Logos und Printmedien vom IPFire-Projekt gibt es auf der Seite <a href="artwork">Artwork</a>.
+		{% else %}	
+			Logos and print media of the IPFire project can be found on the <a href="artwork">artwork</a> page.
+		{% end %}
+		</p>
+	</div>
+	
 			
 {% end block %}
 
@@ -141,6 +152,7 @@
                          <li><a href="#{{ _("source-code") }}">{{ _("source-code") }}</a></li>
                          <li><a href="#{{ _("bugtracker") }}">{{ _("bugtracker") }}</a></li>
                          <li><a href="#{{ _("IPFire 3.x") }}">{{ _("IPFire 3.x") }}</a></li>   
+                         <li><a href="#{{ _("Artwork") }}">{{ _("Artwork") }}</a></li> 
                  <ul>
                          <li><a href="http://www.ohloh.net/projects/compare?metric=Activity&amp;project_0=IPFire&amp;project_1=Smoothwall&amp;project_2=IPCop+Firewall" target="_blank">         
                                  {% if lang == "de" %}
