@@ -20,7 +20,8 @@ class Banners(object):
 			self.items.append(Item(**_stringify(item)))
 
 	def get(self):
-		return random.choice(self.items)
+		if self.items:
+			return random.choice(self.items)
 
 
 banners = Banners("banners.json")
