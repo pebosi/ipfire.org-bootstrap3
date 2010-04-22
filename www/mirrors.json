@@ -157,5 +157,21 @@
 			"pakfire2" : false,
 			"pakfire3" : false
 		}
+	},
+
+	{
+		"name" : "Robert Möker",
+		"location" : {
+			"city" : "Frankfurt am Main",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "datenklatscher.net",
+		"path" : "/ipfire",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
 	}
 ]
