@@ -1,6 +1,8 @@
 [
 	{ "uri"  : "/index",
 	  "name" : "Home" },
+	{ "uri"  : "/features",
+	  "name" : { "de" : "Funktionen", "en" : "Features" }},
 	{ "uri"  : "/download",
 	  "name" : "Downloads" },
 	{ "uri"  : "/screenshots",
