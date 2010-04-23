@@ -9,7 +9,7 @@
 		"hostname" : "mirror1.ipfire.org",
 		"path" : "",
 		"serves" : {
-			"isos" : true,
+			"isos" : false,
 			"pakfire2" : true,
 			"pakfire3" : true
 		}
