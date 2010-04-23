@@ -64,22 +64,6 @@
 	},
 
 	{
-		"name" : "ISP42",
-		"location" : {
-			"city" : "Hannover",
-			"country" : "Germany",
-			"country_code" : "de"
-		},
-		"hostname" : "mirror2.ipfire.org",
-		"path" : "",
-		"serves" : {
-			"isos" : true,
-			"pakfire2" : true,
-			"pakfire3" : true
-		}
-	},
-
-	{
 		"name" : "Peter Schälchli",
 		"location" : {
 			"city" : "Paris",
@@ -152,6 +136,22 @@
 		},
 		"hostname" : "ipfiremirror.wintertech.de",
 		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
+	},
+
+	{
+		"name" : "Robert Möker",
+		"location" : {
+			"city" : "Frankfurt am Main",
+			"country" : "Germany",
+			"country_code" : "de"
+		},
+		"hostname" : "datenklatscher.net",
+		"path" : "/ipfire",
 		"serves" : {
 			"isos" : true,
 			"pakfire2" : false,

@@ -5,15 +5,53 @@
 
 {% block content %}
 	
-	
 	<div class=post>
 		<h3>{{ _("Donation") }}</h3>
 		<img src="{{ static_url("images/page_icons/donation.png") }}") }}" class="floatTR" border="0" alt="{{ _("Donation") }}" />
 		<p>
 			{% if lang == "de" %}
-			Mit jeder Spende und sei sie noch so klein unterstützen sie dieses Projekt sehr.
+			Dieses Projekt wird von Freiwilligen in ihrer Freizeit betrieben und betreut.<br />
+			Mit jeder Spende und sei sie noch so klein unterstützen Sie IPFire und sichern damit den Fortbestand dieses Projektes.	
+		</p>
+		<br />
+		<p>
+		<div align="center">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="10781833">
+				<input type="image" src="https://www.paypal.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+				<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</div>
+		</p>
+		<br />
+		<p>
+			Wegen des einfachen Ablaufs der Spende bevorzugen wir <strong>PayPal</strong>.<br />
+			Es ist auch möglich ohne Anmeldung per Kreditkarte zu spenden.
+		</p>
+			
+			
 			{% else %}
-			With each donation, and if with small ones you support this project.	
+		<p>
+			This project is driven and maintained by volunteers in their free time.<br />
+			With each donation, and even with small ones you will support IPFire and ensure the continuation of this project.
+		</p>
+		<br />
+		<p>
+		<div align="center">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="10781833">
+				<input type="image" src="https://www.paypal.com/en_US/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+				<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</div>
+		</p>
+		<br />
+		<p>
+			Our favorite way for a donation is <strong>PayPal</strong> because it is fast and easy.<br />
+			It is also possible to donate by credit card without registration.
+		</p>	
 			{% end %}
 		</p>
 	</div>

@@ -758,5 +758,88 @@
 						<p>
 							Wir hoffen euch begrüßen zu dürfen in der <strong>Halle 2,
 							Stand F34</strong>.
-						</p>"}}
+						</p>"}},
+										
+		"30" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 37", "de" : "Core Update 37" },
+				"date"     : "2010-04-04",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release <strong>Core 37</strong>. 
+								It implicates following changes:</p>	
+									<ul>
+										<li>Update of openssh to 5.4p1</li>
+										<li>Update of openssl to 0.9.8n</li>
+										<li>Update of apache to 2.2.15</li>
+										<li>Update of sslh to current stable</li>
+										<li>Update of madwifi to lastest stable</li>
+										<li>Update of lm_sensors to current stable</li>
+										<li>Enabled identd lookup for squid</li>
+										<li>Fix cyrus-sasl autorun</li>
+										<li>Fix pakfire pingtest to use icmp again</li>
+										<li>Fix ath5k (no txbuf available)</li>
+										<li>Fix disk (media/hardware) graphs with xen</li>
+										<li>Fix temp readings for some Atom boards</li>
+										<li>Fix mISDN-hfcusb driver (reportl1down and bchannel endpoint)</li>
+										<li>Fix english qos page</li>
+										<li>Fix urlfilter wasting much memory</li>
+										<li>Add eject commandline tool</li>
+										<li>Add possibility to change the ssh port from 222 back to standart port 22</li>
+										<li>Add Atom cpu to p4-clockmod</li>
+										<li>Add ET131x ethernet driver</li>
+									</ul>								
+								<p>
+									Because of the security updates of ssh and ssl, we 
+									recommend all users to install this core update!
+								</p>
+								<p>
+									If you had installed this core update from \"testing tree\" 
+									before 01.04.2010 check the forum how to reinstall this update because the 
+									openssl update was added in last minute.
+								</p>
+								<p>
+									We plan to change the ipsec vpn software from openswan to strongswan in one of the next updates. 
+									To prepare this you schould check the settings and fill the \"Local ID\" and \"Remote ID\" field.
+									The webif marks this as \"can be blank\" but this will change with strongswan!
+								</p>",
+
+
+						"de" : "<p>Heute werden wir <strong>Core 37</strong> veröffentlichen. 
+								Es bringt die folgenden Änderungen mit sich:</p>
+									<ul>
+										<li>Update von openssl auf 0.9.8n</li>
+										<li>Update von apache auf 2.2.15</li>
+										<li>Update von sslh</li>
+										<li>Update von madwifi</li>
+										<li>Update von lm_sensors</li>
+										<li>identd lookup für squid aktiviert</li>
+										<li>Pakfire pingtest vewendet wieder icmp</li>
+										<li>Bugfix: cyrus-sasl autostart</li>
+										<li>Bugfix ath5k (no txbuf available)</li>
+										<li>Bugfix: disk (media/hardware) Graphen unter xen</li>
+										<li>Bugfix: Temperatursensoren von einigen Atom Boards</li>
+										<li>Bugfix: mISDN-hfcusb Treiber (reportl1down and bchannel endpoint)</li>
+										<li>Bugfix: Englische QoS Seite</li>
+										<li>Bugfix: urlfilter verschwendete Speicher</li>
+										<li> Neu: eject Kommandozeilentool</li>
+										<li>Der ssh port kann von 222 auf den Standardport 22 gestellt werden</li>
+										<li>Atom support für P4-clockmod</li>
+										<li>ET131x ethernet driver</li>
+									</ul>								
+								<p>
+									Auf Grund der Sicheitsupdates von ssh und ssl, empfehlen wir allen 
+									Benutzern dieses Core Update zu installieren!
+								</p>
+								<p>
+									Wenn Sie das Core 37 schon vor dem 01.04.2010 aus dem \"testing tree\" 
+									installiert haben bitte schauen Sie ins Forum wie das Update nochmal installiert 
+									wird da das openssl update in letzter Minute hinzugefügt wurde.
+								</p>
+								<p>
+									Wir Planen in einem der nächsten Updates die Software für das IPSEC VPN 
+									von openswan auf strongswan zu wechseln. Um auf diesen Wechsel vorbereitet zu sein 
+									sollten Sie Ihre IPSEC Einstellungen prüfen und die Felder \"Local ID\" und \"Remote ID\" 
+									ausfüllen. Im Moment sind diese Felder optional aber mit strongswan sind diese erforderlich.
+								</p>"}}
 }
