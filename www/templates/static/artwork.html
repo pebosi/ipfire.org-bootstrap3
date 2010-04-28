@@ -82,16 +82,19 @@
 						 <img src="{{ static_url("images/artwork/flyer_tn.png") }}" align="bottom" border= "0"/></a>
 				</div>
 			</p>
+			
+			<p>
+				Designed by <a href="http://www.elricco.com" target="_blank" border="0">elricco media services</a>.
+			</p>
 	</div>
 {% end block %}
 
 {{ modules.SidebarBanner(banner) }}
 
 {% block sidebar %}
-		<h4>Public <span>relations</span></h4>
+		<h4><span>Artwork</span> list</h4>
 		<ul class="links">		
 			<li class="first"><a href="#{{ _("online") }}">{{ _("Online media") }}</a></li>
 				<li><a href="#{{ _("print") }}">{{ _("Print media") }}</a></li>
-				<li><a href="#{{ _("Licenses") }}">{{ _("Licenses") }}</a></li>
 		</ul>
 {% end block %}
