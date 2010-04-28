@@ -7,7 +7,7 @@
 
 	<div class="post">
 		<h3>{{ _("Features") }}</h3>
-		<img src="{{ static_url("images/features.png") }}" class="floatTR" alt="{{ _("Features") }}" />
+		<img src="{{ static_url("images/page_icons/features.png") }}" class="floatTR" alt="{{ _("Features") }}" />
 		<p>
 			{% if lang == "de" %}
 				Hier findet Ihr einen Überblick über alle derzeitig verfügbaren Funktionen
@@ -34,7 +34,7 @@
 	<br class="clear" />
 
 	<div class="post">
-		<h3>{{ _("firewall functions") }}</h3>
+		<a name="{{ _("firewall functions") }}"></a><h3>{{ _("firewall functions") }}</h3>
 		<p>
 			{% if lang == "de" %}
 				Die Firewallfunktionalität ist die Hauptaufgabe von IPFire. Die Distribution trennt
@@ -71,7 +71,7 @@
 	<br class="clear" />
 
 	<div class="post">
-		<h3>{{ _("essential networking services") }}</h3>
+		<a name="{{ _("essential networking services") }}"></a><h3>{{ _("essential networking services") }}</h3>
 		<p>
 			{% if lang == "de" %}
 				IPFire stellt auch unabdingbare Funktionen jedem Netzwerk bereit.
@@ -94,7 +94,7 @@
 	</div>
 
 	<div class="post">
-		<h3>{{ _("http proxy") }}</h3>
+		<a name="{{ _("http proxy") }}"></a><h3>{{ _("http proxy") }}</h3>
 		<p>
 			{% if lang == "de" %}
 				Ein Webproxy ermöglicht dem Administrator Kontrolle über Nutzeraktivitäten
@@ -129,7 +129,7 @@
 	</div>
 
 	<div class="post">
-		<h3>{{ _("virtual private networking") }}</h3>
+		<a name="{{ _("virtual private networking") }}"></a><h3>{{ _("virtual private networking") }}</h3>
 		<p>
 		{% if lang == "de" %}
 			Virtuelle private Netzwerke (VPNs) sind nötig um mit einem entfernten
@@ -195,7 +195,7 @@
 	</div>
 
 	<div class="post">
-		<h3>{{ _("supported connection types") }}</h3>
+		<a name="{{ _("supported connection types") }}"></a><h3>{{ _("supported connection types") }}</h3>
 		<p>
 		{% if lang == "de" %}
 			IPFire ist über eine Vielzahl von Verbindungsmöglichkeiten an
@@ -229,7 +229,7 @@
 	</div>
 
 	<div class="post">
-		<h3>{{ _("configuration") }}</h3>
+		<a name="{{ _("configuration") }}"></a><h3>{{ _("configuration") }}</h3>
 		<p>
 		{% if lang == "de" %}
 			Alle Funktionen sind in einem Web-Interface bequem erreichbar.
@@ -251,7 +251,7 @@
 	</div>
 
 	<div class="post">
-		<h3>{{ _("monitoring") }}</h3>
+		<a name="{{ _("monitoring") }}"></a><h3>{{ _("monitoring") }}</h3>
 		<p>
 		{% if lang == "de" %}
 			Um dem Administrator die Auswerung der Geschehnisse möglichst zu vereinfachen
@@ -275,4 +275,22 @@
 		{% end %}
 		</p>
 	</div>
+{% end block %}
+
+
+{% block sidebar %}
+		<h4><span>Features</span> list</h4>
+        <ul class="links">              
+                         <li class="first"><a href="#{{ _("firewall functions") }}">{{ _("firewall functions") }}</a></li>
+                         <li><a href="#{{ _("essential networking services") }}">{{ _("essential networking services") }}</a></li>
+                         <li><a href="#{{ _("http proxy") }}">{{ _("http proxy") }}</a></li>
+                         <li><a href="#{{ _("virtual private networking") }}">{{ _("virtual private networking") }}</a></li>   
+                         <li><a href="#{{ _("supported connection types") }}">{{ _("supported connection types") }}</a></li>
+                         <li><a href="#{{ _("configuration") }}">{{ _("configuration") }}</a></li>
+                         <li><a href="#{{ _("monitoring") }}">{{ _("monitoring") }}</a></li>
+        </ul>
+
+		
+	
+
 {% end block %}
