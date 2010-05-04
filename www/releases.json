@@ -40,6 +40,7 @@
 	  	}
 	  ]
 	},
+	
 	{ "name" : "IPFire 2.5 - Core 36",
 	  "status"    : "stable",
 	  "online"    : 1,
