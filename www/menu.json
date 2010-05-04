@@ -1,18 +1,25 @@
-[
-	{ "uri"  : "/index",
-	  "name" : "Home" },
-	{ "uri"  : "/features",
-	  "name" : { "de" : "Funktionen", "en" : "Features" }},
-	{ "uri"  : "/screenshots",
-	  "name" : "Screenshots" },
-	{ "uri"  : "/download",
-	  "name" : "Downloads" },
-	{ "uri"  : "http://wiki.ipfire.org/",
-	  "name" : { "de" : "Wiki", "en" : "Wiki" }},
-	{ "uri"  : "http://forum.ipfire.org/",
-	  "name" : "Forum" },
-	{ "uri"  : "/development",
-	  "name" : { "de" : "Entwicklung", "en" : "Development" }},
-	{ "uri"  : "/cebit",
-	  "name" : "CeBIT 2010" }
-]
+{
+	"www.ipfire.org" : [
+		{ "uri"  : "/index",
+		  "name" : "Home" },
+		{ "uri"  : "/features",
+		  "name" : { "de" : "Funktionen", "en" : "Features" }},
+		{ "uri"  : "/screenshots",
+		  "name" : "Screenshots" },
+		{ "uri"  : "/download",
+		  "name" : "Downloads" },
+		{ "uri"  : "http://wiki.ipfire.org/",
+		  "name" : { "de" : "Wiki", "en" : "Wiki" }},
+		{ "uri"  : "http://forum.ipfire.org/",
+		  "name" : "Forum" },
+		{ "uri"  : "/development",
+		  "name" : { "de" : "Entwicklung", "en" : "Development" }},
+		{ "uri"  : "/cebit",
+		  "name" : "CeBIT 2010" }
+	],
+
+	"planet.ipfire.org" : [
+		{ "uri"  : "/index",
+		  "name" : "Home" }
+	]
+}

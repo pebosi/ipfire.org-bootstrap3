@@ -6,7 +6,7 @@ from helpers import Item, _stringify
 
 class Menu(object):
 	def __init__(self, filename=None):
-		self.items = []
+		self.items = {}
 
 		if filename:
 			self.load(filename)
@@ -15,9 +15,14 @@ class Menu(object):
 		f = open(filename)
 		data = f.read()
 		f.close()
-		
-		for item in simplejson.loads(data):
-			self.items.append(MenuItem(**_stringify(item)))
+
+		for url, items in simplejson.loads(data).items():
+			self.items[url] = []
+			for item in items:
+				self.items[url].append(MenuItem(**_stringify(item)))
+
+	def get(self, url):
+		return self.items.get(url, [])
 
 
 class MenuItem(Item):
@@ -32,7 +37,3 @@ class MenuItem(Item):
 				self.args["items"].append(MenuItem(**_stringify(sub)))
 			del self.args["subs"]
 
-
-if __name__ == "__main__":
-	m = Menu("menu.json")
-	print [i.args for i in m.items]
