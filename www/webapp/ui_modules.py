@@ -2,6 +2,7 @@
 
 import tornado.web
 
+import markdown
 import menu
 import releases
 
@@ -13,6 +14,10 @@ class UIModule(tornado.web.UIModule):
 			"link" : self.handler.link,
 		})
 		return tornado.web.UIModule.render_string(self, *args, **kwargs)
+
+	@property
+	def user_db(self):
+		return self.handler.application.user_db
 
 
 class MenuItemModule(UIModule):
@@ -33,7 +38,10 @@ class MenuModule(UIModule):
 	def render(self, menuclass=None):
 		if not menuclass:
 			menuclass = menu.Menu("menu.json")
-		return self.render_string("modules/menu.html", menuitems=menuclass.items)
+
+		host = self.request.host.lower().split(':')[0]
+
+		return self.render_string("modules/menu.html", menuitems=menuclass.get(host))
 
 
 class NewsItemModule(UIModule):
@@ -78,3 +86,15 @@ class SidebarBannerModule(UIModule):
 class BuildModule(UIModule):
 	def render(self, build):
 		return self.render_string("modules/builds.html", build=build)
+
+
+class PlanetEntryModule(UIModule):
+	def render(self, entry):
+		if not getattr(entry, "author", None):
+			entry.author = self.user_db.get_user_by_id(entry.author_id)
+
+		entry.markup = markdown.markdown(entry.text)
+		entry.published = entry.published.strftime("%Y-%m-%d")
+		entry.updated = entry.updated.strftime("%Y-%m-%d %H:%M")
+
+		return self.render_string("modules/planet-entry.html", entry=entry)

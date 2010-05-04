@@ -1,0 +1,14 @@
+<div class="post">
+	<a name="{{ entry.slug }}"></a>
+	<h3>
+		<a href="/post/{{ entry.slug }}">{{ entry.title }}</a>
+	</h3>
+	<div class="post_info">
+		{{ entry.published }} {{ _("by") }}
+		<a href="/user/{{ entry.author.name }}">{{ entry.author.realname }}</a>
+	</div>
+	{{ entry.markup }}
+	<div class="footer">
+		Last update: {{ entry.updated }}
+	</div>
+</div>

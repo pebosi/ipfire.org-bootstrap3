@@ -5,12 +5,15 @@ import httplib
 import mimetypes
 import operator
 import os
+import re
 import simplejson
 import stat
 import sqlite3
 import time
+import unicodedata
 import urlparse
 
+import tornado.database
 import tornado.httpclient
 import tornado.locale
 import tornado.web
@@ -24,7 +27,7 @@ from releases import releases
 
 import builds
 import cluster
-import menu
+import markdown
 import translations
 #import uriel
 
@@ -77,6 +80,15 @@ class BaseHandler(tornado.web.RequestHandler):
 	@property
 	def hash_db(self):
 		return self.application.hash_db
+
+	@property
+	def planet_db(self):
+		return self.application.planet_db
+
+	@property
+	def user_db(self):
+		return self.application.user_db
+
 
 class MainHandler(BaseHandler):
 	def get(self):
@@ -308,3 +320,54 @@ class RSSHandler(BaseHandler):
 
 		self.set_header("Content-Type", "application/rss+xml")
 		self.render("rss.xml", items=items, lang=lang)
+
+
+class PlanetBaseHandler(BaseHandler):
+	@property
+	def db(self):
+		return self.application.planet_db
+
+
+class PlanetMainHandler(PlanetBaseHandler):
+	def get(self):
+		authors = self.db.query("SELECT DISTINCT author_id FROM entries")
+		authors = [a["author_id"] for a in authors]
+
+		users = []
+		for user in self.user_db.users:
+			if user.id in authors:
+				users.append(user)
+
+		entries = self.db.query("SELECT * FROM entries "
+			"ORDER BY published DESC LIMIT 3")
+		
+		for entry in entries:
+			entry.author = self.user_db.get_user_by_id(entry.author_id)
+
+		self.render("planet-main.html", entries=entries, authors=users)
+
+
+class PlanetUserHandler(PlanetBaseHandler):
+	def get(self, user):
+		if not user in [u.name for u in self.user_db.users]:
+			raise tornado.web.HTTPError(404, "User is unknown")
+
+		user = self.user_db.get_user_by_name(user)
+
+		entries = self.db.query("SELECT * FROM entries "
+			"WHERE author_id = '%s' ORDER BY published DESC" % (user.id))
+
+		self.render("planet-user.html", entries=entries, user=user)
+
+
+class PlanetPostingHandler(PlanetBaseHandler):
+	def get(self, slug):
+		entry = self.db.get("SELECT * FROM entries WHERE slug = %s", slug)
+
+		if not entry:
+			raise tornado.web.HTTPError(404)
+
+		user = self.user_db.get_user_by_id(entry.author_id)
+		entry.author = user
+
+		self.render("planet-posting.html", entry=entry, user=user)

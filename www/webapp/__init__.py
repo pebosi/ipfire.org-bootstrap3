@@ -9,7 +9,7 @@ import tornado.locale
 import tornado.options
 import tornado.web
 
-from db import HashDatabase
+from db import HashDatabase, UserDatabase
 from handlers import *
 from ui_modules import *
 
@@ -24,12 +24,14 @@ class Application(tornado.web.Application):
 			cookie_secret = "aXBmaXJlY29va2llc2VjcmV0Cg==",
 			#debug = True,
 			gzip = True,
+			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),
 			ui_modules = {
 				"Build"          : BuildModule,
 				"Menu"           : MenuModule,
 				"MenuItem"       : MenuItemModule,
 				"NewsItem"       : NewsItemModule,
+				"PlanetEntry"    : PlanetEntryModule,
 				"ReleaseItem"    : ReleaseItemModule,
 				"SidebarBanner"  : SidebarBannerModule,
 				"SidebarItem"    : SidebarItemModule,
@@ -42,6 +44,8 @@ class Application(tornado.web.Application):
 
 		# Initialize database connections
 		self.hash_db = HashDatabase()
+		self.planet_db = tornado.database.Connection("172.28.1.150", "planet", user="planet")
+		self.user_db = UserDatabase()
 
 		self.settings["static_path"] = static_path = os.path.join(BASEDIR, "static")
 		static_handlers = [
@@ -81,6 +85,15 @@ class Application(tornado.web.Application):
 			(r"/(.*)", DownloadFileHandler),
 		])
 
+		# planet.ipfire.org
+		self.add_handlers(r"planet\.ipfire\.org", [
+			(r"/", MainHandler),
+			(r"/[A-Za-z]{2}/?", MainHandler),
+			(r"/[A-Za-z]{2}/index", PlanetMainHandler),
+			(r"/post/([A-Za-z0-9_-]+)", PlanetPostingHandler),
+			(r"/user/([a-z0-9]+)", PlanetUserHandler),
+		] + static_handlers)
+
 		# source.ipfire.org
 		self.add_handlers(r"source\.ipfire\.org", [
 			(r"/", MainHandler),
@@ -101,6 +114,22 @@ class Application(tornado.web.Application):
 			(r"/", MainHandler),
 			(r"/[A-Za-z]{2}/?", MainHandler),
 			(r"/[A-Za-z]{2}/index", DownloadTorrentHandler),
+		] + static_handlers)
+
+		# admin.ipfire.org
+		self.add_handlers(r"admin\.ipfire\.org", [
+			(r"/", AdminIndexHandler),
+			(r"/login", AuthLoginHandler),
+			(r"/logout", AuthLogoutHandler),
+			# Accounts
+			(r"/accounts", AdminAccountsHandler),
+			(r"/accounts/edit/([0-9]+)", AdminAccountsEditHandler),
+			# Planet
+			(r"/planet", AdminPlanetHandler),
+			(r"/planet/compose", AdminPlanetComposeHandler),
+			(r"/planet/edit/([0-9]+)", AdminPlanetEditHandler),
+			# API
+			(r"/api/planet/render", AdminApiPlanetRenderMarkupHandler)
 		] + static_handlers)
 
 		# ipfire.org
