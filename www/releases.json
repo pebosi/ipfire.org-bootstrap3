@@ -84,7 +84,7 @@
 	
 	{ "name" : "IPFire 2.5 - Core 35",
 	  "status"    : "stable",
-	  "online"    : 1,
+	  "online"    : 0,
 	  "files" : [
 	  	{
 		  "type" : "alix",
@@ -126,7 +126,7 @@
 
 	{ "name" : "IPFire 2.5 - Core 34",
 	  "status"    : "stable",
-	  "online"    : 1,
+	  "online"    : 0,
 	  "files" : [
 	  	{
 		  "type" : "alix",
@@ -168,7 +168,7 @@
 
 	{ "name" : "IPFire 2.5 - Core 33",
 	  "status"    : "stable",
-	  "online"    : 1,
+	  "online"    : 0,
 	  "files" : [
 	  	{
 		  "type" : "alix",
@@ -222,7 +222,7 @@
 
 	{ "name" : "IPFire 1.4.9 - FINAL",
 	  "status"    : "stable",
-	  "online"    : 1,
+	  "online"    : 0,
 	  "files" : [
 	  	{
 		  "type" : "iso",
