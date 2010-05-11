@@ -102,23 +102,7 @@
 			"country" : "Germany",
 			"country_code" : "de"
 		},
-		"hostname" : "ipfire.kbarthel.de",
-		"path" : "",
-		"serves" : {
-			"isos" : true,
-			"pakfire2" : false,
-			"pakfire3" : false
-		}
-	},
-
-	{
-		"name" : "Kim Barthel",
-		"location" : {
-			"city" : "Stuttgart",
-			"country" : "Germany",
-			"country_code" : "de"
-		},
-		"hostname" : "ipfire.1l0v3u.com",
+		"hostname" : "ipfire.b56.eu",
 		"path" : "",
 		"serves" : {
 			"isos" : true,
