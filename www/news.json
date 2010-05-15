@@ -841,5 +841,25 @@
 									von openswan auf strongswan zu wechseln. Um auf diesen Wechsel vorbereitet zu sein 
 									sollten Sie Ihre IPSEC Einstellungen prüfen und die Felder \"Local ID\" und \"Remote ID\" 
 									ausfüllen. Im Moment sind diese Felder optional aber mit strongswan sind diese erforderlich.
-								</p>"}}
+								</p>"}},
+								
+		"31" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire on LWN.net", "de" : "IPFire auf LWN.net" },
+				"date"     : "2010-05-15",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Linux Weekly News, one of the most important information portals of free software and linux, 
+								 has released a detailed article about IPFire that we want to share with our users:
+								 <br />
+					  		     <a href=\"http://lwn.net/Articles/384419/\" target=\"_blank\">IPFire 2.5: Firewalls and more</a>
+					  		  </p>",
+
+
+					  "de" : "<p>Linux Weekly News, einer der wichtigsten Informationsportale über Freie Software und Linux,
+					  		     hat einen ausführlichen Artikel über IPFire herausgebracht den wir unseren Benutzern nicht 
+					  		     vorenthalten wollen:
+					  		     <br />
+					  		     <a href=\"http://lwn.net/Articles/384419/\" target=\"_blank\">IPFire 2.5: Firewalls and more</a>	
+					  		  </p>"}}
 }
