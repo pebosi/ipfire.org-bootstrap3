@@ -866,10 +866,10 @@
 		"32" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "IPFire 2.7 release candidate 1", "de" : "IPFire 2.7 release candidate 1" },
-				"date"     : "2010-05-15",
+				"date"     : "2010-06-10",
 				"link"     : "",
 				"content"  :
-					{ "en" : "<p>After the approval by the release manager we are going to release <strong>IPFire 2.7 RC1</strong> today. 
+					{ "en" : "<p>After the approval by the release manager we are going to release <strong>IPFire 2.7 rc1</strong> today. 
  								 This version is only suitable for testing and should not be used in productive environments.
  							   	 <br />
 							 	 Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
