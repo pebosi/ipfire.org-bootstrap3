@@ -80,22 +80,6 @@
 	},
 
 	{
-		"name" : "Peter Schälchli",
-		"location" : {
-			"city" : "Cologne",
-			"country" : "Germany",
-			"country_code" : "de"
-		},
-		"hostname" : "mirror5.ipfire.org",
-		"path" : "",
-		"serves" : {
-			"isos" : true,
-			"pakfire2" : true,
-			"pakfire3" : false
-		}
-	},
-
-	{
 		"name" : "Kim Barthel",
 		"location" : {
 			"city" : "Stuttgart",
