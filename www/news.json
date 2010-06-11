@@ -869,30 +869,30 @@
 				"date"     : "2010-06-10",
 				"link"     : "",
 				"content"  :
-					{ "en" : "<p>After the approval by the release manager we are going to release <strong>IPFire 2.7 rc1</strong> today. 
+					{ "en" : "<p>After the approval by the release manager we are going to release <strong>IPFire 2.7 RC1</strong> today. 
  								 This version is only suitable for testing and should not be used in productive environments.
  							   	 <br />
 							 	 Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
 								 <a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
 							     <br />
-							     Help us to test the new version of IPFire, if you found bugs please report them to the <a href=\"http://bugtracker.ipfire.org/\" 
+							     Please help us to test the new version of IPFire. If you have experienced any bugs please report them to the <a href=\"http://bugtracker.ipfire.org/\" 
 								 target=\"_blank\">bugtracker</a>. Thank you!
 					  		     <br />
-					  		     More informations are available on the 
+					  		     More information is available on the 
 					  		     <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
 					  		  </p>",
 
 
-					  "de" : "<p>Nach der Freigabe durch den Releasemanager werden wir Heute <strong>IPFire 2.7 rc1</strong> veröffentlichen. 
+					  "de" : "<p>Nach der Freigabe durch den Releasemanager werden wir heute <strong>IPFire 2.7 RC1</strong> veröffentlichen. 
 								 Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
 								 <br />
 								 Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
 								 <a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
 							     <br />
-								 Helft uns und testet die neue IPFire Version, gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" 
+								 Helft uns und testet die neue IPFire-Version. Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" 
 								 target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
 					  		     <br />
-					  		     Mehr Informationen gib es hier im
+					  		     Mehr Informationen gibt es hier im
 					  		     <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
 					  		  </p>"}}
 }
