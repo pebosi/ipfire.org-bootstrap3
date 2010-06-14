@@ -5,11 +5,23 @@ LOGFILE=/srv/logs/www/webapp.error.log
 
 case "$1" in
 	start)
-		cd ${HOMEDIR} && ./webapp.py >>${LOGFILE} 2>&1 &
+		if ps ax | grep -v grep | grep webapp.py > /dev/null
+		then
+    		echo "webapp is allready running..."
+    	else
+			echo "Starting webapp..."
+			cd ${HOMEDIR} && ./webapp.py >>${LOGFILE} 2>&1 &
+		fi
 		;;
 
 	stop)
-		killall webapp.py
+		if ps ax | grep -v grep | grep webapp.py > /dev/null
+		then
+			echo "Stopping webapp..."
+			killall webapp.py &> /dev/null
+    	else
+			echo "webapp is not running..."
+		fi
 		;;
 
 	restart)
@@ -19,10 +31,17 @@ case "$1" in
 		;;
 
 	check)
-		if (ps aux | grep -q webapp.py); then
-			: # Process is running...
+		if ps ax | grep -v grep | grep webapp.py > /dev/null
+			then
+    		echo "webapp is running..."
 		else
-			$0 restart
-		fi
+			echo "webapp is not running!" 
+			$0 start
+			fi
 		;;
+		
+		*)
+		echo "usage: webapp [ start | stop | restart | check ]"
+		;;
+		
 esac
