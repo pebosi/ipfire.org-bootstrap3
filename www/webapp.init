@@ -33,11 +33,12 @@ case "$1" in
 	check)
 		if ps ax | grep -v grep | grep webapp.py > /dev/null
 			then
-    		echo "webapp is running..."
+		:
+#    		echo "webapp is running..."
 		else
 			echo "webapp is not running!" 
 			$0 start
-			fi
+		fi
 		;;
 		
 		*)
