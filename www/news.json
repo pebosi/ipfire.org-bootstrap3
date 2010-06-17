@@ -804,7 +804,6 @@
 									The webif marks this as \"can be blank\" but this will change with strongswan!
 								</p>",
 
-
 						"de" : "<p>Heute werden wir <strong>Core 37</strong> veröffentlichen. 
 								Es bringt die folgenden Änderungen mit sich:</p>
 									<ul>
@@ -870,29 +869,51 @@
 				"link"     : "",
 				"content"  :
 					{ "en" : "<p>After the approval by the release manager we are going to release <strong>IPFire 2.7 RC1</strong> today. 
- 								 This version is only suitable for testing and should not be used in productive environments.
+ 								This version is only suitable for testing and should not be used in productive environments.
+ 							   	<br />
+							 	Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+							    <br />
+							    Please help us to test the new version of IPFire. If you have experienced any bugs please report 
+							    them to the <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">bugtracker</a>. Thank you!
+					  		    <br />
+					  		    More information is available on the 
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
+					  		  </p>",
+
+					  "de" : "<p>Nach der Freigabe durch den Releasemanager werden wir heute <strong>IPFire 2.7 RC1</strong> veröffentlichen. 
+								Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+								<br />
+								Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+							    <br />
+								Helft uns und testet die neue IPFire-Version. Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
+					  		    <br />
+					  		    Mehr Informationen gibt es hier im
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
+					  		  </p>"}},
+					  		  
+		"33" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 release candidate 2", "de" : "IPFire 2.7 release candidate 2" },
+				"date"     : "2010-06-16",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today <strong>IPFire 2.7 RC2</strong> is available.
+								 <br />
+ 								 Again this version is only suitable for testing and should not be used in productive environments.
  							   	 <br />
 							 	 Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
 								 <a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
-							     <br />
-							     Please help us to test the new version of IPFire. If you have experienced any bugs please report them to the <a href=\"http://bugtracker.ipfire.org/\" 
-								 target=\"_blank\">bugtracker</a>. Thank you!
-					  		     <br />
-					  		     More information is available on the 
-					  		     <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
 					  		  </p>",
 
-
-					  "de" : "<p>Nach der Freigabe durch den Releasemanager werden wir heute <strong>IPFire 2.7 RC1</strong> veröffentlichen. 
-								 Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+					  "de" : "<p>Heute steht <strong>IPFire 2.7 RC2</strong> zur Verfügung. 
+								 <br />Diese Version ist wieder ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
 								 <br />
 								 Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
 								 <a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
-							     <br />
-								 Helft uns und testet die neue IPFire-Version. Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" 
-								 target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
-					  		     <br />
-					  		     Mehr Informationen gibt es hier im
-					  		     <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
 					  		  </p>"}}
+					  		  
 }
