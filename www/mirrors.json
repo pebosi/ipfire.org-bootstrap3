@@ -34,7 +34,7 @@
 	{
 		"name" : "Jan Paul Tücking",
 		"location" : {
-			"city" : "Karlsruhe",
+			"city" : "Falkenstein",
 			"country" : "Germany",
 			"country_code" : "de"
 		},
@@ -42,7 +42,7 @@
 		"path" : "",
 		"serves" : {
 			"isos" : true,
-			"pakfire2" : false,
+			"pakfire2" : true,
 			"pakfire3" : false
 		}
 	},
