@@ -125,5 +125,21 @@
 			"pakfire2" : false,
 			"pakfire3" : false
 		}
+	},
+
+	{
+		"name" : "SWITCH",
+		"location" : {
+			"city" : "Zurich",
+			"country" : "Swiss",
+			"country_code" : "ch"
+		},
+		"hostname" : "mirror.switch.ch",
+		"path" : "/ftp/mirror/ipfire/pakfire2",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : false,
+			"pakfire3" : false
+		}
 	}
 ]
