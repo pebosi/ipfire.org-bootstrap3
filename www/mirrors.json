@@ -131,7 +131,7 @@
 		"name" : "SWITCH",
 		"location" : {
 			"city" : "Zurich",
-			"country" : "Swiss",
+			"country" : "Switzerland",
 			"country_code" : "ch"
 		},
 		"hostname" : "mirror.switch.ch",
