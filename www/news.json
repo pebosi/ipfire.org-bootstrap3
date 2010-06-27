@@ -979,6 +979,39 @@
 								<br />
 					  		    Alle Änderungen gibt es hier im
 					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
+							  </p>"}},
+							  
+		"37" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 release candidate 5", "de" : "IPFire 2.7 release candidate 5" },
+				"date"     : "2010-06-27",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Probably this will be the last release candidate, <strong>IPFire 2.7 RC5</strong> is avaiable.
+								<br />
+ 								This version is only suitable for testing and should not be used in productive environments.
+ 							   	<br />
+							 	Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								If you have experienced any bugs please report them to the <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">bugtracker</a>. Thank you!
+								<br />
+					  		    Changes you will find at the 
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
+					  		  </p>",
+
+					  "de" : "<p>Wahrscheinlich wird dies der letzte Release Candidate, <strong>IPFire 2.7 RC5</strong> 
+					  			steht absofort bereit. 
+								<br />Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+								<br />
+								Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
+								<br />
+					  		    Änderungen findet man im
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
 							  </p>"}}
 					  		  
 }
