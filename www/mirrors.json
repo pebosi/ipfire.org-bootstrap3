@@ -141,5 +141,21 @@
 			"pakfire2" : false,
 			"pakfire3" : false
 		}
-	}
+	},
+
+	{
+                "name" : "Peter Schälchli",
+                "location" : {
+                        "city" : "Paris",
+                        "country" : "France",
+                        "country_code" : "fr"
+                },
+                "hostname" : "mirror6.ipfire.org",
+                "path" : "",
+                "serves" : {
+                        "isos" : true,
+                        "pakfire2" : true,
+                        "pakfire3" : false
+                }
+        }
 ]
