@@ -64,22 +64,6 @@
 	},
 
 	{
-		"name" : "Peter Schälchli",
-		"location" : {
-			"city" : "Paris",
-			"country" : "France",
-			"country_code" : "fr"
-		},
-		"hostname" : "mirror3.ipfire.org",
-		"path" : "",
-		"serves" : {
-			"isos" : true,
-			"pakfire2" : true,
-			"pakfire3" : false
-		}
-	},
-
-	{
 		"name" : "Kim Barthel",
 		"location" : {
 			"city" : "Stuttgart",
