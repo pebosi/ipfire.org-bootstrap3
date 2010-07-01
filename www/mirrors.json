@@ -96,22 +96,6 @@
 	},
 
 	{
-		"name" : "Sebastian Winter",
-		"location" : {
-			"city" : "Minden",
-			"country" : "Germany",
-			"country_code" : "de"
-		},
-		"hostname" : "ipfiremirror.wintertech.de",
-		"path" : "",
-		"serves" : {
-			"isos" : true,
-			"pakfire2" : false,
-			"pakfire3" : false
-		}
-	},
-
-	{
 		"name" : "Robert Möker",
 		"location" : {
 			"city" : "Frankfurt am Main",
