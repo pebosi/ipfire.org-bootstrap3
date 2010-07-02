@@ -1022,7 +1022,8 @@
 				"content"  :
 					{ "en" : "<p>It is time - today we are going to release <strong>IPFire 2.7</strong>.
 								At first we will <strong>only</strong> release the ISO files, the update is not <strong>yet</strong> available via pakfire.<br />
-								The reason for this is the change of the IPSec software from Openwan to Strongwan and the mandatory changes in the configuration 								of net2net connections. The update on pakfire will be released in exactly one week, so there is enough time to change the IPSec 								tunnels, more information about this is avaiable at the
+								The reason for this is the change of the IPSec software from Openwan to Strongwan and the mandatory changes in the configuration 								of net2net connections. The update on pakfire will be released next friday 2010-07-09, 
+								so there is enough time to change the IPSec tunnels, more information about this is avaiable at the
 								<a href=\"http://wiki.ipfire.org/en/configuration/services/ipsec_update\" target=\"_blank\">Wiki</a>.
 								<br />There are about 400 changes in the new IPFire Version. All commits can be found at the 
 								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=log;h=refs/heads/core38\" target=\"_blank\">GIT (changelog)</a>.
@@ -1121,7 +1122,7 @@
 					  			Zuerst veröffentlichen wir <strong>nur</strong> die ISOs, über Pakfire ist das Update auf 2.7 <strong>noch</strong> nicht
 					  			verfügbar.<br />
 					  			Der Grund hierfür liegt an der Umstellung für IPSec von Openwan auf Strongwan und die damit verbunden zwingenden Änderungen
-					  			bei laufenden Net2Net Verbindungen. Das Update über Pakfire wird genau in einer Woche freigegeben, so bleibt genügend Zeit
+					  			bei laufenden Net2Net Verbindungen. Das Update über Pakfire wird am Freitag den 09.07.2010 freigegeben, so bleibt genügend Zeit
 					  			die IPSec Tunnel auf Strongwan anzupassen, mehr Informationen hierüber findet man im 
 					  			<a href=\"http://wiki.ipfire.org/de/configuration/services/ipsec_update\" target=\"_blank\">Wiki</a>.
 								<br />Insgesammt sind an die 400 Änderungen in die neue IPFire Version eingeflossen, alle Commits hierzu findet man im 
