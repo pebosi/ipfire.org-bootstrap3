@@ -1022,7 +1022,7 @@
 				"content"  :
 					{ "en" : "<p>It is time - today we are going to release <strong>IPFire 2.7</strong>.
 								At first we will <strong>only</strong> release the ISO files, the update is not <strong>yet</strong> available via pakfire.<br />
-								The reason for this is the change of the IPSec software from Openwan to Strongwan and the mandatory changes in the configuration 								of net2net connections. The update on pakfire will be released next friday 2010-07-09, 
+								The reason for this is the change of the IPSec software from OpenSwan to StrongSwan and the mandatory changes in the configuration 								of net2net connections. The update on pakfire will be released next friday 2010-07-09, 
 								so there is enough time to change the IPSec tunnels, more information about this is avaiable at the
 								<a href=\"http://wiki.ipfire.org/en/configuration/services/ipsec_update\" target=\"_blank\">Wiki</a>.
 								<br />There are about 400 changes in the new IPFire Version. All commits can be found at the 
@@ -1033,7 +1033,7 @@
 								  <li>Updates</li>
 								  <ul>
 								    <li>Updated <strong>Kernel</strong> to stable lts (2.6.32.15)</li>
-								    <li>Updated openssl to version 0.9.80</li>
+								    <li>Updated openssl to version 0.9.8o</li>
 								    <li>Updated Net-SSLeay to version 1.36</li>
 								    <li>Updated smartmontools to version 5.39.1</li>
 								    <li>Updated usb-modeswitch to version 1.1.2</li>
@@ -1044,17 +1044,17 @@
 								    <li>Updated compat-wireless to version 2.6.34</li>
 								    <li>Updated hardware and GeoIP database</li>
 								    <li>Updated squid to current stable version</li>
-								    <li>Updated mISDN,mISDNuser (25.5.2010) and lcr to version 1.7</li>
+								    <li>Updated mISDN, mISDNuser (25.5.2010) and lcr to version 1.7</li>
 								  </ul>
 								  <li>VPN</li>
 								  <ul>
-								    <li>Switched IPSec from Openswan to strongswan version 4.4.0</li>
+								    <li>Switched IPSec from OpenSwan to StrongSwan version 4.4.0</li>
 								    <li>Fixed vpn-watch hang at connection restart</li>
 								    <li>Many other IPSec fixes</li>
 								    <li>Updated OpenVPN to current stable version</li>
 								    <li>New advanced settings for OpenVPN avaiable [bug #490]</li>
 								    <li>Removed not working tap device</li>
-								    <li>Load cryptodev module by default to use the kernel</li>
+								    <li>Load cryptodev modules by default</li>
 								  </ul>
 								  <li>Snort</li>
 								  <ul>
@@ -1075,23 +1075,23 @@
 								  <ul>
 								    <li>Cosmetic change for the swap and load graphs</li>
 								    <li>Fixed some naming and length problems in the outgoing firewall</li>
-								    <li>Fixed  naming of firewall groups for webinterface</li>
-								    <li>Added Clearer description for p2p</li>
+								    <li>Fixed naming of firewall groups for webinterface</li>
+								    <li>Added clearer description for P2P block</li>
 								    <li>Added links for services on services.cgi [bug #617]</li>
-								    <li>Added Clearer button for stopping services</li>
-								    <li>Added new IPTables GUI</li>
+								    <li>Added clearer button for stopping services</li>
+								    <li>Added new iptables GUI</li>
 								    <li>Fixed white page at first start of ids.cgi</li>
 								    <li>Fixed update acclerator file download</li>
 								  </ul>
 								  <li>Firewall</li>
 								  <ul>
-								    <li>Added Grouping Option to Outgoing firewall - multiport and network group rules</li>
+								    <li>Added grouping option to the outgoing firewall - multiport and network group rules</li>
 								    <li>Added space to logging entries by outgoing firewall</li>
 								  </ul>
 								  <li>Language</li>
 								  <ul>
-								    <li>Add spanish translation of installer and setup</li>
-								    <li>Add spanish webif translation</li>
+								    <li>Added spanish translation of installer and setup</li>
+								    <li>Added spanish webif translation</li>
 								  </ul>
 								  <li>Others</li>
 									<ul>
@@ -1118,12 +1118,12 @@
 								</ul>
 					  		  </p>",
 
-					  "de" : "<p>Es ist soweit heute werden wir <strong>IPFire 2.7</strong> freigeben.<br />
-					  			Zuerst veröffentlichen wir <strong>nur</strong> die ISOs, über Pakfire ist das Update auf 2.7 <strong>noch</strong> nicht
+					  "de" : "<p>Es ist so weit - heute werden wir <strong>IPFire 2.7</strong> freigeben.<br />
+					  			Zuerst veröffentlichen wir <strong>nur</strong> die Installations-ISOs. Über Pakfire ist das Update auf 2.7 <strong>noch</strong> nicht
 					  			verfügbar.<br />
-					  			Der Grund hierfür liegt an der Umstellung für IPSec von Openwan auf Strongwan und die damit verbunden zwingenden Änderungen
-					  			bei laufenden Net2Net Verbindungen. Das Update über Pakfire wird am Freitag den 09.07.2010 freigegeben, so bleibt genügend Zeit
-					  			die IPSec Tunnel auf Strongwan anzupassen, mehr Informationen hierüber findet man im 
+					  			Der Grund hierfür liegt an der Umstellung für IPSec von OpenSwan auf StrongSwan und die damit verbunden zwingenden Änderungen
+					  			bei laufenden Net2Net-Verbindungen. Das Update über Pakfire wird am Freitag, 09.07.2010 freigegeben. So bleibt genügend Zeit
+					  			die IPSec Tunnel auf Strongwan anzupassen. Mehr Informationen hierüber findet man im 
 					  			<a href=\"http://wiki.ipfire.org/de/configuration/services/ipsec_update\" target=\"_blank\">Wiki</a>.
 								<br />Insgesammt sind an die 400 Änderungen in die neue IPFire Version eingeflossen, alle Commits hierzu findet man im 
 								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=log;h=refs/heads/core38\" target=\"_blank\">GIT (Changelog)</a>.
@@ -1133,7 +1133,7 @@
 								  <li>Updates</li>
 								  <ul>
 								    <li>Update vom <strong>Kernel</strong> auf stabile Version mit LTS (2.6.32.15)</li>
-								    <li>Update von openssl auf Version 0.9.80</li>
+								    <li>Update von openssl auf Version 0.9.8o</li>
 								    <li>Update von Net-SSLeay auf Version 1.36</li>
 								    <li>Update von smartmontools auf Version 5.39.1</li>
 								    <li>Update von usb-modeswitch auf Version 1.1.2</li>
@@ -1143,77 +1143,72 @@
 								    <li>Update von kvm-kmod auf Version 2.6.33.1</li>
 								    <li>Update von compat-wireless auf Version 2.6.34</li>
 								    <li>Update von Hardware und GeoIP Datenbank</li>
-								    <li>Update von squid auf dei letzte stabile Version</li>
-								    <li>Update von mISDN,mISDNuser (25.5.2010) und lcr auf Version 1.7</li>
+								    <li>Update von squid auf die letzte stabile Version</li>
+								    <li>Update von mISDN, mISDNuser (25.5.2010) und lcr auf Version 1.7</li>
 								  </ul>
 								  <li>VPN</li>
 								  <ul>
-								    <li>Änderung der IPSec Software von Openswan nach Strongswan Version 4.4.0</li>
-								    <li>Fehler beim vpn-watch behoben, hing nach einem Verbindungsneustart</li>
-								    <li>Viele kleine IPSec Fehler behoben</li>
+								    <li>Änderung der IPSec Software von OpenSwan nach StrongSwan Version 4.4.0</li>
+								    <li>'vpn-watch hing nach einem Verbindungsneustart' behoben</li>
+								    <li>Viele kleine IPSec-Fehler behoben</li>
 								    <li>Update von OpenVPN auf die letzte stabile Version</li>
-								    <li>Neue Möglichekeiten unter Erweiterte Einstellungen für OpenVPN [Bug #490]</li>
-								    <li>Das nicht funktionierende tap device wurde entfernt</li>
-								    <li>Die cryptodev module werden ab nun per default geladen</li>
+								    <li>Neue Möglichkeiten unter 'Erweiterte Einstellungen' für OpenVPN [Bug #490]</li>
+								    <li>Das nicht funktionierende tap-Device wurde entfernt</li>
+								    <li>cryptodev-Module werden nun geladen</li>
 								  </ul>
 								  <li>Snort</li>
 								  <ul>
-								    <li>Update von Snort auf die stablie Version 2.8.6</li>
-								    <li>Snort md5 check wurde entfernt, Überprüfung von freien Speicher wurde hinzugefügt</li>
-								    <li>Fehler in Snort init-Skript wurden behoben</li>
+								    <li>Update von Snort auf die stabile Version 2.8.6</li>
+								    <li>MD5-Check wurde entfernt - Überprüfung von freien Speicher wurde hinzugefügt</li>
+								    <li>Fehler in init-Skript wurden behoben</li>
 								    <li>Es wurden mehrere Snort Konfigurations- und Skriptanpassungen gemacht</li>
 								    <li>Fehler in der Erkennung von Snort Beschreibungen wurde behoben</li>
-								    <li>Austausch der Snort GPL Community Rule gegen Regeln von Emergingthreats</li>
-								    <li>Meherer Guardian Fehler wurden behoben</li>
+								    <li>Austausch der Snort GPL-Community-Rule gegen Regeln von Emergingthreats</li>
+								    <li>Mehere Guardian-Fehler wurden behoben</li>
 								  </ul>
 								  <li>Hardware</li>
 								  <ul>
-								    <li>Support für Alix2 LEDs wurde hinzugefügt</li>
+								    <li>Support für Alix2-LEDs wurde hinzugefügt</li>
 								    <li>Treiber für Vodafone K3765 and K4505 wurden hinzugefügt</li>
 								  </ul>
 								  <li>Webinterface</li>
 								  <ul>
-								    <li>Kosmetische Änderungen am Swap und Load Graph</li>
-								    <li>Fehler bei der Bennenung und längen Problem in der ausgehenden Firewall behoben</li>
-								    <li>Fehler bei der Bennenung von Firewall Gruppen behoben</li>
-								    <li>Eine besserer Beschreibung der P2P Optionen wurde hinzugefügt</li>
+								    <li>Kosmetische Änderungen am Swap- und Load-Graph</li>
+								    <li>Fehler bei der Bennenung und Längenproblem in der ausgehenden Firewall behoben</li>
+								    <li>Fehler bei der Bennenung von Firewall-Gruppen behoben</li>
+								    <li>Eine bessere Beschreibung der P2P-Optionen wurde hinzugefügt</li>
 								    <li>Auf der services.cgi werden die Diensten nun mit entsprechenden Links dargestellt [Bug #617]</li>
 								    <li>Verbesserter Button für das Stoppen von Diensten</li>
-								    <li>Neue IPTables GUI</li>
-								    <li>Der Fehler, dass die ids.cgi Seite beim ersten mal laden leer blieb, wurde behoben</li>
-								    <li>Beim Update Acclerator Datei download wurde ein Fehler behoben</li>
+								    <li>Neue iptables-GUI</li>
+								    <li>Der Fehler, dass die ids.cgi-Seite beim ersten laden leer blieb, wurde behoben</li>
+								    <li>Update-Acclerator: Dateidownload Fehler wurde behoben</li>
 								  </ul>
 								  <li>Firewall</li>
 								  <ul>
-								    <li>Neue Gruppenoption wurde der ausgehenden Firewall hinzugefügt, für Multiport und Netzwerk Gruppen Regeln</li>
-								    <li>Ein Leerzeichen zur verbesserten Lesbarkeit der ausgehnden Firewall Logs wurde hinzugefügt</li>
+								    <li>Neue Gruppenoption wurde der ausgehenden Firewall hinzugefügt, für Multiport- und Netzwerk-Gruppen-Regeln</li>
+								    <li>Ein Leerzeichen zur verbesserten Lesbarkeit der ausgehenden Firewall-Logs wurde hinzugefügt</li>
 								  </ul>
 								  <li>Sprachen</li>
 								  <ul>
-								    <li>Spanische Übersetzung für Installer und Setup Menü wurde hinzugefügt</li>
+								    <li>Spanische Übersetzung für Installer und Setupmenü wurde hinzugefügt</li>
 								    <li>Spanische Übersetzung des Webinterfaces hinzugefügt</li>
 								  </ul>
 								  <li>Sonstiges</li>
 									<ul>
-									  <li>Eine Konfigurationoption wurde hinzugefügt um die Netfilter SIP Modules herauszunehmen</li>
-									  <li>Syslog async logging Funktion hinzugefügt</li>
+									  <li>Eine Konfigurationoption wurde hinzugefügt um die Netfilter-SIP-Module zu deaktivieren</li>
+									  <li>Syslog-async-Loggingfunktion hinzugefügt</li>
 									  <li>Größe von /var/log/rrd in fstab geändert</li>
-									  <li>Größe von Swapdatei geändert</li>
-									  <li>Komplette Überarbeitung der collectd Konfiguration</li>
+									  <li>Größe der Swapdatei geändert</li>
+									  <li>Komplette Überarbeitung der collectd-Konfiguration</li>
 									  <li>Die Erstellung der Chains in der wirelessctrl wurde bereinigt</li>
-									  <li>Geändert Module in Init-Skripten die zum scheitern beim Laden von Modul führten</li>
-									  <li>Neue LED Trigger hinzugefügt: netdev</li>
-									  <li>Eine e2fsck.conf wurde hinzugefügt um den Fehler der superblock checks zu beheben</li>
-									  <li>Enabled force setting system time on boot</li>
-									  <li>Fixed url filter repository for local redirects</li>
-									  <li>Fehler im squidclamav logging wurde behoben [Bug #639]</li>
-									  <li>Erhöhung der Passwortlänge auf 50 Zeichen</li>
-									  <li>Es wurde eine Bootoption hinzugefügt welche bestimmte Init-Skripte überspringen kann</li>
-									  <li>Es wurden alle Frambuffer Module der Blacklist hinzugefügt</li>
+									  <li>Neue LED-Trigger hinzugefügt: netdev</li>
+									  <li>Eine e2fsck.conf wurde hinzugefügt um den Fehler der Superblock-Checks zu beheben</li>
+									  <li>Fehler im squidclamav-Logging wurde behoben [Bug #639]</li>
+									  <li>Erhöhung der Passwortlänge im Installer auf 50 Zeichen</li>
+									  <li>Es wurde eine Bootoption hinzugefügt, welche bestimmte Init-Skripte überspringen kann</li>
+									  <li>Es wurden alle Frambuffer-Module der Blacklist hinzugefügt</li>
 									  <li>Fehler im rebuildhost behoben [Bug #509]</li>
-									  <li>Erlauben der Ip/Netmask für den Blue Zugang</li>
-									  <li>Fehler in GRUP bei der Installation auf Virtio Hdd wurde behoben</li>
-									  <li>Änderung der serialcon am Flashimage</li>
+									  <li>Fehler in GRUB bei der Installation auf Virtio-Blockdevices wurde behoben</li>
 									</ul>
 								</ul>
 							  </p>"}}
