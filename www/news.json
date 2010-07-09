@@ -1211,6 +1211,30 @@
 									  <li>Fehler in GRUB bei der Installation auf Virtio-Blockdevices wurde behoben</li>
 									</ul>
 								</ul>
+							  </p>"}},
+							  
+	    "39" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 final via pakfire", "de" : "IPFire 2.7 final via pakfire" },
+				"date"     : "2010-07-09",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>From today it will be possible to update old IPFire systems via the package manager 
+								to the brand new version <strong>IPFire 2.7</strong>.
+								<br />We want to point out again that the update to StrongSwan comes with 
+								<a href=\"http://wiki.ipfire.org/en/configuration/services/ipsec_update\" target=\"_blank\">mandatory changes</a> 
+								for existing IPSec tunnels with PSK.
+								<br />
+								<br />Because of to the kernel update, a reboot will be needed.<br />
+					  		  </p>",
+
+					  "de" : "<p>Ab heute wird es nun auch möglich sein, über den Paketmanager alte IPFire-Systeme 
+					  			auf die Version <strong>IPFire 2.7</strong> zu aktuallsieren. 
+								<br />Wir wollen erneut darauf hinweisen, dass durch das Update auf StrongSwan 
+								<a href=\"http://wiki.ipfire.org/de/configuration/services/ipsec_update\" target=\"_blank\">zwingend eine Änderung</a> an den
+								bestehenden IPSec-Tunneln mit PSK vorgenommen werden muss.
+								<br />
+								<br />Durch das Update des Kernels ist ein Neustart von IPFire nötig.<br/>
 							  </p>"}}
 					  		  
 					  		  
