@@ -1235,45 +1235,7 @@
 								bestehenden IPSec-Tunneln mit PSK vorgenommen werden muss.
 								<br />
 								<br />Durch das Update des Kernels ist ein Neustart von IPFire nötig.<br/>
-							  </p>"}},
-							  
-	    "40" : {"author"   : "Jan Paul Tuecking",
-				"mail"     : "earl@ipfire.org",
-				"subject"  : { "en" : "Core Update 39", "de" : "Core Update 39" },
-				"date"     : "2010-07-26",
-				"link"     : "",
-				"content"  :
-					{ "en" : "<p>Today we are going to release <strong>Core 37</strong>. 
-								It implicates following changes:<br />
-								<ul>
-									<li>Updated libpng to 1.2.44</li>
-									<li>Updated pppd to 2.4.5</li>
-									<li>Fixed the creating of the backupiso for 2.7</li>
-									<li>Fixed dns dhcp client helper script</li>
-									<li>Fixed Blacklist Update and Cachecleanup of Update Accelerator / Urlfilter</li>
-									<li>Fixed Pakfire Output Bug in functions.pl</li>
-									<li>Added libevent (is needed for new nfs)</li>
-									<li>Added missing screen terminfo file to run mc in screen</li>
-									<li>Enabled support of Cisco VPN client (necessary for iPhone connection)</li>
-									<li>Remove empty nameserver entry from resolv.conf</li>
-									<li>Changed Snort CGI, update in background</li>
-								</ul>
-								</p>",
-
-					  "de" : "<p>Heute werden wir <strong>Core 37</strong> veröffentlichen. 
-								Es bringt die folgenden Änderungen mit sich:<br />
-								<ul>
-									<li>Updated von libpng auf 1.2.44</li>
-									<li>Updated von pppd auf 2.4.5</li>
-									<li>Fehler beim erstellen vom Backupiso für die 2.7</li>
-									<li>Fehler im DNS DHCP Client-Helper-Script behoben</li>
-									<li>Fehler im Blacklist Update und Cachecleanup vom Update Accelerator / Urlfilter behoben</li>
-									<li>Der Pakfire Ausgabe Bug in der functions.pl wurde behoben</li>
-									<li>libevent wurde hinzugefügt (ist nötig für neue version von nfs)</li>
-									<li>Die fehlende screen terminfo Datei um MC im screen zu starten wurde hinzugefügt</li>
-									<li>Support für Cisco VPN Client hinzugefügt (wir für iPhone Verbindungen benötigt)</li>
-									<li>Leerer Nameservereintrag der resolv.conf wurde gelöscht</li>
-									<li>Ändernung der Snort CGI, aktualisiert im Hintergrund</li>
-								</ul>
-							</p>"}}
+							  </p>"}}
+					  		  
+					  		  
 }
