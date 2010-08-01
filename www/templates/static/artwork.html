@@ -2,11 +2,8 @@
 		
 {% block title %}{{ _("Artwork") }}{% end block %}
  
-
 {% block content %}
-	
-	
-	<div class=post>
+	<div class="post">
 		<h3>{{ _("Artwork") }}</h3>
 		<img src="{{ static_url("images/page_icons/artwork.png") }}") }}" class="floatTR" border="0" alt="{{ _("Artwork") }}" />
 		<p>
@@ -16,13 +13,29 @@
 			Here you will find logos and print templates of the IPFire project.			
 			{% end %}
 		</p>
+		
+		{% if lang == "de" %}
+			<p>
+				Alle Rechte an künstlerischen Werken bzw. deren Inhalte, die nicht explizit anders gekennzeichnet sind, 
+				gehören dem IPFire-Projekt und sind folglich urheberrechtlich geschützt und dürfen nur mit ausdrücklicher Genehmigung verwendet werden.
+				<br />
+				Für Presse und Berichterstattungen rund um das IPFire-Projekt sind die Inhalte dieser Seite auch ohne Genehmigung verwendbar.
+			</p>
+		{% else %}
+			<p>
+				All rights of artistic works and their content, which are not explicitly labled belong to the IPFire project 
+				and are protected by copyright and may not be used without explicit authorization.
+				<br />
+				For press releases around the IPFire project the contents of this page is usable without any permission.
+			</p>				
+		{% end %}
 	</div>
 	<br class="clear" />
 
-	<div class=post>
+	<div class="post">
 		<a name="{{ _("online") }}"></a><h3>{{ _("<strong>Online</strong> media") }}</h3>
 			<p>
-				<div class=pr_li>
+				<div class="pr_li">
 						 <img src="{{ static_url("images/tux/ipfire_tux_16x16.png") }}" align="bottom" border= "0"/>
 						 <img src="{{ static_url("images/tux/ipfire_tux_32x32.png") }}" align="bottom" border= "0"/>
 						 <img src="{{ static_url("images/tux/ipfire_tux_64x64.png") }}" align="bottom" border= "0"/>
@@ -43,12 +56,19 @@
 						 ipfire.png (512 x 512)</a>
 				</div>
 			</p>
+			<p>
+				{% if lang == "de" %}
+					Der Tux ist unter der GNU General Public License lizensiert.
+				{% else %}
+					The tux images is licensed under the GNU General Public License.
+				{% end %}
+			</p>
 	</div>
 	
 	<div class=post>
 		<a name="{{ _("print") }}"></a><h3>{{ _("<strong>Print</strong> media") }}</h3>
 			<p>
-				<div class=pr_li>				 
+				<div class="pr_li">
 						 <br /><a href="{{ static_url("images/artwork/cd_label.pdf") }}") }}" target="_blank" border="0">
 						 <img src="{{ static_url("images/artwork/cd_label_tn.png") }}" align="bottom" border= "0"/></a>
 						 &nbsp;&nbsp;&nbsp;
@@ -62,46 +82,19 @@
 						 <img src="{{ static_url("images/artwork/flyer_tn.png") }}" align="bottom" border= "0"/></a>
 				</div>
 			</p>
-	</div>
-	
-	<div class=post>
-		<a name="{{ _("Licenses") }}"></a><h3>{{ _("Licenses") }}</h3>
+			
 			<p>
-
-					{% if lang == "de" %}
-					
-					<img src="{{ static_url("images/tux/ipfire_tux_32x32.png") }}" align="absmiddle" border= "0"/> Der Tux ist unter GPL lizensiert.
-					<br />
-					Alle Rechte an künstlerischen Werken bzw. deren Inhalte, die nicht explizit anders gekennzeichnet sind, 
-					gehören dem IPFire-Projekt und sind folglich urheberrechtlich geschützt und dürfen nur mit ausdrücklicher Genehmigung verwendet werden.
-					<br />Für Presse und Berichterstattungen rund um das IPFire-Projekt sind die Inhalte dieser Seite auch ohne Genehmigung verwendbar.
-					<br />
-					<img src="{{ static_url("images/page_icons/license.png") }}" align="absmiddle" border= "0"/> Das Icon Set wurde von 
-					<a href="http://www.jonasraskdesign.com/") }}" target="_blank" border="0">Jonas Rask Design</a> 
-					erstellt und lizensiert als frei für nicht-kommerzielle Nutzung.
-					{% else %}
-					<img src="{{ static_url("images/tux/ipfire_tux_64x64.png") }}" align="absmiddle" border= "0"/> The Tux is licensed under GPL.
-					<br />
-					All rights of artistic works and their content, which are not explicitly labled belong to the IPFire project 
-					and are protected by copyright and may not be used without explicit authorization.
-					<br />For press releases around the IPFire project the contents of this page is usable without any permission.
-					<br />
-					<img src="{{ static_url("images/page_icons/license.png") }}" align="absmiddle" border= "0"/> The icon set was created by 
-					<a href="http://www.jonasraskdesign.com/") }}" target="_blank" border="0">Jonas Rask Design</a> 
-					and licensed as free for non-commercial use.						
-					{% end %}
+				Designed by <a href="http://www.elricco.com" target="_blank" border="0">elricco media services</a>.
 			</p>
-	</div>	
-
+	</div>
 {% end block %}
 
 {{ modules.SidebarBanner(banner) }}
 
 {% block sidebar %}
-		<h4>Public <span>relations</span></h4>
+		<h4><span>Artwork</span> list</h4>
 		<ul class="links">		
 			<li class="first"><a href="#{{ _("online") }}">{{ _("Online media") }}</a></li>
 				<li><a href="#{{ _("print") }}">{{ _("Print media") }}</a></li>
-				<li><a href="#{{ _("Licenses") }}">{{ _("Licenses") }}</a></li>
 		</ul>
 {% end block %}

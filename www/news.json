@@ -804,7 +804,6 @@
 									The webif marks this as \"can be blank\" but this will change with strongswan!
 								</p>",
 
-
 						"de" : "<p>Heute werden wir <strong>Core 37</strong> veröffentlichen. 
 								Es bringt die folgenden Änderungen mit sich:</p>
 									<ul>
@@ -841,5 +840,432 @@
 									von openswan auf strongswan zu wechseln. Um auf diesen Wechsel vorbereitet zu sein 
 									sollten Sie Ihre IPSEC Einstellungen prüfen und die Felder \"Local ID\" und \"Remote ID\" 
 									ausfüllen. Im Moment sind diese Felder optional aber mit strongswan sind diese erforderlich.
-								</p>"}}
+								</p>"}},
+								
+		"31" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire on LWN.net", "de" : "IPFire auf LWN.net" },
+				"date"     : "2010-05-15",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Linux Weekly News, one of the most important information portals of free software and linux, 
+								 has released a detailed article about IPFire that we want to share with our users:
+								 <br />
+					  		     <a href=\"http://lwn.net/Articles/384419/\" target=\"_blank\">IPFire 2.5: Firewalls and more</a>
+					  		  </p>",
+
+
+					  "de" : "<p>Linux Weekly News, einer der wichtigsten Informationsportale über Freie Software und Linux,
+					  		     hat einen ausführlichen Artikel über IPFire herausgebracht den wir unseren Benutzern nicht 
+					  		     vorenthalten wollen:
+					  		     <br />
+					  		     <a href=\"http://lwn.net/Articles/384419/\" target=\"_blank\">IPFire 2.5: Firewalls and more</a>	
+					  		  </p>"}},
+					  		  
+		"32" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 release candidate 1", "de" : "IPFire 2.7 release candidate 1" },
+				"date"     : "2010-06-10",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>After the approval by the release manager we are going to release <strong>IPFire 2.7 RC1</strong> today. 
+ 								This version is only suitable for testing and should not be used in productive environments.
+ 							   	<br />
+							 	Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+							    <br />
+							    Please help us to test the new version of IPFire. If you have experienced any bugs please report 
+							    them to the <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">bugtracker</a>. Thank you!
+					  		    <br />
+					  		    More information is available on the 
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
+					  		  </p>",
+
+					  "de" : "<p>Nach der Freigabe durch den Releasemanager werden wir heute <strong>IPFire 2.7 RC1</strong> veröffentlichen. 
+								Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+								<br />
+								Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+							    <br />
+								Helft uns und testet die neue IPFire-Version. Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
+					  		    <br />
+					  		    Mehr Informationen gibt es hier im
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
+					  		  </p>"}},
+					  		  
+		"33" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 release candidate 2", "de" : "IPFire 2.7 release candidate 2" },
+				"date"     : "2010-06-16",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today <strong>IPFire 2.7 RC2</strong> is available.
+								 <br />
+ 								 Again this version is only suitable for testing and should not be used in productive environments.
+ 							   	 <br />
+							 	 Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								 <a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+					  		  </p>",
+
+					  "de" : "<p>Heute steht <strong>IPFire 2.7 RC2</strong> zur Verfügung. 
+								 <br />Diese Version ist wieder ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+								 <br />
+								 Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								 <a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+					  		  </p>"}},
+		
+		
+		"35" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 release candidate 3", "de" : "IPFire 2.7 release candidate 3" },
+				"date"     : "2010-06-18",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are gonig to release <strong>IPFire 2.7 RC3</strong>.
+								<br />
+ 								This version is only suitable for testing and should not be used in productive environments.
+ 							   	<br />
+							 	Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								If you have experienced any bugs please report them to the <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">bugtracker</a>. Thank you!
+								<br />
+					  		    Changes are available on the 
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
+					  		  </p>",
+
+					  "de" : "<p>Heute werden wir <strong>IPFire 2.7 RC3</strong> veröffentlichen. 
+								<br />Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+								<br />
+								Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
+								<br />
+					  		    Änderungen gibt es hier im
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
+							  </p>"}},
+
+		"36" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 release candidate 4", "de" : "IPFire 2.7 release candidate 4" },
+				"date"     : "2010-06-22",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>News for all our tester <strong>IPFire 2.7 RC4</strong> is released.
+								<br />
+ 								This version is only suitable for testing and should not be used in productive environments.
+ 							   	<br />
+							 	Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								If you have experienced any bugs please report them to the <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">bugtracker</a>. Thank you!
+								<br />
+					  		    All changes are available on the 
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
+					  		  </p>",
+
+					  "de" : "<p>Neuigkeiten für alle unsere Tester <strong>IPFire 2.7 RC4</strong> ist da. 
+								<br />Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+								<br />
+								Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
+								<br />
+					  		    Alle Änderungen gibt es hier im
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
+							  </p>"}},
+							  
+		"37" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 release candidate 5", "de" : "IPFire 2.7 release candidate 5" },
+				"date"     : "2010-06-27",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Probably this will be the last release candidate, <strong>IPFire 2.7 RC5</strong> is avaiable.
+								<br />
+ 								This version is only suitable for testing and should not be used in productive environments.
+ 							   	<br />
+							 	Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								If you have experienced any bugs please report them to the <a href=\"http://bugtracker.ipfire.org/\" 
+								target=\"_blank\">bugtracker</a>. Thank you!
+								<br />
+					  		    Changes you will find at the 
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire forum</a>.
+					  		  </p>",
+
+					  "de" : "<p>Wahrscheinlich wird dies der letzte Release Candidate, <strong>IPFire 2.7 RC5</strong> 
+					  			steht absofort bereit. 
+								<br />Diese Version ist ausschließlich zu Testzwecken geeignet und sollte nicht in Produktivumgebungen benutzt werden.
+								<br />
+								Download: <a href=\"http://people.ipfire.org/~arne_f/testing/\" target=\"_blank\">Mirror 1</a> | 
+								<a href=\"http://testing.ipfire.at/\" target=\"_blank\">Mirror 2</a>
+								<br />
+								Gefundene Fehler bitte im <a href=\"http://bugtracker.ipfire.org/\" target=\"_blank\">Bugtracker</a> melden. Vielen Dank!
+								<br />
+					  		    Änderungen findet man im
+					  		    <a href=\"http://forum.ipfire.org/index.php?topic=2436.0\" target=\"_blank\">IPFire Forum</a>.
+							  </p>"}},
+							  
+		"38" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 final", "de" : "IPFire 2.7 final" },
+				"date"     : "2010-07-02",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>It is time - today we are going to release <strong>IPFire 2.7</strong>.
+								At first we will <strong>only</strong> release the ISO files, the update is not <strong>yet</strong> available via pakfire.<br />
+								The reason for this is the change of the IPSec software from OpenSwan to StrongSwan and the mandatory changes in the configuration 								of net2net connections. The update on pakfire will be released next friday 2010-07-09, 
+								so there is enough time to change the IPSec tunnels, more information about this is avaiable at the
+								<a href=\"http://wiki.ipfire.org/en/configuration/services/ipsec_update\" target=\"_blank\">Wiki</a>.
+								<br />There are about 400 changes in the new IPFire Version. All commits can be found at the 
+								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=log;h=refs/heads/core38\" target=\"_blank\">GIT (changelog)</a>.
+								<br />
+								Changes among others are:
+								<ul>
+								  <li>Updates</li>
+								  <ul>
+								    <li>Updated <strong>Kernel</strong> to stable lts (2.6.32.15)</li>
+								    <li>Updated openssl to version 0.9.8o</li>
+								    <li>Updated Net-SSLeay to version 1.36</li>
+								    <li>Updated smartmontools to version 5.39.1</li>
+								    <li>Updated usb-modeswitch to version 1.1.2</li>
+								    <li>Updated alsa to version 1.0.23</li>
+								    <li>Updated memtest to version 4.10</li>
+								    <li>Updated v4l-dvb (2010-05-20)</li>
+								    <li>Updated kvm-kmod to version 2.6.33.1</li>
+								    <li>Updated compat-wireless to version 2.6.34</li>
+								    <li>Updated hardware and GeoIP database</li>
+								    <li>Updated squid to current stable version</li>
+								    <li>Updated mISDN, mISDNuser (25.5.2010) and lcr to version 1.7</li>
+								  </ul>
+								  <li>VPN</li>
+								  <ul>
+								    <li>Switched IPSec from OpenSwan to StrongSwan version 4.4.0</li>
+								    <li>Fixed vpn-watch hang at connection restart</li>
+								    <li>Many other IPSec fixes</li>
+								    <li>Updated OpenVPN to current stable version</li>
+								    <li>New advanced settings for OpenVPN avaiable [bug #490]</li>
+								    <li>Removed not working tap device</li>
+								    <li>Load cryptodev modules by default</li>
+								  </ul>
+								  <li>Snort</li>
+								  <ul>
+								    <li>Updated snort to stable 2.8.6</li>
+								    <li>Removed snort md5 check, added free space check</li>
+								    <li>Fixed Snort init script, added sleep before chmod</li>
+								    <li>Many snort config and script changes</li>
+								    <li>Fixed detection of snort descriptions</li>
+								    <li>Replaced snort gpl community rules by emergingthreats</li>
+								    <li>Many Guardian fixes like ignore file handling and linefead detection</li>
+								  </ul>
+								  <li>Hardware</li>
+								  <ul>
+								    <li>Added support for alix2 leds</li>
+								    <li>Added Vodafone K3765 and K4505 usbids to option driver</li>
+								  </ul>
+								  <li>Webinterface</li>
+								  <ul>
+								    <li>Cosmetic change for the swap and load graphs</li>
+								    <li>Fixed some naming and length problems in the outgoing firewall</li>
+								    <li>Fixed naming of firewall groups for webinterface</li>
+								    <li>Added clearer description for P2P block</li>
+								    <li>Added links for services on services.cgi [bug #617]</li>
+								    <li>Added clearer button for stopping services</li>
+								    <li>Added new iptables GUI</li>
+								    <li>Fixed white page at first start of ids.cgi</li>
+								    <li>Fixed update acclerator file download</li>
+								  </ul>
+								  <li>Firewall</li>
+								  <ul>
+								    <li>Added grouping option to the outgoing firewall - multiport and network group rules</li>
+								    <li>Added space to logging entries by outgoing firewall</li>
+								  </ul>
+								  <li>Language</li>
+								  <ul>
+								    <li>Added spanish translation of installer and setup</li>
+								    <li>Added spanish webif translation</li>
+								  </ul>
+								  <li>Others</li>
+									<ul>
+									  <li>Added an config setting to remove netfilter sip modules</li>
+									  <li>Syslog async logging feature</li>
+									  <li>Resized /var/log/rrd in fstab</li>
+									  <li>Changed size of the swapfile</li>
+									  <li>Done a whole rework on the collectd config</li>
+									  <li>misc-progs: Cleanup chain creation of wirelessctrl</li>
+									  <li>Modified modules initscript to softly fail module loads</li>
+									  <li>Added new led triggers: netdev</li>
+									  <li>Added e2fsck.conf, this should fix manual superblock checls</li>
+									  <li>Enabled force setting system time on boot</li>
+									  <li>Fixed url filter repository for local redirects</li>
+									  <li>Fixed squidclamav logging [bug #639]</li>
+									  <li>Increase length of the password dialog to 50 chars</li>
+									  <li>Added bootoption to skip an initskript</li>
+									  <li>Blacklistet all framebuffer modules</li>
+									  <li>Fixed rebuildhost [bug #509]</li>
+									  <li>Allow also ip/netmask for blue access</li>
+									  <li>Fixed grub installation on virtio hdd</li>
+									  <li>Changed the flash serialcon image</li>
+									</ul>
+								</ul>
+					  		  </p>",
+
+					  "de" : "<p>Es ist so weit - heute werden wir <strong>IPFire 2.7</strong> freigeben.<br />
+					  			Zuerst veröffentlichen wir <strong>nur</strong> die Installations-ISOs. Über Pakfire ist das Update auf 2.7 <strong>noch</strong> nicht
+					  			verfügbar.<br />
+					  			Der Grund hierfür liegt an der Umstellung für IPSec von OpenSwan auf StrongSwan und die damit verbunden zwingenden Änderungen
+					  			bei laufenden Net2Net-Verbindungen. Das Update über Pakfire wird am Freitag, 09.07.2010 freigegeben. So bleibt genügend Zeit
+					  			die IPSec Tunnel auf Strongwan anzupassen. Mehr Informationen hierüber findet man im 
+					  			<a href=\"http://wiki.ipfire.org/de/configuration/services/ipsec_update\" target=\"_blank\">Wiki</a>.
+								<br />Insgesammt sind an die 400 Änderungen in die neue IPFire Version eingeflossen, alle Commits hierzu findet man im 
+								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=log;h=refs/heads/core38\" target=\"_blank\">GIT (Changelog)</a>.
+								<br />
+								Änderungen sind unter anderem:
+								<ul>
+								  <li>Updates</li>
+								  <ul>
+								    <li>Update vom <strong>Kernel</strong> auf stabile Version mit LTS (2.6.32.15)</li>
+								    <li>Update von openssl auf Version 0.9.8o</li>
+								    <li>Update von Net-SSLeay auf Version 1.36</li>
+								    <li>Update von smartmontools auf Version 5.39.1</li>
+								    <li>Update von usb-modeswitch auf Version 1.1.2</li>
+								    <li>Update von alsa auf Version 1.0.23</li>
+								    <li>Update von memtest auf Version 4.10</li>
+								    <li>Update von v4l-dvb (2010-05-20)</li>
+								    <li>Update von kvm-kmod auf Version 2.6.33.1</li>
+								    <li>Update von compat-wireless auf Version 2.6.34</li>
+								    <li>Update von Hardware und GeoIP Datenbank</li>
+								    <li>Update von squid auf die letzte stabile Version</li>
+								    <li>Update von mISDN, mISDNuser (25.5.2010) und lcr auf Version 1.7</li>
+								  </ul>
+								  <li>VPN</li>
+								  <ul>
+								    <li>Änderung der IPSec Software von OpenSwan nach StrongSwan Version 4.4.0</li>
+								    <li>'vpn-watch hing nach einem Verbindungsneustart' behoben</li>
+								    <li>Viele kleine IPSec-Fehler behoben</li>
+								    <li>Update von OpenVPN auf die letzte stabile Version</li>
+								    <li>Neue Möglichkeiten unter 'Erweiterte Einstellungen' für OpenVPN [Bug #490]</li>
+								    <li>Das nicht funktionierende tap-Device wurde entfernt</li>
+								    <li>cryptodev-Module werden nun geladen</li>
+								  </ul>
+								  <li>Snort</li>
+								  <ul>
+								    <li>Update von Snort auf die stabile Version 2.8.6</li>
+								    <li>MD5-Check wurde entfernt - Überprüfung von freien Speicher wurde hinzugefügt</li>
+								    <li>Fehler in init-Skript wurden behoben</li>
+								    <li>Es wurden mehrere Snort Konfigurations- und Skriptanpassungen gemacht</li>
+								    <li>Fehler in der Erkennung von Snort Beschreibungen wurde behoben</li>
+								    <li>Austausch der Snort GPL-Community-Rule gegen Regeln von Emergingthreats</li>
+								    <li>Mehere Guardian-Fehler wurden behoben</li>
+								  </ul>
+								  <li>Hardware</li>
+								  <ul>
+								    <li>Support für Alix2-LEDs wurde hinzugefügt</li>
+								    <li>Treiber für Vodafone K3765 and K4505 wurden hinzugefügt</li>
+								  </ul>
+								  <li>Webinterface</li>
+								  <ul>
+								    <li>Kosmetische Änderungen am Swap- und Load-Graph</li>
+								    <li>Fehler bei der Bennenung und Längenproblem in der ausgehenden Firewall behoben</li>
+								    <li>Fehler bei der Bennenung von Firewall-Gruppen behoben</li>
+								    <li>Eine bessere Beschreibung der P2P-Optionen wurde hinzugefügt</li>
+								    <li>Auf der services.cgi werden die Diensten nun mit entsprechenden Links dargestellt [Bug #617]</li>
+								    <li>Verbesserter Button für das Stoppen von Diensten</li>
+								    <li>Neue iptables-GUI</li>
+								    <li>Der Fehler, dass die ids.cgi-Seite beim ersten laden leer blieb, wurde behoben</li>
+								    <li>Update-Acclerator: Dateidownload Fehler wurde behoben</li>
+								  </ul>
+								  <li>Firewall</li>
+								  <ul>
+								    <li>Neue Gruppenoption wurde der ausgehenden Firewall hinzugefügt, für Multiport- und Netzwerk-Gruppen-Regeln</li>
+								    <li>Ein Leerzeichen zur verbesserten Lesbarkeit der ausgehenden Firewall-Logs wurde hinzugefügt</li>
+								  </ul>
+								  <li>Sprachen</li>
+								  <ul>
+								    <li>Spanische Übersetzung für Installer und Setupmenü wurde hinzugefügt</li>
+								    <li>Spanische Übersetzung des Webinterfaces hinzugefügt</li>
+								  </ul>
+								  <li>Sonstiges</li>
+									<ul>
+									  <li>Eine Konfigurationoption wurde hinzugefügt um die Netfilter-SIP-Module zu deaktivieren</li>
+									  <li>Syslog-async-Loggingfunktion hinzugefügt</li>
+									  <li>Größe von /var/log/rrd in fstab geändert</li>
+									  <li>Größe der Swapdatei geändert</li>
+									  <li>Komplette Überarbeitung der collectd-Konfiguration</li>
+									  <li>Die Erstellung der Chains in der wirelessctrl wurde bereinigt</li>
+									  <li>Neue LED-Trigger hinzugefügt: netdev</li>
+									  <li>Eine e2fsck.conf wurde hinzugefügt um den Fehler der Superblock-Checks zu beheben</li>
+									  <li>Fehler im squidclamav-Logging wurde behoben [Bug #639]</li>
+									  <li>Erhöhung der Passwortlänge im Installer auf 50 Zeichen</li>
+									  <li>Es wurde eine Bootoption hinzugefügt, welche bestimmte Init-Skripte überspringen kann</li>
+									  <li>Es wurden alle Frambuffer-Module der Blacklist hinzugefügt</li>
+									  <li>Fehler im rebuildhost behoben [Bug #509]</li>
+									  <li>Fehler in GRUB bei der Installation auf Virtio-Blockdevices wurde behoben</li>
+									</ul>
+								</ul>
+							  </p>"}},
+							  
+	    "39" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "IPFire 2.7 final via pakfire", "de" : "IPFire 2.7 final via pakfire" },
+				"date"     : "2010-07-09",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>From today it will be possible to update old IPFire systems via the package manager 
+								to the brand new version <strong>IPFire 2.7</strong>.
+								<br />We want to point out again that the update to StrongSwan comes with 
+								<a href=\"http://wiki.ipfire.org/en/configuration/services/ipsec_update\" target=\"_blank\">mandatory changes</a> 
+								for existing IPSec tunnels with PSK.
+								<br />
+								<br />Because of to the kernel update, a reboot will be needed.<br />
+					  		  </p>",
+
+					  "de" : "<p>Ab heute wird es nun auch möglich sein, über den Paketmanager alte IPFire-Systeme 
+					  			auf die Version <strong>IPFire 2.7</strong> zu aktuallsieren. 
+								<br />Wir wollen erneut darauf hinweisen, dass durch das Update auf StrongSwan 
+								<a href=\"http://wiki.ipfire.org/de/configuration/services/ipsec_update\" target=\"_blank\">zwingend eine Änderung</a> an den
+								bestehenden IPSec-Tunneln mit PSK vorgenommen werden muss.
+								<br />
+								<br />Durch das Update des Kernels ist ein Neustart von IPFire nötig.<br/>
+							  </p>"}},
+							  
+	    "40" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 39", "de" : "Core Update 39" },
+				"date"     : "2010-08-01",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release <strong>Core 39</strong>.<br />
+								The most significant changes are the fixed download of snort rules and the update of the ppp daemon to version 2.4.5.<br />
+								Despite of that it comes with the following changes:<br />
+								<ul>
+									<li>Updated libpng to version 1.2.44 (critical vulnerability)</li>
+									<li>Fixed the creating of the backupiso</li>
+									<li>Fixed dhcp client helper script to handle multiple dns servers</li>
+									<li>Fixed blacklist update and cache cleanup of the Update-Accelerator/URL filter</li>
+									<li>Added missing terminfo file for screen</li>
+									<li>Enabled support for Cisco VPN clients</li>
+								</ul>
+								</p>",
+
+					  "de" : "<p>Heute werden wir <strong>Core 39</strong> veröffentlichen.<br />
+								Die wichtigten Änderungen sind ins besondere die Aktualisierung des Snort-Regeldownloads und des ppp-Daemon auf die Version 2.4.5.<br />
+								Desweiteren bringt es folgende Änderungen mit sich:<br />
+								<ul>
+									<li>Update der libpng auf Version 1.2.44 (kritische Lücke)</li>
+									<li>Fehler beim Erstellen der Backup-ISO behoben</li>
+									<li>Fehler im DHCP Client-Helper-Script behoben (Multiple DNS-Server wurden falsch verarbeitet)</li>
+									<li>Fehler im Blacklistenupdate und Cachecleanup vom Update-Accelerator/URL-Filter behoben</li>
+									<li>Die fehlende terminfo für Screen wurde hinzugefügt</li>
+									<li>Support für Cisco VPN-Clients hinzugefügt</li>
+								</ul>
+							</p>"}}
 }

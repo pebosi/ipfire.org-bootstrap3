@@ -1,0 +1,296 @@
+{% extends "../base.html" %}
+		
+{% block title %}{{ _("Features") }}{% end block %}
+
+{% block content %}
+	
+
+	<div class="post">
+		<h3>{{ _("Features") }}</h3>
+		<img src="{{ static_url("images/page_icons/features.png") }}" class="floatTR" alt="{{ _("Features") }}" />
+		<p>
+			{% if lang == "de" %}
+				Hier findet Ihr einen Überblick über alle derzeitig verfügbaren Funktionen
+				in der IPFire Distribution.<br />
+			{% else %}
+				This is an overview of all currently available features in IPFire.
+			{% end %}
+		</p>
+
+		<p>
+			{% if lang == "de" %}
+				Zudem können Addons über ein einfaches Paketmanagementsystem nachinstalliert
+				werden und den Funktionsumfang erweitern.<br />
+				Eine komplette Liste über alle Addons ist im Wiki zu finden:
+				<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>.
+			{% else %}
+				A easy packet management system is able to install additional features
+				to the system.<br />
+				A full list of addons can be found in the wiki:
+				<a href="http://wiki.ipfire.org/en/addons/start" target="_blank">Addons</a>.
+			{% end %}
+		</p>
+	</div>
+	<br class="clear" />
+
+	<div class="post">
+		<a name="{{ _("firewall functions") }}"></a><h3>{{ _("firewall functions") }}</h3>
+		<p>
+			{% if lang == "de" %}
+				Die Firewallfunktionalität ist die Hauptaufgabe von IPFire. Die Distribution trennt
+				das Netzwerk in verschiedene Bereiche auf und bietet jedem Teilbereich optimale Rechte
+				aber auch Einschränkungen um maximale Sicherheit zu erzielen.
+
+				<ul>
+					<li>Stateful-Inspection-Firewall basierend auf der Linux Netfilter-Architektur</li>
+					<li>Intrusion-Detection-System mit Guardian-Addon als Erweiterung zum IPS System</li>
+					<li>Filter für ungültige/nicht-standardgerechte Pakete</li>
+					<li>Eigene Netzwerksegmente für Server (DMZ) und Wireless-LAN mit angepassten Policies</li>
+					<li>DoS-Attacken-Schutz</li>
+					<li>Application-Proxies für HTTP und FTP (mit Zugangskontrolle und Content-Filter)</li>
+					<li>Eingehende sowie ausgehende Paketfilterung mit einfacher Gruppenverwaltung</li>
+					<li>Quality-of-Service und Trafficshaping</li>
+				</ul>
+			{% else %}
+				The main focus of the IPFire distribution is being a firewall. It splits the network
+				into several parts and allows only operations that are allowed by policy.
+
+				<ul>
+					<li>stateful inspection firewall based on linux netfilter architecture</li>
+					<li>intrusion detection system with Guardian addon as extension (IPS system)</li>
+					<li>filter for invalid/non-standard packages</li>
+					<li>separate network segments for server (DMZ) and wireless with custom policies</li>
+					<li>DoS attack protection</li>
+					<li>application proxies for HTTP and FTP (with access control and content filtering) and DNS</li>
+					<li>incoming and outgoing packet filtering with user grouping</li>
+					<li>Quality of Service and traffic shaping</li>
+				</ul>
+			{% end %}
+		</p>
+	</div>
+	<br class="clear" />
+
+	<div class="post">
+		<a name="{{ _("essential networking services") }}"></a><h3>{{ _("essential networking services") }}</h3>
+		<p>
+			{% if lang == "de" %}
+				IPFire stellt auch unabdingbare Funktionen jedem Netzwerk bereit.
+				<ul>
+					<li>DHCP-Server</li>
+					<li>Dynamischer DNS-Dienst</li>
+					<li>NTP-Server</li>
+					<li>DNS-Proxy</li>
+				</ul>
+			{% else %}
+				IPFire covers essential functions that are needed on every network as well.	
+				<ul>
+					<li>DHCP server</li> 
+					<li>Dynamic DNS service</li> 
+					<li>NTP server</li>
+					<li>DNS proxy</li>
+				</ul>
+			{% end %}			
+		</p>
+	</div>
+
+	<div class="post">
+		<a name="{{ _("http proxy") }}"></a><h3>{{ _("http proxy") }}</h3>
+		<p>
+			{% if lang == "de" %}
+				Ein Webproxy ermöglicht dem Administrator Kontrolle über Nutzeraktivitäten
+				und das gezielte Sperren von Inhalten.
+
+				<ul>
+					<li>Zwischenspeicherung von Web-Inhalten für schnelleren Seitenaufbau</li>
+					<li>Inhaltsfilter auf Basis von Blocklisten und manuell festlegbaren Listen z.B. für
+						die Sperrung von jugendgefährdenden Inhalten</li>
+					<li>Zeitgesteuerte Sperrung des Zugangs für einzelne Nutzer oder ganze Gruppen</li>
+					<li>Vereinfachte Verwaltung für Klassen oder Konferenzräume</li>
+					<li>Erweiterte Speicherung von Updates für Microsoft Windows, Symantec Antivirus, Adobe-Produkten, Avira Antivir und Avast Antivirus</li>
+					<li>Authentifizierung am LDAP-, identd-, Radius- oder Windows-Server oder einer lokalen Nutzerdatenbank</li>
+					<li>Transfer-Limitierung (Geschwindigkeit und/oder Volumen)</li>
+				</ul>
+			{% else %}
+				The web proxy service allows to filter and log user activities and
+				is able to block malicious content.
+
+				<ul>
+					<li>caching of web content</li> 
+					<li>content filtering based on blocking lists and manually defined lists
+						for blocking malicious content</li> 
+					<li>time based disabling of access for individual users or entire groups</li> 
+					<li>simplified management for classes or conference rooms</li> 
+					<li>advanced storage of updates for Microsoft Windows, Symantec Antivirus, Adobe products, Avira Antivir and Avast Antivirus</li> 
+					<li>authentication to LDAP, identd, radius or Windows server or a local user database</li> 
+					<li>transfer limitation (speed and/or traffic volume)</li>
+				</ul>
+			{% end %}		
+		</p>
+	</div>
+
+	<div class="post">
+		<a name="{{ _("virtual private networking") }}"></a><h3>{{ _("virtual private networking") }}</h3>
+		<p>
+		{% if lang == "de" %}
+			Virtuelle private Netzwerke (VPNs) sind nötig um mit einem entfernten
+			Firmenstandort oder Parter sicher zu kommunizieren. Für maximale
+			Interoperabilität bringt IPFire mehrere Lösung mit.
+
+			<ul>
+				<li>IPSec/Strongswan
+					<ul>
+						<li>Netz-zu-Netz- oder Netz-zu-Host-Verbindungen (Roadwarrior)</li>
+						<li>IKE - PreSharedKey oder</li>
+						<li>X.509-Zertifikate aus integrierter oder externer CA</li>
+						<li>Automatische Erkennung mit nötigem Wiederaufbau der
+							Tunnel-Verbindung und Dead-Peer-Detection</li>
+						<li>NAT-Traversal-Unterstützung</li>
+						<li>Verschlüsselung durch AES, 3DES, Blowfish, Serpent oder Twofish</li>
+						<li>HMAC: SHA1, SHA256, SHA384, SHA512</li>
+						<li>Echtzeit-Kompression</li>
+					</ul>
+				</li>
+				<li>OpenVPN
+					<ul>
+						<li>Host-zu-Netz-Verbindungen (Roadwarrior)</li>
+						<li>SSL-basierte Verschlüsselung: AES, Blowfish, Twofish, 3DES, ...</li>
+						<li>Echtzeit-Kompression</li>
+						<li>Fertige Clientpakete damit eine Konfiguration am Client vereinfacht wird</li>
+						<li>Tunnel über multiples NAT</li>
+					</ul>
+				</li>
+				<li>PPTP-Passthrough</li>
+			</ul>
+		{% else %}
+			Virtual private networks (VPNs) are used to securely communicate with
+			a customer or partner. For a maximum of interoperability, IPFire comes
+			with multiple implementations.
+
+			<ul>
+				<li>IPSec/Strongswan
+					<ul>
+						<li>network-to-network or network-to-host (roadwarrior)</li>
+						<li>IKE - PreSharedKey or</li>
+						<li>X.509 certificates from an integrated or external CA</li>
+						<li>tunnel reconnection on disconnection and dead-peer-detection</li>
+						<li>NAT traversal</li>
+						<li>encryption with AES, 3DES, Blowfish, Serpent and Twofish</li>
+						<li>HMAC: SHA1, SHA256, SHA384, SHA512</li>
+						<li>real time compression</li>
+					</ul>
+				</li>
+				<li>OpenVPN
+					<ul>
+						<li>host-to-network (roadwarrior)</li> 
+						<li>SSL-based encryption: AES, Blowfish, Twofish, 3DES, ...</ li> 
+						<li>real time compression</li> 
+						<li>automatically generated packages for clients so that there configuration is more simplified</li> 
+						<li>tunnel across multiple NAT</li> 
+					</ul>
+				</li>
+				<li>PPTP passthrough</li>
+			</ul>
+		{% end %}
+		</p>
+	</div>
+
+	<div class="post">
+		<a name="{{ _("supported connection types") }}"></a><h3>{{ _("supported connection types") }}</h3>
+		<p>
+		{% if lang == "de" %}
+			IPFire ist über eine Vielzahl von Verbindungsmöglichkeiten an
+			das Internet anzubinden.
+ 
+			<ul>
+				<li>Ethernet-Verbindungen mit statischer IP Adresse oder über
+					das DHCP-Protokoll konfiguriert</li>
+				<li>ADSL/SDSL mit PPPoE</li>
+				<li>DSL über PPTP</li>
+				<li>VDSL der Deutschen Telekom mit Streaming-Angeboten (T-Home)</li>
+				<li>UMTS</li>
+				<li>Automatische Wiederverbindung nach Trennung durch den Provider</li>
+				<li>Wiederverbindung nach Zeitplan steuerbar</li>
+			</ul>
+		{% else %}
+			IPFire is able to access the internet by lots of common
+			connection types.
+	
+			<ul>
+				<li>ethernet links with static ip address or configured via DHCP
+					configured</li> 
+				<li>ADSL/SDSL with PPPoE</li>
+				<li>DSL via PPTP</li>
+				<li>VDSL (a product of Deutsche Telekom)</li>
+				<li>UMTS</li>
+				<li>automatic reconnect after disconnection by the provider</li>
+				<li>reconnect with time based schedule</li>
+			</ul>
+		{% end %}
+	</div>
+
+	<div class="post">
+		<a name="{{ _("configuration") }}"></a><h3>{{ _("configuration") }}</h3>
+		<p>
+		{% if lang == "de" %}
+			Alle Funktionen sind in einem Web-Interface bequem erreichbar.
+
+			<ul>
+				<li>SSL-verschlüsseltes Web-Administrations-Interface</li>
+				<li>SSH-Zugang</li>
+			</ul>
+		{% else %}
+			All of the functionality provides by IPFire is configureable
+			with a simple web management interface.
+
+			<ul>
+				<li>SSL-encrypted web interface</li>
+				<li>SSH access</li>
+			</ul>
+		{% end %}
+		</p>
+	</div>
+
+	<div class="post">
+		<a name="{{ _("monitoring") }}"></a><h3>{{ _("monitoring") }}</h3>
+		<p>
+		{% if lang == "de" %}
+			Um dem Administrator die Auswerung der Geschehnisse möglichst zu vereinfachen
+			werden Logs grafisch ausgewertet, sodass Fehler oder Probleme auf dem
+			ersten Blick erkannt werden können.
+
+			<ul>
+				<li>Grafische Überwachung des Systems im Webinterface</li>
+				<li>Einsehbare Log-Dateien mit automatischer Zusammenfassung der wichtigsten Ereignisse</li>
+				<li>Exportfunktion der Logdateien (einzeln oder als gesamtes Backup)</li>
+			</ul>
+		{% else %}
+			The webinterfaces gives easy access to graphical summaries of logs
+			that let the administrator recognize any issue easily.
+ 
+			<ul>
+				<li>graphical monitoring of the system with the web interface</li> 
+				<li>accessible log files with automatic summary of key events</li> 
+				<li>export function of log files (individually or as a full backup)</li>
+			</ul>
+		{% end %}
+		</p>
+	</div>
+{% end block %}
+
+
+{% block sidebar %}
+		<h4><span>Features</span> list</h4>
+        <ul class="links">              
+                         <li class="first"><a href="#{{ _("firewall functions") }}">{{ _("firewall functions") }}</a></li>
+                         <li><a href="#{{ _("essential networking services") }}">{{ _("essential networking services") }}</a></li>
+                         <li><a href="#{{ _("http proxy") }}">{{ _("http proxy") }}</a></li>
+                         <li><a href="#{{ _("virtual private networking") }}">{{ _("virtual private networking") }}</a></li>   
+                         <li><a href="#{{ _("supported connection types") }}">{{ _("supported connection types") }}</a></li>
+                         <li><a href="#{{ _("configuration") }}">{{ _("configuration") }}</a></li>
+                         <li><a href="#{{ _("monitoring") }}">{{ _("monitoring") }}</a></li>
+        </ul>
+
+		
+	
+
+{% end block %}
