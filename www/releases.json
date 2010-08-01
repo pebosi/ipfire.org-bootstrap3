@@ -1,4 +1,46 @@
 [
+	{ "name" : "IPFire 2.7 - Core 39",
+	  "status"    : "stable",
+	  "online"    : 1,
+	  "files" : [
+	  	{
+		  "type" : "alix",
+	  	  "name" : "ipfire-2.7.1gb-ext2-scon.i586-full-core39.img.gz",
+	  	  "sha1" : "a567fc27f4d85ac7c18fa52fbfcf8539eb34bc85"
+	  	},
+	  	{
+		  "type" : "flash",
+	  	  "name" : "ipfire-2.7.1gb-ext2.i586-full-core39.img.gz",
+	  	  "sha1" : "14c746d895f2400ea7ffaff54a01630b55f62ba9"
+	  	},
+	  	{
+		  "type" : "iso",
+	  	  "name" : "ipfire-2.7.i586-full-core39.iso",
+	  	  "sha1" : "fff98747a60981f7f9db642ffd8984fa459ffd44"
+	  	},
+	  	{
+	  	  "type" : "torrent",
+	  	  "name" : "ipfire-2.7.i586-full-core39.iso.torrent",
+	  	  "hash" : "915E1F25919C8CD9D651CB250CEC00362B41C580"
+	  	},
+	  	{
+		  "type" : "usbfdd",
+	  	  "name" : "ipfire-2.7-install-usb-fdd.i586-full-core39.img.gz",
+	  	  "sha1" : "dbba94f216632105b3591f04feada0f4fa74edc8"
+	  	},
+	  	{
+		  "type" : "usbhdd",
+	  	  "name" : "ipfire-2.7-install-usb-hdd.i586-full-core39.img.gz",
+	  	  "sha1" : "6c806d017336e4349938c3a0aa765142cb3fb184"
+	  	},
+	  	{
+		  "type" : "xen",
+	  	  "name" : "ipfire-2.7.xen.i586-full-core39.tar.bz2",
+	  	  "sha1" : "7eb2f700659be180f1f7195fd7abb1f5b61ede96"
+	  	}
+	  ]
+	},
+
 	{ "name" : "IPFire 2.7 - Core 38",
 	  "status"    : "stable",
 	  "online"    : 1,
@@ -43,7 +85,7 @@
 
 	{ "name" : "IPFire 2.5 - Core 37",
 	  "status"    : "stable",
-	  "online"    : 1,
+	  "online"    : 0,
 	  "files" : [
 	  	{
 		  "type" : "alix",
@@ -85,7 +127,7 @@
 	
 	{ "name" : "IPFire 2.5 - Core 36",
 	  "status"    : "stable",
-	  "online"    : 1,
+	  "online"    : 0,
 	  "files" : [
 	  	{
 		  "type" : "alix",
