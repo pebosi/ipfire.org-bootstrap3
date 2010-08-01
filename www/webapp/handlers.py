@@ -51,7 +51,7 @@ class BaseHandler(tornado.web.RequestHandler):
 	def render(self, *args, **kwargs):
 		nargs = self.render_args
 		nargs.update(kwargs)
-		nargs["title"] = "%s - %s" % (self.request.host, nargs["title"])
+		nargs["hostname"] = self.request.host
 		tornado.web.RequestHandler.render(self, *args, **nargs)
 
 	def link(self, s):
