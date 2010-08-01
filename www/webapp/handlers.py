@@ -23,9 +23,7 @@ from news import news
 from releases import releases
 
 import builds
-import cluster
 import menu
-import translations
 #import uriel
 
 class BaseHandler(tornado.web.RequestHandler):
@@ -194,25 +192,6 @@ class UrielBaseHandler(BaseHandler):
 class UrielHandler(UrielBaseHandler):
 	def get(self):
 		pass
-
-
-class ApiClusterInfoHandler(BaseHandler):
-	def get(self):
-		id = self.get_argument("id", "null")
-
-		c = cluster.Cluster(info["cluster"]["hostname"])
-
-		self.write(simplejson.dumps({
-			"version": "1.1",
-			"id": id,
-			"result" : c.json,
-			"error" : "null", }))
-		self.finish()
-
-
-class TranslationHandler(BaseHandler):
-	def get(self):
-		self.render("translations.html", projects=translations.projects)
 
 
 class SourceHandler(BaseHandler):
