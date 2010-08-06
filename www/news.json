@@ -1257,7 +1257,8 @@
 								</p>",
 
 					  "de" : "<p>Heute werden wir <strong>Core 39</strong> veröffentlichen.<br />
-								Die wichtigten Änderungen sind ins besondere die Aktualisierung des Snort-Regeldownloads und des ppp-Daemon auf die Version 2.4.5.<br />
+								Die wichtigsten Änderungen sind insbesondere die Aktualisierung des Snort-Regeldownloads
+								und des ppp-Daemon auf die Version 2.4.5.<br />
 								Desweiteren bringt es folgende Änderungen mit sich:<br />
 								<ul>
 									<li>Update der libpng auf Version 1.2.44 (kritische Lücke)</li>
