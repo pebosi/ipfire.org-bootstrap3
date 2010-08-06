@@ -1235,7 +1235,37 @@
 								bestehenden IPSec-Tunneln mit PSK vorgenommen werden muss.
 								<br />
 								<br />Durch das Update des Kernels ist ein Neustart von IPFire nötig.<br/>
-							  </p>"}}
-					  		  
-					  		  
+							  </p>"}},
+							  
+	    "40" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 39", "de" : "Core Update 39" },
+				"date"     : "2010-08-01",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release <strong>Core 39</strong>.<br />
+								The most significant changes are the fixed download of snort rules and the update of the ppp daemon to version 2.4.5.<br />
+								Despite of that it comes with the following changes:<br />
+								<ul>
+									<li>Updated libpng to version 1.2.44 (critical vulnerability)</li>
+									<li>Fixed the creating of the backupiso</li>
+									<li>Fixed dhcp client helper script to handle multiple dns servers</li>
+									<li>Fixed blacklist update and cache cleanup of the Update-Accelerator/URL filter</li>
+									<li>Added missing terminfo file for screen</li>
+									<li>Enabled support for Cisco VPN clients</li>
+								</ul>
+								</p>",
+
+					  "de" : "<p>Heute werden wir <strong>Core 39</strong> veröffentlichen.<br />
+								Die wichtigten Änderungen sind ins besondere die Aktualisierung des Snort-Regeldownloads und des ppp-Daemon auf die Version 2.4.5.<br />
+								Desweiteren bringt es folgende Änderungen mit sich:<br />
+								<ul>
+									<li>Update der libpng auf Version 1.2.44 (kritische Lücke)</li>
+									<li>Fehler beim Erstellen der Backup-ISO behoben</li>
+									<li>Fehler im DHCP Client-Helper-Script behoben (Multiple DNS-Server wurden falsch verarbeitet)</li>
+									<li>Fehler im Blacklistenupdate und Cachecleanup vom Update-Accelerator/URL-Filter behoben</li>
+									<li>Die fehlende terminfo für Screen wurde hinzugefügt</li>
+									<li>Support für Cisco VPN-Clients hinzugefügt</li>
+								</ul>
+							</p>"}}
 }

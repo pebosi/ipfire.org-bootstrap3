@@ -58,7 +58,6 @@ class Application(tornado.web.Application):
 			(r"/[A-Za-z]{2}/index", IndexHandler),
 			(r"/[A-Za-z]{2}/news", NewsHandler),
 			(r"/[A-Za-z]{2}/builds", BuildHandler),
-			(r"/[A-Za-z]{2}/translations?", TranslationHandler),
 			# Download sites
 			(r"/[A-Za-z]{2}/downloads?", DownloadHandler),
 			(r"/[A-Za-z]{2}/downloads?/all", DownloadAllHandler),
@@ -68,8 +67,6 @@ class Application(tornado.web.Application):
 			# RSS feed
 			(r"/([A-Za-z]{2})/news.rss", RSSHandler),
 			(r"/data/feeds/main-([A-Za-z]{2}).rss", RSSHandler),
-			# API
-			(r"/api/cluster_info", ApiClusterInfoHandler),
 			# Always the last rule
 			(r"/[A-Za-z]{2}/(.*)", StaticHandler),
 		] + static_handlers)
