@@ -49,14 +49,14 @@
 {% block sidebar %}
 	{{ modules.SidebarRelease() }}
 	
+	{{ modules.SidebarBanner(banner) }}
+	
 	<h4><span>Internet Relay</span> Chat</h4>
 	<p>
 		Server: irc.freenode.net<br />
 		Channel: #ipfire<br />
 		<a href="http://webchat.freenode.net/?channels=ipfire" target="_blank">Web-Chat</a>
 	</p>
-	
-	{{ modules.SidebarBanner(banner) }}
 	
 	<h4><span>RSS</span> feed</h4>
 	<p>
