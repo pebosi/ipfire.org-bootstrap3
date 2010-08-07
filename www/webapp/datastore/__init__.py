@@ -15,8 +15,12 @@ class Databases(object):
 	def __init__(self, application):
 		self.application = application
 
+		self.webapp = WebappConnection()
+
+		self.config = self.webapp
 		self.hashes = HashConnection()
-		self.planet = PlanetConnection()
+		self.mirrors = self.webapp
+		self.planet = self.webapp
 		self.tracker = TrackerConnection()
 
 
@@ -29,6 +33,7 @@ class DataStore(object):
 
 	def reload(self):
 		self.banners = banners.Banners(self.application, "banners.json")
+		self.config = config.Config(self.application)
 #		self.info = info.Info(self.application, "info.json")
 		self.menu = menu.Menu(self.application, "menu.json")
 #		self.mirrors = mirrors.Mirrors(self.application, "mirrors.json")

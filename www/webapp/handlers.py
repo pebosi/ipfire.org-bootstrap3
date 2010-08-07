@@ -84,7 +84,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
 	@property
 	def db(self):
-		return self.application.db
+		return self.ds.db
 
 	@property
 	def ds(self):
@@ -218,15 +218,6 @@ class BuildHandler(BaseHandler):
 
 	def get(self):
 		self.render("builds.html", builds=self.builds)
-
-
-class UrielBaseHandler(BaseHandler):
-	#db = uriel.Database()
-	pass
-
-class UrielHandler(UrielBaseHandler):
-	def get(self):
-		pass
 
 
 class SourceHandler(BaseHandler):
@@ -418,14 +409,12 @@ class TrackerScrapeHandler(TrackerBaseHandler):
 
 
 class PlanetBaseHandler(BaseHandler):
-	@property
-	def db(self):
-		return self.db.planet
+	pass
 
 
 class PlanetMainHandler(PlanetBaseHandler):
 	def get(self):
-		authors = self.db.query("SELECT DISTINCT author_id FROM entries")
+		authors = self.db.query("SELECT DISTINCT author_id FROM planet")
 		authors = [a["author_id"] for a in authors]
 
 		users = []
@@ -433,7 +422,7 @@ class PlanetMainHandler(PlanetBaseHandler):
 			if user.id in authors:
 				users.append(user)
 
-		entries = self.db.query("SELECT * FROM entries "
+		entries = self.db.query("SELECT * FROM planet "
 			"ORDER BY published DESC LIMIT 3")
 		
 		for entry in entries:
@@ -449,7 +438,7 @@ class PlanetUserHandler(PlanetBaseHandler):
 
 		user = self.user_db.get_user_by_name(user)
 
-		entries = self.db.query("SELECT * FROM entries "
+		entries = self.db.query("SELECT * FROM planet "
 			"WHERE author_id = '%s' ORDER BY published DESC" % (user.id))
 
 		self.render("planet-user.html", entries=entries, user=user)
@@ -457,7 +446,7 @@ class PlanetUserHandler(PlanetBaseHandler):
 
 class PlanetPostingHandler(PlanetBaseHandler):
 	def get(self, slug):
-		entry = self.db.get("SELECT * FROM entries WHERE slug = %s", slug)
+		entry = self.db.get("SELECT * FROM planet WHERE slug = %s", slug)
 
 		if not entry:
 			raise tornado.web.HTTPError(404)
