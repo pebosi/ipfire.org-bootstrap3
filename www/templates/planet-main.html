@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("IPFire Planet") }}{% end block %}
+
+{% block content %}
+	<div class="post">
+		<h3>{{ _("IPFire Planet") }}</h3>
+
+		{% if lang == "de" %}
+			<p>
+				Der <strong>IPFire Planet</strong> ist eine Platform für alle
+				Personen, die in das Projekt involviert sind um mit der
+				Community in Kontakt zu bleiben und sie über neue Entwicklungen
+				zu informieren.
+			</p>
+			<p>
+				Um den Aufwand für die Entwickler in Maßen zu halten sind leider
+				alle Einträge nur auf Englisch verfügbar.
+			</p>
+		{% else %}
+			<p>
+				The <strong>IPFire Planet</strong> is a place for the people
+				who are involved in the project to tell the community about
+				new progress in the development or make some minor announcements.
+			</p>
+		{% end %}
+		<br class="clear" />
+		
+		<p>
+			{{ _("Last issues") }}:
+			<ul>
+				{% for entry in entries %}
+					<li>
+						<a href="#{{ entry.id }}">{{ entry.title }}</a>
+						{{ _("by") }} {{ entry.author.realname }}
+					</li>
+				{% end %}
+			</ul>
+		</p>
+	</div>
+	
+	{% for entry in entries %}
+		{{ modules.PlanetEntry(entry) }}
+	{% end %}
+{% end block %}
+
+{% block sidebar %}
+		<h4>{{ _("People on the planet") }}</h4>
+		<ul>
+			{% for author in authors %}
+				<li>
+					<a href="/user/{{ author.name }}">{{ author.realname }}</a>
+				</li>
+			{% end %}
+		</ul>
+{% end %}
