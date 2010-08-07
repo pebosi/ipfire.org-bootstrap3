@@ -1,8 +1,10 @@
 #!/usr/bin/python
 
-from helpers import Item, _stringify, json_loads
+import simplejson
 
-class ReleaseItem(Item):
+from tornado.database import Row
+
+class ReleaseItem(Row):
 	options = {
 		"iso" : {
 			"prio" : 10,
@@ -48,12 +50,18 @@ class ReleaseItem(Item):
 		},
 	}
 
+	def __init__(self, info):
+		self.info = info
+
+	def __getattr__(self, key):
+		return self.info[key]
+
 	@property
 	def downloads(self):
 		ret = []
-		for fileitem in self.args["files"]:
+		for fileitem in self.info["files"]:
 			filetype = fileitem["type"]
-			ret.append(Item(
+			ret.append(Row(
 				desc = self.options[filetype]["desc"],
 				file = fileitem["name"],
 				hash = fileitem.get("hash", None),
@@ -62,21 +70,6 @@ class ReleaseItem(Item):
 				sha1 = fileitem.get("sha1", None),
 				type = filetype,
 				url  = self.options[filetype]["url"] + fileitem["name"],
-			))
-
-		ret.sort(lambda a, b: cmp(a.prio, b.prio))
-		return ret
-		
-		for option in self.options.keys():
-			if not self.args["files"].has_key(option):
-				continue
-
-			ret.append(Item(
-				desc = self.options[option]["desc"],
-				file = self.args["files"][option],
-				prio = self.options[option]["prio"],
-				type = option,
-				url = self.options[option]["url"] + self.args["files"][option],
 			))
 
 		ret.sort(lambda a, b: cmp(a.prio, b.prio))
@@ -104,19 +97,16 @@ class ReleaseItem(Item):
 
 
 class Releases(object):
-	def __init__(self, filename="releases.json"):
+	def __init__(self, application, filename="releases.json"):
+		self.application = application
 		self.items = []
 
 		if filename:
 			self.load(filename)
 	
 	def load(self, filename):
-		f = open(filename)
-		data = f.read()
-		f.close()
-		
-		for item in json_loads(data):
-			self.items.append(ReleaseItem(**_stringify(item)))
+		with open(filename) as f:
+			self.items = [ReleaseItem(i) for i in simplejson.load(f)]
 
 	@property
 	def all(self):
@@ -171,15 +161,3 @@ class Releases(object):
 			if item.torrent:
 				ret.append(item)
 		return ret
-
-
-releases = Releases("releases.json")
-
-if __name__ == "__main__":
-	r = Releases()
-
-	print r.stable
-	print r.development
-	print r.latest
-	print r.online
-	print r.offline

@@ -2,9 +2,6 @@
 
 import time
 
-import tornado.database
-
-
 def decode_hex(s):
 	ret = []
 	for c in s:
@@ -25,12 +22,12 @@ class Tracker(object):
 
 	numwant = 50
 
-	def __init__(self):
-		self.db = tornado.database.Connection(
-			host="172.28.1.150",
-			database="tracker",
-			user="tracker",
-		)
+	def __init__(self, application):
+		self.application = application
+
+	@property
+	def db(self):
+		return self.application.db.tracker
 
 	def _fetch(self, hash, limit=None, random=False, completed=False, no_peer_id=False):
 		query = "SELECT * FROM peers WHERE last_update >= %d" % self.since
@@ -144,9 +141,6 @@ class Tracker(object):
 	@property
 	def since(self):
 		return int(time.time() - self.interval)
-
-
-tracker = Tracker()
 
 
 ##### This is borrowed from the bittorrent client libary #####

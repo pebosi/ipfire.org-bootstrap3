@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
-from helpers import Item, _stringify, json_loads
+import simplejson
+
+from tornado.database import Row
 
 class News(object):
-	def __init__(self, filename=None):
+	def __init__(self, application, filename=None):
+		self.application = application
 		self.items = []
 
 		if filename:
@@ -16,10 +19,10 @@ class News(object):
 
 		data = data.replace("\n", "").replace("\t", " ")
 
-		json = json_loads(data)
+		json = simplejson.loads(data)
 		for key in sorted(json.keys()):
 			json[key]["id"] = key
-			self.items.append(NewsItem(**_stringify(json[key])))
+			self.items.append(Row(json[key]))
 
 	def get(self, limit=None):
 		ret = self.items[:]
@@ -27,8 +30,3 @@ class News(object):
 		if limit:
 			ret = ret[:limit]
 		return ret
-
-
-NewsItem = Item
-
-news = News("news.json")

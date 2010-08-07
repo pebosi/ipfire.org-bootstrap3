@@ -1092,14 +1092,21 @@ table.download-mirrors td {
 	padding-right: 10px;
 }
 
+/*
 table.download-mirrors tr.unreachable, td.unreachable {
 	border: 1px solid #f55;
 	background-color: #f99;
 }
+*/
 
-table.download-mirrors tr.reachable, td.reachable {
+table.download-mirrors tr.ok, td.ok {
 	border: 1px solid #5f5;
 	background-color: #9f9;
+}
+
+table.download-mirrors tr.outdated, td.outdated {
+	border: 1px solid #55f;
+	background-color: #99f;
 }
 
 table.download-mirrors td.latency {

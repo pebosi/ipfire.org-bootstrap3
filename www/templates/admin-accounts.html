@@ -1,0 +1,19 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+	<div id="post">
+		<h3>{{ _("Account Administrator") }}</h3>
+		
+		<p>
+			<a href="/accounts/create">{{ _("Create new account") }}</a>
+		</p>
+
+		<ul>
+			{% for account in accounts %}
+				<li>
+					<a href="/accounts/edit/{{ account.id }}">{{ account.realname }} ({{ account.name }})</a>
+				</li>
+			{% end %}
+		</ul>
+	</div>
+{% end %}

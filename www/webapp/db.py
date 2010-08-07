@@ -131,3 +131,12 @@ class User(object):
 	@property
 	def realname(self):
 		return self.obj["cn"][0]
+
+
+class Databases(object):
+	def __init__(self, application):
+		self.application = application
+
+		self.hashes = HashDatabase()
+		self.planet = PlanetDatabase()
+		self.users = UserDatabase()

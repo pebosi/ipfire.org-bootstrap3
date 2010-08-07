@@ -4,9 +4,8 @@ import os
 import time
 
 from helpers import size
-from info import info
 
-def find():
+def find(info):
 	ret = []
 	for item in info["nightly_builds"]:
 		path = item.get("path", None)

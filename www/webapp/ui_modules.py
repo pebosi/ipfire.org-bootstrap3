@@ -1,12 +1,9 @@
 #!/usr/bin/python
 
+import markdown
 import tornado.web
 
-import markdown
-import menu
-import releases
-
-from helpers import Item
+from tornado.database import Row
 
 class UIModule(tornado.web.UIModule):
 	def render_string(self, *args, **kwargs):
@@ -35,10 +32,8 @@ class MenuItemModule(UIModule):
 
 
 class MenuModule(UIModule):
-	def render(self, menuclass=None):
-		if not menuclass:
-			menuclass = menu.Menu("menu.json")
-
+	def render(self):
+		menuclass = self.handler.application.ds.menu
 		host = self.request.host.lower().split(':')[0]
 
 		return self.render_string("modules/menu.html", menuitems=menuclass.get(host))
@@ -46,7 +41,7 @@ class MenuModule(UIModule):
 
 class NewsItemModule(UIModule):
 	def render(self, item):
-		item = Item(**item.args.copy())
+		item = Row(item.copy())
 		for attr in ("subject", "content"):
 			if type(item[attr]) != type({}):
 				continue
@@ -66,11 +61,9 @@ class SidebarItemModule(UIModule):
 
 
 class SidebarReleaseModule(UIModule):
-	releases = releases.Releases()
-
 	def render(self):
 		return self.render_string("modules/sidebar-release.html",
-			releases=self.releases)
+			releases=self.handler.application.ds.releases)
 
 
 class ReleaseItemModule(UIModule):

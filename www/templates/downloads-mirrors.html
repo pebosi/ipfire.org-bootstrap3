@@ -47,29 +47,32 @@
 			<tr>
 				<th>{{ _("Owner (Hostname)") }}</th>
 				<th>{{ _("Location") }}</th>
-				<th>{{ _("Latency") }}</th>
+				<th>{{ _("Last update") }}</th>
+				<th>{{ _("Contains") }}</th>
 			</tr>
 			{% for mirror in mirrors.all %}
-				<tr class="{% if not mirror.reachable %}un{% end %}reachable">
-					<td>{{ mirror.name }} ({{ mirror.hostname }})</td>
+				<tr class="{{ mirror.html_class() }}">
+					<td><a href="{{ mirror.url }}" target="_blank">{{ mirror.owner }} ({{ mirror.hostname }})</a></td>
 					<td>
 						<img src="{{ static_url("images/flags/%s.png" % mirror.location["country_code"]) }}"
 							 align="absmiddle" alt="{{ mirror.location["country_code"] }}" />
 						{{ mirror.location["country"] }}, {{ mirror.location["city"] }}
 					</td>
-					<td class="latency">{{ mirror.latency }} ms</td>
+
+					<td class="latency"></td>
+					<td class="percentage">{{ mirror.filelist_compare(mirrors.master.files) }}%</td>
 				</tr>
 			{% end %}
 			<tr class="legend">
-				<td colspan="3">&nbsp;</td>
+				<td colspan="4">&nbsp;</td>
 			</tr>
 			<tr class="legend">
 				<td><strong>{{ _("Legend") }}:</strong></td>
-				<td colspan="2" class="reachable">{{ _("Server is reachable") }}</td>
+				<td colspan="3" class="ok">{{ _("Server is okay") }}</td>
 			</tr>
 			<tr class="legend">
 				<td>&nbsp;</td>
-				<td colspan="2" class="unreachable">{{ _("Server is unreachable") }}</td>
+				<td colspan="3" class="outdated">{{ _("Server is outdated") }}</td>
 			</tr>
 		</table>
 

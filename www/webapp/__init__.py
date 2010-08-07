@@ -1,22 +1,22 @@
 #/usr/bin/python
 
+import logging
 import os.path
 import simplejson
 
-simplejson._default_decoder = simplejson.JSONDecoder(encoding="latin-1")
-
+import tornado.httpserver
 import tornado.locale
 import tornado.options
 import tornado.web
 
-from db import HashDatabase, UserDatabase
+import datastore
+
 from handlers import *
 from ui_modules import *
 
 BASEDIR = os.path.join(os.path.dirname(__file__), "..")
 
 tornado.locale.load_translations(os.path.join(BASEDIR, "translations"))
-tornado.options.enable_pretty_logging()
 
 class Application(tornado.web.Application):
 	def __init__(self):
@@ -42,10 +42,7 @@ class Application(tornado.web.Application):
 
 		tornado.web.Application.__init__(self, **settings)
 
-		# Initialize database connections
-		self.hash_db = HashDatabase()
-		self.planet_db = tornado.database.Connection("172.28.1.150", "planet", user="planet")
-		self.user_db = UserDatabase()
+		self.ds = datastore.DataStore(self)
 
 		self.settings["static_path"] = static_path = os.path.join(BASEDIR, "static")
 		static_handlers = [
@@ -136,6 +133,41 @@ class Application(tornado.web.Application):
 			(r".*", tornado.web.RedirectHandler, { "url" : "http://www.ipfire.org" })
 		])
 
+		logging.info("Successfully initialied application")
+
+		self.__running = True
+
 	def __del__(self):
-		from mirrors import mirrors
-		mirrors.stop()
+		logging.info("Shutting down application")
+
+	@property
+	def db(self):
+		return self.ds.db
+
+	@property
+	def ioloop(self):
+		return tornado.ioloop.IOLoop.instance()
+
+	def stop(self, *args):
+		logging.debug("Caught shutdown signal")
+		self.ioloop.stop()
+
+		self.__running = False
+
+	def run(self, port=8001):
+		logging.debug("Going to background")
+
+		http_server = tornado.httpserver.HTTPServer(self, xheaders=True)
+		http_server.listen(port)
+
+		self.ioloop.start()
+
+		while self.__running:
+			time.sleep(1)
+
+			self.ds.trigger()
+
+	def reload(self):
+		logging.debug("Caught reload signal")
+
+		self.ds.reload()

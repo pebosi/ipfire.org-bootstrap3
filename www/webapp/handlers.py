@@ -18,19 +18,10 @@ import tornado.httpclient
 import tornado.locale
 import tornado.web
 
-from banners import banners
-from helpers import size, Item
-from info import info
-from mirrors import mirrors
-from news import news
-from releases import releases
-from torrent import tracker, bencode, bdecode, decode_hex
+from helpers import size
+from datastore.tracker import bencode, bdecode, decode_hex
 
-import builds
-import menu
-import cluster
 import markdown
-#import uriel
 
 class BaseHandler(tornado.web.RequestHandler):
 	def get_user_locale(self):
@@ -43,12 +34,14 @@ class BaseHandler(tornado.web.RequestHandler):
 	@property
 	def render_args(self):
 		return {
-			"banner"    : banners.get(),
+			"banner"    : self.ds.banners.get(),
+			"hostname"  : self.request.host,
 			"lang"      : self.locale.code[:2],
 			"langs"     : [l[:2] for l in tornado.locale.get_supported_locales(None)],
 			"lang_link" : self.lang_link,
 			"link"      : self.link,
 			"title"     : "no title given",
+			"time_ago"  : self.time_ago,
 			"server"    : self.request.host.replace("ipfire", "<span>ipfire</span>"),
 			"uri"       : self.request.uri,
 			"year"      : time.strftime("%Y"),
@@ -57,7 +50,6 @@ class BaseHandler(tornado.web.RequestHandler):
 	def render(self, *args, **kwargs):
 		nargs = self.render_args
 		nargs.update(kwargs)
-		nargs["hostname"] = self.request.host
 		tornado.web.RequestHandler.render(self, *args, **nargs)
 
 	def link(self, s):
@@ -66,6 +58,18 @@ class BaseHandler(tornado.web.RequestHandler):
 	def lang_link(self, lang):
 		return "/%s/%s" % (lang, self.request.uri[4:])
 	
+	def time_ago(self, stamp):
+		if not stamp:
+			return "N/A"
+
+		ago = time.time() - stamp
+		for unit in ("s", "m", "h", "d", "M"):
+			if ago < 60:
+				break
+			ago /= 60
+		
+		return "<%d%s" % (ago, unit)
+
 	def get_error_html(self, status_code, **kwargs):
 		if status_code in (404, 500):
 			render_args = self.render_args
@@ -79,16 +83,12 @@ class BaseHandler(tornado.web.RequestHandler):
 			return tornado.web.RequestHandler.get_error_html(self, status_code, **kwargs)
 
 	@property
-	def hash_db(self):
-		return self.application.hash_db
+	def db(self):
+		return self.application.db
 
 	@property
-	def planet_db(self):
-		return self.application.planet_db
-
-	@property
-	def user_db(self):
-		return self.application.user_db
+	def ds(self):
+		return self.application.ds
 
 
 class MainHandler(BaseHandler):
@@ -99,17 +99,17 @@ class MainHandler(BaseHandler):
 
 class DownloadHandler(BaseHandler):
 	def get(self):
-		self.render("downloads.html", release=releases.latest)
+		self.render("downloads.html", release=self.ds.releases.latest)
 
 
 class DownloadAllHandler(BaseHandler):
 	def get(self):
-		self.render("downloads-all.html", releases=releases)
+		self.render("downloads-all.html", releases=self.ds.releases)
 
 
 class DownloadDevelopmentHandler(BaseHandler):
 	def get(self):
-		self.render("downloads-development.html", releases=releases)
+		self.render("downloads-development.html", releases=self.ds.releases)
 
 
 class DownloadTorrentHandler(BaseHandler):
@@ -121,7 +121,7 @@ class DownloadTorrentHandler(BaseHandler):
 		http.fetch(self.tracker_url, callback=self.async_callback(self.on_response))
 
 	def on_response(self, response):
-		torrents = releases.torrents
+		torrents = self.ds.releases.torrents
 		hashes = {}
 		if response.code == 200:
 			for line in response.body.split("\n"):
@@ -140,9 +140,29 @@ class DownloadTorrentHandler(BaseHandler):
 			tracker=urlparse.urlparse(response.request.url).netloc)
 
 
+class DownloadTorrentHandler(BaseHandler):
+	@property
+	def tracker(self):
+		return self.ds.tracker
+
+	def get(self):
+		releases = self.ds.releases.torrents
+
+		hashes = {}
+		for hash in [release.torrent.hash for release in releases if release.torrent]:
+			hashes[hash] = {
+				"peers" : self.tracker.get_peers(hash),
+				"seeds" : self.tracker.get_seeds(hash),
+			}
+
+		self.render("downloads-torrents.html",
+			hashes=hashes,
+			releases=releases)
+
+
 class DownloadMirrorHandler(BaseHandler):
 	def get(self):
-		self.render("downloads-mirrors.html", mirrors=mirrors)
+		self.render("downloads-mirrors.html", mirrors=self.ds.mirrors)
 
 
 class StaticHandler(BaseHandler):
@@ -169,12 +189,12 @@ class StaticHandler(BaseHandler):
 
 class IndexHandler(BaseHandler):
 	def get(self):
-		self.render("index.html", news=news)
+		self.render("index.html", news=self.ds.news)
 
 
 class NewsHandler(BaseHandler):
 	def get(self):
-		self.render("news.html", news=news)
+		self.render("news.html", news=self.ds.news)
 
 
 class BuildHandler(BaseHandler):
@@ -185,7 +205,7 @@ class BuildHandler(BaseHandler):
 			">24h" : [],
 		}
 
-		for build in builds.find():
+		for build in self.ds.builds.find(self.ds.info):
 			if (time.time() - float(build.get("date"))) < 12*60*60:
 				self.builds["<12h"].append(build)
 			elif (time.time() - float(build.get("date"))) < 24*60*60:
@@ -221,7 +241,7 @@ class SourceHandler(BaseHandler):
 				if file in [f["name"] for f in fileobjects]:
 					continue
 
-				hash = self.hash_db.get_hash(os.path.join(dir, file))
+				hash = self.db.hash.get_hash(os.path.join(dir, file))
 
 				if not hash:
 					hash = "0000000000000000000000000000000000000000"
@@ -262,7 +282,7 @@ class SourceDownloadHandler(BaseHandler):
 		if mime_type:
 			self.set_header("Content-Type", mime_type)
 
-		hash = self.hash_db.get_hash(path)
+		hash = self.db.hash.get_hash(path)
 		if hash:
 			self.set_header("X-Hash-Sha1", "%s" % hash)
 
@@ -277,7 +297,7 @@ class SourceDownloadHandler(BaseHandler):
 
 class DownloadFileHandler(BaseHandler):
 	def get(self, path):
-		for mirror in mirrors.with_file(path):
+		for mirror in self.ds.mirrors.with_file(path):
 			if not mirror.reachable:
 				continue
 
@@ -304,7 +324,6 @@ class RSSHandler(BaseHandler):
 		self.render("rss.xml", items=items, lang=lang)
 
 
-<<<<<<< HEAD
 class TrackerBaseHandler(tornado.web.RequestHandler):
 	def get_hexencoded_argument(self, name, all=False):
 		try:
@@ -326,6 +345,7 @@ class TrackerBaseHandler(tornado.web.RequestHandler):
 	def send_tracker_error(self, error_message):
 		self.write(bencode({"failure reason" : error_message }))
 		self.finish()
+
 
 class TrackerAnnounceHandler(TrackerBaseHandler):
 	def get(self):
@@ -395,11 +415,12 @@ class TrackerScrapeHandler(TrackerBaseHandler):
 
 		self.write(bencode(tracker.scrape(hashes=info_hashes)))
 		self.finish()
-=======
+
+
 class PlanetBaseHandler(BaseHandler):
 	@property
 	def db(self):
-		return self.application.planet_db
+		return self.db.planet
 
 
 class PlanetMainHandler(PlanetBaseHandler):
@@ -445,4 +466,120 @@ class PlanetPostingHandler(PlanetBaseHandler):
 		entry.author = user
 
 		self.render("planet-posting.html", entry=entry, user=user)
->>>>>>> planet
+
+
+class AdminBaseHandler(BaseHandler):
+	def render(self, *args, **kwargs):
+		
+		return BaseHandler.render(self, *args, **kwargs)
+
+
+class AdminIndexHandler(AdminBaseHandler):
+	def get(self):
+		self.render("admin-index.html")
+
+
+class AdminApiPlanetRenderMarkupHandler(AdminBaseHandler):
+	def get(self):
+		text = self.get_argument("text", "")
+
+		# Render markup
+		self.write(markdown.markdown(text))
+		self.finish()
+
+
+class AdminPlanetHandler(AdminBaseHandler):
+	def get(self):
+		entries = self.planet_db.query("SELECT * FROM entries ORDER BY published DESC")
+
+		for entry in entries:
+			entry.author = self.user_db.get_user_by_id(entry.author_id)
+
+		self.render("admin-planet.html", entries=entries)
+
+
+class AdminPlanetComposeHandler(AdminBaseHandler):
+	#@tornado.web.authenticated
+	def get(self, id=None):
+		if id:
+			entry = self.planet_db.get("SELECT * FROM entries WHERE id = '%s'", int(id))
+		else:
+			entry = tornado.database.Row(id="", title="", text="")
+
+		self.render("admin-planet-compose.html", entry=entry)
+
+	#@tornado.web.authenticated
+	def post(self, id=None):
+		id = self.get_argument("id", id)
+		title = self.get_argument("title")
+		text = self.get_argument("text")
+
+		if id:
+			entry = self.planet_db.get("SELECT * FROM entries WHERE id = %s", id)
+			if not entry:
+				raise tornado.web.HTTPError(404)
+
+			self.planet_db.execute("UPDATE entries SET title = %s, text = %s "
+				"WHERE id = %s", title, text, id)
+
+			slug = entry.slug
+
+		else:
+			slug = unicodedata.normalize("NFKD", title).encode("ascii", "ignore")
+			slug = re.sub(r"[^\w]+", " ", slug)
+			slug = "-".join(slug.lower().strip().split())
+
+			if not slug:
+				slug = "entry"
+
+			while True:
+				e = self.planet_db.get("SELECT * FROM entries WHERE slug = %s", slug)
+				if not e:
+					break
+				slug += "-"
+
+			self.planet_db.execute("INSERT INTO entries(author_id, title, slug, text, published) "
+				"VALUES(%s, %s, %s, %s, UTC_TIMESTAMP())", 500, title, slug, text)
+
+		self.redirect("/planet")
+
+
+class AdminPlanetEditHandler(AdminPlanetComposeHandler):
+	pass
+
+
+class AdminAccountsHandler(AdminBaseHandler):
+	def get(self):
+		users = self.user_db.users
+
+		self.render("admin-accounts.html", accounts=users)
+
+
+class AdminAccountsEditHandler(AdminBaseHandler):
+	def get(self, id):
+		user = self.user_db.get_user_by_id(id)
+
+		if not user:
+			raise tornado.web.HTTPError(404)
+
+		self.render("admin-accounts-edit.html", user=user)
+
+
+class AuthLoginHandler(BaseHandler):
+	def get(self):
+		self.render("admin-login.html")
+
+	def post(self):
+		#name = self.get_attribute("name")
+		#password = self.get_attribute("password")
+
+		pass
+
+		#if self.user_db.check_password(name, password):
+		#	self.set_secure_cookie("user", int(user.id))
+
+
+class AuthLogoutHandler(BaseHandler):
+	def get(self):
+		self.clear_cookie("user")
+		self.redirect("/")

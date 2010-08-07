@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+ 
+{% block title %}{{ _("IPFire Admin Area") }}{% end %}
+
+{% block languages %}{% end %}
+
+{% block sidebar %}
+	<h4>{{ _("Options") }}</h4>
+
+	<ul>
+		<li><a href="/accounts">{{ _("Accounts") }}</a></li>
+		<li><a href="/planet">{{ _("Planet") }}</a></li>
+	</ul>
+{% end %}

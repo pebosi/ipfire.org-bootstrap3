@@ -1,6 +1,6 @@
 [
 	{
-		"name" : "IPFire Project",
+		"owner" : "IPFire Project",
 		"location" : {
 			"city" : "Cologne",
 			"country" : "Germany",
@@ -32,7 +32,7 @@
 	},
 
 	{
-		"name" : "Jan Paul Tücking",
+		"owner" : "Jan Paul Tücking",
 		"location" : {
 			"city" : "Falkenstein/Vogtland",
 			"country" : "Germany",
@@ -48,7 +48,7 @@
 	},
 
 	{
-		"name" : "Markus Villwock",
+		"owner" : "Markus Villwock",
 		"location" : {
 			"city" : "Hannover",
 			"country" : "Germany",
@@ -64,7 +64,7 @@
 	},
 
 	{
-		"name" : "Kim Barthel",
+		"owner" : "Kim Barthel",
 		"location" : {
 			"city" : "Stuttgart",
 			"country" : "Germany",
@@ -80,7 +80,7 @@
 	},
 
 	{
-		"name" : "Robert Möker",
+		"owner" : "Robert Möker",
 		"location" : {
 			"city" : "Frankfurt am Main",
 			"country" : "Germany",
@@ -96,7 +96,7 @@
 	},
 
 	{
-		"name" : "SWITCH",
+		"owner" : "SWITCH",
 		"location" : {
 			"city" : "Zurich",
 			"country" : "Switzerland",
@@ -112,18 +112,18 @@
 	},
 
 	{
-                "name" : "Peter Schälchli",
-                "location" : {
-                        "city" : "Paris",
-                        "country" : "France",
-                        "country_code" : "fr"
-                },
-                "hostname" : "mirror6.ipfire.org",
-                "path" : "",
-                "serves" : {
-                        "isos" : true,
-                        "pakfire2" : true,
-                        "pakfire3" : false
-                }
-        }
+		"owner" : "Peter Schälchli",
+		"location" : {
+			"city" : "Paris",
+			"country" : "France",
+			"country_code" : "fr"
+		},
+		"hostname" : "mirror6.ipfire.org",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : true,
+			"pakfire3" : false
+		}
+	}
 ]
