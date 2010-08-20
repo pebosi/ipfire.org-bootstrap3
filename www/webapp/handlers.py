@@ -21,6 +21,7 @@ from info import info
 from mirrors import mirrors
 from news import news
 from releases import releases
+from torrent import tracker, bencode, bdecode, decode_hex
 
 import builds
 import menu
@@ -287,3 +288,95 @@ class RSSHandler(BaseHandler):
 
 		self.set_header("Content-Type", "application/rss+xml")
 		self.render("rss.xml", items=items, lang=lang)
+
+
+class TrackerBaseHandler(tornado.web.RequestHandler):
+	def get_hexencoded_argument(self, name, all=False):
+		try:
+			arguments = self.request.arguments[name]
+		except KeyError:
+			return None
+
+		arguments_new = []
+		for argument in arguments:
+			arguments_new.append(decode_hex(argument))
+
+		arguments = arguments_new
+
+		if all:
+			return arguments
+
+		return arguments[0]
+
+	def send_tracker_error(self, error_message):
+		self.write(bencode({"failure reason" : error_message }))
+		self.finish()
+
+class TrackerAnnounceHandler(TrackerBaseHandler):
+	def get(self):
+		self.set_header("Content-Type", "text/plain")
+
+		info_hash = self.get_hexencoded_argument("info_hash")
+		if not info_hash:
+			self.send_tracker_error("Your client forgot to send your torrent's info_hash.")
+			return
+
+		peer = {
+			"id" : self.get_hexencoded_argument("peer_id"),
+			"ip" : self.get_argument("ip", None),
+			"port" : self.get_argument("port", None),
+			"downloaded" : self.get_argument("downloaded", 0),
+			"uploaded" : self.get_argument("uploaded", 0),
+			"left" : self.get_argument("left", 0),
+		}
+
+		event = self.get_argument("event", "")
+		if not event in ("started", "stopped", "completed", ""):
+			self.send_tracker_error("Got unknown event")
+			return
+
+		if peer["ip"]:
+			if peer["ip"].startswith("10.") or \
+				peer["ip"].startswith("172.") or \
+				peer["ip"].startswith("192.168."):
+				peer["ip"] = self.request.remote_ip
+
+		if peer["port"]:
+			peer["port"] = int(peer["port"])
+
+			if peer["port"] < 0 or peer["port"] > 65535:
+				self.send_tracker_error("Port number is not in valid range")
+				return
+
+		eventhandlers = {
+			"started" : tracker.event_started,
+			"stopped" : tracker.event_stopped,
+			"completed" : tracker.event_completed,
+		}
+
+		if event:
+			eventhandlers[event](info_hash, peer["id"])
+
+		tracker.update(hash=info_hash, **peer)
+
+		no_peer_id = self.get_argument("no_peer_id", False)
+		numwant = self.get_argument("numwant", tracker.numwant)
+
+		self.write(bencode({
+			"tracker id" : tracker.id,
+			"interval" : tracker.interval,
+			"min interval" : tracker.min_interval,
+			"peers" : tracker.get_peers(info_hash, limit=numwant,
+				random=True, no_peer_id=no_peer_id),
+			"complete" : tracker.complete(info_hash),
+			"incomplete" : tracker.incomplete(info_hash),
+		}))
+		self.finish()
+
+
+class TrackerScrapeHandler(TrackerBaseHandler):
+	def get(self):
+		info_hashes = self.get_hexencoded_argument("info_hash", all=True)
+
+		self.write(bencode(tracker.scrape(hashes=info_hashes)))
+		self.finish()
