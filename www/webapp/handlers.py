@@ -38,6 +38,7 @@ class BaseHandler(tornado.web.RequestHandler):
 	def render_args(self):
 		return {
 			"banner"    : banners.get(),
+			"hostname"  : self.request.host,
 			"lang"      : self.locale.code[:2],
 			"langs"     : [l[:2] for l in tornado.locale.get_supported_locales(None)],
 			"lang_link" : self.lang_link,
@@ -51,7 +52,6 @@ class BaseHandler(tornado.web.RequestHandler):
 	def render(self, *args, **kwargs):
 		nargs = self.render_args
 		nargs.update(kwargs)
-		nargs["hostname"] = self.request.host
 		tornado.web.RequestHandler.render(self, *args, **nargs)
 
 	def link(self, s):
