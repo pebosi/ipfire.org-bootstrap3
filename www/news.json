@@ -1268,5 +1268,25 @@
 									<li>Die fehlende terminfo für Screen wurde hinzugefügt</li>
 									<li>Support für Cisco VPN-Clients hinzugefügt</li>
 								</ul>
-							</p>"}}
+							</p>"}},
+							
+	    "41" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "new server infrastructure", "de" : "Neue Server-Infrastruktur" },
+				"date"     : "2010-08-22",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Since the last weekend, the services of the IPFire project are running on a bunch of new
+						servers. Because of the wide distribution and the new hardware the services are running on, we get
+						a lot more performance out of it what will be pleasant for the community as well.<br />
+						This is also a place where we want to thank <a href=\"http://www.hetzner.de\" target=\"_blank\">Hetzner</a>
+						because this won't be possible without their contribution and we are looking forward to provide
+						more services in the next time.</p>",
+
+					  "de" : "<p>Seit diesem Wochenende laufen die IPFire-Dienste auf einer neuen Server-Infrastruktur.<br />
+						Den alten Server haben wir nun gegen neue Hardware, die deutlich leistungsfähiger sind ausgetauscht.
+						Durch das Verteilen der einzelnen Dienste können wir einen ernormen Performancezuwachs verzeichnen,
+						welches sicher auch die ganze Community freuen wird.<br />
+						Durch die professionelle Unterstützung von <a href=\"http://www.hetzner.de\" target=\"_blank\">Hetzner</a>
+						werden bald weitere Dienste, die wir der Community zur Verfügung stellen wollen, folgen.</p>"}}
 }
