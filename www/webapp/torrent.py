@@ -27,7 +27,7 @@ class Tracker(object):
 
 	def __init__(self):
 		self.db = tornado.database.Connection(
-			host="172.28.1.150",
+			host="mysql.ipfire.org",
 			database="tracker",
 			user="webapp",
 		)
