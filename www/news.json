@@ -1288,5 +1288,110 @@
 						Durch das Verteilen der einzelnen Dienste können wir einen ernormen Performancezuwachs verzeichnen,
 						welches sicher auch die ganze Community freuen wird.<br />
 						Durch die professionelle Unterstützung von <a href=\"http://www.hetzner.de\" target=\"_blank\">Hetzner</a>
-						werden bald weitere Dienste, die wir der Community zur Verfügung stellen wollen, folgen.</p>"}}
+						werden bald weitere Dienste, die wir der Community zur Verfügung stellen wollen, folgen.</p>"}},
+							
+	    "42" : {"author"   : "Christian Schmidt",
+				"mail"     : "christian.schmidt@ipfire.org",
+				"subject"  : "Core Update 40",
+				"date"     : "2010-09-17",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>This is the day we are going to release Core Update number 40
+						which includes the following changes:<br />
+						Including...</p>
+						<ul>
+							<li>Added the french webinterface translation.</li>
+							<li>Updated strongswan to 4.4.1</li>
+							<li>Updated openvpn to 2.1.2</li>
+							<li>Updated snort to 2.8.6.1</li>
+							<li>Updated python to 2.7</li>
+							<li>Updated cpio 2.11</li>
+							<li>Updated drivers:</li>
+							<ul>
+								<li>Intel igb network driver 2.3.4</li>
+								<li>Support manual override of usbserial vendor/productid</li>
+								<li>Add Huawei Android usbid's to option driver</li>
+								<li>compat-wireless version 2.6.35-1</li>
+							</ul>
+							<li>Changes on the outgoing firewall:</li>
+							<ul>
+								<li>Re-added the mac filter</li>
+								<li>Fixes on firewall groups</li>
+							</ul>
+							<li>Changes on the QoS module:</li>
+							<ul>
+								<li>Fixed QoS device detection on connection type change</li>
+								<li>Changed QoS port field length to be able to enter port ranges</li>
+							</ul>
+							<li>Added IPTV over ADSL (entertain) support (Germany)</li>
+    						<li>Added DHCPd and dnsmasq configuration customization feature</li>
+							<li>Fixed bug #0000711 - Unable to delete addon backups</li> 
+							<li>Cleaned up the installer:</li>
+							<ul>
+								<li>Removed reiser4progs from installer system.</li>
+								<li>Mkinitcpio: Reduced initrd size by removing unneeded filesystems</li>
+							</ul>
+							<li>Small WebIF changes:</li>
+							<ul>
+								<li>Some cosmetic changes on time server</li>
+								<li>Changed Update-Booster (link) to Update-Accelerator</li>
+							</ul>
+							<li>Default all processes to run with nice=0</li>
+							<li>Increased /var/lock to 8MB</li>
+						</ul>
+						
+						<p>Thanks to all contributers.</p>
+						<p>View further information at the
+							<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core40\" target=\"_blank\">Git Repository</a>.
+						</p>",
+
+					  "de" : "<p>Heute werden wir Core 40 veröffentlichen.<br />
+					  		Mit dem Core Update sind folgende Änderungen verbunden:</p>
+
+							<ul>
+								<li>Französische Übersetzung des Webinterfaces hinzugefügt</li>
+								<li>Update für strongswan auf Version 4.4.1</li>
+								<li>Update für openvpn auf Version 2.1.2</li>
+								<li>Update für snort auf Version 2.8.6.1</li>
+								<li>Update für python auf Version 2.7</li>
+								<li>Update für cpio auf Version 2.11</li>
+								<li>Update von Treibern:</li>
+								<ul>
+									<li>Intel igb Netzwerk-Treiber in der Version 2.3.4</li>
+									<li>Unterstützung für das manuelle Überschreiben durch usbserial für vendor/productid</li>
+									<li>USB-IDs für Huawei Android-Option-Treiber</li>
+									<li>Treiber für compat-wireless auf Version 2.6.35-1 aktualisiert</li>
+								</ul>
+								<li>Einige Änderungen an der ausgehenden Firewall:</li>
+								<ul>
+									<li>Die MAC-Filteroption wurde wieder aktiviert</li>
+									<li>Einige Fixes und Features für die Firewall-Gruppen</li>
+								</ul>
+								<li>Veränderungen am QoS-Modul:</li>
+								<ul>
+									<li>Erkennung für das nachträgliche Ändern des roten Verbindungstypen eingebaut</li>
+									<li>Die Länge für das Portfeld wurde angehoben um Port-Ranges zu ermöglichen</li>
+								</ul>
+								<li>IPTV ist jetzt auch für ADSL (Entertain) möglich</li>
+								<li>Für den DHCP- und DNS-Deamon können nun eigene Änderungen in die Konfiguration eingebracht werden</li>
+								<li>Der Bug beim Löschen von Addon-Sicherungen wurde behoben</li>
+								<li>Der Installer wurde bereinigt:</li>
+								<ul>
+									<li>Reiser4progs wurde entfernt</li>
+									<li>Die initrd wurde verkleinert da einige Filesystemmodule entfernt wurden und auf initramfs umgestellt</li>
+								</ul>
+								<li>Kleinere Änderungen am Webinterface:</li>
+								<ul>
+									<li>Kosmetische Korrekturen am Zeitserver</li>
+									<li>Der Link für den Update-Booster wurde auf Update-Accelerator umbenannt</li>
+								</ul>
+								<li>Alle Prozesse starten mit einem nice-Level von 0</li>
+								<li>Die Größe von /var/lock wurde auf 8MB erhöht</li>
+							</ul>
+							
+							<p>Vielen Dank an Alle die dazu beigetragen haben.</p>
+
+							<p>Ausführlichere Informationen zu den Änderungen findet man
+								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core40\" target=\"_blank\">hier</a>.
+							</p>"}}
 }
