@@ -17,7 +17,7 @@ def decode_hex(s):
 	return "".join(ret)
 
 class Tracker(object):
-	id = "The IPFire Torrent Tracker"
+	id = "The%20IPFire%20Torrent%20Tracker"
 
 	# Intervals
 	interval = 60*60
@@ -27,9 +27,9 @@ class Tracker(object):
 
 	def __init__(self):
 		self.db = tornado.database.Connection(
-			host="172.28.1.150",
+			host="mysql.ipfire.org",
 			database="tracker",
-			user="tracker",
+			user="webapp",
 		)
 
 	def _fetch(self, hash, limit=None, random=False, completed=False, no_peer_id=False):
@@ -40,6 +40,8 @@ class Tracker(object):
 
 		if completed:
 			query += " AND left_data = 0"
+		else:
+			query += " AND left_data != 0"
 
 		if random:
 			query += " ORDER BY RAND()"
