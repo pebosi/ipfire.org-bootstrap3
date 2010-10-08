@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-		<title>{{ hostname }} - {% block title %}{{ title }}{% end block %}</title>
+		<title>{% block title %}{{ title }}{% end block %}</title>
 		<meta name="keywords" content="Linux, Firewall, IPFire, Security" />
 		<meta name="description" content="" />
 		<meta name="verify-v1" content="2LEf3W8naILGWVy2dhedSVEHPXTpp2xFNVsHXZMH1JI=" />
@@ -29,19 +29,12 @@
 					{% block menu %}
 						{{ modules.Menu() }}
 					{% end block %}
-					<div id="lang">
-						{% block languages %}
-							{% for lng in langs %}
-								<a href="{{ lang_link(lng) }}"><img src="{{ static_url("images/%s.gif" % lng) }}" alt="{{ lng }}" /></a>
-							{% end %}
-						{% end block %}
-					</div>
 				</div>
 				<div id="line2">
 					<h1>{{ server }}</h1>
 				</div>
 				<div id="line3">
-					<h2>{{ _("Security gone easy!") }}</h2>
+					<h2>{{ _("Open Source Firewall Solution") }}</h2>
 				</div>
 				
 			</div>
@@ -80,6 +73,14 @@
 						<td id="sh-lft"></td>
 						<td id="footer" class="fixed2">
 							Copyright &copy; {{ year }} IPFire.org. All rights reserved. <a href="{{ link("imprint") }}">{{ _("imprint") }}</a>
+						
+						<div id="lang">
+						{% block languages %}
+							{% for lng in langs %}
+								<a href="{{ lang_link(lng) }}"><img src="{{ static_url("images/%s.gif" % lng) }}" alt="{{ lng }}" /></a>
+							{% end %}
+						{% end block %}
+					   </div>
 						</td>
 						<td id="sh-rgt"></td>
 					</tr>
