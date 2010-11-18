@@ -323,7 +323,7 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 
 		peer = {
 			"id" : self.get_hexencoded_argument("peer_id"),
-			"ip" : self.get_argument("ip", None),
+			"ip" : self.request.remote_ip,
 			"port" : self.get_argument("port", None),
 			"downloaded" : self.get_argument("downloaded", 0),
 			"uploaded" : self.get_argument("uploaded", 0),
@@ -334,12 +334,6 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 		if not event in ("started", "stopped", "completed", ""):
 			self.send_tracker_error("Got unknown event")
 			return
-
-		if peer["ip"]:
-			if peer["ip"].startswith("10.") or \
-				peer["ip"].startswith("172.") or \
-				peer["ip"].startswith("192.168."):
-				peer["ip"] = self.request.remote_ip
 
 		if peer["port"]:
 			peer["port"] = int(peer["port"])
