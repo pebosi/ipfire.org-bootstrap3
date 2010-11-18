@@ -1213,7 +1213,7 @@
 								</ul>
 							  </p>"}},
 							  
-	    "39" : {"author"   : "Jan Paul Tuecking",
+		"39" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "IPFire 2.7 final via pakfire", "de" : "IPFire 2.7 final via pakfire" },
 				"date"     : "2010-07-09",
@@ -1237,7 +1237,7 @@
 								<br />Durch das Update des Kernels ist ein Neustart von IPFire nötig.<br/>
 							  </p>"}},
 							  
-	    "40" : {"author"   : "Jan Paul Tuecking",
+		"40" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 39", "de" : "Core Update 39" },
 				"date"     : "2010-08-01",
@@ -1270,7 +1270,7 @@
 								</ul>
 							</p>"}},
 							
-	    "41" : {"author"   : "Jan Paul Tuecking",
+		"41" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "new server infrastructure", "de" : "Neue Server-Infrastruktur" },
 				"date"     : "2010-08-22",
@@ -1290,7 +1290,7 @@
 						Durch die professionelle Unterstützung von <a href=\"http://www.hetzner.de\" target=\"_blank\">Hetzner</a>
 						werden bald weitere Dienste, die wir der Community zur Verfügung stellen wollen, folgen.</p>"}},
 							
-	    "42" : {"author"   : "Christian Schmidt",
+		"42" : {"author"   : "Christian Schmidt",
 				"mail"     : "christian.schmidt@ipfire.org",
 				"subject"  : "Core Update 40",
 				"date"     : "2010-09-17",
@@ -1394,107 +1394,158 @@
 							<p>Ausführlichere Informationen zu den Änderungen findet man
 								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core40\" target=\"_blank\">hier</a>.
 							</p>"}},
-							
-
- 		"43" : {"author"   : "Jan Paul Tuecking",
+	
+		"43" : {"author"   : "Jan Paul Tuecking",
 				"mail"     : "earl@ipfire.org",
 				"subject"  : { "en" : "Core Update 41", "de" : "Core Update 41" },
 				"date"     : "2010-11-08",
 				"link"     : "",
 				"content"  :
 					{ "en" : "<p>Today on the third birthday of IPFire 2 we are going to release Core 41.
-								This core update has <strong>important security fixes</strong> at glibc and bzip2.</p>
+						This core update has <strong>important security fixes</strong> at glibc and bzip2.</p>
+						<p>The core update implicates following changes:</p>
+						<ul>
+							<li>Language</li>
+							<ul>
+								<li>French: fix idle cpu was showed as used cpu time</li>
+								<li>Setup: add spanish language file</li>
+							</ul>
+							<li>Webinterface</li>
+							<ul>
+								<li>Fixed CGI outgoinggrp display bug</li>
+								<li>Fix bandwich usage display with IE8</li>
+								<li>Added example for black/whitelist on Proxy page</li>
+								<li>VPN pre-shared key field is now a password field</li>
+							</ul>
+							<li>Hardware</li>
+							<ul>
+								<li>Updated Realtek r8169 driver</li>
+								<li>Updated Realtek r8168 driver</li>
+								<li>Updated Realtek r8101 driver</li>
+							</ul>
+							<li>Security</li>
+							<ul>
+								<li>bzip2: 1.0.6 - Security Update</li>
+								<li>glibc: close privil. escalation hole ($origin libpath)</li>
+							</ul>
+							<li>VPN</li>
+							<ul>
+								<li>strongswan: enabled curl for http fetching revoking list<l/i>
+								<li>Added openvpn pam.so</li>
+							</ul>
+							<li>Firewall</li>
+							<ul>
+								<li>Fixed the feature for deactivating outgoingfw rules</li>
+							</ul>
+							<li>Others</li>
+							<ul>
+								<li>Dnsmasq: disable internal TFTP-Server</li>
+								<li>Fix typo /etc/init.d/ntp (booot)</li> 
+							</ul>
+						</ul>
+						<p>	The update is available via pakfire, thanks to all contributers.<br />
+							You can find open bugs via <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
+							View further information at the
+						<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core41\" target=\"_blank\">Git Repository</a>.
+					</p>",
+
+				"de" :" <p>Heute am dritten Geburtstag von IPFire 2 werden wir Core 41 veröffentlichen.
+						Dieses Core-Update enthält <strong>wichtige Sicherheitskorrekturen</strong> an der glibc und bzip2.</p>
+						<p>Das Core-Update beinhaltet weiter folgende Änderungen:</p>
+						<ul>
+							<li>Sprachen</li>
+							<ul>
+								<li>Französich Übersetzung korrigiert Leerlauf- wurde als Benutzte CPU Zeit angezeigt</li>
+								<li>Setup: Spanisch hinzugefügt</li>
+							</ul>
+							<li>Webinterface</li>
+							<ul>
+								<li>Korrektur: outgoinggrp Anzeigefehler</li>
+								<li>Korrektur: Bandreitenbenutzunganzeinge im IE8</li>
+								<li>Beispiel für die black/whitelist auf der Proxy Seite hinzugefügt</li>
+								<li>VPN - pre-shared key Feld ist jetzt ein Passwortfeld</li>
+							</ul>
+							<li>Hardware</li>
+							<ul>
+								<li>Update des Realtek r8169 Treiber</li>
+								<li>Update des Realtek r8168 Treiber</li>
+								<li>Update des Realtek r8101 Treiber</li>
+							</ul>
+							<li>Sicherheit</li>
+							<ul>
+								<li>bzip2: 1.0.6 - Sicherheitsupdate</li>
+								<li>glibc: Sicherheitsupdate gegen eine Rechteausweitung ($origin libpath)</li>
+							</ul>
+							<li>VPN</li>
+							<ul>
+								<li>Strongswan: curl für den http download von Zertifikatsperren aktiviert<l/i>
+								<li>Hinzugefügt: openvpn pam.so</li>
+							</ul>
+							<li>Firewall</li>
+							<ul>
+								<li>Korrektur: Deaktivierung von outgoingfw Regeln</li>
+							</ul>
+							<li>Sonstiges</li>
+							<ul>
+								<li>Dnsmasq: interner TFTP-Server deaktiviert</li>
+								<li>Korrektur: Schreibfehler in /etc/init.d/ntp (booot)</li> 
+							</ul>
+						</ul>
+						<p>Das Update kann via pakfire bezogen werden, vielen Dank an Alle die dazu beigetragen haben.<br />
+						Offene Bugs findet man im <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
+						Ausführlichere Informationen zu den Änderungen findet man
+						<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core41\" target=\"_blank\">hier</a>.
+					</p>"}},
+
+		"44" : {"author"   : "Jan Paul Tuecking",
+				"mail"     : "earl@ipfire.org",
+				"subject"  : { "en" : "Core Update 42", "de" : "Core Update 42" },
+				"date"     : "2010-11-17",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release Core 42 which is a bugfix release 
+								and <strong>we strongly recommend to install this</strong> as soon as possible.</p>
 								<p>The core update implicates following changes:</p>
 								<ul>
-									<li>Language</li>
+									<li>Security</li>
 									<ul>
-										<li>French: fix idle cpu was showed as used cpu time</li>
-										<li>Setup: add spanish language file</li>
+										<li>Update for OpenSSL 0.9.8p (fix race condition - CVE-2010-3864)</li>
+										<li>Update for OpenSSH 5.6p1</li>
 									</ul>
 									<li>Webinterface</li>
 									<ul>
-										<li>Fixed CGI outgoinggrp display bug</li>
-										<li>Fix bandwich usage display with IE8</li>
-										<li>Added example for black/whitelist on Proxy page</li>
-										<li>VPN pre-shared key field is now a password field</li>
-									</ul>
-									<li>Hardware</li>
-									<ul>
-										<li>Updated Realtek r8169 driver</li>
-										<li>Updated Realtek r8168 driver</li>
-										<li>Updated Realtek r8101 driver</li>
-									</ul>
-									<li>Security</li>
-									<ul>
-										<li>bzip2: 1.0.6 - Security Update</li>
-										<li>glibc: close privil. escalation hole ($origin libpath)</li>
-									</ul>
-									<li>VPN</li>
-									<ul>
-										<li>strongswan: enabled curl for http fetching revoking list<l/i>
-										<li>Added openvpn pam.so</li>
-									</ul>
-									<li>Firewall</li>
-									<ul>
-										<li>Fixed the feature for deactivating outgoingfw rules</li>
-									</ul>
-									<li>Others</li>
-									<ul>
-										<li>Dnsmasq: disable internal TFTP-Server</li>
-										<li>Fix typo /etc/init.d/ntp (booot)</li> 
+										<li>Fix Emergingthreats rules download URL</li>
+										<li>Add missing \"copy\" icon for urlfilter page</li>
 									</ul>
 								</ul>
-							<p>	The update is available via pakfire, thanks to all contributers.<br />
+								<p>After installing this update you should restart all services that use OpenSSL. 
+								The easiest way should be a reboot.</p>
+								<p>	The update is available via pakfire, thanks to all contributers.<br />
 								You can find open bugs via <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
 								View further information at the
-								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core41\" target=\"_blank\">Git Repository</a>.
+								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core42\" target=\"_blank\">Git Repository</a>.
 							</p>",
 
-					  "de" :" <p>Heute am dritten Geburtstag von IPFire 2 werden wir Core 41 veröffentlichen.
-					  			Dieses Core-Update enthält <strong>wichtige Sicherheitskorrekturen</strong> an der glibc und bzip2.</p>
+					  "de" :" <p>Heute werden wir Core 42 veröffentlichen, welches vornehmlich ein Bugfix-Release 
+								 ist und hauptsächlich eine <strong>Sicherheitskorrektur</strong> im OpenSSL-Paket enthält.<br />
+								 Wir empfehlen allen dieses Update <strong>so schnell wie möglich zu installieren.</strong></p>
 					  			<p>Das Core-Update beinhaltet weiter folgende Änderungen:</p>
-							<ul>
-								<li>Sprachen</li>
 								<ul>
-									<li>Französich Übersetzung korrigiert Leerlauf- wurde als Benutzte CPU Zeit angezeigt</li>
-									<li>Setup: Spanisch hinzugefügt</li>
+									<li>Sicherheit</li>
+									<ul>
+										<li>Update von OpenSSL 0.9.8p (fix race condition - CVE-2010-3864)</li>
+										<li>Update von OpenSSH 5.6p1</li>
+									</ul>
+									<li>Webinterface</li>
+									<ul>
+										<li>Korrektur der URL für den Emergingthreats-Regeldownload</li>
+										<li>Fehlendes Kopieren-Icon auf der URLFilter-Seite hinzugefügt</li>
+									</ul>
 								</ul>
-								<li>Webinterface</li>
-								<ul>
-									<li>Korrektur: outgoinggrp Anzeigefehler</li>
-									<li>Korrektur: Bandreitenbenutzunganzeinge im IE8</li>
-									<li>Beispiel für die black/whitelist auf der Proxy Seite hinzugefügt</li>
-									<li>VPN - pre-shared key Feld ist jetzt ein Passwortfeld</li>
-								</ul>
-								<li>Hardware</li>
-								<ul>
-									<li>Update des Realtek r8169 Treiber</li>
-									<li>Update des Realtek r8168 Treiber</li>
-									<li>Update des Realtek r8101 Treiber</li>
-								</ul>
-								<li>Sicherheit</li>
-								<ul>
-									<li>bzip2: 1.0.6 - Sicherheitsupdate</li>
-									<li>glibc: Sicherheitsupdate gegen eine Rechteausweitung ($origin libpath)</li>
-								</ul>
-								<li>VPN</li>
-								<ul>
-									<li>Strongswan: curl für den http download von Zertifikatsperren aktiviert<l/i>
-									<li>Hinzugefügt: openvpn pam.so</li>
-								</ul>
-								<li>Firewall</li>
-								<ul>
-									<li>Korrektur: Deaktivierung von outgoingfw Regeln</li>
-								</ul>
-								<li>Sonstiges</li>
-								<ul>
-									<li>Dnsmasq: interner TFTP-Server deaktiviert</li>
-									<li>Korrektur: Schreibfehler in /etc/init.d/ntp (booot)</li> 
-								</ul>
-							</ul>
-							<p>Das Update kann via pakfire bezogen werden, vielen Dank an Alle die dazu beigetragen haben.<br />
-							Offene Bugs findet man im <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
-							Ausführlichere Informationen zu den Änderungen findet man
-							<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core40\" target=\"_blank\">hier</a>.
+								<p>Nach dem Update sollte man alle Dienste die OpenSSH verwenden neu starten. Am einfachsten ist ein Reboot.</p>
+								<p>Das Update kann via pakfire bezogen werden, vielen Dank an Alle die dazu beigetragen haben.<br />
+								Offene Bugs findet man im <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
+								Ausführlichere Informationen zu den Änderungen findet man
+								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core42\" target=\"_blank\">hier</a>.
 							</p>"}}
 }
