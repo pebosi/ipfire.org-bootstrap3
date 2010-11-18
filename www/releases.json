@@ -21,7 +21,7 @@
   	{
   	  "type" : "torrent",
   	  "name" : "ipfire-2.7.i586-full-core42.iso.torrent",
-  	  "hash" : ""
+  	  "hash" : "c01d8c94bb361699899445e50f1e65f4fa183ced"
   	},
   	{
 	  "type" : "usbfdd",
