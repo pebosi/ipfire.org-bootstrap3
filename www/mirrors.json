@@ -87,7 +87,7 @@
 			"country_code" : "de"
 		},
 		"hostname" : "datenklatscher.net",
-		"path" : "/ipfire",
+		"path" : "/ipfire/pakfire2",
 		"serves" : {
 			"isos" : true,
 			"pakfire2" : false,
