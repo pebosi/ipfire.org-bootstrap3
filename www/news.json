@@ -1547,5 +1547,44 @@
 								Offene Bugs findet man im <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
 								Ausführlichere Informationen zu den Änderungen findet man
 								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core42\" target=\"_blank\">hier</a>.
+							</p>"}},
+
+		"45" : {"author"   : "Michael Tremer",
+				"mail"     : "michael.tremer@ipfire.org",
+				"subject"  : "Core Update 43",
+				"date"     : "2010-12-03",
+				"link"     : "",
+				"content"  :
+					{ "en" : "<p>Today we are going to release Core 43 which is a bugfix release 
+								and <strong>we strongly recommend to install this</strong> as soon as possible.</p>
+								<p>The core update implicates following changes:</p>
+								<ul>
+									<li>Security</li>
+									<ul>
+										<li>Update for OpenSSL 0.9.8q (OpenSSL Ciphersuite Downgrade Attack - CVE-2010-4180)</li>
+										<li><a href=\"http://openssl.org/news/secadv_20101202.txt\" target=\"_blank\">Read this for detailed information.</a></li>
+									</ul>
+								</ul>
+								<p>	The update is available via pakfire, thanks to all contributers.<br />
+								You can find open bugs via <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
+								View further information at the
+								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core43\" target=\"_blank\">Git Repository</a>.
+							</p>",
+
+					  "de" :" <p>Heute werden wir Core 43 veröffentlichen, welches eine <strong>Sicherheitskorrektur</strong>
+					  			im OpenSSL-Paket enthält.<br />
+								Wir empfehlen allen dieses Update <strong>so schnell wie möglich zu installieren.</strong></p>
+					  			<p>Das Core-Update beinhaltet folgende Änderungen:</p>
+								<ul>
+									<li>Sicherheit</li>
+									<ul>
+										<li>Update for OpenSSL 0.9.8q (OpenSSL Ciphersuite Downgrade Attack - CVE-2010-4180)</li>
+										<li><a href=\"http://openssl.org/news/secadv_20101202.txt\" target=\"_blank\">Weitere Informationen gibt es hier.</a></li>
+									</ul>
+								</ul>
+								<p>Das Update kann via pakfire bezogen werden, vielen Dank an Alle die dazu beigetragen haben.<br />
+								Offene Bugs findet man im <a href=\"http://bugtracker.ipfire.org\" target=\"_blank\">Bugtracker</a>.<br />
+								Ausführlichere Informationen zu den Änderungen findet man
+								<a href=\"http://git.ipfire.org/?p=ipfire-2.x.git;a=shortlog;h=refs/heads/core43\" target=\"_blank\">hier</a>.
 							</p>"}}
 }
