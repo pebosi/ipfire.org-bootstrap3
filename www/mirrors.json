@@ -125,5 +125,21 @@
                         "pakfire2" : true,
                         "pakfire3" : false
                 }
-        }
+        },
+
+	{
+		"name" : "John Lebherz",
+		"location" : {
+			"city" : "Frankfurt am Main",
+			"country" : "Germany",
+			"country_code": "de"
+		},
+		"hostname" : "ipfire.jl-soft.de",
+		"path" : "",
+		"serves" : {
+			"isos" : true,
+			"pakfire2" : true,
+			"pakfire3" : false
+		}
+	}
 ]
