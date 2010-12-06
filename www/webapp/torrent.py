@@ -12,7 +12,7 @@ def decode_hex(s):
 			if not c == chr(i):
 				continue
 
-			ret.append("%0x" % i)
+			ret.append("%02x" % i)
 
 	return "".join(ret)
 
