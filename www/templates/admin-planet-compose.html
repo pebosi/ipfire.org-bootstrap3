@@ -16,7 +16,7 @@
 				<tr>
 					<td>&nbsp;</td>
 					<td>
-						<textarea id="text" name="text" rows="20" cols="80">{{ entry.text }}</textarea>
+						<textarea id="markdown" name="markdown" rows="20" cols="80">{{ entry.markdown }}</textarea>
 					</td>
 				</tr>
 				<tr>
@@ -35,7 +35,7 @@
 {% block javascript %}
 	<script type="text/javascript">
 		preview = function() {
-			$.get("/api/planet/render", { text : $("#text").val() },
+			$.get("/api/planet/render", { text : $("#markdown").val() },
 				function(data) {
 					$("#preview").html(data);
 				}

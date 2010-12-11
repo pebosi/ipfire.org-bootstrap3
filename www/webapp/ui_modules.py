@@ -1,58 +1,81 @@
 #!/usr/bin/python
 
-import markdown
+import logging
+import socket
+import textile
+import tornado.escape
 import tornado.web
 
 from tornado.database import Row
 
+import backend
+
 class UIModule(tornado.web.UIModule):
-	def render_string(self, *args, **kwargs):
-		kwargs.update({
-			"link" : self.handler.link,
-		})
-		return tornado.web.UIModule.render_string(self, *args, **kwargs)
+	@property
+	def accounts(self):
+		return self.handler.accounts
 
 	@property
-	def user_db(self):
-		return self.handler.application.user_db
+	def banners(self):
+		return self.handler.banners
 
-
-class MenuItemModule(UIModule):
-	def render(self, item):
-		if self.request.uri.endswith(item.uri):
-			item.active = True
-
-		if not item.uri.startswith("http://"):
-			item.uri = "/%s%s" % (self.locale.code[:2], item.uri,)
-
-		if type(item.name) == type({}):
-			item.name = item.name[self.locale.code[:2]]
-
-		return self.render_string("modules/menu-item.html", item=item)
+	@property
+	def releases(self):
+		return self.handler.releases
 
 
 class MenuModule(UIModule):
 	def render(self):
-		menuclass = self.handler.application.ds.menu
-		host = self.request.host.lower().split(':')[0]
+		hostname = self.request.host.lower().split(':')[0]
 
-		return self.render_string("modules/menu.html", menuitems=menuclass.get(host))
+		menuitems = []
+		for m in backend.Menu().get(hostname):
+			m.active = False
+
+			if m.uri and self.request.uri.endswith(m.uri):
+				m.active = True
+
+			# Translate the description of the link
+			m.description = \
+				self.locale.translate(m.description)
+			m.description = tornado.escape.xhtml_escape(m.description)
+
+			menuitems.append(m)
+
+		return self.render_string("modules/menu.html", menuitems=menuitems)
 
 
 class NewsItemModule(UIModule):
+	def get_author(self, author):
+		# Get name of author
+		author = self.accounts.find(author)
+		if author:
+			return author.cn
+		else:
+			_ = self.locale.translate
+			return _("Unknown author")
+
+	def render(self, item, uncut=False):
+		# Get author
+		item.author = self.get_author(item.author_id)
+
+		if not uncut and len(item.text) >= 400:
+			item.text = item.text[:400] + "..."
+
+		# Render text
+		item.text = textile.textile(item.text)
+
+		return self.render_string("modules/news-item.html", item=item, uncut=uncut)
+
+
+class NewsLineModule(NewsItemModule):
 	def render(self, item):
-		item = Row(item.copy())
-		for attr in ("subject", "content"):
-			if type(item[attr]) != type({}):
-				continue
-			item[attr] = item[attr][self.locale.code[:2]]
-
-		return self.render_string("modules/news-item.html", item=item)
+		return self.render_string("modules/news-line.html", item=item)
 
 
-#class SidebarModule(UIModule):
-#	def render(self, sidebar):
-#		return self.render_string("modules/sidebar.html", items=sidebar.items)
+class MirrorItemModule(UIModule):
+	def render(self, item):
+		return self.render_string("modules/mirror-item.html", item=item)
 
 
 class SidebarItemModule(UIModule):
@@ -63,31 +86,39 @@ class SidebarItemModule(UIModule):
 class SidebarReleaseModule(UIModule):
 	def render(self):
 		return self.render_string("modules/sidebar-release.html",
-			releases=self.handler.application.ds.releases)
+			latest=self.releases.get_latest())
 
 
 class ReleaseItemModule(UIModule):
 	def render(self, item):
-		return self.render_string("modules/release-item.html", item=item)
+		return self.render_string("modules/release-item.html", release=item)
 
 
 class SidebarBannerModule(UIModule):
-	def render(self, item):
+	def render(self, item=None):
+		if not item:
+			item = self.banners.get_random()
+
 		return self.render_string("modules/sidebar-banner.html", item=item)
 
 
-class BuildModule(UIModule):
-	def render(self, build):
-		return self.render_string("modules/builds.html", build=build)
-
-
 class PlanetEntryModule(UIModule):
-	def render(self, entry):
-		if not getattr(entry, "author", None):
-			entry.author = self.user_db.get_user_by_id(entry.author_id)
+	def render(self, entry, short=False):
+		return self.render_string("modules/planet-entry.html",
+			entry=entry, short=short)
 
-		entry.markup = markdown.markdown(entry.text)
-		entry.published = entry.published.strftime("%Y-%m-%d")
-		entry.updated = entry.updated.strftime("%Y-%m-%d %H:%M")
 
-		return self.render_string("modules/planet-entry.html", entry=entry)
+class TrackerPeerListModule(UIModule):
+	def render(self, peers, percentages=False):
+		# Guess country code and hostname of the host
+		for peer in peers:
+			country_code = backend.GeoIP().get_country(peer["ip"])
+			peer["country_code"] = country_code or "unknown"
+
+			try:
+				peer["hostname"] = socket.gethostbyaddr(peer["ip"])[0]
+			except:
+				peer["hostname"] = ""
+
+		return self.render_string("modules/tracker-peerlist.html",
+			peers=[Row(p) for p in peers], percentages=percentages)

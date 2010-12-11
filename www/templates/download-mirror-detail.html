@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Mirror-Server") }}{% end block %}
+
+{% block content %}
+	<div class="post">
+		<a name="latest"></a>
+		<h3>{{ _("IPFire Mirrors") }}</h3>
+		<img src="{{ static_url("images/page_icons/download-mirrors.png") }}" class="floatTR" border="0" alt="{{ _("IPFire Torrent Tracker") }}" />
+
+		<table class="download-mirror-detail">
+			<tr>
+				<td>{{ _("Hostname") }}</td>
+				<td><a href="{{ mirror.url }}">{{ mirror.hostname }}</a></td>
+			</tr>
+			<tr>
+				<td>{{ _("Owner") }}</td>
+				<td>{{ mirror.owner }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Last update") }}</td>
+				<td>{{ locale.format_date(mirror.last_update) }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Number of files") }}</td>
+				<td>{{ len(mirror.filelist) }}</td>
+			</tr>
+		</table>
+
+		<br class="clear" />
+
+		<p>
+			<a href="all">{{ _("View list of all mirror servers.") }}</a>
+		</p>
+	</div>
+
+{% end block %}

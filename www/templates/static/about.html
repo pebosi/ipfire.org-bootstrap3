@@ -1,0 +1,224 @@
+{% extends "../base-1.html" %}
+		
+{% block title %}{{ _("About IPFire") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("About IPFire") }}</h3>
+	<img src="{{ static_url("images/page_icons/features.png") }}" class="floatTR" alt="{{ _("Features") }}" />
+
+	<h4>What is IPFire?</h4>
+	<p>
+		IPFire is a Linux-based operating system which focuses on its purpose being a firewall system and
+		also flexible to act as a server system. It is completely free as it is licensed under the
+		<a href="#XXX">GNU General Public License</a> in version 3.
+	</p>
+
+	<h4>What makes IPFire special?</h4>
+	<p>
+		We believe in the power of flexibility. People are only as powerful as their environment is.
+		With IPFire, the access to the internet is fast, easy and secure at the same time which in
+		return influences everbody's life.
+	</p>
+
+	<br class="clear" />
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#concept">{{ _("Concept of the system") }}</a></li>
+			<li><a href="#security">{{ _("Security") }}</a></li>
+			<li><a href="#pakfire">{{ _("Packet management") }}</a></li>
+			<li><a href="#firewall">{{ _("Firewall") }}</a></li>
+			<li><a href="#vpn">{{ _("VPN") }}</a></li>
+			<li><a href="#hardware">{{ _("Hardware") }}</a></li>
+			<li><a href="#virtualization">{{ _("Virtualization") }}</a></li>
+			<li><a href="#community">{{ _("Community") }}</a></li>
+			<li><a href="#itsfree">{{ _("It's free") }}</a></li>
+		</ul>
+		<div id="concept">
+			<p>
+				The foundation of <strong>IPFire</strong> is the high level of flexibility which lets us
+				configure different versions of this operating system out of a single base. Beginning with a
+				few megs big firewall system it is possible to run IPFire as a file server or VPN gateway for
+				staff, branches and customers. This is manageable with the packet manager that enhances
+				the system only if you really want to.
+			</p>
+			<p>
+				We believe that this is the best way to provide security to a network. There is no way to give
+				out a static appliance as is because security is not a single thing to install and never touch
+				again. It's a kind of process paired with behaviour and restrictions. This plans could look
+				different from company to company and also differ from the place IPFire is installed at.
+			</p>
+			<p>
+				<em>Please click through the tabs and take a look at what possibilities IPFire offers for
+				your personal concept of network. And don't be scared. We have built-in our own to
+				start with...</em>
+			</p>
+		</div>
+		<div id="security">
+			<p>
+				The matter that counts most in the development of IPFire is - of course - security. But
+				we don't believe that there is only one single way to achvieve security. It is more important
+				that every administrator knows about what he is configuring and that he is teached about what
+				is right in his special environment.
+			</p>
+			<p>
+				IPFire 
+			</p>
+		</div>
+		<div id="pakfire">
+			<p>
+				From the technical point of view, IPFire is a very shrinked and hardened firewall system
+				which comes with an integrated package manager that is called <a href="/features/pakfire">Pakfire</a>.
+				With only a single click you can extend your system to a server that provides services from different
+				categories.
+			</p>
+			<p>
+				The most interesting addons:
+			</p>
+			<ul>
+				<!-- XXX make this right -->
+				<li>File services like: Samba and vsftpd</li>
+				<li>A collection of command line tools like: tcpdump, nmap and traceroute.</li>
+				<li>Asterisk</li>
+				<li><em>{{ _("and many more...") }}</em></li>
+			</ul>
+			<p class="links">
+				<a href="http://wiki.ipfire.org/{{ lang }}/configuration/ipfire/pakfire/start">
+					{{ _("How to install a package?") }}
+				</a>
+				&bull;
+				<a href="http://wiki.ipfire.org/{{ lang }}/addons/start">
+					{{ _("Full list of installable addons") }}
+				</a>
+			</p>
+		</div>
+		<div id="firewall">
+			<p>
+				IPFire comes with a SPI (stateful inspection) firewall which is built on top of the
+				Linux <a href="http://www.netfilter.org/">netfilter</a>.
+			</p>
+			<p>
+				With the installation of IPFire, the network gets seperated into different parts that
+				represent a special kind of computers with their own level of security:
+			</p>
+			<ul>
+				<li style="color: green;">
+					<strong>Green:</strong> The segment of the network which is marked by the colour <em>green</em>,
+					which stands for a safe area, is where all client computers get. It is the normal LAN and normally
+					wired. Clients can access all other segments without any restriction.
+				</li>
+				<li style="color: red;">
+					<strong>Red:</strong> The internet as a source of danger gets the colour <em>red</em>.
+					No access from the internet is permitted to pass the firewall.
+				</li>
+				<li style="color: darkblue;">
+					<strong>Blue:</strong> The wireless LAN is an other source of potential harm. So it is seperated
+					and got the colour <em>blue</em> for "air". Clients on this part of the network must be
+					allowed explicitely to access the internet.
+				</li>
+				<li style="color: orange;">
+					<strong>Orange:</strong> If there are any servers that are accessable by the internet, it is
+					also possible to take them over. For this case, there is the segment coloured <em>orange</em>
+					(some compromise between red and green) so that those machines are not able to harm any
+					other segment. This is called demilizarized zone (DMZ).
+				</li>
+			</ul>
+			<br class="clear" />
+			<p>
+				So there is a best place for every machine in the network. All the segments can be activated seperately
+				(except green and red are always required).
+				<br />
+				On top of all of that, there is an <strong>outgoing firewall</strong> for filtering the egress direction.
+			</p>
+			<p class="links">
+				<a href="http://wiki.ipfire.org/en/configuration/firewall/outgoingfirewall">{{ _("Outgoing firewall configuration") }}</a>
+			</p>
+		</div>
+		<div id="vpn">
+			<p>
+				IPFire can be enhanced to a VPN (virtual private network) gateway that connects places and
+				persons to the local network. This could either be staff, friends and people you want to share
+				data with in a secure way but also could be a branch office, important customer or an other
+				company you are operating with.
+			</p>
+			<p>
+				To be able to dock on diffent technologies IPFire offers these implementations:
+			</p>
+			<ul>
+				<li><strong>IPSec</strong> to connect networks side-by-side (also is called net-to-net).</li>
+				<li>To connect so called <em>roadwarrior clients</em> there is <strong>OpenVPN</strong>.</li>
+			</ul>
+			<!-- XXX there is too less margin on the buttom of this list, so: -->
+			<br class="clear" />
+			<p>
+				Those implementations let IPFire connect to routers or VPN gateways by:
+				<a href="http://www.cisco.com">Cisco</a>, <a href="http://www.juniper.net">Juniper</a>,
+				other Linux-based implementations and many more...
+			</p>
+			<p class="links">
+				<!-- XXX a link to the wiki goes here -->
+				<a href="http://wiki.ipfire.org">{{ _("Learn more about configuring a VPN connection") }}</a>
+			</p>
+		</div>
+		<div id="hardware">
+			<p>
+				Based on a recent version of the Linux kernel 2.6 series, IPFire supports latest hardware
+				like 10G network cards and wireless hardware out of the box.
+			</p>
+			<p>
+				Developers are concerned about keeping the system running on many variations as
+				possible what makes IPFire run on cheap hardware as well as running on high
+				performance servers.
+			</p>
+			<p class="links">
+				<a href="http://wiki.ipfire.org/{{ lang }}/hardware/start">Hardware section on the wiki</a>
+				&bull;
+				<a href="http://wiki.ipfire.org/{{ lang }}/hardware/networking">Hardware compatibility list (networking)</a>
+			</p>
+		</div>
+		<div id="virtualization">
+			<p>
+				IPFire can be run as a virtual guest on the following hypervisors:
+			</p>
+			<ul>
+				<li><a href="http://www.linux-kvm.org">KVM</a>/Qemu</li>
+				<li>Xen (paravirtualized and fully virtualized mode)</li>
+				<li>VMWare (Workstation, vSphere, ESXi, ...)</li>
+				<li>Virtualbox</li>
+			</ul>
+			<br class="clear" />
+			<p>
+				It brings many frontend drivers for high performnce for all the hypervisors.
+			</p>
+		</div>
+		<div id="community">
+			<p>
+				IPFire has got a great community which is a very important thing for the success of the project.
+			</p>
+			<p>
+				There is a nice relationship between all people that are involved into the project
+				so they are all pull together and make IPFire to the nice project that it is today.
+			</p>
+			<p>
+				Everybody can become part of the community. <a href="/join">Learn more</a>.
+			</p>
+		</div>
+		<div id="itsfree">
+			<p>
+				As IPFire is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General
+				Public License</a> in version 3 it is free of charge.
+			</p>
+			<p>
+				There is the opportunity to make a <a href="/donation">donation</a>.
+			</p>
+		</div>
+	</div>
+{% end block %}
+
+{% block javascript %}
+	<script type="text/javascript">
+		$(function() {
+			$("#tabs").tabs();
+		});
+	</script>
+{% end block %}

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-1.html" %}
 
 {% block title %}{{ _("Ancient Downloads") }}{% end block %}
 
@@ -11,15 +11,13 @@
 		</p>
 		
 		<p>
-			<a href="{{ link("downloads") }}">{{ _("Get back to latest stable downloads.") }}</a>
+			<a href="/downloads">{{ _("Go back to latest stable downloads.") }}</a>
 		</p>
 
 		<br class="clear" />
 	</div>
 	
-	{% for release in releases.stable %}
-		{% if not release == releases.latest %}
-			{{ modules.ReleaseItem(release) }}
-		{% end %}
+	{% for release in releases %}
+		{{ modules.ReleaseItemShort(release) }}
 	{% end %}
 {% end block %}

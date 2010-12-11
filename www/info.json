@@ -1,7 +1,0 @@
-{
-	"cluster"  : { "hostname" : "minerva.ipfire.org" },
-	"nightly_builds" : [{ "url" : "http://ftp.ipfire.org/pub/nightly-builds/",
-						  "path" : "/srv/anonftp/pub/nightly-builds" },
-						{ "url" : "http://www.rowie.at/upload/ipfire/builds/" }],
-	"pakfire3" : { "path" : "/srv/pakfire3/" }
-}

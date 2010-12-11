@@ -1,34 +1,26 @@
-{% extends "base.html" %}
+{% extends "base-2.html" %}
 
-{% block title %}{{ _("IPFire Planet") }} - {{ user.realname }}{% end block %}
+{% block title %}{{ _("IPFire Planet") }} - {{ author.cn }}{% end block %}
 
 {% block content %}
 	{% if entries %}
 		{% for entry in entries %}
-			{{ modules.PlanetEntry(entry) }}
+			{{ modules.PlanetEntry(entry, short=True) }}
 		{% end %}
-	{% else %}
-		<div class="post">
-			{% if lang == "de" %}
-				<p>
-					Der User {{ user.name }} hat bisher keine Einträge verfasst.
-				</p>
-			{% else %}
-				<p>
-					The user {{ user.name }} has no entries, yet.
-				</p>
+		
+		<p class="right">
+			{% if offset - limit %}
+				<a href="?offset={{ offset - (2 * limit) }}">&lt;&lt; {{ _("See newer entries") }}</a>
+				&bull;
 			{% end %}
-		</div>
+			<a href="?offset={{ offset }}">{{ _("See older entries") }} &gt;&gt;</a>
+		</p>
+	{% else %}
+			<p>{{ _("%s did no postings, yet.") % author.cn }}</p>
 	{% end %}
 {% end block %}
 
 {% block sidebar %}
-	<h4>{{ user.realname }}</h4>
-	<img src="{{ static_url("images/portrait.gif") }}" alt="{{ user.name }}" />
-	<ul>
-		<li>
-			<a href="http://people.ipfire.org/~{{ user.name }}/" target="_blank">{{ _("Web directory") }}</a>
-		</li>
-		<li>{{ user.mail }}</li>
-	</ul>
+	<h4>{{ author.cn }}</h4>
+	<img src="{{ author.gravatar_icon(170) }}" alt="{{ author.uid }}" />
 {% end %}

@@ -1,0 +1,22 @@
+{% extends "base-2.html" %}
+
+{% block title %}{{ item.title }}{% end block %}
+
+{% block content %}
+<!--	<h2>{{ item.title }}</h2>
+	<div class="post_info">
+		{{ locale.format_date(item.date) }} {{ _("by") }}
+		<a href="/author/{{ item.author_id }}">{{ item.author }}</a>
+	</div>
+
+	{{ item.text }} -->
+
+	{{ modules.NewsItem(item, uncut=True) }}
+{% end block %}
+
+{% block sidebar %}
+	<h4>other options</h4>
+	<ul>
+		<li><a href="/news">{{ _("Show all news") }}</a></li>
+	</ul>
+{% end block %}

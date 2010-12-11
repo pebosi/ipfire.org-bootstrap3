@@ -1,0 +1,12 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{{ _("Statistical evaluation service") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Statistical evaluation service") }}</h3>
+
+	{% for p in profiles %}
+		<a href="/profile/{{ p }}">{{ p }}</a>
+	{% end %}
+
+{% end block %}

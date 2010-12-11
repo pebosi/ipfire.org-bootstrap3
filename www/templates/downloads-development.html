@@ -1,37 +1,26 @@
-{% extends "base.html" %}
+{% extends "downloads-older.html" %}
 
 {% block title %}{{ _("Development Downloads") }}{% end block %}
 
-{% block content %}
-	<div class="post">
-		<h3>{{ _("Development Downloads") }}</h3>
-		<img src="{{ static_url("images/page_icons/download-developmemt.png") }}"
-			class="floatTR" border="0" alt="{{ _("Development Downloads") }}" />
-		
-		{% if lang == "de" %}
-			<p>
-				In regelmäßigen Abständen wird aus dem aktuellen Quellcode der
-				Entwicklungsversion ein installationsfähiges Image als
-				technologische Vorschau erstellt.<br />
-				Diese Versionen dienen dazu einen stabilen Stand einer größeren
-				Menge an Testern zukommen zu lassen und sind <strong>nicht</strong>
-				für den Produktiveinsatz bestimmt.
-			</p>
-        {% else %}
-        	<p>
-        		The developers do create a snapshort version from the current 
-				development sources to get this distributed to a higher number
-				of testers.<br />
-				These versions are <strong>not</strong> intended to be used in a
-				productive environment.
-		{% end %}		
+{% block information %}
+	<h3>{{ _("Development Downloads") }}</h3>
 
+	{% if lang == "de" %}
 		<p>
-			<a href="{{ link("downloads") }}">{{ _("Get back to latest stable downloads.") }}</a>
+			In regelmäßigen Abständen wird aus dem aktuellen Quellcode der
+			Entwicklungsversion ein installationsfähiges Image als
+			technologische Vorschau erstellt.<br />
+			Diese Versionen dienen dazu einen stabilen Stand einer größeren
+			Menge an Testern zukommen zu lassen und sind <strong>nicht</strong>
+			für den Produktiveinsatz bestimmt.
 		</p>
-	</div>
-
-	{% for release in releases.development %}
-		{{ modules.ReleaseItem(release) }}
+    {% else %}
+    	<p>
+    		The developers do create a snapshort version from the current 
+			development sources to get this distributed to a higher number
+			of testers.<br />
+			These versions are <strong>not</strong> intended to be used in a
+			productive environment.
+		</p>
 	{% end %}
 {% end block %}

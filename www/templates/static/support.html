@@ -1,0 +1,86 @@
+{% extends "../base-1.html" %}
+		
+{% block title %}{{ _("Getting support") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Getting support") }}</h3>
+	<img src="{{ static_url("images/page_icons/features.png") }}" class="floatTR" alt="{{ _("Features") }}" />
+
+	<table>
+		<tr>
+			<td>
+				<!-- XXX need an image right here -->
+				<a href="http://wiki.ipfire.org/{{ lang }}/start" target="_blank">WIKI</a>
+			</td>
+			<td>
+				<p>
+					The first place to go when you need help if the <a href="http://wiki.ipfire.org/{{ lang }}/start">wiki</a>.
+					It is a collection of pages which will answer most of the question that may come up.
+					<br />
+					Really important guides are:
+				</p>
+				<ul>
+					<li><a href="http://wiki.ipfire.org/{{ lang }}/installation/start">{{ _("Installation guide") }}</a>
+						- {{ _("Learn how to start.") }}</li>
+					<!-- XXX need to find some more -->
+					<li>...</li>
+				</ul>
+				<p class="note">
+					The wiki is maintained by community. Feel free to log on with your account and share your
+					knowledge. This is the only way to get the wiki to the best source of information about IPFire.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://forum.ipfire.org/" target="_blank">FORUM</a>
+			</td>
+			<td>
+				The second place is the <a href="http://forum.ipfire.org">forum</a>. If your question was not answered in
+				the wiki you may probably want to ask it there.
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp; <!-- just some space --></td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://bugtracker.ipfire.org/" target="_blank">BUGTRACKER</a>
+			</td>
+			<td>
+				<p>
+					If you are sure (and only if) you found a bug in the IPFire system, you may file it against the
+					developers.
+					<br />
+					This is a way to improve the quality of IPFire.
+				</p>
+				<p>
+					For historical reasons there are two bug tracking systems available. We use
+					<a href="http://www.mantisbt.org/">mantis</a> for IPFire 2.x and earlier versions
+					which is replaced in the development of version 3.x by <a href="http://www.redmine.org">redmine</a>.
+				</p>
+				<ul>
+					<li><a href="http://mantis.ipfire.org/">Development for IPFire 2.x</a></li>
+					<li><a href="http://redmine.ipfire.org/">Development for IPFire 3.x</a></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				IRC
+			</td>
+			<td>
+				<p>
+					If you need immediate help there is the IRC channel where you can meet fellow IPFire users
+					that may get their hands on your configuration and check it out together.
+				</p>
+				<p>
+					<strong>{{ _("Server") }}:</strong> irc.freenode.net
+					<br />
+					<strong>{{ _("Channel") }}:</strong> #ipfire
+				</p>
+			</td>
+		</tr>
+	</table>
+
+{% end block %}

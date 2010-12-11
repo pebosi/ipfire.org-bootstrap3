@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ author.cn }}{% end block %}
+
+{% block content %}
+	<h2>{{ author.cn }}</h2>
+	<p>
+		Fill in some intesting things about the author...
+	</p>
+
+	<h3>{{ _("%s recently announced...") % author.cn }}</h3>
+	<ul class="news_author_latest_news">
+	{% for news in latest_news %}
+		<li>{{ modules.NewsLine(news) }}</li>
+	{% end %}
+	</ul>
+{% end block %}
+

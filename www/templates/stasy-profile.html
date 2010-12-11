@@ -1,0 +1,120 @@
+{% extends "stasy-base-1.html" %}
+
+{% block title %}{{ _("Profile") }} {{ profile.public_id }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Profile") }} {{ profile.public_id }}</h3>
+
+	<table>
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("Operating system") }}</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Version") }}
+			</td>
+			<td>
+				{{ profile.release }}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Architecture") }}
+			</td>
+			<td>
+				{{ profile.arch }}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Kernel version") }}
+			</td>
+			<td>
+				{{ profile.kernel }}
+			</td>
+		</tr>
+	</table>
+	
+	<h4>{{ _("Hardware") }}</h4>
+	<table>
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("CPU") }}</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Vendor") }}
+			</td>
+			<td>
+				{{ profile.cpu.vendor }}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Model") }}
+			</td>
+			<td>
+				<!-- XXX hack - becuase module_string does not exist, yet -->
+				 {{ profile.cpu._data.get("model_string", _("Not available")) }}
+			</td>
+		<tr>
+			<td>
+				{{ _("CPU flags") }}
+			</td>
+			<td>
+				{{ locale.list(profile.cpu.flags) }}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("Memory") }}<strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Size") }}
+			</td>
+			<td>
+				{{ int(profile.memory) / 1024 }} {{ _("MegaBytes") }}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("Disk") }}<strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Size") }}
+			</td>
+			<td>
+				{{ profile.root_size / 1024 }} {{ _("MegaBytes") }}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("Devices") }}</strong>
+			</td>
+		</tr>
+		{% for device in profile.devices %}
+			<tr>
+				<td>
+					{{ device.subsystem.upper() }}
+				</td>
+				<td>
+					<a href="/vendor/{{ device.subsystem.lower() }}/{{ device.vendor }}">{{ device.vendor }}</a>:<a
+						href="/model/pci/{{ device.vendor }}/{{device.model }}">{{ device.model }}</a> &bull;
+					{{ device.vendor_string }}
+					{{ device.model_string }}
+				</td>
+			</tr>
+		{% end %}
+	</table>
+
+	<p class="links">
+		{{ _("Last update") }}: {{ locale.format_date(profile.updated) }}
+	</p>
+{% end block %}

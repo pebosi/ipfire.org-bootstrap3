@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-2.html" %}
 
 {% block title %}{{ _("IPFire Planet") }}{% end block %}
 
@@ -25,23 +25,33 @@
 			</p>
 		{% end %}
 		<br class="clear" />
-		
+		<!--
 		<p>
 			{{ _("Last issues") }}:
 			<ul>
 				{% for entry in entries %}
 					<li>
-						<a href="#{{ entry.id }}">{{ entry.title }}</a>
-						{{ _("by") }} {{ entry.author.realname }}
+						<a href="/post/{{ entry.slug }}">{{ entry.title }}</a>
+						{{ _("by") }}
+						<a href="/user/{{ entry.author.uid }}">{{ entry.author.cn }}</a>
 					</li>
 				{% end %}
 			</ul>
 		</p>
+		-->
 	</div>
 	
 	{% for entry in entries %}
-		{{ modules.PlanetEntry(entry) }}
+		{{ modules.PlanetEntry(entry, short=True) }}
 	{% end %}
+	
+	<p class="right">
+		{% if offset - limit %}
+			<a href="?offset={{ offset - (2 * limit) }}">&lt;&lt; {{ _("See newer entries") }}</a>
+			&bull;
+		{% end %}
+		<a href="?offset={{ offset }}">{{ _("See older entries") }} &gt;&gt;</a>
+	</p>
 {% end block %}
 
 {% block sidebar %}
@@ -49,7 +59,7 @@
 		<ul>
 			{% for author in authors %}
 				<li>
-					<a href="/user/{{ author.name }}">{{ author.realname }}</a>
+					<a href="/user/{{ author.uid }}">{{ author.cn }}</a>
 				</li>
 			{% end %}
 		</ul>

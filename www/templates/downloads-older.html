@@ -1,0 +1,36 @@
+{% extends "downloads-index.html" %}
+
+{% block title %}{{ _("Ancient downloads") }}{% end block %}
+
+{% block content %}
+	{% block information %}
+		<h3>{{ _("Ancient downloads") }}</h3>
+		<img src="{{ static_url("images/page_icons/download-all.png") }}" class="floatTR" border="0" alt="{{ _("Download IPFire") }}" />
+		<p>
+			{{ _("These are the ancient downloads of IPFire. They are just saved for historical reasons and should not be used in a productive environment.") }}
+		</p>
+
+		<p class="warning">
+			{{ _("Beware that these releases could lack possible security-fixes	and so it is recommended to use the <em>latest</em> version.") }}
+		</p>
+		
+		<p>
+			<a href="/">{{ _("Go back to latest stable downloads.") }}</a>
+		</p>
+
+		<br class="clear" />
+	{% end block %}
+
+	<table>
+		<tr>
+			<th>{{ _("Release") }}</th>
+			<th>{{ _("Published on") }}</th>
+		</tr>
+		{% for release in releases %}
+		<tr>
+			<td><a href="/release/{{ release.id }}">{{ release.name }}</a></td>
+			<td>{{ locale.format_date(release.date, shorter=True, relative=False) }}</td>
+		</tr>
+		{% end %}
+	</table>
+{% end block %}

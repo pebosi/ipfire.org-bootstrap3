@@ -1,0 +1,61 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+	<div class="post">
+		<h3>{{ mirror.hostname }} - {{ _("Details") }}</h3>
+		
+		<p>
+			<a href="/mirrors">{{ _("All mirrors") }}</a>
+		</p>
+		
+		<table>
+			<tr>
+				<td>{{ _("Hostname") }}</td>
+				<td><a href="{{ mirror.url }}" target="_blank">{{ mirror.url }}</a></td>
+			</tr>
+			<tr>
+				<td>{{ _("Status") }}</td>
+				<td>{{ mirror.state }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Owner") }}</td>
+				<td>{{ mirror.owner }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Location") }}</td>
+				<td>{{ mirror.location }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("GeoIP Location") }}</td>
+				<td>{{ mirror.country_code }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("File mirror") }}</td>
+				<td>{{ mirror.releases }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Pakfire 2 mirror") }}</td>
+				<td>{{ mirror.pakfire2 }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Pakfire 3 mirror") }}</td>
+				<td>{{ mirror.pakfire3 }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Disabled?") }}</td>
+				<td>{{ mirror.disabled }}</td>
+			</tr>
+		</table>
+
+		{% if mirror.releases == "Y" %}
+			<h4>{{ _("Filelist") }}</h4>
+			<table class="filelist">
+				{% for file in mirror.filelist %}
+					<tr>
+						<td>{{ file }}</td>
+					</tr>
+				{% end %}
+			</table>
+		{% end %}
+	</div>
+{% end block %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block columns %}
+	<div id="columns2_primary">
+		<div id="columns2_columnA">
+			{% block content %}{% end block %}
+			<br class="clear" />
+		</div>
+	</div>
+	<div id="columns2_secondary">
+		<div id="columns2_columnB">
+			{% block sidebar %}
+				{{ modules.SidebarBanner() }}
+			{% end block %}
+			<br class="clear" />
+		</div>
+	</div>
+{% end block %}

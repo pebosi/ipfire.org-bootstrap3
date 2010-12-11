@@ -1,0 +1,13 @@
+{% extends "base-1.html" %}
+
+{% block title %}{{ _("Please login") }}{% end block %}
+
+{% block content %}
+	<!-- XXX needs styling -->
+	<form name="login" method="POST">
+		<input type="text" name="name" />
+		<input type="password" name="password" />
+		<input type="submit" value="{{ _("Log in") }}" />
+		{{ xsrf_form_html() }}
+	</form>
+{% end block %}

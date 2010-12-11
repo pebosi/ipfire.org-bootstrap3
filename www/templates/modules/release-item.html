@@ -1,14 +1,69 @@
-<div class="post">
-	<h3>{{ item.name }}</h3>
-	<p>	
-		{{ _("Here you will find the downloads for the version") }} {{ item.name }}:
-	</p>
+{% if release.files %}
+	<h3>{{ release.name }}</h3>
 
-	<div align="right">
-		{% for download in item.downloads %}
-			<a class="{{ download.type }}" href="{{ download.url }}">{{ _(download.desc) }}</a><br />
+	<!--
+	{% for file in release.files %}
+		{% if file.type == "iso" %}
+			<div class="bigdownload">
+				<a href="{{ file.url }}">
+					{{ _("Begin download") }}<br />{{ release.name }}
+				</a>
+			</div>
 		{% end %}
-	</div>
+	{% end %}
+	-->
+
+	{% if release.stable == "N" %}
+		<p class="warning">
+			<strong>{{ _("Beware!") }}</strong>
+			{{ _("<em>%s</em> was not released yet and so it is not recommended for production use.") % release.name }}
+		</p>
+	{% end %}
+
+	<table class="download">
+		{% for file in release.files %}
+			<tr class="{{ file.type }}">
+				<td class="icon">
+					<img src="{{ static_url("images/download_type_%s.png" % file.type) }}"
+						alt="{{ file.type }}" />
+				</td>
+				<td class="link">
+					<a href="{{ file.url }}">{{ _(file.desc) }}</a>
+				</td>
+				<td>
+					{{ _(file.rem) }}
+				</td>
+			</tr>
+		{% end %}
+
+		<tr>
+			<td colspan="3">
+				&nbsp;
+			</td>
+		</tr>
+<!--		<tr>
+			<td colspan="3">
+				<p>
+					{{ _("With starting the download you accept the <a href=\"/download/legal\">legal terms</a>.") }}
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				&nbsp;
+			</td>
+		</tr>
+-->
+		<tr>
+			<td colspan="3">
+				<p>{{ _("Checksums") }} (SHA1):</p>
+				<pre>{% for file in release.files %}{{ file.sha1 }} {{ file.filename }}{{ "\n" }}{% end %}</pre>
+			</td>
+		</tr>
+	</table>
 
 	<br class="clear" />
-</div>
+
+{% else %}
+	<p>{{ _("There are no downloads available for this release.") }}</p>
+{% end %}

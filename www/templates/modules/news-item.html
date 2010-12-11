@@ -1,6 +1,17 @@
 <div class="post">
-	<a name="{{ item.subject }}"></a>
-	<h3>{{ item.subject }}</h3>
-	<div class="post_info">{{ item.date }} - {{ _("by") }} {{ item.author }}</div>
-	{{ item.content }}
+	<h2 class="title"><a href="/news/{{ item.slug }}">{{ item.title }}</a></h2>
+	<p class="meta">
+		{{ _("Posted by %s on") % item.author }} {{ locale.format_date(item.date, shorter=True) }}
+		<!-- &bull;	<a href="/news/{{ item.slug }}">{{ _("Full article") }}</a> -->
+	</p>
+	<div class="entry">
+		{{ item.text }}
+
+		{% if not uncut %}
+			<p class="links">
+					<a href="/news/{{ item.slug }}">{{ _("Read more") }}</a>
+			</p>
+		{% end %}
+	</div>
 </div>
+

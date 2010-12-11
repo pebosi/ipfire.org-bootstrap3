@@ -1,70 +1,108 @@
-{% extends "base.html" %}
+{% extends "base-2.html" %}
 
 {% block title %}{{ _("Home") }}{% end block %}
 
 {% block content %}
-	<div class=post>
-		<h3>{{ _("More security for your network") }}</h3>
-		<p>
-			{% if lang == "de" %}
-				Das <strong>IPFire</strong>-System ist eine Linux-Distribution, mit der Zielsetzung ein einfach zu 
-				installierendes Grundsystem zu bieten und dabei ein <strong>hohes Sicherheitsniveau</strong> zu gewährleisten.
-				<strong>IPFire</strong> ist komplett über sein intuitiv zu bedienendes Webinterface zu konfigurieren 
-				und bietet sowohl <strong>Anfängern</strong>, als auch erfahrenen <strong>Administratoren</strong> eine Fülle von 
-				Einstellungsmöglichkeiten. Einen <strong>Schwerpunkt</strong> bei der Weiterentwicklung legen die erfahrenen Entwickler 
-				auf regelmäßige System- und vor allem <strong>Sicherheitsupdates</strong>.<br /><br />			 
-				Durch den integrierten Paketmanager <strong>Pakfire</strong> lässt sich der <strong>IPFire</strong> mit diversen 
-				<a href="http://wiki.ipfire.org/de/addons/start" target="_blank">Addons</a>, 
-				zu einem Server-System erweitern.
-			{% else %}
-				<strong>IPFire</strong> is a linux-distribution that focusses on easy setup, good handling and a 
-				<strong>high niveau of security</strong>.<br /> It is operable via an intuitive webinterface, which offers a
-				lot of playground for <strong>beginners</strong> and even experienced <strong>administrators</strong>.
-				<strong>IPFire</strong> is maintained by experienced developers, who are really concerned about security and regulary 
-				updates to <strong>keep it secure</strong>.<br /><br />			 
-				<strong>IPFire</strong> ships with a custom built paket-manager called <strong>Pakfire</strong>, so the system can be 
-				expanded with various <a href="http://wiki.ipfire.org/en/addons/start" target="_blank">addons</a>.				 
-			{% end %}
-		</p>
+	<!--
 		<img src="{{ static_url("images/Network-1.png") }}") }}" alt="IPFire Network" />
-		<div class="button">
-			<div class="button_text">
-					<a href="download">Download&nbsp;&nbsp;IPFire 2.7</a>
-			</div>
-		</div>
-	</div>
-	
-	<div class=post>
-		<h3>{{ _("News") }}</h3>
-	
-		{% for item in news.get(2) %}
-			{{ modules.NewsItem(item) }}
-		{% end %}
-	</div>
+		<br class="clear" />
+	-->
+
+	<h3>IPFire - {{ _("An open source firewall distribution") }}</h3>
+	{% if lang == "de" %}
+		<p>
+			<strong>IPFire</strong> ist eine Firewall-Distribution für den optimalen Einsatz
+			in mittleren bis kleinen Unternehmensnetzwerken und Heimnetzwerken.
+		</p>
+		<p>
+			Obwohl das System extrem schlank gehalten und gehärtet wurde und können
+			Addons mit nur einem Klick installiert werden. Diese Eigenschaft unterscheidet
+			IPFire von anderen Distributionen: IPFire ist einfach zu administrieren
+			aber hat genug Leistung allen Anforderungen gewachsen zu sein.
+		</p>
+	{% else %}
+		<p>
+			<strong>IPFire</strong> is a server distribution with primary task as
+			a firewall. It also focuses on flexibility and scales very well from small to
+			middle-sized buisiness networks and home networks.
+		</p>
+		<p>
+			Along with this very shrinked and hardened system come lots of addons that
+			can be installed with a simple click. That's what makes IPFire different
+			from other distributions: It is easy to administer and has lots of power
+			for every challenge there might be.
+		</p>
+	{% end %}
+
+	<br class="clear" />
+
+	<p>
+		{{ _("See what makes IPFire so great:") }}
+	</p>
+
+	<table class="blocks">
+		<tr>
+			<td class="block block1">
+				<span>{{ _("Security") }}</span>
+				<p>
+					As the most important issue: Security updates
+					are deployed regularly and in a timely manner.
+				</p>
+				<a href="/about#security">{{ _("Learn more.") }}</a>
+			</td>
+			<td class="block block2">
+				<span>{{ _("Flexibility") }}</span>
+				<p>
+					Nowadays it is also important to act flexible and fit
+					as best as possible into the environment. So does IPFire.
+				</p>
+				<p>
+					<a href="/about#concept">{{ _("Learn more.") }}</a>
+				</p>
+			</td>
+			<td class="block block3">
+				<span>{{ _("Community") }}</span>
+				<p>
+					The success of IPFire is based on the community that
+					is working on the code an spreading IPFire to the world.
+				</p>
+				<p>
+					<a href="/about#community">{{ _("Get involved.") }}</a>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="links">
+		{{ _("Quick links") }} &bull;
+		<a href="/about">{{ _("About IPFire") }}</a>
+		&bull;
+		<a href="/screenshots">{{ _("Screenshots") }}</a>
+	</p>
+
+	<br class="clear" />
+
+	{% for item in latest_news %}
+		{{ modules.NewsItem(item) }}
+	{% end %}
+
+	<h4>{{ _("Recent news") }}:</h4>
+	<ul class="news">
+	{% for item in recent_news %}
+		<li>{{ modules.NewsLine(item) }}</li>
+	{% end %}
+	</ul>
+
+	<br class="clear" />
+
 	<p class="right">
-		<a href="{{ link("news") }}">{{ _("Previous posts >>") }}</a>
+		<a class="feed" href="/news.rss">{{ _("Subscribe to the latest news of IPFire") }} (RSS)</a>
+		&bull;
+		<a href="/news">{{ _("All posts") }} &gt;&gt;</a>
 	</p>
 {% end block %}
 
 {% block sidebar %}
 	{{ modules.SidebarRelease() }}
-	
-	<h4><span>Internet Relay</span> Chat</h4>
-	<p>
-		Server: irc.freenode.net<br />
-		Channel: #ipfire<br />
-		<a href="http://webchat.freenode.net/?channels=ipfire" target="_blank">Web-Chat</a>
-	</p>
-	
-	{{ modules.SidebarBanner(banner) }}
-	
-	<h4><span>RSS</span> feed</h4>
-	<p>
-		{% if lang == "de" %}
-			<a class="feed" href="news.rss">IPFire - News</a><br />
-		{% else %}		
-			<a class="feed" href="news.rss">IPFire - News</a><br />
-		{% end %}
-	</p>
-
+	{{ modules.SidebarBanner() }}
 {% end block %}

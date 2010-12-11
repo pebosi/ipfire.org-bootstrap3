@@ -1,0 +1,7 @@
+{% extends "downloads-index.html" %}
+
+{% block title %}Download {{ item.name }}{% end block %}
+
+{% block content %}
+	{{ modules.ReleaseItem(item) }}
+{% end block %}

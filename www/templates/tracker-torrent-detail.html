@@ -1,0 +1,43 @@
+{% extends "base-1.html" %}
+
+{% block title %}{{ _("Torrent Downloads") }}{% end block %}
+
+{% block content %}
+	<div class="post">
+		<a name="latest"></a>
+		<h3>{{ _("IPFire Torrent Tracker") }}</h3>
+
+		<!-- <img src="{{ static_url("images/page_icons/download-torrents.png") }}"
+			class="floatTR" border="0" alt="{{ _("IPFire Torrent Tracker") }}" /> -->
+
+		<table class="download-torrent-detail">
+			<tr>
+				<td>{{ _("Release") }}</td>
+				<td>
+					<a href="http://downloads.ipfire.org/release/{{ release.id }}">{{ release.name }}</a>
+				</td>
+			</tr>
+			<tr>
+				<td>{{ _("Hash") }}</td>
+				<td>{{ release.torrent_hash }}</td>
+			</tr>
+		</table>
+
+		{% if torrent.peers %}
+			<h4>{{ _("Peers") }}</h4>
+			{{ modules.TrackerPeerList(torrent.peers, percentages=True) }}
+		{% end %}
+
+		{% if torrent.seeds %}
+			<h4>{{ _("Seeds") }}</h4>
+			{{ modules.TrackerPeerList(torrent.seeds) }}
+		{% end %}
+
+		<br class="clear" />
+
+		<p>
+			<a href="/">{{ _("See list of all torrents on this tracker.") }}</a>
+		</p>
+	</div>
+{% end block %}
+

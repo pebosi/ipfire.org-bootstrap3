@@ -1,0 +1,71 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+	<div class="post">
+		<h3>{{ _("Create new mirror") }}</h3>
+		<form name="mirror" method="post">
+			{{ xsrf_form_html() }}
+			<input type="hidden" name="id" value="{{ mirror.id }}">
+
+			<table>
+				<tr>
+					<td>{{ _("Hostname") }}</td>
+					<td><input type="text" name="hostname" value="{{ mirror.hostname }}" /></td>
+				</tr>
+				<tr>
+					<td>{{ _("Path") }}</td>
+					<td><input type="text" name="path" value="{{ mirror.path }}" /></td>
+				</tr>
+				<tr>
+					<td>{{ _("Owner") }}</td>
+					<td><input type="text" name="owner" value="{{ mirror.owner }}" /></td>
+				</tr>
+				<tr>
+					<td>{{ _("Location") }}</td>
+					<td><input type="text" name="location" value="{{ mirror.location }}" /></td>
+				</tr>
+				<tr>
+					<td>{{ _("File mirror") }}</td>
+					<td>
+						<select name="releases">
+							<option value="Y" {% if mirror.releases == "Y" %}selected{% end %}>{{ _("yes") }}</option>
+							<option value="N" {% if mirror.releases == "N" %}selected{% end %}>{{ _("no") }}</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>{{ _("Pakfire 2 mirror") }}</td>
+					<td>
+						<select name="pakfire2">
+							<option value="Y" {% if mirror.pakfire2 == "Y" %}selected{% end %}>{{ _("yes") }}</option>
+							<option value="N" {% if mirror.pakfire2 == "N" %}selected{% end %}>{{ _("no") }}</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>{{ _("Pakfire 3 mirror") }}</td>
+					<td>
+						<select name="pakfire3">
+							<option value="Y" {% if mirror.pakfire3 == "Y" %}selected{% end %}>{{ _("yes") }}</option>
+							<option value="N" {% if mirror.pakfire3 == "N" %}selected{% end %}>{{ _("no") }}</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>{{ _("Disabled?") }}</td>
+					<td>
+						<select name="disabled">
+							<option value="Y" {% if mirror.disabled == "Y" %}selected{% end %}>{{ _("yes") }}</option>
+							<option value="N" {% if mirror.disabled == "N" %}selected{% end %}>{{ _("no") }}</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="{{ _("Save") }}" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+{% end block %}
