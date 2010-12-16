@@ -5,6 +5,7 @@ from banners	import Banners
 from geoip		import GeoIP
 from menu		import Menu
 from mirrors	import Mirrors
+from netboot	import NetBoot
 from news		import News
 from planet		import Planet
 from releases	import Releases
