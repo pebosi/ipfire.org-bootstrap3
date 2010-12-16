@@ -9,4 +9,5 @@ from news		import News
 from planet		import Planet
 from releases	import Releases
 from settings	import Settings as Config
+from stasy		import Stasy
 from tracker	import Tracker

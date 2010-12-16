@@ -24,7 +24,7 @@
 				{{ _("Architecture") }}
 			</td>
 			<td>
-				{{ profile.arch }}
+				{{ profile.cpu.arch }}
 			</td>
 		</tr>
 		<tr>
@@ -36,6 +36,37 @@
 			</td>
 		</tr>
 	</table>
+
+	{% if profile.hypervisor %}
+		<h4>{{ _("Hypervisor") }}</h4>
+
+		<table>
+			<tr>
+				<td>
+					{{ _("Vendor") }}
+				</td>
+				<td>
+					{{ profile.hypervisor.vendor }}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{{ _("Model") }}
+				</td>
+				<td>
+					{{ profile.hypervisor.model or _("Unknown") }}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{{ _("Type") }}
+				</td>
+				<td>
+					{{ profile.hypervisor.type }}
+				</td>
+			</tr>
+		</table>
+	{% end %}
 	
 	<h4>{{ _("Hardware") }}</h4>
 	<table>
@@ -49,7 +80,7 @@
 				{{ _("Vendor") }}
 			</td>
 			<td>
-				{{ profile.cpu.vendor }}
+				<a href="/vendor/cpu/{{ profile.cpu.vendor }}">{{ profile.cpu.vendor }}</a>
 			</td>
 		</tr>
 		<tr>
@@ -57,15 +88,53 @@
 				{{ _("Model") }}
 			</td>
 			<td>
-				<!-- XXX hack - becuase module_string does not exist, yet -->
-				 {{ profile.cpu._data.get("model_string", _("Not available")) }}
+				 {{ profile.cpu.model_string or _("Not available") }}
 			</td>
+		</tr>
+<!--
 		<tr>
 			<td>
 				{{ _("CPU flags") }}
 			</td>
 			<td>
 				{{ locale.list(profile.cpu.flags) }}
+			</td>
+		</tr>
+-->
+		<tr>
+			<td>
+				{{ _("Supports x86_64") }}
+			</td>
+			<td>
+				{% if profile.cpu.capable_64bit %}
+					YES
+				{% else %}
+					NO
+				{% end %}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Supports PAE") }}
+			</td>
+			<td>
+				{% if profile.cpu.capable_pae %}
+					YES
+				{% else %}
+					NO
+				{% end %}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Supports VT-x/AMD-V") }}
+			</td>
+			<td>
+				{% if profile.cpu.capable_virt %}
+					YES
+				{% else %}
+					NO
+				{% end %}
 			</td>
 		</tr>
 		<tr>
@@ -99,19 +168,28 @@
 				<strong>{{ _("Devices") }}</strong>
 			</td>
 		</tr>
-		{% for device in profile.devices %}
-			<tr>
-				<td>
-					{{ device.subsystem.upper() }}
-				</td>
-				<td>
-					<a href="/vendor/{{ device.subsystem.lower() }}/{{ device.vendor }}">{{ device.vendor }}</a>:<a
-						href="/model/pci/{{ device.vendor }}/{{device.model }}">{{ device.model }}</a> &bull;
-					{{ device.vendor_string }}
-					{{ device.model_string }}
-				</td>
-			</tr>
-		{% end %}
+		<tr>
+			<td colspan="2">
+				<table>
+					{% for device in profile.devices %}
+						<tr>
+							<td>
+								{{ device.subsystem.upper() }}
+							</td>
+							<td>
+								<a href="/vendor/{{ device.subsystem.lower() }}/{{ device.vendor }}">{{ device.vendor_string }}</a>
+							</td>
+							<td>
+								<a href="/model/pci/{{ device.vendor }}/{{device.model }}">{{ device.model_string }}</a>
+							</td>
+							<td>
+								{{ device.driver or "&nbsp;" }}
+							</td>
+						</tr>
+					{% end %}
+				</table>
+			</td>
+		</tr>
 	</table>
 
 	<p class="links">

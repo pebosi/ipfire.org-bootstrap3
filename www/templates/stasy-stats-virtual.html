@@ -1,0 +1,9 @@
+{% extends "stasy-base-1.html" %}
+
+{% block title %}{% end block %}
+
+{% block content %}
+	{{ modules.StasyTable(is_virtual) }}
+	
+	{{ modules.StasyTable(hypervisor_vendors) }}
+{% end block %}

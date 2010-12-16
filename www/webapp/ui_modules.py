@@ -122,3 +122,21 @@ class TrackerPeerListModule(UIModule):
 
 		return self.render_string("modules/tracker-peerlist.html",
 			peers=[Row(p) for p in peers], percentages=percentages)
+
+
+class StasyTableModule(UIModule):
+	def render(self, items):
+		hundred_percent = 0
+		for v in items.values():
+			hundred_percent += v
+
+		if hundred_percent:
+			_items = []
+			for k in sorted(items.keys()):
+				v = float(items[k] * 100) / hundred_percent
+				_items.append((k, v))
+			items = _items
+
+		print items
+
+		return self.render_string("modules/stasy-table.html", items=items)

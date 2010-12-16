@@ -38,6 +38,7 @@ class Application(tornado.web.Application):
 				"ReleaseItem"    : ReleaseItemModule,
 				"SidebarBanner"  : SidebarBannerModule,
 				"SidebarRelease" : SidebarReleaseModule,
+				"StasyTable"     : StasyTableModule,
 				"TrackerPeerList": TrackerPeerListModule,
 			},
 			xsrf_cookies = True,
@@ -118,6 +119,8 @@ class Application(tornado.web.Application):
 		self.add_handlers(r"stasy\.ipfire\.org", [
 			(r"/", StasyIndexHandler),
 			(r"/profile/([a-z0-9]{40})", StasyProfileHandler),
+			(r"/statistics/cpu", StasyStatsCPUHandler),
+			(r"/statistics/virtual", StasyStatsVirtualHandler),
 		] + static_handlers)
 
 		# source.ipfire.org

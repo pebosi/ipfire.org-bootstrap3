@@ -1,0 +1,8 @@
+<table>
+	{% for k, v in items %}
+		<tr>
+			<td>{{ k }}</td>
+			<td>{{ "%.2f" % v }}%</td>
+		</tr>
+	{% end %}
+</table>
