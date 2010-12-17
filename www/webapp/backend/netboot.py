@@ -52,6 +52,9 @@ class NetBoot(object):
 			if m.type == "header":
 				m.submenu = self.get_menu(m.submenu_level)
 
+			elif m.type == "config":
+				m._data.update(self.db.get("SELECT title, description FROM boot WHERE id = %s" % m.item))
+
 			menu.append(m)
 
 		return menu
