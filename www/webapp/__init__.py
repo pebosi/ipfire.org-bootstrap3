@@ -123,6 +123,11 @@ class Application(tornado.web.Application):
 			(r"/statistics/virtual", StasyStatsVirtualHandler),
 		] + static_handlers)
 
+		# i-use.ipfire.org
+		self.add_handlers(r"i-use\.ipfire\.org", [
+			(r"/profile/([a-f0-9]{40})/([0-9]+).png", IUseImage),
+		])
+
 		# source.ipfire.org
 #		self.add_handlers(r"source\.ipfire\.org", [
 #			(r"/", MainHandler),

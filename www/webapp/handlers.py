@@ -18,6 +18,7 @@ import backend
 from handlers_admin import *
 from handlers_base import *
 from handlers_download import *
+from handlers_iuse import *
 from handlers_mirrors import *
 from handlers_news import *
 from handlers_planet import *
