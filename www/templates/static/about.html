@@ -31,7 +31,6 @@
 			<li><a href="#vpn">{{ _("VPN") }}</a></li>
 			<li><a href="#hardware">{{ _("Hardware") }}</a></li>
 			<li><a href="#virtualization">{{ _("Virtualization") }}</a></li>
-			<li><a href="#community">{{ _("Community") }}</a></li>
 			<li><a href="#itsfree">{{ _("It's free") }}</a></li>
 		</ul>
 		<div id="concept">
@@ -55,6 +54,7 @@
 			</p>
 		</div>
 		<div id="security">
+			<img src="{{ static_url("images/icons/security.png") }}" class="floatTL" alt="{{ _("Security") }}" />
 			<p>
 				The matter that counts most in the development of IPFire is - of course - security. But
 				we don't believe that there is only one single way to achvieve security. It is more important
@@ -66,6 +66,7 @@
 			</p>
 		</div>
 		<div id="pakfire">
+			<img src="{{ static_url("images/icons/pakfire.png") }}" class="floatTL" alt="{{ _("Pakfire") }}" />
 			<p>
 				From the technical point of view, IPFire is a very shrinked and hardened firewall system
 				which comes with an integrated package manager that is called <a href="/features/pakfire">Pakfire</a>.
@@ -93,6 +94,7 @@
 			</p>
 		</div>
 		<div id="firewall">
+			<img src="{{ static_url("images/icons/firewall.png") }}" class="floatTL" alt="{{ _("Firewall") }}" />
 			<p>
 				IPFire comes with a SPI (stateful inspection) firewall which is built on top of the
 				Linux <a href="http://www.netfilter.org/">netfilter</a>.
@@ -135,6 +137,7 @@
 			</p>
 		</div>
 		<div id="vpn">
+			<img src="{{ static_url("images/icons/vpn.png") }}" class="floatTL" alt="{{ _("VPN") }}" />
 			<p>
 				IPFire can be enhanced to a VPN (virtual private network) gateway that connects places and
 				persons to the local network. This could either be staff, friends and people you want to share
@@ -161,6 +164,7 @@
 			</p>
 		</div>
 		<div id="hardware">
+			<img src="{{ static_url("images/icons/hardware.png") }}" class="floatTL" alt="{{ _("Hardware") }}" />
 			<p>
 				Based on a recent version of the Linux kernel 2.6 series, IPFire supports latest hardware
 				like 10G network cards and wireless hardware out of the box.
@@ -177,6 +181,7 @@
 			</p>
 		</div>
 		<div id="virtualization">
+			<img src="{{ static_url("images/icons/virtualization.png") }}" class="floatTL" alt="{{ _("Virtualization") }}" />
 			<p>
 				IPFire can be run as a virtual guest on the following hypervisors:
 			</p>
@@ -191,25 +196,15 @@
 				It brings many frontend drivers for high performnce for all the hypervisors.
 			</p>
 		</div>
-		<div id="community">
-			<p>
-				IPFire has got a great community which is a very important thing for the success of the project.
-			</p>
-			<p>
-				There is a nice relationship between all people that are involved into the project
-				so they are all pull together and make IPFire to the nice project that it is today.
-			</p>
-			<p>
-				Everybody can become part of the community. <a href="/join">Learn more</a>.
-			</p>
-		</div>
 		<div id="itsfree">
+			<img src="{{ static_url("images/icons/itsfree.png") }}" class="floatTL" alt="{{ _("It's free") }}" />
 			<p>
 				As IPFire is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General
 				Public License</a> in version 3 it is free of charge.
 			</p>
 			<p>
-				There is the opportunity to make a <a href="/donation">donation</a>.
+				There is the opportunity to make a <a href="/donation">donation</a> to the
+				community which is a very important thing for the success of the project.
 			</p>
 		</div>
 	</div>

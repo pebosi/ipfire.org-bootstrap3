@@ -897,6 +897,7 @@ table.blocks {
 table.blocks td.block {
 	width: 33%;
 	padding: 1.5em;
+	vertical-align: top;
 }
 
 table.blocks td.block p {
