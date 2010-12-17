@@ -69,6 +69,10 @@ class BaseHandler(tornado.web.RequestHandler):
 		return backend.Banners()
 
 	@property
+	def memcached(self):
+		return backend.Memcached()
+
+	@property
 	def mirrors(self):
 		return backend.Mirrors()
 

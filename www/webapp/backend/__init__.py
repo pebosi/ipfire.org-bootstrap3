@@ -4,6 +4,7 @@ from accounts	import Accounts
 from banners	import Banners
 from geoip		import GeoIP
 from iuse		import IUse
+from memcached	import Memcached
 from menu		import Menu
 from mirrors	import Mirrors
 from netboot	import NetBoot
