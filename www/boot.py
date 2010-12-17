@@ -51,7 +51,7 @@ class MenuCfgHandler(BaseHandler):
 		ident = "\t" * level
 
 		if entry.type == "seperator":
-			lines.append(ident + "menu seperator")
+			lines.append(ident + "menu separator")
 			lines.append("")
 
 		elif entry.type == "header":
@@ -62,9 +62,9 @@ class MenuCfgHandler(BaseHandler):
 			lines.append(ident + "\tlabel %d.back" % entry.id)
 			lines.append(ident + "\t\tmenu label Back...")
 			lines.append(ident + "\t\tmenu exit")
-			lines.append(ident + "\tmenu seperator")
+			lines.append(ident + "\tmenu separator")
 
-			lines.append(ident + "%s" % self._menu_string(entry.submenu, level=level+1))
+			lines.append("%s" % self._menu_string(entry.submenu, level=level+1))
 			lines.append(ident + "menu end")
 			lines.append("")
 
