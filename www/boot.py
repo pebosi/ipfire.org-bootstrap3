@@ -16,6 +16,18 @@ BASEDIR = os.path.dirname(__file__)
 tornado.options.enable_pretty_logging()
 tornado.options.parse_command_line()
 
+def word_wrap(s, width=65):
+	paragraphs = s.split('\n')
+	lines = []
+	for paragraph in paragraphs:
+		while len(paragraph) > width:
+			pos = paragraph.rfind(' ', 0, width)
+			if not pos:
+				pos = width
+			lines.append(paragraph[:pos])
+			paragraph = paragraph[pos:]
+		lines.append(paragraph)
+	return '\n'.join(lines)
 
 class BaseHandler(tornado.web.RequestHandler):
 	@property
@@ -52,7 +64,6 @@ class MenuCfgHandler(BaseHandler):
 
 		if entry.type == "seperator":
 			lines.append(ident + "menu separator")
-			lines.append("")
 
 		elif entry.type == "header":
 			lines.append(ident + "menu begin %d" % entry.id)
@@ -66,19 +77,17 @@ class MenuCfgHandler(BaseHandler):
 
 			lines.append("%s" % self._menu_string(entry.submenu, level=level+1))
 			lines.append(ident + "menu end")
-			lines.append("")
 
 		elif entry.type == "config":
 			lines.append(ident + "label %d" % entry.id)
 			lines.append(ident + "\tmenu label %s" % entry.title)
 			if entry.description:
 				lines.append(ident + "\ttext help")
-				lines.append(entry.description)
+				lines.append(word_wrap(entry.description))
 				lines.append(ident + "\tendtext")
 			lines.append(ident + "\tkernel /config/%s/boot.gpxe" % entry.item)
-			lines.append("")
 
-		return "\n".join(lines)
+		return "\n".join(lines + [""])
 
 	def get(self):
 		self.set_header("Content-Type", "text/plain")
