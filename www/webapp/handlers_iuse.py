@@ -35,6 +35,6 @@ class IUseImage(BaseHandler):
 			# Save the image to the memcache for 15 minutes
 			self.memcached.set(mem_id, image, 15*60)
 
-		self.set_header("Content-type", "image/png")
+		self.set_header("Content-Type", "image/png")
 		self.write(image)
 
