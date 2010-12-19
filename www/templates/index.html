@@ -46,20 +46,35 @@
 				<img src="{{ static_url("images/icons/security.png") }}" alt="{{ _("Security") }}" />
 				<br class="clear" />
 				<span>{{ _("Security") }}</span>
-				<p>
-					As the most important issue: Security updates
-					are deployed regularly and in a timely manner.
-				</p>
+				{% if lang == "de" %}
+					<p>
+						Die oberste Priorität ist die Sicherheit des Systems.
+						So werden zum Beispiel Sicherheitsupdates zügig zur
+						Verfügung gestellt.
+					</p>
+				{% else %}
+					<p>
+						As the most important issue: Security updates
+						are deployed regularly and in a timely manner.
+					</p>
+				{% end %}
 				<a href="/about#security">{{ _("Learn more.") }}</a>
 			</td>
 			<td class="block block2">
 				<img src="{{ static_url("images/icons/flexibility.png") }}" alt="{{ _("Flexibility") }}" />
 				<br class="clear" />
 				<span>{{ _("Flexibility") }}</span>
-				<p>
-					Nowadays it is also important to act flexible and fit
-					as best as possible into the environment. So does IPFire.
-				</p>
+				{% if lang == "de" %}
+					<p>
+						Heutzutage ist nichts wichtiger als flexibel zu sein
+						und sich der Welt anzupassen. Genau wie IPFire...
+					</p>
+				{% else %}
+					<p>
+						Nowadays it is also important to act flexible and fit
+						as best as possible into the environment. So does IPFire.
+					</p>
+				{% end %}
 				<p>
 					<a href="/about#concept">{{ _("Learn more.") }}</a>
 				</p>
@@ -68,10 +83,17 @@
 				<img src="{{ static_url("images/icons/community.png") }}" alt="{{ _("Community") }}" />
 				<br class="clear" />
 				<span>{{ _("Community") }}</span>
-				<p>
-					The success of IPFire is based on the community that
-					is working on the code an spreading IPFire to the world.
-				</p>
+				{% if lang == "de" %}
+					<p>
+						Verantwortlich für den Erfolg von IPFire ist die
+						Community, die das Projekt vorantreibt.
+					</p>
+				{% else %}
+					<p>
+						The success of IPFire is based on the community that
+						is working on the code an spreading IPFire to the world.
+					</p>
+				{% end %}
 				<p>
 					<a href="/about#itsfree">{{ _("Get involved.") }}</a>
 				</p>
