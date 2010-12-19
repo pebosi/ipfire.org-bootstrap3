@@ -16,7 +16,7 @@ BASEDIR = os.path.dirname(__file__)
 tornado.options.enable_pretty_logging()
 tornado.options.parse_command_line()
 
-def word_wrap(s, width=65):
+def word_wrap(s, width=45):
 	paragraphs = s.split('\n')
 	lines = []
 	for paragraph in paragraphs:
@@ -26,7 +26,7 @@ def word_wrap(s, width=65):
 				pos = width
 			lines.append(paragraph[:pos])
 			paragraph = paragraph[pos:]
-		lines.append(paragraph)
+		lines.append(paragraph.lstrip())
 	return '\n'.join(lines)
 
 class BaseHandler(tornado.web.RequestHandler):
