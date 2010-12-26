@@ -39,6 +39,7 @@ class Application(tornado.web.Application):
 				"SidebarBanner"  : SidebarBannerModule,
 				"SidebarRelease" : SidebarReleaseModule,
 				"StasyTable"     : StasyTableModule,
+				"StasyDeviceTable" : StasyDeviceTableModule,
 				"TrackerPeerList": TrackerPeerListModule,
 			},
 			xsrf_cookies = True,
@@ -116,11 +117,20 @@ class Application(tornado.web.Application):
 		] + static_handlers)
 
 		# stasy.ipfire.org
-		self.add_handlers(r"stasy\.ipfire\.org", [
+		self.add_handlers(r"(fireinfo|stasy)\.ipfire\.org", [
 			(r"/", StasyIndexHandler),
-			(r"/profile/([a-z0-9]{40})", StasyProfileHandler),
-			(r"/statistics/cpu", StasyStatsCPUHandler),
-			(r"/statistics/virtual", StasyStatsVirtualHandler),
+			(r"/profile/([a-z0-9]{40})", StasyProfileDetailHandler),
+			(r"/vendor/(pci|usb)/([0-9a-f]{4})", StasyStatsVendorDetail),
+			(r"/model/(pci|usb)/([0-9a-f]{4})/([0-9a-f]{4})", StasyStatsModelDetail),
+
+			# Stats handlers			
+			(r"/stats", StasyStatsHandler),
+			(r"/stats/cpus", StasyStatsCPUHandler),
+			(r"/stats/cpuflags", StasyStatsCPUFlagsHandler),
+			(r"/stats/geo", StasyStatsGeoHandler),
+			(r"/stats/memory", StasyStatsMemoryHandler),
+			(r"/stats/oses", StasyStatsOSesHandler),
+			(r"/stats/virtual", StasyStatsVirtualHandler),
 		] + static_handlers)
 
 		# i-use.ipfire.org

@@ -1,0 +1,25 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{% end block %}
+
+{% block content %}
+	<h3>{{ _("CPU flags") }}</h3>
+	<p>
+		On this page we will examine which CPUs provide a specific feature.
+		These charts will help the IPFire developers to make decisions about
+		the operating system configuration.
+	</p>
+
+	<h4>{{ _("CPUs that support long mode") }}</h4>
+	<p>
+		For future planning it is important to know if there is enough hardware
+		support for a 64bit version of IPFire.
+	</p>
+	{{ modules.StasyTable(cpus_lm, sortby="percentage") }}
+
+	<h4>{{ _("CPUs with PAE") }}</h4>
+	<p>
+		This chart shows us which CPUs have got the PAE flag.
+	</p>
+	{{ modules.StasyTable(cpus_pae, sortby="percentage") }}
+{% end block %}

@@ -1,0 +1,209 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{{ _("Profile") }} {{ profile.public_id }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Profile") }} {{ profile.public_id }}</h3>
+
+	<img src="{{ static_url("images/flags/%s.png" % profile.country_code) }}"
+		class="floatTR" alt="{{ profile.country_code }}" />
+
+	<table class="fireinfo">
+		<tr>
+			<td class="key">
+				{{ _("Vendor") }}
+			</td>
+			<td class="value">
+				{{ profile.vendor }}
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Model") }}
+			</td>
+			<td class="value">
+				{{ profile.model }}
+			</td>
+		</tr>
+	</table>
+
+	<h4>{{ _("Operating system") }}</h4>
+	<table class="fireinfo">
+		<tr>
+			<td class="key">
+				{{ _("Version") }}
+			</td>
+			<td class="value">
+				{{ profile.release }}
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Architecture") }}
+			</td>
+			<td class="value">
+				{{ profile.cpu.arch }}
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Kernel version") }}
+			</td>
+			<td class="value">
+				{{ profile.kernel }}
+			</td>
+		</tr>
+	</table>
+
+	{% if profile.hypervisor %}
+		<h4>{{ _("Hypervisor") }}</h4>
+		<p>
+			{{ _("This machine is running in a virtual environment.") }}
+		</p>
+
+		<table class="fireinfo">
+			<tr>
+				<td class="key">
+					{{ _("Vendor") }}
+				</td>
+				<td class="value">
+					{{ profile.hypervisor.vendor }}
+				</td>
+			</tr>
+			<tr>
+				<td class="key">
+					{{ _("Type") }}
+				</td>
+				<td class="value">
+					{{ profile.hypervisor.type }}
+				</td>
+			</tr>
+		</table>
+	{% end %}
+	
+	<h4>{{ _("Hardware") }}</h4>
+	<table class="fireinfo">
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("CPU") }}</strong>
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Vendor") }}
+			</td>
+			<td class="value">
+				<a href="/stats/cpus">{{ profile.cpu.vendor }}</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Model") }}
+			</td>
+			<td class="value">
+				 {{ profile.cpu.model_string or _("Not available") }}
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Core count") }}
+			</td>
+			<td class="value">
+				 {{ profile.cpu.count }}
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Speed") }}
+			</td>
+			<td class="value">
+				{{ profile.cpu.speed }} MHz (Bogomips: {{ profile.cpu.bogomips }})
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Supported features") }}
+			</td>
+			<td class="value">
+				<table class="cpufeatures">
+					<tr>
+						{% if profile.cpu.capable_64bit %}
+							<td class="enabled">
+						{% else %}
+							<td class="disabled">
+						{% end %}
+							{{ _("64 bit")  }}
+						<td>
+						
+						{% if profile.cpu.capable_pae %}
+							<td class="enabled">
+						{% else %}
+							<td class="disabled">
+						{% end %}
+							{{ _("PAE")  }}
+						<td>
+
+						{% if profile.cpu.capable_virt %}
+							<td class="enabled">
+						{% else %}
+							<td class="disabled">
+						{% end %}
+							{{ _("VT-x/AMD-V")  }}
+						<td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("Memory") }}<strong>
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Size") }}
+			</td>
+			<td class="value">
+				{{ format_size(profile.memory) }}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>{{ _("Disk") }}<strong>
+			</td>
+		</tr>
+		<tr>
+			<td class="key">
+				{{ _("Size") }}
+			</td>
+			<td class="value">
+				{{ format_size(profile.root_size) }}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				{{ modules.StasyDeviceTable(profile.devices) }}
+			</td>
+		</tr>
+	</table>
+	<br class="clear" />
+
+	<h3>{{ _("Signature images") }}</h3>
+	<table>
+		{% for i in range(1) %}
+			<tr>
+				<td>
+					<!-- XXX need some bbcode here -->
+					<a href="http://i-use.ipfire.org/profile/{{ profile.public_id }}/{{ i }}.png">
+						<img src="http://i-use.ipfire.org/profile/{{ profile.public_id }}/{{ i }}.png"
+							alt="{{ _("Signature image") }}" />
+					</a>
+				</td>
+			</tr>
+		{% end %}
+	</table>
+
+	<p class="links">
+		{{ _("Last update") }}: {{ locale.format_date(profile.updated) }}
+	</p>
+{% end block %}

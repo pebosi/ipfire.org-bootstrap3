@@ -5,8 +5,25 @@
 {% block content %}
 	<h3>{{ _("Statistical evaluation service") }}</h3>
 
-	{% for p in profiles %}
-		<a href="/profile/{{ p }}">{{ p }}</a>
-	{% end %}
+	<p>
+		Please enter your profile ID and have a look of the hardware components
+		that are installed on your system:
+	</p>
+
+	<form name="profile" method="POST">
+		{{ xsrf_form_html() }}
+		<p>
+			<input type="text" name="profile_id" size="40" maxlength="40" />
+			<input type="submit" value="{{ _("Show profile") }}" />
+		</p>
+	</form>
+	<br class="clear" />
+
+	<h3>XXX Just for now...</h3>
+	<p>
+		{% for p in profiles %}
+			<a href="/profile/{{ p }}">{{ p }}</a>
+		{% end %}
+	</p>
 
 {% end block %}

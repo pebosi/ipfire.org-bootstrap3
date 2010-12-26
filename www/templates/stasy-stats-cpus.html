@@ -1,7 +1,23 @@
-{% extends "stasy-base-1.html" %}
+{% extends "stasy-base-2.html" %}
 
 {% block title %}{% end block %}
 
 {% block content %}
-	{{ modules.StasyTable(cpu_vendors) }}
+	<h3>{{ _("CPU vendors") }}</h3>
+	<p>
+		This chart shows us which vendors is the most favorite for the CPUs
+		used in IPFire.
+	</p>
+	{{ modules.StasyTable(cpu_vendors, sortby="percentage") }}
+
+	<h3>{{ _("Speed") }}</h3>
+	<p>
+		The average speed of all systems in the database is:
+		<strong>{{ "%.2f" % average_speed }} MHz</strong>.
+	</p>
+	{{ modules.StasyTable(cpu_speeds) }}
+
+	<p class="links">
+		<a href="cpuflags">See statistics about common CPU flags</a>
+	</p>
 {% end block %}

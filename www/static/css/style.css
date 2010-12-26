@@ -916,3 +916,57 @@ table.blocks td.block1,td.block3 {
 table.blocks td.block2 {
 	background-color: #f5f5f5;
 }
+
+table.fireinfo {
+	width: 45em;
+	margin-left: 1.5em;
+}
+
+table.fireinfo td.key {
+	width: 12.5em;
+}
+
+table.fireinfo td.value {
+	width: 32.5em;
+}
+
+table.cpufeatures tr {
+	line-height: 1.2em;
+}
+
+table.cpufeatures td {
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+}
+
+table.cpufeatures td.enabled {
+	border: 1px solid #88ff88;
+	background-color: #aaffaa;
+}
+
+table.cpufeatures td.disabled {
+	border: 1px solid #ff8888;
+	background-color: #ff9999;
+}
+
+table.stats {
+	width: 45em;
+	margin-left: 1.5em;
+}
+
+table.stats td.key {
+	width: 12.5em;
+}
+
+table.stats td.value {
+	width: 2.5em;
+	text-align: right;
+}
+
+table.stats td.bar {
+	width: 30em;
+}
+
+table.stats td.bar p {
+	background-color: #880400;
+}

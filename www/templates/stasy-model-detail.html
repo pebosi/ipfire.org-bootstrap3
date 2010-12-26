@@ -1,0 +1,9 @@
+{% extends "stasy-base-1.html" %}
+
+{% block content %}
+	<h3>{{ vendor_name }} - {{ model_name or model_id  }}</h3>
+	<p>
+		This device is installed on approximately {{ "%.2f" % percentage }}% of
+		all systems in the database.
+	</p>
+{% end block %}

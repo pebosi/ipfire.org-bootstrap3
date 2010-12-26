@@ -1,0 +1,11 @@
+{% extends "stasy-base-1.html" %}
+
+{% block content %}
+	<h3>{{ vendor_name }}</h3>
+	<p>
+		This is a list of all devices this database knows about from
+		<strong>{{ vendor_name }}</strong>.
+	</p>
+
+	{{ modules.StasyDeviceTable(models) }}
+{% end block %}

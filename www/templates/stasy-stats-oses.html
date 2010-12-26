@@ -1,0 +1,18 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Releases") }}</h3>
+	{{ modules.StasyTable(releases, sortby="percentage") }}
+
+	<h3>{{ _("Architectures") }}</h3>
+	{{ modules.StasyTable(arches, sortby="percentage") }}
+
+	<h3>{{ _("Kernels") }}</h3>
+	<p>
+		This chart gives an overview about what kernel the machines are
+		runnning.
+	</p>
+	{{ modules.StasyTable(kernels, sortby="percentage") }}
+{% end block %}

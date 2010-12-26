@@ -1,9 +1,21 @@
-{% extends "stasy-base-1.html" %}
+{% extends "stasy-base-2.html" %}
 
 {% block title %}{% end block %}
 
 {% block content %}
-	{{ modules.StasyTable(is_virtual) }}
-	
-	{{ modules.StasyTable(hypervisor_vendors) }}
+	<h3>{{ _("Virtualization support") }}</h3>
+	<p>
+		IPFire is running very well in a virtual environment.
+	</p>
+	<p>
+		See this chart to get a clue about how many machines are running
+		virtually.
+	</p>
+	{{ modules.StasyTable(is_virtual, sortby="percentage") }}
+
+	<h4>{{ _("Hypervisors") }}</h4>
+	<p>
+		This is a list of all hypervisor vendors that IPFire is running on.
+	</p>
+	{{ modules.StasyTable(hypervisor_vendors, sortby="percentage") }}
 {% end block %}

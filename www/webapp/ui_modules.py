@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
+from __future__ import division
+
 import logging
+import operator
 import socket
 import textile
 import tornado.escape
@@ -9,6 +12,7 @@ import tornado.web
 from tornado.database import Row
 
 import backend
+import backend.stasy
 
 class UIModule(tornado.web.UIModule):
 	@property
@@ -125,18 +129,40 @@ class TrackerPeerListModule(UIModule):
 
 
 class StasyTableModule(UIModule):
-	def render(self, items):
+	def render(self, items, sortby="key", reverse=False):
 		hundred_percent = 0
 		for v in items.values():
 			hundred_percent += v
 
+		keys = []
+		if sortby == "key":
+			keys = sorted(items.keys(), reverse=reverse)
+		elif sortby == "percentage":
+			keys = [k for k,v in sorted(items.items(), key=operator.itemgetter(1))]
+			if not reverse:
+				keys = reversed(keys)
+		else:
+			raise Exception, "Unknown sortby parameter was provided"
+
 		if hundred_percent:
 			_items = []
-			for k in sorted(items.keys()):
-				v = float(items[k] * 100) / hundred_percent
+			for k in keys:
+				v = items[k] * 100 / hundred_percent
 				_items.append((k, v))
 			items = _items
 
-		print items
-
 		return self.render_string("modules/stasy-table.html", items=items)
+
+
+class StasyDeviceTableModule(UIModule):
+	def render(self, devices):
+		groups = {}
+
+		for device in devices:
+			if not groups.has_key(device.cls):
+				groups[device.cls] = []
+
+			groups[device.cls].append(device)
+		
+		return self.render_string("modules/stasy-table-devices.html",
+			groups=groups.items())
