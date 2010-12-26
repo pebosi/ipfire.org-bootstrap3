@@ -86,7 +86,7 @@ class ProfileDevice(ProfileDict):
 
 	classid2name = {
 		"pci" : {
-			"00" : "unclassified",
+			"00" : "Unclassified",
 			"01" : "Mass storage",
 			"02" : "Network",
 			"03" : "Display",
@@ -102,31 +102,31 @@ class ProfileDevice(ProfileDict):
 			"0d" : "Wireless",
 			"0e" : "Intelligent controller",
 			"0f" : "Satellite communications controller",
-			"10" : "Encryption controller",
+			"10" : "Encryption",
 			"11" : "Signal processing controller",
 			"ff" : "Unassigned class",
 		},
 		
 		"usb" : {
-			"00" : "???",
+			"00" : "Unclassified",
 			"01" : "Multimedia",
 			"02" : "Communication",
 			"03" : "Input device",
-			"05" : "Physical ???",
-			"06" : "Image ???",
+			"05" : "Generic system peripheral",
+			"06" : "Image",
 			"07" : "Printer",
 			"08" : "Mass storage",
 			"09" : "Hub",
-			"0a" : "CDC-Data ???",
-			"0b" : "Smart card ???",
-			"0d" : "Content Security ???",
+			"0a" : "Communication",
+			"0b" : "Smart card",
+			"0d" : "Encryption",
 			"0e" : "Display",
-			"0f" : "Personal healthcare ???",
+			"0f" : "Personal Healthcare",
 			"dc" : "Diagnostic Device",
 			"e0" : "Wireless",
-			"ef" : "Misc",
-			"fe" : "Application specific ???",
-			"ff" : "Vendor specific ???",
+			"ef" : "Unclassified",
+			"fe" : "Unclassified",
+			"ff" : "Unclassified",
 		}
 	}
 
