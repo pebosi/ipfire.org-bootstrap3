@@ -277,11 +277,11 @@ class Stasy(object):
 	#	return c
 
 	def profile_exists(self, public_id):
-		return self._db.profiles.find({ "public_id" : public_id }).count() >= 1
+		return self.query({ "public_id" : public_id }).count() >= 1
 
 	def get_profile(self, public_id):
 		# XXX should only find one object in the end
-		for p in self._db.profiles.find({ "public_id" : public_id }):
+		for p in self.query({ "public_id" : public_id }):
 			p = Profile(p)
 
 		return p
@@ -295,17 +295,34 @@ class Stasy(object):
 
 		return profiles
 
+	def query(self, query, archives=False, no_virt=False, all=False):
+		db = self._db.profiles
+
+		if archives:
+			db = self.db.archives
+
+		if not all:
+			# XXX cannot use the index?
+			query.update({ "profile" : { "$exists" : True }})
+
+		if no_virt:
+			query.update({ "profile.system.virtual" : False })
+
+		logging.debug("Executing query: %s" % query)
+
+		return db.find(query)
+
 	@property
 	def secret_ids(self):
 		return self._db.profiles.distinct("secret_id")
 
 	@property
 	def cpus(self):
-		return self._db.profiles.distinct("profile.cpu")
+		return self.query({}, no_virt=True).distinct("profile.cpu")
 
 	@property
 	def cpu_vendors(self):
-		return self._db.profiles.distinct("profile.cpu.vendor")
+		return self.query({}, no_virt=True).distinct("profile.cpu.vendor")
 
 	@property
 	def cpu_vendors_map(self):
@@ -313,9 +330,9 @@ class Stasy(object):
 
 		for vendor in self.cpu_vendors:
 			cpus[vendor] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.cpu.vendor" : vendor
-				}).count()
+				}, no_virt=True).count()
 
 		return cpus
 
@@ -323,7 +340,7 @@ class Stasy(object):
 	def cpu_speed_average(self):
 		speed = 0
 
-		all = self._db.profiles.find()
+		all = self.query({}, no_virt=True)
 
 		# XXX ugly. needs to be done by group()
 		for m in all:
@@ -341,11 +358,11 @@ class Stasy(object):
 			min, max = CPU_SPEED_CONSTRAINTS[i:i+2]
 
 			cpu_speeds[min, max] = \
-				self._db.profiles.find(
-					{ "profile.cpu.speed" : {
+				self.query({
+					"profile.cpu.speed" : {
 						"$gte" : min, "$lt" : max
 					}
-				}).count()
+				}, no_virt=True).count()
 
 		return cpu_speeds
 
@@ -356,11 +373,11 @@ class Stasy(object):
 			min, max = MEMORY_CONSTRAINTS[i:i+2]
 
 			memory[min, max] = \
-				self._db.profiles.find(
+				self.query(
 					{ "profile.system.memory" : {
 						"$gte" : min * 1024, "$lt" : max * 1024
 					}
-				}).count()
+				}, no_virt=True).count()
 
 		return memory
 
@@ -368,7 +385,7 @@ class Stasy(object):
 	def memory_average(self):
 		memory = 0
 
-		all = self._db.profiles.find()
+		all = self.query({}, no_virt=True)
 
 		# XXX ugly. needs to be done by group()
 		for m in all:
@@ -380,7 +397,7 @@ class Stasy(object):
 
 	@property
 	def hypervisor_vendors(self):
-		return self._db.profiles.distinct("profile.hypervisor.vendor")
+		return self.query({}).distinct("profile.hypervisor.vendor")
 
 	@property
 	def hypervisor_map(self):
@@ -388,7 +405,7 @@ class Stasy(object):
 
 		for hypervisor in self.hypervisor_vendors:
 			hypervisors[hypervisor] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.hypervisor.vendor" : hypervisor
 				}).count()
 
@@ -396,7 +413,7 @@ class Stasy(object):
 
 	@property
 	def hypervisor_models(self):
-		return self._db.profiles.distinct("profile.hypervisor.model")
+		return self.query({}).distinct("profile.hypervisor.model")
 
 	@property
 	def virtual_map(self):
@@ -407,20 +424,20 @@ class Stasy(object):
 
 		for k in virtual.keys():
 			virtual[k] = \
-				self._db.profiles.find({ "profile.system.virtual": k }).count()
+				self.query({ "profile.system.virtual": k }).count()
 
 		return virtual
 
 	@property
 	def languages(self):
-		return self._db.profiles.distinct("profile.system.language")
+		return self.query({}).distinct("profile.system.language")
 
 	def get_language_map(self):
 		languages = {}
 
 		for language in self.languages:
 			languages[language] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.system.language" : language
 				}).count()
 
@@ -428,7 +445,7 @@ class Stasy(object):
 
 	@property
 	def vendors(self):
-		return self._db.profiles.distinct("profile.system.vendor")
+		return self.query({}).distinct("profile.system.vendor")
 
 	@property
 	def vendor_map(self):
@@ -436,7 +453,7 @@ class Stasy(object):
 
 		for vendor in self.vendors:
 			vendors[vendor] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.system.vendor" : vendor
 				}).count()
 
@@ -444,7 +461,7 @@ class Stasy(object):
 
 	@property
 	def models(self):
-		return self._db.profiles.distinct("profile.system.model")
+		return self.query({}).distinct("profile.system.model")
 
 	@property
 	def model_map(self):
@@ -452,7 +469,7 @@ class Stasy(object):
 
 		for model in self.models:
 			models[model] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.system.model" : model
 				}).count()
 
@@ -460,7 +477,7 @@ class Stasy(object):
 
 	@property
 	def arches(self):
-		return self._db.profiles.distinct("profile.cpu.arch")
+		return self.query({}).distinct("profile.cpu.arch")
 
 	@property
 	def arch_map(self):
@@ -468,7 +485,7 @@ class Stasy(object):
 
 		for arch in self.arches:
 			arches[arch] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.cpu.arch" : arch
 				}).count()
 
@@ -476,7 +493,7 @@ class Stasy(object):
 
 	@property
 	def kernels(self):
-		return self._db.profiles.distinct("profile.system.kernel_release")
+		return self.query({}).distinct("profile.system.kernel_release")
 
 	@property
 	def kernel_map(self):
@@ -484,7 +501,7 @@ class Stasy(object):
 
 		for kernel in self.kernels:
 			kernels[kernel] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.system.kernel_release" : kernel
 				}).count()
 
@@ -492,7 +509,7 @@ class Stasy(object):
 
 	@property
 	def releases(self):
-		return self._db.profiles.distinct("profile.system.release")
+		return self.query({}).distinct("profile.system.release")
 
 	@property
 	def release_map(self):
@@ -500,45 +517,47 @@ class Stasy(object):
 
 		for release in self.releases:
 			releases[release] = \
-				self._db.profiles.find({
+				self.query({
 					"profile.system.release" : release
 				}).count()
 
 		return releases
 
 	def get_device_percentage(self, bus, vendor_id, model_id):
-		profiles_with_device = self._db.profiles.find({
+		profiles_with_device = self.query({
 			"profile.devices.subsystem" : bus,
 			"profile.devices.vendor" : vendor_id,
 			"profile.devices.model" : model_id,
 		})
 
-		# XXX must only be systems that have profile data
-		profiles_all = self._db.profiles.find()
+		profiles_all = self.query({})
 
 		if not profiles_all.count():
 			return 0
 
 		return profiles_with_device.count() / profiles_all.count()
 
-	def get_cpu_flag_map(self, flag):
-		flags = {}
+	def get_cpu_flag_map(self, flags):
+		# XXX needs a cleanup
 
-		flags[True] = \
-			self._db.profiles.find({
-				"profile.cpu.flags" : flag,
-			}).count()
+		_flags = { True : 0 }
 
-		# XXX must only be systems that have profile data
-		profiles_all = self._db.profiles.find()
+		if type(flags) == type("a"):
+			flags = [flags]
 
-		flags[False] = profiles_all.count() - flags[True]
+		for flag in flags:
+			_flags[True] += \
+				self.query({
+					"profile.cpu.flags" : flag,
+				}, no_virt=True).count()
 
-		return flags
+		_flags[False] = self.query({}, no_virt=True).count() - _flags[True]
+
+		return _flags
 
 	@property
 	def geo_locations(self):
-		return [code.lower() for code in self._db.profiles.distinct("geoip.country_code")]
+		return [code.lower() for code in self.query({}).distinct("geoip.country_code")]
 
 	def get_geo_location_map(self):
 		geo_locations = {}
@@ -546,14 +565,14 @@ class Stasy(object):
 		count = 0
 		for geo_location in self.geo_locations:
 			geo_locations[geo_location] = \
-				self._db.profiles.find({
+				self.query({
 					"geoip.country_code" : geo_location
 				}).count()
 
 			count += geo_locations[geo_location]
 
 		# XXX must only be systems that have profile data
-		profiles_all = self._db.profiles.find()
+		profiles_all = self.query({})
 
 		unknown_count = profiles_all.count() - count
 		if unknown_count:
@@ -565,7 +584,7 @@ class Stasy(object):
 		devices = []
 
 		# XXX must only be systems that have profile data
-		profiles_all = self._db.profiles.find()
+		profiles_all = self.query({})
 
 		for profile in profiles_all:
 			if not profile.has_key("profile"):
