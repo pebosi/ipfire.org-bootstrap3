@@ -52,6 +52,32 @@
 		</tr>
 	</table>
 
+	{% if profile.network %}
+		<h4>{{ _("Network") }}</h4>
+		<table class="fireinfo">
+			<tr>
+				<td class="key">
+					{{ _("Network configuration") }}
+				</td>
+				<td class="value">
+					<table class="cpufeatures">
+						<tr>
+							{% for zone in ("GREEN", "RED", "BLUE", "ORANGE") %}
+								{% if profile.network.has_zone(zone.lower()) %}
+									<td class="enabled">
+								{% else %}
+									<td class="disabled">
+								{% end %}
+									{{ _(zone)  }}
+								<td>
+							{% end %}
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	{% end %}
+
 	{% if profile.hypervisor %}
 		<h4>{{ _("Hypervisor") }}</h4>
 		<p>

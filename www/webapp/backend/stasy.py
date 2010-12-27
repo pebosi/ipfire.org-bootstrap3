@@ -78,6 +78,27 @@ class ProfileHypervisor(ProfileDict):
 		return self._data.get("type")
 
 
+class ProfileNetwork(ProfileDict):
+	def has_zone(self, name):
+		return self._data.get(name)
+
+	@property
+	def green(self):
+		return self._data.get("green")
+
+	@property
+	def red(self):
+		return self._data.get("red")
+
+	@property
+	def blue(self):
+		return self._data.get("blue")
+
+	@property
+	def orange(self):
+		return self._data.get("orange")
+
+
 class ProfileDevice(ProfileDict):
 	subsystem2class = {
 		"pci" : hwdata.PCI,
@@ -253,6 +274,12 @@ class Profile(ProfileDict):
 			return self._geoip["country_code"].lower()
 
 		return "unknown"
+
+	@property
+	def network(self):
+		network = self._data.get("network", None)
+		if network:
+			return ProfileNetwork(network)
 
 
 class Stasy(object):
@@ -600,6 +627,16 @@ class Stasy(object):
 					devices.append(device)
 
 		return devices
+
+	def get_network_zones_map(self):
+		zones = { "green" : 0, "blue" : 0, "orange" : 0, "red" : 0 }
+
+		for zone in zones.keys():
+			zones[zone] = self.query({
+				"profile.network.%s" % zone : True,
+			}).count()
+
+		return zones
 
 
 if __name__ == "__main__":

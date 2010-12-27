@@ -123,6 +123,12 @@ class StasyStatsGeoHandler(StasyBaseHandler):
 			geo_locations = self.stasy.get_geo_location_map())
 
 
+class StasyStatsNetworkHandler(StasyBaseHandler):
+	def get(self):
+		return self.render("stasy-stats-network.html",
+			network_zones=self.stasy.get_network_zones_map())
+
+
 class StasyStatsVendorDetail(StasyBaseHandler):
 	def get(self, bus, vendor_id):
 		# XXX some way ugly

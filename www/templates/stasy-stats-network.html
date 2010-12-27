@@ -1,0 +1,12 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Network configuration") }}</h3>
+	<p>
+		This chart shows us which is the most favourite network configuration.
+	</p>
+	{{ modules.StasyTable(network_zones, sortby="percentage") }}´
+{% end block %}
+
