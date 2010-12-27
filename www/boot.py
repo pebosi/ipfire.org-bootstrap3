@@ -132,12 +132,12 @@ class Application(tornado.web.Application):
 
 		self.add_handlers(r"boot.ipfire.org", [
 			# Configurations
-			(r"/files/menu.gpxe", MenuGPXEHandler),
-			(r"/files/menu.cfg", MenuCfgHandler),
+			(r"/menu.gpxe", MenuGPXEHandler),
+			(r"/menu.cfg", MenuCfgHandler),
 			(r"/config/([0-9]+)/boot.gpxe", BootGPXEHandler),
 
 			# Static files
-			(r"/files/(boot.png|custom.gpxe|premenu.cfg|vesamenu.c32|menu.c32)",
+			(r"/(boot.png|custom.gpxe|premenu.cfg|vesamenu.c32|menu.c32)",
 				tornado.web.StaticFileHandler, { "path" : self.settings["static_path"] }),
 		])
 
