@@ -81,9 +81,17 @@ class StasyStatsCPUHandler(StasyBaseHandler):
 class StasyStatsCPUFlagsHandler(StasyBaseHandler):
 	def get(self):
 		kwargs = {}
+		
+		flags = (
+			("lm", "lm"),
+			("pae", "pae"),
+			("virt", ("vmx", "svm")),
+		)
 
-		for flag in ("lm", "pae"):
-			kwargs["cpus_" + flag] = self.stasy.get_cpu_flag_map(flag)
+		for name, flag in flags:
+			kwargs["cpus_" + name] = self.stasy.get_cpu_flag_map(flag)
+
+		print kwargs
 
 		return self.render("stasy-stats-cpu-flags.html", **kwargs)
 

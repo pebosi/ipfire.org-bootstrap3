@@ -10,16 +10,23 @@
 		the operating system configuration.
 	</p>
 
-	<h4>{{ _("CPUs that support long mode") }}</h4>
+	<h4>{{ _("CPUs that support virtualization") }}</h4>
 	<p>
 		For future planning it is important to know if there is enough hardware
-		support for a 64bit version of IPFire.
+		support for virtualization like VT-x and AMD-V.
 	</p>
-	{{ modules.StasyTable(cpus_lm, sortby="percentage") }}
+	{{ modules.StasyTable(cpus_virt, sortby="percentage") }}
 
 	<h4>{{ _("CPUs with PAE") }}</h4>
 	<p>
 		This chart shows us which CPUs have got the PAE flag.
 	</p>
 	{{ modules.StasyTable(cpus_pae, sortby="percentage") }}
+
+	<h4>{{ _("CPUs that support long mode") }}</h4>
+	<p>
+		For future planning it is important to know if there is enough hardware
+		support for a 64bit version of IPFire.
+	</p>
+	{{ modules.StasyTable(cpus_lm, sortby="percentage") }}
 {% end block %}
