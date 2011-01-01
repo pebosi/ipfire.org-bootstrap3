@@ -219,7 +219,7 @@ img.symbol {
 	margin-bottom: 0.5em;
 }
 
-#main_inner ul {
+#main_inner ul.list {
 	padding-left: 1.5em;
 }
 
@@ -336,6 +336,10 @@ img.symbol {
 	padding: 1.2em 1.2em;
 	border: 1px dotted #E4E4E4;
 	text-align: justify;
+}
+
+.post .entry ul {
+	padding-left: 1em;
 }
 
 .links {
@@ -573,7 +577,6 @@ a.feed {
 	background-color: #F1F1F1;
 }
 
-<<<<<<< HEAD:www/include/style.css
 #screenshots {
 	background-color: #444;
 	padding: 10px;
