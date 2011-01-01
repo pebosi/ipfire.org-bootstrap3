@@ -8,12 +8,10 @@ import tornado.locale
 import tornado.options
 import tornado.web
 
-from webapp import backend
+import backend
 
 BASEDIR = os.path.dirname(__file__)
 
-# Enable logging
-tornado.options.enable_pretty_logging()
 tornado.options.parse_command_line()
 
 def word_wrap(s, width=45):
@@ -108,6 +106,8 @@ class BootGPXEHandler(BaseHandler):
 		line = "kernel -n img %s" % config.image1
 		if line.endswith(".iso"):
 			line += " iso"
+		if config.args:
+			line += " %s" % config.args
 		lines.append(line)
 
 		if config.image2:
@@ -124,8 +124,8 @@ class Application(tornado.web.Application):
 		settings = dict(
 			debug = True,
 			gzip = True,
-			static_path = os.path.join(BASEDIR, "static/netboot"),
-			template_path = os.path.join(BASEDIR, "templates/netboot"),
+			static_path = os.path.join(BASEDIR, "static"),
+			template_path = os.path.join(BASEDIR, "templates"),
 		)
 
 		tornado.web.Application.__init__(self, **settings)
