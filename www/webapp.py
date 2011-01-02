@@ -13,8 +13,6 @@ import tornado.options
 
 from webapp import Application
 
-tornado.options.parse_command_line()
-
 if __name__ == "__main__":
 	app = Application()
 

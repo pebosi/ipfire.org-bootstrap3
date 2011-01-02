@@ -14,9 +14,6 @@ import tornado.web
 
 import webapp.backend as backend
 
-# Enable logging
-tornado.options.parse_command_line()
-
 DATABASE_HOST = ["irma.ipfire.org", "madeye.ipfire.org"]
 DATABASE_NAME = "stasy"
 

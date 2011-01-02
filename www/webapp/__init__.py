@@ -15,10 +15,6 @@ from ui_modules import *
 
 BASEDIR = os.path.join(os.path.dirname(__file__), "..")
 
-# Enable logging
-tornado.options.enable_pretty_logging()
-tornado.options.parse_command_line()
-
 tornado.locale.load_translations(os.path.join(BASEDIR, "translations"))
 
 class Application(tornado.web.Application):

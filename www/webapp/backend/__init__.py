@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+import tornado.options
+tornado.options.parse_command_line()
+
 from accounts	import Accounts
 from banners	import Banners
 from geoip		import GeoIP
