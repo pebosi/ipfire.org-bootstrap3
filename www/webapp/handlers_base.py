@@ -46,12 +46,14 @@ class BaseHandler(tornado.web.RequestHandler):
 			"year" : time.strftime("%Y"),
 		}
 
-	def render(self, *args, **kwargs):
-		kwargs.update(self.render_args)
+	def render(self, *args, **_kwargs):
+		kwargs = self.render_args
+		kwargs.update(_kwargs)
 		tornado.web.RequestHandler.render(self, *args, **kwargs)
 
-	def render_string(self, *args, **kwargs):
-		kwargs.update(self.render_args)
+	def render_string(self, *args, **_kwargs):
+		kwargs = self.render_args
+		kwargs.update(_kwargs)
 		return tornado.web.RequestHandler.render_string(self, *args, **kwargs)
 
 	def get_error_html(self, status_code, **kwargs):
@@ -104,3 +106,7 @@ class BaseHandler(tornado.web.RequestHandler):
 	@property
 	def tracker(self):
 		return backend.Tracker()
+
+	@property
+	def planet(self):
+		return backend.Planet()

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
 	<channel>
-		<title>IPFire.org - News</title>
-		<link>http://www.ipfire.org/</link>
-		<description>IPFire News Feed</description>
+		<title>{{ title }}</title>
+		<link>{{ url }}</link>
+		<description>{{ description }}</description>
 		<language>{{ lang }}</language>
-		<copyright>IPFire-Team</copyright>
+		<copyright>IPFire Team</copyright>
 		<pubDate>Thu, 8 Nov 2007 00:00:00 +0200</pubDate>
 		{% for item in items %}
 			<item>
 				<title>{{ item.title }}</title>
-				<link>http://www.ipfire.org/news/{{ item.slug }}</link>
-				<author>{{ item.author.email }} ({{ item.author.cn }})</author>
-				<guid>{{ item.uuid }}</guid>
-				<pubDate>{{ item.date }}</pubDate>
+				<link>{{ item.url }}</link>
+				<author>{{ item.author.mail }} ({{ item.author.name }})</author>
+				<guid>{{ item.url }}</guid>
+				<pubDate>{{ item.date.strftime("%a, %d %b %Y %H:%M:%S +0200") }}</pubDate>
 				<description>
 					<![CDATA[
 						{{ item.text }}

@@ -64,7 +64,7 @@ class Application(tornado.web.Application):
 			(r"/downloads?", DownloadHandler),
 
 			# RSS feed
-			(r"/news.rss", RSSHandler),
+			(r"/news.rss", RSSNewsHandler),
 
 			# Redirection for bookmarks, etc.
 			(r"/(de|en)/(.*)", LangCompatHandler)
@@ -98,6 +98,10 @@ class Application(tornado.web.Application):
 			(r"/", PlanetMainHandler),
 			(r"/post/([A-Za-z0-9_-]+)", PlanetPostingHandler),
 			(r"/user/([a-z0-9_-]+)", PlanetUserHandler),
+
+			# RSS
+			(r"/rss", RSSPlanetAllHandler),
+			(r"/user/([a-z0-9_-]+)/rss", RSSPlanetUserHandler),
 		] + static_handlers)
 
 		# stasy.ipfire.org

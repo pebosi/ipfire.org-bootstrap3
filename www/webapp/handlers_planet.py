@@ -19,6 +19,8 @@ class PlanetBaseHandler(BaseHandler):
 
 
 class PlanetMainHandler(PlanetBaseHandler):
+	rss_url = "/rss"
+
 	def get(self):
 		offset = int(self.get_argument("offset", 0))
 		limit = int(self.get_argument("limit", 4))
@@ -43,7 +45,7 @@ class PlanetUserHandler(PlanetBaseHandler):
 			offset=offset, limit=limit)
 
 		self.render("planet-user.html", author=author, entries=entries,
-			offset=offset + limit, limit=limit)
+			offset=offset + limit, limit=limit, rss_url="/user/%s/rss" % author.uid)
 
 
 class PlanetPostingHandler(PlanetBaseHandler):
