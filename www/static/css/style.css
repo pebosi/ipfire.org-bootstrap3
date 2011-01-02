@@ -51,6 +51,15 @@ br.clear {
 	clear: both;
 }
 
+div.line {
+	border-top: 1px dotted #e1e1e1;
+	height: 0;
+	width: 100%;
+
+	margin-top: 1em;
+	margin-bottom: 0.8em;
+}
+
 img {
 	padding: 3px;
 }
