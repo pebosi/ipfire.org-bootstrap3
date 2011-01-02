@@ -594,7 +594,7 @@ class Stasy(object):
 		for geo_location in self.geo_locations:
 			geo_locations[geo_location] = \
 				self.query({
-					"geoip.country_code" : geo_location
+					"geoip.country_code" : geo_location.upper()
 				}).count()
 
 			count += geo_locations[geo_location]
