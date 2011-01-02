@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import logging
+import os.path
 import socket
 import time
 import tornado.httpclient
@@ -24,16 +25,40 @@ class Mirrors(object):
 			mirror.check()
 
 	def get(self, id):
-		return Mirror( id)
+		return Mirror(id)
 
 	def get_by_hostname(self, hostname):
 		mirror = self.db.get("SELECT id FROM mirrors WHERE hostname=%s", hostname)
 
 		return Mirror(mirror.id)
 
-	def get_with_file(self, filename):
-		return [Mirror(m.mirror) for m in \
-			self.db.query("SELECT mirror FROM mirror_files WHERE filename=%s", filename)]
+	def get_with_file(self, filename, country=None):
+		# XXX quick and dirty solution - needs a performance boost
+		mirror_ids = [m.mirror for m in self.db.query("SELECT mirror FROM mirror_files WHERE filename=%s", filename)]
+
+		#if country:
+		#	# Sort out all mirrors that are not preferred to the given country
+		#	for mirror in self.get_for_country(country):
+		#		if not mirror.id in mirror_ids:
+		#			mirror_ids.remove(mirror.id)
+
+		mirrors = []
+		for mirror_id in mirror_ids:
+			mirror = self.get(mirror_id)
+			if not mirror.state == "UP":
+				continue
+			mirrors.append(mirror)
+
+		logging.debug("%s" % mirrors)
+
+		return mirrors
+
+	def get_for_country(self, country):
+		# XXX need option for random order
+		mirrors = self.db.query("SELECT id FROM mirrors WHERE prefer_for_countries LIKE %s", country)
+
+		for mirror in mirrors:
+			yield self.get(mirror.id)
 
 
 class Mirror(object):
@@ -41,6 +66,12 @@ class Mirror(object):
 		self.id = id
 
 		self.reload()
+
+	def __repr__(self):
+		return "<%s %s>" % (self.__class__.__name__, self.url)
+
+	def __cmp__(self, other):
+		return cmp(self.id, other.id)
 
 	@property
 	def db(self):
@@ -77,6 +108,13 @@ class Mirror(object):
 	def filelist(self):
 		filelist = self.db.query("SELECT filename FROM mirror_files WHERE mirror=%s ORDER BY filename", self.id)
 		return [f.filename for f in filelist]
+
+	@property
+	def prefix(self):
+		if self.type.startswith("pakfire"):
+			return self.type
+
+		return ""
 
 	def set_state(self, state):
 		logging.info("Setting state of %s to %s" % (self.hostname, state))
@@ -117,7 +155,7 @@ class Mirror(object):
 		http = tornado.httpclient.AsyncHTTPClient()
 
 		http.fetch(self.url + ".timestamp",
-			headers={"Pragma" : "no-cache", },
+			headers={ "Pragma" : "no-cache" },
 			callback=self.__check_timestamp_response)
 
 	def __check_timestamp_response(self, response):
@@ -141,13 +179,14 @@ class Mirror(object):
 		logging.info("Successfully updated timestamp from %s" % self.hostname)
 
 	def check_filelist(self):
-		if self.releases == "N":
+		# XXX need to remove data from disabled mirrors
+		if self.releases == "N" or self.disabled == "Y" or self.type != "full":
 			return
 
 		http = tornado.httpclient.AsyncHTTPClient()
 
 		http.fetch(self.url + ".filelist",
-			headers={"Pragma" : "no-cache", },
+			headers={ "Pragma" : "no-cache" },
 			callback=self.__check_filelist_response)
 
 	def __check_filelist_response(self, response):
@@ -159,9 +198,14 @@ class Mirror(object):
 
 		for file in response.body.splitlines():
 			self.db.execute("INSERT INTO mirror_files(mirror, filename) VALUES(%s, %s)",
-					self.id, file)
+					self.id, os.path.join(self.prefix, file))
 
 		logging.info("Successfully updated mirror filelist from %s" % self.hostname)
+
+	@property
+	def prefer_for_countries(self):
+		return self._info.get("prefer_for_countries", "").split()
+
 
 
 if __name__ == "__main__":

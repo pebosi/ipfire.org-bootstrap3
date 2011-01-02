@@ -1,8 +1,10 @@
 #!/usr/bin/python
 
+import logging
 import random
-
 import tornado.web
+
+import backend
 
 from handlers_base import *
 
@@ -66,10 +68,21 @@ class DownloadDevelopmentHandler(BaseHandler):
 
 class DownloadFileHandler(BaseHandler):
 	def get(self, filename):
-		mirrors = self.mirrors.get_with_file(filename)
+		country_code = self.geoip.get_country(self.request.remote_ip)
 
-		# Choose a random one
-		# XXX need better metric here
+		self.set_header("Pragma", "no-cache")
+		self.set_header("X-Mirror-Client-Country", country_code)
+
+		mirrors = self.mirrors.get_with_file(filename, country=country_code)
+		if not mirrors:
+			self.mirrors.get_with_file(filename)
+
+		if not mirrors:
+			raise tornado.web.HTTPError(404, "File not found: %s" % filename)
+
 		mirror = random.choice(mirrors)
 
-		self.redirect(mirror.url + filename)
+		self.redirect(mirror.url + filename[len(mirror.prefix):])
+
+		self.mirrors.db.execute("INSERT INTO log_download(filename, mirror, country_code) VALUES(%s, %s, %s)",
+			filename, mirror.id, country_code)

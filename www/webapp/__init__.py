@@ -85,15 +85,8 @@ class Application(tornado.web.Application):
 		#	(r"/author/(.*)", NewsAuthorHandler),
 		#] + static_handlers)
 
-		# download.ipfire.org
-		self.add_handlers(r"download\.ipfire\.org", [
-			(r"/", tornado.web.RedirectHandler, { "url" : "http://www.ipfire.org/" }),
-			(r"/(favicon\.ico)", tornado.web.StaticFileHandler, dict(path = static_path)),
-			(r"/(.*)", DownloadFileHandler),
-		])
-
 		# downloads.ipfire.org
-		self.add_handlers(r"downloads\.ipfire\.org", [
+		self.add_handlers(r"downloads?\.ipfire\.org", [
 			(r"/", DownloadsIndexHandler),
 			(r"/latest", DownloadsLatestHandler),
 			(r"/release/([0-9]+)", DownloadsReleaseHandler),
@@ -101,7 +94,9 @@ class Application(tornado.web.Application):
 			(r"/development", DownloadsDevelopmentHandler),
 			(r"/mirrors", tornado.web.RedirectHandler, { "url" : "http://mirrors.ipfire.org/" }),
 			(r"/source", tornado.web.RedirectHandler, { "url" : "http://source.ipfire.org/" }),
-		] + static_handlers)
+		] + static_handlers + [
+			(r"/(.*)", DownloadFileHandler),
+		])
 
 		# mirrors.ipfire.org
 		self.add_handlers(r"mirrors\.ipfire\.org", [
@@ -129,6 +124,7 @@ class Application(tornado.web.Application):
 			(r"/stats/cpuflags", StasyStatsCPUFlagsHandler),
 			(r"/stats/geo", StasyStatsGeoHandler),
 			(r"/stats/memory", StasyStatsMemoryHandler),
+			(r"/stats/network", StasyStatsNetworkHandler),
 			(r"/stats/oses", StasyStatsOSesHandler),
 			(r"/stats/virtual", StasyStatsVirtualHandler),
 		] + static_handlers)

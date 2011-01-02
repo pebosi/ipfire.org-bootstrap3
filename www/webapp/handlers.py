@@ -53,7 +53,7 @@ class IndexHandler(BaseHandler):
 	def get(self):
 		# Get a list of the most recent news items and put them on the page.		
 		latest_news = self.news.get_latest(limit=1, locale=self.locale)
-		recent_news = self.news.get_latest(limit=2, locale=self.locale, offset=1)
+		recent_news = self.news.get_latest(limit=3, locale=self.locale, offset=1)
 
 		return self.render("index.html",
 			latest_news=latest_news, recent_news=recent_news)

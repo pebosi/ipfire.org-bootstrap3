@@ -307,6 +307,7 @@ class Stasy(object):
 		return self.query({ "public_id" : public_id }).count() >= 1
 
 	def get_profile(self, public_id):
+		p = None
 		# XXX should only find one object in the end
 		for p in self.query({ "public_id" : public_id }):
 			p = Profile(p)

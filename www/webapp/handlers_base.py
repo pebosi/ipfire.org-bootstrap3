@@ -21,9 +21,11 @@ class BaseHandler(tornado.web.RequestHandler):
 		# another output that guessed.
 		locale = self.get_argument("locale", None)
 		if locale:
-			locale = tornado.locale.get(locale)
-			for locale in ALLOWED_LOCALES:
-				return locale
+			for l in ALLOWED_LOCALES:
+				if not l.code.startswith(locale):
+					continue
+
+				return l
 
 		# If no locale was provided we guess what the browser sends us
 		locale = self.get_browser_locale()
