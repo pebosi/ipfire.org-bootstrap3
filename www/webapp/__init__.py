@@ -130,14 +130,6 @@ class Application(tornado.web.Application):
 			(r"/profile/([a-f0-9]{40})/([0-9]+).png", IUseImage),
 		])
 
-		# source.ipfire.org
-#		self.add_handlers(r"source\.ipfire\.org", [
-#			(r"/", MainHandler),
-#			(r"/[A-Za-z]{2}/?", MainHandler),
-#			(r"/[A-Za-z]{2}/index", SourceHandler),
-#			(r"(/source.*|/toolchains/.*)", SourceDownloadHandler),
-#		] + static_handlers)
-
 		# tracker.ipfire.org
 		self.add_handlers(r"(torrent|tracker)\.ipfire\.org", [
 			(r"/", TrackerIndexHandler),
