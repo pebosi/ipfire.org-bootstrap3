@@ -113,7 +113,7 @@ class Application(tornado.web.Application):
 		self.add_handlers(r"planet\.ipfire\.org", [
 			(r"/", PlanetMainHandler),
 			(r"/post/([A-Za-z0-9_-]+)", PlanetPostingHandler),
-			(r"/user/([a-z0-9]+)", PlanetUserHandler),
+			(r"/user/([a-z0-9_-]+)", PlanetUserHandler),
 		] + static_handlers)
 
 		# stasy.ipfire.org

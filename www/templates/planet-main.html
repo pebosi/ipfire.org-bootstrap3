@@ -40,7 +40,9 @@
 		</p>
 		-->
 	</div>
-	
+
+	<div class="line"></div>
+
 	{% for entry in entries %}
 		{{ modules.PlanetEntry(entry, short=True) }}
 	{% end %}
@@ -56,7 +58,7 @@
 
 {% block sidebar %}
 		<h4>{{ _("People on the planet") }}</h4>
-		<ul>
+		<ul class="list">
 			{% for author in authors %}
 				<li>
 					<a href="/user/{{ author.uid }}">{{ author.cn }}</a>

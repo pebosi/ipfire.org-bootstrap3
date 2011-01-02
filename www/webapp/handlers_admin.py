@@ -6,8 +6,17 @@ import tornado.web
 
 from handlers_base import *
 
+import backend
 
 class AdminBaseHandler(BaseHandler):
+	@property
+	def accounts(self):
+		return backend.Accounts()
+
+	@property
+	def planet(self):
+		return backend.Planet()
+
 	def get_current_user(self):
 		return self.get_secure_cookie("account")
 
@@ -47,17 +56,14 @@ class AdminApiPlanetRenderMarkupHandler(AdminBaseHandler):
 		text = self.get_argument("text", "")
 
 		# Render markup
-		self.write(markdown2.markdown(text))
+		self.write(self.planet.render(text))
 		self.finish()
 
 
 class AdminPlanetHandler(AdminBaseHandler):
 	@tornado.web.authenticated
 	def get(self):
-		entries = self.backend.db.planet.query("SELECT * FROM planet ORDER BY published DESC")
-
-		for entry in entries:
-			entry.author = self.backend.accounts.search(entry.author_id)
+		entries = self.planet.get_entries(limit=100)
 
 		self.render("admin-planet.html", entries=entries)
 
@@ -65,46 +71,30 @@ class AdminPlanetHandler(AdminBaseHandler):
 class AdminPlanetComposeHandler(AdminBaseHandler):
 	@tornado.web.authenticated
 	def get(self, id=None):
+		entry = backend.PlanetEntry()
+
 		if id:
-			entry = self.backend.db.planet.get("SELECT * FROM planet WHERE id = '%s'", int(id))
-		else:
-			entry = tornado.database.Row(id="", title="", markdown="")
+			entry = self.planet.get_entry_by_id(id)
 
 		self.render("admin-planet-compose.html", entry=entry)
 
 	@tornado.web.authenticated
 	def post(self, id=None):
 		id = self.get_argument("id", id)
-		title = self.get_argument("title")
-		markdown = self.get_argument("markdown")
-		author = self.backend.accounts.search(self.current_user)
+
+		entry = backend.PlanetEntry()
 
 		if id:
-			entry = self.backend.db.planet.get("SELECT * FROM planet WHERE id = %s", id)
-			if not entry:
-				raise tornado.web.HTTPError(404)
+			entry = self.planet.get_entry_by_id(id)
 
-			self.backend.db.planet.execute("UPDATE planet SET title = %s, markdown = %s "
-				"WHERE id = %s", title, markdown, id)
+		entry.set("title", self.get_argument("title"))
+		entry.set("markdown", self.get_argument("markdown"))
+		entry.set("author_id", self.current_user)
 
-			slug = entry.slug
-
+		if id:
+			self.planet.update_entry(entry)
 		else:
-			slug = unicodedata.normalize("NFKD", title).encode("ascii", "ignore")
-			slug = re.sub(r"[^\w]+", " ", slug)
-			slug = "-".join(slug.lower().strip().split())
-
-			if not slug:
-				slug = "entry"
-
-			while True:
-				e = self.backend.db.planet.get("SELECT * FROM planet WHERE slug = %s", slug)
-				if not e:
-					break
-				slug += "-"
-
-			self.backend.db.planet.execute("INSERT INTO planet(author_id, title, slug, markdown, published) "
-				"VALUES(%s, %s, %s, %s, UTC_TIMESTAMP())", author.uid, title, slug, markdown)
+			self.planet.save_entry(entry)
 
 		self.redirect("/planet")
 
@@ -114,15 +104,13 @@ class AdminPlanetEditHandler(AdminPlanetComposeHandler):
 
 
 class AdminAccountsBaseHandler(AdminBaseHandler):
-	@property
-	def accounts(self):
-		return self.backend.accounts
+	pass
 
 
 class AdminAccountsHandler(AdminAccountsBaseHandler):
 	@tornado.web.authenticated
 	def get(self):
-		accounts = self.backend.accounts.list()
+		accounts = self.accounts.list()
 		self.render("admin-accounts.html", accounts=accounts)
 
 
@@ -149,12 +137,8 @@ class AdminAccountsDeleteHandler(AdminAccountsBaseHandler):
 
 class AdminMirrorsBaseHandler(AdminBaseHandler):
 	@property
-	def db(self):
-		return self.backend.db.mirrors
-
-	@property
 	def mirrors(self):
-		return self.backend.mirrors
+		return backend.Mirrors()
 
 
 class AdminMirrorsHandler(AdminMirrorsBaseHandler):

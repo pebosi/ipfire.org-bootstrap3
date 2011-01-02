@@ -15,7 +15,7 @@
 			in mittleren bis kleinen Unternehmensnetzwerken und Heimnetzwerken.
 		</p>
 		<p>
-			Obwohl das System extrem schlank gehalten und gehärtet wurde und können
+			Obwohl das System extrem schlank gehalten und gehärtet wurde, können
 			Addons mit nur einem Klick installiert werden. Diese Eigenschaft unterscheidet
 			IPFire von anderen Distributionen: IPFire ist einfach zu administrieren
 			aber hat genug Leistung allen Anforderungen gewachsen zu sein.
@@ -36,9 +36,9 @@
 
 	<br class="clear" />
 
-	<p>
+	<h4>
 		{{ _("See what makes IPFire so great:") }}
-	</p>
+	</h4>
 
 	<table class="blocks">
 		<tr>
@@ -49,13 +49,13 @@
 				{% if lang == "de" %}
 					<p>
 						Die oberste Priorität ist die Sicherheit des Systems.
-						So werden zum Beispiel Sicherheitsupdates zügig zur
-						Verfügung gestellt.
+						Zum Beispiel werden Sicherheits- updates regelmäßig und
+						zügig verteilt.
 					</p>
 				{% else %}
 					<p>
 						As the most important issue: Security updates
-						are deployed regularly and in a timely manner.
+						are deployed regularly and promptly.
 					</p>
 				{% end %}
 				<a href="/about#security">{{ _("Learn more.") }}</a>
@@ -66,7 +66,7 @@
 				<span>{{ _("Flexibility") }}</span>
 				{% if lang == "de" %}
 					<p>
-						Heutzutage ist nichts wichtiger als flexibel zu sein
+						Heutzutage ist es auch wichtig flexibel zu sein
 						und sich der Welt anzupassen. Genau wie IPFire...
 					</p>
 				{% else %}
@@ -91,7 +91,7 @@
 				{% else %}
 					<p>
 						The success of IPFire is based on the community that
-						is working on the code an spreading IPFire to the world.
+						is working on the code and spreading IPFire to the world.
 					</p>
 				{% end %}
 				<p>
@@ -104,11 +104,11 @@
 	<p class="links">
 		{{ _("Quick links") }} &bull;
 		<a href="/about">{{ _("About IPFire") }}</a>
-		&bull;
-		<a href="/screenshots">{{ _("Screenshots") }}</a>
+		<!-- &bull;
+		<a href="/about">{{ _("Screenshots") }}</a> -->
 	</p>
 
-	<br class="clear" />
+	<div class="line"></div>
 
 	{% for item in latest_news %}
 		{{ modules.NewsItem(item) }}

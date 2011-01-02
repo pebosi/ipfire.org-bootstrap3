@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
+import re
 import textile
+import tornado.database
+import unicodedata
 
 from accounts import Accounts
 from databases import Databases
@@ -8,8 +11,22 @@ from databases import Databases
 from misc import Singleton
 
 class PlanetEntry(object):
-	def __init__(self, entry):
-		self.__entry = entry
+	def __init__(self, entry=None):
+		if entry:
+			self.__entry = entry
+		else:
+			self.__entry = tornado.database.Row({
+				"id" : None,
+				"title" : "",
+				"markdown" : "",
+			})
+
+	def set(self, key, val):
+		self.__entry[key] = val
+
+	@property
+	def planet(self):
+		return Planet()
 
 	@property
 	def id(self):
@@ -40,9 +57,7 @@ class PlanetEntry(object):
 		return self.render(self.markdown, 400)
 
 	def render(self, text, limit=0):
-		if limit and len(text) >= limit:
-			text = text[:limit] + "..."
-		return textile.textile(text)
+		return self.planet.render(text, limit)
 
 	@property
 	def text(self):
@@ -67,10 +82,15 @@ class Planet(object):
 			if author:
 				authors.append(author)
 
-		return authors
+		return sorted(authors)
 
 	def get_entry_by_slug(self, slug):
 		entry = self.db.get("SELECT * FROM planet WHERE slug = %s", slug)
+		if entry:
+			return PlanetEntry(entry)
+
+	def get_entry_by_id(self, id):
+		entry = self.db.get("SELECT * FROM planet WHERE id = %s", id)
 		if entry:
 			return PlanetEntry(entry)
 
@@ -104,7 +124,39 @@ class Planet(object):
 		# Respect limit and offset		
 		query += self._limit_and_offset_query(limit=limit, offset=offset)
 
-
 		entries = self.db.query(query)
 
 		return [PlanetEntry(e) for e in entries]
+
+	def render(self, text, limit=0):
+		if limit and len(text) >= limit:
+			text = text[:limit] + "..."
+		return textile.textile(text)
+
+	def _generate_slug(self, title):
+		slug = unicodedata.normalize("NFKD", title).encode("ascii", "ignore")
+		slug = re.sub(r"[^\w]+", " ", slug)
+		slug = "-".join(slug.lower().strip().split())
+
+		if not slug:
+			slug = "entry"
+
+		while True:
+			e = self.db.get("SELECT * FROM planet WHERE slug = %s", slug)
+			if not e:
+				break
+			slug += "-"
+
+		return slug
+
+	def update_entry(self, entry):
+		self.db.execute("UPDATE planet SET title = %s, markdown = %s WHERE id = %s",
+			entry.title, entry.markdown, entry.id)
+
+	def save_entry(self, entry):
+		slug = self._generate_slug(entry.title)
+
+		self.db.execute("INSERT INTO planet(author_id, title, slug, markdown, published) "
+			"VALUES(%s, %s, %s, %s, UTC_TIMESTAMP())", entry.author.uid, entry.title,
+			slug, entry.markdown)
+

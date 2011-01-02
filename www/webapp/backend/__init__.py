@@ -9,7 +9,7 @@ from menu		import Menu
 from mirrors	import Mirrors
 from netboot	import NetBoot
 from news		import News
-from planet		import Planet
+from planet		import Planet, PlanetEntry
 from releases	import Releases
 from settings	import Settings as Config
 from stasy		import Stasy

@@ -2,6 +2,7 @@
 
 import hashlib
 import ldap
+import logging
 import urllib
 
 from misc import Singleton
@@ -9,6 +10,10 @@ from settings import Settings
 
 class Accounts(object):
 	__metaclass__ = Singleton
+
+	@property
+	def settings(self):
+		return Settings()
 
 	def __init__(self):
 		self.__db = None
@@ -22,13 +27,14 @@ class Accounts(object):
 	@property
 	def db(self):
 		if not self.__db:
-			ldap_uri = Settings().get("ldap_uri")
+			ldap_uri = self.settings.get("ldap_uri")
 
 			self.__db = ldap.initialize(ldap_uri)
 			
-			bind_dn = Settings().get("ldap_bind_dn")
+			bind_dn = self.settings.get("ldap_bind_dn")
+
 			if bind_dn:
-				bind_pw = Settings().get("ldap_bind_pw")
+				bind_pw = self.settings.get("ldap_bind_pw")
 
 				self.__db.simple_bind(bind_dn, bind_pw)
 
