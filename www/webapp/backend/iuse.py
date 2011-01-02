@@ -76,12 +76,12 @@ class Image1(ImageObject):
 		# Hardware information
 		hw = [
 			self.profile.cpu.model_string,
-			"Memory: %.1fG" % (self.profile.memory / 1024**2),
+			"Mem: %.1fG" % (self.profile.memory / 1024**2),
 		]
 
 		if self.profile.virtual:
 			virt = "V-%s" % self.profile.hypervisor.vendor
-			if self.profile.hypervisor.type == "PV":
+			if self.profile.hypervisor.type == "para":
 				virt = "%s-PV" % virt
 			hw.append(virt)
 
