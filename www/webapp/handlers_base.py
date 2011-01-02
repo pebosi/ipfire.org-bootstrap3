@@ -8,6 +8,8 @@ import tornado.web
 import backend
 
 class BaseHandler(tornado.web.RequestHandler):
+	rss_url = None
+
 	def get_account(self, uid):
 		# Find the name of the author
 		return self.accounts.find(uid)
@@ -40,6 +42,7 @@ class BaseHandler(tornado.web.RequestHandler):
 		return {
 			"hostname" : self.request.host,
 			"lang" : self.locale.code[:2],
+			"rss_url" : self.rss_url,
 			"year" : time.strftime("%Y"),
 		}
 

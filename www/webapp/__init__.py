@@ -56,30 +56,23 @@ class Application(tornado.web.Application):
 			(r"/index\.?(s?html?)?", RootHandler),
 
 			# Handle news items
-			#(r"/news/(.*)", NewsRedirectHandler),
 			(r"/news", NewsIndexHandler),
 			(r"/news/(.*)", NewsItemHandler),
 			(r"/author/(.*)", NewsAuthorHandler),
 
 			# Download sites
 			(r"/downloads?", DownloadHandler),
-#			# RSS feed
-#			(r"/([A-Za-z]{2})/news.rss", RSSHandler),
-#			(r"/data/feeds/main-([A-Za-z]{2}).rss", RSSHandler),
 
+			# RSS feed
+			(r"/news.rss", RSSHandler),
+
+			# Redirection for bookmarks, etc.
 			(r"/(de|en)/(.*)", LangCompatHandler)
 
 		] + static_handlers + [
 			# Always the last rule
 			(r"/(.*)", StaticHandler),
 		])
-
-		# news.ipfire.org
-		#self.add_handlers(r"news\.ipfire\.org", [
-		#	(r"/", NewsIndexHandler),
-		#	(r"/news/(.*)", NewsItemHandler),
-		#	(r"/author/(.*)", NewsAuthorHandler),
-		#] + static_handlers)
 
 		# downloads.ipfire.org
 		self.add_handlers(r"downloads?\.ipfire\.org", [
@@ -186,9 +179,6 @@ class Application(tornado.web.Application):
 
 	def run(self, port=8001):
 		logging.debug("Going to background")
-		
-		# All requests should be done after 30 seconds or they will be killed.
-		self.ioloop.set_blocking_log_threshold(30)
 
 		http_server = tornado.httpserver.HTTPServer(self, xheaders=True)
 
@@ -199,6 +189,9 @@ class Application(tornado.web.Application):
 			http_server.start(num_processes=4)
 		else:
 			http_server.listen(port)
+		
+		# All requests should be done after 30 seconds or they will be killed.
+		self.ioloop.set_blocking_log_threshold(30)
 
 		self.ioloop.start()
 

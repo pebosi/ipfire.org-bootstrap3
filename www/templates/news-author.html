@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-2.html" %}
 
 {% block title %}{{ author.cn }}{% end block %}
 
@@ -9,7 +9,7 @@
 	</p>
 
 	<h3>{{ _("%s recently announced...") % author.cn }}</h3>
-	<ul class="news_author_latest_news">
+	<ul class="list news_author_latest_news">
 	{% for news in latest_news %}
 		<li>{{ modules.NewsLine(news) }}</li>
 	{% end %}

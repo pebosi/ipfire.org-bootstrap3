@@ -9,14 +9,14 @@
 		<pubDate>Thu, 8 Nov 2007 00:00:00 +0200</pubDate>
 		{% for item in items %}
 			<item>
-				<title>{{ item.subject }}</title>
-				<link>http://www.ipfire.org/{{ lang }}/news</link>
-				<author>{{ item.mail }} ({{ item.author }})</author>
-				<guid>http://www.ipfire.org/{{ lang }}/news#{{ item.id }}</guid>
+				<title>{{ item.title }}</title>
+				<link>http://www.ipfire.org/news/{{ item.slug }}</link>
+				<author>{{ item.author.email }} ({{ item.author.cn }})</author>
+				<guid>{{ item.uuid }}</guid>
 				<pubDate>{{ item.date }}</pubDate>
 				<description>
 					<![CDATA[
-						{{ item.content }}
+						{{ item.text }}
 					]]>
 				</description>
 			</item>

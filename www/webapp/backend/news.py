@@ -21,11 +21,6 @@ class News(object):
 		return self.db.get("SELECT * FROM news WHERE slug=%s", slug)
 
 	def get_latest(self, author=None, locale=None, limit=1, offset=0):
-		# XXX find a better way to do offset
-
-		if offset:
-			limit += offset
-
 		query = "SELECT * FROM news WHERE published='Y'"
 
 		if author:
@@ -37,13 +32,12 @@ class News(object):
 		query += " ORDER BY date DESC"
 
 		if limit:
-			query += " LIMIT %d" % limit
+			if offset:
+				query += " LIMIT %d,%d" % (offset, limit)
+			else:
+				query += " LIMIT %d" % limit
 
 		news = self.db.query(query)
-
-		# XXX can the database do this?
-		if offset:
-			news = news[offset:]
 
 		return news
 

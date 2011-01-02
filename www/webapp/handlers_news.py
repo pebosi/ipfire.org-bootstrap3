@@ -4,18 +4,9 @@ import tornado.web
 
 from handlers_base import *
 
-class NewsRedirectHandler(BaseHandler):
-	"""
-		This handler redirects (with a given slug) to news.ipfire.org.
-
-		We do not show full news items on the main page and so need a simple
-		way to redirect. Here it is.
-	"""
-	def get(self, slug):
-		self.redirect("http://news.ipfire.org/news/%s" % slug)
-
-
 class NewsIndexHandler(BaseHandler):
+	rss_url = "/news.rss"
+
 	"""
 		This handler fetches the content that is show on the news portal.
 	"""
@@ -34,6 +25,8 @@ class NewsIndexHandler(BaseHandler):
 
 
 class NewsItemHandler(BaseHandler):
+	rss_url = "/news.rss"
+
 	"""
 		This handler displays a whole page full of a single news item.
 	"""
@@ -63,7 +56,7 @@ class NewsAuthorHandler(BaseHandler):
 			raise tornado.web.HTTPError(404)
 
 		latest_news = self.news.get_latest(author=author.uid,
-			locale=self.locale, limit=3)
+			locale=self.locale, limit=10)
 
 		self.render("news-author.html",
 			author=author, latest_news=latest_news)

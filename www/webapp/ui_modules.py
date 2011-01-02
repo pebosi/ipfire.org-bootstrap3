@@ -2,6 +2,7 @@
 
 from __future__ import division
 
+import hashlib
 import logging
 import operator
 import socket
@@ -22,6 +23,10 @@ class UIModule(tornado.web.UIModule):
 	@property
 	def banners(self):
 		return self.handler.banners
+
+	@property
+	def memcached(self):
+		return self.handler.memcached
 
 	@property
 	def releases(self):
@@ -67,7 +72,14 @@ class NewsItemModule(UIModule):
 			item.text = item.text[:400] + "..."
 
 		# Render text
-		item.text = textile.textile(item.text)
+		text_id = "news-%s" % hashlib.md5(item.text.encode("utf-8")).hexdigest()
+
+		text = self.memcached.get(text_id)
+		if not text:
+			text = textile.textile(item.text)
+			self.memcached.set(text_id, text, 60)
+
+		item.text = text
 
 		return self.render_string("modules/news-item.html", item=item, uncut=uncut)
 

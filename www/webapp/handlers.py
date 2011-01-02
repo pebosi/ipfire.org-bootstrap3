@@ -22,6 +22,7 @@ from handlers_iuse import *
 from handlers_mirrors import *
 from handlers_news import *
 from handlers_planet import *
+from handlers_rss import *
 from handlers_stasy import *
 from handlers_tracker import *
 
@@ -47,6 +48,8 @@ class LangCompatHandler(BaseHandler):
 
 
 class IndexHandler(BaseHandler):
+	rss_url = "/news.rss"
+
 	"""
 		This handler displays the welcome page.
 	"""
