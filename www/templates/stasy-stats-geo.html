@@ -8,7 +8,7 @@
 		This will give a short overview about what languages are configured
 		on the IPFire webinterface.
 	</p>
-	{{ modules.StasyTable(languages, sortby="percentage", flags=True) }}
+	{{ modules.StasyTable(languages, sortby="percentage", locale=True) }}
 
 
 	<h3>{{ _("Geo locations") }}</h3>

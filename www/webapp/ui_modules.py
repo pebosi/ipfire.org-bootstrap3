@@ -8,6 +8,7 @@ import operator
 import socket
 import textile
 import tornado.escape
+import tornado.locale
 import tornado.web
 
 from tornado.database import Row
@@ -141,7 +142,7 @@ class TrackerPeerListModule(UIModule):
 
 
 class StasyTableModule(UIModule):
-	def render(self, items, sortby="key", reverse=False, percentage=False, flags=False):
+	def render(self, items, sortby="key", reverse=False, percentage=False, flags=False, locale=False):
 		hundred_percent = 0
 		for v in items.values():
 			hundred_percent += v
@@ -171,6 +172,17 @@ class StasyTableModule(UIModule):
 			_items = []
 			for k, v in items:
 				k = _("%s to %s") % k
+				_items.append((k, v))
+			items = _items
+
+		if locale:
+			flags = False
+			locales = tornado.locale.LOCALE_NAMES
+			_items = []
+			for k, v in items:
+				for code, locale in locales.items():
+					if code.startswith(k):
+						k = locale["name"]
 				_items.append((k, v))
 			items = _items
 
