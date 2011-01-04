@@ -632,10 +632,12 @@ class Stasy(object):
 	def get_network_zones_map(self):
 		zones = { "green" : 0, "blue" : 0, "orange" : 0, "red" : 0 }
 
+		all = self.query({ "profile.network" : { "$exists" : True }})
+
 		for zone in zones.keys():
 			zones[zone] = self.query({
 				"profile.network.%s" % zone : True,
-			}).count()
+			}).count() / all.count()
 
 		return zones
 

@@ -141,7 +141,7 @@ class TrackerPeerListModule(UIModule):
 
 
 class StasyTableModule(UIModule):
-	def render(self, items, sortby="key", reverse=False):
+	def render(self, items, sortby="key", reverse=False, percentage=False):
 		hundred_percent = 0
 		for v in items.values():
 			hundred_percent += v
@@ -159,7 +159,10 @@ class StasyTableModule(UIModule):
 		if hundred_percent:
 			_items = []
 			for k in keys:
-				v = items[k] * 100 / hundred_percent
+				if not percentage:
+					v = items[k] * 100 / hundred_percent
+				else:
+					v = items[k] * 100
 				_items.append((k, v))
 			items = _items
 
