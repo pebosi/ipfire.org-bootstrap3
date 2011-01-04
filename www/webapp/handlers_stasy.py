@@ -41,9 +41,7 @@ class StasyBaseHandler(BaseHandler):
 
 class StasyIndexHandler(StasyBaseHandler):
 	def get(self):
-		profiles = self.stasy.get_profiles()
-
-		self.render("stasy-index.html", profiles=profiles)
+		self.render("stasy-index.html")
 
 	def post(self):
 		profile_id = self.get_argument("profile_id", None)
