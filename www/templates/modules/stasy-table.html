@@ -1,7 +1,12 @@
 <table class="stats">
 	{% for k, v in items %}
 		<tr>
-			<td class="key">{{ k }}</td>
+			<td class="key">
+				{% if flags %}
+					<img src="{{ static_url("images/flags/%s.png" % k) }}" />
+				{% end %}
+				{{ k }}
+			</td>
 			<td class="bar"><p style="{{ "width: %.2f%%" % v }}">&nbsp;</p></td>
 			<td class="value">{{ "%.2f" % v }}%</td>
 		</tr>

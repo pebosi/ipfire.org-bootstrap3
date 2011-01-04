@@ -141,7 +141,7 @@ class TrackerPeerListModule(UIModule):
 
 
 class StasyTableModule(UIModule):
-	def render(self, items, sortby="key", reverse=False, percentage=False):
+	def render(self, items, sortby="key", reverse=False, percentage=False, flags=False):
 		hundred_percent = 0
 		for v in items.values():
 			hundred_percent += v
@@ -174,7 +174,7 @@ class StasyTableModule(UIModule):
 				_items.append((k, v))
 			items = _items
 
-		return self.render_string("modules/stasy-table.html", items=items)
+		return self.render_string("modules/stasy-table.html", items=items, flags=flags)
 
 
 class StasyDeviceTableModule(UIModule):
