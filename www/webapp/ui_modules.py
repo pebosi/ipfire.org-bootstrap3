@@ -166,6 +166,14 @@ class StasyTableModule(UIModule):
 				_items.append((k, v))
 			items = _items
 
+		if items and type(items[0][0]) == type(()) :
+			_ = self.locale.translate
+			_items = []
+			for k, v in items:
+				k = _("%s to %s") % k
+				_items.append((k, v))
+			items = _items
+
 		return self.render_string("modules/stasy-table.html", items=items)
 
 
