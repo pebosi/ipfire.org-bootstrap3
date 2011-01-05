@@ -182,7 +182,7 @@ class StasyTableModule(UIModule):
 			for k, v in items:
 				for code, locale in locales.items():
 					if code.startswith(k):
-						k = locale["name"]
+						k = locale["name"].split()[0]
 				_items.append((k, v))
 			items = _items
 
