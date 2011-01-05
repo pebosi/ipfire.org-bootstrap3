@@ -12,8 +12,6 @@ import backend
 
 BASEDIR = os.path.dirname(__file__)
 
-tornado.options.parse_command_line()
-
 def word_wrap(s, width=45):
 	paragraphs = s.split('\n')
 	lines = []
