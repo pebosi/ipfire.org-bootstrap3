@@ -144,8 +144,8 @@ class Image1(ImageObject):
 	default_size = 500, 50
 
 	_filename = "i-use-1.png"
-	_font = "DejaVuSans-Bold.ttf"
-	_font_size = 9
+	_font = "DejaVuSans.ttf"
+	_font_size = 10
 
 	def draw(self):
 		_ = self.locale.translate
