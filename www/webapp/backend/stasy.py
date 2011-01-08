@@ -5,6 +5,7 @@ from __future__ import division
 import hwdata
 import logging
 import pymongo
+import re
 
 from misc import Singleton
 
@@ -13,6 +14,33 @@ DATABASE_NAME = "stasy"
 
 CPU_SPEED_CONSTRAINTS = (0, 500, 1000, 1500, 2000, 2500, 3000, 3500)
 MEMORY_CONSTRAINTS = (0, 128, 256, 512, 1024, 2048, 4096, 8128, 16384)
+
+CPU_STRINGS = (
+	# AMD
+	(r"(AMD Athlon).*(XP).*", r"\1 \2"),
+	(r"(AMD Phenom).* ([0-9]+) .*", r"\1 \2"),
+	(r"(AMD Phenom).*", r"\1"),
+	(r"(AMD Sempron).*", r"\1"),
+	(r"AMD Athlon.* II X2 ([a-z0-9]+).*", r"AMD Athlon X2 \1"),
+	(r"(Geode).*", r"\1"),
+
+	# Intel
+	(r"Intel.*(Atom|Celeron).*CPU\s*([A-Z0-9]+) .*", r"Intel \1 \2"),
+	(r"(Intel).*(Celeron).*", r"\1 \2"),
+	(r"Intel.* Core.*2 Duo CPU .* ([A-Z0-9]+) .*", r"Intel C2D \1"),
+	(r"Intel.* Core.*2 CPU .* ([A-Z0-9]+) .*", r"Intel C2 \1"),
+	(r"Intel.* Core.*2 Quad CPU .* ([A-Z0-9]+) .*", r"Intel C2Q \1"),
+	(r"Intel.* Xeon.* CPU .* ([A-Z0-9]+) .*", r"Intel Xeon \1"),
+	(r"(Intel).*(Xeon).*", r"\1 \2"),
+	(r"Intel.* Pentium.* (D|4) .*", r"Intel Pentium \1"),
+	(r"Intel.* Pentium.* Dual .* ([A-Z0-9]+) .*", r"Intel Pentium Dual \1"),
+	(r"Pentium.* Dual-Core .* ([A-Z0-9]+) .*", r"Intel Pentium Dual \1"),
+	(r"(Pentium I{2,3}).*", r"Intel \1"),
+	(r"(Celeron \(Coppermine\))", r"Intel Celeron"),
+
+	# VIA
+	(r"(VIA \w*).*", r"\1"),
+)
 
 class ProfileDict(object):
 	def __init__(self, data):
@@ -31,6 +59,13 @@ class ProfileCPU(ProfileDict):
 	@property
 	def speed(self):
 		return self._data.get("speed")
+
+	@property
+	def friendly_speed(self):
+		if self.speed < 1000:
+			return "%dMHz" % self.speed
+
+		return "%.1fGHz" % round(self.speed / 1000, 1)
 
 	@property
 	def bogomips(self):
@@ -63,6 +98,20 @@ class ProfileCPU(ProfileDict):
 	@property
 	def capable_virt(self):
 		return "vmx" in self.flags or "svm" in self.flags
+
+	@property
+	def friendly_vendor(self):
+		s = self.model_string
+		for pattern, repl in CPU_STRINGS:
+			if re.match(pattern, s) is None:
+				continue
+			return re.sub(pattern, repl, s)
+
+		return s
+
+	@property
+	def friendly_string(self):
+		return "%s @ %s" % (self.friendly_vendor, self.friendly_speed)
 
 
 class ProfileHypervisor(ProfileDict):
@@ -257,8 +306,35 @@ class Profile(ProfileDict):
 		return self.system.get("memory")
 
 	@property
+	def friendly_memory(self):
+		units = ("k", "M", "G", "T")
+
+		mem = self.memory
+		i = 0
+		while mem >= 1024:
+			mem /= 1024
+			i += 1
+
+		return "%d%s" % (round(mem, 0), units[i])
+
+	@property
 	def root_size(self):
 		return self.system.get("root_size") or 0
+
+	@property
+	def friendly_root_size(self):
+		units = ("k", "M", "G", "T")
+
+		size = self.root_size
+		if not size:
+			return
+
+		i = 0
+		while size >= 1024:
+			size /= 1024
+			i += 1
+
+		return "%d%s" % (round(size, 0), units[i])
 
 	@property
 	def vendor(self):
@@ -644,35 +720,4 @@ class Stasy(object):
 
 if __name__ == "__main__":
 	s = Stasy()
-
-	print s.get_profile("0" * 40)
-	print s.cpu_vendors
-	for id in s.secret_ids:
-		print "\t", id
-
-	#for p in s._db.profiles.find():
-	#	print p
-
-	print s.cpu_map
-	print s.memory_map
-	print s.memory_average
-	print s.hypervisor_vendors
-	print s.hypervisor_models
-	print s.languages
-	print s.language_maps
-	print s.vendors
-	print s.vendor_map
-	print s.models
-	print s.cpus
-	print s.cpu_map
-	print s.arches
-	print s.arch_map
-	print s.kernels
-	print s.kernel_map
-	print s.releases
-	print s.release_map
-
-	p = s.get_profile("0b5f4fe2162fdfbfa29b632610e317078fa70d34")
-	print p._data
-#	print p.hypervisor
 
