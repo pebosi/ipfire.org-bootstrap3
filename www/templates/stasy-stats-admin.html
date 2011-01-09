@@ -1,0 +1,30 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{% end block %}
+
+{% block content %}
+	<h3>Need a headline</h3>
+
+	<table>
+		<tr>
+			<td>
+				{{ _("Sending profiles") }}
+			</td>
+			<td>
+				{{ profiles_count }} / {{ profiles_count_all }}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ _("Archive size") }}
+			</td>
+			<td>
+				{{ archives_count }}
+			</td>
+		</tr>
+	</table>
+
+	<h3>{{ _("Updates in the last 24 hours") }}</h3>
+	{{ modules.StasyTable(updated_since_24h, percentage=False, sortby="percentage") }}
+{% end block %}
+

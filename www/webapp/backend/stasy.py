@@ -2,6 +2,7 @@
 
 from __future__ import division
 
+import datetime
 import hwdata
 import logging
 import pymongo
@@ -371,7 +372,11 @@ class Stasy(object):
 		# a given date
 
 		# All distinct profiles (based on public_id)
-		return self._db.profiles.distinct("public_id").count()
+		# XXX possibly bad performance
+		return len(self._db.profiles.distinct("public_id"))
+
+	def get_archives_count(self):
+		return self._db.archives.count()
 
 	#def _get_profile_cursor(self, public_id):
 	#	c = self._db.profiles.find({ "public_id" : public_id })
@@ -716,6 +721,26 @@ class Stasy(object):
 			}).count() / all.count()
 
 		return zones
+
+	def get_profile_ratio(self):
+		return (self.query({}).count(), self.get_profile_count())
+
+	def get_updated_since(self, since, _query={}):
+		since = datetime.datetime.utcnow() - datetime.timedelta(**since)
+
+		query = { "updated" : { "$gte" : since }}
+		query.update(_query)
+
+		return self.query(query)
+
+	def get_updates_by_release_since(self, since):
+		updates = {}
+
+		for release in self.releases:
+			updates[release] = self.get_updated_since(since,
+				{ "profile.system.release" : release }).count()
+
+		return updates
 
 
 if __name__ == "__main__":

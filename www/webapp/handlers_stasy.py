@@ -165,3 +165,24 @@ class StasyStatsModelDetail(StasyBaseHandler):
 			model_id=model_id,
 			model_name=model_name,
 			percentage=percentage)
+
+
+class StasyStatsAdminHandler(StasyBaseHandler):
+	def get(self):
+		_ = self.locale.translate
+
+		data = {}
+
+		data["profiles_count"], data["profiles_count_all"] = \
+			self.stasy.get_profile_ratio()
+
+		data["archives_count"] = self.stasy.get_archives_count()
+
+		# updated since 24h
+		since = { "hours" : 24 }
+		updates = self.stasy.get_updates_by_release_since(since)
+		#updates[_("All versions")] = self.stasy.get_updated_since(since).count()
+		data["updated_since_24h"] = updates
+
+		self.render("stasy-stats-admin.html", **data)
+
