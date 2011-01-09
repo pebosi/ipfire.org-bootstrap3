@@ -2,10 +2,16 @@
 
 {% block content %}
 	<h3>{{ vendor_name }}</h3>
-	<p>
-		This is a list of all devices this database knows about from
-		<strong>{{ vendor_name }}</strong>.
-	</p>
+	{% if lang == "de" %}
+		<p>
+			Dies ist eine Aufstellung über alle Geräte von
+			<strong>{{ vendor_name }}</strong> in der Datenbank.
+	{% else %}
+		<p>
+			This is a list of all devices this database knows about from
+			<strong>{{ vendor_name }}</strong>.
+		</p>
+	{% end %}
 
 	{{ modules.StasyDeviceTable(models) }}
 {% end block %}

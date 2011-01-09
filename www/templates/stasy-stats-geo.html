@@ -1,19 +1,33 @@
 {% extends "stasy-base-2.html" %}
 
-{% block title %}{% end block %}
+{% block title %}{{ _("Geo locations") }}{% end block %}
 
 {% block content %}
 	<h3>{{ _("Language selection") }}</h3>
-	<p>
-		This will give a short overview about what languages are configured
-		on the IPFire webinterface.
-	</p>
+	{% if lang == "de" %}
+		<p>
+			Dies gibt einen Überblick über die Häufigkeit der ausgewählten
+			Sprachen.
+		</p>
+	{% else %}
+		<p>
+			This will give a short overview about what languages are configured
+			on the IPFire webinterface.
+		</p>
+	{% end %}
 	{{ modules.StasyTable(languages, sortby="percentage", locale=True) }}
 
 
 	<h3>{{ _("Geo locations") }}</h3>
-	<p>
-		This chart shows us in which country IPFire is running.
-	</p>
+	{% if lang == "de" %}
+		<p>
+			Dieses Diagramm zeigt in welchem Land IPFire am häufigsten
+			eingesetzt wird.
+		</p>
+	{% else %}
+		<p>
+			This chart shows us in which country IPFire is running.
+		</p>
+	{% end %}
 	{{ modules.StasyTable(geo_locations, sortby="percentage", flags=True) }}
 {% end block %}

@@ -1,21 +1,37 @@
 {% extends "stasy-base-2.html" %}
 
-{% block title %}{% end block %}
+{% block title %}{{ _("Virtualization") }}{% end block %}
 
 {% block content %}
 	<h3>{{ _("Virtualization support") }}</h3>
-	<p>
-		IPFire is running very well in a virtual environment.
-	</p>
-	<p>
-		See this chart to get a clue about how many machines are running
-		virtually.
-	</p>
+	{% if lang == "de" %}
+		<p>
+			IPFire läuft hervorragend in virtuellen Umgebungen.
+		</p>
+		<p>
+			Dieser Graph gibt Aufschluss darüber, wieviele Systeme
+			virtuell laufen.
+		</p>
+	{% else %}
+		<p>
+			IPFire is running very well in a virtual environment.
+		</p>
+		<p>
+			See this chart to get a clue about how many machines are running
+			virtually.
+		</p>
+	{% end %}
 	{{ modules.StasyTable(is_virtual, sortby="percentage") }}
 
 	<h4>{{ _("Hypervisors") }}</h4>
-	<p>
-		This is a list of all hypervisor vendors that IPFire is running on.
-	</p>
+	{% if lang == "de" %}
+		<p>
+			Diese Systeme werden eingesetzt um IPFire zu virtualisieren:
+		</p>
+	{% else %}
+		<p>
+			This is a list of all hypervisor vendors that IPFire is running on.
+		</p>
+	{% end %}
 	{{ modules.StasyTable(hypervisor_vendors, sortby="percentage") }}
 {% end block %}
