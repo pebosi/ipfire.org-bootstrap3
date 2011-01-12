@@ -155,6 +155,8 @@ class Application(tornado.web.Application):
 			(r"/mirrors/edit/([0-9]+)", AdminMirrorsEditHandler),
 			(r"/mirrors/details/([0-9]+)", AdminMirrorsDetailsHandler),
 			(r"/mirrors/update", AdminMirrorsUpdateHandler),
+			# Fireinfo
+			(r"/fireinfo/stats", AdminFireinfoStatsHandler),
 			# API
 			(r"/api/planet/render", AdminApiPlanetRenderMarkupHandler)
 		] + static_handlers)

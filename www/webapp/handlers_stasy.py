@@ -167,7 +167,7 @@ class StasyStatsModelDetail(StasyBaseHandler):
 			percentage=percentage)
 
 
-class StasyStatsAdminHandler(StasyBaseHandler):
+class AdminFireinfoStatsHandler(StasyBaseHandler):
 	def get(self):
 		_ = self.locale.translate
 
