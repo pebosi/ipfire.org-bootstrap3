@@ -680,7 +680,6 @@ class Stasy(object):
 
 			count += geo_locations[geo_location]
 
-		# XXX must only be systems that have profile data
 		profiles_all = self.query({})
 
 		unknown_count = profiles_all.count() - count
@@ -692,7 +691,6 @@ class Stasy(object):
 	def get_models_by_vendor(self, subsystem, vendor_id):
 		devices = []
 
-		# XXX must only be systems that have profile data
 		profiles_all = self.query({})
 
 		for profile in profiles_all:
