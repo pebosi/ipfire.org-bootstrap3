@@ -164,7 +164,8 @@ class StasyStatsModelDetail(StasyBaseHandler):
 			vendor_name=vendor_name,
 			model_id=model_id,
 			model_name=model_name,
-			percentage=percentage)
+			percentage=percentage,
+			bus=bus.lower())
 
 
 class AdminFireinfoStatsHandler(StasyBaseHandler):
