@@ -57,7 +57,7 @@
 		<tr>
 			<td colspan="3">
 				<p>{{ _("Checksums") }} (SHA1):</p>
-				<pre>{% for file in release.files %}{{ file.sha1 }} {{ file.filename }}{{ "\n" }}{% end %}</pre>
+				<pre>{% for file in release.files %}{{ file.sha1 }} {{ file.basename }}{{ "\n" }}{% end %}</pre>
 			</td>
 		</tr>
 	</table>

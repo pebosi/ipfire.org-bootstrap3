@@ -94,6 +94,10 @@ class File(object):
 	def filename(self):
 		return self.__data.get("filename")
 
+	@property
+	def basename(self):
+		return os.path.basename(self.filename)
+
 
 class Release(object):
 	@property
