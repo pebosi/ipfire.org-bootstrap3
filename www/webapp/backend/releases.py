@@ -200,6 +200,9 @@ class Release(object):
 
 		path = os.path.join(basepath, self.path)
 
+		if not os.path.exists(path):
+			return
+
 		files = [f.filename for f in self.files]
 
 		# Make files that do not exists not loadable.
