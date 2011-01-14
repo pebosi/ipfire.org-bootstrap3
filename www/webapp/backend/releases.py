@@ -163,7 +163,11 @@ class Release(object):
 		sha1 = hashlib.sha1()
 
 		with open(filename) as f:
-			sha1.update(f.read())
+			buf_size = 1024
+			buf = f.read(buf_size)
+			while buf:
+				sha1.update(buf)
+				buf = f.read(buf_size)
 
 		return sha1.hexdigest()
 
