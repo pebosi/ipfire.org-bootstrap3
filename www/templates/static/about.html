@@ -17,12 +17,12 @@
 		<div id="concept">
 			{% if lang == "de" %}
 				<p>
-					<strong>IPFire</strong> ist auf der Grundidee "Flexibilität" aufgebaut. Das ermöglicht
-					aus einer einzigen Basis verschiedene Arten von Betriebssystemen zu bauen. Beginnend mit einem
-					Firewall-System bestehend aus wenigen Megabytes ist es möglich IPFire auch als Dateiserver oder
-					VPN-Gateway für Mitarbeiter, Filialen oder Kunden zu betreiben. Dies und mehr ist möglich durch
-					den Paketmanager, der nur installiert was gewollt ist und Sicherheitsupdates sehr einfach
-					macht.
+					<strong>IPFire</strong> ist auf der Grundidee einer hohen "Flexibilität" aufgebaut. Das ermöglicht
+					aus einer einzigen Basis verschiedene Einsatzzwecke optimal zu unterstützen. Beginnend mit einem
+					Firewall-System bestehend aus wenigen Megabytes ist es möglich IPFire auch als Dateiserver,
+					Proxyserver, Wireless Access Point oder	VPN-Gateway für Mitarbeiter, Filialen oder Kunden zu
+					betreiben. Dies und mehr ist möglich durch einen eigens entwickelten Paketmanager, der nur
+					installiert was gewollt	ist und Sicherheitsupdates sehr einfach macht.
 				</p>
 				<p>
 					Dies ist der beste Weg ein Netzwerk sicher zu gestalten, denn Sicherheit ist kein Programm,
@@ -245,23 +245,31 @@
 			{% if lang == "de" %}
 				<p>
 					IPFire kann zu einem VPN-Gateway (virtal private network - virtuelles, privates Netzwerk)
-					ausgebaut werden, welches Orte und Personen mit dem lokalen Netzwerk verbindet. Dies können
-					zum Beispiel Mitarbeiter, Freunde oder Personen sein mit denen man Daten sicher austauschen möchte,
-					aber auch eine Filiale, Außenstelle, wichtige Kunden oder andere Unternehmen mit denen kommuniziert
-					wird.
+					ausgebaut werden, welches Personen mit unterschiedlichem Standort untereinander verbindet.
+					Dies können zum Beispiel Mitarbeiter, Freunde oder Personen sein mit denen man Daten sicher
+					austauschen möchte, aber auch eine Filiale, Außenstelle, wichtige Kunden oder andere Unternehmen
+					mit denen kommuniziert wird.
 				</p>
 				<p>
 					Um sich über verschiedene Technologien verbinden zu können verfügt IPFire über folgende
 					Implementierungen:
 				</p>
 				<ul class="list">
-					<li><strong>IPSec</strong>, das Netzwerke mit anderen Netzwerken transparent verbindet.</li>
-					<li>Für sogenannte <em>Roadwarrior-Clients</em> (z.B. Notebooks) gibt es <strong>OpenVPN</strong>.</li>
+					<li>
+						<strong>IPSec</strong>, das Netzwerke mit anderen Netzwerken transparent verbindet und
+						gut geeignet ist für permanente Verbindungen.
+					</li>
+					<li>
+						Für sogenannte <em>Roadwarrior-Clients</em> (z.B. Notebooks) gibt es <strong>OpenVPN</strong>
+						um in verschiedenen Situationen ad hoc eine sichere Verbindung herzustellen.
+					</li>
 				</ul>
 				<br class="clear" />
 				<p>
 					Mit dieser Software, lässt sich IPFire leicht mit Routern oder VPN-Gateways von
-					<a href="http://www.cisco.com">Cisco</a>, <a href="http:///www.juniper.net">Juniper</a>,
+					<a href="http://www.cisco.com" target="_blank">Cisco</a>,
+					<a href="http:///www.juniper.net" target="_blank">Juniper</a>,
+					<a href="http://www.checkpoint.com" target="_blank">Checkpoint</a>,
 					andere Linux-basierten Implementierungen verbinden und vielem mehr...
 				</p>
 			{% else %}
@@ -282,7 +290,9 @@
 				<br class="clear" />
 				<p>
 					Those implementations let IPFire connect to routers or VPN gateways by:
-					<a href="http://www.cisco.com">Cisco</a>, <a href="http://www.juniper.net">Juniper</a>,
+					<a href="http://www.cisco.com" target="_blank">Cisco</a>,
+					<a href="http:///www.juniper.net" target="_blank">Juniper</a>,
+					<a href="http://www.checkpoint.com" target="_blank">Checkpoint</a>,
 					other Linux-based implementations and many more...
 				</p>
 			{% end %}
@@ -301,7 +311,7 @@
 				</p>
 				<p>
 					Es wird mindestens eine i586er CPU benötigt (Intel Pentium I oder höher). Weiterhin
-					empfehlen wir 128 MB RAM (oder mehr) und 1GB Festplattenplatz.
+					empfehlen wir mindestens 128 MB RAM und 1GB Festplattenplatz.
 				</p>
 				<p>
 					Für den Einsatz als Router sind mindestens zwei Netzwerkschnittstellen erforderlich.
@@ -388,6 +398,7 @@
 					<li>Kostenfreie Nutzung über einen unbegrenzten Zeitraum</li>
 					<li>Einblick in den Quelltext</li>
 					<li>Möglichkeiten zur Mitwirkung und Verbeserung</li>
+					<li>Unabhängigkeit von einem Hersteller</li>
 				</ul>
 			{% else %}
 				<p>
@@ -405,6 +416,7 @@
 					<li>Free use for unlimited time</li>
 					<li>Review of the source code</li>
 					<li>Opportunity to take part in and make own improvements</li>
+					<li>Independence from a specific vendor</li>
 				</ul>
 			{% end %}
 		</div>
