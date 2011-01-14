@@ -62,6 +62,7 @@ div.line {
 
 img {
 	padding: 3px;
+	border: 0;
 }
 
 img.floatTL {
