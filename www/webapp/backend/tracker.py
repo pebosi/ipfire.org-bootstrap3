@@ -110,6 +110,9 @@ class Tracker(object):
 		args = [ "last_update = '%s'" % self.now ]
 
 		if ip:
+			if ip.startswith("172.28.1."):
+				ip = "178.63.73.246"
+
 			args.append("ip='%s'" % ip)
 
 		if port:
