@@ -84,6 +84,7 @@ class Application(tornado.web.Application):
 			(r"/mirrors", tornado.web.RedirectHandler, { "url" : "http://mirrors.ipfire.org/" }),
 			(r"/source", tornado.web.RedirectHandler, { "url" : "http://source.ipfire.org/" }),
 		] + static_handlers + [
+			(r"/(iso|torrent)/(.*)", DownloadCompatHandler),
 			(r"/(.*)", DownloadFileHandler),
 		])
 

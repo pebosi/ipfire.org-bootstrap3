@@ -60,6 +60,19 @@ class Mirrors(object):
 		for mirror in mirrors:
 			yield self.get(mirror.id)
 
+	def get_all_files(self):
+		files = []
+
+		for mirror in self.list():
+			if not mirror.state == "UP":
+				continue
+
+			for file in mirror.filelist:
+				if not file in files:
+					files.append(file)
+
+		return files
+
 
 class Mirror(object):
 	def __init__(self, id):

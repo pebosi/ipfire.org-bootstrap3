@@ -86,3 +86,19 @@ class DownloadFileHandler(BaseHandler):
 
 		self.mirrors.db.execute("INSERT INTO log_download(filename, mirror, country_code) VALUES(%s, %s, %s)",
 			filename, mirror.id, country_code)
+
+
+class DownloadCompatHandler(BaseHandler):
+	def get(self, path, url):
+		_filename = None
+
+		for filename in self.mirrors.get_all_files():
+			if filename.endswith("/%s" % url):
+				_filename = filename
+				break
+
+		if not _filename:
+			raise tornado.web.HTTPError(404)
+
+		self.redirect("/%s" % _filename)
+
