@@ -11,6 +11,11 @@ class GeoIP(object):
 		return Databases().geoip
 
 	def __encode_ip(self, addr):
+		# We get a tuple if there were proxy headers.
+		addr = addr.split(", ")
+		if addr:
+			addr = addr[-1]
+
 		# ip is calculated as described in http://ipinfodb.com/ip_database.php
 		a1, a2, a3, a4 = addr.split(".")
 
