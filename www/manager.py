@@ -79,8 +79,23 @@ class MirrorManager(Manager):
 		self.mirrors.check_all()
 
 
+class ReleaseFilesManager(Manager):
+	@property
+	def releases(self):
+		return backend.Releases()
+
+	@property
+	def timeout(self):
+		return backend.Config().get_int("releasefiles_check_interval")
+
+	def do(self):
+		for release in self.releases.get_all():
+			release.scan_files()
+
+
 if __name__ == "__main__":
 	d = Daemon()
 	d.add(MirrorManager)
+	d.add(ReleaseFilesManager)
 
 	d.run()

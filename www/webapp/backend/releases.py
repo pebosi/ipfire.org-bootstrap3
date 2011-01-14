@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
+import hashlib
 import logging
+import os
+import re
 import urlparse
 
 from databases import Databases
@@ -138,6 +141,10 @@ class Release(object):
 		return self.__data.get("date")
 
 	@property
+	def path(self):
+		return self.__data.get("path")
+
+	@property
 	def torrent_hash(self):
 		h = self.__data.get("torrent_hash")
 		if h:
@@ -147,6 +154,75 @@ class Release(object):
 		for file in self.files:
 			if file.type == type:
 				return file
+
+	def __file_hash(self, filename):
+		sha1 = hashlib.sha1()
+
+		with open(filename) as f:
+			sha1.update(f.read())
+
+		return sha1.hexdigest()
+
+	def __guess_filetype(self, filename):
+		if filename.endswith(".iso"):
+			return "iso"
+
+		if filename.endswith(".torrent"):
+			return "torrent"
+
+		if "xen" in filename:
+			return "xen"
+
+		if "sources" in filename:
+			return "source"
+
+		if "usb-fdd" in filename:
+			return "usbfdd"
+
+		if "usb-hdd" in filename:
+			return "usbhdd"
+
+		if "scon" in filename:
+			return "alix"
+
+		if filename.endswith(".img.gz"):
+			return "flash"
+
+		return "unknown"
+
+	def scan_files(self, basepath="/srv/mirror0"):
+		if not self.path:
+			return
+
+		path = os.path.join(basepath, self.path)
+
+		files = [f.filename for f in self.files]
+
+		# Make files that do not exists not loadable.
+		for filename in files:
+			_filename = os.path.join(basepath, filename)
+			if not os.path.exists(_filename):
+				self.db.execute("UPDATE files SET loadable='N' WHERE filename = %s", filename)
+
+		for filename in os.listdir(path):
+			filename = os.path.join(path, filename)
+
+			if os.path.isdir(filename):
+				continue
+
+			_filename = re.match(".*(releases/.*)", filename).group(1)
+			if _filename in files:
+				continue
+
+			if filename.endswith(".md5"):
+				continue
+
+			filehash = self.__file_hash(filename)
+			filesize = os.path.getsize(filename)
+			filetype = self.__guess_filetype(filename)
+
+			self.db.execute("""INSERT INTO files(releases, filename, filesize, filetype, sha1)
+				VALUES(%s, %s, %s, %s, %s)""", self.id, _filename, filesize, filetype, filehash)
 
 
 class Releases(object):
