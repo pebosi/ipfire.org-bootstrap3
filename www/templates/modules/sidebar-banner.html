@@ -1,7 +1,6 @@
 {% if item %}
-	<h4>{{ item.title }}</h4>
-
-	<a href="{{ item.link }}" {% if item.link.startswith("http://") %}target="_blank" {% end %}>
-		<img src="{{ static_url(item.uri) }}" border="0" alt="{{ _("Banner") }}" />
+	<h4>{{ item.caption }}</h4>
+	<a href="{{ item.uri }}" {% if item.uri.startswith("http://") %}target="_blank" {% end %}>
+		<img src="{{ static_url("images/banners/" + item.image) }}" border="0" alt="{{ _("Banner") }}" />
 	</a>
 {% end %}

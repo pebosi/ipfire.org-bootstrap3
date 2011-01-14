@@ -1,0 +1,53 @@
+{% extends "mirrors.html" %}
+
+{% block title %}Mirror {{ item.hostname }}{% end block %}
+
+{% block content %}
+	<h3>{{ item.hostname }}</h3>
+
+	<table class="mirrors">
+		<tr>
+			<td>{{ _("State") }}</td>
+			<td class="{{ item.state.lower() }}">
+				{% if item.state.lower() == "up" %}
+					{{ _("Up") }}
+				{% elif item.state.lower() == "down" %}
+					{{ _("Down") }}
+				{% elif item.state.lower() == "outofsync" %}
+					{{ _("Out of synchronization") }}
+				{% else %}
+					{{ _("Unknown") }}
+				{% end %}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ _("Last update") }}</td>
+			<td>{{ locale.format_date(item.last_update, full_format=True) }}</td>
+		</tr>
+		<tr>
+			<td>{{ _("Owner") }}</td>
+			<td>{{ item.owner }}</td>
+		</tr>
+	</table>
+
+	<p class="links">
+		<a href="{{ item.url }}" target="_blank">{{ _("Open mirror") }}</a>
+		&bull;
+		<a href="/">{{ _("List of all mirror servers") }}</a>
+	</p>
+
+	<br class="clear" />
+
+	<h3>{{ _("Mirror location") }}</h3>
+	<p>
+		{{ _("The mirror <em>%s</em> is located in %s.") % (item.hostname, item.location_str) }}
+		<br class="clear" />
+		<img class="map"
+			src="http://maps.google.com/maps/api/staticmap?center={{ item.coordiantes }}&size=640x280&zoom=6&markers=color:blue|label:.|{{ item.coordiantes }}&sensor=false"
+			alt="{{ _("Location of the server") }}" />
+	</p>
+{% end block %}
+
+{% block sidebar %}
+	{{ modules.SidebarBanner() }}
+{% end block %}

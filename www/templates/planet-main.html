@@ -1,0 +1,68 @@
+{% extends "base-2.html" %}
+
+{% block title %}{{ _("IPFire Planet") }}{% end block %}
+
+{% block content %}
+	<div class="post">
+		<h3>{{ _("IPFire Planet") }}</h3>
+
+		{% if lang == "de" %}
+			<p>
+				Der <strong>IPFire Planet</strong> ist eine Plattform für alle
+				Personen, die in das Projekt involviert sind um mit der
+				Community in Kontakt zu bleiben und sie über neue Entwicklungen
+				zu informieren.
+			</p>
+			<p>
+				Um den Aufwand für die Entwickler in Maßen zu halten sind
+				alle Einträge nur auf Englisch verfügbar.
+			</p>
+		{% else %}
+			<p>
+				The <strong>IPFire Planet</strong> is a place for the people
+				who are involved in the project to tell the community about
+				new progress in the development or make some minor announcements.
+			</p>
+		{% end %}
+		<br class="clear" />
+		<!--
+		<p>
+			{{ _("Last issues") }}:
+			<ul>
+				{% for entry in entries %}
+					<li>
+						<a href="/post/{{ entry.slug }}">{{ entry.title }}</a>
+						{{ _("by") }}
+						<a href="/user/{{ entry.author.uid }}">{{ entry.author.cn }}</a>
+					</li>
+				{% end %}
+			</ul>
+		</p>
+		-->
+	</div>
+
+	<div class="line"></div>
+
+	{% for entry in entries %}
+		{{ modules.PlanetEntry(entry, short=True) }}
+	{% end %}
+	
+	<p class="right">
+		{% if offset - limit %}
+			<a href="?offset={{ offset - (2 * limit) }}">&lt;&lt; {{ _("See newer entries") }}</a>
+			&bull;
+		{% end %}
+		<a href="?offset={{ offset }}">{{ _("See older entries") }} &gt;&gt;</a>
+	</p>
+{% end block %}
+
+{% block sidebar %}
+		<h4>{{ _("People on the planet") }}</h4>
+		<ul class="list">
+			{% for author in authors %}
+				<li>
+					<a href="/user/{{ author.uid }}">{{ author.cn }}</a>
+				</li>
+			{% end %}
+		</ul>
+{% end %}

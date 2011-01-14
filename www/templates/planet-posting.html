@@ -1,0 +1,7 @@
+{% extends "planet-user.html" %}
+
+{% block title %}{{ _("IPFire Planet") }} - {{ entry.title }}{% end block %}
+
+{% block content %}
+	{{ modules.PlanetEntry(entry) }}
+{% end block %}

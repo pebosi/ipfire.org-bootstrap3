@@ -1,0 +1,15 @@
+<table class="tracker-peerlist">
+	<tr>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+		<th>Hostname</th>
+	</tr>
+	{% for peer in peers %}
+		<tr>
+			<td class="ip">{{ peer.ip }}</td>
+			<td><img src="{{ static_url("images/flags/" + peer.country_code + ".png") }}"
+				alt="{{ peer.country_code }}" /></td>
+			<td>{{ peer.hostname or "---" }}</td>
+		</tr>
+	{% end %}
+</table>

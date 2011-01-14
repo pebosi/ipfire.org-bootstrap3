@@ -1,0 +1,18 @@
+<div class="post">
+	<h3>{{ item.name }}</h3>
+	<p>	
+		{{ _("Here you will find the downloads for the version") }} {{ item.name }}:
+	</p>
+
+	<div align="right">
+		{% if item.files %}
+			{% for file in item.files %}
+				<a class="{{ file.type }}" href="{{ file.url }}">{{ _(file.desc) }}</a><br />
+			{% end %}
+		{% else %}
+			<p>{{ _("There are no downloads available for this release.") }}</p>
+		{% end %}
+	</div>
+
+	<br class="clear" />
+</div>

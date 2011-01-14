@@ -1,0 +1,19 @@
+{% extends "stasy-base-1.html" %}
+
+{% block title %}{{ _("Profile lookup") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Profile lookup") }}</h3>
+
+	<p>
+		Please enter your profile ID and have a look of the hardware components
+		that are installed on your system:
+	</p>
+
+	<form name="profile">
+		<p>
+			<input type="text" name="profile_id" size="40" maxlength="40" />
+			<input type="submit" value="{{ _("Show profile") }}" />
+		</p>
+	</form>
+{% end block %}

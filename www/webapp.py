@@ -1,20 +1,32 @@
 #!/usr/bin/python2.6
 
-import tornado.httpserver
-import tornado.ioloop
+import daemon
+import logging
+import logging.handlers
+import os
+import signal
+import sys
+
+#import tornado.httpserver
+#import tornado.ioloop
+import tornado.options
 
 from webapp import Application
-application = Application()
 
 if __name__ == "__main__":
-	http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
-	http_server.listen(8001)
+	app = Application()
 
-	try:
-		tornado.ioloop.IOLoop.instance().start()
-	except:
-		# Shutdown mirror monitoring
-		from webapp.mirrors import mirrors
-		mirrors.shutdown()
+	context = daemon.DaemonContext(
+		working_directory=os.getcwd(),
+#		stdout=sys.stdout, stderr=sys.stderr, # XXX causes errors...
+	)
 
-		raise
+	context.signal_map = {
+		signal.SIGHUP  : app.reload,
+		signal.SIGTERM : app.shutdown,
+	}
+
+#	with context:
+#		app.run()
+
+	app.run()

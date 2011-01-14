@@ -1,0 +1,26 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+	<div id="post">
+		<h3>{{ _("Planet Administrator") }}</h3>
+		
+		<p>
+			<a href="/planet/compose">{{ _("Compose new entry") }}</a>
+		</p>
+
+		<table>
+			<tr>
+				<th>{{ _("Author") }}</th>
+				<th>{{ _("Title") }}</th>
+				<th>&nbsp;</th>
+			</tr>
+			{% for entry in entries %}
+				<tr>
+					<td>{{ entry.author.cn }}</td>
+					<td><a href="http://planet.ipfire.org/post/{{ entry.slug }}" target="_blank">{{ entry.title }}</a></td>
+					<td><a href="/planet/edit/{{ entry.id }}">{{ _("Edit") }}</a></td>
+				</tr>
+			{% end %}
+		</table>
+	</div>
+{% end %}

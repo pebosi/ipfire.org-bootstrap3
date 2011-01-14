@@ -1,0 +1,59 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{{ _("CPU flags") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Processor flags") }}</h3>
+	{% if lang == "de" %}
+		<p>
+			Diese Seite untersucht CPUs und ihre Funktionalitäten.
+			Anhand dieser Graphen können die Entwickler einige Entscheidungen
+			über die Betriebssystemkonfiguration treffen.
+		</p>
+	{% else %}
+		<p>
+			On this page we will examine which CPUs provide a specific feature.
+			These charts will help the IPFire developers to make decisions about
+			the operating system configuration.
+		</p>
+	{% end %}
+
+	<h4>{{ _("CPUs that support virtualization") }}</h4>
+	{% if lang == "de" %}
+		<p>
+			Für zukünftige Planungen ist es nötig zu wissen, ob genug
+			Hardware mit Virtualisierungsunterstützung vorhanden ist
+			(Intels VT-x and AMD-V).
+		</p>
+	{% else %}
+		<p>
+			For future planning it is important to know if there is enough hardware
+			support for virtualization like VT-x and AMD-V.
+		</p>
+	{% end %}
+	{{ modules.StasyTable(cpus_virt, sortby="percentage") }}
+
+	<h4>{{ _("CPUs with PAE") }}</h4>
+	{% if lang == "de" %}
+		<p>
+			Diese Grafik zeigt uns wieviele Prozessoren das PAE-Flag unterstützen.
+		</p>
+	{% else %}
+		<p>
+			This chart shows us which CPUs have got the PAE flag.
+		</p>
+	{% end %}
+	{{ modules.StasyTable(cpus_pae, sortby="percentage") }}
+
+	<h4>{{ _("CPUs that support 64 bits") }}</h4>
+	{% if lang == "de" %}
+		<p>
+			Wieviele Prozessoren unterstützen die 64-Bit-Architektur?
+		</p>
+	{% else %}
+		<p>
+			How many CPUs support the 64-bit architecture?
+		</p>
+	{% end %}
+	{{ modules.StasyTable(cpus_lm, sortby="percentage") }}
+{% end block %}

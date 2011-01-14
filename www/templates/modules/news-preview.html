@@ -1,0 +1,9 @@
+<div class="post">
+	<a name="{{ item.slug }}"></a>
+	<h3>
+		<a href="/news/{{ item.slug }}">{{ item.title }}</a>
+	</h3>
+	<div class="post_info">{{ item.date }} {{ _("by") }} {{ item.author }}</div>
+	{{ item.text }}
+</div>
+

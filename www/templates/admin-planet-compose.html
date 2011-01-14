@@ -1,0 +1,56 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+	<div class="post">
+		<h3>{{ _("Compose new entry") }}</h3>
+		<form name="entry" method="post">
+			{{ xsrf_form_html() }}
+			{% if entry.id %}
+				<input type="hidden" name="id" value="{{ entry.id }}">
+			{% end %}
+
+			<table>
+				<tr>
+					<td>{{ _("Title") }}</td>
+					<td><input type="text" name="title" value="{{ entry.title }}"
+						size="50" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<textarea id="markdown" name="markdown" rows="20" cols="80">{{ entry.markdown }}</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" onClick="preview()" value="{{ _("Preview") }}" />
+						<input type="submit" value="{{ _("Save") }}" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div id="preview"></div>
+{% end block %}
+
+{% block javascript %}
+	<script type="text/javascript">
+		preview = function() {
+			$.get("/api/planet/render", { text : $("#markdown").val() },
+				function(data) {
+					$("#preview").html(data);
+				}
+			);
+		}
+	</script>
+{% end block %}
+
+{% block sidebar %}
+	<h4>Syntax info</h4>
+	<ul>
+		<li>
+			<a href="http://de.wikipedia.org/wiki/Markdown" target="_blank">Wikipedia</a>
+		</li>
+	</ul>
+{% end block %}

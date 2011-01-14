@@ -1,0 +1,26 @@
+<div class="post">
+	<h2 class="title"><a href="/post/{{ entry.slug }}">{{ entry.title }}</a></h2>
+	<p class="meta">
+		{{ _("Posted by") }} <a href="/user/{{ entry.author.uid }}">{{ entry.author.cn }}</a>
+		{{ _("on") }} {{ locale.format_date(entry.published, shorter=True) }}
+		<!-- &bull; <a href="/post/{{ entry.slug }}">{{ _("Full article") }}</a> -->
+	</p>
+	<div class="entry">
+		<img class="floatTR" src="{{ entry.author.gravatar_icon(64) }}"
+			alt="{{ entry.author.cn }}" />
+
+		{% if short %}
+			{{ entry.abstract }}
+		{% else %}
+			{{ entry.text }}
+		{% end %}
+
+		<p class="links">
+			{% if short %}
+				<a href="/post/{{ entry.slug }}">{{ _("Read more") }}</a>
+				&bull;
+			{% end %}
+			{{ _("Last updated on") }} {{ locale.format_date(entry.updated) }}.
+		</p>
+	</div>
+</div>

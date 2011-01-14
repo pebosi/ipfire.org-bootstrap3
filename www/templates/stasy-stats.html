@@ -1,0 +1,29 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{{ _("Statistics") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("fireinfo statistics") }}</h3>
+	{% if lang == "de" %}
+		<p>
+			An dieser Stelle sind eine Menge Statistiken zu finden, die
+			einen Überblick geben sollen welche Art von Hardware am häufigsten
+			eingesetzt wird.
+		</p>
+	{% else %}
+		<p>
+			At this place you can find several charts to find out what kind
+			of hardware is most often used for IPFire.
+		</p>
+	{% end %}
+
+	<ul class="list">
+		<li><a href="/stats/cpus">{{ _("Processors") }}</a></li>
+		<li><a href="/stats/cpuflags">{{ _("Processor flags") }}</a></li>
+		<li><a href="/stats/memory">{{ _("Memory") }}</a></li>
+		<li><a href="/stats/oses">{{ _("IPFire versions") }}</a></li>
+		<li><a href="/stats/virtual">{{ _("Virtualization") }}</a></li>
+		<li><a href="/stats/geo">{{ _("Geographical information") }}</a></li>
+		<li><a href="/stats/network">{{ _("Network") }}</a></li>
+	</ul>
+{% end block %}

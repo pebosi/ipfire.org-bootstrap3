@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-1.html" %}
 
 {% block title %}{{ _("Mirror-Server") }}{% end block %}
 
@@ -45,32 +45,25 @@
 		
 		<table class="download-mirrors">
 			<tr>
-				<th>{{ _("Owner (Hostname)") }}</th>
+				<th>{{ _("Owner") }}</th>
+				<th>{{ _("Hostname") }}</th>
 				<th>{{ _("Location") }}</th>
-				<th>{{ _("Latency") }}</th>
+				<th>{{ _("Last update") }}</th>
+				<th>&nbsp;</th>
 			</tr>
-			{% for mirror in mirrors.all %}
-				<tr class="{% if not mirror.reachable %}un{% end %}reachable">
-					<td>{{ mirror.name }} ({{ mirror.hostname }})</td>
+			{% for mirror in mirrors %}
+				<tr class="{{ mirror.state.lower() }}">
+					<td>{{ mirror.owner }}</td>
+					<td><a href="{{ mirror.url }}" target="_blank">{{ mirror.hostname }}</a></td>
 					<td>
-						<img src="{{ static_url("images/flags/%s.png" % mirror.location["country_code"]) }}"
-							 align="absmiddle" alt="{{ mirror.location["country_code"] }}" />
-						{{ mirror.location["country"] }}, {{ mirror.location["city"] }}
+						<img src="{{ static_url("images/flags/%s.png" % mirror.country_code) }}"
+							 align="absmiddle" alt="{{ mirror.country_code }}" />
+						{{ mirror.location }}
 					</td>
-					<td class="latency">{{ mirror.latency }} ms</td>
+					<td>{{ locale.format_date(mirror.last_update) }}</td>
+					<td><a href="{{ mirror.id }}">{{ _("details") }}</a></td>
 				</tr>
 			{% end %}
-			<tr class="legend">
-				<td colspan="3">&nbsp;</td>
-			</tr>
-			<tr class="legend">
-				<td><strong>{{ _("Legend") }}:</strong></td>
-				<td colspan="2" class="reachable">{{ _("Server is reachable") }}</td>
-			</tr>
-			<tr class="legend">
-				<td>&nbsp;</td>
-				<td colspan="2" class="unreachable">{{ _("Server is unreachable") }}</td>
-			</tr>
 		</table>
 
 		<br class="clear" />

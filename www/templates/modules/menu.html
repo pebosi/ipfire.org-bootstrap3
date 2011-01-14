@@ -1,7 +1,9 @@
 <div id="menu">
 	<ul>
 		{% for item in menuitems %}
-			{{ modules.MenuItem(item) }}
+			<li>
+				<a href="{{ item.uri }}"{% if item.active %} class="active"{% end %}>{{ item.description }}</a>
+			</li>
 		{% end %}
 	</ul>
 </div>

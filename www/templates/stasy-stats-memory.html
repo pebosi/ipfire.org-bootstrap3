@@ -1,0 +1,11 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{{ _("Memory") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Memory") }}</h3>
+	<p>
+		{{ _("The average amount of memory of all systems in the database is: <strong>%.2f MB</strong>.") % average_memory }}
+	</p>
+	{{ modules.StasyTable(memory) }}
+{% end block %}

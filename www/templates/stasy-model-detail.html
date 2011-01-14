@@ -1,0 +1,28 @@
+{% extends "stasy-base-1.html" %}
+
+{% block title %}{{ vendor_name }} - {{ model_name or model_id }}{% end block %}
+
+{% block content %}
+	<h3>{{ vendor_name }} - {{ model_name or model_id  }}</h3>
+	<p>
+		{{ _("This device is installed on approximately %.2f%% of all systems.") % percentage }}
+	</p>
+
+	<h3>{{ _("Feedback") }}</h3>
+	{% if lang == "de" %}
+		<p>
+			Im IPFire-Wiki befindet sich eine Sektion mit Kommentaren und Ratschlägen
+			zu dieser Hardware. Diese werden von der Community gesammelt.
+		</p>
+	{% else %}
+		<p>
+			In the IPFire wiki is a section that keeps comments or instructions on
+			the hardware. These information is maintained by the community.
+		</p>
+	{% end %}
+
+	<p>
+		{{ _("Go to the wiki") }}:
+		<a href="http://wiki.ipfire.org/{{ lang }}/hardware/fireinfo/{{ bus }}/{{ vendor_id }}/{{ model_id }}">{{ vendor_name }} - {{ model_name or model_id }}</a>
+	</p>
+{% end block %}

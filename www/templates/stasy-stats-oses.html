@@ -1,0 +1,24 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}{{ _("Operating system") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Releases") }}</h3>
+	{{ modules.StasyTable(releases, sortby="percentage") }}
+
+	<h3>{{ _("Architectures") }}</h3>
+	{{ modules.StasyTable(arches, sortby="percentage") }}
+
+	<h3>{{ _("Kernels") }}</h3>
+	{% if lang == "de" %}
+		<p>
+			Dies zeigt uns, welche Kernel am häufigsten verwendet werden.
+		</p>
+	{% else %}
+		<p>
+			This chart gives an overview about what kernel the machines are
+			runnning.
+		</p>
+	{% end %}
+	{{ modules.StasyTable(kernels, sortby="percentage") }}
+{% end block %}

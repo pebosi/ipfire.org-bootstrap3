@@ -1,0 +1,41 @@
+{% extends "stasy-base-2.html" %}
+
+{% block title %}Fireinfo{% end block %}
+
+{% block content %}
+	<h3>Fireinfo</h3>
+
+	{% if lang == "de" %}
+		<p>
+			Bitte geben Sie ihre Profil-ID ein um einen Überblick über alle
+			Komponenten in Ihrem System zu erhalten:
+		</p>
+	{% else %}
+		<p>
+			Please enter your profile ID and have a look of the hardware components
+			that are installed on your system:
+		</p>
+	{% end %}
+
+	<form name="profile" method="POST">
+		{{ xsrf_form_html() }}
+		<p>
+			<input type="text" name="profile_id" size="40" maxlength="40" />
+			<input type="submit" value="{{ _("Show profile") }}" />
+		</p>
+	</form>
+	<br class="clear" />
+
+	<h3>{{ _("What is fireinfo?") }}</h3>
+	{% if lang == "de" %}
+		<p>
+			Klicken Sie <a href="http://wiki.ipfire.org/de/fireinfo/start" target="_blank">hier</a>
+			um mehr über fireinfo zu erfahren.
+		</p>
+	{% else %}
+		<p>
+			Click <a href="http://wiki.ipfire.org/en/fireinfo/start" target="_blank">here</a>
+			to learn more about how fireinfo is working.
+		</p>
+	{% end %}
+{% end block %}

@@ -1,7 +1,34 @@
-{% extends "base.html" %}
+{% extends "base-1.html" %}
+
+{% block title %}News{% end block %}
 
 {% block content %}
-	{% for item in news.get() %}
+	<h3>What is new on the IPFire project?</h3>
+
+	<!-- XXX fill in some nice illustration -->
+
+	<p>
+		At this place you will know about the most important announces.
+		For development information and the little beans there is the
+		<a href="http://planet.ipfire.org">IPFire Planet</a>.
+	</p>
+	
+	<p>
+		To get latest news, there is the a
+		<a class="feed" href="/news.rss"> RSS feed</a>.
+	</p>
+
+	<br class="clear" />
+
+	{% for item in news %}
 		{{ modules.NewsItem(item) }}
 	{% end %}
+
+	<p class="links">
+		{% if offset - limit %}
+			<a href="?offset={{ offset - (2 * limit) }}">&lt;&lt; {{ _("See newer news entries") }}</a>
+			&bull;
+		{% end %}
+		<a href="?offset={{ offset }}">{{ _("See older news entries") }} &gt;&gt;</a>
+	</p>
 {% end block %}

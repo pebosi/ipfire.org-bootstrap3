@@ -1,0 +1,49 @@
+{% extends "base-2.html" %}
+
+{% block title %}Index{% end block %}
+
+{% block content %}
+	<h3>{{ _("IPFire Download Center") }}</h3>
+
+	<!-- <img src="{{ static_url("images/box_ipfire.png") }}" alt="{{ _("CD-Box") }}" class="floatTR" /> -->
+
+	<p>
+		Welcome to the downloads section of the IPFire project.
+		<br />
+		At this place you can download every release of IPFire that was published
+		in the last years.
+	</p>
+
+	<p>
+		Please note that older or development releases could bring serious
+		security and stability issues that were solved in a more recent version.
+	<p>
+
+	<h4>Downloads on this site</h4>
+	<ul class="list">
+		<li><a href="/latest">{{ _("Latest release") }}</a></li>
+		<li><a href="/older">{{ _("List of older downloads") }}</a></li>
+		<li><a href="/development">{{ _("Development releases") }}</a></li>
+		<li><a href="/source">{{ _("Source code") }}</a></li>
+	</ul>
+
+	<br class="clear" />
+
+	{{ modules.ReleaseItem(release) }}
+
+{% end block %}
+
+{% block sidebar %}
+	<h4>{{ _("Download options") }}</h4>
+	<ul class="list">
+		<li><a href="/latest">{{ _("Latest release") }}</a></li>
+		<li><a href="/older">{{ _("Older downloads") }}</a></li>
+		<li><a href="/development">{{ _("Development releases") }}</a></li>
+		<li><a href="/source">{{ _("Source code") }}</a></li>
+	</ul>
+
+	<h4>{{ _("Other options") }}</h4>
+	<ul class="list">
+		<li><a href="/mirrors">{{ _("Mirror list") }}</a></li>
+	</ul>
+{% end %}

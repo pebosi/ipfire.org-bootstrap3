@@ -1,0 +1,31 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+	<div id="post">
+		<h3>{{ _("Mirror Administrator") }}</h3>
+		
+		<p>
+			<a href="/mirrors/create">{{ _("Create new mirror") }}</a> |
+			<a href="/mirrors/update">{{ _("Re-check now") }}</a>
+		</p>
+
+		<table>
+			<tr>
+				<th>{{ _("Hostname") }}</th>
+				<th>{{ _("Last update") }}</th>
+				<th>&nbsp;</th>
+			</tr>
+			{% for mirror in mirrors %}
+				<tr class="mirror-{{ mirror.state.lower() }}">
+					<td>{{ mirror.hostname }}</td>
+					<td>{{ locale.format_date(mirror.last_update) }}</td>
+					<td>
+						<a href="/mirrors/details/{{ mirror.id }}">{{ _("Details") }}</a>
+						<a href="/mirrors/edit/{{ mirror.id }}">{{ _("Edit") }}</a>
+						<a href="/mirrors/delete/{{ mirror.id }}">{{ _("Delete") }}</a>
+					</td>
+				</tr>
+			{% end %}
+		</table>
+	</div>
+{% end %}

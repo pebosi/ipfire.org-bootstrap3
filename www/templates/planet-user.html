@@ -1,0 +1,26 @@
+{% extends "base-2.html" %}
+
+{% block title %}{{ _("IPFire Planet") }} - {{ author.cn }}{% end block %}
+
+{% block content %}
+	{% if entries %}
+		{% for entry in entries %}
+			{{ modules.PlanetEntry(entry, short=True) }}
+		{% end %}
+		
+		<p class="right">
+			{% if offset - limit %}
+				<a href="?offset={{ offset - (2 * limit) }}">&lt;&lt; {{ _("See newer entries") }}</a>
+				&bull;
+			{% end %}
+			<a href="?offset={{ offset }}">{{ _("See older entries") }} &gt;&gt;</a>
+		</p>
+	{% else %}
+			<p>{{ _("%s did no postings, yet.") % author.cn }}</p>
+	{% end %}
+{% end block %}
+
+{% block sidebar %}
+	<h4>{{ author.cn }}</h4>
+	<img src="{{ author.gravatar_icon(170) }}" alt="{{ author.uid }}" />
+{% end %}
