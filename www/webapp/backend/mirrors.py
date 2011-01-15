@@ -207,11 +207,21 @@ class Mirror(object):
 			logging.debug("Error getting timestamp from %s" % self.hostname)
 			return
 
-		self.db.execute("DELETE FROM mirror_files WHERE mirror=%s", self.id)
+		files = self.filelist
 
 		for file in response.body.splitlines():
+			file = os.path.join(self.prefix, file)
+
+			if file in files:
+				files.remove(file)
+				continue
+
 			self.db.execute("INSERT INTO mirror_files(mirror, filename) VALUES(%s, %s)",
-					self.id, os.path.join(self.prefix, file))
+				self.id, file)
+
+		for file in files:
+			self.db.execute("DELETE FROM mirror_files WHERE mirror=%s AND filename=%s",
+				self.id, file)
 
 		logging.info("Successfully updated mirror filelist from %s" % self.hostname)
 
