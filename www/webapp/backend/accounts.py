@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# encoding: utf-8
 
 import hashlib
 import ldap
@@ -149,6 +150,12 @@ class Account(object):
 	def email(self):
 		name = self.cn.lower()
 		name = name.replace(" ", ".")
+		name = name.replace("Ä", "Ae")
+		name = name.replace("Ö", "Oe")
+		name = name.replace("Ü", "Ue")
+		name = name.replace("ä", "ae")
+		name = name.replace("ö", "oe")
+		name = name.replace("ü", "ue")
 
 		for mail in self.mail:
 			if mail.startswith(name + "@"):
