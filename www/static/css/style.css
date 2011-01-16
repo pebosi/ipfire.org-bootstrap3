@@ -17,7 +17,7 @@ div.fixed {
 	margin: 0em;
 	padding: 0em;
 }
-
+html { overflow-y: scroll }
 body {
   font-family: "Verdana", "Deja-Vu Sans", "Bitstream Vera Sans", sans-serif;
   font-size: 0.9em;
