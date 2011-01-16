@@ -106,7 +106,7 @@ class Planet(object):
 		return query
 
 	def get_entries(self, limit=3, offset=None):
-		query = "SELECT * FROM planet ORDER BY published DESC"
+		query = "SELECT * FROM planet WHERE acknowledged='Y' ORDER BY published DESC"
 
 		# Respect limit and offset		
 		query += self._limit_and_offset_query(limit=limit, offset=offset)
@@ -119,7 +119,7 @@ class Planet(object):
 
 	def get_entries_by_author(self, author_id, limit=None, offset=None):
 		query = "SELECT * FROM planet WHERE author_id = '%s'" % author_id
-		query += " ORDER BY published DESC"
+		query += " AND acknowledged='Y' ORDER BY published DESC"
 
 		# Respect limit and offset		
 		query += self._limit_and_offset_query(limit=limit, offset=offset)
