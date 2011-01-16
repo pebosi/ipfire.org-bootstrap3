@@ -28,9 +28,9 @@ CPU_STRINGS = (
 	# Intel
 	(r"Intel.*(Atom|Celeron).*CPU\s*([A-Z0-9]+) .*", r"Intel \1 \2"),
 	(r"(Intel).*(Celeron).*", r"\1 \2"),
-	(r"Intel.* Core.*2 Duo CPU .* ([A-Z0-9]+) .*", r"Intel C2D \1"),
+	(r"Intel.* Core.*2 Duo *CPU .* ([A-Z0-9]+) .*", r"Intel C2D \1"),
 	(r"Intel.* Core.*2 CPU .* ([A-Z0-9]+) .*", r"Intel C2 \1"),
-	(r"Intel.* Core.*2 Quad CPU .* ([A-Z0-9]+) .*", r"Intel C2Q \1"),
+	(r"Intel.* Core.*2 Quad *CPU .* ([A-Z0-9]+) .*", r"Intel C2Q \1"),
 	(r"Intel.* Xeon.* CPU .* ([A-Z0-9]+) .*", r"Intel Xeon \1"),
 	(r"(Intel).*(Xeon).*", r"\1 \2"),
 	(r"Intel.* Pentium.* (D|4) .*", r"Intel Pentium \1"),
