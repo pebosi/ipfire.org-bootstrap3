@@ -63,6 +63,9 @@ class Application(tornado.web.Application):
 			# Download sites
 			(r"/downloads?", DownloadHandler),
 
+			# Handle old pages that have moved elsewhere
+			(r"/screenshots", tornado.web.RedirectHandler, { "url" : "/about" }),
+
 			# RSS feed
 			(r"/news.rss", RSSNewsHandler),
 

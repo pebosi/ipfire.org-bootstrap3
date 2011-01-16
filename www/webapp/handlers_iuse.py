@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import logging
+import os
+import random
 import tornado.web
 
 from handlers_base import *
@@ -14,6 +16,24 @@ class IUseImage(BaseHandler):
 	@property
 	def stasy(self):
 		return backend.Stasy()
+
+	def get_error_html(self, status_code, **kwargs):
+		"""
+			Select a random image from the errors directory
+			and return the content.
+		"""
+		self.set_header("Content-Type", "image/png")
+
+		template_path = self.application.settings.get("template_path", "")
+		template_path = os.path.join(template_path, "i-use", "errors")
+
+		images = os.listdir(template_path)
+		if images:
+			image = random.choice(images)
+			image = os.path.join(template_path, image)
+
+			with open(image, "rb") as f:
+				return f.read()
 
 	def get(self, profile_id, image_id):
 		image = None

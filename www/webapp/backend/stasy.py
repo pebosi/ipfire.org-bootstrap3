@@ -666,7 +666,7 @@ class Stasy(object):
 
 	@property
 	def geo_locations(self):
-		return [code.lower() for code in self.query({}).distinct("geoip.country_code")]
+		return [code.lower() for code in self.query({}, all=True).distinct("geoip.country_code")]
 
 	def get_geo_location_map(self):
 		geo_locations = {}
@@ -676,15 +676,9 @@ class Stasy(object):
 			geo_locations[geo_location] = \
 				self.query({
 					"geoip.country_code" : geo_location.upper()
-				}).count()
+				}, all=True).count()
 
 			count += geo_locations[geo_location]
-
-		profiles_all = self.query({})
-
-		unknown_count = profiles_all.count() - count
-		if unknown_count:
-			geo_locations["unknown"] = unknown_count
 
 		return geo_locations
 
