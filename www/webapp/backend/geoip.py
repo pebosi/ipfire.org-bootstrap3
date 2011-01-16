@@ -1,10 +1,15 @@
 #!/usr/bin/python
 
+import re
+
 from databases import Databases
 from misc import Singleton
 
 class GeoIP(object):
 	__metaclass__ = Singleton
+
+	def __init__(self):
+		self.__country_codes = self.db.query("SELECT code, name FROM iso3166_countries")
 
 	@property
 	def db(self):
@@ -31,6 +36,20 @@ class GeoIP(object):
 			ORDER BY ip_start DESC LIMIT 1;", self.__encode_ip(addr)).location
 			
 		return self.db.get("SELECT * FROM locations WHERE id = %s", int(location))
+
+	def get_country_name(self, code):
+		name = "Unknown"
+
+		code = code.upper()
+		for country in self.__country_codes:
+			if country.code == code:
+				name = country.name
+				break
+
+		# Fix some weird strings
+		name = re.sub(r"(.*) (.* Republic of)", r"\2 \1", name)
+
+		return name
 
 
 if __name__ == "__main__":

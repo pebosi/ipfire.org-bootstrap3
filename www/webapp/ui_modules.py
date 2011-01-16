@@ -33,6 +33,10 @@ class UIModule(tornado.web.UIModule):
 	def releases(self):
 		return self.handler.releases
 
+	@property
+	def geoip(self):
+		return self.handler.geoip
+
 
 class MenuModule(UIModule):
 	def render(self):
@@ -201,3 +205,22 @@ class StasyDeviceTableModule(UIModule):
 		
 		return self.render_string("modules/stasy-table-devices.html",
 			groups=groups.items())
+
+
+class StasyGeoTableModule(UIModule):
+	def render(self, items):
+		_ = self.locale.translate
+
+		# Sort all items by value
+		items = sorted(items.items(), key=operator.itemgetter(1), reverse=True)
+
+		countries = []
+		for code, value in items:
+			country = tornado.database.Row({
+				"code" : code.lower(),
+				"name" : _(self.geoip.get_country_name(code)),
+				"value" : value * 100,
+			})
+			countries.append(country)
+
+		return self.render_string("modules/stasy-table-geo.html", countries=countries)
