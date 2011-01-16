@@ -1,0 +1,13 @@
+<table class="stats">
+	{% for country in countries %}
+		<tr>
+			<td class="key">
+				<img src="{{ static_url("images/flags/%s.png" % country.code) }}" />
+				{{ country.name }}
+			</td>
+			<td class="bar"><p style="{{ "width: %.2f%%" % country.value }}">&nbsp;</p></td>
+			<td class="value">{{ "%.2f" % country.value }}%</td>
+		</tr>
+	{% end %}
+</table>
+<br class="clear" />

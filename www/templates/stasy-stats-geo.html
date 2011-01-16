@@ -29,5 +29,5 @@
 			This chart shows us in which country IPFire is running.
 		</p>
 	{% end %}
-	{{ modules.StasyTable(geo_locations, sortby="percentage", flags=True) }}
+	{{ modules.StasyGeoTable(geo_locations) }}
 {% end block %}

@@ -36,6 +36,7 @@ class Application(tornado.web.Application):
 				"SidebarRelease" : SidebarReleaseModule,
 				"StasyTable"     : StasyTableModule,
 				"StasyDeviceTable" : StasyDeviceTableModule,
+				"StasyGeoTable"  : StasyGeoTableModule,
 				"TrackerPeerList": TrackerPeerListModule,
 			},
 			xsrf_cookies = True,

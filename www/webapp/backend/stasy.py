@@ -680,6 +680,9 @@ class Stasy(object):
 
 			count += geo_locations[geo_location]
 
+		for geo_location in geo_locations.keys():
+			geo_locations[geo_location] /= count
+
 		return geo_locations
 
 	def get_models_by_vendor(self, subsystem, vendor_id):
