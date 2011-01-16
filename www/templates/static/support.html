@@ -10,11 +10,14 @@
 
 	{% if lang == "de" %}
 		<p>
-			Die erste Anlaufstelle für Probleme ist das <a href="http://wiki.ipfire.org/{{ lang }}/start">Wiki</a>. Das Wiki enthält für die meisten Fragen die passende Antwort.
+			Die erste Anlaufstelle für Probleme ist das
+			<a href="http://wiki.ipfire.org/{{ lang }}/start" target="_blank">Wiki</a>.
+			Das Wiki enthält für die meisten Fragen die passende Antwort.
 		</p>
 	{% else %}
 		<p>
-			The first place to go when you need help is the <a href="http://wiki.ipfire.org/{{ lang }}/start">wiki</a>.
+			The first place to go when you need help is the
+			<a href="http://wiki.ipfire.org/{{ lang }}/start" target="_blank">wiki</a>.
 			It is a collection of pages which will answer most of the question that may come up.
 		</p>
 	{% end %}
@@ -40,7 +43,7 @@
 			knowledge. This is the only way to get the wiki to the best source of information about IPFire.
 		{% end %}
 	</p>
-
+	<br class="clear" />
 
 	<h3>{{ _("Forum") }}</h3>
 	<a href="http://forum.ipfire.org" target="_blank">
@@ -49,15 +52,16 @@
 
 	{% if lang == "de" %}
 		<p>
-			Die zweite Informationsquelle ist das <a href="http://forum.ipfire.org">Forum</a>.
+			Die zweite Informationsquelle ist das <a href="http://forum.ipfire.org" target="_blank">Forum</a>.
 			Spezielle Fragen, die nicht im Wiki beantwortet wurden, können hier gestellt werden.
 		</p>
 	{% else %}
 		<p>
-			The second place is the <a href="http://forum.ipfire.org">forum</a>. If your question was not 
-			answered in the wiki you may probably want to ask it there.
+			The second place is the <a href="http://forum.ipfire.org" target="_blank">forum</a>.
+			If your question was not answered in the wiki you may probably want to ask it there.
 		</p>
 	{% end %}
+	<br class="clear" />
 
 	<h3>{{ _("Internet relay chat") }}</h3>
 	<img class="floatTR" src="{{ static_url("images/icons/irc.png") }}" alt="IRC" />
@@ -74,7 +78,8 @@
 		</p>
 	{% end %}
 	<p>
-		<strong>{{ _("Server") }}:</strong> irc.freenode.net
+		<strong>{{ _("Server") }}:</strong>
+		<a href="http://webchat.freenode.net/?channels=ipfire" target="_blank">irc.freenode.net</a>
 		<br />
 		<strong>{{ _("Channel") }}:</strong> #ipfire
 	</p>
