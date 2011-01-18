@@ -21,7 +21,7 @@ class Application(tornado.web.Application):
 	def __init__(self):
 		settings = dict(
 			cookie_secret = "aXBmaXJlY29va2llc2VjcmV0Cg==",
-			debug = True,
+			debug = False,
 			gzip = True,
 			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),
