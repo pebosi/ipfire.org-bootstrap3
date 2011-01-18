@@ -1,0 +1,15 @@
+<table class="mirrors">
+	{% for mirror in mirrors %}
+		<tr>
+			<td class="hostname {{ mirror.state.lower() }}">
+				<a href="/mirror/{{ mirror.id }}">{{ mirror.hostname }}</a>
+			</td>
+			<td>
+				<img src="{{ static_url("images/flags/%s.png") % mirror.country_code }}" alt="{{ mirror.country_code }}" />
+				{{ mirror.location_str }}
+			</td>
+		</tr>
+	{% end %}
+</table>
+<br class="clear" />
+

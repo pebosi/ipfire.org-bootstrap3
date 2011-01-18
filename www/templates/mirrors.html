@@ -16,21 +16,16 @@
 
 	<br class="clear" />
 
-	<h3>{{ _("List of servers") }}</h3>
-	<table class="mirrors">
-		{% for mirror in mirrors %}
-			<tr>
-				<td class="hostname {{ mirror.state.lower() }}">
-					<a href="/mirror/{{ mirror.id }}">{{ mirror.hostname }}</a>
-				</td>
-				{% if not mirror.state == "UP" %}
-					<td>{{ _("Last update") }}: {{ locale.format_date(mirror.last_update) }}.</td>
-				{% else %}
-					<td>&nbsp;</td>
-				{% end %}
-			</tr>
-		{% end %}
-	</table>
+	{% if other_mirrors %}
+		<h3>{{ _("Mirror servers nearby") }}</h3>
+		{{ modules.MirrorsTable(preferred_mirrors) }}
+
+		<h3>{{ _("Worldwide mirror servers") }}</h3>
+		{{ modules.MirrorsTable(other_mirrors) }}
+	{% else %}
+		<h3>{{ _("Worldwide mirror servers") }}</h3>
+		{{ modules.MirrorsTable(preferred_mirrors) }}
+	{% end %}
 {% end block %}
 
 {% block sidebar %}

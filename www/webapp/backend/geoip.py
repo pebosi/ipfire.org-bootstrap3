@@ -3,6 +3,7 @@
 import re
 
 from databases import Databases
+from memcached import Memcached
 from misc import Singleton
 
 class GeoIP(object):
@@ -14,6 +15,10 @@ class GeoIP(object):
 	@property
 	def db(self):
 		return Databases().geoip
+
+	@property
+	def memcached(self):
+		return Memcached()
 
 	def __encode_ip(self, addr):
 		# We get a tuple if there were proxy headers.
@@ -27,15 +32,37 @@ class GeoIP(object):
 		return int(((int(a1) * 256 + int(a2)) * 256 + int(a3)) * 256 + int(a4) + 100)
 
 	def get_country(self, addr):
-		return self.db.get("SELECT * FROM ip_group_country WHERE ip_start <= %s \
-			ORDER BY ip_start DESC LIMIT 1;", self.__encode_ip(addr)).country_code.lower()
+		addr = self.__encode_ip(addr)
+
+		mem_id = "geoip-country-%s" % addr
+		ret = self.memcached.get(mem_id)
+
+		if not ret:
+			ret = self.db.get("SELECT * FROM ip_group_country WHERE ip_start <= %s \
+				ORDER BY ip_start DESC LIMIT 1;", addr).country_code.lower()
+			self.memcached.set(mem_id, ret, 3600)
+
+		return ret
 
 	def get_all(self, addr):
-		# XXX should be done with a join
-		location = self.db.get("SELECT location FROM ip_group_city WHERE ip_start <= %s \
-			ORDER BY ip_start DESC LIMIT 1;", self.__encode_ip(addr)).location
-			
-		return self.db.get("SELECT * FROM locations WHERE id = %s", int(location))
+		addr = self.__encode_ip(addr)
+
+		mem_id = "geoip-all-%s" % addr
+		ret = self.memcached.get(mem_id)
+
+		if not ret:
+			# XXX should be done with a join
+			location = self.db.get("SELECT location FROM ip_group_city WHERE ip_start <= %s \
+				ORDER BY ip_start DESC LIMIT 1;", addr).location
+
+			ret = self.db.get("SELECT * FROM locations WHERE id = %s", int(location))
+			self.memcached.set(mem_id, ret, 3600)
+
+		# If location was not determinable
+		if ret.latitude == 0 and ret.longitude == 0:
+			return None
+
+		return ret
 
 	def get_country_name(self, code):
 		name = "Unknown"

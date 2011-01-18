@@ -1,13 +1,16 @@
 #!/usr/bin/python
 
 import logging
+import math
 import os.path
+import random
 import socket
 import time
 import tornado.httpclient
 
 from databases import Databases
 from geoip import GeoIP
+from memcached import Memcached
 from misc import Singleton
 
 class Mirrors(object):
@@ -16,6 +19,10 @@ class Mirrors(object):
 	@property
 	def db(self):
 		return Databases().webapp
+
+	@property
+	def memcached(self):
+		return Memcached()
 
 	def list(self):
 		return [Mirror(m.id) for m in self.db.query("SELECT id FROM mirrors ORDER BY state")]
@@ -26,6 +33,9 @@ class Mirrors(object):
 
 	def get(self, id):
 		return Mirror(id)
+
+	def get_all(self):
+		return MirrorSet(self.list())
 
 	def get_by_hostname(self, hostname):
 		mirror = self.db.get("SELECT id FROM mirrors WHERE hostname=%s", hostname)
@@ -60,6 +70,22 @@ class Mirrors(object):
 		for mirror in mirrors:
 			yield self.get(mirror.id)
 
+	def get_for_location(self, addr):
+		distance = 10
+
+		mirrors = []
+		all_mirrors = self.list()
+
+		while all_mirrors and len(mirrors) <= 2 and distance <= 270:
+			for mirror in all_mirrors:
+				if mirror.distance_to(addr) <= distance:
+					mirrors.append(mirror)
+					all_mirrors.remove(mirror)
+
+			distance *= 1.2
+
+		return mirrors
+
 	def get_all_files(self):
 		files = []
 
@@ -72,6 +98,97 @@ class Mirrors(object):
 					files.append(file)
 
 		return files
+
+
+class MirrorSet(object):
+	def __init__(self, mirrors):
+		self._mirrors = mirrors
+
+	def __add__(self, other):
+		mirrors = []
+
+		for mirror in self._mirrors + other._mirrors:
+			if mirror in mirrors:
+				continue
+
+			mirrors.append(mirror)
+
+		return MirrorSet(mirrors)
+
+	def __sub__(self, other):
+		mirrors = self._mirrors[:]
+
+		for mirror in other._mirrors:
+			if mirror in mirrors:
+				mirrors.remove(mirror)
+
+		return MirrorSet(mirrors)
+
+	def __iter__(self):
+		return iter(self._mirrors)
+
+	def __len__(self):
+		return len(self._mirrors)
+
+	def __str__(self):
+		return "<MirrorSet %s>" % ", ".join([m.hostname for m in self._mirrors])
+
+	@property
+	def db(self):
+		return Mirrors().db
+
+	def get_with_file(self, filename):
+		with_file = [m.mirror for m in self.db.query("SELECT mirror FROM mirror_files WHERE filename=%s", filename)]
+
+		mirrors = []
+		for mirror in self._mirrors:
+			if mirror.id in with_file:
+				mirrors.append(mirror)
+
+		return MirrorSet(mirrors)
+
+	def get_random(self):
+		mirrors = []
+		for mirror in self._mirrors:
+			for i in range(0, mirror.priority + 1):
+				mirrors.append(mirror)
+
+		return random.choice(mirrors)
+
+	def get_for_country(self, country):
+		mirrors = []
+
+		for mirror in self._mirrors:
+			if country in mirror.prefer_for_countries:
+				mirrors.append(mirror)
+
+		return MirrorSet(mirrors)
+
+	def get_for_location(self, addr):
+		distance = 10
+
+		mirrors = []
+
+		while len(mirrors) <= 2 and distance <= 270:
+			for mirror in self._mirrors:
+				if mirror in mirrors:
+					continue
+
+				if mirror.distance_to(addr) <= distance:
+					mirrors.append(mirror)
+
+			distance *= 1.2
+
+		return MirrorSet(mirrors)
+
+	def get_with_state(self, state):
+		mirrors = []
+
+		for mirror in self._mirrors:
+			if mirror.state == state:
+				mirrors.append(mirror)
+
+		return MirrorSet(mirrors)
 
 
 class Mirror(object):
@@ -91,8 +208,15 @@ class Mirror(object):
 		return Databases().webapp
 
 	def reload(self):
-		self._info = self.db.get("SELECT * FROM mirrors WHERE id=%s", self.id)
-		self._info["url"] = self.generate_url()
+		memcached = Memcached()
+		mem_id = "mirror-%s" % self.id
+
+		self._info = memcached.get(mem_id)
+		if not self._info:
+			self._info = self.db.get("SELECT * FROM mirrors WHERE id=%s", self.id)
+			self._info["url"] = self.generate_url()
+
+			memcached.set(mem_id, self._info, 60)
 
 	def generate_url(self):
 		url = "http://%s" % self.hostname
@@ -114,8 +238,55 @@ class Mirror(object):
 		return socket.gethostbyname(self.hostname)
 
 	@property
+	def location(self):
+		if not hasattr(self, "__location"):
+			self.__location = GeoIP().get_all(self.address)
+
+		return self.__location
+
+	@property
+	def latitude(self):
+		return self.location.latitude
+
+	@property
+	def longitude(self):
+		return self.location.longitude
+
+	@property
+	def coordinates(self):
+		return (self.latitude, self.longitude)
+
+	@property
+	def coordiante_str(self):
+		coordinates = []
+
+		for i in self.coordinates:
+			coordinates.append("%s" % i)
+
+		return ",".join(coordinates)
+
+	@property
 	def country_code(self):
 		return GeoIP().get_country(self.address).lower() or "unknown"
+
+	@property
+	def country_name(self):
+		return GeoIP().get_country_name(self.country_code)
+
+	@property
+	def city(self):
+		if self._info["city"]:
+			return self._info["city"]
+
+		return self.location.city
+
+	@property
+	def location_str(self):
+		s = self.country_name
+		if self.city:
+			s = "%s, %s" % (self.city, s)
+
+		return s
 
 	@property
 	def filelist(self):
@@ -227,12 +398,53 @@ class Mirror(object):
 
 	@property
 	def prefer_for_countries(self):
-		return self._info.get("prefer_for_countries", "").split()
+		countries = self._info.get("prefer_for_countries", "")
+		if countries:
+			return sorted(countries.split(", "))
 
+		return []
 
+	@property
+	def prefer_for_countries_names(self):
+		return sorted([GeoIP().get_country_name(c) for c in self.prefer_for_countries])
 
-if __name__ == "__main__":
-	m = Mirrors()
+	def distance_to(self, addr):
+		location = GeoIP().get_all(addr)
+		if not location:
+			return 0
 
-	for mirror in m.list():
-		print mirror.hostname, mirror.country_code
+		if location.country_code.lower() in self.prefer_for_countries:
+			return 0
+
+		distance_vector = (
+			self.latitude - location.latitude,
+			self.longitude - location.longitude
+		)
+
+		distance = 0
+		for i in distance_vector:
+			distance += i**2
+
+		return math.sqrt(distance)
+
+	def traffic(self, since):
+		# XXX needs to be done better
+
+		files = {}
+		for entry in self.db.query("SELECT filename, filesize FROM files"):
+			files[entry.filename] = entry.filesize
+
+		query = "SELECT COUNT(filename) as count, filename FROM log_download WHERE mirror = %s"
+		query += " AND date >= %s GROUP BY filename"
+
+		traffic = 0
+		for entry in self.db.query(query, self.id, since):
+			if files.has_key(entry.filename):
+				traffic += entry.count * files[entry.filename]
+
+		return traffic
+
+	@property
+	def priority(self):
+		return self._info.get("priority", 1) * 10
+

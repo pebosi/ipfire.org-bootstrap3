@@ -7,29 +7,28 @@ from handlers_base import *
 
 class MirrorIndexHandler(BaseHandler):
 	def get(self):
-		mirrors = self.mirrors.list()
+		ip_addr = self.get_argument("addr", self.request.remote_ip)
 
-		self.render("mirrors.html", mirrors=mirrors)
+		# Get a list of all mirrors.
+		all_mirrors = self.mirrors.get_all()
+
+		# Choose the preferred ones by their location.
+		preferred_mirrors = all_mirrors.get_for_location(ip_addr)
+
+		# Remove the preferred ones from the list of the rest.
+		other_mirrors = all_mirrors - preferred_mirrors
+
+		self.render("mirrors.html",
+			preferred_mirrors=preferred_mirrors, other_mirrors=other_mirrors)
 
 
 class MirrorItemHandler(BaseHandler):
 	def get(self, id):
+		_ = self.locale.translate
+
 		mirror = self.mirrors.get(id)
 		if not mirror:
 			raise tornado.web.HTTPError(404)
-
-		ip = socket.gethostbyname(mirror.hostname)
-		mirror.location = self.geoip.get_all(ip)
-
-		# Shortcut for coordiantes
-		mirror.coordiantes = "%s,%s" % \
-			(mirror.location.latitude, mirror.location.longitude)
-
-		# Nice string for the user
-		mirror.location_str = mirror.location.country_code
-		if mirror.location.city:
-			mirror.location_str = "%s, %s" % \
-				(mirror.location.city, mirror.location_str)
 
 		self.render("mirrors-item.html", item=mirror)
 
