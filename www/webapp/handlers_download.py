@@ -90,6 +90,7 @@ class DownloadFileHandler(BaseHandler):
 
 		self.redirect(mirror.url + filename[len(mirror.prefix):])
 
+		self.geoip.get_country(self.request.remote_ip)
 		self.mirrors.db.execute("INSERT INTO log_download(filename, mirror, country_code) VALUES(%s, %s, %s)",
 			filename, mirror.id, country_code)
 
