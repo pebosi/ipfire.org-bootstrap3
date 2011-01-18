@@ -21,13 +21,14 @@ class Application(tornado.web.Application):
 	def __init__(self):
 		settings = dict(
 			cookie_secret = "aXBmaXJlY29va2llc2VjcmV0Cg==",
-			debug = False,
+			debug = True,
 			gzip = True,
 			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),
 			ui_modules = {
 				"Menu"           : MenuModule,
 				"MirrorItem"     : MirrorItemModule,
+				"MirrorsTable"   : MirrorsTableModule,
 				"NewsItem"       : NewsItemModule,
 				"NewsLine"       : NewsLineModule,
 				"PlanetEntry"    : PlanetEntryModule,

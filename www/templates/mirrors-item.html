@@ -28,6 +28,12 @@
 			<td>{{ _("Owner") }}</td>
 			<td>{{ item.owner }}</td>
 		</tr>
+		{% if item.prefer_for_countries %}
+			<tr>
+				<td>{{ _("Preferred for") }}:</td>
+				<td>{{ locale.list(item.prefer_for_countries_names) }}</td>
+			</tr>
+		{% end %}
 	</table>
 
 	<p class="links">
@@ -43,7 +49,7 @@
 		{{ _("The mirror <em>%s</em> is located in %s.") % (item.hostname, item.location_str) }}
 		<br class="clear" />
 		<img class="map"
-			src="http://maps.google.com/maps/api/staticmap?center={{ item.coordiantes }}&size=640x280&zoom=6&markers=color:blue|label:.|{{ item.coordiantes }}&sensor=false"
+			src="http://maps.google.com/maps/api/staticmap?center={{ item.coordiante_str }}&size=640x280&zoom=6&markers=color:blue|label:.|{{ item.coordiante_str }}&sensor=false"
 			alt="{{ _("Location of the server") }}" />
 	</p>
 {% end block %}

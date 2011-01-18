@@ -886,6 +886,7 @@ table.mirrors td {
 table.mirrors td.hostname {
 	text-align: right;
 	padding-left: 2em;
+	width: 10em;
 }
 
 table.mirrors td.down {

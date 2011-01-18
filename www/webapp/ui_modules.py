@@ -224,3 +224,8 @@ class StasyGeoTableModule(UIModule):
 			countries.append(country)
 
 		return self.render_string("modules/stasy-table-geo.html", countries=countries)
+
+
+class MirrorsTableModule(UIModule):
+	def render(self, mirrors):
+		return self.render_string("modules/mirrors-table.html", mirrors=mirrors)

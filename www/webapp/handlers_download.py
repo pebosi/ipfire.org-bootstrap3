@@ -68,19 +68,25 @@ class DownloadDevelopmentHandler(BaseHandler):
 
 class DownloadFileHandler(BaseHandler):
 	def get(self, filename):
-		country_code = self.geoip.get_country(self.request.remote_ip)
-
 		self.set_header("Pragma", "no-cache")
-		self.set_header("X-Mirror-Client-Country", country_code)
 
-		mirrors = self.mirrors.get_with_file(filename, country=country_code)
-		if not mirrors:
-			self.mirrors.get_with_file(filename)
+		# Get all mirrors...
+		mirrors = self.mirrors.get_all()
+		mirrors = mirrors.get_with_file(filename)
+		mirrors = mirrors.get_with_state("UP")
 
 		if not mirrors:
 			raise tornado.web.HTTPError(404, "File not found: %s" % filename)
 
-		mirror = random.choice(mirrors)
+		# Find mirrors located near to the user.
+		# If we have not found any, we use all.
+		if len(mirrors) <= 3:
+			#mirrors_nearby = mirrors.get_for_location(self.request.remote_ip)
+			mirrors_nearby = mirrors.get_for_location("193.59.194.101")
+			if mirrors_nearby:
+				mirrors = mirrors_nearby
+
+		mirror = mirrors.get_random()
 
 		self.redirect(mirror.url + filename[len(mirror.prefix):])
 
