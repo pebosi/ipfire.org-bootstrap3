@@ -80,11 +80,9 @@ class DownloadFileHandler(BaseHandler):
 
 		# Find mirrors located near to the user.
 		# If we have not found any, we use all.
-		if len(mirrors) <= 3:
-			#mirrors_nearby = mirrors.get_for_location(self.request.remote_ip)
-			mirrors_nearby = mirrors.get_for_location("193.59.194.101")
-			if mirrors_nearby:
-				mirrors = mirrors_nearby
+		mirrors_nearby = mirrors.get_for_location(self.request.remote_ip)
+		if mirrors_nearby:
+			mirrors = mirrors_nearby
 
 		mirror = mirrors.get_random()
 
