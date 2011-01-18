@@ -7,7 +7,7 @@
 		<ul>
 			<li><a href="#concept">{{ _("Concept of the system") }}</a></li>
 			<li><a href="#security">{{ _("Security") }}</a></li>
-			<li><a href="#pakfire">{{ _("Packet management") }}</a></li>
+			<li><a href="#pakfire">{{ _("Package management") }}</a></li>
 			<li><a href="#firewall">{{ _("Firewall") }}</a></li>
 			<li><a href="#vpn">{{ _("VPN") }}</a></li>
 			<li><a href="#hardware">{{ _("Hardware") }}</a></li>
@@ -38,20 +38,23 @@
 				<p>
 					The foundation of <strong>IPFire</strong> is the high level of flexibility which lets us
 					configure different versions of this operating system out of a single base. Beginning with a
-					few megabytes small firewall system it is possible to run IPFire as a file server or VPN gateway for
-					staff, branches or customers. This is manageable with the package manager that enhances
-					the system only if you really want to and makes securtity updates very easy.
+					small firewall system of a few megabytes, it is possible to run IPFire as a file server or
+					VPN gateway for	staff, branches or customers. This modularity means that yor version of
+					IPFire runs with exactly what you require and nothing more.
+					All features are easily configured with the package manager, which also
+					makes updates very easy.
 				</p>
 				<p>
-					We believe that this is the best way to provide security to a network. There is no way to give
-					out a static appliance because security is not a single thing to install and never touch
-					again. It's a kind of process paired with behaviour and restrictions. This plans could be very
-					different from company to company and also differ from the place IPFire is installed at.
+					We believe that this is the best way to provide security to a network. There is no way to 
+					distribute a static appliance because security menas different things to different people,
+					and changes over time. Security is more of a process paired with behaviour and restrictions.
+					IPFire has been designed to be flexible enough to fit into any existing security architecture.
 				</p>
 				<p>
-					<em>Please click through the tabs and take a look at what possibilities IPFire offers for
-					your personal concept of network. And don't be scared. We have built-in our own to
-					start with...</em>
+					<em>Please click through the tabs and take a look at the possibilities IPFire offers for
+					your personal concept of network.</em>
+					If you're still deciding what that concept is, don't worry. IPFire comes with intelligent
+					defaults for settings whereever possible.
 				</p>
 			{% end %}
 
@@ -85,21 +88,21 @@
 				</p>
 			{% else %}
 				<p>
-					The matter that counts most in the development of IPFire is - of course - security. But
-					we don't believe that there is only one single way to achieve security. It is more important
-					that every administrator knows about what he is configuring and that he is teached about what
-					is right in his special environment.
+					The primary objective in the development of IPFire is - of course - security. But it doesn't
+					mean there is only one way to achieve security. Rather, it is more important for every
+					administrator to understand their environemnt and what security means <em>in that context</em>.
 				</p>
 				<p>
-					IPFire is the base of security in the network. It has the power to separate the network into
-					smaller parts rated by their security level. That's what makes it more easy to create a custom
-					policy for every part. See the firewall tab to learn more about that.
+					IPFire is the base of security for a local network. It has the power to segment the network based
+					on their required security level. This makes it easy to create custom policies for each segment.
+					See the firewall tab for more information.
 				</p>
 				<p>
-					Another very important thing the developers focus on is the fast and reliable distribution
-					of security updates of the system or its components like the Linux kernel, libraries, etc.
-					As IPFire is directly connected to the internet it is a primary target for hackers and bots
-					we have to fight against.
+					Part of this focus on security involves the fast and reliable distribution of security updates
+					of the system and its components. Updates are digitally signed and encrypted, and can be
+					automatically installed by the Pakfire, the package manager. Since IPFire is directly
+					connected to the Internet it is a primary target for hackers and bots. Pakfire helps
+					administrators feel certain they are running the latest security updates and bug fixes.
 				</p>
 			{% end %}
 		</div>
@@ -124,19 +127,18 @@
 				</ul>
 			{% else %}
 				<p>
-					From the technical point of view, IPFire is a very shrinked and hardened firewall system
-					which comes with an integrated package manager that is called <a href="/features/pakfire">Pakfire</a>.
-					With only a single click you can extend your system to a server that provides services from different
-					categories.
+					From a technical point of view, IPFire is a minimalistic, hardened firewall system
+					which comes with an integrated package manager called Pakfire. With a single click you
+					can enhance the base system by providing network services.
 				</p>
 				<p>
-					The most interesting addons:
+					Some interesting addons:
 				</p>
 				<ul class="list">
 					<!-- XXX make this right -->
-					<li>File services like: Samba and vsftpd</li>
-					<li>A collection of command line tools like: tcpdump, nmap and traceroute.</li>
-					<li>Asterisk</li>
+					<li>File services such as Samba and vsftpd</li>
+					<li>Communication Server Asterisk</li>
+					<li>A collection of command line tools like tcpdump, nmap and traceroute.</li>
 					<li><em>and many more...</em></li>
 				</ul>
 			{% end %}
@@ -192,41 +194,42 @@
 				</p>
 			{% else %}
 				<p>
-					IPFire comes with a SPI (stateful inspection) firewall which is built on top of the
-					Linux <a href="http://www.netfilter.org/">netfilter</a>.
+					IPFire uses a firewall using Stateful Packet Inspection (SPI) which is built on top of
+					<a href="http://www.netfilter.org/">netfilter</a>, the Linux packet filtering framework.
 				</p>
 				<p>
-					With the installation of IPFire, the network gets seperated into different parts that
-					represent a special kind of computers with their own level of security:
+					With the installation of IPFire, the network gets separated into different segments which
+					represent a group of computers which share a common security level:
 				</p>
 				<ul class="list">
 					<li style="color: green;">
-						<strong>Green:</strong> The segment of the network which is marked by the colour <em>green</em>,
-						which stands for a safe area, is where all client computers get. It is the normal LAN and normally
-						wired. Clients can access all other segments without any restriction.
+						<strong>Green</strong> represents a safe area. This is where all regular client computers
+						reside. is usually comprised of a wired local network. Clients can access all other
+						network segments without restriction.
 					</li>
 					<li style="color: red;">
-						<strong>Red:</strong> The internet as a source of danger gets the colour <em>red</em>.
-						No access from the internet is permitted to pass the firewall.
+						<strong>Red</strong>,  a color commonly indicating danger, represents the Internet.
+						No access from the Internet is permitted to pass the firewall unless specially configured
+						by the administrator. 
 					</li>
 					<li style="color: darkblue;">
-						<strong>Blue:</strong> The wireless LAN is an other source of potential harm. So it is seperated
-						and got the colour <em>blue</em> for "air". Clients on this part of the network must be
-						allowed explicitely to access the internet.
+						<strong>Blue</strong> represents the wireless part of the local network, since it has
+						its own unique potential for abuse. The color blue was chosen as it is the color of the
+						sky. Clients on this network segment must be explicitly allowed before they may access
+						the network.
 					</li>
 					<li style="color: orange;">
-						<strong>Orange:</strong> If there are any servers that are accessable by the internet, it is
-						also possible to take them over. For this case, there is the segment coloured <em>orange</em>
-						(some compromise between red and green) so that those machines are not able to harm any
-						other segment. This is called demilitarized zone (DMZ).
+						<strong>Orange</strong> is commonly referred to as the demilitarized zone (DMZ). Any
+						servers which are publicly accessible are separated from the rest of the network to
+						limit extent of a security breach.
 					</li>
 				</ul>
 				<br class="clear" />
 				<p>
-					So there is a best place for every machine in the network. All the segments can be activated seperately
-					(except green and red are always required).
-					<br />
-					On top of all of that, there is an <strong>outgoing firewall</strong> for filtering the egress direction.
+					This scheme means there is a perfect place for each machine in the network. The various
+					segments may be enabled separately depending on requirements. Additionally, the firewall
+					can also control outbound Internet access from any segment. This gives the administrator
+					ultimate control over how their network can be used.
 				</p>
 			{% end %}
 
@@ -278,26 +281,20 @@
 				</p>
 			{% else %}
 				<p>
-					IPFire can be enhanced to a VPN (virtual private network) gateway that connects places and
-					persons to the local network. This could either be staff, friends and people you want to share
-					data with in a secure way but also could be a branch office, important customer or an other
-					company you are operating with.
+					IPFire may be enhanced to include a virtual private network (VPN) gateway which connects
+					remote people and places to the local network using an encrypted link. This could be staff,
+					friends, or anyone you'd like to share data with in a secure way. Businesses use VPNs to
+					connect branch offices, datacenters, corporate partners, and to provide traveling staff
+					with a portal into the corporate network.
 				</p>
 				<p>
-					To be able to dock on different technologies IPFire offers these implementations:
-				</p>
-				<ul class="list">
-					<li><strong>IPSec</strong> to connect networks side-by-side (also is called net-to-net).</li>
-					<li>To connect so called <em>roadwarrior clients</em> there is <strong>OpenVPN</strong>.</li>
-				</ul>
-				<!-- XXX there is too less margin on the buttom of this list, so: -->
-				<br class="clear" />
-				<p>
-					Those implementations let IPFire connect to routers or VPN gateways by:
+					IPFire uses both the IPSEC and OpenVPN protocols, affording the maximum in flexibility
+					when configuring your VPN. These implementations allow IPFire connect to VPN endpoint
+					devices by:
 					<a href="http://www.cisco.com" target="_blank">Cisco</a>,
 					<a href="http:///www.juniper.net" target="_blank">Juniper</a>,
 					<a href="http://www.checkpoint.com" target="_blank">Checkpoint</a>,
-					other Linux-based implementations and many more...
+					NetGear, or any Linux based implementation.
 				</p>
 			{% end %}
 			<p class="links">
@@ -328,27 +325,29 @@
 				</p>
 			{% else %}
 				<p>
-					Based on a recent version of the Linux kernel 2.6 series, IPFire supports latest hardware
-					like 10G network cards and wireless hardware out of the box.
+					Based on a recent version of the Linux kernel 2.6 series, IPFire supports the latest hardware
+					like 10Gbit network cards and wireless hardware out of the box.
 				</p>
 				<p>
-					It is at least a Intel Pentium I compatible CPU (i586) required and we recommend
-					approx. 128 MB RAM (or more) and 1GB disk space.
+					Requirements are minimal: an Intel Pentium I compatible CPU (i586), 128 MB RAM,
+					and 1GB disk space.
 				</p>
 				<p>
-					For routing, there are at least 2 network interfaces required.
-					Alternatively, a 3G-modem can be used.
+					For routing, at least 2 network interfaces are required.
+					Alternatively, a 3G modem may be used. 
 				</p>
 				<p>
-					Developers are concerned about keeping the system running on many variations as
-					possible what makes IPFire run on cheap hardware as well as running on high
-					performance servers.
+					The IPFire Developers are concerned with the ability to run IPFire on systems running as many
+					variations as possible. This is what helps IPFire run on cheap hardware as well as high
+					performance servers. 
 				</p>
 			{% end %}
 			<p class="links">
-				<a href="http://wiki.ipfire.org/{{ lang }}/hardware/start">{{ _("Hardware section on the wiki") }}</a>
+				<a href="http://fireinfo.ipfire.org/" target="_blank">{{ _("Fireinfo") }}</a>
 				&bull;
-				<a href="http://wiki.ipfire.org/{{ lang }}/hardware/networking">{{ _("Hardware compatibility list") }} ({{ _("networking") }})</a>
+				<a href="http://wiki.ipfire.org/{{ lang }}/hardware/start" target="_blank">{{ _("Hardware section on the wiki") }}</a>
+				&bull;
+				<a href="http://wiki.ipfire.org/{{ lang }}/hardware/networking" target="_blank">{{ _("Hardware compatibility list") }} ({{ _("networking") }})</a>
 			</p>
 		</div>
 		<div id="virtualization">
@@ -407,19 +406,19 @@
 			{% else %}
 				<p>
 					IPFire is licensed under the terms of the <a href="http://www.gnu.org/licenses/gpl.html">GNU General
-					Public License</a> in version 3. So it is free software.
+					Public License</a> in version 3, so it is free software.
 				</p>
 				<p>
-					There is the opportunity to make a <a href="/donation">donation</a> to the
-					community which is a very important thing for the success of the project.
+					The success of the project depends upon <a href="/donation">donations</a>
+					to the community.
 				</p>
 				<p>
 					Free software allows (under the terms of the GPLv3):
 				</p>
 				<ul class="list">
-					<li>Free use for unlimited time</li>
-					<li>Review of the source code</li>
-					<li>Opportunity to take part in and make own improvements</li>
+					<li>Free use for an unlimited amount time</li>
+					<li>Review of the full source code</li>
+					<li>Opportunity to take part in development and make own improvements</li>
 					<li>Independence from a specific vendor</li>
 				</ul>
 			{% end %}
