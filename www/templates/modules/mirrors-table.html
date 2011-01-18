@@ -5,7 +5,7 @@
 				<a href="/mirror/{{ mirror.id }}">{{ mirror.hostname }}</a>
 			</td>
 			<td>
-				<img src="{{ static_url("images/flags/%s.png") % mirror.country_code }}" alt="{{ mirror.country_code }}" />
+				<img src="{{ static_url("images/flags/%s.png" % mirror.country_code) }}" alt="{{ mirror.country_code }}" />
 				{{ mirror.location_str }}
 			</td>
 		</tr>
