@@ -207,9 +207,12 @@ class Mirror(object):
 	def db(self):
 		return Databases().webapp
 
-	def reload(self):
+	def reload(self, force=False):
 		memcached = Memcached()
 		mem_id = "mirror-%s" % self.id
+
+		if force:
+			memcached.delete(mem_id)
 
 		self._info = memcached.get(mem_id)
 		if not self._info:
@@ -310,7 +313,7 @@ class Mirror(object):
 			state, self.id)
 
 		# Reload changed settings
-		self.reload()
+		self.reload(force=True)
 
 	def check(self):
 		logging.info("Running check for mirror %s" % self.hostname)
@@ -356,7 +359,7 @@ class Mirror(object):
 			timestamp, self.id)
 
 		# Reload changed settings
-		self.reload()
+		self.reload(force=True)
 
 		self.check_state()
 

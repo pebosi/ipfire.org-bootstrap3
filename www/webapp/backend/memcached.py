@@ -19,3 +19,6 @@ class Memcached(object):
 
 	def set(self, *args, **kwargs):
 		return self._connection.set(*args, **kwargs)
+
+	def delete(self, *args, **kwargs):
+		return self._connection.delete(*args, **kwargs)
