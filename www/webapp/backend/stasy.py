@@ -16,6 +16,22 @@ DATABASE_NAME = "stasy"
 CPU_SPEED_CONSTRAINTS = (0, 500, 1000, 1500, 2000, 2500, 3000, 3500)
 MEMORY_CONSTRAINTS = (0, 128, 256, 512, 1024, 2048, 4096, 8192, 16384)
 
+CPU_VENDORS = {
+	"AMDisbetter!" : "AMD",
+	"AuthenticAMD" : "AMD",
+	"CentaurHauls" : "VIA",
+	"CyrixInstead" : "Cyrix",
+	"GenuineIntel" : "Intel",
+	"TransmetaCPU" : "Transmeta",
+	"GenuineTMx86" : "Transmeta",
+	"Geode by NSC" : "NSC",
+	"NexGenDriven" : "NexGen",
+	"RiseRiseRise" : "Rise",
+	"SiS SiS SiS " : "SiS",
+	"UMC UMC UMC " : "UMC",
+	"VIA VIA VIA " : "VIA",
+}
+
 CPU_STRINGS = (
 	# AMD
 	(r"(AMD Athlon).*(XP).*", r"\1 \2"),
@@ -55,7 +71,9 @@ class ProfileCPU(ProfileDict):
 
 	@property
 	def vendor(self):
-		return self._data.get("vendor")
+		vendor = self._data.get("vendor")
+
+		return CPU_VENDORS.get(vendor, vendor)
 
 	@property
 	def speed(self):
@@ -438,7 +456,8 @@ class Stasy(object):
 		cpus = {}
 
 		for vendor in self.cpu_vendors:
-			cpus[vendor] = \
+			friendly_vendor = CPU_VENDORS.get(vendor, vendor)
+			cpus[friendly_vendor] = \
 				self.query({
 					"profile.cpu.vendor" : vendor
 				}, no_virt=True).count()
