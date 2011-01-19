@@ -106,9 +106,14 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 			self.send_tracker_error("Your client forgot to send your torrent's info_hash.")
 			return
 
+		# Fix for clients behind a proxy that sends "X-Forwarded-For".
+		ip_addr = self.request.remote_ip.split(", ")
+		if ip_addr:
+			ip_addr = ip_addr[-1]
+
 		peer = {
 			"id" : self.get_hexencoded_argument("peer_id"),
-			"ip" : self.request.remote_ip,
+			"ip" : ip_addr,
 			"port" : self.get_argument("port", None),
 			"downloaded" : self.get_argument("downloaded", 0),
 			"uploaded" : self.get_argument("uploaded", 0),
