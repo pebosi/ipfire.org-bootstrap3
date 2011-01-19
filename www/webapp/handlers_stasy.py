@@ -40,6 +40,10 @@ class StasyBaseHandler(BaseHandler):
 
 
 class StasyIndexHandler(StasyBaseHandler):
+	def _profile_not_found(self, profile_id):
+		self.set_status(404)
+		self.render("stasy-profile-notfound.html", profile_id=profile_id)
+
 	def get(self):
 		self.render("stasy-index.html")
 
@@ -49,16 +53,18 @@ class StasyIndexHandler(StasyBaseHandler):
 			raise tornado.web.HTTPError(400, "No profile ID was given.")
 
 		if not self.stasy.profile_exists(profile_id):
-			raise tornado.web.HTTPError(404, "Profile does not exist.")
+			self._profile_not_found(profile_id)
+			return
 
 		self.redirect("/profile/%s" % profile_id)
 
 
-class StasyProfileDetailHandler(StasyBaseHandler):
+class StasyProfileDetailHandler(StasyIndexHandler):
 	def get(self, profile_id):
 		profile = self.stasy.get_profile(profile_id)
 		if not profile:
-			raise tornado.web.HTTPError(404, "Profile not found: %s" % profile_id)
+			self._profile_not_found(profile_id)
+			return
 
 		self.render("stasy-profile-detail.html", profile=profile)
 
