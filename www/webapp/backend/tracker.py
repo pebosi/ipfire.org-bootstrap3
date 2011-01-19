@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import random
 import time
 
 from databases import Databases
@@ -20,8 +21,10 @@ class Tracker(object):
 	id = "TheIPFireTorrentTracker"
 
 	# Intervals # XXX needs to be in Settings
-	interval = 60*60
-	min_interval = 30*60
+	_interval = 60*60
+	_min_interval = 30*60
+
+	random_interval = -60, 60
 
 	numwant = 50
 
@@ -150,6 +153,14 @@ class Tracker(object):
 	@property
 	def since(self):
 		return int(time.time() - self.interval)
+
+	@property
+	def interval(self):
+		return self._interval + random.randint(*self.random_interval)
+
+	@property
+	def min_interval(self):
+		return self._min_interval + random.randint(*self.random_interval)
 
 
 ##### This is borrowed from the bittorrent client libary #####

@@ -5,8 +5,9 @@ import os.path
 import simplejson
 import tornado.httpserver
 import tornado.locale
-import tornado.options
 import tornado.web
+
+from tornado.options import options
 
 import backend
 
@@ -21,7 +22,7 @@ class Application(tornado.web.Application):
 	def __init__(self):
 		settings = dict(
 			cookie_secret = "aXBmaXJlY29va2llc2VjcmV0Cg==",
-			debug = False,
+			debug = options.debug,
 			gzip = True,
 			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),

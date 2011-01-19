@@ -150,7 +150,7 @@ class MirrorSet(object):
 	def get_random(self):
 		mirrors = []
 		for mirror in self._mirrors:
-			for i in range(0, mirror.priority + 1):
+			for i in range(0, mirror.priority):
 				mirrors.append(mirror)
 
 		return random.choice(mirrors)
@@ -449,5 +449,5 @@ class Mirror(object):
 
 	@property
 	def priority(self):
-		return self._info.get("priority", 1) * 10
+		return self._info.get("priority", 10)
 

@@ -1,0 +1,38 @@
+{% extends "base-1.html" %}
+
+{% block title %}{{ _("Profile not found") }}}{% end block %}
+
+{% block content %}
+	<h3>404 - {{ _("Profile not found") }}</h3>
+	<img class="floatTL" src="{{ static_url("images/error/404.png") }}"
+		alt="{{ _("Error") }}" />
+	<p>
+		{% if lang == "de" %}
+			Es wurden keine Daten für das Profil <em>{{ profile_id }}</em>
+			gefunden.
+		{% else %}
+			There was no profile data found for profile
+			<em>{{ profile_id }}</em>.
+		{% end %}
+	</p>
+	<p>
+		{% if lang == "de" %}
+			Der Eigentümer dieses Profils hat möglicherweise der Veröffentlichung
+			der Daten nicht zugestimmt oder diese abgeschaltet.
+		{% else %}
+			Apparently, the profile owner has not submitted any data or disabled
+			it recently.
+		{% end %}
+	</p>
+	<p>
+		{% if lang == "de" %}
+			Falls dieses Profile Ihr eigenes ist, so können Sie die Veröffentlichung
+			im Web-Interface
+			<a href="http://wiki.ipfire.org/de/fireinfo/my_profile" target="_blank">einschalten</a>.
+		{% else %}
+			If this is your own profile, you can
+			<a href="http://wiki.ipfire.org/en/fireinfo/my_profile" target="_blank">enable</a>
+			the submission on the web user interface.
+		{% end %}
+	</p>
+{% end block %}

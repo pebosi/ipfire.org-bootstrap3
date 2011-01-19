@@ -1,7 +1,10 @@
 #!/usr/bin/python
 
-import tornado.options
-tornado.options.parse_command_line()
+from tornado.options import define, options, parse_command_line
+
+# Command line options
+define("debug", default=False, help="Run in debug mode", type=bool)
+parse_command_line()
 
 from accounts	import Accounts
 from banners	import Banners
