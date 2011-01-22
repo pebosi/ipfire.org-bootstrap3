@@ -89,7 +89,7 @@ class ReleaseFilesManager(Manager):
 		return backend.Config().get_int("releasefiles_check_interval")
 
 	def do(self):
-		for release in self.releases.get_all():
+		for release in self.releases.list():
 			release.scan_files()
 
 
