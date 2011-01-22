@@ -59,6 +59,8 @@ CPU_STRINGS = (
 	(r"(VIA \w*).*", r"\1"),
 )
 
+CPU_CORES = range(1, 9)
+
 class ProfileDict(object):
 	def __init__(self, data):
 		self._data = data
@@ -422,7 +424,7 @@ class Stasy(object):
 
 		return profiles
 
-	def query(self, query, archives=False, no_virt=False, all=False):
+	def query(self, query, archives=False, no_virt=False, all=False, fields=None):
 		db = self._db.profiles
 
 		if archives:
@@ -437,7 +439,7 @@ class Stasy(object):
 
 		logging.debug("Executing query: %s" % query)
 
-		return db.find(query)
+		return db.find(query, fields=fields)
 
 	@property
 	def secret_ids(self):
@@ -478,6 +480,11 @@ class Stasy(object):
 
 		return (speed / all.count())
 
+	def get_cpu_bogomips_accumulated(self):
+		profiles = self.query({}, no_virt=True, fields=["profile.cpu.bogomips"])
+
+		return sum([int(o["profile"]["cpu"]["bogomips"]) for o in profiles])
+
 	@property
 	def cpu_speed_map(self):
 		cpu_speeds = {}
@@ -493,6 +500,17 @@ class Stasy(object):
 				}, no_virt=True).count()
 
 		return cpu_speeds
+
+	def get_cpu_cores_map(self):
+		cores = {}
+
+		for i in CPU_CORES:
+			cores[i] = \
+				self.query({
+					"profile.cpu.count" : i,
+				}, no_virt=True).count()
+
+		return cores
 
 	def get_memory_map(self):
 		memory = {}

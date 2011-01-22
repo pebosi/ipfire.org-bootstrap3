@@ -37,6 +37,7 @@ class Application(tornado.web.Application):
 				"SidebarBanner"  : SidebarBannerModule,
 				"SidebarRelease" : SidebarReleaseModule,
 				"StasyTable"     : StasyTableModule,
+				"StasyCPUCoreTable" : StasyCPUCoreTableModule,
 				"StasyDeviceTable" : StasyDeviceTableModule,
 				"StasyGeoTable"  : StasyGeoTableModule,
 				"TrackerPeerList": TrackerPeerListModule,

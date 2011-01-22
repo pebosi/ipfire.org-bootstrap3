@@ -146,6 +146,15 @@ class TrackerPeerListModule(UIModule):
 
 
 class StasyTableModule(UIModule):
+	def _make_percentages(self, items):
+		total = sum(items.values())
+
+		for k in items.keys():
+			items[k] *= 100
+			items[k] /= total
+
+		return items
+
 	def render(self, items, sortby="key", reverse=False, percentage=False, flags=False, locale=False):
 		hundred_percent = 0
 		for v in items.values():
@@ -191,6 +200,18 @@ class StasyTableModule(UIModule):
 			items = _items
 
 		return self.render_string("modules/stasy-table.html", items=items, flags=flags)
+
+
+class StasyCPUCoreTableModule(StasyTableModule):
+	def render(self, items):
+		items = self._make_percentages(items)
+
+		items = items.items()
+		items.sort()
+
+		return self.render_string("modules/stasy-table.html", items=items,
+			flags=None #XXX
+		)
 
 
 class StasyDeviceTableModule(UIModule):

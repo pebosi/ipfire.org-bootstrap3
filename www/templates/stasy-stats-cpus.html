@@ -19,8 +19,16 @@
 	<h3>{{ _("Speed") }}</h3>
 	<p>
 		{{ _("The average speed of all systems in the database is: <strong>%.2f MHz</strong>.") % average_speed }}
+		<br />
+		{{ _("All together, there are <strong>%s bogomips</strong> out there.") % locale.friendly_number(bogomips) }}
 	</p>
 	{{ modules.StasyTable(cpu_speeds) }}
+
+	<h3>{{ _("CPU cores counter") }}</h3>
+	<p>
+		{{ _("See a breakdown of the CPU cores that are installed on the IPFire systems.") }}
+	</p>
+	{{ modules.StasyCPUCoreTable(cpu_cores) }}
 
 	<p class="links">
 		<a href="cpuflags">{{ _("See statistics about common CPU flags") }}</a>

@@ -79,7 +79,9 @@ class StasyStatsCPUHandler(StasyBaseHandler):
 		return self.render("stasy-stats-cpus.html",
 			cpu_vendors=self.stasy.cpu_vendors_map,
 			average_speed=self.stasy.cpu_speed_average,
-			cpu_speeds=self.stasy.cpu_speed_map)
+			cpu_speeds=self.stasy.cpu_speed_map,
+			cpu_cores=self.stasy.get_cpu_cores_map(),
+			bogomips=self.stasy.get_cpu_bogomips_accumulated())
 
 
 class StasyStatsCPUFlagsHandler(StasyBaseHandler):
@@ -94,8 +96,6 @@ class StasyStatsCPUFlagsHandler(StasyBaseHandler):
 
 		for name, flag in flags:
 			kwargs["cpus_" + name] = self.stasy.get_cpu_flag_map(flag)
-
-		print kwargs
 
 		return self.render("stasy-stats-cpu-flags.html", **kwargs)
 
