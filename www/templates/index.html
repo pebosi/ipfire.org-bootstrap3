@@ -118,13 +118,17 @@
 		{{ modules.NewsItem(item) }}
 	{% end %}
 
-	<h4>{{ _("Recent news") }}:</h4>
-	<ul class="news">
-	{% for item in recent_news %}
-		<li>{{ modules.NewsLine(item) }}</li>
-	{% end %}
-	</ul>
+	<div class="line"></div>
 
+	{% for item in recent_planets %}
+		<strong>{{ _("Have you already seen?") }}</strong>
+		<a href="http://planet.ipfire.org/user/{{ item.author.uid }}">{{ item.author.cn }}</a>
+		{{ _("talks about") }}
+		<a href="http://planet.ipfire.org/post/{{ item.slug }}">{{ item.title }}</a>
+		{{ _("on the IPFire planet.") }}
+	{% end %}
+
+	<br class="clear" />
 	<br class="clear" />
 
 	<p class="right">
