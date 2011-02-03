@@ -67,6 +67,14 @@ class BaseHandler(tornado.web.RequestHandler):
 		else:
 			return tornado.web.RequestHandler.get_error_html(self, status_code, **kwargs)
 
+	def static_url(self, path, static=True):
+		ret = tornado.web.RequestHandler.static_url(self, path)
+
+		if static:
+			return "http://static.ipfire.org%s" % ret
+
+		return ret
+
 	@property
 	def accounts(self):
 		return backend.Accounts()
