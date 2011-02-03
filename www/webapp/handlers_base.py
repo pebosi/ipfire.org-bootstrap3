@@ -29,6 +29,10 @@ class BaseHandler(tornado.web.RequestHandler):
 
 				return l
 
+		# The planet is always in english.
+		if self.request.host == "planet.ipfire.org":
+			return DEFAULT_LOCALE
+
 		# If no locale was provided we guess what the browser sends us
 		locale = self.get_browser_locale()
 		if locale in ALLOWED_LOCALES:
