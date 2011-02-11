@@ -57,6 +57,9 @@ CPU_STRINGS = (
 
 	# VIA
 	(r"(VIA \w*).*", r"\1"),
+
+	# Qemu
+	(r"QEMU Virtual CPU version .*", r"QEMU CPU"),
 )
 
 CPU_CORES = range(1, 9)
