@@ -9,7 +9,7 @@
 		<pubDate>Thu, 8 Nov 2007 00:00:00 +0200</pubDate>
 		{% for item in items %}
 			<item>
-				<title>{{ item.title }}</title>
+				<title>{{ escape(item.title) }}</title>
 				<link>{{ item.url }}</link>
 				<author>{{ item.author.mail }} ({{ item.author.name }})</author>
 				<guid>{{ item.url }}</guid>
