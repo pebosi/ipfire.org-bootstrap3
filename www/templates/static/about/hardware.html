@@ -1,0 +1,63 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("Hardware") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Hardware") }}</h3>
+
+	<img src="{{ static_url("images/icons/hardware.png") }}" class="floatTL" alt="{{ _("Hardware") }}" />
+	{% if lang == "de" %}
+		<p>
+			Basierend auf aktuellen Versionen des Linux Kernels der 2.6er Serie unterstützt IPFire
+			neueste Hardware, wie 10-Gigabit-Netzwerkkarten und Wireless-Hardware, ohne zusätzlich
+			nachzuinstallierende Treiber.
+		</p>
+		<p>
+			Es wird mindestens eine i586er CPU benötigt (Intel Pentium I oder höher). Weiterhin
+			empfehlen wir mindestens 128 MB RAM und 1GB Festplattenplatz.
+		</p>
+		<p>
+			Für den Einsatz als Router sind mindestens zwei Netzwerkschnittstellen erforderlich.
+			Alternativ kann der Internetzugang auch über ein UMTS-Modem erfolgen.
+		</p>
+		<p>
+			Den Entwicklern ist es ein Anliegen, IPFire auf einer möglichst breiten Palette von
+			Hardware lauffähig zu machen. Das schließt sowohl günstige Hardware, wie auch
+			hochperformante Server ein.
+		</p>
+	{% else %}
+		<p>
+			Based on a recent version of the Linux kernel 2.6 series, IPFire supports the latest hardware
+			like 10Gbit network cards and wireless hardware out of the box.
+		</p>
+		<p>
+			Requirements are minimal: an Intel Pentium I compatible CPU (i586), 128 MB RAM,
+			and 1GB disk space.
+		</p>
+		<p>
+			For routing, at least 2 network interfaces are required.
+			Alternatively, a 3G modem may be used. 
+		</p>
+		<p>
+			The IPFire Developers are concerned with the ability to run IPFire on systems running as many
+			variations as possible. This is what helps IPFire run on cheap hardware as well as high
+			performance servers. 
+		</p>
+	{% end %}
+	<p class="links">
+		<a href="http://fireinfo.ipfire.org/" target="_blank">{{ _("Fireinfo") }}</a>
+		&bull;
+		<a href="http://wiki.ipfire.org/{{ lang }}/hardware/start" target="_blank">{{ _("Hardware section on the wiki") }}</a>
+		&bull;
+		<a href="http://wiki.ipfire.org/{{ lang }}/hardware/networking" target="_blank">{{ _("Hardware compatibility list") }} ({{ _("networking") }})</a>
+	</p>
+
+	<div class="line"></div>
+
+	<div class="screenshots">
+		<a rel="screens" href="{{ static_url("images/screenshots/en/hardware/hwtemp-1.png") }}"
+			title="{{ _("All hardware data is monitored.") }}"><img alt="{{ _("Image 1") }}"
+			src="{{ static_url("images/screenshots/en/hardware/hwtemp-1_thumb.png") }}" />
+		</a>
+	</div>
+{% end block %}

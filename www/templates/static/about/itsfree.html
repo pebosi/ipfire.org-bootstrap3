@@ -1,0 +1,46 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("IPFire is free software") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("IPFire is free software") }}</h3>
+
+	<img src="{{ static_url("images/icons/itsfree.png") }}" class="floatTL" alt="{{ _("It's free") }}" />
+	{% if lang == "de" %}
+		<p>
+			Lizenziert unter der <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>
+			in Version 3 ist IPFire freie Software.
+		</p>
+		<p>
+			Eine <a href="/donation">Spende</a> sichert den Fortbestand des Projekts,
+			welches ohne diese Form der Unterstützung, nicht existieren könnte.
+		</p>
+		<p>
+			Freie Software ermöglicht (unter den Bedingungen der GPLv3):
+		</p>
+		<ul class="list">
+			<li>Kostenfreie Nutzung über einen unbegrenzten Zeitraum</li>
+			<li>Einblick in den Quelltext</li>
+			<li>Möglichkeiten zur Mitwirkung und Verbeserung</li>
+			<li>Unabhängigkeit von einem Hersteller</li>
+		</ul>
+	{% else %}
+		<p>
+			IPFire is licensed under the terms of the <a href="http://www.gnu.org/licenses/gpl.html">GNU General
+			Public License</a> in version 3, so it is free software.
+		</p>
+		<p>
+			The success of the project depends upon <a href="/donation">donations</a>
+			to the community.
+		</p>
+		<p>
+			Free software allows (under the terms of the GPLv3):
+		</p>
+		<ul class="list">
+			<li>Free use for an unlimited amount time</li>
+			<li>Review of the full source code</li>
+			<li>Opportunity to take part in development and make own improvements</li>
+			<li>Independence from a specific vendor</li>
+		</ul>
+	{% end %}
+{% end block %}

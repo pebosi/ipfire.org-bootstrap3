@@ -121,6 +121,18 @@ p.right {
 	float: right;
 }
 
+div.screenshots {
+	text-align: center;
+}
+
+div.screenshots img {
+	border: 1px dotted #e1e1e1;
+	padding: 0.5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	vertical-align: text-top;
+}
+
 /* Header */
 
 #header {
@@ -443,6 +455,14 @@ a.feed {
 	float: left;
 	padding: 0em 1em 0.5em 1em;
 	border-left: dotted 1px #E1E1E1;
+}
+
+#columns2_columnB ul {
+	margin-left: 1em;
+}
+
+#columns2_columnB ul li {
+	margin-bottom: 0.2em;
 }
 
 #columns1_primary {
@@ -984,4 +1004,11 @@ table.stats td.bar {
 
 table.stats td.bar p {
 	background-color: #880400;
+}
+
+div.seeleftbox {
+	margin-bottom: 1em;
+	background-color: #e1e1e1;
+	border: 1px dotted black;
+	padding: 1em;
 }

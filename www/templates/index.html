@@ -3,42 +3,24 @@
 {% block title %}{{ _("Home") }}{% end block %}
 
 {% block content %}
-	<!--
-		<img src="{{ static_url("images/Network-1.png") }}") }}" alt="IPFire Network" />
-		<br class="clear" />
-	-->
-
 	<h3>IPFire - {{ _("An open source firewall solution") }}</h3>
 	{% if lang == "de" %}
 		<p>
-			<strong>IPFire</strong> ist eine Firewall-Distribution für den optimalen Einsatz
-			in mittleren bis kleinen Unternehmensnetzwerken und Heimnetzwerken.
-		</p>
-		<p>
-			Obwohl das System extrem schlank gehalten wurde, können
-			Addons mit nur einem Klick installiert werden. Diese Eigenschaft unterscheidet
-			IPFire von anderen Distributionen: IPFire ist einfach zu administrieren
-			hat aber genug Leistung um allen Anforderungen gewachsen zu sein.
+			<strong>IPFire</strong> ist eine Server-Distribution mit primärem Einsatzzweck
+			als Firewall mit besonderer Sicherheit. Ebenso ist IPFire sehr flexibel
+			und skaliert hervorragend von kleinen bis mitteleren Unternehmensnetzwerken,
+			Heimnetzen, Behörden und Schulen.
 		</p>
 	{% else %}
 		<p>
-			<strong>IPFire</strong> is a server distribution with intended to use as
-			a firewall. It focuses on flexibility, and scales from small to
-			middle sized business networks and home networks.
-		</p>
-		<p>
-			Along with this hardened, minimalist come lots of addons that
-			can be installed with a simple click. That's what makes IPFire different
-			from other firewall distributions: it is easy to configure for any task,
-			and easy to administer once it's set up.
+			<strong>IPFire</strong> is a server distribution which primary function
+			is a firewall bundled with strong security. It focuses on
+			flexibility as well and scales from small to middle sized business
+			networks, home networks, authorities and schools.
 		</p>
 	{% end %}
 
 	<br class="clear" />
-
-	<h4>
-		{{ _("See what makes IPFire so great:") }}
-	</h4>
 
 	<table class="blocks">
 		<tr>
@@ -48,8 +30,8 @@
 				<span>{{ _("Security") }}</span>
 				{% if lang == "de" %}
 					<p>
-						Die oberste Priorität ist die Sicherheit des Systems.
-						Zum Beispiel werden Sicherheits- updates regelmäßig und
+						Die oberste Priorität ist die Sicherheit des Sys- tems.
+						Sicherheitsupdates werden regelmäßig und
 						zügig verteilt.
 					</p>
 				{% else %}
@@ -66,13 +48,14 @@
 				<span>{{ _("Flexibility") }}</span>
 				{% if lang == "de" %}
 					<p>
-						Heutzutage ist es auch wichtig flexibel auf verschiedenste
-						Anforder- ungen einzugehen. Genau wie IPFire...
+						IPFire ist ein schlankes System (Image ca. 60 MB),
+						welches ganz leicht durch zusätzliche Funk- tionen erweitert
+						werden kann.
 					</p>
 				{% else %}
 					<p>
-						Nowadays it is also important to act flexible and fit
-						as best as possible into the environment. So does IPFire.
+						IPFire is a very small system (install image is about 60MB)
+						and can be easily customized with additional functions. 
 					</p>
 				{% end %}
 				<p>
@@ -82,16 +65,16 @@
 			<td class="block block3">
 				<img src="{{ static_url("images/icons/community.png") }}" alt="{{ _("Community") }}" />
 				<br class="clear" />
-				<span>{{ _("Community") }}</span>
+				<span>{{ _("Open Source") }}</span>
 				{% if lang == "de" %}
 					<p>
-						Verantwortlich für den Erfolg von IPFire ist eine aktive
-						Community, die das Projekt vorantreibt.
+						IPFire ist freie Software, welche von einer offenen
+						Community tagtäglich verbessert wird.
 					</p>
 				{% else %}
 					<p>
-						The success of IPFire is based on the community that
-						is working on the code and spreading IPFire to the world.
+						IPFire is free software and developed by an open community,
+						that makes IPFire better every single day.
 					</p>
 				{% end %}
 				<p>
@@ -101,6 +84,33 @@
 		</tr>
 	</table>
 
+	<br class="clear" />
+
+	{% if lang == "de" %}
+		<p>
+			Das sehr minimalistische, gehärtete System ist höchst anpassungsfähig und
+			schnell zu konfigurieren. Mit nur einem Klick können kostenlos zusätzliche
+			Funktionen nachinstalliert werden, was IPFire grundsätzlich von
+			seinen Konkurrenten in Sachen einfacher Wartung und Funktionsvielfalt
+			abgrenzt.
+		</p>
+		<p>
+			Dabei ist IPFire, da es auf dem Linux-Kernel basiert, äußerst
+			leistungsstark und sicher, um auch in großen Umgebungen betrieben werden
+			zu können.
+		</p>
+	{% else %}
+		<p>
+			IPFire is a minimal, hardened system which distinguishes itself by being
+			very customizable and the possibility to install additional features with
+			only a single click for free. It is very easy to install and maintain.
+		</p>
+		<p>
+			Based on the Linux kernel, IPFire has got a lot of performance and
+			is very secure that it can be used in large environments.
+		</p>
+	{% end %}
+
 	<p class="links">
 		{{ _("Quick links") }} &bull;
 		<a href="/about">{{ _("About IPFire") }}</a>
@@ -108,8 +118,6 @@
 		<a href="http://wiki.ipfire.org/" target="_blank">{{ _("wiki") }}</a>
 		&bull;
 		<a href="http://forum.ipfire.org/" target="_blank">{{ _("forum") }}</a>
-		<!-- &bull;
-		<a href="/about">{{ _("Screenshots") }}</a> -->
 	</p>
 
 	<div class="line"></div>

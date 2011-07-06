@@ -1,0 +1,60 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("Pakfire") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Pakfire - the IPFire package management") }}</h3>
+
+	<img src="{{ static_url("images/icons/pakfire.png") }}" class="floatTL" alt="{{ _("Pakfire") }}" />
+	{% if lang == "de" %}
+		<p>
+			Vom technischen Standpunkt aus ist IPFire ein schlankes, gehärtetes Firewall-System, welches
+			einen Paketmanager mitbringt, der den Namen Pakfire trägt.
+			Mit nur wenigen Klicks ist es möglich dieses System als eine Serverlösung auszubauen.
+		</p>
+		<p>
+			Die interessantesten Addons:
+		</p>
+		<ul class="list">
+			<li>Dateidienste wie z.B.: Samba und vsftpd</li>
+			<li>Eine Auswahl an Konsolentools: tcpdump, nmap und traceroute.</li>
+			<li>Asterisk</li>
+			<li><em>und viele mehr...</em></li>
+		</ul>
+	{% else %}
+		<p>
+			From a technical point of view, IPFire is a minimalistic, hardened firewall system
+			which comes with an integrated package manager called Pakfire. With a single click you
+			can enhance the base system by providing network services.
+		</p>
+		<p>
+			Some interesting addons:
+		</p>
+		<ul class="list">
+			<!-- XXX make this right -->
+			<li>File services such as Samba and vsftpd</li>
+			<li>Communication Server Asterisk</li>
+			<li>A collection of command line tools like tcpdump, nmap and traceroute.</li>
+			<li><em>and many more...</em></li>
+		</ul>
+	{% end %}
+
+	<p class="links">
+		<a href="http://wiki.ipfire.org/{{ lang }}/configuration/ipfire/pakfire/start">{{ _("How to install a package?") }}</a>
+		&bull;
+		<a href="http://wiki.ipfire.org/{{ lang }}/addons/start">{{ _("Full list of installable addons") }}</a>
+	</p>
+
+	<div class="line"></div>
+
+	<div class="screenshots">
+		<a rel="screens" href="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1.png") }}"
+			title="{{ _("Additional packages can be installed on your option.") }}"><img alt="{{ _("Image 1") }}"
+			src="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1_thumb.png") }}" />
+		</a>
+		<a rel="screens" href="{{ static_url("images/screenshots/en/pakfire/addon-services-1.png") }}"
+			title="{{ _("Each service is monitored individually.") }}"><img alt="{{ _("Image 1") }}"
+			src="{{ static_url("images/screenshots/en/pakfire/addon-services-1_thumb.png") }}" />
+		</a>
+	</div>
+{% end block %}

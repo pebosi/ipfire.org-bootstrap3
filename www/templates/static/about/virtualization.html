@@ -1,0 +1,48 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("Virtualization") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Virtualization") }}</h3>
+
+	<img src="{{ static_url("images/icons/virtualization.png") }}" class="floatTL" alt="{{ _("Virtualization") }}" />
+	{% if lang == "de" %}
+		<p>
+			IPFire kann, als virtueller Gast, auf folgenden Lösungen betrieben werden:
+		</p>
+		<ul class="list">
+			<li><a href="http://www.linux-kvm.org">KVM</a>/Qemu</li>
+			<li>Xen (paravirtualisiert oder im vollvirtualisieren Modus)</li>
+			<li>VMWare (Workstation, vSphere, ESXi, ...)</li>
+			<li>Virtualbox</li>
+		</ul>
+		<br class="clear" />
+		<p>
+			Um eine hohe Leistung auf allen Systemen zu gewährleisten, werden
+			zahlreiche Frontent-Treiber mitgeliefert.
+		</p>
+	{% else %}
+		<p>
+			IPFire can be run as a virtual guest on the following hypervisors:
+		</p>
+		<ul class="list">
+			<li><a href="http://www.linux-kvm.org">KVM</a>/Qemu</li>
+			<li>Xen (paravirtualized and fully virtualized mode)</li>
+			<li>VMWare (Workstation, vSphere, ESXi, ...)</li>
+			<li>Virtualbox</li>
+		</ul>
+		<br class="clear" />
+		<p>
+			It brings many frontend drivers for high performance to all the hypervisors.
+		</p>
+	{% end %}
+
+	<div class="line"></div>
+
+	<div class="screenshots">
+		<a rel="screens" href="{{ static_url("images/screenshots/en/virtualization/virt-manager-1.png") }}"
+			title="{{ _("IPFire runs perfectly in virtual environments.") }}"><img alt="{{ _("Image 1") }}"
+			src="{{ static_url("images/screenshots/en/virtualization/virt-manager-1_thumb.png") }}" />
+		</a>
+	</div>
+{% end block %}

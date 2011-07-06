@@ -74,6 +74,9 @@ class BaseHandler(tornado.web.RequestHandler):
 	def static_url(self, path, static=True):
 		ret = tornado.web.RequestHandler.static_url(self, path)
 
+		if self.settings.get("debug", False):
+			return ret
+
 		if static:
 			return "http://static.ipfire.org%s" % ret
 

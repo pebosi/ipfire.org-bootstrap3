@@ -1,0 +1,111 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("Firewall") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Firewall") }}</h3>
+
+	<img src="{{ static_url("images/icons/firewall.png") }}" class="floatTL" alt="{{ _("Firewall") }}" />
+	{% if lang == "de" %}
+		<p>
+			IPFire ist mit einer SPI-Firewall (stateful inspection) ausgestattet, die auf dem
+			Linux <a href="http://www.netfilter.org/">netfilter</a> aufgebaut ist.
+		</p>
+		<p>
+			Jede IPFire-Installation teilt das Netzwerk in kleinere, voneinander getrennte Teile,
+			denen eine Gruppe von Computern zugeordnet wird - abhängig von ihrer Sicherheitseinstufung:
+		</p>
+		<ul class="list">
+			<li style="color: green;">
+				<strong>Grün (Green):</strong> In der grünen Zone befinden sich alle Client-PCs,
+				die als sicher eingestuft sind. Das ist in der Regel das verkabelte LAN. Alle PCs
+				können auf alle anderen Netze ohne Beschränkung zugreifen.
+			</li>
+			<li style="color: red;">
+				<strong>Rot (Red):</strong> Das Internet hat, aufgrund seiner potentiellen Gefahr,
+				die Farbe Rot bekommen. Es ist kein Zugriff von dort auf eines der anderen
+				Netze möglich ohne, dass dies vorher explizit erlaubt wurde.
+			</li>
+			<li style="color: darkblue;">
+				<strong>Blau (Blue):</strong> Das drahtlose Netzwerk ist auch eher als gefärlich
+				einzustufen und wurde daher vom übrigen LAN getrennt. PCs in diesem Netz müssen
+				explizit zugelassen werden, um auf das Internet zugreifen zu dürfen.
+			</li>
+			<li style="color: orange;">
+				<strong>Orange:</strong> Server, die vom Internet aus erreichbar sein müssen,
+				haben die Gefahr, dass sie übernommen werden können. Für diesen Fall sind sie
+				im orangen Segment eingeschlossen und können keine anderen Systeme
+				in den anderen Zonen beeinträchtigen. Die orangene Zone wird auch demilitarisierte
+				Zone (DMZ) genannt.
+			</li>
+		</ul>
+		<br class="clear" />
+		<p>
+			Somit gibt es für jedes System einen optimalen Platz im Netzwerk. Alle Netzwerksegmente
+			außer Grün und Rot, die immer vorhanden sind, können einzeln hinzukonfiguriert werden.
+			<br />
+			Zusätzlich gibt es eine <strong>ausgehende Firewall</strong>, die Verkehr aus den lokalen
+			Netzen heraus ins Internet filtert.
+		</p>
+	{% else %}
+		<p>
+			IPFire uses a firewall using Stateful Packet Inspection (SPI) which is built on top of
+			<a href="http://www.netfilter.org/">netfilter</a>, the Linux packet filtering framework.
+		</p>
+		<p>
+			With the installation of IPFire, the network gets separated into different segments which
+			represent a group of computers which share a common security level:
+		</p>
+		<ul class="list">
+			<li style="color: green;">
+				<strong>Green</strong> represents a safe area. This is where all regular client computers
+				reside. is usually comprised of a wired local network. Clients can access all other
+				network segments without restriction.
+			</li>
+			<li style="color: red;">
+				<strong>Red</strong>,  a color commonly indicating danger, represents the Internet.
+				No access from the Internet is permitted to pass the firewall unless specially configured
+				by the administrator. 
+			</li>
+			<li style="color: darkblue;">
+				<strong>Blue</strong> represents the wireless part of the local network, since it has
+				its own unique potential for abuse. The color blue was chosen as it is the color of the
+				sky. Clients on this network segment must be explicitly allowed before they may access
+				the network.
+			</li>
+			<li style="color: orange;">
+				<strong>Orange</strong> is commonly referred to as the demilitarized zone (DMZ). Any
+				servers which are publicly accessible are separated from the rest of the network to
+				limit extent of a security breach.
+			</li>
+		</ul>
+		<br class="clear" />
+		<p>
+			This scheme means there is a perfect place for each machine in the network. The various
+			segments may be enabled separately depending on requirements. Additionally, the firewall
+			can also control outbound Internet access from any segment. This gives the administrator
+			ultimate control over how their network can be used.
+		</p>
+	{% end %}
+
+	<p class="links">
+		<a href="http://wiki.ipfire.org/en/configuration/firewall/outgoingfirewall">{{ _("Outgoing firewall configuration") }}</a>
+	</p>
+
+	<div class="line"></div>
+
+	<div class="screenshots">
+		<a rel="screens" href="{{ static_url("images/screenshots/en/firewall/edit-portfw-rule-1.png") }}"
+			title="{{ _("Firewall rules can be easily edited.") }}"><img alt="{{ _("Image 1") }}"
+			src="{{ static_url("images/screenshots/en/firewall/edit-portfw-rule-1_thumb.png") }}" />
+		</a>
+		<a rel="screens" href="{{ static_url("images/screenshots/en/firewall/dmz-holes-1.png") }}"
+			title="{{ _("Firewall rules can be easily edited.") }}"><img alt="{{ _("Image 1") }}"
+			src="{{ static_url("images/screenshots/en/firewall/dmz-holes-1_thumb.png") }}" />
+		</a>
+		<a rel="screens" href="{{ static_url("images/screenshots/en/firewall/connections-1.png") }}"
+			title="{{ _("An overview over all connections.") }}"><img alt="{{ _("Image 1") }}"
+			src="{{ static_url("images/screenshots/en/firewall/connections-1_thumb.png") }}" />
+		</a>
+	</div>
+{% end block %}

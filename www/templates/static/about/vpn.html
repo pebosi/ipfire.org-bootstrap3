@@ -1,0 +1,61 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("VPN") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("VPN") }}</h3>
+
+	<img src="{{ static_url("images/icons/vpn.png") }}" class="floatTL" alt="{{ _("VPN") }}" />
+	{% if lang == "de" %}
+		<p>
+			IPFire kann zu einem VPN-Gateway (virtal private network - virtuelles, privates Netzwerk)
+			ausgebaut werden, welches Personen mit unterschiedlichem Standort untereinander verbindet.
+			Dies können zum Beispiel Mitarbeiter, Freunde oder Personen sein mit denen man Daten sicher
+			austauschen möchte, aber auch eine Filiale, Außenstelle, wichtige Kunden oder andere Unternehmen
+			mit denen kommuniziert wird.
+		</p>
+		<p>
+			Um sich über verschiedene Technologien verbinden zu können verfügt IPFire über folgende
+			Implementierungen:
+		</p>
+		<ul class="list">
+			<li>
+				<strong>IPSec</strong>, das Netzwerke mit anderen Netzwerken transparent verbindet und
+				gut geeignet ist für permanente Verbindungen.
+			</li>
+			<li>
+				Für sogenannte <em>Roadwarrior-Clients</em> (z.B. Notebooks) gibt es <strong>OpenVPN</strong>
+				um in verschiedenen Situationen ad hoc eine sichere Verbindung herzustellen.
+			</li>
+		</ul>
+		<br class="clear" />
+		<p>
+			Mit dieser Software, lässt sich IPFire leicht mit Routern oder VPN-Gateways von
+			<a href="http://www.cisco.com" target="_blank">Cisco</a>,
+			<a href="http:///www.juniper.net" target="_blank">Juniper</a>,
+			<a href="http://www.checkpoint.com" target="_blank">Checkpoint</a>,
+			andere Linux-basierten Implementierungen verbinden und vielem mehr...
+		</p>
+	{% else %}
+		<p>
+			IPFire may be enhanced to include a virtual private network (VPN) gateway which connects
+			remote people and places to the local network using an encrypted link. This could be staff,
+			friends, or anyone you'd like to share data with in a secure way. Businesses use VPNs to
+			connect branch offices, datacenters, corporate partners, and to provide traveling staff
+			with a portal into the corporate network.
+		</p>
+		<p>
+			IPFire uses both the IPSEC and OpenVPN protocols, affording the maximum in flexibility
+			when configuring your VPN. These implementations allow IPFire connect to VPN endpoint
+			devices by:
+			<a href="http://www.cisco.com" target="_blank">Cisco</a>,
+			<a href="http:///www.juniper.net" target="_blank">Juniper</a>,
+			<a href="http://www.checkpoint.com" target="_blank">Checkpoint</a>,
+			NetGear, or any Linux based implementation.
+		</p>
+	{% end %}
+	<p class="links">
+		<!-- XXX a link to the wiki goes here -->
+		<a href="http://wiki.ipfire.org">{{ _("Learn more about configuring a VPN connection") }}</a>
+	</p>
+{% end block %}

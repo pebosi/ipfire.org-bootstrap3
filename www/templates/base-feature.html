@@ -1,0 +1,47 @@
+{% extends "base-2.html" %}
+
+{% block sidebar %}
+	<h4>{{ _("Highlights") }}</h4>
+	<ul>
+		<li><a href="/about">{{ _("About IPFire") }}</a></li>
+		<li><a href="/about/security">{{ _("Security") }}</a></li>
+		<li><a href="/about/firewall">{{ _("Firewall") }}</a></li>
+		<li><a href="/about/pakfire">{{ _("Pakfire") }}</a></li>
+		<li><a href="/about/itsfree">{{ _("It's free") }}</a></li>
+	</ul>
+
+	<h4>{{ _("Features &amp; Addons") }}</h4>
+	<ul>
+		<li><a href="/about/proxy">{{ _("Web proxy") }}</a></li>
+		<ul>
+			<li><a href="/about/proxy/content-filter">{{ _("Content filter") }}</a></li>
+			<li><a href="/about/proxy/update-accelerator">{{ _("Update accelerator") }}</a></li>
+			<li><a href="/about/proxy/virus-scanner">{{ _("Virus scan") }}</a></li>
+		</ul>
+		<li><a href="/about/vpn">{{ _("VPN") }}</a></li>
+		<ul>
+			<li><a href="/about/vpn/ipsec">{{ _("IPsec") }}</a></li>
+			<li><a href="/about/vpn/openvpn">{{ _("OpenVPN") }}</a></li>
+		</ul>
+		<li><a href="/about/ids">{{ _("Intrusion detection") }}</a></li>
+		<li><a href="/about/qos">{{ _("Quality of Service") }}</a></li>
+		<li><a href="/about/wireless">{{ _("Wireless AP") }}</a></li>
+		<li><a href="/about/hardware">{{ _("Hardware") }}</a></li>
+		<li><a href="/about/monitoring">{{ _("Monitoring") }}</a></li>
+		<li><a href="/about/fileserver">{{ _("File and print service") }}</a></li>
+		<li><a href="/about/mailserver">{{ _("Mail server") }}</a></li>
+		<li><a href="/about/virtualization">{{ _("Virtualization") }}</a></li>
+	</ul>
+{% end block %}
+
+{% block javascript %}
+	<script type="text/javascript">
+		$(function() {
+			$("a[rel=screens]").fancybox({
+				'titlePosition'	: 'inside',
+				'transitionIn'	: 'elastic',
+				'transitionOut'	: 'elastic'
+			});
+		});
+	</script>
+{% end block %}

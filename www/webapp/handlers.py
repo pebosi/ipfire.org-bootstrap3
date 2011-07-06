@@ -72,11 +72,12 @@ class StaticHandler(BaseHandler):
 
 	@property
 	def static_files(self):
-		ret = []
-		for filename in os.listdir(self.static_path):
-			if filename.endswith(".html"):
-				ret.append(filename)
-		return ret
+		for dir, subdirs, files in os.walk(self.static_path):
+			dir = dir[len(self.static_path) + 1:]
+			for file in files:
+				if not file.endswith(".html"):
+					continue
+				yield os.path.join(dir, file)
 
 	def get(self, name=None):
 		name = "%s.html" % name
@@ -85,5 +86,3 @@ class StaticHandler(BaseHandler):
 			raise tornado.web.HTTPError(404)
 
 		self.render("static/%s" % name, lang=self.locale.code[:2])
-
-
