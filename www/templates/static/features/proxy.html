@@ -1,0 +1,115 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("Web proxy") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Web proxy") }}</h3>
+
+	<!-- XXX needs icons -->
+	<!-- XXX needs screenshots -->
+
+	{% if lang == "de" %}
+		<p>
+			Der Webproxy in IPFire, die Open-Source-Software Squid, ist der Linux und UNIX-Welt nicht unbekannt
+			und steht unter der GNU General Public License. Nicht nur ISPs, Universitäten, Schulen und grosse
+			Firmen nutzen diesen Proxy, denn seine Vielfältigkeit, Stabilität und ausgereifte Entwicklung macht
+			ihn auch für kleine Heimnetzwerke zu einem nutzvollen Partner. Ergänzend zur zustandsgesteuerten
+			Paketfilterung auf TCP/IP Ebene der Firewall können somit auch Inhalte, die über das HTTP-Protokoll
+			übertragen werden, analysiert und geregelt werden. Dabei können sowohl  HTTP-, HTTPS- sowie
+			FTP-Inhalte über Squid angefordert werden.
+		</p>
+		<p>
+			Ein Proxy-Server hat im Netzwerk eine Vermittlungsfunktion. Er nimmt Anfragen der Anwender entgegen,
+			lädt Daten aus dem Internet und leitet diese wieder zurück an den Anwender - auf Wunsch ganz
+			transparent und ohne eine einzige Einstellung am Client. Das Zwischenspeichern von statischen
+			Inhalten (Caching) und Webseiten kann einen stark genutzten Internetzugang Entlasten und das Surfen
+			beschleunigen. Das Caching ist aber aufgrund von immer schnelleren Internetzungen in den Hintergrund
+			geraten und die wichtigere Aufgabe eines Webproxies ist die Regelung von Zugangsberechtigungen (ACLs)
+			- wobei hier sämtliche Einstellungen bequem über das IPFire-Webinterface gemacht werden können.
+		</p>
+		<ul class="list">
+			<li>
+				<strong>Sicherheit:</strong> Der Client fragt nicht selbst, er lässt seinen Proxy fragen.
+				Die Antwort des Servers geht wieder an den Proxy und nicht an den Client. Der Client tritt
+				somit nicht selbst in Erscheinung. Ein damit verbundener Angriff würde also in erster Linie
+				den Proxy und nicht den Client treffen. Es stehen auch Funktionen zum Datenschutz zur Verfügung,
+				was einen Vorteil gegenüber einem reinen NAT Router darstellt.
+			</li>
+			<li>
+				<strong>Authentifizierung:</strong> Über Access-Listen kann Squid auch veranlasst werden,
+				Zugriffe nur nach einer Benutzerauthentifizierung zuzulassen. Hierbei stehen LDAP, identd,
+				Windows, Radius oder Lokale Authentifizierungsmethoden zur Verfügung, womit sich der Webproxy
+				zum Beispiel an einen Microsoft Windows Domänencontroller anbinden lässt und nur Mitarbeitern
+				der Zugang zum Internet gewährt werden kann.
+			</li>
+			<li>
+				<strong>Kontrolle der Zugriffe:</strong> Soll der Internetzugriff nur zu speziellen Tageszeiten
+				oder auch komplett für einzelne oder mehrere Clients eingeschränkt werden, kann dies über die
+				“Netzwerkbasierten Zugriffskontrolle” geschehen, welche man im Webinterface findet. Ein sinnvoller
+				Anwendungsbereich dafür sind z.B. Schulen.
+			</li>
+			<li>
+				<strong>Protokollierung:</strong> Da jeder Zugriff über den Proxy protokolliert werden kann, bieten
+				sich Möglichkeiten zur Überprüfung der Zugriffe im Nachhinein an und es können auch Statistiken
+				und Abrechnungen erstellt werden. Durch das Analyseprogramm Calamaris lassen sich die Logdateien
+				in unterschiedlichsten Kriterien über das IPFire Webinterface übersichtlich darstellen.
+			</li>
+			<li>
+				<strong>Bandbreitenmanagement:</strong> Das Downloadmanagement lässt eine Kontrolle der Bandbreite
+				für spezifizierte Bereiche zu. So können inhaltsbasierte Drosselungen zum Beispiel für Binärdateien,
+				CD-Images oder Multimediadaten ebenso konfiguriert werden wie eine Download Drosselung der einzelnen
+				Zonen oder für Hosts in den jeweiligen Zonen.
+			</li>
+		</ul>
+	{% else %}
+		<p>
+			IPFire includes a web proxy, which is the open-source software Squid. It is well known in the Linux
+			and Unix world and often represented. Not only ISPs, universities, schools and large companies use
+			this proxy because of its diversity, stability and mature development. Even for small home networks
+			is squid a useful partner. In addition to the stateful paket inspection filtering by the firewall on
+			the TCP/IP layer, the web content which is either transmitted over HTTP, HTTPS or FTP can be analyzed
+			and filtered.
+		</p>
+		<p>
+			For the local network a proxy server has got an intervention function. It takes requests from the user,
+			forwards it to the Internet and passes the response back to the user - optionally completely transparent
+			and without only a single adjustment on the client machine. The caching of static content and websites
+			can speed up a heavily used Internet line and enhance the surfing experience very much, although it is
+			mostly subordinated because of ever-faster Internet lines. The more important function of the web proxy
+			is the task of the control of access permissions (ACLs) - all settings can be easily made via the web
+			interface of IPFire.
+		</p>
+		<ul class="list">
+			<li>
+				<strong>Security:</strong> The client does not query web servers by itself, it queries his proxy.
+				The server response goes back to the proxy and not to the client, which does not even appear on the
+				Internet. A related attack would therefore primarily reach the proxy and not the client. There are also
+				functions available for data privacy, which is an advantage in relation to a pure NAT router.
+			</li>
+			<li>
+				<strong>Authentication:</strong> Over the access-lists, the web proxy can also be configured to allow
+				access only after a user authentication. At this point you have the choice between LDAP, identd,
+				Windows, Radius or local authentication methods, whereby the web proxy can connect for example to a
+				Microsoft Windows domain controller and only the employees can be granted access to the Internet.
+			</li>
+			<li>
+				<strong>Authorization:</strong> If the Internet access should be limited to specific times of a day,
+				or if it should be even completely disabled for a single or multiple clients, is this viable by the
+				“network-based access control”, which can also be found on the IPFire web interface. A useful scope
+				therefore can be for example a school classroom.
+			</li>
+			<li>
+				<strong>Logging:</strong> Since each access can be logged over the proxy, possibilities for the
+				examination of the accesses can be very useful and also statistics and bills can be issued afterwards.
+				By the analyzer which is called Calamaris, log files can be charted by lots of different criterias
+				on the IPFire web interface.
+			</li>
+			<li>
+				<strong>Bandwidth management:</strong> The download management allows the control of the bandwidth
+				for specified zones. Thus, content-based throttling, for example for binary files, CD images or
+				multimedia content is configurable like bandwidth limitation for individual zones or for each host
+				in a zone.
+			</li>
+		</ul>
+	{% end %}
+{% end block %}

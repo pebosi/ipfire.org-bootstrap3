@@ -1,0 +1,33 @@
+{% extends "../../../base-feature.html" %}
+		
+{% block title %}{{ _("Update accelerator") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Web proxy: Update accelerator") }}</h3>
+
+	<!-- XXX needs icons -->
+	<!-- XXX needs screenshots -->
+
+	{% if lang == "de" %}
+		<p>
+			Der Update-Accelerator ist ein System, das Updates für z.B. Betriebssysteme massiv beschleunigen
+			kann. Dazu werden alle heruntergeladenen Updates zwischengespeichert und bei einem weiteren Download
+			aus dem lokalen Cache ausgeliefert.
+		</p>
+		<p>
+			Bei Service Packs für Microsoft Windows, die oft einige hundert Megabytes haben, lohnt sich dieses
+			Speichern massiv, aber auch Virenscanner und andere Produkte profitieren und machen ein Update von
+			allen Workstations in der Firma zu einer schnell erledigten Aufgabe.
+		</p>
+	{% else %}
+		<p>
+			The Update Accelerator is a system that can accelerate updates such as for operating systems massively.
+			Therefore, all downloaded updates are cached and if requested another time, delivered from the cache.
+		</p>
+		<p>
+			With for example Service Packs for Microsoft Windows, which often are several hundred megabytes,
+			benefit as well as virus scanners and other products massively and the Update Accelerator makes an
+			update on all workstations in the company to a quickly completed task. 
+		</p>
+	{% end %}
+{% end block %}

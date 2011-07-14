@@ -69,6 +69,7 @@ class Application(tornado.web.Application):
 
 			# Handle old pages that have moved elsewhere
 			(r"/screenshots", tornado.web.RedirectHandler, { "url" : "/about" }),
+			(r"/features", tornado.web.RedirectHandler, { "url" : "/about" }),
 
 			# RSS feed
 			(r"/news.rss", RSSNewsHandler),

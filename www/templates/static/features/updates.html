@@ -1,0 +1,75 @@
+{% extends "../../base-feature.html" %}
+
+{% block title %}{{ _("Updates") }}{% end block %}
+
+{% block content %}
+	<h3>{{ _("Updates") }}</h3>
+
+	{% if lang == "de" %}
+		<p>
+			IPFire basiert auf Linux, dem besten Open-Source-Kernel, den es gibt.
+			Ebenso basiert IPFire <strong>nicht</strong> auf irgendeiner Distribution
+			wie z.B. Knoppix auf Debian basiert sondern wird aus den Sourcen einer
+			großen Anzahl von Paketen gebaut. Dieser Prozess der Entwicklung kostet
+			viel Zeit, gibt allerdings die Möglichkeit nicht von Updatezyklen anderer
+			abzuhängen. Dagegen hat es den Vorteil besonders zuverlässige Versionen
+			eines Softwarepakets auszuwählen und den größten Teil der Distribution
+			daraus aufzubauen. Der Kernel hingegen wird laufend aktualisiert und
+			gepatcht um aktuelle und eine möglichst breite Palette an Hardware zu
+			unterstützen - und viel wichtiger noch Sicherheitsupdates zeitnah zur
+			Verfügung zu stellen.
+		</p>
+
+		<p>
+			Das macht IPFire zu einem sehr leistungsfähigen und gleichzeitig
+			gehärtetem System.
+		</p>
+
+		<p>
+			Um dies beizubehalten und kompatibel zu der Vielzahl an Hardware auf
+			dem Markt zu bleiben, werden sogenannte “Core Updates” in einem Abstand
+			von etwa vier Wochen herausgegegen, um gesammelte Patches auszuliefern.
+			Im Falle eines kritischen Sicherheitsproblems in einem der Pakete gibt
+			es Sicherheitsupdates innerhalb weniger als 24 Stunden.
+		</p>
+
+		<p>
+			Alle Updates können mittels des Paketmanagements eingespielt werden
+			und die Benutzer werden per Email über eben diese informiert. So ist
+			in allen Fällen das Update nach einem einzigen Klick installiert und
+			das System ist wieder gesichert im Internet.
+		</p>
+	{% else %}
+		<p>
+			IPFire is based on Linux, which is the best Open Source kernel around.
+			Additionally, IPFire is <strong>not</strong> based on any other
+			distribution like Knoppix is on Debian. It is compiled from the sources
+			of every single package. This comsumes a lot of work, but finally
+			gives the opportunity to not rely on the update cycles of others.
+			The advantages we gain is that we are able to select very stable
+			versions of software and build the distribution from them. For example
+			is the most part of the distribution quite well tested and long maintained
+			- in contrast to the kernel which is very recent and regularly updated
+			with patches to support as much hardware as possible and more importantly
+			fix security errors.
+		</p>
+
+		<p>
+			This is what makes IPFire a very strong and hardened system.
+		</p>
+
+		<p>
+			To keep up that strength and be prepared for new hardware, we give
+			out the so called Core Updates which are issued in about every four
+			weeks and updating collected fixes. If there is a security emergency,
+			we provide updates in less than a day to overcome zero-day holes in
+			the system.
+		</p>
+
+		<p>
+			All of the updates can be installed by the package management system
+			and users are notified by mail. So in all cases, the update is just
+			a simple click and your system is running safe again.
+		</p>
+	{% end %}
+{% end block %}

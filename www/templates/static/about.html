@@ -1,23 +1,9 @@
 {% extends "../base-feature.html" %}
-		
+
 {% block title %}{{ _("About IPFire") }}{% end block %}
 
 {% block content %}
 	<h3>{{ _("About IPFire") }}</h3>
-
-	<div class="seeleftbox">
-		{% if lang == "de" %}
-			<p>
-				Auf der rechten Seite können Sie durch alle Funktionen von IPFire
-				durchblättern.
-			</p>
-		{% else %}
-			<p>
-				See the navigation on the right and browse through the wonderful features
-				of IPFire.
-			</p>
-		{% end %}
-	</div>
 
 	{% if lang == "de" %}
 		<p>
@@ -35,8 +21,9 @@
 			erfordert Anpassungsfähigkeit, die IPFire mit sich bringt.
 		</p>
 		<p>
-			<em>Diese Tabs zeigen was mit IPFire alles möglich ist. Jede Rubrik trägt ihren Teil zum
-			Gesamtkonzept bei und macht IPFire ganz individuell zu dem was es ist.</em>
+			<em>Die Links in der Sidebar zeigen, was mit IPFire alles möglich ist.
+			Jede Rubrik trägt ihren Teil zum Gesamtkonzept bei und macht IPFire ganz
+			individuell zu dem, was es ist.</em>
 		</p>
 	{% else %}
 		<p>
@@ -55,8 +42,8 @@
 			IPFire has been designed to be flexible enough to fit into any existing security architecture.
 		</p>
 		<p>
-			<em>Please click through the tabs and take a look at the possibilities IPFire offers for
-			your personal concept of network.</em>
+			<em>Please click through the links in the sidebar and take a look at
+			the possibilities IPFire offers for your personal concept of network.</em>
 			If you're still deciding what that concept is, don't worry. IPFire comes with intelligent
 			defaults for settings whereever possible.
 		</p>
