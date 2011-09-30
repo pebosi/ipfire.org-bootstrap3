@@ -140,43 +140,48 @@
 				{{ _("Speed") }}
 			</td>
 			<td class="value">
-				{{ profile.cpu.speed }} MHz (Bogomips: {{ profile.cpu.bogomips }})
+				{{ profile.cpu.speed }} MHz
+				{% if profile.cpu.speed != profile.cpu.bogomips %}
+					(Bogomips: {{ profile.cpu.bogomips }})
+				{% end %}
 			</td>
 		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Supported features") }}
-			</td>
-			<td class="value">
-				<table class="cpufeatures">
-					<tr>
-						{% if profile.cpu.capable_64bit %}
-							<td class="enabled">
-						{% else %}
-							<td class="disabled">
-						{% end %}
-							{{ _("64 bit")  }}
-						<td>
-						
-						{% if profile.cpu.capable_pae %}
-							<td class="enabled">
-						{% else %}
-							<td class="disabled">
-						{% end %}
-							{{ _("PAE")  }}
-						<td>
+		{% if profile.cpu.vendor != "ARM" %}
+			<tr>
+				<td class="key">
+					{{ _("Supported features") }}
+				</td>
+				<td class="value">
+					<table class="cpufeatures">
+						<tr>
+							{% if profile.cpu.capable_64bit %}
+								<td class="enabled">
+							{% else %}
+								<td class="disabled">
+							{% end %}
+								{{ _("64 bit")  }}
+							<td>
 
-						{% if profile.cpu.capable_virt %}
-							<td class="enabled">
-						{% else %}
-							<td class="disabled">
-						{% end %}
-							{{ _("VT-x/AMD-V")  }}
-						<td>
-					</tr>
-				</table>
-			</td>
-		</tr>
+							{% if profile.cpu.capable_pae %}
+								<td class="enabled">
+							{% else %}
+								<td class="disabled">
+							{% end %}
+								{{ _("PAE")  }}
+							<td>
+
+							{% if profile.cpu.capable_virt %}
+								<td class="enabled">
+							{% else %}
+								<td class="disabled">
+							{% end %}
+								{{ _("VT-x/AMD-V")  }}
+							<td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		{% end %}
 		<tr>
 			<td colspan="2">
 				<strong>{{ _("Memory") }}<strong>
