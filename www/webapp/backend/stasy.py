@@ -60,6 +60,9 @@ CPU_STRINGS = (
 
 	# Qemu
 	(r"QEMU Virtual CPU version .*", r"QEMU CPU"),
+
+	# ARM
+	(r"Feroceon .*", r"ARM Feroceon"),
 )
 
 CPU_CORES = range(1, 9)
@@ -82,7 +85,14 @@ class ProfileCPU(ProfileDict):
 
 	@property
 	def speed(self):
-		return self._data.get("speed")
+		speed = self._data.get("speed")
+
+		# ARM boxes do not report speed but
+		# bogomips equals speed
+		if not speed:
+			return self.bogomips
+
+		return speed
 
 	@property
 	def friendly_speed(self):
@@ -135,7 +145,12 @@ class ProfileCPU(ProfileDict):
 
 	@property
 	def friendly_string(self):
-		return "%s @ %s" % (self.friendly_vendor, self.friendly_speed)
+		s = self.friendly_vendor
+
+		if self.speed:
+			s += " @ %s" % self.friendly_speed
+
+		return s
 
 
 class ProfileHypervisor(ProfileDict):
