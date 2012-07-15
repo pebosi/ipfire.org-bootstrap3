@@ -89,7 +89,7 @@ class Application(tornado.web.Application):
 		])
 
 		# downloads.ipfire.org
-		self.add_handlers(r"downloads\.ipfire\.org", [
+		self.add_handlers(r"downloads?\.ipfire\.org", [
 			(r"/", DownloadsIndexHandler),
 			(r"/latest", DownloadsLatestHandler),
 			(r"/release/([0-9]+)", DownloadsReleaseHandler),
@@ -101,9 +101,6 @@ class Application(tornado.web.Application):
 		] + static_handlers + [
 			(r"/(iso|torrent)/(.*)", DownloadCompatHandler),
 			(r"/(.*)", DownloadFileHandler),
-		])
-		self.add_handlers(r"download\.ipfire\.org", [
-			(r".*", tornado.web.RedirectHandler, { "url" : "http://downloads.ipfire.org" })
 		])
 
 		# mirrors.ipfire.org
