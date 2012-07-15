@@ -97,7 +97,7 @@ class Mirrors(object):
 		return Memcached()
 
 	def list(self):
-		return [Mirror(m.id) for m in self.db.query("SELECT id FROM mirrors ORDER BY state")]
+		return [Mirror(m.id) for m in self.db.query("SELECT id FROM mirrors ORDER BY state,hostname")]
 
 	def check_all(self):
 		for mirror in self.list():
@@ -420,6 +420,7 @@ class Mirror(object):
 	def __check_timestamp_response(self, response):
 		if response.error:
 			logging.debug("Error getting timestamp from %s" % self.hostname)
+			self.set_state("DOWN")
 			return
 
 		try:
