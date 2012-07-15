@@ -97,7 +97,7 @@ class Mirrors(object):
 		return Memcached()
 
 	def list(self):
-		return [Mirror(m.id) for m in self.db.query("SELECT id FROM mirrors ORDER BY state,hostname")]
+		return [Mirror(m.id) for m in self.db.query("SELECT id FROM mirrors WHERE disabled = 'N' ORDER BY state,hostname")]
 
 	def check_all(self):
 		for mirror in self.list():
