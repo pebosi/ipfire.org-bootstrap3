@@ -302,10 +302,14 @@ class ProfileSendHandler(BaseHandler):
 		self.check_profile()
 
 		# Get GeoIP information if address is not defined in rfc1918
-		addr = ipaddr.IPAddress(self.request.remote_ip)
-		if not addr.is_private:
-			remote_ips = self.request.remote_ip.split(", ")
-			profile.geoip = self.geoip.get_all(remote_ips[-1])
+		remote_ips = self.request.remote_ip.split(", ")
+		for remote_ip in remote_ips:
+			addr = ipaddr.IPAddress(remote_ip)
+			if addr.is_private:
+				continue
+
+			profile.geoip = self.geoip.get_all(remote_ip)
+			break
 
 		# Move previous profiles to archive and keep only the latest one
 		# in profiles. This will make full table lookups faster.
