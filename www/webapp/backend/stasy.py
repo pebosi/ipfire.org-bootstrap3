@@ -10,7 +10,7 @@ import re
 
 from misc import Singleton
 
-DATABASE_HOST = ["wilhelmina.ipfire.org"]
+DATABASE_HOST = ["wilhelmina.ipfire.org", "miranda.ipfire.org"]
 DATABASE_NAME = "stasy"
 
 CPU_SPEED_CONSTRAINTS = (0, 500, 1000, 1500, 2000, 2500, 3000, 3500)
