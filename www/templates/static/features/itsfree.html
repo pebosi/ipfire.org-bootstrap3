@@ -2,45 +2,86 @@
 		
 {% block title %}{{ _("IPFire is free software") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("IPFire is free software") }}</h3>
+{% block bodyA %}
+	<img src="{{ static_url("images/icons/itsfree.png") }}" class="pull-right" alt="{{ _("It's free") }}" />
 
-	<img src="{{ static_url("images/icons/itsfree.png") }}" class="floatTL" alt="{{ _("It's free") }}" />
-	{% if lang == "de" %}
-		<p>
-			Lizenziert unter der <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>
-			in Version 3 ist IPFire freie Software.
-		</p>
-		<p>
-			Eine <a href="/donation">Spende</a> sichert den Fortbestand des Projekts,
-			welches ohne diese Form der Unterstützung, nicht existieren könnte.
-		</p>
-		<p>
-			Freie Software ermöglicht (unter den Bedingungen der GPLv3):
-		</p>
-		<ul class="list">
-			<li>Kostenfreie Nutzung über einen unbegrenzten Zeitraum</li>
-			<li>Einblick in den Quelltext</li>
-			<li>Möglichkeiten zur Mitwirkung und Verbeserung</li>
-			<li>Unabhängigkeit von einem Hersteller</li>
-		</ul>
-	{% else %}
-		<p>
-			IPFire is licensed under the terms of the <a href="http://www.gnu.org/licenses/gpl.html">GNU General
-			Public License</a> in version 3, so it is free software.
-		</p>
-		<p>
-			The success of the project depends upon <a href="/donation">donations</a>
-			to the community.
-		</p>
-		<p>
-			Free software allows (under the terms of the GPLv3):
-		</p>
-		<ul class="list">
-			<li>Free use for an unlimited amount time</li>
-			<li>Review of the full source code</li>
-			<li>Opportunity to take part in development and make own improvements</li>
-			<li>Independence from a specific vendor</li>
-		</ul>
-	{% end %}
+	<div class="page-header">
+		<h1>
+			{{ _("IPFire is free software") }}
+			<small>{{ _("Free as in freedom") }}</small>
+		</h1>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					Die Komponenten aus denen IPFire sich zusammensetzt sind
+					ausschließlich unter <em>freien Softwarelizenzen</em> lizenziert.
+					Das bedeutet widerum, dass IPFire selbst <em>freie Software</em> ist.
+				</p>
+				<p>
+					Freie Software bietet wesentliche Vorteile im Vergleich zu
+					Closed-Source Entwicklungen.
+					Beispielweise ist es jederzeit möglich Quellcode
+					anzusehen und zu verbessern.
+					Die IPFire Entwickler erhalten laufend Patches, welche
+					Fehler beseitigen und neue Funktionen hinzufügen.
+				</p>
+				<p>
+					IPFire kann von jederman egal ob im Büro oder zu Hause
+					vollkommen unlimitiert verwendet werden,
+					auch ist es erlaubt Kopien an Freunde oder Kollegen
+					weiterzugeben.
+				</p>
+				<p>
+					Für sämtliche Software die in IPFire eingesetzt wird, ist
+					ebenfalls der Quellcode verfügbar.
+				</p>
+
+				<h2>Spenden</h2>
+				<p>
+					Der Erfolg von IPFire basiert überwiegend auf Spenden und
+					der Arbeit, welche die Community beisteuert.
+					Wir möchten jeden der unsere Software herunterlädt oder
+					verwendet, dazu ermutigen auch ein Teil dieser Gemeinschaft
+					zu werden - sei es durch Hilfestellung im Forum,
+					Erweiterung/Korrektur der Dokumentation oder durch eine
+					<a href="/donation">Spende</a>.
+					Je mehr Leute sich einbringen, desto mehr Ressourcen
+					stehen zur Verfügung für Fortschritt und Entwicklung.
+				</p>
+			{% else %}
+				<p>
+					IPFire is assembled with software that is licensed under
+					<em>free software</em> licences. That basically means IPFire
+					itself is <em>free software</em>.
+				</p>
+				<p>
+					Free software has huge advantages in difference to closed source developments.
+					At this project, it is possible to review the code and make it better. In fact,
+					IPFire is receiving a lot of code contributions that make the whole distribution
+					a little bit better every day.
+				</p>
+				<p>
+					People who simply use IPFire in their offices or homes can use it for an unlimited
+					amount of time, make copies of it and give them to friends or colleges.
+				</p>
+				<p>
+					As IPFire is including many different software packages, all of them are also
+					availble in source code and distributed under a free license.
+				</p>
+
+				<h2>Donations</h2>
+				<p>
+					The ultimate success of the project is dependent on donations and community
+					interaction.
+					We encourage anyone who downloads and uses IPFire to get involved, whether
+					it be on the forum, adding/editing the wiki, or <a href="/donation">donating</a>.
+					The more we foster community development, the more resources we have
+					available to continue and expand development.
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}

@@ -2,47 +2,139 @@
 		
 {% block title %}{{ _("Virtualization") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Virtualization") }}</h3>
-
-	<img src="{{ static_url("images/icons/virtualization.png") }}" class="floatTL" alt="{{ _("Virtualization") }}" />
-	{% if lang == "de" %}
-		<p>
-			IPFire kann, als virtueller Gast, auf folgenden Lösungen betrieben werden:
-		</p>
-		<ul class="list">
-			<li><a href="http://www.linux-kvm.org">KVM</a>/Qemu</li>
-			<li>Xen (paravirtualisiert oder im vollvirtualisieren Modus)</li>
-			<li>VMWare (Workstation, vSphere, ESXi, ...)</li>
-			<li>Virtualbox</li>
-		</ul>
-		<br class="clear" />
-		<p>
-			Um eine hohe Leistung auf allen Systemen zu gewährleisten, werden
-			zahlreiche Frontent-Treiber mitgeliefert.
-		</p>
-	{% else %}
-		<p>
-			IPFire can be run as a virtual guest on the following hypervisors:
-		</p>
-		<ul class="list">
-			<li><a href="http://www.linux-kvm.org">KVM</a>/Qemu</li>
-			<li>Xen (paravirtualized and fully virtualized mode)</li>
-			<li>VMWare (Workstation, vSphere, ESXi, ...)</li>
-			<li>Virtualbox</li>
-		</ul>
-		<br class="clear" />
-		<p>
-			It brings many frontend drivers for high performance to all the hypervisors.
-		</p>
-	{% end %}
-
-	<div class="line"></div>
-
-	<div class="screenshots">
-		<a rel="screens" href="{{ static_url("images/screenshots/en/virtualization/virt-manager-1.png") }}"
-			title="{{ _("IPFire runs perfectly in virtual environments.") }}"><img alt="{{ _("Image 1") }}"
-			src="{{ static_url("images/screenshots/en/virtualization/virt-manager-1_thumb.png") }}" />
-		</a>
+{% block bodyA %}
+	<img src="{{ static_url("images/icons/virtualization.png") }}" class="pull-right" alt="{{ _("Virtualization") }}" />
+	<div class="page-header">
+		<h1>{{ _("Virtualization") }}</h1>
 	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					IPFire bringt einige Frontend-Treiber für High-Performance-Virtualisierung
+					mit sich und arbeitet hervorragend als Gast auf den folgenden
+					Virtualisierungsplattformen.
+				</p>
+
+				<h2>Unterstützte Hypervisoren</h2>
+				<h3>KVM</h3>
+				<p>
+					<a href="http://www.linux-kvm.org">KVM</a> ist die Abkürzung
+					für Kernel-based Virtual Machine und wird von
+					<a href="http://www.redhat.com">Red Hat Inc.</a> entwickelt.
+					Es ist derzeit am häufigsten eingesetzte freie Virtualisierungslösung
+					und löst Xen zunehmend ab.
+				</p>
+				<p>
+					Der IPFire-Kernel verfügt über die <em>virtio</em> Module,
+					welche hervorragende Leistung bei wenig Virtualisierungsoverhead
+					bieten.
+				</p>
+
+				<h3>VMware</h3>
+				<p>
+					IPFire arbeitet auf verschiedenen VMware Produkten wie
+					<em>vSphere</em>, <em>ESXi</em> und <em>VMware workstation</em>.
+					Das optionale Paket <em>open-vm-tools</em> verbessert die
+					Integration zusätzlich.
+				</p>
+
+				<h3>Xen</h3>
+				<p>
+					Xen war der de-facto Open-Source-Hypervisor, wird
+					allerdings immer öfter durch KVM ersetzt.
+				</p>
+				<p>
+					IPFire bringt für den Einsatz auf einem Xen-Host einen
+					paravirtualisierten Kernel mit.
+					Die Installation ist sehr einfach, da bereits ein
+					vorinstalliertes Image auf der Downloadseite heruntergeladen
+					werden kann.
+				</p>
+
+				<h3>Andere</h3>
+				<p>
+					IPFire ist nicht auf die oben genannten Lösungen beschränkt.
+					Ebenso läuft die Distribution auch unter <em>Qemu</em>,
+					<em>Microsoft Hyper-V</em> und <em>Oracle Virtualbox</em>.
+				</p>
+
+				<h3>Ein Hinweis zu Virtualisierung</h3>
+				<p>
+					Virtualisierung hat Vorteile, allerdings nicht ohne Nachteile.
+					Es besteht die Möglichkeit, dass die VM-Container-Sicherheit
+					umgangen werden kann und somit ein Angreifer Zugang über die
+					virtuelle Maschine heraus erlangen kann.
+					Aus diesen Gründen empfehlen wir nicht IPFire virtuell
+					in produktiven Umgebungen einzusetzen.
+				</p>
+			{% else %}
+				<p>
+					IPFire brings many front-end drivers for high-performance virtualization
+					and can be run as virtual guest operating system on the following
+					virtualization platforms.
+					It has also been optimized to some of the mostly distributed ones to bring
+					the best possible performance without impacting the hardware very much.
+				</p>
+
+				<h2>Supported hypervisors</h2>
+				<h3>KVM</h3>
+				<p>
+					<a href="http://www.linux-kvm.org">KVM</a> is short for
+					Kernel-based Virtual Machine and is developed by
+					<a href="http://www.redhat.com">Red Hat Inc.</a>.
+					It is becoming the most advanced hypervisor and succeeding Xen, which
+					has been used so far.
+				</p>
+				<p>
+					IPFire is coming with the <em>virtio</em> kernel modules, that have best
+					performance due to very less virtualization overhead.
+				</p>
+
+				<h3>VMware</h3>
+				<p>
+					IPFire runs on different VMware products like <em>vSphere</em>,
+					<em>ESXi</em> and <em>VMware workstation</em>. The additional package
+					<em>open-vm-tools</em> offers tools for a better integration.
+				</p>
+
+				<h3>Xen</h3>
+				<p>
+					Xen has recently been the de-facto Open Source hypervisor but is now
+					succeeded by KVM.
+				</p>
+				<p>
+					IPFire can optionally be run with a paravirtualized kernel, which has very
+					less virtualization overhead as well. To make the installation very easy,
+					a pregenerated Xen image can be downloaded from the download page.
+				</p>
+
+				<h3>Others</h2>
+				<p>
+					IPFire is not limited to the hypervisors described above. It runs perfectly on
+					<em>Qemu</em>, <em>Microsoft Hyper-V</em> or <em>Oracle VirtualBox</em>, too.
+				</p>
+
+				<h3>A note on virtualization</h3>
+				<p>
+					Virtualization does have advantages, but it is not without disadavantages.
+					There is always the possibility that the VM container security can be
+					bypassed in some way and a hacker can gain access beyond the VM.
+					Because of this, it is not suggested to use IPFire as a virtual machine
+					in a production-level environment.
+				</p>
+			{% end %}
+		</div>
+	</div>
+
+	<hr>
+
+	<ul class="thumbnails">
+		<li class="span3">
+			<a class="thumbnail" href="{{ static_url("images/screenshots/en/virtualization/virt-manager-1.png") }}">
+				<img src="{{ static_url("images/screenshots/en/virtualization/virt-manager-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+			</a>
+		</li>
+	</ul>
 {% end block %}

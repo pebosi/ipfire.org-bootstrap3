@@ -1,0 +1,27 @@
+{% extends "admin-downloads-base.html" %}
+
+{% block body %}
+	<div id="post">
+		<h3>{{ _("Download statistics") }}</h3>
+
+		<h4>{{ _("Download counters") }}</h4>
+		<table>
+			<tr>
+				<td>{{ _("Today") }}</td>
+				<td>{{ downloads_today }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Yesterday") }}</td>
+				<td>{{ downloads_yesterday }}</td>
+			</tr>
+			<tr>
+				<td>{{ _("Total") }}</td>
+				<td>{{ downloads_total }}</td>
+			</tr>
+		</table>
+
+		<h4>{{ _("Downloads by country") }}</h4>
+		{{ modules.StasyGeoTable(downloads_locations_today) }}
+		{{ modules.StasyGeoTable(downloads_locations_total) }}
+	</div>
+{% end %}

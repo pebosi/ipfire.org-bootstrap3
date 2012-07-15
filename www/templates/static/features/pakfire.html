@@ -2,59 +2,144 @@
 		
 {% block title %}{{ _("Pakfire") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Pakfire - the IPFire package management") }}</h3>
+{% block bodyA %}
+	<img src="{{ static_url("images/icons/pakfire.png") }}" class="pull-right" alt="{{ _("Pakfire") }}" />
 
-	<img src="{{ static_url("images/icons/pakfire.png") }}" class="floatTL" alt="{{ _("Pakfire") }}" />
-	{% if lang == "de" %}
-		<p>
-			Vom technischen Standpunkt aus ist IPFire ein schlankes, gehärtetes Firewall-System, welches
-			einen Paketmanager mitbringt, der den Namen Pakfire trägt.
-			Mit nur wenigen Klicks ist es möglich dieses System als eine Serverlösung auszubauen.
-		</p>
-		<p>
-			Die interessantesten Addons:
-		</p>
-		<ul class="list">
-			<li>Dateidienste wie z.B.: Samba und vsftpd</li>
-			<li>Eine Auswahl an Konsolentools: tcpdump, nmap und traceroute.</li>
-			<li>Asterisk</li>
-			<li><em>und viele mehr...</em></li>
-		</ul>
-	{% else %}
-		<p>
-			From a technical point of view, IPFire is a minimalistic, hardened firewall system
-			which comes with an integrated package manager called Pakfire. With a single click you
-			can enhance the base system by providing network services.
-		</p>
-		<p>
-			Some interesting addons:
-		</p>
-		<ul class="list">
-			<!-- XXX make this right -->
-			<li>File services such as Samba and vsftpd</li>
-			<li>Communication Server Asterisk</li>
-			<li>A collection of command line tools like tcpdump, nmap and traceroute.</li>
-			<li><em>and many more...</em></li>
-		</ul>
-	{% end %}
-
-	<p class="links">
-		<a href="http://wiki.ipfire.org/{{ lang }}/configuration/ipfire/pakfire/start">{{ _("How to install a package?") }}</a>
-		&bull;
-		<a href="http://wiki.ipfire.org/{{ lang }}/addons/start">{{ _("Full list of installable addons") }}</a>
-	</p>
-
-	<div class="line"></div>
-
-	<div class="screenshots">
-		<a rel="screens" href="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1.png") }}"
-			title="{{ _("Additional packages can be installed on your option.") }}"><img alt="{{ _("Image 1") }}"
-			src="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1_thumb.png") }}" />
-		</a>
-		<a rel="screens" href="{{ static_url("images/screenshots/en/pakfire/addon-services-1.png") }}"
-			title="{{ _("Each service is monitored individually.") }}"><img alt="{{ _("Image 1") }}"
-			src="{{ static_url("images/screenshots/en/pakfire/addon-services-1_thumb.png") }}" />
-		</a>
+	<div class="page-header">
+		<h1>
+			Pakfire
+			<small>{{ _("The IPFire package management system") }}</small>
+		</h1>
 	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					Vom technischen Standpunkt aus ist IPFire ein schlankes, gehärtetes
+					Firewall-System, welches den Paketmanager Pakfire mitbringt.
+					Die primäre Aufgabe von Pakfire ist es, Systemupdates mit nur einem Klick
+					einspielen zu können.
+					Somit ist es ganz leicht <a href="/features/updates">Sicherheitslücken
+					zu schließen und Bugfixes sowie neue Funktionen zu installieren</a>.
+					Dies macht IPFIre sicherer und schneller - oder einfach: besser.
+				</p>
+				<p>
+					Eine weitere Aufgabe ist es, zusätzliche Addons zu installieren, welche die
+					Funktionen des Systems erweitern.
+
+					Einige beliebte sind unter anderen:
+
+					<ul>
+						<li>Datei- und Druckdienste wie <em>samba</em> und <em>vsftpd</em></li>
+						<li>Kommunikationslösungen wie <em>Asterisk</em></li>
+						<li>
+							Verschiedene Kommandozeilenhelfer wie
+							<em>tcpdump</em>, <em>nmap</em>, <em>traceroute</em>
+							und viele mehr.
+						</li>
+					</ul>
+				</p>
+
+				<h2>Pakfire als Buildsystem</h2>
+				<p>
+					Das kommende Major-Release von IPFire wird eine neue
+					Generation des Pakfire Paketmanagementsystems mitbringen.
+					Diese ist schneller, sicherer und einfacher zu bedienen.
+					Dazu kommen unzählige neue Funktionen.
+				</p>
+				<p>
+					Eine der neuen Funktionen ist, dass <em>pakfire</em>
+					nun auch als Buildsystem fungiert.
+					Ein auf die IPFire-Distribution angepasstes Buildsystem
+					hat die Produktivität der Entwickler immens gesteigert.
+					Neue Pakete zu bauen ist nun einfacher und nimmt weniger
+					Zeit in Anspruch.
+				</p>
+				<p>
+					Qualitätssicherung ist jetzt eine Aufgabe für alle.
+					Mehr dazu auf <a href="http://pakfire.ipfire.org/">pakfire.ipfire.org</a>.
+				</p>
+			{% else %}
+				<p>
+					From a technical point of view, IPFire is a minimalistic, hardened firewall system
+					which comes with an integrated package manager called Pakfire.
+					The primary task of Pakfire is to update the system with only a single click.
+					It is very easy to install <a href="/features/updates">security patches,
+					bugfixes and feature enhancements</a>, which make IPFire safer and faster
+					- or simply: better.
+				</p>
+				<p>
+					Another task of Pakfire is to install additional software that adds new
+					functionality to the IPFire system.
+
+					Some useful of them are:
+					
+					<ul>
+						<li>File sharing services such as Samba and vsftpd</li>
+						<li>Communications server using Asterisk</li>
+						<li>
+							Various command-line tools as <em>tcpdump</em>,
+							<em>nmap</em>, <em>traceroute</em> and many more.
+						</li>
+					</ul>
+				</p>
+
+				<h2>Pakfire as a build system</h2>
+				<p>
+					The next major release of IPFire will also ship a new generation
+					of the Pakfire packagement system.
+					This new generation has been made faster, more secure, more
+					easy to handle and adds a whole bunch of new features.
+				</p>
+				<p>
+					One of this features is that <em>pakfire</em> is now the
+					buildsystem as well. Having a customized build system for
+					the needs of IPFire and the IPFire developers improved
+					the development process very much. Building new packages
+					became a lot more easy and less time-consuming.
+				</p>
+				<p>
+					Quality assurance became more social right now. Check it
+					out at <a href="http://pakfire.ipfire.org/">pakfire.ipfire.org</a>.
+				</p>
+			{% end %}
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="well">
+		<h3>{{ _("Further reading") }}</h3>
+		<ul>
+			<li>
+				<a href="http://wiki.ipfire.org/{{ lang }}/configuration/ipfire/pakfire/start">
+					{{ _("How to install a package?") }}
+				</a>
+			</li>
+			<li>
+				<a href="http://wiki.ipfire.org/{{ lang }}/addons/start">
+					{{ _("List of add-ons") }}
+				</a>
+			</li>
+			<li>
+				<a href="http://pakfire.ipfire.org/">
+					{{ _("Pakfire Build System") }}
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<ul class="thumbnails">
+		<li class="span3">
+			<a class="thumbnail" href="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1.png") }}">
+				<img src="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+			</a>
+		</li>
+		<li class="span3">
+			<a class="thumbnail" href="{{ static_url("images/screenshots/en/pakfire/addon-services-1.png") }}">
+				<img src="{{ static_url("images/screenshots/en/pakfire/addon-services-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+			</a>
+		</li>
+	</ul>
 {% end block %}

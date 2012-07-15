@@ -1,4 +1,4 @@
-<table class="stats">
+<table class="table table-fireinfo">
 	{% for k, v in items %}
 		<tr>
 			<td class="key">
@@ -7,9 +7,12 @@
 				{% end %}
 				{{ k }}
 			</td>
-			<td class="bar"><p style="{{ "width: %.2f%%" % v }}">&nbsp;</p></td>
-			<td class="value">{{ "%.2f" % v }}%</td>
+			<td class="bar">
+				<div class="progress">
+					<div class="bar" style="{{ "width: %.2f%%" % v }}"></div>
+				</div>
+			</td>
+			<td class="val">{{ "%.2f" % v }}%</td>
 		</tr>
 	{% end %}
 </table>
-<br class="clear" />

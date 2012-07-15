@@ -1,13 +1,16 @@
-<table class="stats">
+<table class="table table-fireinfo">
 	{% for country in countries %}
 		<tr>
 			<td class="key">
 				<img src="{{ static_url("images/flags/%s.png" % country.code) }}" />
 				{{ country.name }}
 			</td>
-			<td class="bar"><p style="{{ "width: %.2f%%" % country.value }}">&nbsp;</p></td>
-			<td class="value">{{ "%.2f" % country.value }}%</td>
+			<td class="bar">
+				<div class="progress">
+					<div class="bar" style="{{ "width: %.2f%%" % country.value }}"></div>
+				</div>
+			</td>
+			<td class="val">{{ "%.2f" % country.value }}%</td>
 		</tr>
 	{% end %}
 </table>
-<br class="clear" />

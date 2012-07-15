@@ -1,30 +1,40 @@
-<table class="fireinfo">
-	{% for group, devices in groups %}
-		<tr class="vendor">
-			<td colspan="3">
-				&nbsp;<br />
-				<strong>{{ _(group) }}</strong>
-			</td>
-		</tr>
-		{% for device in devices %}
-			<tr class="device">
-				<td>
-					&nbsp; <!-- XXX add margin in CSS -->
-					<img src="{{ static_url("images/icons/bus-%s.png" % device.subsystem) }}"
-						alt="{{ device.subsystem.upper() }}" />
-				</td>
-				<td>
-					<a class="vendor" href="/vendor/{{ device.subsystem }}/{{ device.vendor }}">
-						{{ device.vendor_string }}
-					</a>
-					-
-					<a href="/model/{{ device.subsystem }}/{{ device.vendor }}/{{ device.model }}">
-						{{ device.model_string or "N/A (%s)" % device.model }}
-					</a>
-					<br />
-					{{ _("Module") }}: {{ device.driver or "N/A" }}
-				</td>
-			</tr>
-		{% end %}
-	{% end %}
-</table>
+<div class="row">
+	<div class="span12">
+		<table class="table">
+			<thead>
+				<th colspan="2">&nbsp;</th>
+				<th>{{ _("Kernel module") }}</th>
+			</thead>
+			<tbody>
+				{% for group, devices in groups %}
+					<tr>
+						<td colspan="3">
+							<h3>{{ _(group) }}</h3>
+						</td>
+					</tr>
+
+					{% for device in devices %}
+						<tr>
+							<td>
+								<img src="{{ static_url("images/icons/bus-%s.png" % device.subsystem) }}"
+									alt="{{ device.subsystem.upper() }}" />
+							</td>
+							<td>
+								<a class="vendor" href="/vendor/{{ device.subsystem }}/{{ device.vendor }}">
+									{{ device.vendor_string }}
+								</a>
+								-
+								<a href="/model/{{ device.subsystem }}/{{ device.vendor }}/{{ device.model }}">
+									{{ device.model_string or "N/A (%s)" % device.model }}
+								</a>
+							</td>
+							<td>
+								{% if device.driver %}{{ device.driver }}{% end %}
+							</td>
+						</tr>
+					{% end %}
+				{% end %}
+			</tbody>
+		</table>
+	</div>
+</div>

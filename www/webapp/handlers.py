@@ -21,6 +21,7 @@ from handlers_download import *
 from handlers_iuse import *
 from handlers_mirrors import *
 from handlers_news import *
+from handlers_nopaste import *
 from handlers_planet import *
 from handlers_rss import *
 from handlers_stasy import *
@@ -56,10 +57,8 @@ class IndexHandler(BaseHandler):
 	def get(self):
 		# Get a list of the most recent news items and put them on the page.		
 		latest_news = self.news.get_latest(limit=1, locale=self.locale)
-		recent_planets = self.planet.get_entries(limit=1)
 
-		return self.render("index.html",
-			latest_news=latest_news, recent_planets=recent_planets)
+		return self.render("index.html", latest_news=latest_news)
 
 
 class StaticHandler(BaseHandler):

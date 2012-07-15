@@ -2,32 +2,33 @@
 		
 {% block title %}{{ _("Virus scanner") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Web proxy: Transparent virus scanner") }}</h3>
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("Web proxy: Transparent virus scanner") }}</h1>
+	</div>
 
-	<!-- XXX needs icons -->
-	<!-- XXX needs screenshots -->
-
-	{% if lang == "de" %}
-		<p>
-			Das Paketmanagement bietet das Addon “SquidClamAV” zur Erweiterung an. Somit steht dem Webproxy
-			ein Virenscanner zur Verfügung, der in Echtzeit den Datenverkehr nach Viren mit Hilfe des bekannten
-			ClamAV prüft.
-		</p>
-		<p>
-			Der zusätzliche Schutz zu einem herkömmlichen Virenscanner besteht vor allem darin, dass die Dateien
-			nicht erst auf den Client-Rechner gelangen, bevor der Virenscan ausgeführt werden kann. Potentielle
-			Schädlinge werden vor dem Download durch SquidClamAV geblockt.
-		</p>
-	{% else %}
-		<p>
-			The package manager Pakfire offers the addon SquidClamAV - a virus scanner for the web proxy, which
-			checks in real-time web traffic for viruses using the ClamAV virus definitions.
-		</p>
-		<p>
-			The additional protection to a conventional virus scanner consists in the fact that the files get not
-			on the client machine before the virus scan can be performed. So potential parasites are blocked by
-			SquidClamAV before the actual download.
-		</p>
-	{% end %}
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					Das Paketmanagement bietet das Addon “SquidClamAV” zur Erweiterung an. Somit steht dem Webproxy
+					ein Virenscanner zur Verfügung, der in Echtzeit den Datenverkehr nach Viren mit Hilfe des bekannten
+					ClamAV prüft.
+				</p>
+				<p>
+					Der zusätzliche Schutz zu einem herkömmlichen Virenscanner besteht vor allem darin, dass die Dateien
+					nicht erst auf den Client-Rechner gelangen, bevor der Virenscan ausgeführt werden kann. Potentielle
+					Schädlinge werden vor dem Download durch SquidClamAV geblockt.
+				</p>
+			{% else %}
+				<p>
+					The package manager Pakfire offers the addon SquidClamAV - a virus scanner for the web proxy. This checks in real-time all web traffic for viruses, utilizing the ClamAV virus definitions and scanning engine.
+				</p>
+				<p>
+					The additional protection to a conventional virus scanner lies in the fact that the files are transparently checked before ever making it to the client machine before the client machine's virus scan can be performed. So potentially-malicious files are blocked by
+					SquidClamAV before the client's actual download.
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}

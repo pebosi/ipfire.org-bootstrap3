@@ -1,44 +1,59 @@
 {% extends "../../base-feature.html" %}
-		
+
 {% block title %}{{ _("Security") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Security") }}</h3>
+{% block bodyA %}
+	<img src="{{ static_url("images/icons/security.png") }}" class="pull-right" alt="{{ _("Security") }}" />
 
-	<img src="{{ static_url("images/icons/security.png") }}" class="floatTL" alt="{{ _("Security") }}" />
-	{% if lang == "de" %}
-		<p>
-			Der Schwerpunkt, der in der Entwicklung von IPFire am meisten wiegt, ist Sicherheit. Aber da
-			es nicht nur einen Weg gibt Sicherheit zu erlangen, ist es notwendig, dass jeder Administrator
-			Kenntnis darüber hat, welche Konfiguration am Besten in seiner individuellen Umgebung ist.
-		</p>
-		<p>
-			IPFire ist die Basis für Sicherheit im Netzwerk. Durch die Fähigkeit das Netzwerk zu separieren,
-			kann jeder Teil nach seinen Bedürfnissen gesichert werden. In der
-			Firewall-Sektion gibt es mehr dazu.
-		</p>
-		<p>
-			Ein weiterer sehr wichtiger Punkt, auf den die Entwickler Wert legen, ist das zügige und
-			zuverlässige Bereitstellen von Sicherheitsupdates. Da sich IPFire direkt mit dem Internet
-			verbindet, ist das System primäres Ziel von Hackern und Bots.
-		</p>
-	{% else %}
-		<p>
-			The primary objective in the development of IPFire is - of course - security. But it doesn't
-			mean there is only one way to achieve security. Rather, it is more important for every
-			administrator to understand their environemnt and what security means <em>in that context</em>.
-		</p>
-		<p>
-			IPFire is the base of security for a local network. It has the power to segment the network based
-			on their required security level. This makes it easy to create custom policies for each segment.
-			See the firewall tab for more information.
-		</p>
-		<p>
-			Part of this focus on security involves the fast and reliable distribution of security updates
-			of the system and its components. Updates are digitally signed and encrypted, and can be
-			automatically installed by the Pakfire, the package manager. Since IPFire is directly
-			connected to the Internet it is a primary target for hackers and bots. Pakfire helps
-			administrators feel certain they are running the latest security updates and bug fixes.
-		</p>
-	{% end %}
+	<div class="page-header">
+		<h1>{{ _("Security") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					Das Hauptaugenmerk von IPFire liegt bei Sicherheit.
+					Gerade bei einem solch umfangreichen Thema gibt es nicht nur einen einzigen
+					Weg, um ein maximales Maß an Sicherheit zu erlangen. Mindestens genauso
+					wichtig ist es für den Netwzerkadministrator seine Bedürfnisse zu verstehen
+					und entsprechend zu handeln. IPFire stellt für diesen Zweck eine Basis bereit,
+					die einzelne Netzwerksegmente nach ihren Sicherheitsleveln unterteilt und erlaubt diese
+					anschließend anzupassen (mehr dazu unter <a href="/features/firewall">Firewall</a>).
+				</p>
+				<p>
+					Eine ebenso hohe Priorität genießt die Sicherheit der modularen Komponenten.
+					Aktualisierungen werden digital signiert, verschlüsselt
+					und können automatisch über das <a href="/features/pakfire">Pakfire
+					Paketmanagement-System</a> installiert werden.
+					Typischerweise ist IPFire direkt mit dem Internet verbunden und macht es
+					somit zu einem Ziel für Hacker und andere Gefahren.
+					Das Paketmanagement-System unterstützt den Administrator darin,
+					sicher zu sein, dass alle wichtigen Lücken gestopft und Fehler
+					in allen eingesetzten Komponenten beseitigt sind.
+				</p>
+			{% else %}
+				<p>
+					The primary objective of IPFire is security.
+					As there is of course no one, single way to achieve network security, it is important
+					for a network administrator to understand their environment and what the term
+					<em>security</em> means in the context of their own network.
+					IPFire forms the base of a secure network.
+					It has the power to segment networks based on their respective security levels
+					and makes it easy to create custom policies that manage each segment
+					(see the Firewall page for more information).
+				</p>
+				<p>
+					Security of the modular components is a top priority.
+					Updates are digitally signed and encrypted, as well as can be automatically installed
+					by Pakfire (<a href="/features/updates">the IPFire package management system</a>).
+					Since IPFire is typically directly connected to the Internet, it is going to be a
+					primary target for hackers and other threats.
+					The simple Pakfire package manager helps administrators feel confident that
+					they are running the latest security updates and bug fixes for all of the
+					components they utilize.
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}

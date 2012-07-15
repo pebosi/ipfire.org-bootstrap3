@@ -8,7 +8,7 @@ from misc import Singleton
 class Row(tornado.database.Row):
 	pass
 
-MYSQL_SERVER = "172.28.1.150"
+MYSQL_SERVER = "mysql-master.ipfire.org"
 
 class Databases(object):
 	__metaclass__ = Singleton

@@ -1,53 +1,71 @@
 {% extends "base-2.html" %}
 
-{% block sidebar %}
-	<h4>{{ _("Highlights") }}</h4>
+{% block bodyB %}
 	<ul>
-		<li><a href="/about">{{ _("About IPFire") }}</a></li>
-		<li><a href="/features/security">{{ _("Security") }}</a></li>
-		<li><a href="/features/firewall">{{ _("Firewall") }}</a></li>
-		<li><a href="/features/pakfire">{{ _("Pakfire") }}</a></li>
-		<li><a href="/features/updates">{{ _("Updates") }}</a></li>
-		<li><a href="/features/itsfree">{{ _("It's free") }}</a></li>
+		<li>
+			<a href="/features">{{ _("About IPFire") }}</a>
+		</li>
+		<li>
+			<a href="/features/security">{{ _("Security") }}</a>
+		</li>
+		<li>
+			<a href="/features/firewall">{{ _("Firewall") }}</a>
+		</li>
+		<li>
+			<a href="/features/pakfire">{{ _("Pakfire") }}</a>
+		</li>
+		<li>
+			<a href="/features/updates">{{ _("Updates") }}</a>
+		</li>
+		<li>
+			<a href="/features/itsfree">{{ _("It's free") }}</a>
+		</li>
 	</ul>
 
-	<h4>{{ _("Features") }}</h4>
+	<h3>{{ _("Features") }}</h3>
 	<ul>
-		<li><a href="/features/dial-in">{{ _("Dial-in") }}</a></li>
-		<li><a href="/features/proxy">{{ _("Web proxy") }}</a></li>
+		<li>
+			<a href="/features/dialup">{{ _("Dialup") }}</a>
+		</li>
+		<li>
+			<a href="/features/proxy">{{ _("Web proxy") }}</a>
+		</li>
 		<ul>
-			<li><a href="/features/proxy/content-filter">{{ _("Content filter") }}</a></li>
-			<li><a href="/features/proxy/update-accelerator">{{ _("Update accelerator") }}</a></li>
-			<li><a href="/features/proxy/virus-scanner">{{ _("Virus scan") }}</a></li>
+			<li>
+				<a href="/features/proxy/content-filter">{{ _("Content filter") }}</a>
+			</li>
+			<li>
+				<a href="/features/proxy/update-accelerator">{{ _("Update accelerator") }}</a>
+			</li>
+			<li>
+				<a href="/features/proxy/virus-scanner">{{ _("Virus scan") }}</a>
+			</li>
 		</ul>
-		<li><a href="/features/vpn">{{ _("VPN") }}</a></li>
+		<li>
+			<a href="/features/vpn">{{ _("VPN") }}</a>
+		</li>
 		<ul>
-			<li><a href="/features/vpn/ipsec">{{ _("IPsec") }}</a></li>
-			<li><a href="/features/vpn/openvpn">{{ _("OpenVPN") }}</a></li>
+			<li>
+				<a href="/features/vpn/ipsec">{{ _("IPsec") }}</a>
+			</li>
+			<li>
+				<a href="/features/vpn/openvpn">{{ _("OpenVPN") }}</a>
+			</li>
 		</ul>
-		<li><a href="/features/ids">{{ _("Intrusion detection") }}</a></li>
-		<li><a href="/features/qos">{{ _("Quality of Service") }}</a></li>
-		<li><a href="/features/hardware">{{ _("Hardware") }}</a></li>
-		<li><a href="/features/virtualization">{{ _("Virtualization") }}</a></li>
+		<li>
+			<a href="/features/ids">{{ _("Intrusion detection") }}</a>
+		</li>
+		<li>
+			<a href="/features/qos">{{ _("Quality of Service") }}</a>
+		</li>
+		<li>
+			<a href="/features/hardware">{{ _("Hardware") }}</a>
+		</li>
+		<li>
+			<a href="/features/virtualization">{{ _("Virtualization") }}</a>
+		</li>
+		<li>
+			<a href="/features/wireless">{{ _("Wireless AP") }}</a>
+		</li>
 	</ul>
-
-	<h4>{{ _("Addons") }}</h4>
-	<ul>
-		<li><a href="/features/addons">{{ _("All addons") }}</a></li>
-		<li><a href="/features/wireless">{{ _("Wireless AP") }}</a></li>
-		<li><a href="/features/fileserver">{{ _("File and print service") }}</a></li>
-		<li><a href="/features/mailserver">{{ _("Mail server") }}</a></li>
-	</ul>
-{% end block %}
-
-{% block javascript %}
-	<script type="text/javascript">
-		$(function() {
-			$("a[rel=screens]").fancybox({
-				'titlePosition'	: 'inside',
-				'transitionIn'	: 'elastic',
-				'transitionOut'	: 'elastic'
-			});
-		});
-	</script>
 {% end block %}

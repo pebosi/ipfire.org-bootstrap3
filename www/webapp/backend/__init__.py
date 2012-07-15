@@ -12,7 +12,7 @@ from geoip		import GeoIP
 from iuse		import IUse
 from memcached	import Memcached
 from menu		import Menu
-from mirrors	import Mirrors
+from mirrors	import Downloads, Mirrors
 from netboot	import NetBoot
 from news		import News
 from planet		import Planet, PlanetEntry

@@ -1,123 +1,71 @@
-{% extends "../base-2.html" %}
+{% extends "../base-1.html" %}
 		
-{% block title %}CeBIT-Special{% end block %}
+{% block title %}{{ _("CeBIT special") }}{% end block %}
 
-{% block content %}
-
-	<div class=post>		
-	{% if lang == "de" %}
-		<a name="IPFire auf der CeBIT 2010"></a><h3>IPFire auf der CeBIT 2010</h3>
-		<img src="{{ static_url("images/cebit-177px_schatten.png") }}" class="floatTR" border="0" alt="CeBIT" />
-		<p>
-			Unser Dank gebührt allen <strong>Spendern</strong> ohne deren Mithilfe ein Stand auf der CeBit nicht möglich gewesen wäre!
-		</p>
-		<br />
-		<p>
-			Vom <em>2. bis 6. März 2010</em> fand die <strong>CeBIT</strong> in Hannover statt.
-			Das Besondere dieses Jahr war: <strong>IPFire</strong> mit einem
-			kleinen Stand in der <strong>Open Source Project Lounge</strong> auf der Messe vertreten.
-		</p>
-		<br />
-	{% else %}
-		<a name="IPFire on CeBIT 2010"></a><h3>IPFire on CeBIT 2010</h3>
-		<img src="{{ static_url("images/cebit-177px_schatten.png") }}"class="floatTR" alt="CeBIT" />
-		<p>
-		Our thanks due to all <strong>donors</strong> without thier help a booth at the CeBit would not have been possible!
-		</p>
-		<br />
-		<p>
-			<strong>CeBIT</strong> 2010 was from march 2nd and lasting until
-			march 6th in Hannover, Germany. The special this year was that 
-			<strong>IPFire</strong> had his own booth in
-			the <strong>Open Source Project Lounge</strong>.
-		</p>		
-		<br />
-	{% end %}
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("IPFire at CeBIT 2010") }}</h1>
 	</div>
 
+	<img class="pull-right" src="{{ static_url("images/cebit-177px_schatten.png") }}" alt="CeBIT">
 
-	<div class=post>
 	{% if lang == "de" %}
-		<a name="Impressionen"></a><h3>Impressionen</h3>
-	{% else %}
-		<a name="Impressions"></a><h3>Impressions</h3>
-	{% end %}
 		<p>
-		<div id="cebit_pics">
-			<a href="{{ static_url("images/cebit/cebit_2010_1.jpg") }}" title="{{ _("Cebit") }}"><img src="{{ static_url("images/cebit/cebit_2010_1_tn.jpg") }}" border="0" alt="{{ _("Cebit") }}" /></a>
-			&nbsp;
-			<a href="{{ static_url("images/cebit/cebit_2010_2.jpg") }}" title="{{ _("Cebit") }}"><img src="{{ static_url("images/cebit/cebit_2010_2_tn.jpg") }}" border="0" alt="{{ _("Cebit") }}" /></a><br />
-			<a href="{{ static_url("images/cebit/cebit_2010_3.jpg") }}" title="{{ _("Cebit") }}"><img src="{{ static_url("images/cebit/cebit_2010_3_tn.jpg") }}" border="0" alt="{{ _("Cebit") }}" /></a>
-			&nbsp;
-			<a href="{{ static_url("images/cebit/cebit_2010_4.jpg") }}" title="{{ _("Cebit") }}"><img src="{{ static_url("images/cebit/cebit_2010_4_tn.jpg") }}" border="0" alt="{{ _("Cebit") }}" /></a>
-		</div>
+			Vom 2. bis 6. März 2010 fand die <strong>CeBIT</strong> in Hannover statt.
+			Das IPFire-Projekt war in diesem Jahr mit einem Stand in der
+			<em>Open Source Project Lounge</em> vertreten.
 		</p>
 		<p>
-			<object width="560" height="340"><param name="movie" value="http://www.youtube-nocookie.com/v/9zUcQouQ1sE&hl=de_DE&fs=1&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/9zUcQouQ1sE&hl=de_DE&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
-			<br />Quelle: <a href="http://eine-minute.blogspot.com/2010/03/ipfire-eine-utm-auf-opensource-basis.html" target="_blank">der "eine-minute" Blog</a>		</p>
-
-	</div>
-	
-	
-	<div class=post>
-	{% if lang == "de" %}
-		<a name="Sponsoren"></a><h3>Sponsoren</h3>
-		<p>
-			Wir danken der
-			<a href="http://www.linuxnewmedia.de/Produkte/Events" target="_blank">Linux New Media AG</a>
-			und der <a href="http://www.cebit.de/opensource_d" target="_blank">Messegesellschaft</a>,
-			welche für ausgewählte OpenSource-Projekte einige kostenlose Stände zur Verfügung gestellt haben.
-			Die <strong>CeBIT</strong> die weltgrößte Computer- und Telekommunikationsmesse,
-			und diese Präsentationsmöglichkeit war natürlich eine riesige Chance, das Projekt bekannter
-			zu machen, mehr Nutzer und Entwickler zu erreichen, bzw. Kontakte zu knüpfen und Allianzen
-			zu schmieden. 
+			Unser Danke gebührt allen Spendern, die uns bei diesem Stand durch
+			ihre Mithilfe unter die Arme gegriffen haben.
+			Wir danken der <a href="http://www.linuxnewmedia.de/Produkte/Events">Linux New Media AG</a>
+			und der <a href="http://www.cebit.de/opensource_d">Messegesellschaft</a>,
+			welche für ausgewählte Open Source-Projekte kostenlose Stände zur
+			Verfügung gestellt haben.
+			Die <strong>CeBIT</strong>, die weltgrößte Computer- und Telekommunikationsmesse,
+			war eine große Chance, das Projekt bekannter zu machen und neue Kontakte zu knüpfen.
 		</p>
 	{% else %}
-		<a name="Sponsors"></a><h3>Sponsors</h3>
 		<p>
+			From 2nd to 6th March 2010, the IPFire project attended CeBIT in
+			Hanover, Germany with its own booth which was to be found
+			in the <em>Open Source Project Lounge</em>.
+		</p>
+		<p>
+			We would like to thank all the people who contributed to the booth
+			and made it happening.
 			Our very special thanks go out to
-			<a href="http://www.linuxnewmedia.de/Produkte/Events" target="_blank">Linux New Media AG</a> and
-			<a href="http://www.cebit.de/opensource_d" target="_blank">Messegesellschaft</a>,
-			who offered free booths to selected Open Source
-			projects. <strong>CeBIT</strong> (a German acronym for the Center for Office and
-			Information Technology) is the biggest computer and telecommunications
-			exhibition in the world. This was an excellent chance for IPFire to gain
-			recognition, get in touch with users and developers, and possibly find
-			sponsors and forge alliances. 
+			<a href="http://www.linuxnewmedia.de/Produkte/Events">Linux New Media AG</a> and
+			<a href="http://www.cebit.de/opensource_d">Messegesellschaft</a>,
+			who offered free booths to selected Open Source	projects.
+			This was an excellent chance for IPFire to gain more
+			recognition and to get in touch new people.
 		</p>
 	{% end %}
-	<a href="http://www.linuxnewmedia.de/" target="_blank" border"0"><img src="{{ static_url("images/linux_new_media_ag.jpg") }} alt="Linux New Media AG" /></a>
-	<a href="http://www.aktinet.de/" target="_blank" border="0"><img src="{{ static_url("images/aktinet_logo.jpg") }} alt="Aktinet IT-Services" /></a>
+
+	<br style="clear: both;">
+	<hr>
+
+	<div class="row">
+		<div class="span8 offset2">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/9zUcQouQ1sE?rel=0" frameborder="0" allowfullscreen></iframe>
+			<a class="pull-right" href="http://eine-minute.blogspot.com/2010/03/ipfire-eine-utm-auf-opensource-basis.html">"eine-minute" Blog</a>
+		</div>
 	</div>
-{% end block %}
 
-{% block sidebar %}
-	<h4><span>Ce</span>BIT</h4>
-	{% if lang == "de" %}
-		<ul class="links">		
-			<li class="first"><a href="#IPFire auf der CeBIT 2010">CeBIT 2010</a></li>
-			<li><a href="#Impressionen">Impressionen</a></li>
-			<li><a href="#Sponsoren">Sponsoren</a></li>
-			<li><a href="http://forum.ipfire.org/index.php?topic=2076.0">CeBIT Blog</a></li>
-		</ul>
-	{% else %}
-		<ul class="links">		
-			<li class="first"><a href="#IPFire on CeBIT 2010">CeBIT 2010</a></li>
-			<li><a href="#Impressions">Impressions</a></li>
-			<li><a href="#Sponsors">Sponsors</a></li>
-			<li><a href="http://forum.ipfire.org/index.php?topic=2076.msg15947#msg15947">CeBIT Blog</a></li>			
-		</ul>
-	{% end %}
+	<hr>
 
-{{ modules.SidebarBanner() }}
-
-{% end block %}
-
-{% block javascript %}
-	<script type="text/javascript" src="{{ static_url("js/jquery.lightbox.min.js") }}"></script>
-	<script type="text/javascript">
-		$(function() {
-			$("#cebit_pics a").lightBox();
-		});
-	</script>
+	<div class="row">
+		<div class="span8 offset2">
+			<ul class="thumbnails">
+				{% for i in range(1, 5) %}
+					<li class="span4">
+						<a class="thumbnail" href="{{ static_url("images/cebit/cebit_2010_%d.jpg" % i) }}">
+							<img src="{{ static_url("images/cebit/cebit_2010_%d_tn.jpg" % i) }}" alt="{{ _("CeBIT") }}">
+						</a>
+					</li>
+				{% end %}
+			</ul>
+		</div>
+	</div>
 {% end block %}

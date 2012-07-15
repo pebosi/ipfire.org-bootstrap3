@@ -1,69 +1,54 @@
 {% extends "../../../base-feature.html" %}
 		
-{% block title %}{{ _("OpenVPN") }}{% end block %}
+{% block title %}{{ _("VPN") }}: {{ _("OpenVPN") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("VPN: OpenVPN") }}</h3>
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("VPN: OpenVPN") }}</h1>
+	</div>
 
-	<!-- XXX needs icons -->
-	<!-- XXX needs screenshots -->
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					Unter den OpenSoure-SSL-VPNs ist OpenVPN ein häufig angetroffener und
+					beliebter Vertreter, dessen einfache Konfiguration über das IPFire-
+					Webinterface noch einmal erleichtert wird. Die Firewall-Einstellungen
+					werden von IPFire automatisch geregelt, ebenso werden die benötigten
+					Zertifikate mit wenigen Mausklicks erzeugt und können als kompaktes
+					Client-Paket heruntergeladen, verteilt und mit einem weiteren Klick
+					ausgeführt werden.
+				</p>
 
-	{% if lang == "de" %}
-		<p>
-			Unter den OpenSoure-SSL-VPNs ist OpenVPN ein häufig angetroffener und
-			beliebter Vertreter, dessen einfache Konfiguration über das IPFire-
-			Webinterface noch einmal erleichtert wird. Die Firewall-Einstellungen
-			werden von IPFire automatisch geregelt, ebenso werden die benötigten
-			Zertifikate mit wenigen Mausklicks erzeugt und können als kompaktes
-			Client-Paket heruntergeladen, verteilt und mit einem weiteren Klick
-			ausgeführt werden.
-		</p>
+				<p>
+					Durch die hohe Kompatibilität der Software zu anderen Betriebssystemen
+					eignet sich OpenVPN zur Anbindung sogenannter Roadwarrior-Clients und
+					Ad-Hoc-Verbindungen sehr gut. Eine leicht zu konfigurierende, auf
+					Zertifikaten basierende, verschlüsselte Anbindung aus dem Internet
+					auf die Firmendaten oder das Zuhause liegende Netzwerk kann nicht
+					nur über Notebooks, sondern unter anderem auch über PDAs, Smartphones
+					oder Tablets hergestellt werden.
+				</p>
 
-		<p>
-			Durch die hohe Kompatibilität der Software zu anderen Betriebssystemen
-			eignet sich OpenVPN zur Anbindung sogenannter Roadwarrior-Clients und
-			Ad-Hoc-Verbindungen sehr gut. Eine leicht zu konfigurierende, auf
-			Zertifikaten basierende, verschlüsselte Anbindung aus dem Internet
-			auf die Firmendaten oder das Zuhause liegende Netzwerk kann nicht
-			nur über Notebooks, sondern unter anderem auch über PDAs, Smartphones
-			oder Tablets hergestellt werden.
-		</p>
-
-		<p>
-			Sicherheit und eine geeignete Verschlüsselung ist auch im lokalen
-			Netzwerk ein wichtiges Thema. IPFire bietet über sein Webinterface
-			die Möglichkeit an, WLAN-Verbindungen über Zertifikate zu schützen,
-			was einen klaren Vorteil gegenüber den gängigen Router-Verschlüsselungen
-			wie WEP, WPA oder sogar WPA2 bedeutet, da Zertifikate gegenüber den
-			PSKs (Private Shared Keys) einen Bruteforce-Angriff quasi unmöglich
-			machen.
-		</p>
-	{% else %}
-		<p>
-			Under the OpenSoure-SSL-VPNs OpenVPN is a frequently encountered and
-			popular representative, its ease of configuration will be again easier
-			via IPFires web interface. The firewall settings will be controlled
-			by IPFire automatically, likewise the required certificates will be
-			generated with a few mouse clicks and can be downloaded and distributed
-			as a compact-client package.
-		</p>
-
-		<p>
-			Due to the high compatibility of the software to other operating systems
-			are suitable very well for linking OpenVPN to so called roadwarrior
-			clients and ad-hoc connections. An easy to configure, based on certificates,
-			encrypted connection from the Internet to the corporate data or the
-			remote network at home can be made not only on laptops, but also
-			including PDAs, smartphones or tablets.
-		</p>
-
-		<p>
-			Security and a appropriated encryption are also in the local network
-			an important issue. IPFire offers via his web interface, the ability
-			to protect Wi-Fi connections through certificates, which is a clear
-			advantage over the conventional router encryptions such as WEP, WPA
-			or even WPA2 PSKs (Private Shared Keys), because a brute force attack
-			against certificates is virtually impossible.
-		</p>
-	{% end %}
+				<p>
+					Sicherheit und eine geeignete Verschlüsselung ist auch im lokalen
+					Netzwerk ein wichtiges Thema. IPFire bietet über sein Webinterface
+					die Möglichkeit an, WLAN-Verbindungen über Zertifikate zu schützen,
+					was einen klaren Vorteil gegenüber den gängigen Router-Verschlüsselungen
+					wie WEP, WPA oder sogar WPA2 bedeutet, da Zertifikate gegenüber den
+					PSKs (Private Shared Keys) einen Bruteforce-Angriff quasi unmöglich
+					machen.
+				</p>
+			{% else %}
+				<p>
+					Under the OpenSoure-SSL-VPNs, OpenVPN is a frequently-encountered and perhaps, the most 
+					popular representative. The relative ease of configuration has again, been made easier
+					by the IPFire web interface. The firewall settings are controlled
+					by IPFire automatically, as well as the required certificates will be
+					generated with a few mouse clicks and can be downloaded and distributed
+					as a very compact client package. Clients can be anything, such as other routers, laptops/desktops, PDAs, smartphones or tablets.
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}

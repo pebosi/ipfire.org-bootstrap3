@@ -1,25 +1,23 @@
-{% extends "mirrors.html" %}
+{% extends "base-1.html" %}
 
-{% block title %}Mirror {{ item.hostname }}{% end block %}
+{% block title %}{{ _("Mirror %s") % item.hostname }}{% end block %}
 
-{% block content %}
-	<h3>{{ item.hostname }}</h3>
+{% block body %}
+	<div class="page-header">
+		{% if item.state == "UP" %}
+			<span class="label label-success pull-right">{{ _("Up") }}</span>
+		{% elif item.state == "DOWN" %}
+			<span class="label label-failure pull-right">{{ _("Down") }}</span>
+		{% elif item.state == "OUTOFSYNC" %}
+			<span class="label label-warning pull-right">{{ _("Out of sync") }}</span>
+		{% else %}
+			<span class="label label-info pull-right">{{ _("Unknown") }}</span>
+		{% end %}
 
-	<table class="mirrors">
-		<tr>
-			<td>{{ _("State") }}</td>
-			<td class="{{ item.state.lower() }}">
-				{% if item.state.lower() == "up" %}
-					{{ _("Up") }}
-				{% elif item.state.lower() == "down" %}
-					{{ _("Down") }}
-				{% elif item.state.lower() == "outofsync" %}
-					{{ _("Out of synchronization") }}
-				{% else %}
-					{{ _("Unknown") }}
-				{% end %}
-			</td>
-		</tr>
+		<h1>{{ item.hostname }}</h1>
+	</div>
+
+	<table class="table">
 		<tr>
 			<td>{{ _("Last update") }}</td>
 			<td>{{ locale.format_date(item.last_update, full_format=True) }}</td>
@@ -36,24 +34,18 @@
 		{% end %}
 	</table>
 
-	<p class="links">
-		<a href="{{ item.url }}" target="_blank">{{ _("Open mirror") }}</a>
-		&bull;
-		<a href="/">{{ _("List of all mirror servers") }}</a>
-	</p>
+	<a class="btn pull-right" href="{{ item.url }}">{{ _("Go to mirror") }}</a>
 
-	<br class="clear" />
+	<br style="clear: both;">
+	<hr>
 
 	<h3>{{ _("Mirror location") }}</h3>
 	<p>
 		{{ _("The mirror <em>%s</em> is located in %s.") % (item.hostname, item.location_str) }}
-		<br class="clear" />
+	</p>
+	<p>
 		<img class="map"
 			src="http://maps.google.com/maps/api/staticmap?center={{ item.coordiante_str }}&size=640x280&zoom=6&markers=color:blue|label:.|{{ item.coordiante_str }}&sensor=false"
 			alt="{{ _("Location of the server") }}" />
 	</p>
-{% end block %}
-
-{% block sidebar %}
-	{{ modules.SidebarBanner() }}
 {% end block %}

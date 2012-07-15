@@ -1,0 +1,117 @@
+{% extends "base-1.html" %}
+
+{% block title %}{{ _("Thanks for downloading IPFire!") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>
+			{{ _("Thanks for downloading IPFire!") }}
+		</h1>
+	</div>
+
+	<div class="row">
+		<div class="span8 offset2">
+			<div class="well">
+				<h2>{{ _("Please consider donating!") }}</h2>
+				{% if lang == "de" %}
+					<p>
+						Wir möchten jeden, der IPFire herunterlädt einladen,
+						sich in das Projekt einzubringen, zum Beispiel mit
+						einer Spende.
+					</p>
+					<p>
+						Daher bitten wir um ein paar Euro für das Projekt
+						<a href="http://www.ipfire.org/getinvolved">oder das
+						Projekt auf eine andere Weise zu unterstützen</a>.
+					</p>
+				{% else %}
+					<p>
+						We encourage everyone who downloads and uses IPFire to
+						get involved for example by donating a small amount of
+						money.
+					</p>
+					<p>
+						Please consider donating a few bucks to the project.
+						<a href="http://www.ipfire.org/getinvolved">If you can't
+						afford to donate, there are other ways you can help</a>.
+					</p>
+				{% end %}
+
+				<p style="text-align: center;">
+					<a class="btn btn-success btn-large" href="http://www.ipfire.org/donate">
+						{{ _("Donate") }}
+					</a>
+				</p>
+			</div>
+			<br>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<h3>
+				{% if lang == "de" %}
+					Der Download beginnt in Kürze.
+					Falls nicht, auf den untenstehenden Link klicken.
+				{% else %}
+					Your download should begin in a few seconds.
+					If not, click the link below.
+				{% end %}
+			</h3>
+			<p class="download-path"></p>
+			<hr>
+		</div>
+	</div>
+
+	<h3>{{ _("Next steps") }}</h3>
+	<div class="row">
+		<div class="span4">
+			<h3>
+				<a href="http://wiki.ipfire.org/{{ lang }}/installation/start">
+					{{ _("Install IPFire") }}
+				</a>
+			</h3>
+			<p>
+				{% if lang == "de" %}
+					Erfahre wie es nach dem Download des Images weitergeht.
+				{% else %}
+					Learn how to install IPFire from the image file you just
+					downloaded.
+				{% end %}
+			</p>
+		</div>
+
+		<div class="span4">
+			<h3>
+				<a href="http://wiki.ipfire.org/">{{ _("Access documentation") }}</a>
+			</h3>
+			<p>
+				{% if lang == "de" %}
+					Im Problemfall ist ein Blick in die Dokumentation immer
+					hilfreich. Diese wird übrigens vom Dokumentations-Team
+					gepflegt.
+				{% else %}
+					In case you are stuck with a problem, have a look at
+					the documentation which is maintained by the IPFire
+					Documentation Team.
+				{% end %}
+			</p>
+		</div>
+
+		<div class="span4">
+			<h3>
+				<a href="http://www.ipfire.org/getinvolved">{{ _("Join the community") }}</a>
+			</h3>
+			<p>
+				{% if lang == "de" %}
+					Egal, ob Neueinsteiger oder Linux-Experte. Es gibt
+					unzählige Wege beim Projekt mitzumachen.
+				{% else %}
+					If you are using IPFire for the first time or if you are
+					a Linux expert, there are lots of ways to contribute to the
+					IPFire project.
+				{% end %}
+			</p>
+		</div>
+	</div>
+{% end %}

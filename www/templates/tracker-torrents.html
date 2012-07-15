@@ -2,48 +2,30 @@
 
 {% block title %}{{ _("Torrent Downloads") }}{% end block %}
 
-{% block content %}
-	<div class="post">
-		<a name="latest"></a>
-		<h3>{{ _("IPFire Torrent Tracker") }}</h3>
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("IPFire Torrent Tracker") }}</h1>
+	</div>
 
-		<img src="{{ static_url("images/page_icons/download-torrents.png") }}"
-			class="floatTR" border="0" alt="{{ _("IPFire Torrent Tracker") }}" />
+	{% if lang == "de" %}
 
-		{% if lang == "de" %}
-			<p>
-				Auf dieser Seite findet man eine Liste aller Releases, die
-				über den IPFire-Torrent-Tracker verteilt werden.
-			<p>
-			<p>
-				Das Torrentnetz ist ein Netzwerk, welches Dateien durch verteilte
-				Downloads schnell verbreitet. IPFire nutzt dieses System um
-				Downloads der Distributionsimages bereitzustellen.
-			</p>
-			<p>
-				Mehr Informationen zu Torrent-Netzwerken gibt es in der
-				<a href="http://de.wikipedia.org/wiki/BitTorrent"
-				target="_blank">Wikipedia</a>.
-			</p>
-		{% else %}
-			<p>
-				This page displays a list of files that are tracked by the
-				IPFire torrent tracker.
-			<p>
-			<p>
-				The bittorrent protocol transfers large files by a distributed
-				technology. IPFire uses this system to spread the distribution's
-				files.
-			</p>
-			<p>
-				Get more information on the bittorrent protocol on
-				<a href="http://en.wikipedia.org/wiki/BitTorrent_(protocol)"
-				target="_blank">Wikipedia</a>.
-			</p>
-		{% end %}
-		
-		<br class="clear" />
-		
+
+	{% else %}
+		<p>
+			This is the home of the IPFire torrent tracker.
+			This tracker is used to distribute the IPFire
+			downloads in an efficient way with help of the Bittorrent
+			protocol.
+		</p>
+		<p>
+			The Bittorrent protocol transfers large files from one
+			peer to an other without need to download data from
+			a central server. However, there is a server which is
+			called the tracker that enables the clients to talk to
+			each other.
+		</p>
+	{% end %}
+
 		<table class="download-torrents">
 			<tr>
 				<th>{{ _("Release") }}</th>
@@ -59,6 +41,4 @@
 			{% end %}
 		</table>
 
-		<br class="clear" />
-	</div>
 {% end block %}

@@ -136,10 +136,12 @@ class Account(object):
 
 		logging.debug("Checking credentials for %s" % self.dn)
 		try:
-			self.db.simple_bind_s(self.dn, password)
+			self.db.simple_bind_s(self.dn, password.encode("utf-8"))
 		except ldap.INVALID_CREDENTIALS:
+			logging.debug("Account credentials are invalid.")
 			return False
 
+		logging.debug("Successfully authenticated.")
 		return True
 
 	@property
@@ -170,6 +172,7 @@ class Account(object):
 		gravatar_url += urllib.urlencode({'d': "mm", 's': str(size)})
 
 		return gravatar_url
+
 
 if __name__ == "__main__":
 	a = Accounts()

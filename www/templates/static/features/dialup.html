@@ -1,0 +1,121 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("Dialup") }}{% end block %}
+
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("Dialup") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					IPFire ist als Internet-Gateway in der Lage über verschiedene
+					(Einwahl-)Techniken eine Verbindung zum Internet aufzubauen.
+				</p>
+				<p>
+					Es werden alle gängigen Breitbandzugangsarten wie auch mobile Zugänge unterstützt:
+				</p>
+
+				<table class="table table-striped table-bordered">
+					<tbody>
+						<tr>
+							<td>
+								<strong>VDSL</strong>
+							</td>
+							<td>
+								VDSL ist die Abkürzung für <em>Very High Data Rate Digital Subscriber Line</em> und
+								bietet in Deutschland derzeit Bandbreiten bis zu 50 MBit/s im Downstream und 10 MBit/s im Upstream.
+								Damit eignet sich VDSL für die Zukunft und bringt auch IPTV mit sich. Mit IPFire kann der herkömmliche
+								Router ausgetauscht werden und auf ein vollwertiges System gesetzt werden, das den IPTV-Stream ins
+								eigene Netz bringt.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>ADSL/SDSL</strong>
+							</td>
+							<td>
+								Selbstverständlich wird auch herkömmliches DSL unterstützt, wobei es sich
+								technisch um PPPoE oder PPPoA handelt. In einigen Ländern ist auch PPTP als Protokoll verbreitet und
+								wird ebenso unterstützt.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>Ethernet</strong>
+							</td>
+							<td>
+								Über Ethernet kann IPFire ebenfalls mit dem Internet verbunden werden und
+								eine IP-Adresse entweder per DHCP beziehen oder statisch konfiguriert werden. Das wird u.a. bei
+								Verbindungen über Kabel genutzt.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>3. Generation</strong>
+							</td>
+							<td>
+								Über USB-Modems wird auch jede Art von mobilen Breitbandverbindungen
+								unterstützt, welche bekannt sind unter den Bezeichnungen UMTS, 3G, CDMA, HSDPA oder LTE.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			{% else %}
+				<p>
+					IPFire as an Internet Gateway is able to dialup through various techniques
+					to connect to the Internet.
+				</p>
+				<p>
+					It supports all popular types of broadband access, as well as mobile access:
+				</p>
+
+				<table class="table table-striped table-bordered">
+					<tbody>
+						<tr>
+							<td>
+								<strong>VDSL</strong>
+							</td>
+							<td>
+								VDSL is short for <em>Very High Data Rate Digital Subscriber Line</em> and
+								it currently offers bandwidth up to 50 Mbit/s downstream and 10 Mbit/s upstream.
+								VDSL brings the possibility of using new technologies such as IPTV. With IPFire, a conventional
+								router can be replaced by a full-fledged system that brings the IPTV stream into your own home network.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>ADSL/SDSL</strong>
+							</td>
+							<td>
+								Conventional DSL is also supported, although it is technically
+								called also PPPoE or PPPoA. In some countries, the PPTP protocol is also widely used and it is also fully
+								supported by IPFire.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>Ethernet</strong>
+							</td>
+							<td>
+								Over Ethernet, IPFire can also be connected to the Internet and obtain
+								an IP address either via DHCP or static configuration.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>3rd Generation</strong>
+							</td>
+							<td>
+								Mobile broadband connections over USB modems, which are also known by the names
+								UMTS, 3G, CDMA, HSDPA or LTE are also supported by IPFire.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			{% end %}
+		</div>
+	</div>
+{% end block %}

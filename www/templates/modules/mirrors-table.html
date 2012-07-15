@@ -1,15 +1,32 @@
-<table class="mirrors">
+<table class="table table-striped">
 	{% for mirror in mirrors %}
 		<tr>
-			<td class="hostname {{ mirror.state.lower() }}">
+			{% if mirror.state == "UP" %}
+				<td style="background-color: green;">
+					&nbsp;
+				</td>
+			{% elif mirror.state == "DOWN" %}
+				<td style="background-color: red;">
+					&nbsp;
+				</td>
+			{% elif mirror.state == "OUTOFSYNC" %}
+				<td style="background-color: yellow;">
+					&nbsp;
+				</td>
+			{% else %}
+				<td style="background-color: grey;">
+					&nbsp;
+				</td>
+			{% end %}
+			<td>
 				<a href="/mirror/{{ mirror.id }}">{{ mirror.hostname }}</a>
 			</td>
 			<td>
+				{{ mirror.owner }}
+				<br>
 				<img src="{{ static_url("images/flags/%s.png" % mirror.country_code) }}" alt="{{ mirror.country_code }}" />
 				{{ mirror.location_str }}
 			</td>
 		</tr>
 	{% end %}
 </table>
-<br class="clear" />
-

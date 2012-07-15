@@ -13,6 +13,78 @@ from geoip import GeoIP
 from memcached import Memcached
 from misc import Singleton
 
+class Downloads(object):
+	__metaclass__ = Singleton
+
+	@property
+	def db(self):
+		return Databases().webapp
+
+	@property
+	def mirrors(self):
+		return Mirrors()
+
+	@property
+	def total(self):
+		ret = self.db.get("SELECT COUNT(*) AS total FROM log_download")
+
+		return ret.total
+
+	@property
+	def today(self):
+		ret = self.db.get("SELECT COUNT(*) AS today FROM log_download WHERE date >= NOW() - 1000000")
+
+		return ret.today
+
+	@property
+	def yesterday(self):
+		ret = self.db.get("SELECT COUNT(*) AS yesterday FROM log_download WHERE DATE(date) = DATE(NOW())-1")
+
+		return ret.yesterday
+
+	@property
+	def daily_map(self):
+		ret = self.db.query("SELECT DATE(date) AS date, COUNT(*) AS downloads FROM log_download"
+			" WHERE DATE(date) BETWEEN DATE(NOW()) - 31 AND DATE(NOW()) GROUP BY DATE(date)")
+
+		return ret
+
+	def get_countries(self, duration="all"):
+		query = "SELECT country_code, count(country_code) AS count FROM log_download"
+
+		if duration == "today":
+			query += " WHERE date >= NOW() - 1000000"
+
+		query += " GROUP BY country_code ORDER BY count DESC"
+
+		results = self.db.query(query)
+		ret = {}
+
+		count = sum([o.count for o in results])
+		for res in results:
+			ret[res.country_code] = float(res.count) / count
+
+		return ret
+
+	def get_mirror_load(self, duration="all"):
+		query = "SELECT mirror, COUNT(mirror) AS count FROM log_download"
+
+		if duration == "today":
+			query += " WHERE date >= NOW() - 1000000"
+
+		query += " GROUP BY mirror ORDER BY count DESC"
+
+		results = self.db.query(query)
+		ret = {}
+
+		count = sum([o.count for o in results])
+		for res in results:
+			mirror = self.mirrors.get(res.mirror)
+			ret[mirror.hostname] = float(res.count) / count
+
+		return ret
+
+
 class Mirrors(object):
 	__metaclass__ = Singleton
 

@@ -2,82 +2,79 @@
 		
 {% block title %}{{ _("Quality of Service") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Quality of Service") }}</h3>
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("Quality of Service") }}</h1>
+	</div>
 
-	<!-- XXX needs icons -->
-	<!-- XXX needs screenshots -->
-
-	{% if lang == "de" %}
-		<p>
-			Ein Quality of Service, oder kurz QoS, ist in der Lage die Qualität eines Dienstes über eine
-			Internetleitung sicherzustellen. Das bedeutet, dass auf einer stark belasteten Internetverbindung
-			einem Dienst, wie zum Beispiel einem VoIP-Telefonats, ein gewisses Maß an Bandbreite zugesichert
-			werden kann, damit alle Sprachdaten ohne Verzögerung und verlustfrei übertragen werden können.
-			Das geht allerdings zu Lasten der anderen Datenströme auf der Leitung, welche es aber durchaus
-			vertragen, dass Daten langsamer übertragen werden, wie z.B. ein Upload auf einen FTP-Server.
-		</p>
-		<p>
-			Ein QoS bietet aber nicht nur bei Echtzeitdiensten Vorteile und macht sie besser benutzbar, sondern
-			bringt auch kleine Verbesserungen mit, die sich gut bemerktbar machen. Dazu gehören unter anderem:
-		</p>
-		<ul class="list">
-			<li>
-				<strong>Schnellerer Verbindungsaufbau:</strong> Verbindungen werden immer rasch aufgebaut und
-				dann nach Dienst eingeordnet und wenn möglich abgebremst. Das verbessert das Arbeitsgefühl.
-			</li>
-			<li>
-				<strong>Stabilere Verbindungen:</strong> da jedem Dienst ein Mindestmaß an Bandbreite zugesichert wird.
-			</li>
-		</ul>
-		<p>
-			Für die Klassifizierung der Pakete, die das System wissen lässt mit welcher Art von Daten es zu tun hat,
-			kommt ein Layer-7-Filter zum Einsatz. Dabei wird auch der Inhalt und nicht nur Quell-Ports, -IPs und
-			Ziel-Ports und -IPs eines Pakets untersucht. Mit dem Wissen, ob es sich z.B. um einen langen Download
-			oder um ein Echtzeitprotokoll handelt, kann es Entscheidungen zur optimalen Auslastung der
-			Internetverbindung treffen.
-		</p>
-		<p>
-			Zusammengefasst ist das Endergebnis eines QoS, eine Leitung mit geringer Latenzzeit und geringer
-			Paketverlustrate. Eine Funktion, die man schnell nicht mehr vermissen möchte, wo die Bandbreite knapp ist.
-		</p>
-		<p>
-			Perfekte Kontrolle über die getätigten Einstellungen, findet man in der graphischen Darstellung der
-			Leitungsauslastung (siehe Screenshots).
-		</p>
-	{% else %}
-		<p>
-			Quality of Service (QoS) is able to save the quality of a service on one internetconnection. That
-			means, that on a high used internetconnection a service, for example VoIP, get a stable size of bandwidth,
-			to transfer the informations without delay and without loss. This is however at the expense of the other
-			data flows on the line, which is tolerated but certainly, that data is transmitted more slowly, such as
-			an upload to an FTP server.
-		</p>
-		<p>
-			A QoS does not only increase the use of real-time services but also little improvement. For example:
-		</p>
-		<ul class="list">
-			<li>
-				<strong>faster dial-up:</strong> Connections establish faster and the services will classified
-				and maybe slowed down. That increase the work feeling.
-			</li>
-			<li>
-				<strong>stable connections:</strong> because every service gets a minimum size of bandwidth.
-			</li>
-		</ul>
-		<p>
-			For the classification of the packets, which lets the system know of what kind of data it's deals,
-			a Level-7-Filter will be used. Thereby it also analyze the content and not only the source-ports, -IPs
-			and destination-ports, -IPs of the packets. With the knowledge if it's a long download or a real-time
-			protocol it could decide about the optimal use of the connection.
-		</p>
-		<p>
-			To put all in a nutshell, Quality of Service reduces the latency and a less packetloss of an
-			internet connection. A function that you don't want to miss where a bandwidth is limited.
-		</p>
-		<p>
-			A perfect control about the setings can be find at the graphical diagram of the performancedate
-			(see screenshots).
-		</p>
-	{% end %}
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					Ein Quality of Service, oder kurz QoS, ist in der Lage die Qualität eines Dienstes über eine
+					Internetleitung sicherzustellen. Das bedeutet, dass auf einer stark belasteten Internetverbindung
+					einem Dienst, wie zum Beispiel einem VoIP-Telefonats, ein gewisses Maß an Bandbreite zugesichert
+					werden kann, damit alle Sprachdaten ohne Verzögerung und verlustfrei übertragen werden können.
+					Das geht allerdings zu Lasten der anderen Datenströme auf der Leitung, welche es aber durchaus
+					vertragen, dass Daten langsamer übertragen werden, wie z.B. ein Upload auf einen FTP-Server.
+				</p>
+				<p>
+					Ein QoS bietet aber nicht nur bei Echtzeitdiensten Vorteile und macht sie besser benutzbar, sondern
+					bringt auch kleine Verbesserungen mit, die sich gut bemerktbar machen. Dazu gehören unter anderem:
+				</p>
+				<ul>
+					<li>
+						<strong>Schnellerer Verbindungsaufbau:</strong> Verbindungen werden immer rasch aufgebaut und
+						dann nach Dienst eingeordnet und wenn möglich abgebremst. Das verbessert das Arbeitsgefühl.
+					</li>
+					<li>
+						<strong>Stabilere Verbindungen:</strong> da jedem Dienst ein Mindestmaß an Bandbreite zugesichert wird.
+					</li>
+				</ul>
+				<p>
+					Für die Klassifizierung der Pakete, die das System wissen lässt mit welcher Art von Daten es zu tun hat,
+					kommt ein Layer-7-Filter zum Einsatz. Dabei wird auch der Inhalt und nicht nur Quell-Ports, -IPs und
+					Ziel-Ports und -IPs eines Pakets untersucht. Mit dem Wissen, ob es sich z.B. um einen langen Download
+					oder um ein Echtzeitprotokoll handelt, kann es Entscheidungen zur optimalen Auslastung der
+					Internetverbindung treffen.
+				</p>
+				<p>
+					Zusammengefasst ist das Endergebnis eines QoS, eine Leitung mit geringer Latenzzeit und geringer
+					Paketverlustrate. Eine Funktion, die man schnell nicht mehr vermissen möchte, wo die Bandbreite knapp ist.
+				</p>
+				<p>
+					Perfekte Kontrolle über die getätigten Einstellungen, findet man in der graphischen Darstellung der
+					Leitungsauslastung (siehe Screenshots).
+				</p>
+			{% else %}
+				<p>
+					Quality of Service (QoS) is able to save the quality of a service on one internet connection. This
+					means that on a highly-utilized internet connection, a service (for example VoIP) gets a stable size of bandwidth,
+					to transfer the information without delay and without loss. This is at the expense of the other
+					data flows on the line, which is tolerated, albeit transmitted more slowly (such as a file upload to an FTP server).
+				</p>
+				<p>
+					QoS does not only increase the functionality of real-time services, but also offers a little bit of overall improvement. For example:
+				</p>
+				<ul>
+					<li>
+						<strong>Connections establish much faster.</strong>
+						This is works very well on busy links.
+					</li>
+					<li>
+						<strong>Connections are much more stable.</strong>
+						Every service gets a minimum, guaranteed amount of bandwidth.
+					</li>
+				</ul>
+				<p>
+					For the classification of the packets, a Level-7-Filter is used. It also analyses the content, as well as the source-ports/IPs, and destination-ports/IPs of the packets. With that analysis, it will decide if it's a long download or a real-time
+					protocol and then subsequently determines the optimal use of the connection.
+				</p>
+				<p>
+					To put all in a nutshell, QoS reduces the latency and packet loss of an
+					internet connection. This is certainly a function that you don't want to miss where bandwidth is limited.
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}

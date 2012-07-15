@@ -1,6 +1,6 @@
 {% extends "admin-base.html" %}
 
-{% block content %}
+{% block bodyA %}
 	<div class="post">
 		<h3>{{ _("Compose new entry") }}</h3>
 		<form name="entry" method="post">
@@ -44,13 +44,4 @@
 			);
 		}
 	</script>
-{% end block %}
-
-{% block sidebar %}
-	<h4>Syntax info</h4>
-	<ul>
-		<li>
-			<a href="http://de.wikipedia.org/wiki/Markdown" target="_blank">Wikipedia</a>
-		</li>
-	</ul>
 {% end block %}

@@ -59,6 +59,7 @@ class File(object):
 			"alix"		: 41,
 			"usbfdd"	: 31,
 			"usbhdd"	: 30,
+			"arm"       : 40,
 			"xen"		: 50,
 		}
 		
@@ -98,6 +99,20 @@ class File(object):
 	def basename(self):
 		return os.path.basename(self.filename)
 
+	@property
+	def size(self):
+		return self.__data.get("filesize")
+
+	@property
+	def arch(self):
+		known_arches = ("i586", "arm")
+
+		for arch in known_arches:
+			if arch in self.basename:
+				return arch
+
+		return "N/A" 
+
 
 class Release(object):
 	@property
@@ -121,7 +136,7 @@ class Release(object):
 	def files(self):
 		if not self.__files:
 			files = self.db.query("SELECT id FROM files WHERE releases = %s \
-					AND loadable = 'Y'", self.id)
+					AND loadable = 'Y' AND NOT filetype = 'torrent'", self.id)
 
 			self.__files = [File(self, f.id) for f in files]
 			self.__files.sort(lambda a, b: cmp(a.prio, b.prio))
@@ -189,6 +204,9 @@ class Release(object):
 
 		if "usb-hdd" in filename:
 			return "usbhdd"
+
+		if "arm" in filename:
+			return "arm"
 
 		if "scon" in filename:
 			return "alix"

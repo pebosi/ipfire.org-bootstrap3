@@ -2,60 +2,63 @@
 		
 {% block title %}{{ _("Intrusion detection system") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Intrusion detection system") }}</h3>
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("Intrusion detection system") }}</h1>
+	</div>
 
-	<!-- XXX needs icons -->
-	<!-- XXX needs screenshots -->
-
-	{% if lang == "de" %}
-		<p>
-			Ein Intrusion Dection System, kurz IDS, dient zur Erkennung von Angriffen gegen Computersysteme
-			oder Computernetze. Dabei analysiert das IDS den Netzwerktraffic und durchsucht diesen nach Angriffsmustern.
-			Wird zum Beispiel ein einfacher Portscan auf ein IPFire-System ausgeführt um angebotene Dienste auszuspähen,
-			dann wird dies sofort erkannt.
-		</p>
-		<p>
-			Ein IPS, Intrusion Prevention System, hat zusätzlich zu der Erkennung die Aufgabe Aktionen auszuführen.
-			Dabei nimmt es Informationen zum Angriff vom IDS entgegen und handelt entsprechend. Bei dem Beispiel des
-			Portscans würde es den Angreifer blocken damit keine Daten mehr ausgetauscht werden.
-		</p>
-		<p>
-			Arbeiten wie in IPFire beide Systeme zusammen nennt man dies ein IDPS (Intrusion detection and prevention
-			system). Ein sehr bekannter Vertreter dafür ist Snort. Das freie Netzwerk Intrusion Dection System (NIDS)
-			analysiert den Datenverkehr und sofern es etwas Auffälliges findet, logt es dieses. IPFire bietet die
-			Möglichkeit die erkannten Angriffe im Webinterface detailliert durchzusehen.
-		</p>
-		<p>
-			Automatische Gegenmaßnahmen verrichtet in IPFire Guardian, was optional nachinstalliert werden kann.
-		</p>
-		<p>
-			Somit ist ein IDPS ein sinnvoller Zusatz zum herkömmlichen Paketfilter um intelligente Entscheidungen
-			über einkommende Daten zu treffen.
-		</p>
-	{% else %}
-		<p>
-			An Intrusion Dection System, shortly IDS, is a software to detect attacks against computer systems
-			and networks. Thereby the IDS analyze the networktraffic and search for attacksamples. If someone
-			scans the ports of the IPFire-System to see which services are available, the IDS notice it.
-		</p>
-		<p>
-			An IPS, Intrusion Prevention System, has in addition to the detection the task to perform actions.
-			Thereby the IPS get the information from the IDS and react. That means, if we recall the example with
-			the portscan, the system would block the attacker in order to prevent further inquiries.
-		</p>
-		<p>
-			It is possible to use IDS and IPS at the IPFire system. We call such a system IDPS (Intrusion Detection
-			and Prevention System). A very important deputy is Snort. This free Network Intrusion Dection System
-			(NIDS) analyzes the networktraffic and if something abnormal happens it will logs it. IPFire gives you
-			the possibility to see it very explicit at the webinterface.
-		</p>
-		<p>
-			For automatical prevention, IPFire has an addon called Guardian which can be installed optional.
-		</p>
-		<p>
-			Therefore an IDPS is a wise addition to the normal packetfilter to get intelligent decisions about
-			incoming and outgoing information.
-		</p>
-	{% end %}
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					Ein Intrusion Dection System, kurz IDS, dient zur Erkennung von Angriffen gegen Computersysteme
+					oder Computernetze. Dabei analysiert das IDS den Netzwerktraffic und durchsucht diesen nach Angriffsmustern.
+					Wird zum Beispiel ein einfacher Portscan auf ein IPFire-System ausgeführt um angebotene Dienste auszuspähen,
+					dann wird dies sofort erkannt.
+				</p>
+				<p>
+					Ein IPS, Intrusion Prevention System, hat zusätzlich zu der Erkennung die Aufgabe Aktionen auszuführen.
+					Dabei nimmt es Informationen zum Angriff vom IDS entgegen und handelt entsprechend. Bei dem Beispiel des
+					Portscans würde es den Angreifer blocken damit keine Daten mehr ausgetauscht werden.
+				</p>
+				<p>
+					Arbeiten wie in IPFire beide Systeme zusammen nennt man dies ein IDPS (Intrusion detection and prevention
+					system). Ein sehr bekannter Vertreter dafür ist Snort. Das freie Netzwerk Intrusion Dection System (NIDS)
+					analysiert den Datenverkehr und sofern es etwas Auffälliges findet, logt es dieses. IPFire bietet die
+					Möglichkeit die erkannten Angriffe im Webinterface detailliert durchzusehen.
+				</p>
+				<p>
+					Automatische Gegenmaßnahmen verrichtet in IPFire Guardian, was optional nachinstalliert werden kann.
+				</p>
+				<p>
+					Somit ist ein IDPS ein sinnvoller Zusatz zum herkömmlichen Paketfilter um intelligente Entscheidungen
+					über einkommende Daten zu treffen.
+				</p>
+			{% else %}
+				<p>
+					An Intrusion Dection System (or IDS), is a piece of software designed to detect attacks against computer systems
+					and networks. Thereby the IDS will analyze the network traffic and search for attack samples. If someone
+					scans the ports of the IPFire-System to see which services are available, the IDS will immediately notice it.
+				</p>
+				<p>
+					An Intrusion Prevention System (or IPS), in addition to the detection system, will perform actions.
+					The IPS gets the information from the IDS and reacts accordingly. That means, recalling the example above with
+					the portscan, the system would automatically block the attacker immediately in order to prevent further inquiries.
+				</p>
+				<p>
+					It is possible to use IDS and IPS on the IPFire system. We call this system "Intrusion Detection
+					and Prevention System" (or IDPS). A very important deputy of this system is Snort, the free Network Intrusion Dection System
+					(NIDS). It analyzes the network traffic and if something abnormal happens, it will log the event. IPFire gives you
+					the possibility to see it very explicitly in the web interface.
+				</p>
+				<p>
+					For automatic prevention, IPFire has an add-on called Guardian which can be installed optionally.
+				</p>
+				<p>
+					An IDPS is a wise addition to the normal packet filter. It makes intelligent decisions about
+					incoming and outgoing network traffic and how to deal with it.
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}
