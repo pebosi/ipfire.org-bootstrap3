@@ -40,23 +40,7 @@ class UIModule(tornado.web.UIModule):
 
 class MenuModule(UIModule):
 	def render(self):
-		hostname = self.request.host.lower().split(':')[0]
-
-		menuitems = []
-		for m in backend.Menu().get(hostname):
-			m.active = False
-
-			if m.uri and self.request.uri.endswith(m.uri):
-				m.active = True
-
-			# Translate the description of the link
-			m.description = \
-				self.locale.translate(m.description)
-			m.description = tornado.escape.xhtml_escape(m.description)
-
-			menuitems.append(m)
-
-		return self.render_string("modules/menu.html", menuitems=menuitems)
+		return self.render_string("modules/menu.html")
 
 
 class NewsItemModule(UIModule):
@@ -69,7 +53,7 @@ class NewsItemModule(UIModule):
 			_ = self.locale.translate
 			return _("Unknown author")
 
-	def render(self, item, uncut=False):
+	def render(self, item, uncut=True, announcement=False, show_heading=True):
 		# Get author
 		item.author = self.get_author(item.author_id)
 
@@ -86,7 +70,8 @@ class NewsItemModule(UIModule):
 
 		item.text = text
 
-		return self.render_string("modules/news-item.html", item=item, uncut=uncut)
+		return self.render_string("modules/news-item.html", item=item,
+			uncut=uncut, announcement=announcement, show_heading=show_heading)
 
 
 class NewsLineModule(NewsItemModule):
@@ -111,8 +96,20 @@ class SidebarReleaseModule(UIModule):
 
 
 class ReleaseItemModule(UIModule):
-	def render(self, item):
-		return self.render_string("modules/release-item.html", release=item)
+	def render(self, release, latest=False):
+		files = {
+			"i586" : [],
+			"arm"  : [],
+		}
+
+		for file in release.files:
+			try:
+				files[file.arch].append(file)
+			except KeyError:
+				pass
+
+		return self.render_string("modules/release-item.html",
+			release=release, latest=latest, files=files)
 
 
 class SidebarBannerModule(UIModule):
@@ -123,10 +120,27 @@ class SidebarBannerModule(UIModule):
 		return self.render_string("modules/sidebar-banner.html", item=item)
 
 
+class DownloadButtonModule(UIModule):
+	def render(self, release, text="Download now!"):
+		best_image = None
+
+		for file in release.files:
+			if file.type == "iso":
+				best_image = file
+				break
+
+		# Show nothing when there was no image found.
+		if not best_image:
+			return ""
+
+		return self.render_string("modules/download-button.html",
+			release=release, image=best_image)
+
+
 class PlanetEntryModule(UIModule):
-	def render(self, entry, short=False):
+	def render(self, entry, show_avatar=True):
 		return self.render_string("modules/planet-entry.html",
-			entry=entry, short=short)
+			entry=entry, show_avatar=show_avatar)
 
 
 class TrackerPeerListModule(UIModule):

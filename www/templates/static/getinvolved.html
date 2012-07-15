@@ -1,0 +1,173 @@
+{% extends "../base-1.html" %}
+
+{% block title %}{{ _("Get involved") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Get involved") }}</h1>
+	</div>
+
+	<h2>{{ _("Thanks for your support") }}</h2>
+	{% if lang == "de" %}
+		<p>
+			Das IPFire Projekt bekommt eine Menge Unterstützung durch
+			alle, die mitmachen. Daher sei an dieser Stelle allen, die
+			sich in das Projekt einbringen ein Wort des Danks ausgesprochen.
+		</p>
+		<p>
+			Die Distribution wird dank Euch jeden Tag ein kleines Stück besser.
+		</p>
+		<p>
+			Es ist so leicht etwas zu erreichen.
+			Hier ist eine Liste von Möglichkeiten dem Projekt in einem
+			oder mehreren Wegen unter die Arme zu greifen:
+		</p>
+	{% else %}
+		<p>
+			The IPFire project receives a great amount of support from
+			the community and we would like to take the opportunity to
+			thank each and every contributor participating.
+		</p>
+		<p>
+			This distribution is getting better and better, every single
+			day thanks to you.
+		</p>
+		<p>
+			It's easy to make a difference. Here is a list of ways how
+			you can help the IPFire project in one or more ways:
+		</p>
+	{% end %}
+
+	<br>
+
+	<div class="row">
+		<div class="span6">
+			<h2>{{ _("Donations") }}</h2>
+			{% if lang == "de" %}
+				<p>
+					Du kannst dem Projekt helfen, indem du etwas spendest.
+					Dadurch kann neues Equipment angeschafft und Veranstaltungen
+					gestaltet werden.
+				</p>
+			{% else %}
+				<p>
+					You can help by making a financial contribution to the project.
+					Due to revenue from your donations, the IPFire project can
+					afford to buy dedicated servers, new equipment and events.
+				</p>
+			{% end %}
+			<p style="text-align: center;">
+				<a class="btn btn-success" href="/donate">
+					{{ _("Donate") }}
+				</a>
+			</p>
+		</div>
+
+		<div class="span6">
+			<h2>
+				{{ _("Promotion") }}
+				<small>{{ _("Spread the word") }}</small>
+			</h2>
+			{% if lang == "de" %}
+				<p>
+					Wenn dir IPFire gefällt, dann lass das auch andere wissen.
+					Hilf uns IPFire bekannt zu machen indem du ein Review schreibst
+					oder all deinen Freunden und Kollegen davon erzählst.
+					Halte einen Vortrag in deiner lokalen Linux-User-Group,
+					Schule oder Universität und beantworte Fragen der Zuhörer.
+				</p>
+			{% else %}
+				<p>
+					If you like IPFire, let people know. Help us to promote IPFire
+					by writing reviews or by telling your friends and colleagues.
+					Hold a talk at your local Linux user group, school or university
+					and answer people's questions.
+				</p>
+			{% end %}
+		</div>
+	</div>
+
+	<br>
+
+	<div class="row">
+		<div class="span6">
+			<h2>{{ _("Join the community") }}</h2>
+			{% if lang == "de" %}
+				<p>
+					Neben der Entwicklung selbst gibt es in einem Projekt
+					noch viel mehr zu tun.
+					Es gibt Gruppen, welche sich darum kümmern Einsteigern
+					Hilfe zu geben, Leute, die Dokumentation schreiben,
+					die Übersetzungen koordinieren und vieles mehr.
+				</p>
+				<p>
+					Das ist nur ein Auszug aus den vielen Möglichkeiten für Dich
+					beim Projekt mitzumachen:
+				</p>
+			{% else %}
+				<p>
+					Besides development, there is a lot more to do in a project.
+					There are groups which care about helping beginners to get along
+					with IPFire, people who write documentation, coordinate translations
+					and manage the infrastructure.
+				</p>
+				<p>
+					These are only a few of the many opportunities you have
+					to take part in the project:
+				</p>
+			{% end %}
+			<ul>
+				<li>
+					<a href="http://forum.ipfire.org/">
+						{{ _("Register on the forums") }}
+					</a>
+				</li>
+				<li>
+					<a href="/chat">
+						{{ _("Join the IRC channel") }}
+					</a>
+				</li>
+				<li>
+					<a href="http://planet.ipfire.org/">
+						{{ _("Subscribe to the planet feed") }}
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="span6">
+			<h2>{{ _("Development") }}</h2>
+			{% if lang == "de" %}
+				<p>
+					Mehr dazu, wie du bei der Entwicklung helfen kannst
+					befindet sich auf der <a href="/development">Entwicklungssseite</a>.
+				</p>
+			{% else %}
+				<p>
+					Read more about getting involved into hacking the code on the
+					<a href="/development">development page</a>.
+				</p>
+			{% end %}
+
+			<h3>{{ _("Translation") }}</h3>
+			{% if lang == "de" %}
+				<p>
+					Wenn du Englisch und noch eine weitere Sprache sprichst,
+					dann kannst du dabei helfen IPFire in deine Sprache zu übersetzen.
+				</p>
+			{% else %}
+				<p>
+					If you are able to read English and speak an other language, you
+					can help us translating IPFire into your language.
+				</p>
+			{% end %}
+			<ul>
+				<li>
+					<a href="http://wiki.ipfire.org/projects/translation/start">
+						{{ _("Join the translation project") }}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% end block %}

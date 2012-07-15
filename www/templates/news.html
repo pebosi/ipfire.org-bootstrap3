@@ -2,10 +2,10 @@
 
 {% block title %}News{% end block %}
 
-{% block content %}
-	<h3>What is new on the IPFire project?</h3>
-
-	<!-- XXX fill in some nice illustration -->
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("What is new on the IPFire project?") }}</h1>
+	</div>
 
 	<p>
 		At this place you will know about the most important announces.
@@ -24,11 +24,18 @@
 		{{ modules.NewsItem(item) }}
 	{% end %}
 
-	<p class="links">
-		{% if offset - limit %}
-			<a href="?offset={{ offset - (2 * limit) }}">&lt;&lt; {{ _("See newer news entries") }}</a>
-			&bull;
-		{% end %}
-		<a href="?offset={{ offset }}">{{ _("See older news entries") }} &gt;&gt;</a>
-	</p>
+	<div class="row">
+		<div class="span9">
+			<ul class="pager">
+				<li class="previous">
+					<a href="?offset={{ offset }}">&larr; {{ _("Older posts") }}</a>
+				</li>
+				{% if offset - limit %}
+					<li class="next">
+						<a href="?offset={{ offset - (2 * limit) }}">{{ _("Newer posts") }} &rarr;</a>
+					</li>
+				{% end %}
+			</ul>
+		</div>
+	</div>
 {% end block %}

@@ -2,40 +2,54 @@
 
 {% block title %}Fireinfo{% end block %}
 
-{% block content %}
-	<h3>Fireinfo</h3>
+{% block body %}
+	<div class="page-header">
+		<h1>
+			Fireinfo <small>{{ _("A hardware data collection tool for IPFire") }}</small>
+		</h1>
+	</div>
 
-	{% if lang == "de" %}
-		<p>
-			Bitte geben Sie ihre Profil-ID ein um einen Überblick über alle
-			Komponenten in Ihrem System zu erhalten:
-		</p>
-	{% else %}
-		<p>
-			Please enter your profile ID and have a look of the hardware components
-			that are installed on your system:
-		</p>
-	{% end %}
+	<div class="row">
+		<div class="span12">
+			{% if lang == "de" %}
+				<p>
+					<strong>Fireinfo</strong> ist ein Tool, welches anonym Informationen
+					über die in IPFire-Systemen verbaute Hardware sammelt.
+					Diese Daten sollen den Entwicklern helfen zu erkennen, welche
+					Hardware am häufigsten eingesetzt wird und sind auch hilfreich
+					um Hardware-Probleme ausfindig zu machen.
+				</p>
+			{% else %}
+				<p>
+					<strong>Fireinfo</strong> is a tool that anonymously collects statistical
+					data from IPFire systems. These data should help the developers to learn
+					which hardware is used most often to run an IPFire system, but is also
+					handy when it comes to debugging hardware problems.
+				</p>
+			{% end %}
+			<hr>
+		</div>
+	</div>
 
-	<form name="profile" method="POST">
-		{{ xsrf_form_html() }}
-		<p>
-			<input type="text" name="profile_id" size="40" maxlength="40" />
-			<input type="submit" value="{{ _("Show profile") }}" />
-		</p>
-	</form>
-	<br class="clear" />
+	<div class="row">
+		<div class="span8 offset2">
+			{% if lang == "de" %}
+				<p>
+					Bitte geben Sie die Profil-ID von ihrem System ein, welche
+					Sie auf der Fireinfo-Seite des Webinterfaces finden können:
+				</p>
+			{% else %}
+				<p>
+					Please enter the profile ID of your system, which can be found
+					on the fireinfo page on the web interface, to see your profile:
+				</p>
+			{% end %}
 
-	<h3>{{ _("What is fireinfo?") }}</h3>
-	{% if lang == "de" %}
-		<p>
-			Klicken Sie <a href="http://wiki.ipfire.org/de/fireinfo/start" target="_blank">hier</a>
-			um mehr über fireinfo zu erfahren.
-		</p>
-	{% else %}
-		<p>
-			Click <a href="http://wiki.ipfire.org/en/fireinfo/start" target="_blank">here</a>
-			to learn more about how fireinfo is working.
-		</p>
-	{% end %}
+			<form class="well form-search" method="POST" action="">
+				<input type="text" class="span6 search-query" name="profile_id" value="">
+				<button type="submit" class="btn">{{ _("Show profile") }}</button>
+				{{ xsrf_form_html() }}
+			</form>
+		</div>
+	</div>
 {% end block %}

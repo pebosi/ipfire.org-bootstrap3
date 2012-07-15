@@ -1,11 +1,18 @@
-{% extends "stasy-base-2.html" %}
+{% extends "stasy-base-1.html" %}
 
 {% block title %}{{ _("Memory") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Memory") }}</h3>
-	<p>
-		{{ _("The average amount of memory of all systems in the database is: <strong>%.2f MB</strong>.") % average_memory }}
-	</p>
-	{{ modules.StasyTable(memory) }}
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Memory") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<p>
+				{{ _("The average amount of memory of all systems in the database is: <strong>%.2f MB</strong>.") % average_memory }}
+			</p>
+			{{ modules.StasyTable(memory) }}
+		</div>
+	</div>
 {% end block %}

@@ -2,99 +2,64 @@
 		
 {% block title %}{{ _("Artwork") }}{% end block %}
  
-{% block content %}
-	<div class="post">
-		<h3>{{ _("Artwork") }}</h3>
-		<img src="{{ static_url("images/page_icons/artwork.png") }}") }}" class="floatTR" border="0" alt="{{ _("Artwork") }}" />
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Artwork") }}</h1>
+	</div>
+
+	{% if lang == "de" %}
 		<p>
-			{% if lang == "de" %}
-			Hier finden Sie Logos und Printvorlagen des IPFire Projektes.
-			{% else %}
-			Here you will find logos and print templates of the IPFire project.			
-			{% end %}
+			Auf dieser Seite befinden sich Logos und Printvorlagen.
 		</p>
-		
-		{% if lang == "de" %}
-			<p>
-				Alle Rechte an künstlerischen Werken bzw. deren Inhalte, die nicht explizit anders gekennzeichnet sind, 
-				gehören dem IPFire-Projekt und sind folglich urheberrechtlich geschützt und dürfen nur mit ausdrücklicher Genehmigung verwendet werden.
-				<br />
-				Für Presse und Berichterstattungen rund um das IPFire-Projekt sind die Inhalte dieser Seite auch ohne Genehmigung verwendbar.
-			</p>
-		{% else %}
-			<p>
-				All rights of artistic works and their content, which are not explicitly labled belong to the IPFire project 
-				and are protected by copyright and may not be used without explicit authorization.
-				<br />
-				For press releases around the IPFire project the contents of this page is usable without any permission.
-			</p>				
+		<p>
+			Alle Rechte an künstlerischen Werken bzw. deren Inhalte, die nicht
+			explizit anders gekennzeichnet sind, gehören dem IPFire-Projekt
+			und sind folglich urheberrechtlich geschützt und dürfen nur mit
+			ausdrücklicher Genehmigung verwendet werden.
+		</p>
+	{% else %}
+		<p>
+			On this page, you will find a logos and templates for printing.
+		</p>
+		<p>
+			All rights of artistic works and their content, which are not
+			explicitly labled belong to the IPFire project and are protected
+			by copyright and may not be used without explicit authorization.
+		</p>
+	{% end %}
+
+	<h2>{{ _("The IPFire Logo") }}</h2>
+	<ul class="thumbnails">
+		{% for i in ("512x512", "256x256", "128x128", "64x64", "32x32") %}
+			<li class="span4">
+				<a class="thumbnail" href="{{ static_url("images/tux/ipfire_tux_%s.png" % i) }}">
+					<img src="{{ static_url("images/tux/ipfire_tux_%s.png" % i) }}" alt="{{ _("Logo") }}">
+				</a>
+			</li>
 		{% end %}
-	</div>
-	<br class="clear" />
+	</ul>
+	<hr>
 
-	<div class="post">
-		<a name="{{ _("online") }}"></a><h3>{{ _("<strong>Online</strong> media") }}</h3>
-			<p>
-				<div class="pr_li">
-						 <img src="{{ static_url("images/tux/ipfire_tux_16x16.png") }}" align="bottom" border= "0"/>
-						 <img src="{{ static_url("images/tux/ipfire_tux_32x32.png") }}" align="bottom" border= "0"/>
-						 <img src="{{ static_url("images/tux/ipfire_tux_64x64.png") }}" align="bottom" border= "0"/>
-						 <img src="{{ static_url("images/tux/ipfire_tux_128x128.png") }}" align="bottom" border= "0"/>
-						 <img src="{{ static_url("images/tux/ipfire_tux_256x256.png") }}" align="bottom" border= "0"/>
+	<h2>{{ _("Flyers, Rollups, CDs and more") }}</h2>
+	{% if lang == "de" %}
+		<p>
+			Diese Arbeiten wurden erstellt von
+			<a href="http://www.elricco.com">elricco media services</a>.
+		</p>
+	{% else %}
+		<p>
+			These artworks have been designed by
+			<a href="http://www.elricco.com">elricco media services</a>.
+		</p>
+	{% end %}
 
-						 <br /><a href="{{ static_url("images/tux/ipfire_tux_16x16.png") }}") }}" target="_blank" border="0">
-						 ipfire.png (16 x 16)</a>
-						 <br /><a href="{{ static_url("images/tux/ipfire_tux_32x32.png") }}") }}" target="_blank" border="0">
-						 ipfire.png (32 x 32)</a>
-						 <br /><a href="{{ static_url("images/tux/ipfire_tux_64x64.png") }}") }}" target="_blank" border="0">
-						 ipfire.png (64 x 64)</a>
-						 <br /><a href="{{ static_url("images/tux/ipfire_tux_128x128.png") }}") }}" target="_blank" border="0">
-						 ipfire.png (128 x 128)</a>
-						 <br /><a href="{{ static_url("images/tux/ipfire_tux_256x256.png") }}") }}" target="_blank" border="0">
-						 ipfire.png (256 x 256)</a>
-						 <br /><a href="{{ static_url("images/tux/ipfire_tux_512x512.png") }}") }}" target="_blank" border="0">
-						 ipfire.png (512 x 512)</a>
-				</div>
-			</p>
-			<p>
-				{% if lang == "de" %}
-					Der Tux ist unter der GNU General Public License lizensiert.
-				{% else %}
-					The tux images is licensed under the GNU General Public License.
-				{% end %}
-			</p>
-	</div>
-	
-	<div class=post>
-		<a name="{{ _("print") }}"></a><h3>{{ _("<strong>Print</strong> media") }}</h3>
-			<p>
-				<div class="pr_li">
-						 <br /><a href="{{ static_url("images/artwork/cd_label.pdf") }}") }}" target="_blank" border="0">
-						 <img src="{{ static_url("images/artwork/cd_label_tn.png") }}" align="bottom" border= "0"/></a>
-						 &nbsp;&nbsp;&nbsp;
-						 <a href="{{ static_url("images/artwork/cd_schuber.pdf") }}") }}" target="_blank" border="0">
-						 <img src="{{ static_url("images/artwork/cd_schuber_tn.png") }}" align="bottom" border= "0"/></a>
-						 <br />
-						 <a href="{{ static_url("images/artwork/rollup.pdf") }}") }}" target="_blank" border="0">
-						 <img src="{{ static_url("images/artwork/rollup_tn.png") }}" align="bottom" border= "0"/></a>
-						 &nbsp;&nbsp;&nbsp;
-						 <a href="{{ static_url("images/artwork/flyer.pdf") }}") }}" target="_blank" border="0">
-						 <img src="{{ static_url("images/artwork/flyer_tn.png") }}" align="bottom" border= "0"/></a>
-				</div>
-			</p>
-			
-			<p>
-				Designed by <a href="http://www.elricco.com" target="_blank" border="0">elricco media services</a>.
-			</p>
-	</div>
-{% end block %}
-
-{{ modules.SidebarBanner() }}
-
-{% block sidebar %}
-		<h4><span>Artwork</span> list</h4>
-		<ul class="links">		
-			<li class="first"><a href="#{{ _("online") }}">{{ _("Online media") }}</a></li>
-				<li><a href="#{{ _("print") }}">{{ _("Print media") }}</a></li>
-		</ul>
+	<ul class="thumbnails">
+		{% for i in ("rollup", "flyer", "cd_schuber", "cd_label") %}
+			<li class="span6">
+				<a class="thumbnail" href="{{ static_url("images/artwork/%s.pdf" % i) }}">
+					<img src="{{ static_url("images/artwork/%s_tn.png" % i) }}" alt="{{ _("Artwork") }}">
+				</a>
+			</li>
+		{% end %}
+	</ul>
 {% end block %}

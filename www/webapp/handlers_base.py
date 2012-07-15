@@ -1,11 +1,24 @@
 #!/usr/bin/python
 
+from __future__ import division
+
 import httplib
 import time
 import tornado.locale
 import tornado.web
 
 import backend
+
+def format_size(b):
+	units = ["B", "k", "M", "G"]
+	unit_pointer = 0
+
+	while b >= 1024 and unit_pointer < len(units):
+		b /= 1024
+		unit_pointer += 1
+
+	return "%.1f%s" % (b, units[unit_pointer])
+
 
 class BaseHandler(tornado.web.RequestHandler):
 	rss_url = None
@@ -14,36 +27,60 @@ class BaseHandler(tornado.web.RequestHandler):
 		# Find the name of the author
 		return self.accounts.find(uid)
 
-	def get_user_locale(self):
-		DEFAULT_LOCALE = tornado.locale.get("en_US")
-		ALLOWED_LOCALES = \
-			[tornado.locale.get(l) for l in tornado.locale.get_supported_locales(None)]
+	def get_supported_locales(self):
+		for l in tornado.locale.get_supported_locales(None):
+			yield tornado.locale.get(l)
 
-		# One can append "?locale=de" to mostly and URI on the site and
-		# another output that guessed.
+	def valid_locale(self, locale):
+		if not locale:
+			return False
+
+		for l in self.get_supported_locales():
+			if l.code.startswith(locale):
+				return True
+
+		return False
+
+	def get_query_locale(self):
 		locale = self.get_argument("locale", None)
-		if locale:
-			for l in ALLOWED_LOCALES:
-				if not l.code.startswith(locale):
-					continue
 
-				return l
+		if locale is None:
+			return
+
+		if self.valid_locale(locale):
+			return locale
+
+	def prepare(self):
+		locale = self.get_query_locale()
+		if locale:
+			self.set_cookie("locale", locale)
+
+	def get_user_locale(self):
+		default_locale = tornado.locale.get("en_US")
 
 		# The planet is always in english.
 		if self.request.host == "planet.ipfire.org":
-			return DEFAULT_LOCALE
+			return default_locale
 
-		# If no locale was provided we guess what the browser sends us
-		locale = self.get_browser_locale()
-		if locale in ALLOWED_LOCALES:
-			return locale
+		# Get the locale from the query.
+		locale = self.get_query_locale()
+		if not locale:
+			# Read the locale from the cookies.
+			locale = self.get_cookie("locale", None)
 
-		# If no one of the cases above worked we use our default locale
-		return DEFAULT_LOCALE
+			if not locale:
+				locale = self.get_browser_locale().code
+
+		for l in self.get_supported_locales():
+			if l.code.startswith(locale):
+				return l
+
+		return default_locale
 
 	@property
 	def render_args(self):
 		return {
+			"format_size" : format_size,
 			"hostname" : self.request.host,
 			"lang" : self.locale.code[:2],
 			"rss_url" : self.rss_url,
@@ -73,6 +110,9 @@ class BaseHandler(tornado.web.RequestHandler):
 
 	def static_url(self, path, static=True):
 		ret = tornado.web.RequestHandler.static_url(self, path)
+
+		if self.settings.get("debug", False):
+			return ret
 
 		if static:
 			return "http://static.ipfire.org%s" % ret

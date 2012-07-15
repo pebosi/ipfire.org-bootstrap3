@@ -107,3 +107,6 @@ class DownloadCompatHandler(BaseHandler):
 
 		self.redirect("/%s" % _filename)
 
+class DownloadSplashHandler(BaseHandler):
+	def get(self):
+		self.render("download-splash.html")

@@ -2,62 +2,100 @@
 		
 {% block title %}{{ _("Donation") }}{% end block %}
  
-
-{% block content %}
-	
-	<div class=post>
-		<h3>{{ _("Donation") }}</h3>
-		<img src="{{ static_url("images/page_icons/donation.png") }}") }}" class="floatTR" border="0" alt="{{ _("Donation") }}" />
-		<p>
-			{% if lang == "de" %}
-			Dieses Projekt wird von Freiwilligen in ihrer Freizeit betrieben und betreut.<br />
-			Mit jeder Spende und sei sie noch so klein unterstützen Sie IPFire und sichern damit den Fortbestand dieses Projektes.	
-		</p>
-		<br />
-		<p>
-		<div align="center">
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="10781833">
-				<input type="image" src="https://www.paypal.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-				<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-			</form>
-		</div>
-		</p>
-		<br />
-		<p>
-			Wegen des einfachen Ablaufs der Spende bevorzugen wir <strong>PayPal</strong>.<br />
-			Es ist auch möglich ohne Anmeldung per Kreditkarte zu spenden.
-		</p>
-			
-			
-			{% else %}
-		<p>
-			This project is driven and maintained by volunteers in their free time.<br />
-			With each donation, and even with small ones you will support IPFire and ensure the continuation of this project.
-		</p>
-		<br />
-		<p>
-		<div align="center">
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="10781833">
-				<input type="image" src="https://www.paypal.com/en_US/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-				<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-			</form>
-		</div>
-		</p>
-		<br />
-		<p>
-			Our favorite way for a donation is <strong>PayPal</strong> because it is fast and easy.<br />
-			It is also possible to donate by credit card without registration.
-		</p>	
-			{% end %}
-		</p>
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Please consider donating!") }}</h1>
 	</div>
-	<br class="clear" />
 
-	{% end block %}
+	<div class="row">
+		<div class="span7 offset1">
+			{% if lang == "de" %}
+				<p>
+					IPFire ist kostenlos und das Projekt hat keine direkten
+					Einnahmen. Stattdessen wird es vollständig durch Spenden
+					seiner Benutzer finanziert, welche die Ambition haben
+					ein Produkt zu entwickeln, welches mit denjenigen,
+					die von großen Unternehmen unterstützt werden,
+					konkurrieren kann.
+				</p>
+				<p>
+					Finanzielle Mittel sind essenziell um Sever und Equipment
+					zu bezahlen, Notwendigkeiten der Distribution zu finanzieren
+					und die Arbeit der Leute hinter dem Projekt zu fördern.
+				</p>
+				<p>
+					Wir ermutigen jeden, der IPFire herunterlädt und nutzt
+					einen Beitrag zu leisten:
+					<strong>
+						Wir bitten um eine Spende und bedanken uns im Voraus
+						sehr dafür.
+					</strong>
+				</p>
+			{% else %}
+				<p>
+					IPFire is free of cost and does not generate any direct sort
+					of income. It is funded by donations and although it is
+					financially supported by its own community of users, its
+					ambition is to compete with projects which are backed by large
+					companies.
+				</p>
+				<p>
+					Financial ressources are essential for the IPFire project to pay
+					for servers and equipment, finance the needs of the distribution
+					and fund the work of the people behind it.
+				</p>
+				<p>
+					We encourage anyone who downloads and uses IPFire to contribute
+					to the distribution:
+					<strong>
+						Please donate and encourage others to do so	as well.
+						It is very much appreciated.
+					</strong>
+				</p>
+			{% end %}
+		</div>
 
-{% block sidebar %}
+		<div class="span3">
+			<br><br><br><br>
+			{% if lang == "de" %}
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="Z44GQ52ZHKVFW">
+					<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+					<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			{% else %}
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="HHBTSN9QRWPAY">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			{% end %}
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="row">
+		<div class="span10 offset1">
+			{% if lang == "de" %}
+				<p>
+					<em>
+						Falls du keinen PayPal-Account hast oder haben
+						möchtest, so kann auch mit Kreditkarte gespendet
+						werden. Dafür einfach auf den Button klicken.
+					</em>
+				</p>
+			{% else %}
+				<p>
+					<em>
+						If don't have or want a PayPal account,
+						you can also donate with your credit card.
+						Just click on the button.
+					</em>
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}

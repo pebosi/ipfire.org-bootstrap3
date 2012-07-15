@@ -1,17 +1,22 @@
-<div class="post">
-	<h2 class="title"><a href="/news/{{ item.slug }}">{{ item.title }}</a></h2>
-	<p class="meta">
-		{{ _("Posted by %s on") % item.author }} {{ locale.format_date(item.date, shorter=True) }}
-		<!-- &bull;	<a href="/news/{{ item.slug }}">{{ _("Full article") }}</a> -->
-	</p>
-	<div class="entry">
-		{{ item.text }}
-
-		{% if not uncut %}
-			<p class="links">
-					<a href="/news/{{ item.slug }}">{{ _("Read more") }}</a>
-			</p>
+<div class="row">
+	<div class="span12">
+		{% if show_heading %}
+			<h2>
+				{% if announcement %}
+					{{ _("Announcement") }}:
+				{% end %}
+				<a href="/news/{{ escape(item.slug) }}">{{ escape(item.title) }}</a>
+			</h2>
 		{% end %}
+
+		{{ item.text }}
 	</div>
 </div>
-
+<div class="row">
+	<div class="span12">
+		<p class="pull-right">
+			<a href="/author/{{ item.author_id }}">{{ item.author }}</a> -
+			{{ locale.format_date(item.date, full_format=True) }}
+		</p>
+	</div>
+</div>

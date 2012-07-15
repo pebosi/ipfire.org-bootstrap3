@@ -1,0 +1,70 @@
+{% extends "../../../base-feature.html" %}
+		
+{% block title %}{{ _("VPN") }}: {{ _("IPsec") }}{% end block %}
+
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("VPN: IPsec") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					IPsec ist ein Standard, der unter den VPN-Technologien weit bekannt
+					ist und im IPv6-Protokoll entwickelt wurde. Da IPv6 allerdings so
+					langsam seinen Weg in die Welt gefunden hat, begannen Einige damit
+					das IPsec-Protokoll auf IPv4 zurückzuportieren.
+				</p>
+
+				<p>
+					Im Gegensatz zu den ebenfalls eingesetzten SSL-VPNs gilt IPsec als
+					schwer einzurichten. Diese Hürde wurde in IPFire beseitigt - zur
+					Verfügung steht ein einfach zu bedienendes User-Interface,
+					in welches man einige Konfigurationsparameter eingibt, welches dann
+					den Rest übernimmt. Ebenso wird automatsich dafür gesorgt, dass die
+					Tunnel geöffnet sind und, dass diese von allein wieder aufgebaut werden,
+					sollte einmal ein Tunnelpartner seine Internetverbindung verlieren.
+					So wird eine sichere und stabile Verbindung zu Filialen, Partnern oder
+					dem Zuhause innerhalb von Minuten eingerichtet und sie ist auch
+					kompatibel zu denen anderer Anbieter.
+				</p>
+
+				<p>
+					Der hohe Grad der Kompatibilität zu anderen Herstellern wird durch
+					die Verwendung der freien Implementierung 
+					<a href="http://www.strongswan.org" target="_blank">strongSwan</a>
+					möglich, welches von Andreas Steffen, einem Professor für Sicherheit
+					in der Kommunikationstechnik und Leiter des Instituts für
+					Internetechnologien und -applikationen an der Universität der
+					angewandten Wissenschaften Rapperswil in der Schweiz entwickelt wird.
+					StrongSwan arbeitet besonders gut mit Produkten wie Microsoft Windows 7,
+					Microsoft Windows Vista und Mac OS X zusammen.
+				</p>
+			{% else %}
+				<p>
+					IPsec is a widely-deployed VPN solution that was originally developed to be used in conjunction with IPv6. Because it was so secure and IPv6 was so slowly deployed, it was backported to secure IPv4 traffic as well.
+				</p>
+
+				<p>
+					In contrast to SSL-VPNs, IPsec is hard to set-up. In IPFire, we
+					thought about how to make this technology easy-to-use and as a result, there
+					is a web user interface that handles all settings and takes care of the rest
+					of the configuration for you. It also keeps the tunnels alive and
+					re-establishes them automatically after a remote site has lost the connection. A secure connection to a branch office, a
+					business partner, or a home office is done within a couple of minutes
+					and compatible with all other implementations.
+				</p>
+
+				<p>
+					This high-level of compatibility is achieved by using the free
+					implementation called
+					<a href="http://www.strongswan.org" target="_blank">strongSwan</a>. It is maintained by Andreas Steffen, who is a professor for security in communications and head of the Institute for Internet Technologies
+					and Applications at the University of Applied Sciences Rapperswil, in
+					Switzerland. StrongSwan also works with all current, major operating systems, such as Microsoft
+					Windows 7, Microsoft Windows Vista and Mac OS X.
+				</p>
+			{% end %}
+		</div>
+	</div>
+{% end block %}

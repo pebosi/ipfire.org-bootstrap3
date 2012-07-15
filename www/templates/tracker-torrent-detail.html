@@ -2,42 +2,33 @@
 
 {% block title %}{{ _("Torrent Downloads") }}{% end block %}
 
-{% block content %}
-	<div class="post">
-		<a name="latest"></a>
-		<h3>{{ _("IPFire Torrent Tracker") }}</h3>
-
-		<!-- <img src="{{ static_url("images/page_icons/download-torrents.png") }}"
-			class="floatTR" border="0" alt="{{ _("IPFire Torrent Tracker") }}" /> -->
-
-		<table class="download-torrent-detail">
-			<tr>
-				<td>{{ _("Release") }}</td>
-				<td>
-					<a href="http://downloads.ipfire.org/release/{{ release.id }}">{{ release.name }}</a>
-				</td>
-			</tr>
-			<tr>
-				<td>{{ _("Hash") }}</td>
-				<td>{{ release.torrent_hash }}</td>
-			</tr>
-		</table>
-
-		{% if torrent.peers %}
-			<h4>{{ _("Peers") }}</h4>
-			{{ modules.TrackerPeerList(torrent.peers, percentages=True) }}
-		{% end %}
-
-		{% if torrent.seeds %}
-			<h4>{{ _("Seeds") }}</h4>
-			{{ modules.TrackerPeerList(torrent.seeds) }}
-		{% end %}
-
-		<br class="clear" />
-
-		<p>
-			<a href="/">{{ _("See list of all torrents on this tracker.") }}</a>
-		</p>
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("IPFire Torrent Tracker") }}</h1>
 	</div>
-{% end block %}
 
+	<table class="download-torrent-detail">
+		<tr>
+			<td>{{ _("Release") }}</td>
+			<td>
+				<a href="http://downloads.ipfire.org/release/{{ release.id }}">{{ release.name }}</a>
+			</td>
+		</tr>
+		<tr>
+			<td>{{ _("Hash") }}</td>
+			<td>{{ release.torrent_hash }}</td>
+		</tr>
+	</table>
+
+	<hr>
+
+	{% if torrent.peers %}
+		<h3>{{ _("Peers") }}</h3>
+		{{ modules.TrackerPeerList(torrent.peers, percentages=True) }}
+	{% end %}
+
+	{% if torrent.seeds %}
+		<h3>{{ _("Seeds") }}</h3>
+		{{ modules.TrackerPeerList(torrent.seeds) }}
+	{% end %}
+{% end block %}

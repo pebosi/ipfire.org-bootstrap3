@@ -1,0 +1,39 @@
+{% extends "../base-1.html" %}
+		
+{% block title %}{{ _("Chat") }}{% end block %}
+ 
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Chat") }}</h1>
+	</div>
+
+	{% if lang == "de" %}
+		<p>
+			Wer Fragen rund um IPFire hat, findet in unserem IRC-Channel rund
+			um die Uhr Ansprechpartner, die Hilfestellung zu allen möglichen
+			Themen geben können.
+			Dies ist gleichzeitig eine tolle Möglichkeit, neue Kontakte zu
+			knüpfen oder sich einfach zu unterhalten.
+		</p>
+	{% else %}
+		<p>
+			On the IPFire IRC channel, you will find people who can help you
+			with your questions about IPFire.
+			This is a good chance to meet people involved in the project
+			or just have a chat.
+		</p>
+	{% end %}
+
+	<ul>
+		<li>
+			<strong>{{ _("Server") }}</strong>: irc.freenode.net
+		</li>
+		<li>
+			<strong>{{ _("Channel") }}</strong>: #ipfire
+		</li>
+	</ul>
+
+	<a class="btn" href="http://webchat.freenode.net/?channels=ipfire">
+		{{ _("Use the web client") }}
+	</a>
+{% end block %}

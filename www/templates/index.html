@@ -1,144 +1,144 @@
-{% extends "base-2.html" %}
+{% extends "base-1.html" %}
 
 {% block title %}{{ _("Home") }}{% end block %}
 
-{% block content %}
-	<!--
-		<img src="{{ static_url("images/Network-1.png") }}") }}" alt="IPFire Network" />
-		<br class="clear" />
-	-->
+{% block body %}
+	<div class="pull-right">
+		<strong>{{ _("Follow us") }}</strong>
+		<a href="https://www.facebook.com/IPFire.org"><img src="{{ static_url("images/icons/social/facebook.png") }}" alt="Facebook"></a>
+		<a href="https://twitter.com/ipfire"><img src="{{ static_url("images/icons/social/twitter.png") }}" alt="Twitter"></a>
+		<a href="/news.rss"><img src="{{ static_url("images/icons/social/rss.png") }}" alt="RSS"></a>
+	</div>
 
-	<h3>IPFire - {{ _("An open source firewall solution") }}</h3>
-	{% if lang == "de" %}
-		<p>
-			<strong>IPFire</strong> ist eine Firewall-Distribution für den optimalen Einsatz
-			in mittleren bis kleinen Unternehmensnetzwerken und Heimnetzwerken.
-		</p>
-		<p>
-			Obwohl das System extrem schlank gehalten wurde, können
-			Addons mit nur einem Klick installiert werden. Diese Eigenschaft unterscheidet
-			IPFire von anderen Distributionen: IPFire ist einfach zu administrieren
-			hat aber genug Leistung um allen Anforderungen gewachsen zu sein.
-		</p>
-	{% else %}
-		<p>
-			<strong>IPFire</strong> is a server distribution with intended to use as
-			a firewall. It focuses on flexibility, and scales from small to
-			middle sized business networks and home networks.
-		</p>
-		<p>
-			Along with this hardened, minimalist come lots of addons that
-			can be installed with a simple click. That's what makes IPFire different
-			from other firewall distributions: it is easy to configure for any task,
-			and easy to administer once it's set up.
-		</p>
+	<div class="page-header">
+		<h1>
+			IPFire
+			<small>{{ _("An Open Source Firewall Solution") }}</small>
+		</h1>
+	</div>
+
+	{% if hostname == "dev.ipfire.org" %}
+		<div class="row">
+			<div class="span12">
+				<div style="text-align: center;">
+					<img src="http://placehold.it/640x380" alt="Thumbnail">
+				</div>
+				<hr>
+			</div>
+		</div>
 	{% end %}
 
-	<br class="clear" />
+	<div class="row">
+		<div class="span9">
+			<div class="row">
+				<div class="span9">
+					{% if lang == "de" %}
+						<p>
+							<strong>IPFire</strong> ist eine gehärtete Linux-Appliance-Distribution
+							mit primärem Einsatzzweck als Firewall.
+						</p>
+						<p>
+							Mit IPFire kommt eine unternehmensfähige Absicherung des Netzwerks
+							für Jedermann - vom Heimnetzwerk bis zum großen Unternehmen,
+							Schulnetzwerken und Behörden.
+							IPFire fokussiert Sicherheit, Stabilität und einfache Benutzbarkeit.
+							Die Core-Distribution erlaubt das nachinstallieren von Addons mit
+							nur einem einzigen Klick.
+						</p>
+						<p>
+							IPFire ist einfach, schnell und <a href="/features/itsfree">kostet nichts</a>.
+						</p>
+					{% else %}
+						<p>
+							<strong>IPFire</strong> is a hardened Linux appliance distribution
+							designed for use as a firewall.
+						</p>
+						<p>
+							It offers corporate-level network protection for anyone who needs it,
+							from homes users all the way up to large corporations, school networks
+							and authorities.
+							IPFire focusses on security, stability and ease of use. Along with the
+							core distribution, there are a variety of add-ons which can be installed
+							with a single click.
+						</p>
+						<p>
+							IPFire is easily deployed, fast and <a href="/features/itsfree">costs nothing</a>.
+						</p>
+					{% end %}
+					<hr>
+				</div>
+			</div>
 
-	<h4>
-		{{ _("See what makes IPFire so great:") }}
-	</h4>
+			<div class="row">
+				<div class="span3">
+					<h3>
+						<img src="{{ static_url("images/icons/security.png") }}" alt="{{ _("Security") }}" />
+						{{ _("Security") }}
+					</h3>
 
-	<table class="blocks">
-		<tr>
-			<td class="block block1">
-				<img src="{{ static_url("images/icons/security.png") }}" alt="{{ _("Security") }}" />
-				<br class="clear" />
-				<span>{{ _("Security") }}</span>
-				{% if lang == "de" %}
-					<p>
-						Die oberste Priorität ist die Sicherheit des Systems.
-						Zum Beispiel werden Sicherheits- updates regelmäßig und
-						zügig verteilt.
-					</p>
-				{% else %}
-					<p>
-						As the most important issue: Security updates
-						are deployed regularly and promptly.
-					</p>
-				{% end %}
-				<a href="/about#security">{{ _("Learn more.") }}</a>
-			</td>
-			<td class="block block2">
-				<img src="{{ static_url("images/icons/flexibility.png") }}" alt="{{ _("Flexibility") }}" />
-				<br class="clear" />
-				<span>{{ _("Flexibility") }}</span>
-				{% if lang == "de" %}
-					<p>
-						Heutzutage ist es auch wichtig flexibel auf verschiedenste
-						Anforder- ungen einzugehen. Genau wie IPFire...
-					</p>
-				{% else %}
-					<p>
-						Nowadays it is also important to act flexible and fit
-						as best as possible into the environment. So does IPFire.
-					</p>
-				{% end %}
-				<p>
-					<a href="/about#concept">{{ _("Learn more.") }}</a>
-				</p>
-			</td>
-			<td class="block block3">
-				<img src="{{ static_url("images/icons/community.png") }}" alt="{{ _("Community") }}" />
-				<br class="clear" />
-				<span>{{ _("Community") }}</span>
-				{% if lang == "de" %}
-					<p>
-						Verantwortlich für den Erfolg von IPFire ist eine aktive
-						Community, die das Projekt vorantreibt.
-					</p>
-				{% else %}
-					<p>
-						The success of IPFire is based on the community that
-						is working on the code and spreading IPFire to the world.
-					</p>
-				{% end %}
-				<p>
-					<a href="/about#itsfree">{{ _("Get involved.") }}</a>
-				</p>
-			</td>
-		</tr>
-	</table>
+					{% if lang == "de" %}
+						<p>
+							Das wichtigste: Sicherheits- updates werden
+							regelmäßig und zügig bereitgestellt.
+						</p>
+					{% else %}
+						<p>
+							As the most important issue: Security updates
+							are deployed regularly and promptly.
+						</p>
+					{% end %}
+				</div>
 
-	<p class="links">
-		{{ _("Quick links") }} &bull;
-		<a href="/about">{{ _("About IPFire") }}</a>
-		&bull;
-		<a href="http://wiki.ipfire.org/" target="_blank">{{ _("wiki") }}</a>
-		&bull;
-		<a href="http://forum.ipfire.org/" target="_blank">{{ _("forum") }}</a>
-		<!-- &bull;
-		<a href="/about">{{ _("Screenshots") }}</a> -->
-	</p>
+				<div class="span3">
+					<h3>
+						<img src="{{ static_url("images/icons/flexibility.png") }}" alt="{{ _("Flexibility") }}" />
+						{{ _("Flexibility") }}
+					</h3>
 
-	<div class="line"></div>
+					{% if lang == "de" %}
+						<p>
+							IPFire ist ein schlankes System, welches leicht durch
+							zusätzliche Funktionen erweitert werden kann.
+						</p>
+					{% else %}
+						<p>
+							IPFire is a very small system (the install image is about 60MB)
+							and can be easily customized with additional functions.
+						</p>
+					{% end %}		
+				</div>
+
+				<div class="span3">
+					<h3>
+						<img src="{{ static_url("images/icons/community.png") }}" alt="{{ _("Community") }}" />
+						{{ _("Open Source") }}
+					</h3>
+
+					{% if lang == "de" %}
+						<p>
+							IPFire ist freie Software, welche von einer offenen
+							Community tagtäglich verbessert wird.
+						</p>
+					{% else %}
+						<p>
+							IPFire is free software and developed by an open community,
+							that makes IPFire better every single day.
+						</p>
+					{% end %}
+				</div>
+			</div>
+		</div>
+
+		<div class="span3">
+			<img src="{{ static_url("images/tux/ipfire_tux_256x256.png") }}" alt="IPFire Logo" />
+
+			{{ modules.SidebarRelease() }}
+		</div>
+	</div>
+
+	<hr>
 
 	{% for item in latest_news %}
-		{{ modules.NewsItem(item) }}
+		{{ modules.NewsItem(item, announcement=True) }}
 	{% end %}
-
-	<div class="line"></div>
-
-	{% for item in recent_planets %}
-		<strong>{{ _("Have you already seen?") }}</strong>
-		<a href="http://planet.ipfire.org/user/{{ item.author.uid }}">{{ item.author.cn }}</a>
-		{{ _("talks about") }}
-		<a href="http://planet.ipfire.org/post/{{ item.slug }}">{{ item.title }}</a>
-		{{ _("on the IPFire planet.") }}
-	{% end %}
-
-	<br class="clear" />
-	<br class="clear" />
-
-	<p class="right">
-		<a class="feed" href="/news.rss">{{ _("Subscribe to the latest news of IPFire") }} (RSS)</a>
-		&bull;
-		<a href="/news">{{ _("All posts") }} &gt;&gt;</a>
-	</p>
-{% end block %}
-
-{% block sidebar %}
-	{{ modules.SidebarRelease() }}
-	{{ modules.SidebarBanner() }}
 {% end block %}

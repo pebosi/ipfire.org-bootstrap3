@@ -16,7 +16,8 @@ from ui_modules import *
 
 BASEDIR = os.path.join(os.path.dirname(__file__), "..")
 
-tornado.locale.load_translations(os.path.join(BASEDIR, "translations"))
+# Load translations.
+tornado.locale.load_gettext_translations(os.path.join(BASEDIR, "translations"), "webapp")
 
 class Application(tornado.web.Application):
 	def __init__(self):
@@ -27,6 +28,7 @@ class Application(tornado.web.Application):
 			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),
 			ui_modules = {
+				"DownloadButton" : DownloadButtonModule,
 				"Menu"           : MenuModule,
 				"MirrorItem"     : MirrorItemModule,
 				"MirrorsTable"   : MirrorsTableModule,
@@ -65,10 +67,15 @@ class Application(tornado.web.Application):
 			(r"/author/(.*)", NewsAuthorHandler),
 
 			# Download sites
-			(r"/downloads?", DownloadHandler),
+			(r"/download", DownloadHandler),
+			(r"/downloads", tornado.web.RedirectHandler, { "url" : "/download" }),
 
 			# Handle old pages that have moved elsewhere
 			(r"/screenshots", tornado.web.RedirectHandler, { "url" : "/about" }),
+			(r"/about", tornado.web.RedirectHandler, { "url" : "/features" }),
+			(r"/support", tornado.web.RedirectHandler, { "url" : "/getinvolved" }),
+
+			(r"/donate", tornado.web.RedirectHandler, { "url" : "/donation" }),
 
 			# RSS feed
 			(r"/news.rss", RSSNewsHandler),
@@ -82,7 +89,7 @@ class Application(tornado.web.Application):
 		])
 
 		# downloads.ipfire.org
-		self.add_handlers(r"downloads?\.ipfire\.org", [
+		self.add_handlers(r"downloads\.ipfire\.org", [
 			(r"/", DownloadsIndexHandler),
 			(r"/latest", DownloadsLatestHandler),
 			(r"/release/([0-9]+)", DownloadsReleaseHandler),
@@ -90,9 +97,13 @@ class Application(tornado.web.Application):
 			(r"/development", DownloadsDevelopmentHandler),
 			(r"/mirrors", tornado.web.RedirectHandler, { "url" : "http://mirrors.ipfire.org/" }),
 			(r"/source", tornado.web.RedirectHandler, { "url" : "http://source.ipfire.org/" }),
+			(r"/download-splash", DownloadSplashHandler),
 		] + static_handlers + [
 			(r"/(iso|torrent)/(.*)", DownloadCompatHandler),
 			(r"/(.*)", DownloadFileHandler),
+		])
+		self.add_handlers(r"download\.ipfire\.org", [
+			(r".*", tornado.web.RedirectHandler, { "url" : "http://downloads.ipfire.org" })
 		])
 
 		# mirrors.ipfire.org
@@ -113,7 +124,7 @@ class Application(tornado.web.Application):
 		] + static_handlers)
 
 		# stasy.ipfire.org
-		self.add_handlers(r"(fireinfo|stasy)\.ipfire\.org", [
+		self.add_handlers(r"fireinfo\.ipfire\.org", [
 			(r"/", StasyIndexHandler),
 			(r"/profile/([a-z0-9]{40})", StasyProfileDetailHandler),
 			(r"/vendor/(pci|usb)/([0-9a-f]{4})", StasyStatsVendorDetail),
@@ -143,6 +154,12 @@ class Application(tornado.web.Application):
 			(r"/torrent/([0-9a-f]+)", TrackerDetailHandler),
 		] + static_handlers)
 
+		# nopaste.ipfire.org
+		self.add_handlers(r"nopaste\.ipfire\.org", [
+			(r"/", NopasteIndexHandler),
+			(r"/([\w]{8}-[\w]{4}-[\w]{4}-[\w]{4}-[\w]{12})", NopasteEntryHandler),
+		] + static_handlers)
+
 		# admin.ipfire.org
 		self.add_handlers(r"admin\.ipfire\.org", [
 			(r"/", AdminIndexHandler),
@@ -165,6 +182,10 @@ class Application(tornado.web.Application):
 			(r"/mirrors/update", AdminMirrorsUpdateHandler),
 			# Fireinfo
 			(r"/fireinfo/stats", AdminFireinfoStatsHandler),
+			# Downloads
+			(r"/downloads", AdminDownloadsHandler),
+			(r"/downloads/mirrors", AdminDownloadsMirrorsHandler),
+			(r"/downloads/test", AdminDownloadsGraphHandler),
 			# API
 			(r"/api/planet/render", AdminApiPlanetRenderMarkupHandler)
 		] + static_handlers)

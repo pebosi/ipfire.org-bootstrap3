@@ -1,0 +1,57 @@
+{% extends "../base-1.html" %}
+
+{% block title %}{{ _("Press") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Press") }}</h1>
+	</div>
+
+	<a class="thumbnail pull-right" href="{{ static_url("images/tux/ipfire_tux_512x512.png") }}">
+		<img src="{{ static_url("images/tux/ipfire_tux_256x256.png") }}" alt="{{ _("Logo") }}">
+	</a>
+
+	{% if lang == "de" %}
+		<p>
+			Ihr Ansprechpartner für die Bereiche Presse und allgemeine Öffentlichkeitsarbeit und Sponsoring:
+		</p>
+	{% else %}
+		<p>
+			Your contact for public relations:
+		</p>
+	{% end %}
+
+	<address>
+		<strong>Michael Tremer</strong><br>
+		Gerhardstraße 8<br>
+		D-45711 Datteln<br>
+	
+		<a href="mailto:michael.tremer@ipfire.org">
+			<i class="icon-envelope"></i>
+			{{ _("Mail") }}
+		</a>
+	</address>
+
+	<h2>{{ _("Logo") }}</h2>
+	{% if lang == "de" %}
+		<p>
+			Klicken Sie rechts auf das Vorschaubild, um das IPFire in einer
+			hohen Auflösung herunterzuladen.
+		</p>
+		<p>
+			Mehr von dieser Art findet sich auf unserer
+			<a href="/artwork">Artwork</a>-Seite.
+		</p>
+	{% else %}
+		<p>
+			Click on the thumbnail on the right to order the IPFire logo
+			in a high resolution.
+		</p>
+		<p>
+			More of this kind is to be found on our
+			<a href="/artwork">artwork</a> page.
+		</p>
+	{% end %}
+
+	<br style="clear: both;">
+{% end block %}

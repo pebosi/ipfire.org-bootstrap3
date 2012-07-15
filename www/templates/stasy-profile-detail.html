@@ -1,237 +1,234 @@
-{% extends "stasy-base-2.html" %}
+{% extends "stasy-base-1.html" %}
 
 {% block title %}{{ _("Profile") }} {{ profile.public_id }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Profile") }} {{ profile.public_id }}</h3>
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Profile") }} {{ profile.public_id }}</h1>
+	</div>
 
-	<table class="fireinfo">
-		<tr>
-			<td class="key">
-				{{ _("Vendor") }}
-			</td>
-			<td class="value">
-				{{ profile.vendor }}
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Model") }}
-			</td>
-			<td class="value">
-				{{ profile.model }}
-			</td>
-		</tr>
-	</table>
+	<div class="row">
+		<div class="span6">
+			<h3>{{ _("Operating system") }}</h3>
+			<table class="table">
+				<tr>
+					<td>
+						{{ _("Version") }}
+					</td>
+					<td>
+						{{ profile.release }}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ _("Architecture") }}
+					</td>
+					<td>
+						{{ profile.cpu.arch }}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ _("Kernel version") }}
+					</td>
+					<td>
+						{{ profile.kernel }}
+					</td>
+				</tr>
+			</table>
+		</div>
 
-	<h4>{{ _("Operating system") }}</h4>
-	<table class="fireinfo">
-		<tr>
-			<td class="key">
-				{{ _("Version") }}
-			</td>
-			<td class="value">
-				{{ profile.release }}
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Architecture") }}
-			</td>
-			<td class="value">
-				{{ profile.cpu.arch }}
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Kernel version") }}
-			</td>
-			<td class="value">
-				{{ profile.kernel }}
-			</td>
-		</tr>
-	</table>
+		<div class="span6">
+			{% if profile.hypervisor %}
+				<h3>{{ _("Hypervisor") }}</h3>
+				<p>
+					{{ _("This machine is running in a virtual environment.") }}
+				</p>
+
+				<table class="table">
+					<tr>
+						<td>
+							{{ _("Vendor") }}
+						</td>
+						<td>
+							{{ profile.hypervisor.vendor }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{ _("Type") }}
+						</td>
+						<td>
+							{{ profile.hypervisor.type }}
+						</td>
+					</tr>
+				</table>
+			{% else %}
+				<h3>{{ _("Hardware vendor") }}</h3>
+				<table class="table">
+					<tr>
+						<td>
+							{{ _("Vendor") }}
+						</td>
+						<td>
+							{{ profile.vendor or _("Unknown") }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{ _("Model") }}
+						</td>
+						<td>
+							{{ profile.model or _("Unknown") }}
+						</td>
+					</tr>
+				</table>
+			{% end %}
+		</div>
+	</div>
+
+	<hr>
 
 	{% if profile.network %}
-		<h4>{{ _("Network") }}</h4>
-		<table class="fireinfo">
-			<tr>
-				<td class="key">
-					{{ _("Network configuration") }}
-				</td>
-				<td class="value">
-					<table class="cpufeatures">
-						<tr>
-							{% for zone in ("GREEN", "RED", "BLUE", "ORANGE") %}
-								{% if profile.network.has_zone(zone.lower()) %}
-									<td class="enabled">
-								{% else %}
-									<td class="disabled">
-								{% end %}
-									{{ _(zone)  }}
-								<td>
+		<div class="row">
+			<div class="span12">
+				<h2>{{ _("Network") }}</h2>
+				<p>
+					{{ _("Enabled network zones") }}
+
+					{% for zone in ("GREEN", "RED", "BLUE", "ORANGE") %}
+						{% if profile.network.has_zone(zone.lower()) %}
+							{% if zone == "GREEN" %}
+								<span class="label label-success">{{ _(zone) }}</span>
+							{% elif zone == "RED" %}
+								<span class="label label-important">{{ _(zone) }}</span>
+							{% elif zone == "ORANGE" %}
+								<span class="label label-warning">{{ _(zone) }}</span>
+							{% elif zone == "BLUE" %}
+								<span class="label label-info">{{ _(zone) }}</span>
 							{% end %}
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
+						{% end %}
+					{% end %}
+				</p>
+			</div>
+		</div>
 	{% end %}
 
-	{% if profile.hypervisor %}
-		<h4>{{ _("Hypervisor") }}</h4>
-		<p>
-			{{ _("This machine is running in a virtual environment.") }}
-		</p>
+	<hr>
 
-		<table class="fireinfo">
-			<tr>
-				<td class="key">
-					{{ _("Vendor") }}
-				</td>
-				<td class="value">
-					{{ profile.hypervisor.vendor }}
-				</td>
-			</tr>
-			<tr>
-				<td class="key">
-					{{ _("Type") }}
-				</td>
-				<td class="value">
-					{{ profile.hypervisor.type }}
-				</td>
-			</tr>
-		</table>
-	{% end %}
-	
-	<h4>{{ _("Hardware") }}</h4>
-	<table class="fireinfo">
-		<tr>
-			<td colspan="2">
-				<strong>{{ _("CPU") }}</strong>
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Vendor") }}
-			</td>
-			<td class="value">
-				<a href="/stats/cpus">{{ profile.cpu.vendor }}</a>
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Model") }}
-			</td>
-			<td class="value">
-				 {{ profile.cpu.model_string or _("Not available") }}
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Core count") }}
-			</td>
-			<td class="value">
-				 {{ profile.cpu.count }}
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Speed") }}
-			</td>
-			<td class="value">
-				{{ profile.cpu.speed }} MHz
-				{% if profile.cpu.speed != profile.cpu.bogomips %}
-					(Bogomips: {{ profile.cpu.bogomips }})
-				{% end %}
-			</td>
-		</tr>
-		{% if profile.cpu.vendor != "ARM" %}
-			<tr>
-				<td class="key">
-					{{ _("Supported features") }}
-				</td>
-				<td class="value">
-					<table class="cpufeatures">
-						<tr>
+	<h2>{{ _("Hardware") }}</h2>
+	<div class="row">
+		<div class="span6">
+			<table class="table">
+				<tr>
+					<td colspan="2">
+						<strong>{{ _("CPU") }}</strong>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ _("Vendor") }}
+					</td>
+					<td>
+						<a href="/stats/cpus">{{ profile.cpu.vendor }}</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ _("Model") }}
+					</td>
+					<td>
+						 {{ profile.cpu.model_string or _("Not available") }}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ _("Cores") }}
+					</td>
+					<td>
+						 {{ profile.cpu.count }}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ _("Speed") }}
+					</td>
+					<td>
+						{{ profile.cpu.speed }} MHz
+						{% if profile.cpu.speed != profile.cpu.bogomips %}
+							(Bogomips: {{ profile.cpu.bogomips }})
+						{% end %}
+					</td>
+				</tr>
+				{% if profile.cpu.vendor != "ARM" %}
+					<tr>
+						<td>
+							{{ _("Supported features") }}
+						</td>
+						<td>
 							{% if profile.cpu.capable_64bit %}
-								<td class="enabled">
-							{% else %}
-								<td class="disabled">
+								<span class="label label-success">{{ _("64 bit capable") }}</span>
 							{% end %}
-								{{ _("64 bit")  }}
-							<td>
 
 							{% if profile.cpu.capable_pae %}
-								<td class="enabled">
-							{% else %}
-								<td class="disabled">
+								<span class="label label-success">{{ _("PAE capable") }}</span>
 							{% end %}
-								{{ _("PAE")  }}
-							<td>
 
 							{% if profile.cpu.capable_virt %}
-								<td class="enabled">
-							{% else %}
-								<td class="disabled">
+								<span class="label label-success">{{ _("VT-x/AMD-V") }}</span>
 							{% end %}
-								{{ _("VT-x/AMD-V")  }}
-							<td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		{% end %}
-		<tr>
-			<td colspan="2">
-				<strong>{{ _("Memory") }}<strong>
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Size") }}
-			</td>
-			<td class="value">
-				{{ format_size(profile.memory) }}
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<strong>{{ _("Disk") }}<strong>
-			</td>
-		</tr>
-		<tr>
-			<td class="key">
-				{{ _("Size") }}
-			</td>
-			<td class="value">
-				{{ format_size(profile.root_size) }}
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				{{ modules.StasyDeviceTable(profile.devices) }}
-			</td>
-		</tr>
-	</table>
-	<br class="clear" />
+						</td>
+					</tr>
+				{% end %}
+			</table>
+		</div>
+
+		<div class="span6">
+			<table class="table">
+				<tr>
+					<td>
+						{{ _("Memory size") }}
+					</td>
+					<td>
+						{{ format_size(profile.memory) }}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ _("System disk size") }}
+					</td>
+					<td>
+						{{ format_size(profile.root_size) }}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<hr>
+
+	{% if profile.devices %}
+		<h3>{{ _("Peripherial devices") }}</h3>
+		{{ modules.StasyDeviceTable(profile.devices) }}
+		<hr>
+	{% end %}
 
 	<h3>{{ _("Signature images") }}</h3>
-	<table>
+	<ul class="unstyled">
 		{% for i in range(1) %}
-			<tr>
-				<td>
-					<!-- XXX need some bbcode here -->
-					<a href="http://i-use.ipfire.org/profile/{{ profile.public_id }}/{{ i }}.png">
-						<img src="http://i-use.ipfire.org/profile/{{ profile.public_id }}/{{ i }}.png"
-							alt="{{ _("Signature image") }}" />
-					</a>
-				</td>
-			</tr>
+			<li>
+				<!-- XXX need some bbcode here -->
+				<a href="http://i-use.ipfire.org/profile/{{ profile.public_id }}/{{ i }}.png">
+					<img src="http://i-use.ipfire.org/profile/{{ profile.public_id }}/{{ i }}.png"
+						alt="{{ _("Signature image") }}" />
+				</a>
+			</li>
 		{% end %}
-	</table>
+	</ul>
 
-	<p class="links">
-		{{ _("Last update") }}: {{ locale.format_date(profile.updated) }}
-	</p>
+	<div class="pull-right">
+		<p>
+			{{ _("Last update") }}: {{ locale.format_date(profile.updated) }}
+		</p>
+	</div>
 {% end block %}

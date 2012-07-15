@@ -1,0 +1,13 @@
+{% extends "admin-base.html" %}
+
+{% block sidebar %}
+	<p>
+		<a href="/">{{ _("Back to home") }}</a>
+	</p>
+
+	<h4>{{ _("Options") }}</h4>
+
+	<ul class="list">
+		<li><a href="/downloads/mirrors">{{ _("Mirror stats") }}</a></li>
+	</ul>
+{% end block %}

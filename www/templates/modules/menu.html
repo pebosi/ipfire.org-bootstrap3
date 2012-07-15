@@ -1,9 +1,131 @@
-<div id="menu">
-	<ul>
-		{% for item in menuitems %}
-			<li>
-				<a href="{{ item.uri }}"{% if item.active %} class="active"{% end %}>{{ item.description }}</a>
-			</li>
-		{% end %}
+<ul class="nav">
+	{% if hostname in ("www.ipfire.org", "dev.ipfire.org") %}
+		<li>
+			<a href="/download">{{ _("Download") }}</a>
+		</li>
+		<li>
+			<a href="/about">{{ _("About") }}</a>
+		</li>
+		<li>
+			<a href="/getinvolved">{{ _("Get Involved") }}</a>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				{{ _("More") }} <b class="caret"></b>
+			</a>
+			<ul class="dropdown-menu">
+				<li class="nav-header">
+					{{ _("Documentation") }}
+				</li>
+				<li>
+					<a href="http://wiki.ipfire.org/">
+						<i class="icon-align-left"></i>
+						{{ _("Wiki") }}
+					</a>
+				</li>
+
+				<li class="nav-header">
+					{{ _("Support") }}
+				</li>
+				<li>
+					<a href="http://forum.ipfire.org/">
+						<i class="icon-question-sign"></i>
+						{{ _("Forum") }}
+					</a>
+				</li>
+				<li>
+					<a href="/chat">
+						<i class="icon-comment"></i>
+						{{ _("Chat") }}
+					</a>
+				</li>
+
+				<li class="nav-header">
+					{{ _("Development") }}
+				</li>
+				<li>
+					<a href="/development">
+						<i class="icon-info-sign"></i>
+						{{ _("Overview") }}
+					</a>
+				</li>
+				<li>
+					<a href="https://pakfire.ipfire.org/">
+						<i class="icon-cog"></i>
+						{{ _("Pakfire Build Service") }}
+					</a>
+				</li>
+				<li>
+					<a href="https://bugzilla.ipfire.org/">
+						<i class="icon-th-list"></i>
+						{{ _("Bugtracker") }}
+					</a>
+				</li>
+
+				<li class="nav-header">
+					 {{ _("Miscellaneous") }}
+				</li>
+				<li>
+					<a href="http://planet.ipfire.org/">
+						<i class="icon-globe"></i>
+						{{ _("Planet") }}
+					</a>
+				</li>
+				<li>
+					<a href="http://fireinfo.ipfire.org/">
+						<i class="icon-signal"></i>
+						{{ _("Fireinfo") }}
+					</a>
+				</li>
+				<li>
+					<a href="http://lists.ipfire.org/">
+						<i class="icon-envelope"></i>
+						{{ _("Mailing lists") }}
+					</a>
+				</li>
+				<li>
+					<a href="http://mirrors.ipfire.org/">
+						<i class="icon-download-alt"></i>
+						{{ _("Mirrors") }}
+					</a>
+				</li>
+				<li>
+					<a href="/artwork">
+						<i class="icon-pencil"></i>
+						{{ _("Artwork") }}
+					</a>
+				</li>
+				<li>
+					<a href="/cebit">
+						<i class="icon-eye-open"></i>
+						{{ _("CeBIT") }}
+					</a>
+				</li>
+
+				<li class="divider"></li>
+				<li>
+					<a href="/donate">
+						<i class="icon-arrow-right"></i>
+						{{ _("Donate") }}
+					</a>
+				</li>
+			</ul>
+		</li>
+
+	{% elif hostname == "fireinfo.ipfire.org" %}
+		<li>
+			<a href="/stats">{{ _("Statistics") }}</a>
+		</li>
+
+	{% end %}
+</ul>
+
+{% if not hostname == "www.ipfire.org" and not hostname == "dev.ipfire.org" %}
+	<ul class="nav pull-right">
+		<li>
+			<a href="http://www.ipfire.org">
+				{{ _("Return to www.ipfire.org") }}
+			</a>
+		</li>
 	</ul>
-</div>
+{% end %}

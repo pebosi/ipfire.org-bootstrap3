@@ -14,7 +14,10 @@ import tornado.web
 
 import backend
 
-DATABASE_HOST = ["irma.ipfire.org", "madeye.ipfire.org"]
+DATABASE_HOST = [
+	"wilhelmina.ipfire.org",
+	"miranda.ipfire.org",
+]
 DATABASE_NAME = "stasy"
 
 DEFAULT_HOST = "www.ipfire.org"
@@ -301,7 +304,8 @@ class ProfileSendHandler(BaseHandler):
 		# Get GeoIP information if address is not defined in rfc1918
 		addr = ipaddr.IPAddress(self.request.remote_ip)
 		if not addr.is_private:
-			profile.geoip = self.geoip.get_all(self.request.remote_ip)
+			remote_ips = self.request.remote_ip.split(", ")
+			profile.geoip = self.geoip.get_all(remote_ips[-1])
 
 		# Move previous profiles to archive and keep only the latest one
 		# in profiles. This will make full table lookups faster.

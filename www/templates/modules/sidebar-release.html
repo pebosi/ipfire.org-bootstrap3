@@ -1,17 +1,12 @@
-{% extends "sidebar-item.html" %}
-
-{% block heading %}{{ _("release information") }}{% end block %}
-
-{% block body %}
-	<p>
-		<img src="{{ static_url("images/ipfire_download.png") }}" alt="Tux Logo" />
-	</p>
-
-	{% if latest %}
+{% if latest %}
+	<!-- XXX not good style -->
+	<div style="text-align: center;">
+		<h3>{{ _("Latest release") }}</h3>
 		<p>
-			<strong>{{ _("Current version") }}</strong>:
-			<br />
-			<a href="downloads">{{ latest.name }}</a>
+			<a href="/downloads">{{ latest.name }}</a>
 		</p>
-	{% end %}
-{% end block %}
+		<p>
+			<a class="btn btn-success" href="/downloads">{{ _("Download now") }}</a>
+		</p>
+	</div>
+{% end %}

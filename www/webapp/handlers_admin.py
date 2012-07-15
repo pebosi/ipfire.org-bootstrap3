@@ -1,8 +1,12 @@
 #!/usr/bin/python
 
-# XXX most of this is broken
-
 import tornado.web
+
+import matplotlib
+matplotlib.use("Agg")
+
+import matplotlib.pyplot as plt
+import matplotlib.dates
 
 from handlers_base import *
 
@@ -16,6 +20,10 @@ class AdminBaseHandler(BaseHandler):
 	@property
 	def planet(self):
 		return backend.Planet()
+
+	@property
+	def downloads(self):
+		return backend.Downloads()
 
 	def get_current_user(self):
 		return self.get_secure_cookie("account")
@@ -255,3 +263,45 @@ class AdminNewsCreateHandler(AdminNewsBaseHandler):
 
 class AdminNewsEditHandler(AdminNewsCreateHandler):
 	pass
+
+
+class AdminDownloadsHandler(AdminBaseHandler):
+	@tornado.web.authenticated
+	def get(self):
+		self.render("admin-downloads.html",
+			downloads_total = self.downloads.total,
+			downloads_today = self.downloads.today,
+			downloads_yesterday = self.downloads.yesterday,
+			downloads_locations_today = self.downloads.get_countries("today"),
+			downloads_locations_total = self.downloads.get_countries(),
+		)
+
+
+class AdminDownloadsMirrorsHandler(AdminBaseHandler):
+	@tornado.web.authenticated
+	def get(self):
+		self.render("admin-downloads-mirrors.html",
+			mirror_load_total = self.downloads.get_mirror_load(),
+			mirror_load_today = self.downloads.get_mirror_load("today"),
+		)
+
+
+class AdminDownloadsGraphHandler(AdminBaseHandler):
+	@tornado.web.authenticated
+	def get(self):
+		x = []
+		y = []
+		for row in self.downloads.daily_map:
+			x.append(matplotlib.dates.date2num(row.date))
+			y.append(row.downloads)
+
+		print x, y
+
+		# Create output image.
+		fig = plt.figure()
+
+		# Plot the data.
+		plot = fig.add_subplot(111)
+		plot.plot(x, y)
+
+		fig.savefig("nice-image.svg")

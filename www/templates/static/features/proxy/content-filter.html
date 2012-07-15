@@ -1,0 +1,70 @@
+{% extends "../../../base-feature.html" %}
+		
+{% block title %}{{ _("Content filter") }}{% end block %}
+
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("Web proxy: Content filter") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					SquidGuard ist ein URL-Filter, der über den Redirektor-Mechanismus an den Proxy angebunden wird.
+					Das Herz stellen sogenannte Blacklists dar, die von offizieller Seite erstellt, eine Reihe von
+					klassifizierten Webseiten enthalten und über das Webinterface automatisch auf dem neuesten Stand
+					gehalten werden. Es stehen unterschiedliche, freie Quellen für vorgefertigte Blacklists zur Verfügung,
+					die erlauben unter anderem jugendgefährdende Inhalte, Shopping-, Warez-, Social-Networking- oder
+					gewaltverherrlichende Seiten zu filtern.
+				</p>
+				<p>
+					Individuelle Erweiterungen einzelner Domains oder URLs können für Blacklists und ebenso für Whitelists
+					über das Webinterface eingerichtet werden. IPFire bietet auch einen Blacklist-Editor, der das Editieren
+					und erstellen eigener Blacklists über das Webinterface anbietet.
+				</p>
+				<p>
+					Mögliche Anwendungsbereiche für SquidGuard auf dem IPFire sind:
+				</p>
+				<ul>
+					<li>
+						Sperren oder Einschränken spezieller Internet Inhalte in Abhängigkeit von Uhrzeit, Benutzer
+						und verwendetem Rechner.
+					</li>
+					<li>
+						Verhinderung des Zugriffs auf bestimmte (z.B. jugendgefährdende) Seiten.
+					</li>
+					<li>
+						Ausblenden von Werbung.
+					</li>
+				</ul>
+			{% else %}
+				<p>
+					SquidGuard is a URL filter add-on which is connected via the redirector mechanism of the proxy.
+					The heart of SquidGuard is something called a "blacklist." This is a content control list created by the official site. These lists contain a number of categorically-classified websites and can be kept up-to-date automatically. There are different, independent
+					sources for pre-built blacklists available, which allow among other classes filtering for adult
+					content, shopping, warez, social networking, or sites containing violent/abusive content.
+				</p>
+				<p>
+					Individual extensions for particular domains or URLs can be set up on the IPFire web interface for
+					blacklists and whitelists as well. IPFire also offers a black list editor, that makes the editing
+					and creating your own blacklists quite easy.
+				</p>
+				<p>
+					Possible areas of application for the SquidGuard on IPFire are:
+				</p>
+				<ul>
+					<li>
+						Block or restrict Internet content conditionally by time, user and/or computers.
+					</li>
+					<li>
+						Preventing access to certain (eg. youth-endangering) pages and content categories.
+					</li>
+					<li>
+						Hiding advertising.
+					</li>
+				</ul>
+			{% end %}
+		</div>
+	</div>
+{% end block %}

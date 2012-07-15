@@ -1,0 +1,42 @@
+{% extends "../../base-feature.html" %}
+		
+{% block title %}{{ _("Wireless Access Point") }}{% end block %}
+
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("Wireless Access Point") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				<p>
+					IPFire bietet mehrere Möglichkeiten zur Einbindung von Wireless-Clients. Zum einen kann ein
+					Accesspoint über eine LAN Karte angeschlossen werden. Hier bietet IPFire einen MAC/IP Addressfilter,
+					um nur erlaubte Clients zuzulassen. Die Clients dürfen in der Standardeinstellung zwar ins Internet,
+					aber nicht auf das lokale Lan zugreifen. Als zweite Möglichkeit kann man eine WLAN-Karte in den IPFire
+					einbauen, die über das Addon “hostapd” Funktionalität des Accesspoints übernimmt. Unterstützt werden
+					dann unverschlüsselte sowie WPA/WPA2 verschlüsselte Verbindungen. Auch die Nutzung des 5 GHz Bandes
+					(802.11a) ist möglich, wenn die WLAN-Karte dies unterstützt.
+				</p>
+				<p>
+					Die Unterstützung von Wireless-Karten in IPFire ist exzellent, da in dem stabilen Kernel die Treiber
+					trotzdem auf neuestem Stand sind und somit möglichst viele Karten unterstützt werden.
+				</p>
+			{% else %}
+				<p>
+					IPFire offers several options for the integration of wireless clients. First, an access point can
+					be connected via a LAN card. In this scenario, IPFire offers MAC/IP address filtering to allow only authorized
+					clients. The clients are allowed by default to access the Internet, but they are not allowed access the local LAN.
+					The second option is to install a wireless LAN (WLAN) card in the IPFire machine that takes the functionality of the access
+					point over, using the add-on "hostapd". This add-on supports both unencrypted and WPA/WPA2-encrypted connections. Also
+					the use of 5 GHz (802.11a standard) is possible if the wireless card supports it.
+				</p>
+				<p>
+					Wireless card support in IPFire is excellent. The drivers in the stable kernel are very up-to-date
+					and IPFire therefore supports a significant amount of WLAN cards.
+				</p>
+			{% end %}
+		</div>
+	</div>
+{% end block %}

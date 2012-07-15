@@ -2,6 +2,21 @@
 
 {% block title %}{{ _("IPFire Planet") }} - {{ entry.title }}{% end block %}
 
-{% block content %}
-	{{ modules.PlanetEntry(entry) }}
+{% block bodyA %}
+	<div class="page-header">
+		<h2>
+			<a href="/post/{{ entry.slug }}">{{ entry.title }}</a>
+		</h2>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			{{ entry.text }}
+		</div>
+
+		<p class="pull-right" style="clear: both;">
+			{{ _("Posted by") }} <a href="/user/{{ entry.author.uid }}">{{ entry.author.cn }}</a>
+			{{ _("on") }} {{ locale.format_date(entry.published, shorter=True) }}
+		</p>
+	</div>
 {% end block %}

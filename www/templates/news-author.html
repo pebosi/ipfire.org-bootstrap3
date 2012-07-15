@@ -1,18 +1,37 @@
-{% extends "base-2.html" %}
+{% extends "planet-user.html" %}
 
 {% block title %}{{ author.cn }}{% end block %}
 
-{% block content %}
-	<h2>{{ author.cn }}</h2>
-	<p>
-		Fill in some intesting things about the author...
-	</p>
+{% block bodyA %}
+	<div class="page-header">
+		<h1>{{ _("%s's announcements") % author.cn }}</h1>
+	</div>
 
-	<h3>{{ _("%s recently announced...") % author.cn }}</h3>
-	<ul class="list news_author_latest_news">
-	{% for news in latest_news %}
-		<li>{{ modules.NewsLine(news) }}</li>
-	{% end %}
-	</ul>
+	<div class="row">
+		<div class="span9">
+			{% if lang == "de" %}
+				XXX GERMAN TEXT MISSING
+			{% else %}
+				<p>
+					This is a list of all announcements made by {{ author.cn }}
+					in reverse chronological order.
+				</p>
+			{% end %}
+
+			<table class="table table-striped table-bordered">
+				<tbody>
+					{% for news in latest_news %}
+						<tr>
+							<td>
+								<a href="/news/{{ news.slug }}">{{ news.title }}</a>
+							</td>
+							<td>
+								{{ locale.format_date(news.date, full_format=True) }}
+							</td>
+						</tr>
+					{% end %}
+				</tbody>
+			</table>
+		</div>
+	</div>
 {% end block %}
-

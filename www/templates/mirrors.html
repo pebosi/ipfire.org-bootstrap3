@@ -1,33 +1,34 @@
-{% extends "base-2.html" %}
+{% extends "base-1.html" %}
 
 {% block title %}Mirrors{% end block %}
 
-{% block content %}
-	<h3>mirrors.ipfire.org</h3>
-	<p>
-		The IPFire project is hosted on several servers to provide a high
-		availabilty of service.
-	</p>
-	<p>
-		This is the list of the download mirrors. Most of them are not owned
-		and managed by the IPFire project. So please do not call us to get them
-		work again if there is a problem.
-	</p>
+{% block body %}
+	<div class="page-header">
+		<h1>mirrors.ipfire.org</h1>
+	</div>
 
-	<br class="clear" />
+	{% if lang == "de" %}
+		<p>
+			Das IPFire-Projekt ist auf vielen Servern gehostet um
+			von jedem Ort der Welt die bestmögliche Verfügbarkeit
+			und Downloadgeschwindigkeit zu gewährleisten.
+		</p>
+	{% else %}
+		<p>
+			The IPFire project is hosted on several servers to provide a high
+			availabilty of service and download speed from any place
+			on the world.
+		</p>
+	{% end %}
 
 	{% if other_mirrors %}
-		<h3>{{ _("Mirror servers nearby") }}</h3>
+		<h2>{{ _("Mirror servers nearby") }}</h2>
 		{{ modules.MirrorsTable(preferred_mirrors) }}
 
-		<h3>{{ _("Worldwide mirror servers") }}</h3>
+		<h2>{{ _("Worldwide mirror servers") }}</h2>
 		{{ modules.MirrorsTable(other_mirrors) }}
 	{% else %}
-		<h3>{{ _("Worldwide mirror servers") }}</h3>
+		<h2>{{ _("Worldwide mirror servers") }}</h2>
 		{{ modules.MirrorsTable(preferred_mirrors) }}
 	{% end %}
-{% end block %}
-
-{% block sidebar %}
-	{{ modules.SidebarBanner() }}
 {% end block %}

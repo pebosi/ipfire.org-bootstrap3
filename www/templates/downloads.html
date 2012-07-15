@@ -1,88 +1,73 @@
-{% extends "base-2.html" %}
+{% extends "base-1.html" %}
 
 {% block title %}{{ _("Downloads") }}{% end block %}
 
-{% block content %}
-	<h3>{{ _("Download IPFire") }}</h3>
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Download IPFire") }}</h1>
+	</div>
 
-	<img src="{{ static_url("images/box_ipfire.png") }}" alt="{{ _("CD-Box") }}" class="floatTR" />
+	<div class="row">
+		<div class="span8">
+			{% if lang == "de" %}
+				<p>
+					Lade IPFire jetzt kostenlos herunter. Klicke dazu auf den
+					untenstehenden Link um den Download zu starten oder wähle
+					eine andere Architektur oder ein anderes Imageformat.
+				</p>
+				<p>
+					Wenn du IPFire das erste mal herunterlädst, dann zögere nicht
+					es endlich auszuprobieren. Es dauert nur 15 Minuten, bis
+					diese freie Firewall-Distribution auch dein Netzwerk schützt.
+				</p>
+			{% else %}
+				<p>
+					Download IPFire now for free. Click on the link below to start
+					the download or choose an other architecture or image type.
+				</p>
+				<p>
+					If you are downloading IPFire for the first time, don't hesitate
+					to try it out. The installation process takes only 15 minutes
+					until you have got a free firewall distribution protecting your
+					network.
+				</p>
+			{% end %}
+		</div>
+	
+		<div class="span4">
+			<h3>
+				<a href="/getinvolved">{{ _("Get yourself involved") }}</a>
+			</h3>
+			{% if lang == "de" %}
+				<p>
+					Wir wünschen uns von jedem, der IPFire herunterlädt sich
+					selbst in das Projekt mit einzubringen. Trete der Community
+					bei, unterstütze die Entwicklung oder <a href="/donate">spende</a>.
+				</p>
+			{% else %}
+				<p>
+					We ask everyone who downloads IPFire to contribute
+					themselves to the project. Join the community, take
+					part in the development or <a href="/donate">donate</a>.
+				</p>
+			{% end %}
 
-	{% if lang == "de" %}
-		<p>
-			Auf dieser Seite können Sie <strong>kostenlos</strong> die neueste
-			Version von IPFire herunterladen.
-		</p>
-		<p>
-			Ältere Versionen oder andere Downloadoptionen finden Sie im
-			<a href="http://downloads.ipfire.org/">Download Center</a>.
-		</p>
-	{% else %}
-		<p>
-			On this page one can download the latest version of IPFire
-			<strong>for free</strong>.
-		</p>
-		<p>
-			Older versions and other downloads can be found in the
-			<a href="http://downloads.ipfire.org/">Download Center</a>.
-		</p>
-	{% end %}
+			<h3>{{ _("Need help with the first steps?") }}</h3>
+			{% if lang == "de" %}
+				<p>
+					Lies die
+					<a href="http://wiki.ipfire.org/{{ lang }}/installation/start">Installationsanleitung</a>.
+				</p>
+			{% else %}
+				<p>
+					Check out the
+					<a href="http://wiki.ipfire.org/{{ lang }}/installation/start">Installation guide</a>.
+				</p>
+			{% end %}
+		</div>
+	</div>
 
-	<br class="clear" />
+	<hr>
 
-	{{ modules.ReleaseItem(release) }}
-
-	<br class="clear" />
-
-	<h3>{{ _("Donation") }}</h3>
-	{% if lang == "de" %}
-		<p>
-			Wenn Ihnen IPFire gefällt, gibt es die Möglichkeit mit einer kleinen
-			Menge Geld das Projekt zu unterstützen. Diese Unterstützung bedeutet
-			sehr viel, denn sie hilft das Projekt fortzuführen.
-		</p>
-		<br class="clear" />
-		<p>
-			<div align="center">
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="10781833">
-					<input type="image" src="https://www.paypal.com/de_DE/DE/i/btn/btn_donateCC_LG.gif"
-						border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-				</form>
-			</div>
-		</p>
-		<br class="clear" />
-		<p>
-			Um mehr darüber zu erfahren, wie Sie das Projekt unterstützen können,
-			klicken Sie <a href="/donation">hier</a>.
-		</p>
-	{% else %}
-		<p>
-			If you like IPFire, there is the opportunity to donate a small amount
-			of money to the project. This will help the people that are running
-			this project very much.
-		</p>
-		<br class="clear" />
-		<p>
-			<div align="center">
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="10781833">
-					<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
-						border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-				</form>
-			</div>
-		</p>
-		<br class="clear" />
-		<p>
-			If you want to know more about how you can help the IPFire project
-			read <a href="/donation">this</a>.
-		</p>
-	{% end %}
-{% end block %}
-
-{% block sidebar %}
-	{{ modules.SidebarBanner() }}
+	{{ modules.ReleaseItem(release, latest=True) }}
 {% end block %}
