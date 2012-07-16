@@ -1320,7 +1320,7 @@ msgstr "Image, bei welchem die serielle Konsole eingeschaltet ist."
 
 #: webapp/backend/releases.py:80
 msgid "Install IPFire from a floppy-formated USB key."
-msgstr "IPFire von einem Floppy-formatiertem USB-Stick installieren-"
+msgstr "IPFire von einem Floppy-formatiertem USB-Stick installieren."
 
 #: webapp/backend/releases.py:81
 msgid "If the floppy image doesn't work, use this image instead."
