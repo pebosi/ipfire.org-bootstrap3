@@ -151,6 +151,21 @@ class Application(tornado.web.Application):
 			(r"/torrent/([0-9a-f]+)", TrackerDetailHandler),
 		] + static_handlers)
 
+		# boot.ipfire.org
+		BOOT_STATIC_PATH = os.path.join(self.settings["static_path"], "netboot")
+		self.add_handlers(r"boot\.ipfire\.org", [
+			(r"/", tornado.web.RedirectHandler, { "url" : "http://www.ipfire.org/download" }),
+
+			# Configurations
+			(r"/menu.gpxe", MenuGPXEHandler),
+			(r"/menu.cfg", MenuCfgHandler),
+			(r"/config/([0-9]+)/boot.gpxe", BootGPXEHandler),
+
+			# Static files
+			(r"/(boot.png|custom.gpxe|premenu.cfg|vesamenu.c32|menu.c32)",
+				tornado.web.StaticFileHandler, { "path" : BOOT_STATIC_PATH }),
+		])
+
 		# nopaste.ipfire.org
 		self.add_handlers(r"nopaste\.ipfire\.org", [
 			(r"/", NopasteIndexHandler),

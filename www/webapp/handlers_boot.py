@@ -25,13 +25,13 @@ def word_wrap(s, width=45):
 		lines.append(paragraph.lstrip())
 	return '\n'.join(lines)
 
-class BaseHandler(tornado.web.RequestHandler):
+class BootBaseHandler(tornado.web.RequestHandler):
 	@property
 	def netboot(self):
 		return backend.NetBoot()
 
 
-class MenuGPXEHandler(BaseHandler):
+class MenuGPXEHandler(BootBaseHandler):
 	"""
 		menu.gpxe
 	"""
@@ -44,7 +44,7 @@ class MenuGPXEHandler(BaseHandler):
 		self.write("chain menu.c32 premenu.cfg\n")
 
 
-class MenuCfgHandler(BaseHandler):
+class MenuCfgHandler(BootBaseHandler):
 	def _menu_string(self, menu, level=0):
 		s = ""
 
@@ -93,7 +93,7 @@ class MenuCfgHandler(BaseHandler):
 		self.render("menu.cfg", menu=menu)
 
 
-class BootGPXEHandler(BaseHandler):
+class BootGPXEHandler(BootBaseHandler):
 	def get(self, id):
 		config = self.netboot.get_config(id)
 		if not config:
@@ -115,58 +115,3 @@ class BootGPXEHandler(BaseHandler):
 
 		for line in lines:
 			self.write("%s\n" % line)
-
-
-class Application(tornado.web.Application):
-	def __init__(self):
-		settings = dict(
-			debug = True,
-			gzip = True,
-			static_path = os.path.join(BASEDIR, "static"),
-			template_path = os.path.join(BASEDIR, "templates"),
-		)
-
-		tornado.web.Application.__init__(self, **settings)
-
-		self.add_handlers(r"boot.ipfire.org", [
-			# Configurations
-			(r"/menu.gpxe", MenuGPXEHandler),
-			(r"/menu.cfg", MenuCfgHandler),
-			(r"/config/([0-9]+)/boot.gpxe", BootGPXEHandler),
-
-			# Static files
-			(r"/(boot.png|custom.gpxe|premenu.cfg|vesamenu.c32|menu.c32)",
-				tornado.web.StaticFileHandler, { "path" : self.settings["static_path"] }),
-		])
-
-	@property
-	def ioloop(self):
-		return tornado.ioloop.IOLoop.instance()
-
-	def shutdown(self, *args):
-		logging.debug("Caught shutdown signal")
-		self.ioloop.stop()
-
-	def run(self, port=8002):
-		logging.debug("Going to background")
-
-		# All requests should be done after 30 seconds or they will be killed.
-		self.ioloop.set_blocking_log_threshold(30)
-
-		http_server = tornado.httpserver.HTTPServer(self, xheaders=True)
-
-		# If we are not running in debug mode, we can actually run multiple
-		# frontends to get best performance out of our service.
-		if not self.settings["debug"]:
-			http_server.bind(port)
-			http_server.start(num_processes=4)
-		else:
-			http_server.listen(port)
-
-		self.ioloop.start()
-
-if __name__ == "__main__":
-	a = Application()
-
-	a.run()
-

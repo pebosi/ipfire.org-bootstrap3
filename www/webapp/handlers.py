@@ -17,6 +17,7 @@ import backend
 
 from handlers_admin import *
 from handlers_base import *
+from handlers_boot import *
 from handlers_download import *
 from handlers_iuse import *
 from handlers_mirrors import *

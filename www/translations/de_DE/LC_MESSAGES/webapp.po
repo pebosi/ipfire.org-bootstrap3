@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-25 20:08+0200\n"
+"POT-Creation-Date: 2012-07-25 20:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1271,10 +1271,6 @@ msgstr "Vor mehr als einem Tag"
 #: templates/stasy-profile-notfound.html:8
 msgid "Profile not found"
 msgstr "Profil nicht gefunden"
-
-#: templates/news-item.html:7
-msgid "Show all news entries"
-msgstr ""
 
 #: webapp/handlers_news.py:44 webapp/ui_modules.py:54
 msgid "Unknown author"
