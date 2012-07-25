@@ -141,4 +141,19 @@
 	{% for item in latest_news %}
 		{{ modules.NewsItem(item, announcement=True) }}
 	{% end %}
+
+	<div class="row">
+		<div class="span12">
+			<hr>
+			<a class="pull-right" href="/news">
+				<i class="icon-inbox"></i>
+				{{ _("Show older announcements") }}
+			</a>
+
+			<span class="label label-info"><i class="icon-globe icon-white"></i> {{ _("Planet news") }}</span>
+			{% for entry in latest_planets %}
+				{{ _("%(name)s talks about %(what)s.") % { "name" : entry.author.givenName, "what" : """<a href="http://planet.ipfire.org/post/%s">%s</a>""" % (entry.slug, entry.title) } }}
+			{% end %}
+		</div>
+	</div>
 {% end block %}

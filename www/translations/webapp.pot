@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-15 11:01+0200\n"
+"POT-Creation-Date: 2012-07-25 20:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,28 +77,28 @@ msgstr ""
 msgid "Ancient downloads"
 msgstr ""
 
-#: templates/downloads-older.html:10 templates/downloads-all.html:10
+#: templates/downloads-older.html:9 templates/downloads-all.html:9
 msgid ""
 "These are the ancient downloads of IPFire. They are just saved for "
 "historical reasons and should not be used in a productive environment."
 msgstr ""
 
-#: templates/downloads-older.html:14
+#: templates/downloads-older.html:13
 msgid ""
 "Beware that these releases could lack possible security-fixes\tand so it is "
 "recommended to use the <em>latest</em> version."
 msgstr ""
 
-#: templates/downloads-older.html:18 templates/downloads-all.html:14
+#: templates/downloads-older.html:17 templates/downloads-all.html:13
 msgid "Go back to latest stable downloads."
 msgstr ""
 
-#: templates/downloads-older.html:26 templates/tracker-torrent-detail.html:12
+#: templates/downloads-older.html:25 templates/tracker-torrent-detail.html:12
 #: templates/tracker-torrents.html:31
 msgid "Release"
 msgstr ""
 
-#: templates/downloads-older.html:27
+#: templates/downloads-older.html:26
 msgid "Published on"
 msgstr ""
 
@@ -128,15 +128,15 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: templates/mirrors-item.html:22 templates/downloads-mirrors.html:51
+#: templates/mirrors-item.html:22 templates/downloads-mirrors.html:50
 #: templates/stasy-profile-detail.html:231
-#: templates/download-mirror-detail.html:21 templates/admin-mirrors.html:15
+#: templates/download-mirror-detail.html:20 templates/admin-mirrors.html:15
 msgid "Last update"
 msgstr ""
 
-#: templates/mirrors-item.html:26 templates/downloads-mirrors.html:48
+#: templates/mirrors-item.html:26 templates/downloads-mirrors.html:47
 #: templates/admin-mirrors-create.html:20
-#: templates/download-mirror-detail.html:17
+#: templates/download-mirror-detail.html:16
 #: templates/admin-mirrors-details.html:21
 msgid "Owner"
 msgstr ""
@@ -411,18 +411,18 @@ msgstr ""
 msgid "IPFire Mirrors"
 msgstr ""
 
-#: templates/downloads-mirrors.html:49 templates/admin-mirrors-create.html:12
-#: templates/download-mirror-detail.html:13 templates/admin-mirrors.html:14
+#: templates/downloads-mirrors.html:48 templates/admin-mirrors-create.html:12
+#: templates/download-mirror-detail.html:12 templates/admin-mirrors.html:14
 #: templates/admin-mirrors-details.html:13
 msgid "Hostname"
 msgstr ""
 
-#: templates/downloads-mirrors.html:50 templates/admin-mirrors-create.html:24
+#: templates/downloads-mirrors.html:49 templates/admin-mirrors-create.html:24
 #: templates/admin-mirrors-details.html:25
 msgid "Location"
 msgstr ""
 
-#: templates/downloads-mirrors.html:64
+#: templates/downloads-mirrors.html:63
 msgid "details"
 msgstr ""
 
@@ -747,11 +747,11 @@ msgstr ""
 msgid "Signature images"
 msgstr ""
 
-#: templates/download-mirror-detail.html:25
+#: templates/download-mirror-detail.html:24
 msgid "Number of files"
 msgstr ""
 
-#: templates/download-mirror-detail.html:33
+#: templates/download-mirror-detail.html:32
 msgid "View list of all mirror servers."
 msgstr ""
 
@@ -1182,6 +1182,19 @@ msgstr ""
 msgid "Open Source"
 msgstr ""
 
+#: templates/index.html:150
+msgid "Show older announcements"
+msgstr ""
+
+#: templates/index.html:153
+msgid "Planet news"
+msgstr ""
+
+#: templates/index.html:155
+#, python-format
+msgid "%(name)s talks about %(what)s."
+msgstr ""
+
 #: templates/admin-mirrors-details.html:8
 msgid "All mirrors"
 msgstr ""
@@ -1251,11 +1264,15 @@ msgstr ""
 msgid "Profile not found"
 msgstr ""
 
-#: webapp/handlers_news.py:44 webapp/ui_modules.py:70
+#: templates/news-item.html:7
+msgid "Show all news entries"
+msgstr ""
+
+#: webapp/handlers_news.py:44 webapp/ui_modules.py:54
 msgid "Unknown author"
 msgstr ""
 
-#: webapp/ui_modules.py:217
+#: webapp/ui_modules.py:201
 #, python-format
 msgid "%s to %s"
 msgstr ""

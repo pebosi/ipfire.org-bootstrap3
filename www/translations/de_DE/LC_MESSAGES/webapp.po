@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-15 11:01+0200\n"
+"POT-Creation-Date: 2012-07-25 20:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,7 +77,7 @@ msgstr "Mirrorstatistiken"
 msgid "Ancient downloads"
 msgstr "Veraltete Downloads"
 
-#: templates/downloads-older.html:10 templates/downloads-all.html:10
+#: templates/downloads-older.html:9 templates/downloads-all.html:9
 msgid ""
 "These are the ancient downloads of IPFire. They are just saved for "
 "historical reasons and should not be used in a productive environment."
@@ -85,7 +85,7 @@ msgstr ""
 "Dieses sind veraltete Downloads von IPFire. Sie wurden hier archiviert und "
 "sollten nicht in produktiven Umgebungen eingesetzt werden."
 
-#: templates/downloads-older.html:14
+#: templates/downloads-older.html:13
 msgid ""
 "Beware that these releases could lack possible security-fixes\tand so it is "
 "recommended to use the <em>latest</em> version."
@@ -93,16 +93,16 @@ msgstr ""
 "Achtung! Diese Releases könnten potentielle Sicherheitsprobleme aufweisen. "
 "Daher wird empfohlen die <em>neueste</em> Version einzusetzen."
 
-#: templates/downloads-older.html:18 templates/downloads-all.html:14
+#: templates/downloads-older.html:17 templates/downloads-all.html:13
 msgid "Go back to latest stable downloads."
 msgstr "Zurück zu den neuesten stabilen Downloads."
 
-#: templates/downloads-older.html:26 templates/tracker-torrent-detail.html:12
+#: templates/downloads-older.html:25 templates/tracker-torrent-detail.html:12
 #: templates/tracker-torrents.html:31
 msgid "Release"
 msgstr "Release"
 
-#: templates/downloads-older.html:27
+#: templates/downloads-older.html:26
 msgid "Published on"
 msgstr "Veröffentlicht am"
 
@@ -132,15 +132,15 @@ msgstr "Nicht synchronisiert"
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: templates/mirrors-item.html:22 templates/downloads-mirrors.html:51
+#: templates/mirrors-item.html:22 templates/downloads-mirrors.html:50
 #: templates/stasy-profile-detail.html:231
-#: templates/download-mirror-detail.html:21 templates/admin-mirrors.html:15
+#: templates/download-mirror-detail.html:20 templates/admin-mirrors.html:15
 msgid "Last update"
 msgstr "Letztes Update"
 
-#: templates/mirrors-item.html:26 templates/downloads-mirrors.html:48
+#: templates/mirrors-item.html:26 templates/downloads-mirrors.html:47
 #: templates/admin-mirrors-create.html:20
-#: templates/download-mirror-detail.html:17
+#: templates/download-mirror-detail.html:16
 #: templates/admin-mirrors-details.html:21
 msgid "Owner"
 msgstr "Eigentümer"
@@ -419,18 +419,18 @@ msgstr "Mirrorserver"
 msgid "IPFire Mirrors"
 msgstr "IPFire Mirrors"
 
-#: templates/downloads-mirrors.html:49 templates/admin-mirrors-create.html:12
-#: templates/download-mirror-detail.html:13 templates/admin-mirrors.html:14
+#: templates/downloads-mirrors.html:48 templates/admin-mirrors-create.html:12
+#: templates/download-mirror-detail.html:12 templates/admin-mirrors.html:14
 #: templates/admin-mirrors-details.html:13
 msgid "Hostname"
 msgstr "Hostname"
 
-#: templates/downloads-mirrors.html:50 templates/admin-mirrors-create.html:24
+#: templates/downloads-mirrors.html:49 templates/admin-mirrors-create.html:24
 #: templates/admin-mirrors-details.html:25
 msgid "Location"
 msgstr "Standort"
 
-#: templates/downloads-mirrors.html:64
+#: templates/downloads-mirrors.html:63
 msgid "details"
 msgstr "Details"
 
@@ -755,11 +755,11 @@ msgstr "Peripheriegeräte"
 msgid "Signature images"
 msgstr "Signaturbilder"
 
-#: templates/download-mirror-detail.html:25
+#: templates/download-mirror-detail.html:24
 msgid "Number of files"
 msgstr "Anzahl von Dateien"
 
-#: templates/download-mirror-detail.html:33
+#: templates/download-mirror-detail.html:32
 msgid "View list of all mirror servers."
 msgstr "Liste aller Mirrorserver."
 
@@ -1190,6 +1190,19 @@ msgstr "Flexibilität"
 msgid "Open Source"
 msgstr "Open Source"
 
+#: templates/index.html:150
+msgid "Show older announcements"
+msgstr "Ältere Ankündigungen"
+
+#: templates/index.html:153
+msgid "Planet news"
+msgstr "Planet News"
+
+#: templates/index.html:155
+#, python-format
+msgid "%(name)s talks about %(what)s."
+msgstr "%(name)s schreibt über %(what)s."
+
 #: templates/admin-mirrors-details.html:8
 msgid "All mirrors"
 msgstr "Alle Mirrors"
@@ -1259,11 +1272,15 @@ msgstr "Vor mehr als einem Tag"
 msgid "Profile not found"
 msgstr "Profil nicht gefunden"
 
-#: webapp/handlers_news.py:44 webapp/ui_modules.py:70
+#: templates/news-item.html:7
+msgid "Show all news entries"
+msgstr ""
+
+#: webapp/handlers_news.py:44 webapp/ui_modules.py:54
 msgid "Unknown author"
 msgstr "Unbekannter Autor"
 
-#: webapp/ui_modules.py:217
+#: webapp/ui_modules.py:201
 #, python-format
 msgid "%s to %s"
 msgstr "%s nach %s"
