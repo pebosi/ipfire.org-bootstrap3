@@ -8,36 +8,63 @@
 	</div>
 
 	{% if lang == "de" %}
-
-
+		<p>
+			Dies ist der IPFire Torrent Tracker.
+		</p>
+		<p>
+			Er wird für das verteilen der IPFire-Downloads gebraucht
+			und tut das effizient mit Hilfe des Bittorrent-Protokols.
+		</p>
 	{% else %}
 		<p>
 			This is the home of the IPFire torrent tracker.
+		</p>
+		<p>
 			This tracker is used to distribute the IPFire
 			downloads in an efficient way with help of the Bittorrent
 			protocol.
 		</p>
-		<p>
-			The Bittorrent protocol transfers large files from one
-			peer to an other without need to download data from
-			a central server. However, there is a server which is
-			called the tracker that enables the clients to talk to
-			each other.
-		</p>
 	{% end %}
 
-		<table class="download-torrents">
+	<table class="table table-striped">
+		<thead>
 			<tr>
 				<th>{{ _("Release") }}</th>
-				<th class="seeds">{{ _("Seeders") }}</th>
-				<th class="peers">{{ _("Peers") }}</th>
+				<th>{{ _("Seeders") }}</th>
+				<th>{{ _("Peers") }}</th>
+				<th>&nbsp;</th>
 			</tr>
-			{% for torrent in torrents %}
+		</thead>
+		<tbody>
+			{% for release in releases %}
 				<tr>
-					<td><a href="torrent/{{ torrent.hash }}">{{ torrent.name }}</a></td>
-					<td class="seeds">{{ torrent.seeds }}</td>
-					<td class="peers">{{ torrent.peers }}</td>
+					<td colspan="4">
+						<h3>{{ release.name }}</h3>
+					</td>
 				</tr>
+
+				{% for torrent in release.torrents %}
+					<tr>
+						<td>
+							<a href="/{{ torrent.torrent_hash }}">{{ torrent.basename }}</a>
+						</td>
+						<td>
+							{{ len(torrent.seeders) }}
+						</td>
+						<td>
+							{{ len(torrent.peers) }}
+						</td>
+						<td>
+							<a href="{{ torrent.magnet_link }}">
+								<i class="icon-magnet"></i>
+							</a>
+							<a href="http://tracker.ipfire.org/{{ torrent.torrent_hash }}/download">
+								<i class="icon-download-alt"></i>
+							</a>
+						</td>
+					</tr>
+				{% end %}
 			{% end %}
-		</table>
+		</tbody>
+	</table>
 {% end block %}

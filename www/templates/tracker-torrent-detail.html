@@ -1,34 +1,31 @@
 {% extends "base-1.html" %}
 
-{% block title %}{{ _("Torrent Downloads") }}{% end block %}
+{% block title %}{{ file.basename }} - {{ release.name }} - {{ _("Torrent download") }}{% end block %}
 
 {% block body %}
 	<div class="page-header">
-		<h1>{{ _("IPFire Torrent Tracker") }}</h1>
+		<h1>
+			{{ file.basename }}
+			<small>{{ release.name }}</small>
+		</h1>
 	</div>
 
-	<table class="download-torrent-detail">
-		<tr>
-			<td>{{ _("Release") }}</td>
-			<td>
-				<a href="http://downloads.ipfire.org/release/{{ release.id }}">{{ release.name }}</a>
-			</td>
-		</tr>
-		<tr>
-			<td>{{ _("Hash") }}</td>
-			<td>{{ release.torrent_hash }}</td>
-		</tr>
-	</table>
+	<p class="pull-right">
+		<a class="btn" href="{{ file.magnet_link }}">
+			<i class="icon-magnet"></i> {{ _("Magnet link") }}
+		</a>
+		<a class="btn" href="http://tracker.ipfire.org/{{ file.torrent_hash }}/download">
+			<i class="icon-download-alt"></i> {{ _("Torrent download") }}
+		</a>
+	</p>
 
-	<hr>
-
-	{% if torrent.peers %}
+	{% if peers %}
 		<h3>{{ _("Peers") }}</h3>
-		{{ modules.TrackerPeerList(torrent.peers, percentages=True) }}
+		{{ modules.TrackerPeerList(peers, percentages=True) }}
 	{% end %}
 
-	{% if torrent.seeds %}
+	{% if seeds %}
 		<h3>{{ _("Seeds") }}</h3>
-		{{ modules.TrackerPeerList(torrent.seeds) }}
+		{{ modules.TrackerPeerList(seeds) }}
 	{% end %}
 {% end block %}

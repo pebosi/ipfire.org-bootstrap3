@@ -15,14 +15,35 @@ from settings import Settings
 
 class File(object):
 	def __init__(self, release, id):
-		self.release = release
+		self.id = id
+		self._release = release
 
 		# get all data from database
-		self.__data = self.db.get("SELECT * FROM files WHERE id = %s", id)
+		self.__data = None
 
 	@property
 	def db(self):
-		return self.release.db
+		return Databases().webapp
+
+	@property
+	def tracker(self):
+		return self.release.tracker
+
+	@property
+	def data(self):
+		if self.__data is None:
+			self.__data = self.db.get("SELECT * FROM files WHERE id = %s", self.id)
+			assert self.__data
+
+		return self.__data
+
+	@property
+	def release(self):
+		if not self._release:
+			release_id = self.data.get("releases")
+			self._release = Release(release_id)
+
+		return self._release
 
 	@property
 	def type(self):
@@ -124,11 +145,11 @@ class File(object):
 
 	@property
 	def sha1(self):
-		return self.__data.get("sha1")
+		return self.data.get("sha1")
 
 	@property
 	def filename(self):
-		return self.__data.get("filename")
+		return self.data.get("filename")
 
 	@property
 	def basename(self):
@@ -136,7 +157,7 @@ class File(object):
 
 	@property
 	def size(self):
-		return self.__data.get("filesize")
+		return self.data.get("filesize")
 
 	@property
 	def arch(self):
@@ -150,7 +171,7 @@ class File(object):
 
 	@property
 	def torrent_hash(self):
-		return self.__data.get("torrent_hash", None)
+		return self.data.get("torrent_hash", None)
 
 	@property
 	def magnet_link(self):
@@ -168,11 +189,36 @@ class File(object):
 
 		return s
 
+	@property
+	def seeders(self):
+		if not self.torrent_hash:
+			return
+
+		return self.tracker.get_seeds(self.torrent_hash)
+
+	@property
+	def peers(self):
+		if not self.torrent_hash:
+			return
+
+		return self.tracker.get_peers(self.torrent_hash)
+
+	@property
+	def completed(self):
+		if not self.torrent_hash:
+			return
+
+		return self.tracker.complete(self.torrent_hash)
+
 
 class Release(object):
 	@property
 	def db(self):
 		return Releases().db
+
+	@property
+	def tracker(self):
+		return tracker.Tracker()
 
 	def __init__(self, id):
 		self.id = id
@@ -191,12 +237,24 @@ class Release(object):
 	def files(self):
 		if not self.__files:
 			files = self.db.query("SELECT id, filename FROM files WHERE releases = %s \
-					AND loadable = 'Y'", self.id)
+					AND loadable = 'Y' AND NOT filename LIKE '%%.torrent'", self.id)
 
-			self.__files = [File(self, f.id) for f in files if not f.filename.endswith(".torrent")]
+			self.__files = [File(self, f.id) for f in files]
 			self.__files.sort(lambda a, b: cmp(a.prio, b.prio))
 
 		return self.__files
+
+	@property
+	def torrents(self):
+		torrents = []
+
+		for file in self.files:
+			if not file.torrent_hash:
+				continue
+
+			torrents.append(file)
+
+		return torrents
 
 	@property
 	def name(self):
@@ -358,14 +416,17 @@ class Releases(object):
 
 		return [Release(r.id) for r in releases]
 
-	def get_filename_for_torrent_hash(self, torrent_hash):
-		file = self.db.get("SELECT filename FROM files WHERE torrent_hash = %s LIMIT 1",
+	def get_file_for_torrent_hash(self, torrent_hash):
+		file = self.db.get("SELECT id, releases FROM files WHERE torrent_hash = %s LIMIT 1",
 			torrent_hash)
 
 		if not file:
 			return
 
-		return file.filename
+		release = Release(file.releases)
+		file = File(release, file.id)
+
+		return file
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 12:27+0200\n"
+"POT-Creation-Date: 2012-07-26 14:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,8 +93,7 @@ msgstr ""
 msgid "Go back to latest stable downloads."
 msgstr ""
 
-#: templates/downloads-older.html:25 templates/tracker-torrent-detail.html:12
-#: templates/tracker-torrents.html:31
+#: templates/downloads-older.html:25 templates/tracker-torrents.html:32
 msgid "Release"
 msgstr ""
 
@@ -170,23 +169,22 @@ msgstr ""
 msgid "Mirror load"
 msgstr ""
 
-#: templates/tracker-torrent-detail.html:3 templates/tracker-torrents.html:3
-msgid "Torrent Downloads"
-msgstr ""
-
-#: templates/tracker-torrent-detail.html:7 templates/tracker-torrents.html:7
-msgid "IPFire Torrent Tracker"
-msgstr ""
-
+#: templates/tracker-torrent-detail.html:3
 #: templates/tracker-torrent-detail.html:18
-msgid "Hash"
+#: templates/modules/release-item.html:123
+msgid "Torrent download"
 msgstr ""
 
-#: templates/tracker-torrent-detail.html:26 templates/tracker-torrents.html:33
+#: templates/tracker-torrent-detail.html:15
+#: templates/modules/release-item.html:122
+msgid "Magnet link"
+msgstr ""
+
+#: templates/tracker-torrent-detail.html:23 templates/tracker-torrents.html:34
 msgid "Peers"
 msgstr ""
 
-#: templates/tracker-torrent-detail.html:31
+#: templates/tracker-torrent-detail.html:28
 msgid "Seeds"
 msgstr ""
 
@@ -837,7 +835,15 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: templates/tracker-torrents.html:32
+#: templates/tracker-torrents.html:3
+msgid "Torrent Downloads"
+msgstr ""
+
+#: templates/tracker-torrents.html:7
+msgid "IPFire Torrent Tracker"
+msgstr ""
+
+#: templates/tracker-torrents.html:33
 msgid "Seeders"
 msgstr ""
 
@@ -859,14 +865,6 @@ msgstr ""
 
 #: templates/modules/release-item.html:121
 msgid "Legend:"
-msgstr ""
-
-#: templates/modules/release-item.html:122
-msgid "Magnet link"
-msgstr ""
-
-#: templates/modules/release-item.html:123
-msgid "Torrent download"
 msgstr ""
 
 #: templates/modules/release-item.html:131
@@ -1285,71 +1283,71 @@ msgstr ""
 msgid "%s to %s"
 msgstr ""
 
-#: webapp/backend/releases.py:73
+#: webapp/backend/releases.py:93
 msgid "Image for the armv5tel architecture"
 msgstr ""
 
-#: webapp/backend/releases.py:74
+#: webapp/backend/releases.py:94
 msgid "Installable CD image"
 msgstr ""
 
-#: webapp/backend/releases.py:75
+#: webapp/backend/releases.py:95
 msgid "Torrent file"
 msgstr ""
 
-#: webapp/backend/releases.py:76
+#: webapp/backend/releases.py:96
 msgid "Flash image"
 msgstr ""
 
-#: webapp/backend/releases.py:77
+#: webapp/backend/releases.py:97
 msgid "Alix image"
 msgstr ""
 
-#: webapp/backend/releases.py:78
+#: webapp/backend/releases.py:98
 msgid "USB FDD Image"
 msgstr ""
 
-#: webapp/backend/releases.py:79
+#: webapp/backend/releases.py:99
 msgid "USB HDD Image"
 msgstr ""
 
-#: webapp/backend/releases.py:80
+#: webapp/backend/releases.py:100
 msgid "Pregenerated Xen image"
 msgstr ""
 
-#: webapp/backend/releases.py:86 webapp/backend/releases.py:124
+#: webapp/backend/releases.py:106 webapp/backend/releases.py:144
 msgid "Unknown image type"
 msgstr ""
 
-#: webapp/backend/releases.py:111
+#: webapp/backend/releases.py:131
 msgid "This image runs on many ARM-based boards"
 msgstr ""
 
-#: webapp/backend/releases.py:112
+#: webapp/backend/releases.py:132
 msgid "Use this image to burn a CD and install IPFire from it."
 msgstr ""
 
-#: webapp/backend/releases.py:113
+#: webapp/backend/releases.py:133
 msgid "Download the CD image from the torrent network."
 msgstr ""
 
-#: webapp/backend/releases.py:114
+#: webapp/backend/releases.py:134
 msgid "An image that is meant to run on embedded devices."
 msgstr ""
 
-#: webapp/backend/releases.py:115
+#: webapp/backend/releases.py:135
 msgid "Flash image where a serial console is enabled by default."
 msgstr ""
 
-#: webapp/backend/releases.py:116
+#: webapp/backend/releases.py:136
 msgid "Install IPFire from a floppy-formated USB key."
 msgstr ""
 
-#: webapp/backend/releases.py:117
+#: webapp/backend/releases.py:137
 msgid "If the floppy image doesn't work, use this image instead."
 msgstr ""
 
-#: webapp/backend/releases.py:118
+#: webapp/backend/releases.py:138
 msgid "A ready-to-run image for Xen."
 msgstr ""
 

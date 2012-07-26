@@ -8,55 +8,37 @@ from handlers_base import *
 
 class TrackerIndexHandler(BaseHandler):
 	def get(self):
-		hashes = self.tracker.hashes
+		releases = self.releases.get_all()
 
-		torrents = []
-		for release in self.releases.list():
-			if not release.torrent_hash:
-				continue
+		limit = 5
+		releases = releases[:limit]
 
-			if release.torrent_hash in hashes:
-				torrents.append(tornado.database.Row({
-					"name"  : release.name,
-					"hash"  : release.torrent_hash.lower(),
-					"peers" : self.tracker.incomplete(release.torrent_hash),
-					"seeds" : self.tracker.complete(release.torrent_hash),
-				}))
-
-		self.render("tracker-torrents.html", torrents=torrents)		
+		self.render("tracker-torrents.html", releases=releases)
 
 
 class TrackerDetailHandler(BaseHandler):
-	def get(self, hash):
-		release = None
-		for r in self.releases.list():
-			if not r.torrent_hash:
-				continue
+	def get(self, torrent_hash):
+		file = self.releases.get_file_for_torrent_hash(torrent_hash)
 
-			if r.torrent_hash.lower() == hash.lower():
-				release = r
-				break
+		if not file:
+			raise tornado.web.HTTPError(404, "Could not find torrent file for hash: %s" % torrent_hash)
 
-		if not release:
-			raise tornado.web.HTTPError(404)
+		peers = self.tracker.get_peers(torrent_hash)
+		seeds = self.tracker.get_seeds(torrent_hash)
 
-		torrent = tornado.database.Row({
-			"peers" : self.tracker.get_peers(hash),
-			"seeds" : self.tracker.get_seeds(hash),
-		})
-
-		self.render("tracker-torrent-detail.html", release=release, torrent=torrent)
+		self.render("tracker-torrent-detail.html", release=file.release,
+			file=file, peers=peers, seeds=seeds)
 
 
 class TrackerDownloadHandler(BaseHandler):
 	def get(self, torrent_hash):
-		file = self.releases.get_filename_for_torrent_hash(torrent_hash)
+		file = self.releases.get_file_for_torrent_hash(torrent_hash)
 
 		if not file:
-			raise tornado.web.HTTPError(404, "Could not find torrent file for hash: %s" % hash)
+			raise tornado.web.HTTPError(404, "Could not find torrent file for hash: %s" % torrent_hash)
 
 		# Redirect the user to the download redirector.
-		self.redirect("http://downloads.ipfire.org/%s.torrent" % file)
+		self.redirect("http://downloads.ipfire.org/%s.torrent" % file.filename)
 
 
 #class TrackerTorrentsHandler(BaseHandler):

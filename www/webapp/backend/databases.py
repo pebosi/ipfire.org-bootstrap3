@@ -32,14 +32,6 @@ class Databases(object):
 
 		return self._connections["geoip"]
 
-	@property
-	def tracker(self):
-		if not self._connections.has_key("tracker"):
-			self._connections["tracker"] = \
-				Connection(MYSQL_SERVER, "tracker", user="webapp")
-
-		return self._connections["tracker"]
-
 
 class Connection(tornado.database.Connection):
 	def __init__(self, *args, **kwargs):

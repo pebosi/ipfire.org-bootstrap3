@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
+import os
 import random
 import time
 
-from databases import Databases
+import releases
+
+from databases import Databases, Row
 from misc import Singleton
 
 def decode_hex(s):
@@ -30,10 +33,10 @@ class Tracker(object):
 
 	@property
 	def db(self):
-		return Databases().tracker
+		return Databases().webapp
 
 	def _fetch(self, hash, limit=None, random=False, completed=False, no_peer_id=False):
-		query = "SELECT * FROM peers WHERE last_update >= %d" % self.since
+		query = "SELECT * FROM tracker_peers WHERE last_update >= %d" % self.since
 
 		if hash:
 			query += " AND hash = '%s'" % hash
@@ -81,21 +84,21 @@ class Tracker(object):
 
 	def event_started(self, hash, peer_id):
 		# Damn, mysql does not support INSERT IF NOT EXISTS...
-		if not self.db.query("SELECT id FROM peers WHERE hash = '%s' AND peer_id = '%s'" % (hash, peer_id)):
-			self.db.execute("INSERT INTO peers(hash, peer_id) VALUES('%s', '%s')" % (hash, peer_id))
+		if not self.db.query("SELECT id FROM tracker_peers WHERE hash = '%s' AND peer_id = '%s'" % (hash, peer_id)):
+			self.db.execute("INSERT INTO tracker_peers(hash, peer_id) VALUES('%s', '%s')" % (hash, peer_id))
 
 		if not hash in self.hashes:
-			self.db.execute("INSERT INTO hashes(hash) VALUES('%s')" % hash)
+			self.db.execute("INSERT INTO tracker_hashes(hash) VALUES('%s')" % hash)
 
 	def event_stopped(self, hash, peer_id):
-		self.db.execute("DELETE FROM peers WHERE hash = '%s' AND peer_id = '%s'" % (hash, peer_id))
+		self.db.execute("DELETE FROM tracker_peers WHERE hash = '%s' AND peer_id = '%s'" % (hash, peer_id))
 
 	def event_completed(self, hash, peer_id):
-		self.db.execute("UPDATE hashes SET completed=completed+1 WHERE hash = '%s'" % hash)
+		self.db.execute("UPDATE tracker_hashes SET completed=completed+1 WHERE hash = '%s'" % hash)
 
 	def scrape(self, hashes=[]):
 		ret = {}
-		for hash in self.db.query("SELECT hash, completed FROM hashes"):
+		for hash in self.db.query("SELECT hash, completed FROM tracker_hashes"):
 			hash, completed = hash.hash, hash.completed
 
 			if hashes and hash not in hashes:
@@ -133,7 +136,7 @@ class Tracker(object):
 		if not args:
 			return
 
-		query = "UPDATE peers SET " + ", ".join(args) + \
+		query = "UPDATE tracker_peers SET " + ", ".join(args) + \
 			" WHERE hash = '%s' AND peer_id = '%s'" % (hash, id)
 
 		self.db.execute(query)
@@ -141,7 +144,7 @@ class Tracker(object):
 	@property
 	def hashes(self):
 		hashes = []
-		for h in self.db.query("SELECT hash FROM hashes"):
+		for h in self.db.query("SELECT hash FROM tracker_hashes"):
 			hashes.append(h["hash"].lower())
 
 		return hashes
