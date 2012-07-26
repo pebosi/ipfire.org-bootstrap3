@@ -149,6 +149,8 @@ class Application(tornado.web.Application):
 			(r"/a.*", TrackerAnnounceHandler),
 			(r"/scrape", TrackerScrapeHandler),
 			(r"/torrent/([0-9a-f]+)", TrackerDetailHandler),
+			(r"/([0-9a-f]{40})", TrackerDetailHandler),
+			(r"/([0-9a-f]{40})/download", TrackerDownloadHandler),
 		] + static_handlers)
 
 		# boot.ipfire.org

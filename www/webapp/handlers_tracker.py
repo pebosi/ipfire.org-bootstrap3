@@ -48,6 +48,17 @@ class TrackerDetailHandler(BaseHandler):
 		self.render("tracker-torrent-detail.html", release=release, torrent=torrent)
 
 
+class TrackerDownloadHandler(BaseHandler):
+	def get(self, torrent_hash):
+		file = self.releases.get_filename_for_torrent_hash(torrent_hash)
+
+		if not file:
+			raise tornado.web.HTTPError(404, "Could not find torrent file for hash: %s" % hash)
+
+		# Redirect the user to the download redirector.
+		self.redirect("http://downloads.ipfire.org/%s.torrent" % file)
+
+
 #class TrackerTorrentsHandler(BaseHandler):
 #	@property
 #	def tracker(self):

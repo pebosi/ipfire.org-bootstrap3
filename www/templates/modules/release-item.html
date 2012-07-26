@@ -96,6 +96,16 @@
 							{% for file in files[arch] %}
 								<tr>
 									<td>
+										{% if file.torrent_hash %}
+											<p class="pull-right">
+												<a href="{{ file.magnet_link }}">
+													<i class="icon-magnet"></i>
+												</a>
+												<a href="http://tracker.ipfire.org/{{ file.torrent_hash }}/download">
+													<i class="icon-download-alt"></i>
+												</a>
+											</p>
+										{% end %}
 										<a class="download-splash" href="{{ file.url }}">{{ _(file.desc) }}</a>
 										<br>{{ _(file.rem) }}
 									</td>
@@ -106,6 +116,12 @@
 							{% end %}
 						</tbody>							
 					</table>
+
+					<p class="pull-right">
+						<strong>{{ _("Legend:") }}</strong>
+						<i class="icon-magnet"></i> {{ _("Magnet link") }},
+						<i class="icon-download-alt"></i> {{ _("Torrent download") }}
+					</p>
 				</div>
 			{% end %}
 		</div>

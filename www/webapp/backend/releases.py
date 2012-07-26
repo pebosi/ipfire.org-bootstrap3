@@ -4,7 +4,10 @@ import hashlib
 import logging
 import os
 import re
+import urllib
 import urlparse
+
+import tracker
 
 from databases import Databases
 from misc import Singleton
@@ -23,7 +26,37 @@ class File(object):
 
 	@property
 	def type(self):
-		return self.__data.get("filetype")
+		filename = self.filename
+
+		if filename.endswith(".iso"):
+			return "iso"
+
+		elif filename.endswith(".torrent"):
+			return "torrent"
+
+		elif "xen" in filename:
+			return "xen"
+
+		elif "sources" in filename:
+			return "source"
+
+		elif "usb-fdd" in filename:
+			return "usbfdd"
+
+		elif "usb-hdd" in filename:
+			return "usbhdd"
+
+		elif "armv5tel" in filename:
+			return "armv5tel"
+
+		elif "scon" in filename:
+			return "alix"
+
+		elif filename.endswith(".img.gz"):
+			return "flash"
+
+		else:
+			return "unknown"
 
 	@property
 	def url(self):
@@ -36,6 +69,7 @@ class File(object):
 		_ = lambda x: x
 
 		descriptions = {
+			"armv5tel"	: _("Image for the armv5tel architecture"),
 			"iso"		: _("Installable CD image"),
 			"torrent"	: _("Torrent file"),
 			"flash"		: _("Flash image"),
@@ -59,7 +93,7 @@ class File(object):
 			"alix"		: 41,
 			"usbfdd"	: 31,
 			"usbhdd"	: 30,
-			"arm"       : 40,
+			"armv5tel"  : 40,
 			"xen"		: 50,
 		}
 		
@@ -73,6 +107,7 @@ class File(object):
 		_ = lambda x: x
 	
 		remarks = {
+			"armv5tel"	: _("This image runs on many ARM-based boards"),
 			"iso"		: _("Use this image to burn a CD and install IPFire from it."),
 			"torrent"	: _("Download the CD image from the torrent network."),
 			"flash"		: _("An image that is meant to run on embedded devices."),
@@ -111,7 +146,27 @@ class File(object):
 			if arch in self.basename:
 				return arch
 
-		return "N/A" 
+		return "N/A"
+
+	@property
+	def torrent_hash(self):
+		return self.__data.get("torrent_hash", None)
+
+	@property
+	def magnet_link(self):
+		# Don't return anything if we have no torrent hash.
+		if self.torrent_hash is None:
+			return
+
+		s = "magnet:?xt=urn:btih:%s" % self.torrent_hash
+
+		#s += "&xl=%d" % self.size
+		s += "&dn=%s" % urllib.quote(self.basename)
+
+		# Add our tracker.
+		s += "&tr=http://tracker.ipfire.org:6969/announce"
+
+		return s
 
 
 class Release(object):
@@ -135,10 +190,10 @@ class Release(object):
 	@property
 	def files(self):
 		if not self.__files:
-			files = self.db.query("SELECT id FROM files WHERE releases = %s \
-					AND loadable = 'Y' AND NOT filetype = 'torrent'", self.id)
+			files = self.db.query("SELECT id, filename FROM files WHERE releases = %s \
+					AND loadable = 'Y'", self.id)
 
-			self.__files = [File(self, f.id) for f in files]
+			self.__files = [File(self, f.id) for f in files if not f.filename.endswith(".torrent")]
 			self.__files.sort(lambda a, b: cmp(a.prio, b.prio))
 
 		return self.__files
@@ -163,12 +218,6 @@ class Release(object):
 	def path(self):
 		return self.__data.get("path")
 
-	@property
-	def torrent_hash(self):
-		h = self.__data.get("torrent_hash")
-		if h:
-			return h.lower()
-
 	def get_file(self, type):
 		for file in self.files:
 			if file.type == type:
@@ -186,46 +235,16 @@ class Release(object):
 
 		return sha1.hexdigest()
 
-	def __guess_filetype(self, filename):
-		if filename.endswith(".iso"):
-			return "iso"
-
-		if filename.endswith(".torrent"):
-			return "torrent"
-
-		if "xen" in filename:
-			return "xen"
-
-		if "sources" in filename:
-			return "source"
-
-		if "usb-fdd" in filename:
-			return "usbfdd"
-
-		if "usb-hdd" in filename:
-			return "usbhdd"
-
-		if "arm" in filename:
-			return "arm"
-
-		if "scon" in filename:
-			return "alix"
-
-		if filename.endswith(".img.gz"):
-			return "flash"
-
-		return "unknown"
-
 	def scan_files(self, basepath="/srv/mirror0"):
 		if not self.path:
 			return
 
 		path = os.path.join(basepath, self.path)
-
 		if not os.path.exists(path):
 			return
 
-		files = [f.filename for f in self.files]
+		files = self.db.query("SELECT filename FROM files WHERE releases = %s", self.id)
+		files = [f.filename for f in files]
 
 		# Make files that do not exists not loadable.
 		for filename in files:
@@ -248,10 +267,47 @@ class Release(object):
 
 			filehash = self.__file_hash(filename)
 			filesize = os.path.getsize(filename)
-			filetype = self.__guess_filetype(filename)
 
-			self.db.execute("""INSERT INTO files(releases, filename, filesize, filetype, sha1)
-				VALUES(%s, %s, %s, %s, %s)""", self.id, _filename, filesize, filetype, filehash)
+			# Check if there is a torrent download available for this file:
+			torrent_hash = ""
+			torrent_file = "%s.torrent" % filename
+			if os.path.exists(torrent_file):
+				torrent_hash = self.torrent_read_hash(torrent_file)
+
+			self.db.execute("INSERT INTO files(releases, filename, filesize, \
+				sha1, torrent_hash) VALUES(%s, %s, %s, %s, %s)",
+				self.id, _filename, filesize, filehash, torrent_hash)
+
+		# Search for all files that miss a torrent hash.
+		files = self.db.query("SELECT id, filename FROM files \
+			WHERE releases = %s AND torrent_hash IS NULL", self.id)
+
+		for file in files:
+			path = os.path.join(basepath, file.filename)
+
+			torrent_file = "%s.torrent" % path
+			if os.path.exists(torrent_file):
+				torrent_hash = self.torrent_read_hash(torrent_file)
+
+				self.db.execute("UPDATE files SET torrent_hash = %s WHERE id = %s",
+					torrent_hash, file.id)
+
+	def torrent_read_hash(self, filename):
+		f = None
+		try:
+			f = open(filename, "rb")
+
+			metainfo = tracker.bdecode(f.read())
+			metainfo = tracker.bencode(metainfo["info"])
+
+			hash = hashlib.sha1()
+			hash.update(metainfo)
+
+			return hash.hexdigest()
+
+		finally:
+			if f:
+				f.close()
 
 
 class Releases(object):
@@ -301,6 +357,15 @@ class Releases(object):
 			WHERE published='Y' ORDER BY date DESC""")
 
 		return [Release(r.id) for r in releases]
+
+	def get_filename_for_torrent_hash(self, torrent_hash):
+		file = self.db.get("SELECT filename FROM files WHERE torrent_hash = %s LIMIT 1",
+			torrent_hash)
+
+		if not file:
+			return
+
+		return file.filename
 
 
 if __name__ == "__main__":

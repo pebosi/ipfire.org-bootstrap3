@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-25 20:13+0200\n"
+"POT-Creation-Date: 2012-07-26 12:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -857,7 +857,19 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: templates/modules/release-item.html:115
+#: templates/modules/release-item.html:121
+msgid "Legend:"
+msgstr ""
+
+#: templates/modules/release-item.html:122
+msgid "Magnet link"
+msgstr ""
+
+#: templates/modules/release-item.html:123
+msgid "Torrent download"
+msgstr ""
+
+#: templates/modules/release-item.html:131
 #: templates/modules/release-item-short.html:13
 msgid "There are no downloads available for this release."
 msgstr ""
@@ -1273,63 +1285,71 @@ msgstr ""
 msgid "%s to %s"
 msgstr ""
 
-#: webapp/backend/releases.py:39
+#: webapp/backend/releases.py:73
+msgid "Image for the armv5tel architecture"
+msgstr ""
+
+#: webapp/backend/releases.py:74
 msgid "Installable CD image"
 msgstr ""
 
-#: webapp/backend/releases.py:40
+#: webapp/backend/releases.py:75
 msgid "Torrent file"
 msgstr ""
 
-#: webapp/backend/releases.py:41
+#: webapp/backend/releases.py:76
 msgid "Flash image"
 msgstr ""
 
-#: webapp/backend/releases.py:42
+#: webapp/backend/releases.py:77
 msgid "Alix image"
 msgstr ""
 
-#: webapp/backend/releases.py:43
+#: webapp/backend/releases.py:78
 msgid "USB FDD Image"
 msgstr ""
 
-#: webapp/backend/releases.py:44
+#: webapp/backend/releases.py:79
 msgid "USB HDD Image"
 msgstr ""
 
-#: webapp/backend/releases.py:45
+#: webapp/backend/releases.py:80
 msgid "Pregenerated Xen image"
 msgstr ""
 
-#: webapp/backend/releases.py:51 webapp/backend/releases.py:88
+#: webapp/backend/releases.py:86 webapp/backend/releases.py:124
 msgid "Unknown image type"
 msgstr ""
 
-#: webapp/backend/releases.py:76
+#: webapp/backend/releases.py:111
+msgid "This image runs on many ARM-based boards"
+msgstr ""
+
+#: webapp/backend/releases.py:112
 msgid "Use this image to burn a CD and install IPFire from it."
 msgstr ""
 
-#: webapp/backend/releases.py:77
+#: webapp/backend/releases.py:113
 msgid "Download the CD image from the torrent network."
 msgstr ""
 
-#: webapp/backend/releases.py:78
+#: webapp/backend/releases.py:114
 msgid "An image that is meant to run on embedded devices."
 msgstr ""
 
-#: webapp/backend/releases.py:79
+#: webapp/backend/releases.py:115
 msgid "Flash image where a serial console is enabled by default."
 msgstr ""
 
-#: webapp/backend/releases.py:80
+#: webapp/backend/releases.py:116
 msgid "Install IPFire from a floppy-formated USB key."
 msgstr ""
 
-#: webapp/backend/releases.py:81
+#: webapp/backend/releases.py:117
 msgid "If the floppy image doesn't work, use this image instead."
 msgstr ""
 
-#: webapp/backend/releases.py:82
+#: webapp/backend/releases.py:118
 msgid "A ready-to-run image for Xen."
 msgstr ""
 
