@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 14:36+0200\n"
+"POT-Creation-Date: 2012-07-29 11:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,11 +278,11 @@ msgstr ""
 msgid "Accounts"
 msgstr ""
 
-#: templates/admin-base.html:10 templates/modules/menu.html:89
+#: templates/admin-base.html:10 templates/modules/menu.html:97
 msgid "Mirrors"
 msgstr ""
 
-#: templates/admin-base.html:11 templates/modules/menu.html:71
+#: templates/admin-base.html:11 templates/modules/menu.html:79
 msgid "Planet"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Please consider donating!"
 msgstr ""
 
-#: templates/download-splash.html:42 templates/modules/menu.html:109
+#: templates/download-splash.html:42 templates/modules/menu.html:40
 #: templates/static/getinvolved.html:61
 msgid "Donate"
 msgstr ""
@@ -455,8 +455,8 @@ msgstr ""
 msgid "Mail"
 msgstr ""
 
-#: templates/downloads.html:7 templates/downloads-all.html:7
-msgid "Download IPFire"
+#: templates/downloads.html:7 templates/modules/menu.html:4
+msgid "Download"
 msgstr ""
 
 #: templates/downloads.html:39
@@ -537,7 +537,7 @@ msgstr ""
 msgid "Downloads by country"
 msgstr ""
 
-#: templates/stasy-stats.html:3 templates/modules/menu.html:117
+#: templates/stasy-stats.html:3 templates/modules/menu.html:123
 msgid "Statistics"
 msgstr ""
 
@@ -757,6 +757,10 @@ msgstr ""
 msgid "Ancient Downloads"
 msgstr ""
 
+#: templates/downloads-all.html:7
+msgid "Download IPFire"
+msgstr ""
+
 #: templates/nopaste-index.html:3 templates/nopaste-index.html:6
 msgid "IPFire nopaste service"
 msgstr ""
@@ -810,12 +814,12 @@ msgstr ""
 msgid "No title given"
 msgstr ""
 
-#: templates/base.html:67 templates/static/press.html:3
+#: templates/base.html:69 templates/static/press.html:3
 #: templates/static/press.html:7
 msgid "Press"
 msgstr ""
 
-#: templates/base.html:69
+#: templates/base.html:71
 msgid "imprint"
 msgstr ""
 
@@ -893,10 +897,6 @@ msgstr ""
 msgid "Kernel module"
 msgstr ""
 
-#: templates/modules/menu.html:4
-msgid "Download"
-msgstr ""
-
 #: templates/modules/menu.html:7
 msgid "About"
 msgstr ""
@@ -906,69 +906,69 @@ msgid "Get Involved"
 msgstr ""
 
 #: templates/modules/menu.html:14
-msgid "More"
-msgstr ""
-
-#: templates/modules/menu.html:18
-msgid "Documentation"
-msgstr ""
-
-#: templates/modules/menu.html:23
-msgid "Wiki"
-msgstr ""
-
-#: templates/modules/menu.html:28
 msgid "Support"
 msgstr ""
 
-#: templates/modules/menu.html:33
+#: templates/modules/menu.html:20
+msgid "Wiki"
+msgstr ""
+
+#: templates/modules/menu.html:26
 msgid "Forum"
 msgstr ""
 
-#: templates/modules/menu.html:39 templates/static/chat.html:3
+#: templates/modules/menu.html:32 templates/static/chat.html:3
 #: templates/static/chat.html:7
 msgid "Chat"
 msgstr ""
 
-#: templates/modules/menu.html:44 templates/static/development.html:3
+#: templates/modules/menu.html:48
+msgid "More"
+msgstr ""
+
+#: templates/modules/menu.html:52 templates/static/development.html:3
 #: templates/static/development.html:8 templates/static/getinvolved.html:139
 msgid "Development"
 msgstr ""
 
-#: templates/modules/menu.html:49
+#: templates/modules/menu.html:57
 msgid "Overview"
 msgstr ""
 
-#: templates/modules/menu.html:55
+#: templates/modules/menu.html:63
 msgid "Pakfire Build Service"
 msgstr ""
 
-#: templates/modules/menu.html:61 templates/static/development.html:44
+#: templates/modules/menu.html:69 templates/static/development.html:44
 msgid "Bugtracker"
 msgstr ""
 
-#: templates/modules/menu.html:66
+#: templates/modules/menu.html:74
 msgid "Miscellaneous"
 msgstr ""
 
-#: templates/modules/menu.html:77 templates/static/features/hardware.html:80
+#: templates/modules/menu.html:85 templates/static/features/hardware.html:80
 msgid "Fireinfo"
 msgstr ""
 
-#: templates/modules/menu.html:83
+#: templates/modules/menu.html:91
 msgid "Mailing lists"
 msgstr ""
 
-#: templates/modules/menu.html:95 templates/static/artwork.html:3
+#: templates/modules/menu.html:103 templates/static/artwork.html:3
 #: templates/static/artwork.html:7
 msgid "Artwork"
 msgstr ""
 
-#: templates/modules/menu.html:101
+#: templates/modules/menu.html:109
 msgid "CeBIT"
 msgstr ""
 
-#: templates/modules/menu.html:127
+#: templates/modules/menu.html:115
+msgid "Tracker"
+msgstr ""
+
+#: templates/modules/menu.html:133
 msgid "Return to www.ipfire.org"
 msgstr ""
 
