@@ -60,11 +60,14 @@ class AdminIndexHandler(AdminBaseHandler):
 
 class AdminApiPlanetRenderMarkupHandler(AdminBaseHandler):
 	@tornado.web.authenticated
-	def get(self):
+	def post(self):
 		text = self.get_argument("text", "")
 
 		# Render markup
-		self.write(self.planet.render(text))
+		output = {
+			"html" : self.planet.render(text),
+		}
+		self.write(output)
 		self.finish()
 
 

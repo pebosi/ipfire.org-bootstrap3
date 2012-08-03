@@ -32,14 +32,12 @@
 	</div>
 
 	<div id="preview"></div>
-{% end block %}
 
-{% block javascript %}
 	<script type="text/javascript">
 		preview = function() {
-			$.get("/api/planet/render", { text : $("#markdown").val() },
+			$.postJSON("/api/planet/render", { text : $("#markdown").val() },
 				function(data) {
-					$("#preview").html(data);
+					$("#preview").html(data.html);
 				}
 			);
 		}
