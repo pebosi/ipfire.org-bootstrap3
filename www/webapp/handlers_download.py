@@ -67,7 +67,7 @@ class DownloadDevelopmentHandler(BaseHandler):
 
 
 class DownloadFileHandler(BaseHandler):
-	def get(self, filename):
+	def head(self, filename):
 		self.set_header("Pragma", "no-cache")
 
 		# Get all mirrors...
@@ -88,6 +88,10 @@ class DownloadFileHandler(BaseHandler):
 
 		self.redirect(mirror.url + filename[len(mirror.prefix):])
 
+	def get(self, filename):
+		return self.head(filename)
+
+		# Record the downlaod.
 		country_code = self.geoip.get_country(self.request.remote_ip)
 		self.mirrors.db.execute("INSERT INTO log_download(filename, mirror, country_code) VALUES(%s, %s, %s)",
 			filename, mirror.id, country_code)
