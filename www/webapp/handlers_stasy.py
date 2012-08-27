@@ -186,10 +186,10 @@ class AdminFireinfoStatsHandler(StasyBaseHandler):
 		data["archives_count"] = self.stasy.get_archives_count()
 
 		# updated since 24h
-		since = { "hours" : 24 }
-		updates = self.stasy.get_updates_by_release_since(since)
+		#since = { "hours" : 24 }
+		#updates = self.stasy.get_updates_by_release_since(since)
 		#updates[_("All versions")] = self.stasy.get_updated_since(since).count()
-		data["updated_since_24h"] = updates
+		#data["updated_since_24h"] = updates
 
 		self.render("stasy-stats-admin.html", **data)
 
