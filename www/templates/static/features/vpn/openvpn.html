@@ -11,7 +11,7 @@
 		<div class="span9">
 			{% if lang == "de" %}
 				<p>
-					Unter den OpenSoure-SSL-VPNs ist OpenVPN ein häufig angetroffener und
+					Unter den Open Source SSL-VPNs ist OpenVPN ein häufig angetroffener und
 					beliebter Vertreter, dessen einfache Konfiguration über das IPFire-
 					Webinterface noch einmal erleichtert wird. Die Firewall-Einstellungen
 					werden von IPFire automatisch geregelt, ebenso werden die benötigten
@@ -19,34 +19,47 @@
 					Client-Paket heruntergeladen, verteilt und mit einem weiteren Klick
 					ausgeführt werden.
 				</p>
-
 				<p>
-					Durch die hohe Kompatibilität der Software zu anderen Betriebssystemen
-					eignet sich OpenVPN zur Anbindung sogenannter Roadwarrior-Clients und
-					Ad-Hoc-Verbindungen sehr gut. Eine leicht zu konfigurierende, auf
-					Zertifikaten basierende, verschlüsselte Anbindung aus dem Internet
-					auf die Firmendaten oder das Zuhause liegende Netzwerk kann nicht
+					Durch die hohe Kompatibilität zu anderen Betriebssystemen
+					(Microsoft Windows, Mac OSX, Linux, Android, uvam.)
+					eignet sich OpenVPN bestens zur Anbindung sogenannter Roadwarrior-Clients.
+					Eine leicht zu konfigurierende, durch Zertifikate gesicherte,
+					verschlüsselte Anbindung aus dem Internet
+					auf Firmendaten oder das Zuhause liegende Netzwerk kann nicht
 					nur über Notebooks, sondern unter anderem auch über PDAs, Smartphones
 					oder Tablets hergestellt werden.
 				</p>
-
 				<p>
-					Sicherheit und eine geeignete Verschlüsselung ist auch im lokalen
-					Netzwerk ein wichtiges Thema. IPFire bietet über sein Webinterface
-					die Möglichkeit an, WLAN-Verbindungen über Zertifikate zu schützen,
-					was einen klaren Vorteil gegenüber den gängigen Router-Verschlüsselungen
-					wie WEP, WPA oder sogar WPA2 bedeutet, da Zertifikate gegenüber den
-					PSKs (Private Shared Keys) einen Bruteforce-Angriff quasi unmöglich
-					machen.
+					Doch neben der Anbindung von Laptops und anderen Handgeräten, kann
+					mit OpenVPN auch eine transparente Verbindung zu Filialen, Partnern
+					und für jeden beliebigen anderen Einsatz erstellt werden.
+					Das ermöglicht sicheren Zugriff auf ein gesamtes Netzwerk ohne
+					aufwändige Konfiguration.
 				</p>
 			{% else %}
 				<p>
-					Under the OpenSoure-SSL-VPNs, OpenVPN is a frequently-encountered and perhaps, the most 
-					popular representative. The relative ease of configuration has again, been made easier
+					OpenVPN is a frequently-encountered and most popular representative
+					of the class of Open Source SSL VPNs.
+					Its relative ease of configuration has again, been made easier
 					by the IPFire web interface. The firewall settings are controlled
 					by IPFire automatically, as well as the required certificates will be
 					generated with a few mouse clicks and can be downloaded and distributed
-					as a very compact client package. Clients can be anything, such as other routers, laptops/desktops, PDAs, smartphones or tablets.
+					as a very compact client package.
+				</p>
+				<p>
+					Due to its high compatibility to all sorts of operating systems,
+					such as Microsoft Windows, Mac OSX, Linux, Android and many more,
+					it is perfectly useful for roadwarrior connections.
+					With those, it is easy to connect your laptop, phone, tablet or
+					other devices to your company network, which makes it easy to
+					work from anywhere in the world.
+				</p>
+				<p>
+					But besides connecting portable devices, OpenVPN can also be used
+					to securely connect branches to the headquater.
+					This makes it easy to access resources on other networks
+					remotely without any complicated configuration on each client
+					on your local network.
 				</p>
 			{% end %}
 		</div>

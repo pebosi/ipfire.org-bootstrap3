@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="row">
-		<div class="span7 offset1">
+		<div class="span10 offset1">
 			{% if lang == "de" %}
 				<p>
 					IPFire ist kostenlos und das Projekt hat keine direkten
@@ -54,40 +54,41 @@
 				</p>
 			{% end %}
 		</div>
+	</div>
 
-		<div class="span3">
-			<br><br><br><br>
+	<hr>
+
+	<div class="row">
+		<div class="span5 offset1">
 			{% if lang == "de" %}
+				<h2>Über Paypal spenden</h2>
+				<br><br>
+
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="Z44GQ52ZHKVFW">
 					<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
 					<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 				</form>
+
+				<p>
+					<em>
+						Falls du keinen PayPal-Account hast,
+						kann mit PayPal auch über Kreditkarte gespendet
+						werden. Dafür einfach auf den Button klicken.
+					</em>
+				</p>
 			{% else %}
+				<h2>Donate with PayPal</h2>
+				<br><br>
+
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="HHBTSN9QRWPAY">
 					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 					<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 				</form>
-			{% end %}
-		</div>
-	</div>
 
-	<hr>
-
-	<div class="row">
-		<div class="span10 offset1">
-			{% if lang == "de" %}
-				<p>
-					<em>
-						Falls du keinen PayPal-Account hast oder haben
-						möchtest, so kann auch mit Kreditkarte gespendet
-						werden. Dafür einfach auf den Button klicken.
-					</em>
-				</p>
-			{% else %}
 				<p>
 					<em>
 						If don't have or want a PayPal account,
@@ -95,6 +96,47 @@
 						Just click on the button.
 					</em>
 				</p>
+			{% end %}
+		</div>
+
+		<div class="span5">
+			{% if lang == "de" %}
+				<h2>Überweisung</h2>
+				<p>
+					Ebenso ist eine Spende auf ein Bankkonto möglich.
+				</p>
+
+				<h4>Euro-Überweisung/SEPA</h4>
+				<blockquote>
+					IBAN: DE86 4265 0150 1020 0768 89<br>
+					BIC-/SWIFT-Code: WELADED1REK
+				</blockquote>
+
+				<h4>Überweisung innerhalb Deutschland</h4>
+				<blockquote>
+					Kontoinhaber: Michael Tremer<br>
+					Kontonummer: 1020076889<br>
+					Bankleitzahl: 426 501 50
+				</blockquote>
+			{% else %}
+				<h2>Bank Transfer</h2>
+				<p>
+					It is also possible to transfer donations into
+					our bank account.
+				</p>
+
+				<h4>euro bank transfer</h4>
+				<blockquote>
+					IBAN: DE86 4265 0150 1020 0768 89<br>
+					BIC-/SWIFT-Code: WELADED1REK
+				</blockquote>
+
+				<h4>bank transfer within Germany</h4>
+				<blockquote>
+					Bank account owner: Michael Tremer<br>
+					Bank account number: 1020076889<br>
+					Bank code: 426 501 50
+				</blockquote>
 			{% end %}
 		</div>
 	</div>
