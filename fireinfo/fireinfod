@@ -304,7 +304,14 @@ class ProfileSendHandler(BaseHandler):
 		# Get GeoIP information if address is not defined in rfc1918
 		remote_ips = self.request.remote_ip.split(", ")
 		for remote_ip in remote_ips:
-			addr = ipaddr.IPAddress(remote_ip)
+			try:
+				addr = ipaddr.IPAddress(remote_ip)
+			except ValueError:
+				# Skip invalid IP addresses.
+				continue
+
+			# Check if the given IP address is from a
+			# private network.
 			if addr.is_private:
 				continue
 
