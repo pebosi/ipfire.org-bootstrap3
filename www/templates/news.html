@@ -1,41 +1,93 @@
 {% extends "base-1.html" %}
 
-{% block title %}News{% end block %}
+{% block title %}{{ _("News") }}{% end block %}
 
 {% block body %}
 	<div class="page-header">
 		<h1>{{ _("What is new on the IPFire project?") }}</h1>
 	</div>
 
-	<p>
-		At this place you will know about the most important announces.
-		For development information and the little beans there is the
-		<a href="http://planet.ipfire.org">IPFire Planet</a>.
-	</p>
-	
-	<p>
-		To get latest news, there is the a
-		<a class="feed" href="/news.rss"> RSS feed</a>.
-	</p>
-
-	<br class="clear" />
-
-	{% for item in news %}
-		{{ modules.NewsItem(item) }}
-	{% end %}
-
 	<div class="row">
-		<div class="span9">
-			<ul class="pager">
-				<li class="previous">
-					<a href="?offset={{ offset }}">&larr; {{ _("Older posts") }}</a>
-				</li>
-				{% if offset - limit %}
-					<li class="next">
-						<a href="?offset={{ offset - (2 * limit) }}">{{ _("Newer posts") }} &rarr;</a>
-					</li>
-				{% end %}
-			</ul>
+		<div class="span6">
+			{% if lang == "de" %}
+				<p>
+					Auf diesen Seiten findest du alle Ankündigungen,
+					die je veröffentlicht wurden.
+				</p>
+				<p>
+					Nutze die Navigationsleiste am unteren Ende,
+					um zu einem bestimmten Jahr zu springen.
+				</p>
+			{% else %}
+				<p>
+					On these pages, you will find all the news announcements
+					that have been released.
+				</p>
+				<p>
+					Use the navigation bar on the bottom to jump to
+					a certain year.
+				</p>
+			{% end %}
+		</div>
+
+		<div class="span3">
+			<h4>{{ _("Stay up to date") }}</h4>
+
+			{% if lang == "de" %}
+				<p>
+					Du kannst dir alle Ankündigungen direkt in
+					dein Emailpostfach senden lassen.
+					Abboniere dazu einfach die 
+					<a href="http://lists.ipfire.org/mailman/listinfo/ipfire-announce">ipfire-announce</a>
+					Mailingliste.
+				</p>
+				<p>
+					Ebenso gibt es einen <a href="/news.rss">RSS-Feed</a>.
+				</p>
+			{% else %}
+				<p>
+					You can get the latest IPFire news directly to
+					your mailbox by subscribing to the
+					<a href="http://lists.ipfire.org/mailman/listinfo/ipfire-announce">ipfire-announce</a>
+					mailing list.
+				</p>
+				<p>
+					There is also an <a href="/news.rss">RSS feed</a> available.
+				</p>
+			{% end %}
+		</div>
+
+		<div class="span3">
+			<h4>{{ _("IPFire Planet") }}</h4>
+
+			{% if lang == "de" %}
+				<p>
+					Der <em>IPFire Planet</em> ist ein Blog der Entwickler.
+				</p>
+				<p>
+					Dort schreiben sie über interessante Dinge rund um das Projekt.
+				</p>
+			{% else %}
+				<p>
+					The <em>IPFire planet</em> is the blog of the IPFire developers.
+				</p>
+				<p>
+					They write about intesting stuff all around the project.
+				</p>
+			{% end %}
 		</div>
 	</div>
+
+	<hr>
+
+	<div class="row">
+		<div class="span6 offset3">
+			<h3>{{ _("Latest news") }}</h3>
+			{{ modules.NewsTable(news) }}
+		</div>
+	</div>
+
+	<hr>
+
+	{{ modules.NewsYearNavigation() }}
 {% end block %}

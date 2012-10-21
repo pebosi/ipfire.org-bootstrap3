@@ -1,0 +1,14 @@
+<ul class="nav nav-pills">
+	<li class="disabled">
+		<a href="#">{{ _("Jump to") }}</a>
+	</li>
+	<li {% if active is None %}class="active"{% end %}>
+		<a href="/news">{{ _("Most recent") }}</a>
+	</li>
+
+	{% for y in years %}
+		<li {% if active == y %}class="active"{% end %}>
+			<a href="/news/year/{{ y }}">{{ y }}</a>
+		</li>
+	{% end %}
+</ul>

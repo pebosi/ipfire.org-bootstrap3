@@ -1,9 +1,7 @@
-<h2>
+<h3>
 	{% if latest %}{{ _("Latest release") }}:{% end %}
 	{{ escape(release.name) }}
-</h2>
-
-<br>
+</h3>
 
 {% if release.files %}
 	<div class="tabbable">
@@ -21,16 +19,12 @@
 
 		<div class="tab-content">
 			<div class="tab-pane active" id="arch_unknown">
-				{{ modules.DownloadButton(release) }}
-
 				{% if lang == "de" %}
 					<p>
 						Bitte klicke auf den Button, um IPFire für
 						i586-kompatible Computer als ISO-Installationsimage
 						herunterzuladen.
 						Dies ist das am häufigsten benötigte Medium.
-					</p>
-					<p>
 						In der Tableiste finden sich alternative Architekturen
 						und Imageformate zum Download.
 					</p>
@@ -40,51 +34,45 @@
 						ISO image for i586-compatible computers.
 						This is the default image, you will most likely
 						need to install IPFire.
-					</p>
-					<p>
 						You may also pick your desired architecture from
 						the tabs above and see a list of all image
 						formats.
 					</p>
 				{% end %}
 
-				{% if release.stable == "N" %}
-					<div class="alert alert-info">
-						{% if lang == "de" %}
-							Dieses Release ist nicht als <em>stabile</em> Version
-							von IPFire freigegeben und nur für Testumgebungen gedacht.
-							Daher sollte dieses Release nicht in produktiven
-							Umgebungen eingesetzt werden und Fehler berichtet werden.
-						{% else %}
-							This release is not a stable version of IPFire and
-							intended for testing purposes only.
-							Do not use this release in production and please
-							report any bugs.
-						{% end %}
+				<hr>
+
+				<div class="ac">
+					{{ modules.DownloadButton(release) }}
+				</div>
+
+				{% if not release.stable %}
+					<hr>
+
+					<div class="row">
+						<div class="span6 offset3">
+							<div class="alert alert-error">
+								<strong>{{ _("Caution!") }}</strong>
+
+								{% if lang == "de" %}
+									Dieses Release ist nicht als <em>stabile</em> Version
+									von IPFire freigegeben und nur für Testumgebungen gedacht.
+									Daher sollte dieses Release nicht in produktiven
+									Umgebungen eingesetzt werden und Fehler berichtet werden.
+								{% else %}
+									This release is not a stable version of IPFire and
+									intended for testing purposes only.
+									Do not use this release in production and please
+									report any bugs.
+								{% end %}
+							</div>
+						</div>
 					</div>
 				{% end %}
 			</div>
 
 			{% for arch in files.keys() %}
 				<div class="tab-pane" id="arch_{{ arch }}">
-					<!-- {% if lang == "de" %}
-						{% if arch == "i586" %}
-							<p>
-								Diese Images sind für den Einsatz auf Intel-kompatiblen
-								Systemen gedacht. Dazu gehört die gesamte Klasse der
-								x86er Systeme ab Pentium I.
-							</p>
-						{% end %}
-					{% else %}
-						{% if arch == "i586" %}
-							<p>
-								These images are built for Intel-compatible systems.
-								This is the entire class of x86 CPUs since Intel
-								Pentium I.
-							</p>
-						{% end %}
-					{% end %} -->
-
 					<table class="table table-striped table-bordered">
 						<thead>
 							<tr>

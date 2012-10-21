@@ -1,19 +1,44 @@
 {% extends "base-1.html" %}
 
-{% block title %}{{ _("Downloads") }}{% end block %}
+{% block title %}{{ _("Get IPFire") }}{% end block %}
 
 {% block body %}
 	<div class="page-header">
-		<h1>{{ _("Download") }}</h1>
+		<h1>{{ _("Get IPFire") }}</h1>
 	</div>
 
 	<div class="row">
-		<div class="span8">
+		<div class="span6 offset3">
+			<ul class="thumbnails">
+				<li class="span6">
+					<div class="thumbnail download-box ac">
+						<h4>
+							{{ release.name }}
+							<br>
+							<small>{{ locale.format_date(release.date, shorter=True) }}</small>
+						</h4>
+
+						<hr>
+
+						{{ modules.DownloadButton(release) }}
+						<br>
+
+						<a href="http://downloads.ipfire.org/latest">
+							<small>{{ _("More download options") }}</small>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="row">
+		<div class="span7">
 			{% if lang == "de" %}
-				<p>
-					Lade IPFire jetzt kostenlos herunter. Klicke dazu auf den
-					untenstehenden Link um den Download zu starten oder wähle
-					eine andere Architektur oder ein anderes Imageformat.
+				<p class="lead">
+					Lade IPFire jetzt <a href="/features/itsfree">kostenlos</a> herunter!
 				</p>
 				<p>
 					Wenn du IPFire das erste mal herunterlädst, dann zögere nicht
@@ -21,53 +46,42 @@
 					diese freie Firewall-Distribution auch dein Netzwerk schützt.
 				</p>
 			{% else %}
-				<p>
-					Download IPFire now for free. Click on the link below to start
-					the download or choose an other architecture or image type.
+				<p class="lead">
+					Download IPFire now and learn why IPFire is
+					<a href="/features/itsfree">free</a>!
 				</p>
 				<p>
-					If you are downloading IPFire for the first time, don't hesitate
-					to try it out. The installation process takes only 15 minutes
-					until you have got a free firewall distribution protecting your
-					network.
+					If you are downloading IPFire for the first time, don't be afraid.
+					The installation process takes only about 15 minutes until you're
+					running a free firewall distribution that's actively protecting your network.
 				</p>
 			{% end %}
 		</div>
 	
-		<div class="span4">
-			<h3>
-				<a href="/getinvolved">{{ _("Get yourself involved") }}</a>
-			</h3>
-			{% if lang == "de" %}
-				<p>
-					Wir wünschen uns von jedem, der IPFire herunterlädt sich
-					selbst in das Projekt mit einzubringen. Trete der Community
-					bei, unterstütze die Entwicklung oder <a href="/donate">spende</a>.
-				</p>
-			{% else %}
-				<p>
-					We ask everyone who downloads IPFire to contribute
-					themselves to the project. Join the community, take
-					part in the development or <a href="/donate">donate</a>.
-				</p>
-			{% end %}
-
-			<h3>{{ _("Need help with the first steps?") }}</h3>
-			{% if lang == "de" %}
-				<p>
-					Lies die
-					<a href="http://wiki.ipfire.org/{{ lang }}/installation/start">Installationsanleitung</a>.
-				</p>
-			{% else %}
-				<p>
-					Check out the
-					<a href="http://wiki.ipfire.org/{{ lang }}/installation/start">Installation guide</a>.
-				</p>
-			{% end %}
+		<div class="span5">
+			<div class="well">
+				<h4>{{ _("Get yourself involved") }}</h4>
+				{% if lang == "de" %}
+					<p>
+						Wir wünschen uns von jedem, der IPFire herunterlädt sich
+						selbst in das Projekt mit einzubringen.
+					</p>
+					<p>
+						Tritt der <a href="/getinvolved">Community</a> bei,
+						unterstütze die Entwicklung oder tätige eine
+						<a href="/donate">Spende</a>.
+					</p>
+				{% else %}
+					<p>
+						We ask everyone who downloads IPFire to contribute
+						themselves to the project.
+					</p>
+					<p>
+						Join the <a href="/getinvolved">community</a>, take
+						part in the development or <a href="/donate">donate</a>.
+					</p>
+				{% end %}
+			</div>
 		</div>
 	</div>
-
-	<hr>
-
-	{{ modules.ReleaseItem(release, latest=True) }}
 {% end block %}

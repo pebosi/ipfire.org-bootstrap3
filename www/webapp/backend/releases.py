@@ -262,11 +262,11 @@ class Release(object):
 
 	@property
 	def stable(self):
-		return self.__data.get("stable")
+		return self.__data.get("stable") == "Y"
 
 	@property
 	def published(self):
-		return self.__data.get("published")
+		return self.__data.get("published") == "Y"
 
 	@property
 	def date(self):

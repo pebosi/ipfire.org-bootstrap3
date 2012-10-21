@@ -1,5 +1,5 @@
 body {
-	padding-top: 50px;
+	padding-top: 55px;
 
 	/* SVG as background image (IE9/Chrome/Safari/Opera) */ 
 	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc2ODQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTAwJSIgeTE9IjEwMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMDAwMDAwIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjODgwNDAwIiBvZmZzZXQ9IjU3JSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c2ODQpIiAvPgo8L3N2Zz4=);
@@ -48,6 +48,10 @@ body {
 	padding-bottom: 10px;
 }
 
+.ac {
+	text-align: center;
+}
+
 table.table-fireinfo td.bar {
 	width: 70%;
 }
@@ -58,4 +62,22 @@ table.table-fireinfo td.key {
 
 table.table-fireinfo td.val {
 	width: 10%;
+}
+
+.wishes li div.thumbnail {
+	padding: 1em;
+}
+
+.objectives .icon {
+	padding: 1.2em;
+}
+
+.thumbnails .download-box {
+	padding-top: 2em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.download-button {
+	margin-bottom: 1em;
 }

@@ -1,0 +1,26 @@
+{% extends "../base-1.html" %}
+
+{% block title %}{{ wish.title }} - {{ _("Wish") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ wish.title }}</h1>
+	</div>
+
+	{{ modules.Wishlist([wish,], short=True) }}
+
+	<div class="pull-right">
+		<ul class="unstyled">
+			<li>
+				<i class="icon-calendar"></i>
+				{{ _("Launched: %s") % wish.date_start }}
+			</li>
+			<li>
+				<i class="icon-time"></i>
+				{{ _("Funding ends: %s") % wish.date_end }}
+			</li>
+		</ul>
+	</div>
+
+	{{ wish.description }}
+{% end block %}

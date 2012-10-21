@@ -1,0 +1,54 @@
+{% extends "../base-1.html" %}
+
+{% block title %}{{ _("Terms & Conditions") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Terms & Conditions") }}</h1>
+	</div>
+
+	{% if lang == "de" %}
+		<p>
+			Vielen Dank, dass du zum IPFire-Projekt beitragen möchtest.
+			Mit deiner Spende erklärst du dich mit den folgenden Regeln und Bedingungen
+			einverstanden.
+		</p>
+		<p>
+			Es wird nicht auf einen präferierten Wunsch gespendet, sondern eine
+			Spende an das Projekt entrichtet, die dir die Möglichkeit gibt
+			deinen Wunsch nach oben zu befördern.
+		</p>
+		<p>
+			Es kann nicht garantiert werden, dass dein favorisierter Wunsch
+			(z.B. aus technischen Gründen) implementiert wird.
+			Die gesammelte Spendensumme wird dann für die Finanzierung
+			andere Teile des Projekts verwendet.
+		</p>
+		<p>
+			Mehr Informationen über Spenden finden sich auf unserer
+			<a href="http://www.ipfire.org/donation">Spenden</a>-Seite.
+		</p>
+	{% else %}
+		<p>
+			Thank you for contributing to the IPFire project.
+			By donating, you agree to be bound by the following terms and conditions.
+			If you don't agree to be bound or cannot comply with any of the terms
+			and conditions, do not continue the donations.
+		</p>
+		<p>
+			You don't donate on a feature, you donate money to the project
+			and with that donation comes the option to recommend that a certain
+			feature should be implemented.
+		</p>
+		<p>
+			There is no guarantee that your favorite feature will ever be implemented
+			- e.g. because of technical reasons.
+			If your feature will not be implemented,
+			your donations will then be used to fund other parts of the project.
+		</p>
+		<p>
+			More information about donations can be found on our
+			<a href="http://www.ipfire.org/donation">donation</a> page.
+		</p>
+	{% end %}
+{% end block %}

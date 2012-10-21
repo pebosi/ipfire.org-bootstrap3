@@ -162,3 +162,7 @@ class BaseHandler(tornado.web.RequestHandler):
 	@property
 	def planet(self):
 		return backend.Planet()
+
+	@property
+	def wishlist(self):
+		return backend.Wishlist()

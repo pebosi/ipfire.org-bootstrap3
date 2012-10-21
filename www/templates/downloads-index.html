@@ -1,49 +1,58 @@
-{% extends "base-2.html" %}
+{% extends "base-1.html" %}
 
-{% block title %}Index{% end block %}
+{% block title %}{{ _("Download Center") }}{% end block %}
 
 {% block body %}
-	<h3>{{ _("IPFire Download Center") }}</h3>
+	<div class="page-header">
+		<h1>{{ _("IPFire Download Center") }}</h1>
+	</div>
 
-	<!-- <img src="{{ static_url("images/box_ipfire.png") }}" alt="{{ _("CD-Box") }}" class="floatTR" /> -->
+	<div class="row">
+		<div class="span12">
+			<img class="pull-right" src="{{ static_url("images/box_ipfire.png") }}" alt="{{ _("CD-Box") }}">
 
-	<p>
-		Welcome to the downloads section of the IPFire project.
-		<br />
-		At this place you can download every release of IPFire that was published
-		in the last years.
-	</p>
+			{% if lang == "de" %}
+				<p>
+					Willkommen in der Downloadsektion des IPFire-Projekts.
+					Hier findest du alle bisher veröffentlichten Releases zum Download..
+				</p>
+			{% else %}
+				<p>
+					Welcome to the downloads section of the IPFire project.
+					You will find all published releases of IPFire for download.
+				</p>
+			{% end %}
+		</div>
+	</div>
 
-	<p>
-		Please note that older or development releases could bring serious
-		security and stability issues that were solved in a more recent version.
-	<p>
+	<hr>
 
-	<h4>Downloads on this site</h4>
-	<ul class="list">
-		<li><a href="/latest">{{ _("Latest release") }}</a></li>
-		<li><a href="/older">{{ _("List of older downloads") }}</a></li>
-		<li><a href="/development">{{ _("Development releases") }}</a></li>
-		<li><a href="/source">{{ _("Source code") }}</a></li>
-	</ul>
+	<h3>{{ _("Available releases") }}</h3>
 
-	<br class="clear" />
-
-	{{ modules.ReleaseItem(release) }}
-
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>{{ _("Release") }}</th>
+				<th>{{ _("Release type") }}</th>
+				<th>{{ _("Release date") }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for release in releases %}
+				<tr>
+					<td>
+						<a href="/release/{{ release.id }}">{{ release.name }}</a>
+					</td>
+					<td>
+						{% if release.stable %}
+							<span class="label label-success">{{ _("Stable") }}</span>
+						{% else %}
+							<span class="label label-important">{{ _("Development") }}</span>
+						{% end %}
+					</td>
+					<td>{{ locale.format_date(release.date, shorter=True) }}</td>
+				</tr>
+			{% end %}
+		</tbody>
+	</table>
 {% end block %}
-
-{% block sidebar %}
-	<h4>{{ _("Download options") }}</h4>
-	<ul class="list">
-		<li><a href="/latest">{{ _("Latest release") }}</a></li>
-		<li><a href="/older">{{ _("Older downloads") }}</a></li>
-		<li><a href="/development">{{ _("Development releases") }}</a></li>
-		<li><a href="/source">{{ _("Source code") }}</a></li>
-	</ul>
-
-	<h4>{{ _("Other options") }}</h4>
-	<ul class="list">
-		<li><a href="/mirrors">{{ _("Mirror list") }}</a></li>
-	</ul>
-{% end %}

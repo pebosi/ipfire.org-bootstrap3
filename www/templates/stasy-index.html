@@ -32,7 +32,7 @@
 	</div>
 
 	<div class="row">
-		<div class="span8 offset2">
+		<div class="span8 offset2 well">
 			{% if lang == "de" %}
 				<p>
 					Bitte geben Sie die Profil-ID von ihrem System ein, welche
@@ -45,9 +45,13 @@
 				</p>
 			{% end %}
 
-			<form class="well form-search" method="POST" action="">
-				<input type="text" class="span6 search-query" name="profile_id" value="">
-				<button type="submit" class="btn">{{ _("Show profile") }}</button>
+			<hr>
+
+			<form method="POST" action="">
+				<div class="input-append">
+					<input type="text" class="span7" name="profile_id" value=""
+						placeholder="{{ _("Profile ID") }}"><button type="submit" class="btn">{{ _("Show") }}</button>
+				</div>
 				{{ xsrf_form_html() }}
 			</form>
 		</div>

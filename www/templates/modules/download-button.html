@@ -1,5 +1,5 @@
-<a class="btn btn-large btn-success pull-right download-splash" href="{{ escape(image.url) }}">
+<a class="btn btn-primary download-button download-splash" href="{{ escape(image.url) }}">
 	{{ _("Download %s") % escape(release.name) }}
 	<br>
-	(ISO-Image - {{ escape(image.arch) }} - {{ format_size(image.size) }})
+	<small>(ISO-Image - {{ escape(image.arch) }} - {{ format_size(image.size) }})</small>
 </a>

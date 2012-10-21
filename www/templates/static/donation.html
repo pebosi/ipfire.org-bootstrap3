@@ -4,53 +4,51 @@
  
 {% block body %}
 	<div class="page-header">
-		<h1>{{ _("Please consider donating!") }}</h1>
+		<h1>{{ _("Donation") }}</h1>
 	</div>
 
 	<div class="row">
-		<div class="span10 offset1">
+		<div class="span12">
 			{% if lang == "de" %}
 				<p>
-					IPFire ist kostenlos und das Projekt hat keine direkten
-					Einnahmen. Stattdessen wird es vollständig durch Spenden
-					seiner Benutzer finanziert, welche die Ambition haben
-					ein Produkt zu fördern, welches mit denjenigen,
-					die von großen Unternehmen unterstützt werden,
-					konkurrieren kann.
+					IPFire ist ein Open Source-Projekt.
+					Nutzer und die Gemeinschaft sind das wertvollste und wichtigste
+					Gut, weil sich das Projekt auf sie stützt.
+					Die Entwicklung und die Fortführung des Projekts sind allein
+					einer Gruppe von Freiwilligen zu verdanken.
+					Sie haben ein Produkt entwickelt, das tagtäglich von
+					Hunderttausenden genutzt wird.
 				</p>
 				<p>
-					Finanzielle Mittel sind essenziell um Sever und Equipment
-					zu bezahlen, Notwendigkeiten der Distribution zu finanzieren
-					und die Arbeit der Leute hinter dem Projekt zu fördern.
+					Um die Qualität von IPFire noch weiter verbessern zu können,
+					sowie Aktivitäten des Projekts auszuweiten und die Verbreitung
+					zu steigern, sind finanzielle Mittel unabdingbar.
+					Jeder Sponsor kann seinen Teil dazu beitragen, diese Ziele
+					zu erreichen, das Projekt finanziell gesund zu erhalten und
+					somit langfristig abzusichern.
 				</p>
 				<p>
-					Wir ermutigen jeden, der IPFire herunterlädt und nutzt
-					einen Beitrag zu leisten:
-					<strong>
-						Wir bitten um eine Spende und bedanken uns im Voraus
-						sehr dafür.
-					</strong>
+					Deshalb ermutigen wir jeden, der IPFire einsetzt einen Beitrag zu leisten.
+					Danke dafür.
 				</p>
 			{% else %}
 				<p>
-					IPFire is free of cost and does not generate any direct sort
-					of income. It is funded by donations and although it is
-					financially supported by its own community of users, its
-					ambition is to compete with projects which are backed by large
-					companies.
+					IPFire is an Open Source project.
+					The users and the community are the most valuable and most important factor,
+					because those people are the foundation of the project.
+					Development and keeping the project healthy is carried out by a group of volunteers,
+					that in time have built a very successful product,
+					which hundreds of thousands of people use every day.
+					We appreciate every bit of <a href="/getinvolved">feedback, every bug report, patch and contribution</a>.
 				</p>
 				<p>
-					Financial ressources are essential for the IPFire project to pay
-					for servers and equipment, finance the needs of the distribution
-					and fund the work of the people behind it.
+					We would like to extend our activities and improve the quality of IPFire even more.
+					For that, we will need financial resources to support the maintenance,
+					improvement and promotion of the IPFire project.
+					Sponsorship is a good way to ensure the longevity and overall health of the project.
 				</p>
-				<p>
-					We encourage anyone who downloads and uses IPFire to contribute
-					to the distribution:
-					<strong>
-						Please donate and encourage others to do so	as well.
-						It is very much appreciated.
-					</strong>
+					So we encourage anyone who downloads and uses IPFire to donate.
+					It is very much appreciated.
 				</p>
 			{% end %}
 		</div>
@@ -59,84 +57,100 @@
 	<hr>
 
 	<div class="row">
-		<div class="span5 offset1">
+		<div class="span8 offset2">
+			{{ modules.DonationBox() }}
+
+			<div class="alert alert-success">
+				<h5>{{ _("Did you know...?") }}</h5>
+
+				{% if lang == "de" %}
+					Du kannst die Implementierung deiner bevorzugten Funktion mit Hilfe einer Spende auf der
+					<a href="http://wishlist.ipfire.org/">IPFire Wunschliste</a> unterstützen!
+				{% else %}
+					You can support the implementation of your favorite feature on the
+					<a href="http://wishlist.ipfire.org/">IPFire wishlist</a>!
+				{% end %}
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="page-header">
+		<h4>{{ _("How do we use financial support?") }}</h4>
+	</div>
+
+	<div class="row">
+		<div class="span6">
 			{% if lang == "de" %}
-				<h2>Über Paypal spenden</h2>
-				<br><br>
-
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="Z44GQ52ZHKVFW">
-					<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
-					<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-				</form>
-
 				<p>
-					<em>
-						Falls du keinen PayPal-Account hast,
-						kann mit PayPal auch über Kreditkarte gespendet
-						werden. Dafür einfach auf den Button klicken.
-					</em>
+					Die gesammelten Spenden werden direkt dazu verwendet,
+					das Projekt zu verbessern und das hohe Level an Qualität
+					zu erhalten.
 				</p>
 			{% else %}
-				<h2>Donate with PayPal</h2>
-				<br><br>
-
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="HHBTSN9QRWPAY">
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-				</form>
-
 				<p>
-					<em>
-						If don't have or want a PayPal account,
-						you can also donate with your credit card.
-						Just click on the button.
-					</em>
+					The sponsored funds will be directly spent to improve
+					and maintain the high quality code base that IPFire is built upon.
 				</p>
+			{% end %}
+
+			{% if lang == "de" %}
+				<p>
+					Ebenfalls sammeln wir um die folgenden Aktivitäten zu unterstützen:
+				</p>
+				<ul>
+					<li>
+						Entwickler, die neue Funktion implementieren und Fehler in IPFire beseitigen
+					</li>
+					<li>
+						Verbessung von Dokumentation, Tutorials und des Community-Supports
+					</li>
+					<li>
+						Die Bekanntheit von IPFire durch Werbung zu fördern
+					</li>
+				</ul>
+			{% else %}
+				<p>
+					We would also like to fund the following activities:
+				</p>
+				<ul>
+					<li>
+						Developers implementing new features and fixing bugs in IPFire
+					</li>
+					<li>
+						Improve documentation, tutorials and community support
+					</li>
+					<li>
+						Promote IPFire and do advertising
+					</li>
+				</ul>
 			{% end %}
 		</div>
 
-		<div class="span5">
+		<div class="span6">
+			<h4>{{ _("Research & Development") }}</h4>
+
 			{% if lang == "de" %}
-				<h2>Überweisung</h2>
 				<p>
-					Ebenso ist eine Spende auf ein Bankkonto möglich.
+					Forschung und Entwicklung sind uns sehr wichtig,
+					um IPFire auch den Weg für die Zukunft zu bereiten.
+					Ein Beispiel dafür ist die Portierung auf neue Architekturen.
 				</p>
-
-				<h4>Euro-Überweisung/SEPA</h4>
-				<blockquote>
-					IBAN: DE86 4265 0150 1020 0768 89<br>
-					BIC-/SWIFT-Code: WELADED1REK
-				</blockquote>
-
-				<h4>Überweisung innerhalb Deutschland</h4>
-				<blockquote>
-					Kontoinhaber: Michael Tremer<br>
-					Kontonummer: 1020076889<br>
-					Bankleitzahl: 426 501 50
-				</blockquote>
+				<p>
+					Einige Themen, in welchen wir uns engagieren wollen sind unter anderem
+					ARM, IPv6 und eine neuartige Weboberfläche.
+				</p>
 			{% else %}
-				<h2>Bank Transfer</h2>
 				<p>
-					It is also possible to transfer donations into
-					our bank account.
+					We would also like to do some research and development to
+					make IPFire ready for the future.
+					One example is we'd like to acquire new hardware platforms
+					and port IPFire to them.
 				</p>
-
-				<h4>euro bank transfer</h4>
-				<blockquote>
-					IBAN: DE86 4265 0150 1020 0768 89<br>
-					BIC-/SWIFT-Code: WELADED1REK
-				</blockquote>
-
-				<h4>bank transfer within Germany</h4>
-				<blockquote>
-					Bank account owner: Michael Tremer<br>
-					Bank account number: 1020076889<br>
-					Bank code: 426 501 50
-				</blockquote>
+				<p>
+					Some of the big things we would like to dig in are ARM, IPv6 and a new WUI.
+				</p>
 			{% end %}
 		</div>
 	</div>

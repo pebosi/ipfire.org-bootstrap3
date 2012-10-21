@@ -1,7 +1,7 @@
-{% extends "downloads-index.html" %}
+{% extends "base-1.html" %}
 
-{% block title %}Download {{ item.name }}{% end block %}
+{% block title %}Download {{ release.name }}{% end block %}
 
-{% block content %}
-	{{ modules.ReleaseItem(item) }}
+{% block body %}
+	{{ modules.ReleaseItem(release, latest=latest) }}
 {% end block %}

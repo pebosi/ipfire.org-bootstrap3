@@ -28,12 +28,15 @@ class Application(tornado.web.Application):
 			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),
 			ui_modules = {
+				"DonationBox"    : DonationBoxModule,
 				"DownloadButton" : DownloadButtonModule,
 				"Menu"           : MenuModule,
 				"MirrorItem"     : MirrorItemModule,
 				"MirrorsTable"   : MirrorsTableModule,
 				"NewsItem"       : NewsItemModule,
 				"NewsLine"       : NewsLineModule,
+				"NewsTable"      : NewsTableModule,
+				"NewsYearNavigation": NewsYearNavigationModule,
 				"PlanetEntry"    : PlanetEntryModule,
 				"ReleaseItem"    : ReleaseItemModule,
 				"SidebarBanner"  : SidebarBannerModule,
@@ -43,6 +46,8 @@ class Application(tornado.web.Application):
 				"StasyDeviceTable" : StasyDeviceTableModule,
 				"StasyGeoTable"  : StasyGeoTableModule,
 				"TrackerPeerList": TrackerPeerListModule,
+				"Wish"           : WishModule,
+				"Wishlist"       : WishlistModule,
 			},
 			xsrf_cookies = True,
 		)
@@ -63,6 +68,7 @@ class Application(tornado.web.Application):
 
 			# Handle news items
 			(r"/news", NewsIndexHandler),
+			(r"/news/year/([0-9]*)", NewsYearHandler),
 			(r"/news/(.*)", NewsItemHandler),
 			(r"/author/(.*)", NewsAuthorHandler),
 
@@ -172,6 +178,14 @@ class Application(tornado.web.Application):
 		self.add_handlers(r"nopaste\.ipfire\.org", [
 			(r"/", NopasteIndexHandler),
 			(r"/([\w]{8}-[\w]{4}-[\w]{4}-[\w]{4}-[\w]{12})", NopasteEntryHandler),
+		] + static_handlers)
+
+		# wishlist.ipfire.org
+		self.add_handlers(r"wishlist\.ipfire\.org", [
+			(r"/", WishlistIndexHandler),
+			(r"/wish/(.*)/donate", WishDonateHandler),
+			(r"/wish/(.*)", WishHandler),
+			(r"/terms", WishlistTermsHandler),
 		] + static_handlers)
 
 		# admin.ipfire.org

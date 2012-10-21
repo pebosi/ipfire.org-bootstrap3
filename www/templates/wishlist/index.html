@@ -1,0 +1,76 @@
+{% extends "../base-1.html" %}
+
+{% block title %}{{ _("Home") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Crowd funding for the IPFire project") }}</h1>
+	</div>
+
+	{% if lang == "de" %}
+		<p>
+			Dies ist die IPFire Crowdfunding-Platform, auf welcher du mittels 
+			Spenden deinem bevorzugten Feature mehr Gewicht verleihen kannst.
+		</p>
+		<p>
+			Es ist ganz einfach. Wähle einen Wunsch, über den du dich freuen
+			würdest, wenn er in Zukunkft umgesetzt wird.
+			Klicke auf den Spenden-Knopf und spende deinen gewünschten Betrag. Teile 
+			auch deinen Freunden und Kollegen mit, wie sie ihre Wünsche unterstützen 
+			können.
+		</p>
+	{% else %}
+		<p>
+			The wishlist is the IPFire crowd funding platform where you can
+			donate to accelerate the development of your favorite features.
+		</p>
+		<p>
+			It's easy! Just pick the wish you would to see implemented
+			in the future. Hit the donate button and donate the amount of
+			money this feature is worth for you.
+			After that tell your friends and collegues about it and
+			encourage them to promote your favourite wish as well.
+		</p>
+	{% end %}
+
+	<hr>
+
+	{% if wishes %}
+		{{ modules.Wishlist(wishes) }}
+	{% else %}
+		<div class="alert alert-error">
+			{% if lang == "de" %}
+				<strong>Es tut uns Leid!</strong>
+				Derzeit finden keine Finanzierungen statt.
+				Wenn du das Projekt unterstützten möchtest, so
+				tätige eine <a href="http://www.ipfire.org/donation">Spende</a>.
+			{% else %}
+				<strong>We are sorry!</strong>
+				There are currently no running fundings.
+				If you want to contribute to the project, please
+				make a <a href="http://www.ipfire.org/donation">donation</a>.
+			{% end %}
+		</div>
+	{% end %}
+
+	<hr>
+
+	{% if lang == "de" %}
+		<p class="ac">
+			Du hast eine Idee, oder glaubst ein wichtiges Feature fehlt
+			und wäre ideal von der Community finanziert?
+			Sende eine E-Mail an
+			<a href="mailto:wishlist@ipfire.org">
+				<i class="icon-envelope"></i> wishlist@ipfire.org
+			</a>
+		</p>
+	{% else %}
+		<p class="ac">
+			Do you think we are missing a great feature that could be
+			funded by the community? Write us an email about it to
+			<a href="mailto:wishlist@ipfire.org">
+				<i class="icon-envelope"></i> wishlist@ipfire.org
+			</a>
+		</p>
+	{% end %}
+{% end block %}

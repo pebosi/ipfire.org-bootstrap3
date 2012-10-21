@@ -20,3 +20,4 @@ from releases	import Releases
 from settings	import Settings as Config
 from stasy		import Stasy
 from tracker	import Tracker
+from wishlist	import Wishlist

@@ -11,17 +11,16 @@ class NewsIndexHandler(BaseHandler):
 		This handler fetches the content that is show on the news portal.
 	"""
 	def get(self):
-		offset = int(self.get_argument("offset", 0))
-		limit = int(self.get_argument("limit", 4))
+		news = self.news.get_latest(limit=5, locale=self.locale)
 
-		news = self.news.get_latest(
-			locale=self.locale,
-			limit=limit,
-			offset=offset,
-		)
+		return self.render("news.html", news=news)
 
-		return self.render("news.html", news=news,
-			offset=offset + limit, limit=limit)
+
+class NewsYearHandler(NewsIndexHandler):
+	def get(self, year):
+		news = self.news.get_by_year(year, locale=self.locale)
+
+		return self.render("news-year.html", news=news, selected_year=year)
 
 
 class NewsItemHandler(BaseHandler):
