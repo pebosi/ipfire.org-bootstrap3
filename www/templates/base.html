@@ -46,9 +46,9 @@
 			<div class="container container-body">
 				{% block body %}EMPTY BODY{% end block %}
 
-				<hr />
+				<footer class="footer hidden-phone">
+					<hr>
 
-				<footer class="footer">
 					{% if not hostname == "planet.ipfire.org" %}
 						<div class="pull-right">
 							<p>
@@ -69,6 +69,10 @@
 							<a href="/press">{{ _("Press") }}</a> -
 						{% end %}
 						<a href="http://www.ipfire.org/imprint">{{ _("imprint") }}</a>
+
+						{% if hostname == "wishlist.ipfire.org" %}
+							- <a href="/terms">{{ _("Terms & Conditions") }}</a>
+						{% end %}
 					</p>
 				</footer>
 			</div>

@@ -2,7 +2,7 @@
 	<div class="span9">
 		{% if show_avatar %}
 			<a class="pull-right" href="/user/{{ entry.author.uid }}">
-				<img class="img-rounded" src="{{ entry.author.gravatar_icon(96) }}" alt="{{ entry.author.cn }}" />
+				<img class="img-polaroid" src="{{ entry.author.gravatar_icon(96) }}" alt="{{ entry.author.cn }}" />
 			</a>
 		{% end %}
 
@@ -19,8 +19,4 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="span9">
-		<hr>
-	</div>
-</div>
+<hr>

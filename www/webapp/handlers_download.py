@@ -10,7 +10,9 @@ from handlers_base import *
 
 class DownloadsIndexHandler(BaseHandler):
 	def get(self):
-		self.render("downloads-index.html", release=self.releases.get_latest())
+		releases = self.releases.get_all()
+
+		self.render("downloads-index.html", releases=releases)
 
 
 class DownloadsReleaseHandler(BaseHandler):
@@ -19,7 +21,7 @@ class DownloadsReleaseHandler(BaseHandler):
 		if not release:
 			raise tornado.web.HTTPError(404)
 
-		self.render("downloads-item.html", item=release)
+		self.render("downloads-item.html", release=release, latest=False)
 
 
 class DownloadsLatestHandler(BaseHandler):
@@ -28,7 +30,7 @@ class DownloadsLatestHandler(BaseHandler):
 		if not release:
 			raise tornado.web.HTTPError(404)
 
-		self.render("downloads-item.html", item=release)
+		self.render("downloads-item.html", release=release, latest=True)
 
 
 class DownloadsOlderHandler(BaseHandler):

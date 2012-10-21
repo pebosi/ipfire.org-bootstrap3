@@ -37,6 +37,10 @@ class UIModule(tornado.web.UIModule):
 	def geoip(self):
 		return self.handler.geoip
 
+	@property
+	def news(self):
+		return self.handler.news
+
 
 class MenuModule(UIModule):
 	def render(self):
@@ -74,9 +78,25 @@ class NewsItemModule(UIModule):
 			uncut=uncut, announcement=announcement, show_heading=show_heading)
 
 
-class NewsLineModule(NewsItemModule):
+class NewsLineModule(UIModule):
 	def render(self, item):
 		return self.render_string("modules/news-line.html", item=item)
+
+
+class NewsTableModule(UIModule):
+	def render(self, news):
+		return self.render_string("modules/news-table.html", news=news)
+
+
+class NewsYearNavigationModule(UIModule):
+	def render(self, active=None):
+		try:
+			active = int(active)
+		except:
+			active = None
+
+		return self.render_string("modules/news-year-nav.html",
+			active=active, years=self.news.years)
 
 
 class MirrorItemModule(UIModule):
@@ -265,3 +285,27 @@ class StasyGeoTableModule(UIModule):
 class MirrorsTableModule(UIModule):
 	def render(self, mirrors):
 		return self.render_string("modules/mirrors-table.html", mirrors=mirrors)
+
+
+class WishlistModule(UIModule):
+	def render(self, wishes, short=False):
+		return self.render_string("wishlist/modules/wishlist.html",
+			wishes=wishes, short=short)
+
+
+class WishModule(UIModule):
+	def render(self, wish, short=False):
+		progress_bar = "progress-success"
+
+		if wish.percentage >= 90:
+			progress_bar = "progress-danger"
+		elif wish.percentage >= 50:
+			progress_bar = "progress-warning"
+
+		return self.render_string("wishlist/modules/wish.html",
+			wish=wish, short=short, progress_bar=progress_bar)
+
+
+class DonationBoxModule(UIModule):
+	def render(self):
+		return self.render_string("modules/donation-box.html")

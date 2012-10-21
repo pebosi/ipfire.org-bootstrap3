@@ -1,0 +1,15 @@
+{% extends "base-1.html" %}
+
+{% block title %}{{ _("News") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("News from %(year)s") % { "year" : selected_year } }}</h1>
+	</div>
+
+	{{ modules.NewsYearNavigation(selected_year) }}
+
+	<hr>
+
+	{{ modules.NewsTable(news) }}
+{% end block %}

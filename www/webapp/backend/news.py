@@ -41,6 +41,29 @@ class News(object):
 
 		return news
 
+	def get_by_year(self, year, locale=None):
+		query = "SELECT * FROM news WHERE published = 'Y' AND YEAR(date) = %s"
+		args  = [year,]
+
+		if locale:
+			query += " AND lang = %s"
+			args.append(locale.code[:2])
+
+		query += " ORDER BY date DESC"
+
+		return self.db.query(query, *args)
+
+	@property
+	def years(self):
+		years = []
+
+		for row in self.db.query("SELECT DISTINCT YEAR(date) AS year FROM news \
+				WHERE published = 'Y' ORDER BY year DESC"):
+			years.append(row.year)
+
+		return years
+
+
 if __name__ == "__main__":
 	n = News()
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-29 11:31+0200\n"
+"POT-Creation-Date: 2012-10-21 19:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,111 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: templates/downloads-index.html:6
+#: templates/wishlist/wish.html:3
+msgid "Wish"
+msgstr "Wunsch"
+
+#: templates/wishlist/wish.html:16
+#, python-format
+msgid "Launched: %s"
+msgstr "Gestarted: %s"
+
+#: templates/wishlist/wish.html:20
+#, python-format
+msgid "Funding ends: %s"
+msgstr "Sammlung endet: %s"
+
+#: templates/wishlist/modules/wish.html:6
+msgid "Only a few days left!"
+msgstr "Nur noch wenige Tage!"
+
+#: templates/wishlist/modules/wish.html:26 templates/wishlist/donate.html:3
+#: templates/download-splash.html:37 templates/modules/menu.html:40
+#: templates/static/features/itsfree.html:86
+#: templates/static/getinvolved.html:121
+msgid "Donate"
+msgstr "Spenden"
+
+#: templates/wishlist/modules/wish.html:36
+msgid "funded"
+msgstr "gesammelt"
+
+#: templates/wishlist/modules/wish.html:40
+#, python-format
+msgid "%s &euro;"
+msgstr "%s &euro;"
+
+#: templates/wishlist/modules/wish.html:41
+msgid "donated"
+msgstr "gespendet"
+
+#: templates/wishlist/modules/wish.html:47
+msgid "day to go"
+msgid_plural "days to go"
+msgstr[0] "Tag übrig"
+msgstr[1] "Tage übrig"
+
+#: templates/wishlist/modules/wish.html:49
+msgid "Ended"
+msgstr "Beendet"
+
+#: templates/wishlist/modules/wish.html:59
+msgid "Share this wish with your friends and help us promote it!"
+msgstr ""
+"Teile diesen Wunsch mit deinen Freunden und hilf diesen bekannter zu machen!"
+
+#: templates/wishlist/index.html:3 templates/index.html:3
+msgid "Home"
+msgstr "Startseite"
+
+#: templates/wishlist/index.html:7
+msgid "Crowd funding for the IPFire project"
+msgstr "Crowdfunding für das IPFire-Projekt"
+
+#: templates/wishlist/donate.html:15 templates/wishlist/donate.html:22
+#: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
+#: templates/base.html:74
+msgid "Terms & Conditions"
+msgstr "Allgemeine Bedingungen"
+
+#: templates/wishlist/donate.html:42
+msgid "Reason for transfer"
+msgstr "Verwendungszweck"
+
+#: templates/downloads-index.html:3
+msgid "Download Center"
+msgstr "Downloadcenter"
+
+#: templates/downloads-index.html:7
 msgid "IPFire Download Center"
 msgstr "IPFire Download-Center"
 
-#: templates/downloads-index.html:24 templates/downloads-index.html:39
-#: templates/modules/release-item.html:2
-#: templates/modules/sidebar-release.html:4
-msgid "Latest release"
-msgstr "Neuestes Release"
+#: templates/downloads-index.html:30
+msgid "Available releases"
+msgstr "Verfügbare Releases"
 
-#: templates/downloads-index.html:25
-msgid "List of older downloads"
-msgstr "Liste älterer Downloads"
+#: templates/downloads-index.html:35 templates/downloads-older.html:25
+#: templates/tracker-torrents.html:32
+msgid "Release"
+msgstr "Release"
 
-#: templates/downloads-index.html:26 templates/downloads-index.html:41
-msgid "Development releases"
-msgstr "Entwicklungsreleases"
-
-#: templates/downloads-index.html:27 templates/downloads-index.html:42
-#: templates/static/development.html:83
-msgid "Source code"
-msgstr "Quellcode"
+#: templates/downloads-index.html:36
+msgid "Release type"
+msgstr "Release-Typ"
 
 #: templates/downloads-index.html:37
-msgid "Download options"
-msgstr "Downloadoptionen"
+msgid "Release date"
+msgstr "Veröffentlichungsdatum"
 
-#: templates/downloads-index.html:40
-msgid "Older downloads"
-msgstr "Ältere Downloads"
+#: templates/downloads-index.html:48
+msgid "Stable"
+msgstr "Stabil"
 
-#: templates/downloads-index.html:45
-msgid "Other options"
-msgstr "Andere Optionen"
-
-#: templates/downloads-index.html:47
-msgid "Mirror list"
-msgstr "Mirrorliste"
+#: templates/downloads-index.html:50 templates/modules/menu.html:58
+#: templates/static/development.html:3 templates/static/development.html:8
+#: templates/static/getinvolved.html:154
+msgid "Development"
+msgstr "Entwicklung"
 
 #: templates/stasy-profile.html:3 templates/stasy-profile.html:6
 msgid "Profile lookup"
@@ -96,10 +163,6 @@ msgstr ""
 #: templates/downloads-older.html:17 templates/downloads-all.html:13
 msgid "Go back to latest stable downloads."
 msgstr "Zurück zu den neuesten stabilen Downloads."
-
-#: templates/downloads-older.html:25 templates/tracker-torrents.html:32
-msgid "Release"
-msgstr "Release"
 
 #: templates/downloads-older.html:26
 msgid "Published on"
@@ -173,14 +236,23 @@ msgstr "Mirrorauslastung von heute"
 msgid "Mirror load"
 msgstr "Mirrorauslastung"
 
+#: templates/news-year.html:3 templates/news.html:3
+msgid "News"
+msgstr "Neuigkeiten"
+
+#: templates/news-year.html:7
+#, python-format
+msgid "News from %(year)s"
+msgstr "Neuigkeiten aus %(year)s"
+
 #: templates/tracker-torrent-detail.html:3
 #: templates/tracker-torrent-detail.html:18
-#: templates/modules/release-item.html:123
+#: templates/modules/release-item.html:111
 msgid "Torrent download"
 msgstr "Torrent-Download"
 
 #: templates/tracker-torrent-detail.html:15
-#: templates/modules/release-item.html:122
+#: templates/modules/release-item.html:110
 msgid "Magnet link"
 msgstr "Magnet-Link"
 
@@ -193,7 +265,7 @@ msgid "Seeds"
 msgstr "Seeds"
 
 #: templates/stasy-stats-geo.html:3 templates/stasy-stats-geo.html:7
-#: templates/stasy-stats.html:50
+#: templates/stasy-stats.html:38
 msgid "Geo locations"
 msgstr "Geographischer Standort"
 
@@ -201,7 +273,7 @@ msgstr "Geographischer Standort"
 msgid "Language selection"
 msgstr "Sprachauswahl"
 
-#: templates/stasy-stats-network.html:3 templates/stasy-stats.html:118
+#: templates/stasy-stats-network.html:3 templates/stasy-stats.html:106
 #: templates/stasy-profile-detail.html:95
 msgid "Network"
 msgstr "Netzwerk"
@@ -230,16 +302,15 @@ msgstr "%ss Ankündigungen"
 
 #: templates/planet-main.html:3 templates/planet-main.html:7
 #: templates/planet-user.html:3 templates/planet-posting.html:3
+#: templates/news.html:61
 msgid "IPFire Planet"
 msgstr "IPFire Planet"
 
 #: templates/planet-main.html:43 templates/planet-user.html:19
-#: templates/news.html:31
 msgid "Older posts"
 msgstr "Ältere Beiträge"
 
 #: templates/planet-main.html:47 templates/planet-user.html:23
-#: templates/news.html:35
 msgid "Newer posts"
 msgstr "Neuere Beiträge"
 
@@ -255,7 +326,7 @@ msgstr "Feed"
 msgid "People on the IPFire planet"
 msgstr "Auf dem IPFire Planet"
 
-#: templates/stasy-stats-virtual.html:3 templates/stasy-stats.html:139
+#: templates/stasy-stats-virtual.html:3 templates/stasy-stats.html:127
 #: templates/base-feature.html:65
 #: templates/static/features/virtualization.html:3
 #: templates/static/features/virtualization.html:8
@@ -282,15 +353,15 @@ msgstr "IPFire Adminbereich"
 msgid "Accounts"
 msgstr "Accounts"
 
-#: templates/admin-base.html:10 templates/modules/menu.html:97
+#: templates/admin-base.html:10 templates/modules/menu.html:103
 msgid "Mirrors"
 msgstr "Mirrors"
 
-#: templates/admin-base.html:11 templates/modules/menu.html:79
+#: templates/admin-base.html:11 templates/modules/menu.html:85
 msgid "Planet"
 msgstr "Planet"
 
-#: templates/admin-base.html:12 templates/downloads.html:3
+#: templates/admin-base.html:12
 msgid "Downloads"
 msgstr "Downloads"
 
@@ -306,7 +377,7 @@ msgstr "Titel"
 msgid "Processors"
 msgstr "Prozessoren"
 
-#: templates/stasy-stats-cpus.html:7 templates/stasy-stats.html:71
+#: templates/stasy-stats-cpus.html:7 templates/stasy-stats.html:59
 msgid "Hardware: CPUs"
 msgstr "Hardware: CPUs"
 
@@ -338,7 +409,7 @@ msgstr "Zusammengenomen sind es <strong>%s Bogomips</strong>."
 
 #: templates/stasy-stats-cpus.html:48
 msgid "CPU core counter"
-msgstr "CPU Kerne"
+msgstr "CPU-Kerne"
 
 #: templates/stasy-stats-cpus.html:50
 msgid ""
@@ -358,32 +429,23 @@ msgstr ""
 "Die durchschnittliche Menge an Arbeitsspeicher aller System ist: <strong>"
 "%.2f MB</strong>."
 
-#: templates/download-splash.html:3 templates/download-splash.html:8
+#: templates/download-splash.html:3 templates/download-splash.html:7
 msgid "Thanks for downloading IPFire!"
-msgstr "Vielen Dank, für das herunterladen von IPFire! "
+msgstr "Vielen Dank, für das Herunterladen von IPFire! "
 
-#: templates/download-splash.html:15 templates/static/donation.html:7
-msgid "Please consider donating!"
-msgstr "Wir bitten um eine Spende!"
-
-#: templates/download-splash.html:42 templates/modules/menu.html:40
-#: templates/static/getinvolved.html:61
-msgid "Donate"
-msgstr "Spenden"
-
-#: templates/download-splash.html:66
+#: templates/download-splash.html:59
 msgid "Next steps"
 msgstr "Nächste Schritte"
 
-#: templates/download-splash.html:71
+#: templates/download-splash.html:64
 msgid "Install IPFire"
 msgstr "IPFire installieren"
 
-#: templates/download-splash.html:86
+#: templates/download-splash.html:80
 msgid "Access documentation"
 msgstr "Dokumentation lesen"
 
-#: templates/download-splash.html:103 templates/static/getinvolved.html:94
+#: templates/download-splash.html:98
 msgid "Join the community"
 msgstr "Der Community beitreten"
 
@@ -463,17 +525,17 @@ msgstr "%s hat bisher noch keine Beiträge verfasst."
 msgid "Mail"
 msgstr "Mail"
 
-#: templates/downloads.html:7 templates/modules/menu.html:4
-msgid "Download"
-msgstr "Download"
+#: templates/downloads.html:3 templates/downloads.html:7
+msgid "Get IPFire"
+msgstr "IPFire herunterladen"
 
-#: templates/downloads.html:39
+#: templates/downloads.html:27
+msgid "More download options"
+msgstr "Weitere Downloadoptionen"
+
+#: templates/downloads.html:63
 msgid "Get yourself involved"
 msgstr "Selbst mitmachen"
-
-#: templates/downloads.html:55
-msgid "Need help with the first steps?"
-msgstr "Hilfe bei den ersten Schritten?"
 
 #: templates/admin-mirrors-create.html:5 templates/admin-mirrors.html:8
 msgid "Create new mirror"
@@ -517,11 +579,11 @@ msgstr "Pakfire 3 Mirror"
 msgid "Disabled?"
 msgstr "Ausgeschaltet?"
 
-#: templates/planet-posting.html:18 templates/modules/planet-entry.html:18
+#: templates/planet-posting.html:18 templates/modules/planet-entry.html:16
 msgid "Posted by"
 msgstr "Erstellt von"
 
-#: templates/planet-posting.html:19 templates/modules/planet-entry.html:19
+#: templates/planet-posting.html:19 templates/modules/planet-entry.html:17
 msgid "on"
 msgstr "am"
 
@@ -545,7 +607,7 @@ msgstr "Insgesamt"
 msgid "Downloads by country"
 msgstr "Downloads pro Land"
 
-#: templates/stasy-stats.html:3 templates/modules/menu.html:123
+#: templates/stasy-stats.html:3 templates/modules/menu.html:129
 msgid "Statistics"
 msgstr "Statistiken"
 
@@ -553,15 +615,15 @@ msgstr "Statistiken"
 msgid "fireinfo statistics"
 msgstr "Fireinfo Statistiken"
 
-#: templates/stasy-stats.html:29
+#: templates/stasy-stats.html:17
 msgid "IPFire versions"
 msgstr "IPFire-Versionen"
 
-#: templates/stasy-stats.html:85
+#: templates/stasy-stats.html:73
 msgid "CPU features"
 msgstr "CPU-Funktionen"
 
-#: templates/stasy-stats.html:97
+#: templates/stasy-stats.html:85
 msgid "Hardware: Memory"
 msgstr "Hardware: Arbeitsspeicher"
 
@@ -569,13 +631,21 @@ msgstr "Hardware: Arbeitsspeicher"
 msgid "What is new on the IPFire project?"
 msgstr "Was gibt es neues im IPFire Projekt?"
 
-#: templates/base-feature.html:6 templates/static/features.html:3
-#: templates/static/features.html:7
+#: templates/news.html:34
+msgid "Stay up to date"
+msgstr "Informiere dich"
+
+#: templates/news.html:85
+msgid "Latest news"
+msgstr "Aktuelle Neuigkeiten"
+
+#: templates/base-feature.html:6 templates/modules/menu.html:7
+#: templates/static/features.html:3 templates/static/features.html:7
 msgid "About IPFire"
 msgstr "Über IPFire"
 
 #: templates/base-feature.html:9 templates/static/features/security.html:3
-#: templates/static/features/security.html:9 templates/index.html:76
+#: templates/static/features/security.html:9 templates/index.html:118
 msgid "Security"
 msgstr "Sicherheit"
 
@@ -599,7 +669,7 @@ msgstr "IPFire ist frei"
 
 #: templates/base-feature.html:25
 msgid "Features"
-msgstr "Features"
+msgstr "Funktionen"
 
 #: templates/base-feature.html:28 templates/static/features/dialup.html:3
 #: templates/static/features/dialup.html:7
@@ -785,9 +855,9 @@ msgstr "Accountadministrator"
 msgid "A hardware data collection tool for IPFire"
 msgstr "Ein Hardwaredatensammeltool für IPFire"
 
-#: templates/stasy-index.html:50
-msgid "Show profile"
-msgstr "Profil anzeigen"
+#: templates/stasy-index.html:53
+msgid "Show"
+msgstr "Anzeigen"
 
 #: templates/stasy-model-detail.html:11
 #, python-format
@@ -813,10 +883,6 @@ msgstr "Senden Profile"
 #: templates/stasy-stats-admin.html:19
 msgid "Archive size"
 msgstr "Archivgröße"
-
-#: templates/stasy-stats-admin.html:27
-msgid "Updates in the last 24 hours"
-msgstr "Updates innerhalb der vergangenen 24 Stunden"
 
 #: templates/base.html:4
 msgid "No title given"
@@ -863,23 +929,41 @@ msgstr "Seeders"
 msgid "Error"
 msgstr "Error"
 
-#: templates/modules/release-item.html:12
+#: templates/modules/donation-box.html:5
+msgid "Donate with PayPal or Credit Card"
+msgstr "Mit PayPal oder Kreditkarte spenden"
+
+#: templates/modules/donation-box.html:47
+msgid "Bank Transfer"
+msgstr "Banküberweisung"
+
+#: templates/modules/release-item.html:2
+#: templates/modules/sidebar-release.html:4 templates/index.html:24
+#: templates/index.html:47
+msgid "Latest release"
+msgstr "Neuestes Release"
+
+#: templates/modules/release-item.html:10
 msgid "Choose an architecture:"
 msgstr "Architektur auswählen:"
 
-#: templates/modules/release-item.html:91
+#: templates/modules/release-item.html:55
+msgid "Caution!"
+msgstr "Achtung!"
+
+#: templates/modules/release-item.html:79
 msgid "Image type"
 msgstr "Imagetyp"
 
-#: templates/modules/release-item.html:92
+#: templates/modules/release-item.html:80
 msgid "Size"
 msgstr "Größe"
 
-#: templates/modules/release-item.html:121
+#: templates/modules/release-item.html:109
 msgid "Legend:"
 msgstr "Legende:"
 
-#: templates/modules/release-item.html:131
+#: templates/modules/release-item.html:119
 #: templates/modules/release-item-short.html:13
 msgid "There are no downloads available for this release."
 msgstr "Es gibt keine Downloads für dieses Release."
@@ -899,15 +983,23 @@ msgstr "von"
 #: templates/modules/download-button.html:2
 #, python-format
 msgid "Download %s"
-msgstr "Lade %s herunter"
+msgstr "%s herunterladen"
 
 #: templates/modules/stasy-table-devices.html:6
 msgid "Kernel module"
 msgstr "Kernelmodul"
 
-#: templates/modules/menu.html:7
-msgid "About"
-msgstr "Über"
+#: templates/modules/news-year-nav.html:3
+msgid "Jump to"
+msgstr "Springe zu"
+
+#: templates/modules/news-year-nav.html:6
+msgid "Most recent"
+msgstr "Aktuellste"
+
+#: templates/modules/menu.html:4
+msgid "Download"
+msgstr "Download"
 
 #: templates/modules/menu.html:10
 msgid "Get Involved"
@@ -930,55 +1022,50 @@ msgstr "Forum"
 msgid "Chat"
 msgstr "Chat"
 
-#: templates/modules/menu.html:48
+#: templates/modules/menu.html:46 templates/static/getinvolved.html:127
+msgid "Wishlist"
+msgstr "Wunschliste"
+
+#: templates/modules/menu.html:54
 msgid "More"
 msgstr "Mehr"
 
-#: templates/modules/menu.html:52 templates/static/development.html:3
-#: templates/static/development.html:8 templates/static/getinvolved.html:139
-msgid "Development"
-msgstr "Entwicklung"
-
-#: templates/modules/menu.html:57
+#: templates/modules/menu.html:63
 msgid "Overview"
 msgstr "Übersicht"
 
-#: templates/modules/menu.html:63
+#: templates/modules/menu.html:69
 msgid "Pakfire Build Service"
 msgstr "Pakfire Buildsystem"
 
-#: templates/modules/menu.html:69 templates/static/development.html:44
+#: templates/modules/menu.html:75 templates/static/development.html:44
 msgid "Bugtracker"
 msgstr "Bugtracker"
 
-#: templates/modules/menu.html:74
+#: templates/modules/menu.html:80
 msgid "Miscellaneous"
 msgstr "Verschiedenes"
 
-#: templates/modules/menu.html:85 templates/static/features/hardware.html:80
+#: templates/modules/menu.html:91 templates/static/features/hardware.html:80
 msgid "Fireinfo"
 msgstr "Fireinfo"
 
-#: templates/modules/menu.html:91
+#: templates/modules/menu.html:97
 msgid "Mailing lists"
 msgstr "Mailinglisten"
 
-#: templates/modules/menu.html:103 templates/static/artwork.html:3
+#: templates/modules/menu.html:109 templates/static/artwork.html:3
 #: templates/static/artwork.html:7
 msgid "Artwork"
 msgstr "Artwork"
 
-#: templates/modules/menu.html:109
+#: templates/modules/menu.html:115
 msgid "CeBIT"
 msgstr "CeBIT"
 
-#: templates/modules/menu.html:115
+#: templates/modules/menu.html:121
 msgid "Tracker"
 msgstr "Tracker"
-
-#: templates/modules/menu.html:133
-msgid "Return to www.ipfire.org"
-msgstr "Zurück zu www.ipfire.org"
 
 #: templates/modules/news-item.html:6
 msgid "Announcement"
@@ -995,6 +1082,10 @@ msgstr "Entwicklungstools"
 #: templates/static/development.html:65
 msgid "Development Mailing List"
 msgstr "Entwicklungsmailingliste"
+
+#: templates/static/development.html:83
+msgid "Source code"
+msgstr "Quellcode"
 
 #: templates/static/development.html:101
 msgid "IPFire Git repositories"
@@ -1124,45 +1215,38 @@ msgstr "CeBIT-Spezial"
 msgid "IPFire at CeBIT 2010"
 msgstr "IPFire auf der CeBIT 2010"
 
-#: templates/static/getinvolved.html:3 templates/static/getinvolved.html:7
+#: templates/static/getinvolved.html:3 templates/static/getinvolved.html:9
+#: templates/static/getinvolved.html:12
 msgid "Get involved"
 msgstr "Mitmachen"
 
-#: templates/static/getinvolved.html:10
-msgid "Thanks for your support"
-msgstr "Vielen Dank für die Unterstützung"
+#: templates/static/getinvolved.html:48
+msgid "First steps"
+msgstr "Erste Schritte"
 
-#: templates/static/getinvolved.html:45
+#: templates/static/getinvolved.html:98
 msgid "Donations"
 msgstr "Spenden"
 
-#: templates/static/getinvolved.html:68
-msgid "Promotion"
-msgstr "Promotion"
+#: templates/static/getinvolved.html:143
+msgid "Make a wish"
+msgstr "Wünsch dir was"
 
-#: templates/static/getinvolved.html:69
-msgid "Spread the word"
-msgstr "Spread the word"
+#: templates/static/getinvolved.html:150
+msgid "Contribute yourself"
+msgstr "Bring dich selbst ein"
 
-#: templates/static/getinvolved.html:122
-msgid "Register on the forums"
-msgstr "Im Forum registrieren"
-
-#: templates/static/getinvolved.html:127
-msgid "Join the IRC channel"
-msgstr "Dem IRC-Channel beitreten"
-
-#: templates/static/getinvolved.html:132
-msgid "Subscribe to the planet feed"
-msgstr "Den Planet-Feed abonnieren"
-
-#: templates/static/getinvolved.html:152
+#: templates/static/getinvolved.html:176
 msgid "Translation"
 msgstr "Übersetzung"
 
-#: templates/static/getinvolved.html:167
-msgid "Join the translation project"
-msgstr "Dem Übersetzungsteam beitreten"
+#: templates/static/getinvolved.html:191
+msgid "Translation team"
+msgstr "Übersetzungsteam"
+
+#: templates/static/getinvolved.html:197
+msgid "Promotion"
+msgstr "Promotion"
 
 #: templates/static/artwork.html:31
 msgid "The IPFire Logo"
@@ -1176,42 +1260,45 @@ msgstr "Flyer, Rollups, CDs und mehr"
 msgid "Imprint"
 msgstr "Impressum"
 
-#: templates/static/donation.html:3
+#: templates/static/donation.html:3 templates/static/donation.html:7
 msgid "Donation"
 msgstr "Spende"
 
-#: templates/index.html:3
-msgid "Home"
-msgstr "Startseite"
+#: templates/static/donation.html:64
+msgid "Did you know...?"
+msgstr "Schon gewusst?"
 
-#: templates/index.html:7
-msgid "Follow us"
-msgstr "Folge uns"
+#: templates/static/donation.html:80
+msgid "How do we use financial support?"
+msgstr "Wofür werden Spenden eingesetzt?"
 
-#: templates/index.html:16
+#: templates/static/donation.html:132
+msgid "Research & Development"
+msgstr "Forschung & Entwicklung"
+
+#: templates/index.html:19 templates/index.html:42
 msgid "An Open Source Firewall Solution"
 msgstr "An Open Source Firewall Solution"
 
-#: templates/index.html:95
+#: templates/index.html:57
+msgid "New!"
+msgstr "Neu!"
+
+#: templates/index.html:103
+msgid "What's new?"
+msgstr "Neuigkeiten"
+
+#: templates/index.html:135
 msgid "Flexibility"
 msgstr "Flexibilität"
 
-#: templates/index.html:114
+#: templates/index.html:152
 msgid "Open Source"
 msgstr "Open Source"
 
-#: templates/index.html:150
-msgid "Show older announcements"
-msgstr "Ältere Ankündigungen"
-
-#: templates/index.html:153
-msgid "Planet news"
-msgstr "Planet News"
-
-#: templates/index.html:155
-#, python-format
-msgid "%(name)s talks about %(what)s."
-msgstr "%(name)s schreibt über %(what)s."
+#: templates/index.html:169
+msgid "Read more"
+msgstr "Mehr erfahren"
 
 #: templates/admin-mirrors-details.html:8
 msgid "All mirrors"
@@ -1282,14 +1369,18 @@ msgstr "Vor mehr als einem Tag"
 msgid "Profile not found"
 msgstr "Profil nicht gefunden"
 
-#: webapp/handlers_news.py:44 webapp/ui_modules.py:54
+#: webapp/handlers_news.py:43 webapp/ui_modules.py:58
 msgid "Unknown author"
 msgstr "Unbekannter Autor"
 
-#: webapp/ui_modules.py:201
+#: webapp/ui_modules.py:221
 #, python-format
 msgid "%s to %s"
 msgstr "%s nach %s"
+
+#: webapp/backend/wishlist.py:128
+msgid "Checkout this crowdfunding wish from #ipfire:"
+msgstr ""
 
 #: webapp/backend/releases.py:93
 msgid "Image for the armv5tel architecture"
@@ -1528,6 +1619,81 @@ msgstr "%(weekday)s, %(day)s. %(month_name)s"
 msgid "%(commas)s and %(last)s"
 msgstr "%(commas)s und %(last)s"
 
+#~ msgid "Show profile"
+#~ msgstr "Profil anzeigen"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "IPFire Wishlist"
+#~ msgstr "IPFire Wunschliste"
+
+#~ msgid "Turning an idea into a new feature"
+#~ msgstr "Verwandle eine Idee in ein neues Feature"
+
+#~ msgid "Share"
+#~ msgstr "Teilen"
+
+#~ msgid "List of older downloads"
+#~ msgstr "Liste älterer Downloads"
+
+#~ msgid "Development releases"
+#~ msgstr "Entwicklungsreleases"
+
+#~ msgid "Follow us"
+#~ msgstr "Folge uns"
+
+#~ msgid "Download options"
+#~ msgstr "Downloadoptionen"
+
+#~ msgid "Older downloads"
+#~ msgstr "Ältere Downloads"
+
+#~ msgid "Other options"
+#~ msgstr "Andere Optionen"
+
+#~ msgid "Mirror list"
+#~ msgstr "Mirrorliste"
+
+#~ msgid "Please consider donating!"
+#~ msgstr "Wir bitten um eine Spende!"
+
+#~ msgid "Need help with the first steps?"
+#~ msgstr "Hilfe bei den ersten Schritten?"
+
+#~ msgid "Register on the forums"
+#~ msgstr "Im Forum registrieren"
+
+#~ msgid "Subscribe to the planet feed"
+#~ msgstr "Den Planet-Feed abonnieren"
+
+#~ msgid "Join the translation project"
+#~ msgstr "Dem Übersetzungsteam beitreten"
+
+#~ msgid "Join the IRC channel"
+#~ msgstr "Dem IRC-Channel beitreten"
+
+#~ msgid "About"
+#~ msgstr "Über"
+
+#~ msgid "Updates in the last 24 hours"
+#~ msgstr "Updates innerhalb der vergangenen 24 Stunden"
+
+#~ msgid "Return to www.ipfire.org"
+#~ msgstr "Zurück zu www.ipfire.org"
+
+#~ msgid "Thanks for your support"
+#~ msgstr "Vielen Dank für die Unterstützung"
+
+#~ msgid "Spread the word"
+#~ msgstr "Spread the word"
+
+#~ msgid "Show older announcements"
+#~ msgstr "Ältere Ankündigungen"
+
+#~ msgid "%(name)s talks about %(what)s."
+#~ msgstr "%(name)s schreibt über %(what)s."
+
 #~ msgid "Documentation"
 #~ msgstr "Dokumentation"
 
@@ -1611,9 +1777,6 @@ msgstr "%(commas)s und %(last)s"
 
 #~ msgid "Outgoing Firewall"
 #~ msgstr "Ausgehende Firewall"
-
-#~ msgid "IPFire"
-#~ msgstr "IPFire"
 
 #~ msgid "Samba"
 #~ msgstr "Samba"
