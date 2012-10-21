@@ -87,11 +87,12 @@ class DownloadFileHandler(BaseHandler):
 		mirror = mirrors.get_random()
 
 		self.redirect(mirror.url + filename[len(mirror.prefix):])
+		return mirror
 
 	def get(self, filename):
-		return self.head(filename)
+		mirror = self.head(filename)
 
-		# Record the downlaod.
+		# Record the download.
 		country_code = self.geoip.get_country(self.request.remote_ip)
 		self.mirrors.db.execute("INSERT INTO log_download(filename, mirror, country_code) VALUES(%s, %s, %s)",
 			filename, mirror.id, country_code)
