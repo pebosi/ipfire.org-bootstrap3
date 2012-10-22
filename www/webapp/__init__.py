@@ -152,7 +152,7 @@ class Application(tornado.web.Application):
 		# tracker.ipfire.org
 		self.add_handlers(r"(torrent|tracker)\.ipfire\.org", [
 			(r"/", TrackerIndexHandler),
-			(r"/a.*", TrackerAnnounceHandler),
+			(r"/announce.*", TrackerAnnounceHandler),
 			(r"/scrape", TrackerScrapeHandler),
 			(r"/torrent/([0-9a-f]+)", TrackerDetailHandler),
 			(r"/([0-9a-f]{40})", TrackerDetailHandler),
