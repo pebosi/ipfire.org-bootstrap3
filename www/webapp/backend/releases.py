@@ -67,6 +67,9 @@ class File(object):
 		elif "usb-hdd" in filename:
 			return "usbhdd"
 
+		elif "armv5tel" in filename and "scon" in filename:
+			return "armv5tel-scon"
+
 		elif "armv5tel" in filename:
 			return "armv5tel"
 
@@ -91,6 +94,7 @@ class File(object):
 
 		descriptions = {
 			"armv5tel"	: _("Image for the armv5tel architecture"),
+			"armv5tel-scon"	: _("armv5tel image for boards with serial console"),
 			"iso"		: _("Installable CD image"),
 			"torrent"	: _("Torrent file"),
 			"flash"		: _("Flash image"),
@@ -114,7 +118,8 @@ class File(object):
 			"alix"		: 41,
 			"usbfdd"	: 31,
 			"usbhdd"	: 30,
-			"armv5tel"  : 40,
+			"armv5tel"	: 40,
+			"armv5tel-scon"	: 41,
 			"xen"		: 50,
 		}
 		
@@ -129,6 +134,7 @@ class File(object):
 	
 		remarks = {
 			"armv5tel"	: _("This image runs on many ARM-based boards"),
+			"armv5tel-scon"	: _("This image runs on ARM boards with a serial console"),
 			"iso"		: _("Use this image to burn a CD and install IPFire from it."),
 			"torrent"	: _("Download the CD image from the torrent network."),
 			"flash"		: _("An image that is meant to run on embedded devices."),
