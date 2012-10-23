@@ -307,5 +307,9 @@ class WishModule(UIModule):
 
 
 class DonationBoxModule(UIModule):
-	def render(self):
-		return self.render_string("modules/donation-box.html")
+	def render(self, reason_for_transfer=None):
+		if reason_for_transfer:
+			reason_for_transfer = "IPFire.org - %s" % reason_for_transfer
+
+		return self.render_string("modules/donation-box.html",
+			reason_for_transfer=reason_for_transfer)

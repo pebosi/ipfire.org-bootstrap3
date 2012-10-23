@@ -7,53 +7,32 @@
 		<h2>{{ wish.title }}</h2>
 	</div>
 
-	<div class="row">
-		<div class="span9">
-			{% if lang == "de" %}
-				<p>
-					Bevor du mit deiner Spende fortfährst, lies bitte die
-					<a href="/terms">{{ _("Terms & Conditions") }}</a>.
-					Solltest du mit diesen nicht einverstanden sein,
-					fahre nicht weiter fort.
-				</p>
-			{% else %}
-				<p>
-					Before you make your donation, make sure that you
-					have read the <a href="/terms">{{ _("Terms & Conditions") }}</a>.
-					In case you don't agree to them, please stop right here.
-				</p>
-			{% end %}
-
-			{% if lang == "de" %}
-				<p>
-					Um fortzufahren, wähle eine der Bezahlmethoden aus und
-					<strong>
-						stelle sicher, dass du den nebenstehenden Verwendungszweck mit angibst.
-					</strong>
-				</p>
-			{% else %}
-				<p>
-					To go on, please pick one of the methods below to make your donation.
-					<strong>
-						Make sure that you state the reason you are donating in the comment box with your donation.
-					</strong>
-				</p>
-			{% end %}
-		</div>
-
-		<div class="span3">
-			<div class="well well-small ac">
-				<h4>{{ _("Reason for transfer") }}</h4>
-				{{ wish.tag }}
-			</div>
-		</div>
-	</div>
+	{% if lang == "de" %}
+		<p>
+			Bevor du mit deiner Spende fortfährst, lies bitte die
+			<a href="/terms">{{ _("Terms & Conditions") }}</a>.
+			Solltest du mit diesen nicht einverstanden sein,
+			fahre nicht weiter fort.
+		</p>
+		<p>
+			Wähle dann deine präferierte Bezahlmethode aus, um deine Spende zu tätigen.
+		</p>
+	{% else %}
+		<p>
+			Before you make your donation, make sure that you
+			have read the <a href="/terms">{{ _("Terms & Conditions") }}</a>.
+			In case you don't agree to them, please stop right here.
+		</p>
+		<p>
+			To go on, please pick one of the methods below to make your donation.
+		</p>
+	{% end %}
 
 	<hr>
 
 	<div class="row">
-		<div class="span8 offset2">
-			{{ modules.DonationBox() }}
+		<div class="span10 offset1">
+			{{ modules.DonationBox(wish.tag) }}
 		</div>
 	</div>
 {% end block %}

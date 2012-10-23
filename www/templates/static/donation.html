@@ -7,61 +7,58 @@
 		<h1>{{ _("Donation") }}</h1>
 	</div>
 
-	<div class="row">
-		<div class="span12">
-			{% if lang == "de" %}
-				<p>
-					IPFire ist ein Open Source-Projekt.
-					Nutzer und die Gemeinschaft sind das wertvollste und wichtigste
-					Gut, weil sich das Projekt auf sie stützt.
-					Die Entwicklung und die Fortführung des Projekts sind allein
-					einer Gruppe von Freiwilligen zu verdanken.
-					Sie haben ein Produkt entwickelt, das tagtäglich von
-					Hunderttausenden genutzt wird.
-				</p>
-				<p>
-					Um die Qualität von IPFire noch weiter verbessern zu können,
-					sowie Aktivitäten des Projekts auszuweiten und die Verbreitung
-					zu steigern, sind finanzielle Mittel unabdingbar.
-					Jeder Sponsor kann seinen Teil dazu beitragen, diese Ziele
-					zu erreichen, das Projekt finanziell gesund zu erhalten und
-					somit langfristig abzusichern.
-				</p>
-				<p>
-					Deshalb ermutigen wir jeden, der IPFire einsetzt einen Beitrag zu leisten.
-					Danke dafür.
-				</p>
-			{% else %}
-				<p>
-					IPFire is an Open Source project.
-					The users and the community are the most valuable and most important factor,
-					because those people are the foundation of the project.
-					Development and keeping the project healthy is carried out by a group of volunteers,
-					that in time have built a very successful product,
-					which hundreds of thousands of people use every day.
-					We appreciate every bit of <a href="/getinvolved">feedback, every bug report, patch and contribution</a>.
-				</p>
-				<p>
-					We would like to extend our activities and improve the quality of IPFire even more.
-					For that, we will need financial resources to support the maintenance,
-					improvement and promotion of the IPFire project.
-					Sponsorship is a good way to ensure the longevity and overall health of the project.
-				</p>
-					So we encourage anyone who downloads and uses IPFire to donate.
-					It is very much appreciated.
-				</p>
-			{% end %}
-		</div>
-	</div>
+	{% if lang == "de" %}
+		<p>
+			IPFire ist ein Open Source-Projekt.
+			Nutzer und die Gemeinschaft sind das wertvollste und wichtigste
+			Gut, weil sich das Projekt auf sie stützt.
+			Die Entwicklung und die Fortführung des Projekts sind allein
+			einer Gruppe von Freiwilligen zu verdanken.
+			Sie haben ein Produkt entwickelt, das tagtäglich von
+			Hunderttausenden genutzt wird.
+		</p>
+		<p>
+			Um die Qualität von IPFire noch weiter verbessern zu können,
+			sowie Aktivitäten des Projekts auszuweiten und die Verbreitung
+			zu steigern, sind finanzielle Mittel unabdingbar.
+			Jeder Sponsor kann seinen Teil dazu beitragen, diese Ziele
+			zu erreichen, das Projekt finanziell gesund zu erhalten und
+			somit langfristig abzusichern.
+		</p>
+		<p>
+			Deshalb ermutigen wir jeden, der IPFire einsetzt einen Beitrag zu leisten.
+			Danke dafür.
+		</p>
+	{% else %}
+		<p>
+			IPFire is an Open Source project.
+			The users and the community are the most valuable and most important factor,
+			because those people are the foundation of the project.
+			Development and keeping the project healthy is carried out by a group of volunteers,
+			that in time have built a very successful product,
+			which hundreds of thousands of people use every day.
+			We appreciate every bit of <a href="/getinvolved">feedback, every bug report, patch and contribution</a>.
+		</p>
+		<p>
+			We would like to extend our activities and improve the quality of IPFire even more.
+			For that, we will need financial resources to support the maintenance,
+			improvement and promotion of the IPFire project.
+			Sponsorship is a good way to ensure the longevity and overall health of the project.
+		</p>
+		<p>
+			So we encourage anyone who downloads and uses IPFire to donate.
+			It is very much appreciated.
+		</p>
+	{% end %}
 
 	<hr>
 
 	<div class="row">
-		<div class="span8 offset2">
+		<div class="span10 offset1">
 			{{ modules.DonationBox() }}
 
-			<div class="alert alert-success">
-				<h5>{{ _("Did you know...?") }}</h5>
+			<div class="muted ac">
+				<strong>{{ _("Did you know...?") }}</strong>
 
 				{% if lang == "de" %}
 					Du kannst die Implementierung deiner bevorzugten Funktion mit Hilfe einer Spende auf der

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-21 19:41+0200\n"
+"POT-Creation-Date: 2012-10-23 11:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,15 +79,11 @@ msgstr "Startseite"
 msgid "Crowd funding for the IPFire project"
 msgstr "Crowdfunding für das IPFire-Projekt"
 
-#: templates/wishlist/donate.html:15 templates/wishlist/donate.html:22
+#: templates/wishlist/donate.html:15 templates/wishlist/donate.html:25
 #: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
 #: templates/base.html:74
 msgid "Terms & Conditions"
 msgstr "Allgemeine Bedingungen"
-
-#: templates/wishlist/donate.html:42
-msgid "Reason for transfer"
-msgstr "Verwendungszweck"
 
 #: templates/downloads-index.html:3
 msgid "Download Center"
@@ -933,9 +929,42 @@ msgstr "Error"
 msgid "Donate with PayPal or Credit Card"
 msgstr "Mit PayPal oder Kreditkarte spenden"
 
-#: templates/modules/donation-box.html:47
+#: templates/modules/donation-box.html:53
 msgid "Bank Transfer"
 msgstr "Banküberweisung"
+
+#: templates/modules/donation-box.html:71
+msgid "euro bank transfer"
+msgstr "Europa-Banküberweisung"
+
+#: templates/modules/donation-box.html:73
+msgid "IBAN"
+msgstr "IBAN"
+
+#: templates/modules/donation-box.html:74
+msgid "BIC-/SWIFT-Code"
+msgstr "BIC-/SWIFT-Code"
+
+#: templates/modules/donation-box.html:77
+#: templates/modules/donation-box.html:91
+msgid "Reason for transfer"
+msgstr "Verwendungszweck"
+
+#: templates/modules/donation-box.html:84
+msgid "bank transfer within Germany"
+msgstr "Überweisung innerhalb Deutschlands"
+
+#: templates/modules/donation-box.html:86
+msgid "Bank account owner"
+msgstr "Kontoinhaber"
+
+#: templates/modules/donation-box.html:87
+msgid "Bank account number"
+msgstr "Kontonummer"
+
+#: templates/modules/donation-box.html:88
+msgid "Bank code"
+msgstr "BLZ"
 
 #: templates/modules/release-item.html:2
 #: templates/modules/sidebar-release.html:4 templates/index.html:24
