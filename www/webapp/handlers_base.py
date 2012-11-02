@@ -120,6 +120,10 @@ class BaseHandler(tornado.web.RequestHandler):
 		return ret
 
 	@property
+	def advertisements(self):
+		return backend.Advertisements()
+
+	@property
 	def accounts(self):
 		return backend.Accounts()
 

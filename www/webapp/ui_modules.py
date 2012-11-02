@@ -22,6 +22,10 @@ class UIModule(tornado.web.UIModule):
 		return self.handler.accounts
 
 	@property
+	def advertisements(self):
+		return self.handler.advertisements
+
+	@property
 	def banners(self):
 		return self.handler.banners
 
@@ -40,6 +44,20 @@ class UIModule(tornado.web.UIModule):
 	@property
 	def news(self):
 		return self.handler.news
+
+
+class AdvertisementModule(UIModule):
+	def render(self, where):
+		assert where in ("download-splash",), where
+
+		ad = self.advertisements.get(where)
+		if not ad:
+			return ""
+
+		# Mark that advert has been shown.
+		ad.update_impressions()
+
+		return self.render_string("modules/ads/%s.html" % where, ad=ad)
 
 
 class MenuModule(UIModule):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-23 11:34+0200\n"
+"POT-Creation-Date: 2012-11-02 13:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -429,19 +429,19 @@ msgstr ""
 msgid "Thanks for downloading IPFire!"
 msgstr "Vielen Dank, für das Herunterladen von IPFire! "
 
-#: templates/download-splash.html:59
+#: templates/download-splash.html:61
 msgid "Next steps"
 msgstr "Nächste Schritte"
 
-#: templates/download-splash.html:64
+#: templates/download-splash.html:66
 msgid "Install IPFire"
 msgstr "IPFire installieren"
 
-#: templates/download-splash.html:80
+#: templates/download-splash.html:82
 msgid "Access documentation"
 msgstr "Dokumentation lesen"
 
-#: templates/download-splash.html:98
+#: templates/download-splash.html:100
 msgid "Join the community"
 msgstr "Der Community beitreten"
 
@@ -1026,6 +1026,15 @@ msgstr "Springe zu"
 msgid "Most recent"
 msgstr "Aktuellste"
 
+#: templates/modules/ads/download-splash.html:4
+msgid "Advertisement"
+msgstr "Werbung"
+
+#: templates/modules/ads/download-splash.html:5
+#, python-format
+msgid "This download is sponsored by %s!"
+msgstr "Dieser Download wurde gesponsort von %s!"
+
 #: templates/modules/menu.html:4
 msgid "Download"
 msgstr "Download"
@@ -1398,11 +1407,11 @@ msgstr "Vor mehr als einem Tag"
 msgid "Profile not found"
 msgstr "Profil nicht gefunden"
 
-#: webapp/handlers_news.py:43 webapp/ui_modules.py:58
+#: webapp/handlers_news.py:43 webapp/ui_modules.py:76
 msgid "Unknown author"
 msgstr "Unbekannter Autor"
 
-#: webapp/ui_modules.py:221
+#: webapp/ui_modules.py:239
 #, python-format
 msgid "%s to %s"
 msgstr "%s nach %s"

@@ -28,6 +28,7 @@ class Application(tornado.web.Application):
 			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),
 			ui_modules = {
+				"Advertisement"  : AdvertisementModule,
 				"DonationBox"    : DonationBoxModule,
 				"DownloadButton" : DownloadButtonModule,
 				"Menu"           : MenuModule,
