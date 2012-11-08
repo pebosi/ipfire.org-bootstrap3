@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-02 13:12+0100\n"
+"POT-Creation-Date: 2012-11-08 21:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -641,7 +641,7 @@ msgid "About IPFire"
 msgstr "Über IPFire"
 
 #: templates/base-feature.html:9 templates/static/features/security.html:3
-#: templates/static/features/security.html:9 templates/index.html:118
+#: templates/static/features/security.html:9 templates/index.html:122
 msgid "Security"
 msgstr "Sicherheit"
 
@@ -925,44 +925,44 @@ msgstr "Seeders"
 msgid "Error"
 msgstr "Error"
 
-#: templates/modules/donation-box.html:5
+#: templates/modules/donation-box.html:4
 msgid "Donate with PayPal or Credit Card"
 msgstr "Mit PayPal oder Kreditkarte spenden"
 
-#: templates/modules/donation-box.html:53
-msgid "Bank Transfer"
-msgstr "Banküberweisung"
+#: templates/modules/donation-box.html:7
+msgid "Donate by Bank Transfer"
+msgstr "Per Banküberweisung spenden"
 
-#: templates/modules/donation-box.html:71
+#: templates/modules/donation-box.html:74
 msgid "euro bank transfer"
 msgstr "Europa-Banküberweisung"
 
-#: templates/modules/donation-box.html:73
+#: templates/modules/donation-box.html:76
 msgid "IBAN"
 msgstr "IBAN"
 
-#: templates/modules/donation-box.html:74
+#: templates/modules/donation-box.html:77
 msgid "BIC-/SWIFT-Code"
 msgstr "BIC-/SWIFT-Code"
 
-#: templates/modules/donation-box.html:77
-#: templates/modules/donation-box.html:91
+#: templates/modules/donation-box.html:80
+#: templates/modules/donation-box.html:94
 msgid "Reason for transfer"
 msgstr "Verwendungszweck"
 
-#: templates/modules/donation-box.html:84
+#: templates/modules/donation-box.html:87
 msgid "bank transfer within Germany"
 msgstr "Überweisung innerhalb Deutschlands"
 
-#: templates/modules/donation-box.html:86
+#: templates/modules/donation-box.html:89
 msgid "Bank account owner"
 msgstr "Kontoinhaber"
 
-#: templates/modules/donation-box.html:87
+#: templates/modules/donation-box.html:90
 msgid "Bank account number"
 msgstr "Kontonummer"
 
-#: templates/modules/donation-box.html:88
+#: templates/modules/donation-box.html:91
 msgid "Bank code"
 msgstr "BLZ"
 
@@ -1302,15 +1302,15 @@ msgstr "Impressum"
 msgid "Donation"
 msgstr "Spende"
 
-#: templates/static/donation.html:61
+#: templates/static/donation.html:63
 msgid "Did you know...?"
 msgstr "Schon gewusst?"
 
-#: templates/static/donation.html:77
+#: templates/static/donation.html:79
 msgid "How do we use financial support?"
 msgstr "Wofür werden Spenden eingesetzt?"
 
-#: templates/static/donation.html:129
+#: templates/static/donation.html:131
 msgid "Research & Development"
 msgstr "Forschung & Entwicklung"
 
@@ -1326,15 +1326,19 @@ msgstr "Neu!"
 msgid "What's new?"
 msgstr "Neuigkeiten"
 
-#: templates/index.html:135
+#: templates/index.html:116
+msgid "Support this project with your donation!"
+msgstr "Unterstütze dieses Projekt mit deiner Spende!"
+
+#: templates/index.html:139
 msgid "Flexibility"
 msgstr "Flexibilität"
 
-#: templates/index.html:152
+#: templates/index.html:156
 msgid "Open Source"
 msgstr "Open Source"
 
-#: templates/index.html:169
+#: templates/index.html:173
 msgid "Read more"
 msgstr "Mehr erfahren"
 

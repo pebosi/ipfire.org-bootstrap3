@@ -16,7 +16,7 @@ class Wishlist(object):
 		return Databases().webapp
 
 	def get(self, slug):
-		wish = self.db.get("SELECT id FROM wishlist WHERE slug = %s", slug)
+		wish = self.db.get("SELECT * FROM wishlist WHERE slug = %s", slug)
 
 		if wish:
 			return Wish(self, wish.id)
@@ -25,27 +25,27 @@ class Wishlist(object):
 		wishes = []
 
 		for row in self.db.query(query):
-			wish = Wish(self, row.id)
+			wish = Wish(self, row.id, row)
 			wishes.append(wish)
 
 		return wishes
 
 	def get_all_running(self):
-		return self.get_all_by_query("SELECT id FROM wishlist \
+		return self.get_all_by_query("SELECT * FROM wishlist \
 			WHERE DATE(NOW()) >= date_start AND DATE(NOW()) <= date_end AND published = 'Y'\
 			ORDER BY prio ASC, date_end ASC")
 
 	def get_all_finished(self):
-		return self.get_all_by_query("SELECT id FROM wishlist \
+		return self.get_all_by_query("SELECT * FROM wishlist \
 			WHERE DATE(NOW()) > date_end AND published = 'Y' ORDER BY date_end ASC")
 
 
 class Wish(object):
-	def __init__(self, wishlist, id):
+	def __init__(self, wishlist, id, data=None):
 		self.wishlist = wishlist
 		self.id = id
 
-		self.__data = None
+		self.__data = data
 
 	def __cmp__(self, other):
 		return cmp(self.date_end, other.date_end)
@@ -89,6 +89,13 @@ class Wish(object):
 	@property
 	def percentage(self):
 		return (self.donated / self.goal) * 100
+
+	@property
+	def percentage_bar(self):
+		if self.percentage > 100:
+			return 100
+
+		return self.percentage
 
 	@property
 	def running(self):

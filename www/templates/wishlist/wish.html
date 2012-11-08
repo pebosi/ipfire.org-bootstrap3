@@ -9,18 +9,17 @@
 
 	{{ modules.Wishlist([wish,], short=True) }}
 
-	<div class="pull-right">
-		<ul class="unstyled">
-			<li>
-				<i class="icon-calendar"></i>
-				{{ _("Launched: %s") % wish.date_start }}
-			</li>
-			<li>
-				<i class="icon-time"></i>
-				{{ _("Funding ends: %s") % wish.date_end }}
-			</li>
-		</ul>
-	</div>
-
 	{{ wish.description }}
+
+	<hr>
+
+	<p class="ac">
+		<i class="icon-calendar"></i>
+		{{ _("Launched: %s") % wish.date_start }}
+
+		&bull;
+
+		<i class="icon-time"></i>
+		{{ _("Funding ends: %s") % wish.date_end }}
+	</p>
 {% end block %}

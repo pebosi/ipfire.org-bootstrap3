@@ -1,98 +1,100 @@
-<div class="accordion" id="accordionDonate">
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionDonate" href="#collapseOne">
-				{{ _("Donate with PayPal or Credit Card") }}
-			</a>
+<div class="tabbable">
+	<ul class="nav nav-pills">
+		<li class="active">
+			<a href="#paypal" data-toggle="tab">{{ _("Donate with PayPal or Credit Card") }}</a>
+		</li>
+		<li>
+			<a href="#banktransfer" data-toggle="tab">{{ _("Donate by Bank Transfer") }}</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="paypal">
+			{% if lang == "de" %}
+				<p>
+					PayPal ist unser bevorzugter und gleichzeitig einfachster Weg zu spenden.
+					Dazu einfach auf den Button klicken und den gewünschten Betrag eingeben.
+				</p>
+
+				<div class="ac">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="Z44GQ52ZHKVFW">
+						{% if reason_for_transfer %}
+							<input type="hidden" name="item_name" value="{{ reason_for_transfer }}">
+						{% end %}
+						<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+						<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>
+
+				<p>
+					Wenn du nicht per PayPal spenden möchtest, kannst du das auch per
+					Banküberweisung tun. Dazu einfach oben auf den Button klicken.
+				</p>
+			{% else %}
+				<p>
+					PayPal is our preferred way to make donations.
+					Simply click on the donate button and type in the
+					amount of money you would like to donate.
+				</p>
+
+				<div class="ac">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="HHBTSN9QRWPAY">
+						{% if reason_for_transfer %}
+							<input type="hidden" name="item_name" value="{{ reason_for_transfer }}">
+						{% end %}
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>
+
+				<p>
+					If you are not keen on using PayPal, you can also donate by bank transfer.
+					Click on the button above to do so.
+				</p>
+			{% end %}
 		</div>
-		<div id="collapseOne" class="accordion-body collapse in">
-			<div class="accordion-inner">
-				{% if lang == "de" %}
-					<p>
-						PayPal ist unser bevorzugter und gleichzeitig einfachster Weg zu spenden.
-						Dazu einfach auf den Button klicken und den gewünschten Betrag eingeben.
-					</p>
 
-					<div class="ac">
-						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="Z44GQ52ZHKVFW">
-							{% if reason_for_transfer %}
-								<input type="hidden" name="item_name" value="{{ reason_for_transfer }}">
-							{% end %}
-							<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
-							<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-						</form>
-					</div>
-				{% else %}
-					<p>
-						PayPal is our preferred way to make donations.
-						Simply click on the donate button and type in the
-						amount of money you would like to donate.
-					</p>
+		<div class="tab-pane" id="banktransfer">
+			{% if lang == "de" %}
+				<p>
+					Ebenso ist eine Spende auf unser Bankkonto möglich.
+				</p>
+			{% else %}
+				<p>
+					It is also possible to transfer donations into
+					our bank account.
+				</p>
+			{% end %}
 
-					<div class="ac">
-						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="HHBTSN9QRWPAY">
-							{% if reason_for_transfer %}
-								<input type="hidden" name="item_name" value="{{ reason_for_transfer }}">
-							{% end %}
-							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-							<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-						</form>
-					</div>
-				{% end %}
-			</div>
-		</div>
-	</div>
-
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionDonate" href="#collapseTwo">
-				{{ _("Bank Transfer") }}
-			</a>
-		</div>
-		<div id="collapseTwo" class="accordion-body collapse">
-			<div class="accordion-inner">
-				{% if lang == "de" %}
-					<p>
-						Ebenso ist eine Spende auf unser Bankkonto möglich.
-					</p>
-				{% else %}
-					<p>
-						It is also possible to transfer donations into
-						our bank account.
-					</p>
-				{% end %}
-
-				<div class="row-fluid">
-					<div class="span6">
-						<h4>{{ _("euro bank transfer") }}</h4>
-						<blockquote>
-							{{ _("IBAN") }}: DE86 4265 0150 1020 0768 89<br>
-							{{ _("BIC-/SWIFT-Code") }}: WELADED1REK
-							{% if reason_for_transfer %}
-								<br>
-								{{ _("Reason for transfer") }}:
-								<strong>{{ reason_for_transfer }}</strong>
-							{% end %}
-							</blockquote>
-					</div>
-
-					<div class="span6">
-						<h4>{{ _("bank transfer within Germany") }}</h4>
-						<blockquote>
-							{{ _("Bank account owner") }}: Michael Tremer<br>
-							{{ _("Bank account number") }}: 1020076889<br>
-							{{ _("Bank code") }}: 426 501 50
-							{% if reason_for_transfer %}
-								<br>
-								{{ _("Reason for transfer") }}:
-								<strong>{{ reason_for_transfer }}</strong>
-							{% end %}
+			<div class="row-fluid">
+				<div class="span6">
+					<h4>{{ _("euro bank transfer") }}</h4>
+					<blockquote>
+						{{ _("IBAN") }}: DE86 4265 0150 1020 0768 89<br>
+						{{ _("BIC-/SWIFT-Code") }}: WELADED1REK
+						{% if reason_for_transfer %}
+							<br>
+							{{ _("Reason for transfer") }}:
+							<strong>{{ reason_for_transfer }}</strong>
+						{% end %}
 						</blockquote>
-					</div>
+				</div>
+
+				<div class="span6">
+					<h4>{{ _("bank transfer within Germany") }}</h4>
+					<blockquote>
+						{{ _("Bank account owner") }}: Michael Tremer<br>
+						{{ _("Bank account number") }}: 1020076889<br>
+						{{ _("Bank code") }}: 426 501 50
+						{% if reason_for_transfer %}
+							<br>
+							{{ _("Reason for transfer") }}:
+							<strong>{{ reason_for_transfer }}</strong>
+						{% end %}
+					</blockquote>
 				</div>
 			</div>
 		</div>
