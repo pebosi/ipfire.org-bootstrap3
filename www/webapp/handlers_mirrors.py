@@ -24,13 +24,18 @@ class MirrorIndexHandler(BaseHandler):
 
 class MirrorItemHandler(BaseHandler):
 	def get(self, id):
-		_ = self.locale.translate
-
 		mirror = self.mirrors.get(id)
 		if not mirror:
 			raise tornado.web.HTTPError(404)
 
-		self.render("mirrors-item.html", item=mirror)
+		ip_addr = self.get_argument("addr", self.request.remote_ip)
+		client_location = self.geoip.get_all(ip_addr)
+
+		client_distance = mirror.distance_to(client_location, ignore_preference=True)
+		client_distance *= 111.32 # to km
+
+		self.render("mirrors-item.html", item=mirror,
+			client_distance=client_distance)
 
 
 class MirrorHandler(BaseHandler):

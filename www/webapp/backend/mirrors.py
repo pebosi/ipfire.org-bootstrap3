@@ -148,9 +148,13 @@ class Mirrors(object):
 		mirrors = []
 		all_mirrors = self.list()
 
+		location = GeoIP().get_all(addr)
+		if not location:
+			return None
+
 		while all_mirrors and len(mirrors) <= 2 and distance <= 270:
 			for mirror in all_mirrors:
-				if mirror.distance_to(addr) <= distance:
+				if mirror.distance_to(location) <= distance:
 					mirrors.append(mirror)
 					all_mirrors.remove(mirror)
 
@@ -241,15 +245,17 @@ class MirrorSet(object):
 
 		mirrors = []
 
-		while len(mirrors) <= 2 and distance <= 270:
-			for mirror in self._mirrors:
-				if mirror in mirrors:
-					continue
+		location = GeoIP().get_all(addr)
+		if location:
+			while len(mirrors) <= 2 and distance <= 270:
+				for mirror in self._mirrors:
+					if mirror in mirrors:
+						continue
 
-				if mirror.distance_to(addr) <= distance:
-					mirrors.append(mirror)
+					if mirror.distance_to(location) <= distance:
+						mirrors.append(mirror)
 
-			distance *= 1.2
+				distance *= 1.2
 
 		return MirrorSet(mirrors)
 
@@ -268,6 +274,9 @@ class Mirror(object):
 		self.id = id
 
 		self.reload()
+
+		self.__location = None
+		self.__country_name = None
 
 	def __repr__(self):
 		return "<%s %s>" % (self.__class__.__name__, self.url)
@@ -314,7 +323,7 @@ class Mirror(object):
 
 	@property
 	def location(self):
-		if not hasattr(self, "__location"):
+		if self.__location is None:
 			self.__location = GeoIP().get_all(self.address)
 
 		return self.__location
@@ -342,11 +351,14 @@ class Mirror(object):
 
 	@property
 	def country_code(self):
-		return GeoIP().get_country(self.address).lower() or "unknown"
+		return self.location.country_code.lower() or "unknown"
 
 	@property
 	def country_name(self):
-		return GeoIP().get_country_name(self.country_code)
+		if self.__country_name is None:
+			self.__country_name = GeoIP().get_country_name(self.country_code)
+
+		return self.__country_name
 
 	@property
 	def city(self):
@@ -484,12 +496,11 @@ class Mirror(object):
 	def prefer_for_countries_names(self):
 		return sorted([GeoIP().get_country_name(c) for c in self.prefer_for_countries])
 
-	def distance_to(self, addr):
-		location = GeoIP().get_all(addr)
+	def distance_to(self, location, ignore_preference=False):
 		if not location:
 			return 0
 
-		if location.country_code.lower() in self.prefer_for_countries:
+		if not ignore_preference and location.country_code.lower() in self.prefer_for_countries:
 			return 0
 
 		distance_vector = (

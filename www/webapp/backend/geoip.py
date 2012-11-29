@@ -9,54 +9,48 @@ from misc import Singleton
 class GeoIP(object):
 	__metaclass__ = Singleton
 
-	def __init__(self):
-		self.__country_codes = self.db.query("SELECT code, name FROM iso3166_countries")
-
 	@property
 	def db(self):
 		return Databases().geoip
 
-	@property
-	def memcached(self):
-		return Memcached()
-
-	def __encode_ip(self, addr):
+	def _encode_ip(self, addr):
 		# We get a tuple if there were proxy headers.
 		addr = addr.split(", ")
 		if addr:
 			addr = addr[-1]
 
-		# ip is calculated as described in http://ipinfodb.com/ip_database.php
+		# ip is calculated as described in http://dev.maxmind.com/geoip/csv
 		a1, a2, a3, a4 = addr.split(".")
 
-		return int(((int(a1) * 256 + int(a2)) * 256 + int(a3)) * 256 + int(a4) + 100)
+		try:
+			a1 = int(a1)
+			a2 = int(a2)
+			a3 = int(a3)
+			a4 = int(a4)
+		except ValueError:
+			return 0
+
+		return (16777216 * a1) + (65536 * a2) + (256 * a3) + a4
 
 	def get_country(self, addr):
-		addr = self.__encode_ip(addr)
+		addr = self._encode_ip(addr)
 
-		mem_id = "geoip-country-%s" % addr
-		ret = self.memcached.get(mem_id)
+		ret = self.db.get("SELECT locations.country_code AS country_code FROM addresses \
+			JOIN locations ON locations.id = addresses.location \
+			WHERE %s BETWEEN start_ip_num AND end_ip_num LIMIT 1", addr)
 
-		if not ret:
-			ret = self.db.get("SELECT * FROM ip_group_country WHERE ip_start <= %s \
-				ORDER BY ip_start DESC LIMIT 1;", addr).country_code.lower()
-			self.memcached.set(mem_id, ret, 3600)
-
-		return ret
+		if ret:
+			return ret.country_code
 
 	def get_all(self, addr):
-		addr = self.__encode_ip(addr)
+		addr = self._encode_ip(addr)
 
-		mem_id = "geoip-all-%s" % addr
-		ret = self.memcached.get(mem_id)
+		ret = self.db.get("SELECT locations.* FROM addresses \
+			JOIN locations ON locations.id = addresses.location \
+			WHERE %s BETWEEN start_ip_num AND end_ip_num LIMIT 1", addr)
 
 		if not ret:
-			# XXX should be done with a join
-			location = self.db.get("SELECT location FROM ip_group_city WHERE ip_start <= %s \
-				ORDER BY ip_start DESC LIMIT 1;", addr).location
-
-			ret = self.db.get("SELECT * FROM locations WHERE id = %s", int(location))
-			self.memcached.set(mem_id, ret, 3600)
+			return
 
 		# If location was not determinable
 		if ret.latitude == 0 and ret.longitude == 0:
@@ -65,13 +59,24 @@ class GeoIP(object):
 		return ret
 
 	def get_country_name(self, code):
-		name = "Unknown"
+		name = "Unkown"
 
-		code = code.upper()
-		for country in self.__country_codes:
-			if country.code == code:
-				name = country.name
-				break
+		codes = {
+			"A1" : "Anonymous Proxy",
+			"A2" : "Satellite Provider",
+			"EU" : "Europe",
+			"AP" : "Asia/Pacific Region",
+		}
+
+		# Return description of some exceptional codes.
+		try:
+			return codes[code]
+		except KeyError:
+			pass
+
+		ret = self.db.get("SELECT name FROM iso3166_countries WHERE code = %s LIMIT 1", code)
+		if ret:
+			name = ret.name
 
 		# Fix some weird strings
 		name = re.sub(r"(.*) (.* Republic of)", r"\2 \1", name)

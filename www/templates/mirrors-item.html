@@ -28,8 +28,14 @@
 		</tr>
 		{% if item.prefer_for_countries %}
 			<tr>
-				<td>{{ _("Preferred for") }}:</td>
+				<td>{{ _("Preferred for") }}</td>
 				<td>{{ locale.list(item.prefer_for_countries_names) }}</td>
+			</tr>
+		{% end %}
+		{% if client_distance %}
+			<tr>
+				<td>{{ _("Your distance to this mirror") }}</td>
+				<td>{{ "%.1f km" % client_distance }}</td>
 			</tr>
 		{% end %}
 	</table>
@@ -43,9 +49,20 @@
 	<p>
 		{{ _("The mirror <em>%s</em> is located in %s.") % (item.hostname, item.location_str) }}
 	</p>
-	<p>
-		<img class="map"
-			src="http://maps.google.com/maps/api/staticmap?center={{ item.coordiante_str }}&size=640x280&zoom=6&markers=color:blue|label:.|{{ item.coordiante_str }}&sensor=false"
-			alt="{{ _("Location of the server") }}" />
-	</p>
+
+	{% if item.longitude and item.latitude %}
+		<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+			src="http://www.openstreetmap.org/export/embed.html?bbox={{ item.longitude - 4 }},{{ item.latitude - 4 }},{{ item.longitude + 4 }},{{ item.latitude + 4 }}&amp;layer=mapquest&amp;marker={{ item.latitude }},{{ item.longitude }}" style="border: 1px solid black">
+		</iframe>
+		<p>
+			<a href="http://www.openstreetmap.org/?lat={{ item.latitude }}&amp;lon={{ item.longitude }}&amp;zoom=8&amp;layers=M&amp;mlat={{ item.latitude }}&amp;mlon={{ item.longitude }}" target="_blank">{{ _("View larger map") }}</a>
+			-
+			&copy; <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA
+		</p>
+		<p class="muted ac">
+			{{ _("The location of the mirror server is estimated by the IP address.") }}
+		</p>
+	{% else %}
+		{{ _("The location of the mirror server could not be estimated.") }}
+	{% end %}
 {% end block %}

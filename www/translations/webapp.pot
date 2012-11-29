@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-08 21:41+0100\n"
+"POT-Creation-Date: 2012-11-29 18:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,12 @@ msgstr ""
 msgid "Wish"
 msgstr ""
 
-#: templates/wishlist/wish.html:16
+#: templates/wishlist/wish.html:18
 #, python-format
 msgid "Launched: %s"
 msgstr ""
 
-#: templates/wishlist/wish.html:20
+#: templates/wishlist/wish.html:23
 #, python-format
 msgid "Funding ends: %s"
 msgstr ""
@@ -203,16 +203,32 @@ msgid "Preferred for"
 msgstr ""
 
 #: templates/mirrors-item.html:37
+msgid "Your distance to this mirror"
+msgstr ""
+
+#: templates/mirrors-item.html:43
 msgid "Go to mirror"
 msgstr ""
 
-#: templates/mirrors-item.html:42
+#: templates/mirrors-item.html:48
 msgid "Mirror location"
 msgstr ""
 
-#: templates/mirrors-item.html:44
+#: templates/mirrors-item.html:50
 #, python-format
 msgid "The mirror <em>%s</em> is located in %s."
+msgstr ""
+
+#: templates/mirrors-item.html:58
+msgid "View larger map"
+msgstr ""
+
+#: templates/mirrors-item.html:63
+msgid "The location of the mirror server is estimated by the IP address."
+msgstr ""
+
+#: templates/mirrors-item.html:66
+msgid "The location of the mirror server could not be estimated."
 msgstr ""
 
 #: templates/admin-downloads-mirrors.html:5 templates/admin-downloads.html:5
@@ -1411,7 +1427,7 @@ msgstr ""
 msgid "%s to %s"
 msgstr ""
 
-#: webapp/backend/wishlist.py:128
+#: webapp/backend/wishlist.py:135
 msgid "Checkout this crowdfunding wish from #ipfire:"
 msgstr ""
 
