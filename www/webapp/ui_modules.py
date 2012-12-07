@@ -313,12 +313,10 @@ class WishlistModule(UIModule):
 
 class WishModule(UIModule):
 	def render(self, wish, short=False):
-		progress_bar = "progress-success"
+		progress_bar = "progress-warning"
 
-		if wish.percentage >= 90:
-			progress_bar = "progress-danger"
-		elif wish.percentage >= 50:
-			progress_bar = "progress-warning"
+		if wish.percentage >= 100:
+			progress_bar = "progress-success"
 
 		return self.render_string("wishlist/modules/wish.html",
 			wish=wish, short=short, progress_bar=progress_bar)
