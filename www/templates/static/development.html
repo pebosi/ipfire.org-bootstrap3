@@ -4,8 +4,9 @@
 
 {% block body %}
 	<img src="{{ static_url("images/icons/development.png") }}" class="pull-right" alt="{{ _("Development") }}">
+
 	<div class="page-header">
-		<h1>{{ _("Development") }}</h1>
+		<h2>{{ _("Development") }}</h2>
 	</div>
 
 	{% if lang == "de" %}	
@@ -25,7 +26,9 @@
 		</p>
 	{% end %}
 
-	<h2>{{ _("Development tools") }}</h2>
+	<hr>
+
+	<h3>{{ _("Development tools") }}</h3>
 	{% if lang == "de" %}
 		<p>
 			Dies sind die Werkzeuge, welche die IPFire Entwickler nutzen
@@ -40,9 +43,9 @@
 
 	<div class="row">
 		<div class="span6">
-			<h3>
+			<h4>
 				<a href="http://bugtracker.ipfire.org/">{{ _("Bugtracker") }}</a>
-			</h3>
+			</h4>
 			{% if lang == "de" %}
 				<p>
 					Der Bugtracker ist ein Tool, welches helfen soll bei
@@ -61,9 +64,9 @@
 		</div>
 
 		<div class="span6">
-			<h3>
+			<h4>
 				<a href="http://lists.ipfire.org/mailman/listinfo/development">{{ _("Development Mailing List") }}</a>
-			</h3>
+			</h4>
 			{% if lang == "de" %}
 				<p>
 					Diskussionen rund um den Entwicklungsprozess werden
@@ -78,9 +81,10 @@
 			{% end %}
 		</div>
 	</div>
-	<br>
 
-	<h2>{{ _("Source code") }}</h2>
+	<hr>
+
+	<h3>{{ _("Source code") }}</h3>
 	<div class="row">
 		<div class="span6">
 			{% if lang == "de" %}
@@ -103,7 +107,7 @@
 		</div>
 
 		<div class="span6">
-			<h3>{{ _("Important repositories") }}</h3>
+			<h4>{{ _("Important repositories") }}</h4>
 			<table class="table">
 				<tbody>
 					<tr>
@@ -139,43 +143,45 @@
 		</div>
 	</div>
 
+	<hr>
+
 	<div class="row">
 		<div class="span4">
-				<h3>{{ _("How to build IPFire?") }}</h3>
-				{% if lang == "de" %}
-					<p>
-						IPFire zu kompilieren ist ganz einfach, aber dauert seine
-						Zeit.
-					</p>
-					<p>
-						Einen Einblick dazu gibt es in der
-						<a href="http://wiki.ipfire.org/{{ lang }}/development/build">Bauanleitung</a>
-						im Wiki, welche Schritt für Schritt vorgeht.
-					</p>
-					<p>
-						Addonentwicklung ist erwünscht. Die Vorgehensweise
-						dafür findet sich in der entsprechenden
-						<a href="http://wiki.ipfire.org/{{ lang }}/development/addon#building_addon_-_howto">Anleitung</a>.
-					</p>
-				{% else %}
-					<p>
-						Building IPFire is actually very easy, but it does take some time.
-					</p>
-					<p>
-						Have a look at the
-						<a href="http://wiki.ipfire.org/{{ lang }}/development/build">guide on our wiki</a>
-						and work through it at your own pace, step by step.
-					</p>
-					<p>
-						Add-on development is encouraged. Have a look at the
-						<a href="http://wiki.ipfire.org/{{ lang }}/development/addon#building_addon_-_howto">building an add-on guide on our wiki</a>
-						for more information.
-					</p>
-				{% end %}
+			<h4>{{ _("How to build IPFire?") }}</h4>
+			{% if lang == "de" %}
+				<p>
+					IPFire zu kompilieren ist ganz einfach, aber dauert seine
+					Zeit.
+				</p>
+				<p>
+					Einen Einblick dazu gibt es in der
+					<a href="http://wiki.ipfire.org/{{ lang }}/development/build">Bauanleitung</a>
+					im Wiki, welche Schritt für Schritt vorgeht.
+				</p>
+				<p>
+					Addonentwicklung ist erwünscht. Die Vorgehensweise
+					dafür findet sich in der entsprechenden
+					<a href="http://wiki.ipfire.org/{{ lang }}/development/addon#building_addon_-_howto">Anleitung</a>.
+				</p>
+			{% else %}
+				<p>
+					Building IPFire is actually very easy, but it does take some time.
+				</p>
+				<p>
+					Have a look at the
+					<a href="http://wiki.ipfire.org/{{ lang }}/development/build">guide on our wiki</a>
+					and work through it at your own pace, step by step.
+				</p>
+				<p>
+					Add-on development is encouraged. Have a look at the
+					<a href="http://wiki.ipfire.org/{{ lang }}/development/addon#building_addon_-_howto">building an add-on guide on our wiki</a>
+					for more information.
+				</p>
+			{% end %}
 		</div>
 
 		<div class="span4">
-			<h3>{{ _("How to submit patches?") }}</h3>
+			<h4>{{ _("How to submit patches?") }}</h4>
 			{% if lang == "de" %}
 				<p>
 					Die IPFire Entwickler freuen sich über jeden Beitrag zur Software.
@@ -203,17 +209,17 @@
 		</div>
 
 		<div class="span4">
-			<h3>{{ _("How to translate IPFire?") }}</h3>
+			<h4>{{ _("How to translate IPFire?") }}</h4>
 
 			{% if lang == "de" %}
-				<h4>IPFire 2.x</h4>
+				<h5>IPFire 2.x</h5>
 				<p>
 					In der <a href="http://wiki.ipfire.org/{{ lang }}/development/language">Übersetzungsanleitung</a>
 					finden sich Informationen darüber, wie man das Webinterface von IPFire 2
 					übersetzt.
 				</p>
 
-				<h4>IPFire 3.x</h4>
+				<h5>IPFire 3.x</h5>
 				<p>
 					Auf <a href="http://www.transifex.net/projects/p/ipfire/">Transifex</a>
 					findet sich eine Reihe von Übersetzungsprojekten in Verbindung
@@ -224,13 +230,13 @@
 					Hilf dem <a href="http://wiki.ipfire.org/projects/translation/start">IPFire Übersetzungsteam</a>!
 				</div>
 			{% else %}
-				<h4>IPFire 2.x</h4>
+				<h5>IPFire 2.x</h5>
 				<p>
 					Please read the <a href="http://wiki.ipfire.org/en/development/language">translation guide</a>
 					to learn how to translate the web interface of IPFire 2.
 				</p>
 
-				<h4>IPFire 3.x</h4>
+				<h5>IPFire 3.x</h5>
 				<p>
 					Head over to <a href="http://www.transifex.net/projects/p/ipfire/">Transifex</a>
 					to see a list of our translation projects and feel free to join.
