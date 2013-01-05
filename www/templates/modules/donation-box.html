@@ -1,19 +1,16 @@
-<div class="tabbable">
-	<ul class="nav nav-pills">
-		<li class="active">
-			<a href="#paypal" data-toggle="tab">{{ _("Donate with PayPal or Credit Card") }}</a>
-		</li>
-		<li>
-			<a href="#banktransfer" data-toggle="tab">{{ _("Donate by Bank Transfer") }}</a>
-		</li>
-	</ul>
-	<div class="tab-content">
-		<div class="tab-pane active" id="paypal">
+<div class="well">
+	<div class="row-fluid">
+		<div class="span6 ac">
+			<h4>{{ _("Donate with PayPal or Credit Card") }}</h4>
+			<br>
+
 			{% if lang == "de" %}
 				<p>
 					PayPal ist unser bevorzugter und gleichzeitig einfachster Weg zu spenden.
 					Dazu einfach auf den Button klicken und den gewünschten Betrag eingeben.
 				</p>
+
+				<br>
 
 				<div class="ac">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -27,6 +24,8 @@
 					</form>
 				</div>
 
+				<br>
+
 				<p>
 					Wenn du nicht per PayPal spenden möchtest, kannst du das auch per
 					Banküberweisung tun. Dazu einfach oben auf den Button klicken.
@@ -37,6 +36,8 @@
 					Simply click on the donate button and type in the
 					amount of money you would like to donate.
 				</p>
+
+				<br>
 
 				<div class="ac">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -50,6 +51,8 @@
 					</form>
 				</div>
 
+				<br>
+
 				<p>
 					If you are not keen on using PayPal, you can also donate by bank transfer.
 					Click on the button above to do so.
@@ -57,7 +60,10 @@
 			{% end %}
 		</div>
 
-		<div class="tab-pane" id="banktransfer">
+		<div class="span6 ac">
+			<h4>{{ _("Donate by Bank Transfer") }}</h4>
+			<br>
+
 			{% if lang == "de" %}
 				<p>
 					Ebenso ist eine Spende auf unser Bankkonto möglich.
@@ -69,34 +75,32 @@
 				</p>
 			{% end %}
 
-			<div class="row-fluid">
-				<div class="span6">
-					<h4>{{ _("euro bank transfer") }}</h4>
-					<blockquote>
-						{{ _("IBAN") }}: DE86 4265 0150 1020 0768 89<br>
-						{{ _("BIC-/SWIFT-Code") }}: WELADED1REK
-						{% if reason_for_transfer %}
-							<br>
-							{{ _("Reason for transfer") }}:
-							<strong>{{ reason_for_transfer }}</strong>
-						{% end %}
-						</blockquote>
-				</div>
+			<br>
 
-				<div class="span6">
-					<h4>{{ _("bank transfer within Germany") }}</h4>
-					<blockquote>
-						{{ _("Bank account owner") }}: Michael Tremer<br>
-						{{ _("Bank account number") }}: 1020076889<br>
-						{{ _("Bank code") }}: 426 501 50
-						{% if reason_for_transfer %}
-							<br>
-							{{ _("Reason for transfer") }}:
-							<strong>{{ reason_for_transfer }}</strong>
-						{% end %}
-					</blockquote>
-				</div>
-			</div>
+			<p>
+				{{ _("IBAN") }}: DE86 4265 0150 1020 0768 89<br>
+				{{ _("BIC-/SWIFT-Code") }}: WELADED1REK
+				{% if reason_for_transfer %}
+					<br>
+					{{ _("Reason for transfer") }}:
+					<strong>{{ reason_for_transfer }}</strong>
+				{% end %}
+			</p>
+
+			<hr>
+
+			<h5>{{ _("bank transfer within Germany") }}</h5>
+
+			<p>
+				{{ _("Bank account owner") }}: Michael Tremer<br>
+				{{ _("Bank account number") }}: 1020076889<br>
+				{{ _("Bank code") }}: 426 501 50 - Sparkasse Vest Recklinghausen
+				{% if reason_for_transfer %}
+					<br>
+					{{ _("Reason for transfer") }}:
+					<strong>{{ reason_for_transfer }}</strong>
+				{% end %}
+			</p>
 		</div>
 	</div>
 </div>
