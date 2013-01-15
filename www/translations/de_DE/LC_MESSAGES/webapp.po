@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-08 21:41+0100\n"
+"POT-Creation-Date: 2013-01-15 17:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,12 @@ msgstr ""
 msgid "Wish"
 msgstr "Wunsch"
 
-#: templates/wishlist/wish.html:16
+#: templates/wishlist/wish.html:18
 #, python-format
 msgid "Launched: %s"
 msgstr "Gestarted: %s"
 
-#: templates/wishlist/wish.html:20
+#: templates/wishlist/wish.html:23
 #, python-format
 msgid "Funding ends: %s"
 msgstr "Sammlung endet: %s"
@@ -81,7 +81,7 @@ msgstr "Crowdfunding für das IPFire-Projekt"
 
 #: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
 #: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
-#: templates/base.html:74
+#: templates/base.html:75
 msgid "Terms & Conditions"
 msgstr "Allgemeine Bedingungen"
 
@@ -115,7 +115,7 @@ msgid "Stable"
 msgstr "Stabil"
 
 #: templates/downloads-index.html:50 templates/modules/menu.html:58
-#: templates/static/development.html:3 templates/static/development.html:8
+#: templates/static/development.html:3 templates/static/development.html:9
 #: templates/static/getinvolved.html:154
 msgid "Development"
 msgstr "Entwicklung"
@@ -208,17 +208,33 @@ msgid "Preferred for"
 msgstr "Bevorzugt für"
 
 #: templates/mirrors-item.html:37
+msgid "Your distance to this mirror"
+msgstr ""
+
+#: templates/mirrors-item.html:43
 msgid "Go to mirror"
 msgstr "Zum Mirror"
 
-#: templates/mirrors-item.html:42
+#: templates/mirrors-item.html:48
 msgid "Mirror location"
 msgstr "Mirrorort"
 
-#: templates/mirrors-item.html:44
+#: templates/mirrors-item.html:50
 #, python-format
 msgid "The mirror <em>%s</em> is located in %s."
 msgstr "Der Mirrorserver <em>%s</em> befindet sich in %s."
+
+#: templates/mirrors-item.html:58
+msgid "View larger map"
+msgstr ""
+
+#: templates/mirrors-item.html:63
+msgid "The location of the mirror server is estimated by the IP address."
+msgstr ""
+
+#: templates/mirrors-item.html:66
+msgid "The location of the mirror server could not be estimated."
+msgstr ""
 
 #: templates/admin-downloads-mirrors.html:5 templates/admin-downloads.html:5
 msgid "Download statistics"
@@ -884,12 +900,12 @@ msgstr "Archivgröße"
 msgid "No title given"
 msgstr "Kein Titel"
 
-#: templates/base.html:69 templates/static/press.html:3
+#: templates/base.html:70 templates/static/press.html:3
 #: templates/static/press.html:7
 msgid "Press"
 msgstr "Presse"
 
-#: templates/base.html:71
+#: templates/base.html:72
 msgid "imprint"
 msgstr "Impressum"
 
@@ -929,40 +945,36 @@ msgstr "Error"
 msgid "Donate with PayPal or Credit Card"
 msgstr "Mit PayPal oder Kreditkarte spenden"
 
-#: templates/modules/donation-box.html:7
+#: templates/modules/donation-box.html:64
 msgid "Donate by Bank Transfer"
 msgstr "Per Banküberweisung spenden"
 
-#: templates/modules/donation-box.html:74
-msgid "euro bank transfer"
-msgstr "Europa-Banküberweisung"
-
-#: templates/modules/donation-box.html:76
+#: templates/modules/donation-box.html:81
 msgid "IBAN"
 msgstr "IBAN"
 
-#: templates/modules/donation-box.html:77
+#: templates/modules/donation-box.html:82
 msgid "BIC-/SWIFT-Code"
 msgstr "BIC-/SWIFT-Code"
 
-#: templates/modules/donation-box.html:80
-#: templates/modules/donation-box.html:94
+#: templates/modules/donation-box.html:85
+#: templates/modules/donation-box.html:100
 msgid "Reason for transfer"
 msgstr "Verwendungszweck"
 
-#: templates/modules/donation-box.html:87
+#: templates/modules/donation-box.html:92
 msgid "bank transfer within Germany"
 msgstr "Überweisung innerhalb Deutschlands"
 
-#: templates/modules/donation-box.html:89
+#: templates/modules/donation-box.html:95
 msgid "Bank account owner"
 msgstr "Kontoinhaber"
 
-#: templates/modules/donation-box.html:90
+#: templates/modules/donation-box.html:96
 msgid "Bank account number"
 msgstr "Kontonummer"
 
-#: templates/modules/donation-box.html:91
+#: templates/modules/donation-box.html:97
 msgid "Bank code"
 msgstr "BLZ"
 
@@ -1076,7 +1088,7 @@ msgstr "Übersicht"
 msgid "Pakfire Build Service"
 msgstr "Pakfire Buildsystem"
 
-#: templates/modules/menu.html:75 templates/static/development.html:44
+#: templates/modules/menu.html:75 templates/static/development.html:47
 msgid "Bugtracker"
 msgstr "Bugtracker"
 
@@ -1113,25 +1125,33 @@ msgstr "Ankündigung"
 msgid "Logo"
 msgstr "Logo"
 
-#: templates/static/development.html:28
+#: templates/static/development.html:31
 msgid "Development tools"
 msgstr "Entwicklungstools"
 
-#: templates/static/development.html:65
+#: templates/static/development.html:68
 msgid "Development Mailing List"
 msgstr "Entwicklungsmailingliste"
 
-#: templates/static/development.html:83
+#: templates/static/development.html:87
 msgid "Source code"
 msgstr "Quellcode"
 
-#: templates/static/development.html:101
+#: templates/static/development.html:90
+msgid "Git"
+msgstr "Git"
+
+#: templates/static/development.html:109
 msgid "IPFire Git repositories"
 msgstr "IPFire Git-Repositorien"
 
-#: templates/static/development.html:106
-msgid "Important repositories"
-msgstr "Wichtige Repositorien"
+#: templates/static/development.html:115
+msgid "GitHub"
+msgstr "GitHub"
+
+#: templates/static/development.html:134
+msgid "ipfire on GitHub"
+msgstr "ipfire auf GitHub"
 
 #: templates/static/development.html:144
 msgid "How to build IPFire?"
@@ -1420,7 +1440,7 @@ msgstr "Unbekannter Autor"
 msgid "%s to %s"
 msgstr "%s nach %s"
 
-#: webapp/backend/wishlist.py:128
+#: webapp/backend/wishlist.py:135
 msgid "Checkout this crowdfunding wish from #ipfire:"
 msgstr ""
 
@@ -1668,6 +1688,12 @@ msgstr "%(weekday)s, %(day)s. %(month_name)s"
 #, python-format
 msgid "%(commas)s and %(last)s"
 msgstr "%(commas)s und %(last)s"
+
+#~ msgid "euro bank transfer"
+#~ msgstr "Europa-Banküberweisung"
+
+#~ msgid "Important repositories"
+#~ msgstr "Wichtige Repositorien"
 
 #~ msgid "Show profile"
 #~ msgstr "Profil anzeigen"

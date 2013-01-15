@@ -87,6 +87,8 @@
 	<h3>{{ _("Source code") }}</h3>
 	<div class="row">
 		<div class="span6">
+			<h4>{{ _("Git") }}</h4>
+
 			{% if lang == "de" %}
 				<p>
 					Die IPFire Entwickler nutzen <a href="http://www.git-scm.com/">Git</a>
@@ -101,45 +103,37 @@
 					Anyone may download the source code under terms of the accompanying, provided licenses.
 				</p>
 			{% end %}
-			<p>
-				<a href="http://git.ipfire.org/">{{ _("IPFire Git repositories") }}</a>
+
+			<p class="ac">
+				<a class="btn" href="http://git.ipfire.org/" target="_blank">
+					<i class="icon-github-sign"></i> {{ _("IPFire Git repositories") }}
+				</a>
 			</p>
 		</div>
 
 		<div class="span6">
-			<h4>{{ _("Important repositories") }}</h4>
-			<table class="table">
-				<tbody>
-					<tr>
-						<td>
-							<a href="http://git.ipfire.org/?p=ipfire-2.x.git;a=summary">
-								IPFire 2.x
-							</a>
-						</td>
-						<td>
-							{% if lang == "de" %}
-								Quellcode der IPFire 2 Serie
-							{% else %}
-								Source of the IPFire 2 series
-							{% end %}
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="http://git.ipfire.org/?p=ipfire-3.x.git;a=summary">
-								IPFire 3.x
-							</a>
-						</td>
-						<td>
-							{% if lang == "de" %}
-								Quellcode der IPFire 3 Serie
-							{% else %}
-								Source of the IPFire 3 series
-							{% end %}
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<h4>{{ _("GitHub") }}</h4>
+
+			{% if lang == "de" %}
+				<p>
+					Seit Januar 2013 wird der IPFire Quellcode und verwandte Projekt
+					auf GitHub gespiegelt. Damit ist es ganz einfach sich eine Kopie
+					des Codes zu erstellen und ihn zu bearbeiten.
+					Pull-Requests sind gern willkommen!
+				</p>
+			{% else %}
+				<p>
+					Since January 2013, the IPFire source code and related projects are mirrored on GitHub.
+					So it is easier to get your own working copy of the IPFire source and start hacking on it.
+					Pull requests are welcome!
+				</p>
+			{% end %}
+
+			<p class="ac">
+				<a class="btn" href="https://github.com/ipfire" target="_blank">
+					<i class="icon-github"></i> {{ _("ipfire on GitHub") }}
+				</a>
+			</p>
 		</div>
 	</div>
 

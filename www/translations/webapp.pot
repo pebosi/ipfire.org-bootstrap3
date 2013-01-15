@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-29 18:31+0100\n"
+"POT-Creation-Date: 2013-01-15 17:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
 #: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
-#: templates/base.html:74
+#: templates/base.html:75
 msgid "Terms & Conditions"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgid "Stable"
 msgstr ""
 
 #: templates/downloads-index.html:50 templates/modules/menu.html:58
-#: templates/static/development.html:3 templates/static/development.html:8
+#: templates/static/development.html:3 templates/static/development.html:9
 #: templates/static/getinvolved.html:154
 msgid "Development"
 msgstr ""
@@ -891,12 +891,12 @@ msgstr ""
 msgid "No title given"
 msgstr ""
 
-#: templates/base.html:69 templates/static/press.html:3
+#: templates/base.html:70 templates/static/press.html:3
 #: templates/static/press.html:7
 msgid "Press"
 msgstr ""
 
-#: templates/base.html:71
+#: templates/base.html:72
 msgid "imprint"
 msgstr ""
 
@@ -936,40 +936,36 @@ msgstr ""
 msgid "Donate with PayPal or Credit Card"
 msgstr ""
 
-#: templates/modules/donation-box.html:7
+#: templates/modules/donation-box.html:64
 msgid "Donate by Bank Transfer"
 msgstr ""
 
-#: templates/modules/donation-box.html:74
-msgid "euro bank transfer"
-msgstr ""
-
-#: templates/modules/donation-box.html:76
+#: templates/modules/donation-box.html:81
 msgid "IBAN"
 msgstr ""
 
-#: templates/modules/donation-box.html:77
+#: templates/modules/donation-box.html:82
 msgid "BIC-/SWIFT-Code"
 msgstr ""
 
-#: templates/modules/donation-box.html:80
-#: templates/modules/donation-box.html:94
+#: templates/modules/donation-box.html:85
+#: templates/modules/donation-box.html:100
 msgid "Reason for transfer"
 msgstr ""
 
-#: templates/modules/donation-box.html:87
+#: templates/modules/donation-box.html:92
 msgid "bank transfer within Germany"
 msgstr ""
 
-#: templates/modules/donation-box.html:89
+#: templates/modules/donation-box.html:95
 msgid "Bank account owner"
 msgstr ""
 
-#: templates/modules/donation-box.html:90
+#: templates/modules/donation-box.html:96
 msgid "Bank account number"
 msgstr ""
 
-#: templates/modules/donation-box.html:91
+#: templates/modules/donation-box.html:97
 msgid "Bank code"
 msgstr ""
 
@@ -1083,7 +1079,7 @@ msgstr ""
 msgid "Pakfire Build Service"
 msgstr ""
 
-#: templates/modules/menu.html:75 templates/static/development.html:44
+#: templates/modules/menu.html:75 templates/static/development.html:47
 msgid "Bugtracker"
 msgstr ""
 
@@ -1120,24 +1116,32 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: templates/static/development.html:28
+#: templates/static/development.html:31
 msgid "Development tools"
 msgstr ""
 
-#: templates/static/development.html:65
+#: templates/static/development.html:68
 msgid "Development Mailing List"
 msgstr ""
 
-#: templates/static/development.html:83
+#: templates/static/development.html:87
 msgid "Source code"
 msgstr ""
 
-#: templates/static/development.html:101
+#: templates/static/development.html:90
+msgid "Git"
+msgstr ""
+
+#: templates/static/development.html:109
 msgid "IPFire Git repositories"
 msgstr ""
 
-#: templates/static/development.html:106
-msgid "Important repositories"
+#: templates/static/development.html:115
+msgid "GitHub"
+msgstr ""
+
+#: templates/static/development.html:134
+msgid "ipfire on GitHub"
 msgstr ""
 
 #: templates/static/development.html:144
