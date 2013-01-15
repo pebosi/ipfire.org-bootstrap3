@@ -44,6 +44,8 @@ class GeoIP(object):
 
 	def get_all(self, addr):
 		addr = self._encode_ip(addr)
+		if not addr:
+			return
 
 		ret = self.db.get("SELECT locations.* FROM addresses \
 			JOIN locations ON locations.id = addresses.location \
