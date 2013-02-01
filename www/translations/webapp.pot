@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-15 17:17+0100\n"
+"POT-Creation-Date: 2013-02-01 18:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
 #: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
-#: templates/base.html:75
+#: templates/base.html:74
 msgid "Terms & Conditions"
 msgstr ""
 
@@ -254,12 +254,12 @@ msgstr ""
 
 #: templates/tracker-torrent-detail.html:3
 #: templates/tracker-torrent-detail.html:18
-#: templates/modules/release-item.html:111
+#: templates/modules/release-item.html:115
 msgid "Torrent download"
 msgstr ""
 
 #: templates/tracker-torrent-detail.html:15
-#: templates/modules/release-item.html:110
+#: templates/modules/release-item.html:114
 msgid "Magnet link"
 msgstr ""
 
@@ -891,12 +891,12 @@ msgstr ""
 msgid "No title given"
 msgstr ""
 
-#: templates/base.html:70 templates/static/press.html:3
+#: templates/base.html:69 templates/static/press.html:3
 #: templates/static/press.html:7
 msgid "Press"
 msgstr ""
 
-#: templates/base.html:72
+#: templates/base.html:71
 msgid "imprint"
 msgstr ""
 
@@ -991,11 +991,15 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: templates/modules/release-item.html:109
+#: templates/modules/release-item.html:101
+msgid "SHA1 checksum"
+msgstr ""
+
+#: templates/modules/release-item.html:113
 msgid "Legend:"
 msgstr ""
 
-#: templates/modules/release-item.html:119
+#: templates/modules/release-item.html:123
 #: templates/modules/release-item-short.html:13
 msgid "There are no downloads available for this release."
 msgstr ""

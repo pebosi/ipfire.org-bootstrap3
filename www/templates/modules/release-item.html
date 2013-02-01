@@ -96,6 +96,10 @@
 										{% end %}
 										<a class="download-splash" href="{{ file.url }}">{{ _(file.desc) }}</a>
 										<br>{{ _(file.rem) }}
+
+										{% if file.sha1 %}
+											<br><br><em>{{ _("SHA1 checksum") }}: {{ file.sha1 }}</em>
+										{% end %}
 									</td>
 									<td>
 										{{ format_size(file.size) }}
