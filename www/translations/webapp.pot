@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 18:09+0100\n"
+"POT-Creation-Date: 2013-02-02 18:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,22 @@ msgstr ""
 #: templates/wishlist/wish.html:23
 #, python-format
 msgid "Funding ends: %s"
+msgstr ""
+
+#: templates/wishlist/closed.html:3 templates/wishlist/closed.html:13
+msgid "Closed wishes"
+msgstr ""
+
+#: templates/wishlist/closed.html:9
+msgid "Wishes open for donation"
+msgstr ""
+
+#: templates/wishlist/closed.html:36 templates/wishlist/closed.html:40
+msgid "Older"
+msgstr ""
+
+#: templates/wishlist/closed.html:46 templates/wishlist/closed.html:50
+msgid "Newer"
 msgstr ""
 
 #: templates/wishlist/modules/wish.html:6
@@ -63,10 +79,18 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: templates/wishlist/modules/wish.html:49
-msgid "Ended"
+msgid "In progress"
 msgstr ""
 
-#: templates/wishlist/modules/wish.html:59
+#: templates/wishlist/modules/wish.html:51
+msgid "Finished"
+msgstr ""
+
+#: templates/wishlist/modules/wish.html:53
+msgid "Funding ended"
+msgstr ""
+
+#: templates/wishlist/modules/wish.html:63
 msgid "Share this wish with your friends and help us promote it!"
 msgstr ""
 
@@ -1435,7 +1459,7 @@ msgstr ""
 msgid "%s to %s"
 msgstr ""
 
-#: webapp/backend/wishlist.py:135
+#: webapp/backend/wishlist.py:153
 msgid "Checkout this crowdfunding wish from #ipfire:"
 msgstr ""
 

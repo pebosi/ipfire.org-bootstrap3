@@ -45,8 +45,12 @@
 							{% if wish.remaining_days >= 0 %}
 								<p class="lead">{{ wish.remaining_days }}</p>
 								<p>{{ _("day to go", "days to go", wish.remaining_days) }}</p>
+							{% elif wish.status == "in_progress" %}
+								<p class="lead">{{ _("In progress") }}</p>
+							{% elif wish.status == "finished" %}
+								<p class="lead">{{ _("Finished") }}</p>
 							{% else %}
-								<p class="lead">{{ _("Ended") }}</p>
+								<p class="lead">{{ _("Funding ended") }}</p>
 							{% end %}
 						</div>
 					</div>

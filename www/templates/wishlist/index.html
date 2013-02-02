@@ -38,14 +38,14 @@
 	{% if wishes %}
 		{{ modules.Wishlist(wishes) }}
 	{% else %}
-		<div class="alert alert-error">
+		<div class="alert alert-error ac">
 			{% if lang == "de" %}
-				<strong>Es tut uns Leid!</strong>
+				<strong>Es tut uns Leid!</strong><br>
 				Derzeit finden keine Finanzierungen statt.
 				Wenn du das Projekt unterstützten möchtest, so
 				tätige eine <a href="http://www.ipfire.org/donation">Spende</a>.
 			{% else %}
-				<strong>We are sorry!</strong>
+				<strong>We are sorry!</strong><br>
 				There are currently no running fundings.
 				If you want to contribute to the project, please
 				make a <a href="http://www.ipfire.org/donation">donation</a>.
@@ -55,38 +55,40 @@
 
 	<hr>
 
-	{% if lang == "de" %}
-		<p class="ac">
-			Du hast eine Idee, oder glaubst ein wichtiges Feature fehlt
-			und wäre ideal von der Community finanziert?
-			Sende eine E-Mail an
-			<a href="mailto:wishlist@ipfire.org">
-				<i class="icon-envelope"></i> wishlist@ipfire.org
-			</a>
-		</p>
-	{% else %}
-		<p class="ac">
-			Do you think we are missing a great feature that could be
-			funded by the community? Write us an email about it to
-			<a href="mailto:wishlist@ipfire.org">
-				<i class="icon-envelope"></i> wishlist@ipfire.org
-			</a>
-		</p>
-	{% end %}
+	<div class="row">
+		<div class="span4 ac">
+			{% if lang == "de" %}
+				Wenn du dich nicht entscheiden kannst für was
+				deine Spende verwendet werden soll, klicke
+				<a href="http://www.ipfire.org/donate">hier</a>.
+			{% else %}
+				In case you cannot decide for which feature
+				your donation should be used, click
+				<a href="http://www.ipfire.org/donate">here</a>.
+			{% end %}
+		</div>
 
-	<hr>
+		<div class="span4 ac">
+			{% if lang == "de" %}
+				Du hast eine Idee, oder glaubst ein wichtiges Feature fehlt
+				und wäre ideal von der Community finanziert?
+				Sende eine E-Mail an:<br>
+				<i class="icon-envelope"></i> <a href="mailto:wishlist@ipfire.org">wishlist@ipfire.org</a>
+			{% else %}
+				Do you think we are missing a great feature that could be
+				funded by the community? Write us an email about it to:<br>
+				<i class="icon-envelope"></i> <a href="mailto:wishlist@ipfire.org">wishlist@ipfire.org</a>
+			{% end %}
+		</div>
 
-	{% if lang == "de" %}
-		<p class="ac">
-			Wenn du dich nicht entscheiden kannst für was
-			deine Spende verwendet werden soll, klicke
-			<a href="http://www.ipfire.org/donate">hier</a>.
-		</p>
-	{% else %}
-		<p class="ac">
-			In case you cannot decide for which feature
-			your donation should be used, click
-			<a href="http://www.ipfire.org/donate">here</a>.
-		</p>
-	{% end %}
+		<div class="span4 ac">
+			{% if lang == "de" %}
+				Bereits abgelaufene Sammlungen finden sich
+				<a href="/closed">hier</a>.
+			{% else %}
+				Already closed fundings are to be found over
+				<a href="/closed">here</a>.
+			{% end %}
+		</div>
+	</div>
 {% end block %}

@@ -21,10 +21,10 @@ class Wishlist(object):
 		if wish:
 			return Wish(self, wish.id)
 
-	def get_all_by_query(self, query):
+	def get_all_by_query(self, query, *args):
 		wishes = []
 
-		for row in self.db.query(query):
+		for row in self.db.query(query, *args):
 			wish = Wish(self, row.id, row)
 			wishes.append(wish)
 
@@ -32,12 +32,23 @@ class Wishlist(object):
 
 	def get_all_running(self):
 		return self.get_all_by_query("SELECT * FROM wishlist \
-			WHERE DATE(NOW()) >= date_start AND DATE(NOW()) <= date_end AND published = 'Y'\
+			WHERE DATE(NOW()) >= date_start AND DATE(NOW()) <= date_end AND status = 'running' \
 			ORDER BY prio ASC, date_end ASC")
 
-	def get_all_finished(self):
-		return self.get_all_by_query("SELECT * FROM wishlist \
-			WHERE DATE(NOW()) > date_end AND published = 'Y' ORDER BY date_end ASC")
+	def get_all_finished(self, limit=5, offset=None):
+		query = "SELECT * FROM wishlist WHERE DATE(NOW()) > date_end AND status IS NOT NULL \
+			ORDER BY date_end DESC"
+		args = []
+
+		if limit:
+			if offset:
+				query += " LIMIT %s,%s"
+				args += [limit, offset]
+			else:
+				query += " LIMIT %s"
+				args.append(limit)
+
+		return self.get_all_by_query(query, *args)
 
 
 class Wish(object):
@@ -96,6 +107,13 @@ class Wish(object):
 			return 100
 
 		return self.percentage
+
+	@property
+	def status(self):
+		if self.data.status == "running" and not self.running:
+			return "closed"
+
+		return self.data.status
 
 	@property
 	def running(self):

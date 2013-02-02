@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 18:09+0100\n"
+"POT-Creation-Date: 2013-02-02 18:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,22 @@ msgstr "Gestarted: %s"
 #, python-format
 msgid "Funding ends: %s"
 msgstr "Sammlung endet: %s"
+
+#: templates/wishlist/closed.html:3 templates/wishlist/closed.html:13
+msgid "Closed wishes"
+msgstr "Beendete Wünsche"
+
+#: templates/wishlist/closed.html:9
+msgid "Wishes open for donation"
+msgstr "Noch laufende Wünsche"
+
+#: templates/wishlist/closed.html:36 templates/wishlist/closed.html:40
+msgid "Older"
+msgstr "Älter"
+
+#: templates/wishlist/closed.html:46 templates/wishlist/closed.html:50
+msgid "Newer"
+msgstr "Neuer"
 
 #: templates/wishlist/modules/wish.html:6
 msgid "Only a few days left!"
@@ -63,10 +79,18 @@ msgstr[0] "Tag übrig"
 msgstr[1] "Tage übrig"
 
 #: templates/wishlist/modules/wish.html:49
-msgid "Ended"
+msgid "In progress"
+msgstr "In Entwicklung"
+
+#: templates/wishlist/modules/wish.html:51
+msgid "Finished"
 msgstr "Beendet"
 
-#: templates/wishlist/modules/wish.html:59
+#: templates/wishlist/modules/wish.html:53
+msgid "Funding ended"
+msgstr "Sammlung beendet"
+
+#: templates/wishlist/modules/wish.html:63
 msgid "Share this wish with your friends and help us promote it!"
 msgstr ""
 "Teile diesen Wunsch mit deinen Freunden und hilf diesen bekannter zu machen!"
@@ -1444,7 +1468,7 @@ msgstr "Unbekannter Autor"
 msgid "%s to %s"
 msgstr "%s nach %s"
 
-#: webapp/backend/wishlist.py:135
+#: webapp/backend/wishlist.py:153
 msgid "Checkout this crowdfunding wish from #ipfire:"
 msgstr ""
 
@@ -1692,6 +1716,9 @@ msgstr "%(weekday)s, %(day)s. %(month_name)s"
 #, python-format
 msgid "%(commas)s and %(last)s"
 msgstr "%(commas)s und %(last)s"
+
+#~ msgid "Ended"
+#~ msgstr "Beendet"
 
 #~ msgid "euro bank transfer"
 #~ msgstr "Europa-Banküberweisung"

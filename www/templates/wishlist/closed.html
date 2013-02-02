@@ -1,0 +1,55 @@
+{% extends "../base-1.html" %}
+
+{% block title %}{{ _("Closed wishes") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<ul class="nav nav-pills pull-right">
+			<li>
+				<a href="/">{{ _("Wishes open for donation") }}</a>
+			</li>
+		</ul>
+
+		<h1>{{ _("Closed wishes") }}</h1>
+	</div>
+
+	{% if lang == "de" %}
+		<p>
+			Auf dieser Seite finden sich bereits ausgelaufene Sammlungen.
+		</p>
+	{% else %}
+		<p>
+			On this page, you will find all fundings that have already ended.
+		</p>
+	{% end %}
+
+	<hr>
+
+	{% if wishes %}
+		{{ modules.Wishlist(wishes) }}
+
+		<hr>
+
+		<ul class="pager">
+			{% if has_next %}
+				<li class="previous">
+					<a href="/closed?limit={{ limit }}&offset={{ offset + limit }}">&larr; {{ _("Older") }}</a>
+				</li>
+			{% else %}
+				<li class="previous disabled">
+					<a href="#">&larr; {{ _("Older") }}</a>
+				</li>
+			{% end %}
+
+			{% if has_previous %}
+				<li class="next">
+					<a href="/closed?limit={{ limit }}&offset={{ offset - limit }}">{{ _("Newer") }} &rarr;</a>
+				</li>
+			{% else %}
+				<li class="next disabled">
+					<a href="#">{{ _("Newer") }} &rarr;</a>
+				</li>
+			{% end %}
+		</ul>
+	{% end %}
+{% end %}

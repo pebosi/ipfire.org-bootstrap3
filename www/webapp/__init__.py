@@ -184,6 +184,7 @@ class Application(tornado.web.Application):
 		# wishlist.ipfire.org
 		self.add_handlers(r"wishlist\.ipfire\.org", [
 			(r"/", WishlistIndexHandler),
+			(r"/closed", WishlistClosedHandler),
 			(r"/wish/(.*)/donate", WishDonateHandler),
 			(r"/wish/(.*)", WishHandler),
 			(r"/terms", WishlistTermsHandler),
