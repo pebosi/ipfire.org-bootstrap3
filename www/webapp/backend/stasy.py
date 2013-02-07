@@ -10,7 +10,7 @@ import re
 
 from misc import Singleton
 
-DATABASE_HOST = ["wilhelmina.ipfire.org", "miranda.ipfire.org"]
+DATABASE_HOST = ["wilhelmina.ipfire.org", "miranda.ipfire.org", "falco.ipfire.org",]
 DATABASE_NAME = "stasy"
 
 CPU_SPEED_CONSTRAINTS = (0, 500, 1000, 1500, 2000, 2500, 3000, 3500)
@@ -413,6 +413,16 @@ class Stasy(object):
 		# XXX possibly bad performance
 		return len(self._db.profiles.distinct("public_id"))
 
+	# Shortcuts to database collections.
+
+	@property
+	def archives(self):
+		return self._db.archives
+
+	@property
+	def profiles(self):
+		return self._db.profiles
+
 	def get_archives_count(self):
 		return self._db.archives.count()
 
@@ -441,6 +451,14 @@ class Stasy(object):
 				profiles.append(p.get("public_id"))
 
 		return profiles
+
+	def move_profiles(self, find):
+		"""
+			Move all profiles by the "find" criteria.
+		"""
+		for p in self.profiles.find(find):
+			self.archives.save(p)
+		self.profiles.remove(find)
 
 	def query(self, query, archives=False, no_virt=False, all=False, fields=None):
 		db = self._db.profiles

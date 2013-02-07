@@ -134,6 +134,9 @@ class Application(tornado.web.Application):
 			(r"/vendor/(pci|usb)/([0-9a-f]{4})", StasyStatsVendorDetail),
 			(r"/model/(pci|usb)/([0-9a-f]{4})/([0-9a-f]{4})", StasyStatsModelDetail),
 
+			# Send profiles.
+			(r"/send/([a-z0-9]+)", StasyProfileSendHandler),
+
 			# Stats handlers			
 			(r"/stats", StasyStatsHandler),
 			(r"/stats/cpus", StasyStatsCPUHandler),

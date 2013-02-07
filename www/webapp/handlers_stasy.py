@@ -2,7 +2,12 @@
 
 from __future__ import division
 
+import datetime
 import hwdata
+import ipaddr
+import logging
+import re
+import simplejson
 import tornado.web
 
 import backend
@@ -37,6 +42,182 @@ class StasyBaseHandler(BaseHandler):
 		})
 
 		return BaseHandler.render(self, *args, **kwargs)
+
+
+MIN_PROFILE_VERSION = 0
+MAX_PROFILE_VERSION = 0
+
+class Profile(dict):
+	def __getattr__(self, key):
+		try:
+			return self[key]
+		except KeyError:
+			raise AttributeError, key
+
+	def __setattr__(self, key, val):
+		self[key] = val
+
+
+class StasyProfileSendHandler(StasyBaseHandler):
+	def check_xsrf_cookie(self):
+		# This cookie is not required here.
+		pass
+
+	@property
+	def archives(self):
+		return self.stasy.archives
+
+	@property
+	def profiles(self):
+		return self.stasy.profiles
+
+	def prepare(self):
+		# Create an empty profile.
+		self.profile = Profile()
+
+	def __check_attributes(self, profile):
+		"""
+			Check for attributes that must be provided,
+		"""
+
+		attributes = (
+			"private_id",
+			"profile_version",
+			"public_id",
+			"updated",
+		)
+		for attr in attributes:
+			if not profile.has_key(attr):
+				raise tornado.web.HTTPError(400, "Profile lacks '%s' attribute: %s" % (attr, profile))
+
+	def __check_valid_ids(self, profile):
+		"""
+			Check if IDs contain valid data.
+		"""
+
+		for id in ("public_id", "private_id"):
+			if re.match(r"^([a-f0-9]{40})$", "%s" % profile[id]) is None:
+				raise tornado.web.HTTPError(400, "ID '%s' has wrong format: %s" % (id, profile))
+
+	def __check_equal_ids(self, profile):
+		"""
+			Check if public_id and private_id are equal.
+		"""
+
+		if profile.public_id == profile.private_id:
+			raise tornado.web.HTTPError(400, "Public and private IDs are equal: %s" % profile)
+
+	def __check_matching_ids(self, profile):
+		"""
+			Check if a profile with the given public_id is already in the
+			database. If so we need to check if the private_id matches.
+		"""
+		p = self.profiles.find_one({ "public_id" : profile["public_id"]})
+		if not p:
+			return
+
+		p = Profile(p)
+		if p.private_id != profile.private_id:
+			raise tornado.web.HTTPError(400, "Mismatch of private_id: %s" % profile)
+
+	def __check_profile_version(self, profile):
+		"""
+			Check if this version of the server software does support the
+			received profile.
+		"""
+		version = profile.profile_version
+
+		if version < MIN_PROFILE_VERSION or version > MAX_PROFILE_VERSION:
+			raise tornado.web.HTTPError(400,
+				"Profile version is not supported: %s" % version)
+
+	def check_profile(self):
+		"""
+			This method checks if the blob is sane.
+		"""
+
+		checks = (
+			self.__check_attributes,
+			self.__check_valid_ids,
+			self.__check_equal_ids,
+			self.__check_profile_version,
+			# These checks require at least one database query and should be done
+			# at last.
+			self.__check_matching_ids,
+		)
+
+		for check in checks:
+			check(self.profile)
+
+		# If we got here, everything is okay and we can go on...
+
+	# The GET method is only allowed in debugging mode.
+	def get(self, public_id):
+		if not self.application.settings["debug"]:
+			return tornado.web.HTTPError(405)
+
+		return self.post(public_id)
+
+	def post(self, public_id):
+		profile = self.get_argument("profile", None)
+
+		# Send "400 bad request" if no profile was provided
+		if not profile:
+			raise tornado.web.HTTPError(400, "No profile received.")
+
+		# Try to decode the profile.
+		try:
+			self.profile.update(simplejson.loads(profile))
+		except simplejson.decoder.JSONDecodeError, e:
+			raise tornado.web.HTTPError(400, "Profile could not be decoded: %s" % e)
+
+		# Create a shortcut and overwrite public_id from query string
+		profile = self.profile
+		profile.public_id = public_id
+
+		# Add timestamp to the profile
+		profile.updated = datetime.datetime.utcnow()
+
+		# Check if profile contains proper data.
+		self.check_profile()
+
+		# Get GeoIP information if address is not defined in rfc1918
+		remote_ips = self.request.remote_ip.split(", ")
+		for remote_ip in remote_ips:
+			try:
+				addr = ipaddr.IPAddress(remote_ip)
+			except ValueError:
+				# Skip invalid IP addresses.
+				continue
+
+			# Check if the given IP address is from a
+			# private network.
+			if addr.is_private:
+				continue
+
+			profile.geoip = self.geoip.get_all(remote_ip)
+			break
+
+		# Move previous profiles to archive and keep only the latest one
+		# in profiles. This will make full table lookups faster.
+		self.stasy.move_profiles({ "public_id" : profile.public_id })
+
+		# Write profile to database
+		id = self.profiles.save(profile)
+
+		self.write("Your profile was successfully saved to the database.")
+		self.finish()
+
+		logging.debug("Saved profile: %s" % profile)
+
+	def on_finish(self):
+		logging.debug("Starting automatic cleanup...")
+
+		# Remove all profiles that were not updated since 4 weeks.
+		not_updated_since = datetime.datetime.utcnow() - \
+			datetime.timedelta(weeks=4)
+
+		self.stasy.move_profiles({ "updated" : { "$lt" : not_updated_since }})
 
 
 class StasyIndexHandler(StasyBaseHandler):
