@@ -1,5 +1,5 @@
 <ul class="thumbnails wishes">
 	{% for wish in wishes %}
-		{{ modules.Wish(wish, short=short) }}
+		{% module Wish(wish, short=short) %}
 	{% end %}
 </ul>

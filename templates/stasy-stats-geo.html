@@ -19,7 +19,7 @@
 					This chart shows us in which country IPFire is running.
 				</p>
 			{% end %}
-			{{ modules.StasyGeoTable(geo_locations) }}
+			{% module StasyGeoTable(geo_locations) %}
 		</div>
 	</div>
 
@@ -37,7 +37,7 @@
 					on the IPFire webinterface.
 				</p>
 			{% end %}
-			{{ modules.StasyTable(languages, sortby="percentage", locale=True) }}
+			{% module StasyTable(languages, sortby="percentage", locale=True) %}
 		</div>
 	</div>
 {% end block %}

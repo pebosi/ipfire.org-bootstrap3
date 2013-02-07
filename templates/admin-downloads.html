@@ -21,7 +21,7 @@
 		</table>
 
 		<h4>{{ _("Downloads by country") }}</h4>
-		{{ modules.StasyGeoTable(downloads_locations_today) }}
-		{{ modules.StasyGeoTable(downloads_locations_total) }}
+		{% module StasyGeoTable(downloads_locations_today) %}
+		{% module StasyGeoTable(downloads_locations_total) %}
 	</div>
 {% end %}

@@ -27,7 +27,7 @@
 					used in IPFire.
 				</p>
 			{% end %}
-			{{ modules.StasyTable(cpu_vendors, sortby="percentage") }}
+			{% module StasyTable(cpu_vendors, sortby="percentage") %}
 		</div>
 	</div>
 
@@ -39,7 +39,7 @@
 				<br>
 				{{ _("All together, there are <strong>%s bogomips</strong> out there.") % locale.friendly_number(bogomips) }}
 			</p>
-			{{ modules.StasyTable(cpu_speeds) }}
+			{% module StasyTable(cpu_speeds) %}
 		</div>
 	</div>
 
@@ -49,7 +49,7 @@
 			<p>
 				{{ _("See a breakdown of the CPU cores that are installed on the IPFire systems.") }}
 			</p>
-			{{ modules.StasyCPUCoreTable(cpu_cores) }}
+			{% module StasyCPUCoreTable(cpu_cores) %}
 		</div>
 	</div>
 {% end block %}

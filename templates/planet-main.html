@@ -33,7 +33,7 @@
 	</div>
 
 	{% for entry in entries %}
-		{{ modules.PlanetEntry(entry) }}
+		{% module PlanetEntry(entry) %}
 	{% end %}
 
 	<div class="row">

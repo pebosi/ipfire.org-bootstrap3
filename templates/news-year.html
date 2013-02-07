@@ -7,9 +7,9 @@
 		<h1>{{ _("News from %(year)s") % { "year" : selected_year } }}</h1>
 	</div>
 
-	{{ modules.NewsYearNavigation(selected_year) }}
+	{% module NewsYearNavigation(selected_year) %}
 
 	<hr>
 
-	{{ modules.NewsTable(news) }}
+	{% module NewsTable(news) %}
 {% end block %}

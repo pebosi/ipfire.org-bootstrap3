@@ -5,9 +5,9 @@
 		<h3>{{ _("Download statistics") }}</h3>
 
 		<h4>{{ _("Mirror load from today") }}</h4>
-		{{ modules.StasyTable(mirror_load_today, sortby="percentage") }}
+		{% module StasyTable(mirror_load_today, sortby="percentage") %}
 
 		<h4>{{ _("Mirror load") }}</h4>
-		{{ modules.StasyTable(mirror_load_total, sortby="percentage") }}
+		{% module StasyTable(mirror_load_total, sortby="percentage") %}
 	</div>
 {% end %}

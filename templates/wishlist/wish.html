@@ -7,7 +7,7 @@
 		<h1>{{ wish.title }}</h1>
 	</div>
 
-	{{ modules.Wishlist([wish,], short=True) }}
+	{% module Wishlist([wish,], short=True) %}
 
 	{{ wish.description }}
 

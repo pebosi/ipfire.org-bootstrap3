@@ -3,5 +3,5 @@
 {% block title %}Download {{ release.name }}{% end block %}
 
 {% block body %}
-	{{ modules.ReleaseItem(release, latest=latest) }}
+	{% module ReleaseItem(release, latest=latest) %}
 {% end block %}

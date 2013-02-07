@@ -23,12 +23,12 @@
 
 	{% if preferred_mirrors %}
 		<h2>{{ _("Mirror servers nearby") }}</h2>
-		{{ modules.MirrorsTable(preferred_mirrors) }}
+		{% module MirrorsTable(preferred_mirrors) %}
 
 		<h2>{{ _("Worldwide mirror servers") }}</h2>
-		{{ modules.MirrorsTable(other_mirrors) }}
+		{% module MirrorsTable(other_mirrors) %}
 	{% else %}
 		<h2>{{ _("Worldwide mirror servers") }}</h2>
-		{{ modules.MirrorsTable(other_mirrors) }}
+		{% module MirrorsTable(other_mirrors) %}
 	{% end %}
 {% end block %}

@@ -18,7 +18,7 @@
 					This chart shows us which is the most favourite network configuration.
 				</p>
 			{% end %}
-			{{ modules.StasyTable(network_zones, sortby="percentage", percentage=True) }}
+			{% module StasyTable(network_zones, sortby="percentage", percentage=True) %}
 		</div>
 	</div>
 {% end block %}

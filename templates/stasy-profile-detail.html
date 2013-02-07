@@ -209,7 +209,7 @@
 
 	{% if profile.devices %}
 		<h3>{{ _("Peripherial devices") }}</h3>
-		{{ modules.StasyDeviceTable(profile.devices) }}
+		{% module StasyDeviceTable(profile.devices) %}
 		<hr>
 	{% end %}
 

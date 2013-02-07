@@ -17,6 +17,6 @@
 	</div>
 	
 	{% for release in releases %}
-		{{ modules.ReleaseItemShort(release) }}
+		{% module ReleaseItemShort(release) %}
 	{% end %}
 {% end block %}

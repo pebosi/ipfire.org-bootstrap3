@@ -9,7 +9,7 @@
 
 	{% if entries %}
 		{% for entry in entries %}
-			{{ modules.PlanetEntry(entry, show_avatar=False) }}
+			{% module PlanetEntry(entry, show_avatar=False) %}
 		{% end %}
 
 		<div class="row">

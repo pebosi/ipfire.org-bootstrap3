@@ -9,14 +9,14 @@
 
 	<div class="row">
 		<div class="span12">
-			{{ modules.StasyTable(releases, sortby="percentage") }}
+			{% module StasyTable(releases, sortby="percentage") %}
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="span12">
 			<h2>{{ _("Architectures") }}</h2>
-			{{ modules.StasyTable(arches, sortby="percentage") }}
+			{% module StasyTable(arches, sortby="percentage") %}
 		</div>
 	</div>
 
@@ -33,7 +33,7 @@
 					runnning.
 				</p>
 			{% end %}
-			{{ modules.StasyTable(kernels, sortby="percentage") }}
+			{% module StasyTable(kernels, sortby="percentage") %}
 		</div>
 	</div>
 {% end block %}

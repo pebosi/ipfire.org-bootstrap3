@@ -36,7 +36,7 @@
 	<hr>
 
 	{% if wishes %}
-		{{ modules.Wishlist(wishes) }}
+		{% module Wishlist(wishes) %}
 	{% else %}
 		<div class="alert alert-error ac">
 			{% if lang == "de" %}

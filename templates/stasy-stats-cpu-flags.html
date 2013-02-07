@@ -37,7 +37,7 @@
 					How many CPUs support the 64-bit architecture?
 				</p>
 			{% end %}
-			{{ modules.StasyTable(cpus_lm, sortby="percentage") }}
+			{% module StasyTable(cpus_lm, sortby="percentage") %}
 		</div>
 	</div>
 
@@ -53,7 +53,7 @@
 					This chart shows us which CPUs have got the PAE flag.
 				</p>
 			{% end %}
-			{{ modules.StasyTable(cpus_pae, sortby="percentage") }}
+			{% module StasyTable(cpus_pae, sortby="percentage") %}
 		</div>
 	</div>
 
@@ -72,7 +72,7 @@
 					support for virtualization like VT-x and AMD-V.
 				</p>
 			{% end %}
-			{{ modules.StasyTable(cpus_virt, sortby="percentage") }}
+			{% module StasyTable(cpus_virt, sortby="percentage") %}
 		</div>
 	</div>
 {% end block %}

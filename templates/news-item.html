@@ -7,5 +7,5 @@
 		<h1>{{ item.title }}</h1>
 	</div>
 
-	{{ modules.NewsItem(item, show_heading=False) }}
+	{% module NewsItem(item, show_heading=False) %}
 {% end block %}

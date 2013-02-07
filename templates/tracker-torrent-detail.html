@@ -21,11 +21,11 @@
 
 	{% if peers %}
 		<h3>{{ _("Peers") }}</h3>
-		{{ modules.TrackerPeerList(peers, percentages=True) }}
+		{% module TrackerPeerList(peers, percentages=True) %}
 	{% end %}
 
 	{% if seeds %}
 		<h3>{{ _("Seeds") }}</h3>
-		{{ modules.TrackerPeerList(seeds) }}
+		{% module TrackerPeerList(seeds) %}
 	{% end %}
 {% end block %}
