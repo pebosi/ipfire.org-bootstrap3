@@ -218,7 +218,6 @@ class Application(tornado.web.Application):
 			# Downloads
 			(r"/downloads", AdminDownloadsHandler),
 			(r"/downloads/mirrors", AdminDownloadsMirrorsHandler),
-			(r"/downloads/test", AdminDownloadsGraphHandler),
 			# API
 			(r"/api/planet/render", AdminApiPlanetRenderMarkupHandler)
 		] + static_handlers)

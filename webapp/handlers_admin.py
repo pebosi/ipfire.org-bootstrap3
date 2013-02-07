@@ -2,12 +2,6 @@
 
 import tornado.web
 
-import matplotlib
-matplotlib.use("Agg")
-
-import matplotlib.pyplot as plt
-import matplotlib.dates
-
 from handlers_base import *
 
 import backend
@@ -287,24 +281,3 @@ class AdminDownloadsMirrorsHandler(AdminBaseHandler):
 			mirror_load_total = self.downloads.get_mirror_load(),
 			mirror_load_today = self.downloads.get_mirror_load("today"),
 		)
-
-
-class AdminDownloadsGraphHandler(AdminBaseHandler):
-	@tornado.web.authenticated
-	def get(self):
-		x = []
-		y = []
-		for row in self.downloads.daily_map:
-			x.append(matplotlib.dates.date2num(row.date))
-			y.append(row.downloads)
-
-		print x, y
-
-		# Create output image.
-		fig = plt.figure()
-
-		# Plot the data.
-		plot = fig.add_subplot(111)
-		plot.plot(x, y)
-
-		fig.savefig("nice-image.svg")
