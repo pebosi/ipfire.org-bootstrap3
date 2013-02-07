@@ -52,7 +52,7 @@
 					<input type="text" class="span7" name="profile_id" value=""
 						placeholder="{{ _("Profile ID") }}"><button type="submit" class="btn">{{ _("Show") }}</button>
 				</div>
-				{{ xsrf_form_html() }}
+				{% raw xsrf_form_html() %}
 			</form>
 		</div>
 	</div>

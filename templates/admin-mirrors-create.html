@@ -4,7 +4,7 @@
 	<div class="post">
 		<h3>{{ _("Create new mirror") }}</h3>
 		<form name="mirror" method="post">
-			{{ xsrf_form_html() }}
+			{% raw xsrf_form_html() %}
 			<input type="hidden" name="id" value="{{ mirror.id }}">
 
 			<table>

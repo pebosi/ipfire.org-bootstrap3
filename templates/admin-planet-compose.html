@@ -4,7 +4,7 @@
 	<div class="post">
 		<h3>{{ _("Compose new entry") }}</h3>
 		<form name="entry" method="post">
-			{{ xsrf_form_html() }}
+			{% raw xsrf_form_html() %}
 			{% if entry.id %}
 				<input type="hidden" name="id" value="{{ entry.id }}">
 			{% end %}
