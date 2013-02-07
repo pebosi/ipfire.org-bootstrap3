@@ -1,6 +1,7 @@
 #/usr/bin/python
 
 import logging
+import multiprocessing
 import os.path
 import simplejson
 import tornado.httpserver
@@ -253,7 +254,7 @@ class Application(tornado.web.Application):
 		# frontends to get best performance out of our service.
 		if not self.settings["debug"]:
 			http_server.bind(port)
-			http_server.start(num_processes=4)
+			http_server.start(num_processes=multiprocessing.cpu_count())
 		else:
 			http_server.listen(port)
 		
