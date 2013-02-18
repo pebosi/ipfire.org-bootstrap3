@@ -1,12 +1,16 @@
 {% extends "../base-1.html" %}
 		
 {% block title %}{{ _("Chat") }}{% end block %}
+
+{% block header %}
+	<header class="jumbotron subhead" id="overview">
+		<div class="container">
+			<h1>{{ _("Chat") }}</h1>
+		</div>
+	</header>
+{% end header %}
  
 {% block body %}
-	<div class="page-header">
-		<h1>{{ _("Chat") }}</h1>
-	</div>
-
 	{% if lang == "de" %}
 		<p>
 			Wer Fragen rund um IPFire hat, findet in unserem IRC-Channel rund

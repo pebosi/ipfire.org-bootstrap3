@@ -23,7 +23,7 @@
 		{% end %}
 	</head>
 
-	<body>
+	<body data-spy="scroll" data-target=".sidebar">
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
@@ -43,39 +43,57 @@
 		</div>
 
 		{% block container %}
+			{% block header %}{% end block %}
+
 			<div class="container container-body">
 				{% block body %}EMPTY BODY{% end block %}
+			</div>
+		{% end block %}
 
-				<footer class="footer hidden-phone">
-					<hr>
+		{% block footer %}
+			<footer class="footer">
+				<div class="container">
+					<div class="pull-right">
+						<a href="https://www.facebook.com/IPFire.org"><img src="{{ static_url("images/icons/social/facebook.png") }}" alt="Facebook"></a>
+						<a href="https://twitter.com/ipfire"><img src="{{ static_url("images/icons/social/twitter.png") }}" alt="Twitter"></a>
+						<a href="/news.rss"><img src="{{ static_url("images/icons/social/rss.png") }}" alt="RSS"></a>
+					</div>
 
-					{% if not hostname == "planet.ipfire.org" %}
-						<div class="pull-right">
-							<p>
-								{% for l in ("en", "de") %}
-									{% if not l == lang %}
+					<p>
+						&copy; {{ year }} - {{ _("IPFire is free software") }}
+					</p>
+
+					<ul class="footer-links">
+						{% if hostname in ("www.ipfire.org", "dev.ipfire.org") %}
+							<li>
+								<a href="/press">{{ _("Press") }}</a>
+							</li>
+							<li class="muted">&middot;</li>
+						{% end %}
+						<a href="http://www.ipfire.org/imprint">{{ _("Imprint") }}</a>
+
+						{% if hostname == "wishlist.ipfire.org" %}
+							<li class="muted">&middot;</li>
+							<li>
+								<a href="/terms">{{ _("Terms & Conditions") }}</a>
+							</li>
+						{% end %}
+
+						{% if not hostname == "planet.ipfire.org" %}
+							{% for l in ("en", "de") %}
+								{% if not l == lang %}
+									<li class="muted">&middot;</li>
+									<li>
 										<a href="?locale={{ l }}">
 											<img src="{{ static_url("images/flags/%s.png" % l) }}" alt="{{ l }}">
 										</a>
-									{% end %}
+									</li>
 								{% end %}
-							</p>
-						</div>
-					{% end %}
-
-					<p>
-						&copy; {{ year }} - <a href="http://www.ipfire.org/">IPFire.org</a> -
-						{% if hostname in ("www.ipfire.org", "dev.ipfire.org") %}
-							<a href="/press">{{ _("Press") }}</a> -
+							{% end %}
 						{% end %}
-						<a href="http://www.ipfire.org/imprint">{{ _("imprint") }}</a>
-
-						{% if hostname == "wishlist.ipfire.org" %}
-							- <a href="/terms">{{ _("Terms & Conditions") }}</a>
-						{% end %}
-					</p>
-				</footer>
-			</div>
+					</ul>
+				</div>
+			</footer>
 		{% end block %}
 
 		<script src="{{ static_url("js/jquery.js") }}"></script>

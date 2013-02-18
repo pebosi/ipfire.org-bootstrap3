@@ -2,11 +2,15 @@
 		
 {% block title %}{{ _("CeBIT special") }}{% end block %}
 
-{% block body %}
-	<div class="page-header">
-		<h1>{{ _("IPFire at CeBIT 2010") }}</h1>
-	</div>
+{% block header %}
+	<header class="jumbotron subhead" id="overview">
+		<div class="container">
+			<h1>{{ _("IPFire at CeBIT 2010") }}</h1>
+		</div>
+	</header>
+{% end header %}
 
+{% block body %}
 	<img class="pull-right" src="{{ static_url("images/cebit-177px_schatten.png") }}" alt="CeBIT">
 
 	{% if lang == "de" %}
@@ -47,25 +51,22 @@
 	<hr>
 
 	<div class="row">
-		<div class="span8 offset2">
+		<div class="span8 offset2 ac">
 			<iframe width="640" height="360" src="http://www.youtube.com/embed/9zUcQouQ1sE?rel=0" frameborder="0" allowfullscreen></iframe>
-			<a class="pull-right" href="http://eine-minute.blogspot.com/2010/03/ipfire-eine-utm-auf-opensource-basis.html">"eine-minute" Blog</a>
+			<br>
+			<a href="http://eine-minute.blogspot.com/2010/03/ipfire-eine-utm-auf-opensource-basis.html">"eine-minute" Blog</a>
 		</div>
 	</div>
 
 	<hr>
 
-	<div class="row">
-		<div class="span8 offset2">
-			<ul class="thumbnails">
-				{% for i in range(1, 5) %}
-					<li class="span4">
-						<a class="thumbnail" href="{{ static_url("images/cebit/cebit_2010_%d.jpg" % i) }}">
-							<img src="{{ static_url("images/cebit/cebit_2010_%d_tn.jpg" % i) }}" alt="{{ _("CeBIT") }}">
-						</a>
-					</li>
-				{% end %}
-			</ul>
-		</div>
-	</div>
+	<ul class="thumbnails">
+		{% for i in range(1, 5) %}
+			<li class="span3">
+				<a class="thumbnail" href="{{ static_url("images/cebit/cebit_2010_%d.jpg" % i) }}">
+					<img src="{{ static_url("images/cebit/cebit_2010_%d_tn.jpg" % i) }}" alt="{{ _("CeBIT") }}">
+				</a>
+			</li>
+		{% end %}
+	</ul>
 {% end block %}

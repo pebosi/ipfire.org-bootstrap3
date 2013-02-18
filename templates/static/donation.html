@@ -1,13 +1,24 @@
 {% extends "../base-1.html" %}
 		
-{% block title %}{{ _("Donation") }}{% end block %}
+{% block title %}{{ _("Donate") }}{% end block %}
+
+{% block header %}
+	<header class="jumbotron subhead" id="overview">
+		<div class="container">
+			<h1>{{ _("Donate") }}</h1>
+			<p class="lead">
+				{{ _("We need your help!") }}
+			</p>
+		</div>
+	</header>
+{% end header %}
  
 {% block body %}
-	<div class="page-header">
-		<h1>{{ _("Donation") }}</h1>
-	</div>
-
 	{% if lang == "de" %}
+		<p class="lead ac">
+			Wir möchten jeden, der IPFire einsetzt, ermutigen einen Beitrag zu leisten.
+			Danke dafür.
+		</p>
 		<p>
 			IPFire ist ein Open Source-Projekt.
 			Nutzer und die Gemeinschaft sind das wertvollste und wichtigste
@@ -25,11 +36,11 @@
 			zu erreichen, das Projekt finanziell gesund zu erhalten und
 			somit langfristig abzusichern.
 		</p>
-		<p>
-			Deshalb ermutigen wir jeden, der IPFire einsetzt einen Beitrag zu leisten.
-			Danke dafür.
-		</p>
 	{% else %}
+		<p class="lead ac">
+			We encourage anyone who downloads and uses IPFire to donate.
+			It is very much appreciated.
+		</p>
 		<p>
 			IPFire is an Open Source project.
 			The users and the community are the most valuable and most important factor,
@@ -45,10 +56,6 @@
 			improvement and promotion of the IPFire project.
 			Sponsorship is a good way to ensure the longevity and overall health of the project.
 		</p>
-		<p>
-			So we encourage anyone who downloads and uses IPFire to donate.
-			It is very much appreciated.
-		</p>
 	{% end %}
 
 	<hr>
@@ -57,9 +64,7 @@
 		<div class="span10 offset1">
 			{% module DonationBox() %}
 
-			<hr>
-
-			<div class="ac">
+			<p class="ac">
 				<strong>{{ _("Did you know...?") }}</strong>
 
 				{% if lang == "de" %}
@@ -69,88 +74,82 @@
 					You can support the implementation of your favorite feature on the
 					<a href="http://wishlist.ipfire.org/">IPFire wishlist</a>!
 				{% end %}
-			</div>
+			</p>
 		</div>
 	</div>
 
 	<br>
 
 	<div class="page-header">
-		<h4>{{ _("How do we use financial support?") }}</h4>
+		<h3>{{ _("How do we use financial support?") }}</h3>
 	</div>
 
-	<div class="row">
-		<div class="span6">
-			{% if lang == "de" %}
-				<p>
-					Die gesammelten Spenden werden direkt dazu verwendet,
-					das Projekt zu verbessern und das hohe Level an Qualität
-					zu erhalten.
-				</p>
-			{% else %}
-				<p>
-					The sponsored funds will be directly spent to improve
-					and maintain the high quality code base that IPFire is built upon.
-				</p>
-			{% end %}
+	{% if lang == "de" %}
+		<p>
+			Die gesammelten Spenden werden direkt dazu verwendet,
+			das Projekt zu verbessern und das hohe Level an Qualität
+			zu erhalten.
+		</p>
+	{% else %}
+		<p>
+			The sponsored funds will be directly spent to improve
+			and maintain the high quality code base that IPFire is built upon.
+		</p>
+	{% end %}
 
-			{% if lang == "de" %}
-				<p>
-					Ebenfalls sammeln wir um die folgenden Aktivitäten zu unterstützen:
-				</p>
-				<ul>
-					<li>
-						Entwickler, die neue Funktion implementieren und Fehler in IPFire beseitigen
-					</li>
-					<li>
-						Verbessung von Dokumentation, Tutorials und des Community-Supports
-					</li>
-					<li>
-						Die Bekanntheit von IPFire durch Werbung zu fördern
-					</li>
-				</ul>
-			{% else %}
-				<p>
-					We would also like to fund the following activities:
-				</p>
-				<ul>
-					<li>
-						Developers implementing new features and fixing bugs in IPFire
-					</li>
-					<li>
-						Improve documentation, tutorials and community support
-					</li>
-					<li>
-						Promote IPFire and do advertising
-					</li>
-				</ul>
-			{% end %}
-		</div>
+	{% if lang == "de" %}
+		<p>
+			Ebenfalls sammeln wir um die folgenden Aktivitäten zu unterstützen:
+		</p>
+		<ul>
+			<li>
+				Entwickler, die neue Funktion implementieren und Fehler in IPFire beseitigen
+			</li>
+			<li>
+				Verbessung von Dokumentation, Tutorials und des Community-Supports
+			</li>
+			<li>
+				Die Bekanntheit von IPFire durch Werbung zu fördern
+			</li>
+		</ul>
+	{% else %}
+		<p>
+			We would also like to fund the following activities:
+		</p>
+		<ul>
+			<li>
+				Developers implementing new features and fixing bugs in IPFire
+			</li>
+			<li>
+				Improve documentation, tutorials and community support
+			</li>
+			<li>
+				Promote IPFire and do advertising
+			</li>
+		</ul>
+	{% end %}
 
-		<div class="span6">
-			<h4>{{ _("Research & Development") }}</h4>
+	<h4>{{ _("Research & Development") }}</h4>
 
-			{% if lang == "de" %}
-				<p>
-					Forschung und Entwicklung sind uns sehr wichtig,
-					um IPFire auch den Weg für die Zukunft zu bereiten.
-					Ein Beispiel dafür ist die Portierung auf neue Architekturen.
-				</p>
-				<p>
-					Einige Themen, in welchen wir uns engagieren wollen sind unter anderem
-					ARM, IPv6 und eine neuartige Weboberfläche.
-				</p>
-			{% else %}
-				<p>
-					We would also like to do some research and development to
-					make IPFire ready for the future.
-					One example is we'd like to acquire new hardware platforms
-					and port IPFire to them.
-				</p>
-				<p>
-					Some of the big things we would like to dig in are ARM, IPv6 and a new WUI.
-				</p>
-			{% end %}
-		</div>
-	</div>
+	{% if lang == "de" %}
+		<p>
+			Forschung und Entwicklung sind uns sehr wichtig,
+			um IPFire auch den Weg für die Zukunft zu bereiten.
+			Ein Beispiel dafür ist die Portierung auf neue Architekturen.
+		</p>
+		<p>
+			Einige Themen, in welchen wir uns engagieren wollen sind unter anderem
+			ARM, IPv6 und eine neuartige Weboberfläche.
+		</p>
+	{% else %}
+		<p>
+			We would also like to do some research and development to
+			make IPFire ready for the future.
+			One example is we'd like to acquire new hardware platforms
+			and port IPFire to them.
+		</p>
+		<p>
+			Some of the big things we would like to dig in are ARM, IPv6 and a new WUI.
+		</p>
+	{% end %}
 {% end block %}

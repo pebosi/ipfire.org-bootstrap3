@@ -1,76 +1,1415 @@
-{% extends "../base-feature.html" %}
+{% extends "../base.html" %}
 
 {% block title %}{{ _("About IPFire") }}{% end block %}
 
-{% block bodyA %}
-	<div class="page-header">
-		<h1>{{ _("About IPFire") }}</h1>
-	</div>
-
-	<div class="row">
-		<div class="span5 offset2">
-			<img src="{{ static_url("images/tux/ipfire_tux_512x512.png") }}" alt="IPFire Logo" />
+{% block header %}
+	<header class="jumbotron subhead" id="overview">
+		<div class="container">
+			<h1>{{ _("About IPFire") }}</h1>
+			<p class="lead">
+				{{ _("Because IPFire is more than just a firewall") }}
+			</p>
 		</div>
-	</div>
+	</header>
+{% end header %}
 
-	<hr>
-
+{% block body %}
 	<div class="row">
 		<div class="span9">
-			{% if lang == "de" %}
-				<p>
-					<strong>IPFire</strong> wurde mit Augenmerk auf Modularität und einem hohen
-					Level an Flexibilität entwickelt. Es ist kinderleicht verschiedene Konfigurationen
-					zu installieren, wie zum Beispiel eine Firewall, einen Proxy-Server oder ein
-					VPN-Gateway.
-					Das modulare Design stellt sicher, dass nur exakt die Module laufen, die auch
-					benötigt werden und nichts weiter.
-					Erweiterungen und Updates lasses sich durch einen Paketmanager einfach
-					verwalten und aktualisieren.
+			<section id="about">
+				<div class="page-header">
+					<h1>
+						{{ _("IPFire") }} <small>{{ _("An Open Source Firewall Distribution") }}</small>
+					</h1>
+				</div>
+
+				<p class="ac">
+					<img src="{{ static_url("images/tux/ipfire_tux_512x512.png") }}" alt="IPFire Logo" />
 				</p>
-				<p>
-					Das IPFire Entwicklerteam ist sich im Klaren, dass Sicherheit von Anwendungsfall
-					zu Anwendungsfall ganz verschieden aussehen kann und sich auch über die Zeit
-					verändert.
-					Für diesen Fall erlaubt die Modularität und Flexibilität eine einfache
-					Integration in jede bestehende Sicherheitsarchitektur.
-					Nicht zu vergessen ist, dass Einfachheit in der Bedienung eine
-					Schlüsseleigenschaft ist.
-					Wenn all dies im Moment ein wenig viel klingt, so ist ein sinnvoller
-					Einsatz von IPFire schon sofort nach der Installation möglich.
-				</p>
-				<p>
-					<em>
-						Die Links in der Sidebar zeigen, was mit IPFire alles möglich ist
-						und sind einen genaueren Blick wert.
-					</em>
-				</p>
-			{% else %}
-				<p>
-					<strong>IPFire</strong> was designed with both modularity and a high-level of
-					flexibility in mind. You can easily deploy many variations of it, such as a firewall,
-					a proxy server or a VPN gateway.
-					The modular design ensures that it runs exactly what you've configured it for and
-					nothing more. Everything is simple to manage and update through the package manager,
-					making maintenance a breeze.
-				</p>
-				<p>
-					The IPFire development team understands that security means different things to
-					different people and certainly can change over time.
-					The fact that IPFire is modular and flexible make it perfect for integrating
-					into any existing security architecture.
-					Don't forget that ease-of-use is a key principle.
-					If all this sounds a little too much for you, IPFire comes with great default
-					settings out-of-the-box, meaning it's a snap to get going quickly!
-				</p>
-				<p>
-					<em>
-						Above are some links that we encourage you to click through.
-						Please take a look at all of the features and possibilities
-						which IPFire offers for your network. 
-					</em>
-				</p>
-			{% end %}
+
+				{% if lang == "de" %}
+					<p>
+						<strong>IPFire</strong> wurde mit Augenmerk auf Modularität und einem hohen
+						Level an Flexibilität entwickelt. Es ist kinderleicht verschiedene Konfigurationen
+						zu installieren, wie zum Beispiel eine Firewall, einen Proxy-Server oder ein
+						VPN-Gateway.
+						Das modulare Design stellt sicher, dass nur exakt die Module laufen, die auch
+						benötigt werden und nichts weiter.
+						Erweiterungen und Updates lasses sich durch einen Paketmanager einfach
+						verwalten und aktualisieren.
+					</p>
+					<p>
+						Das IPFire Entwicklerteam ist sich im Klaren, dass Sicherheit von Anwendungsfall
+						zu Anwendungsfall ganz verschieden aussehen kann und sich auch über die Zeit
+						verändert.
+						Für diesen Fall erlaubt die Modularität und Flexibilität eine einfache
+						Integration in jede bestehende Sicherheitsarchitektur.
+						Nicht zu vergessen ist, dass Einfachheit in der Bedienung eine
+						Schlüsseleigenschaft ist.
+						Wenn all dies im Moment ein wenig viel klingt, so ist ein sinnvoller
+						Einsatz von IPFire schon sofort nach der Installation möglich.
+					</p>
+					<p>
+						<em>
+							Die Links in der Sidebar zeigen, was mit IPFire alles möglich ist
+							und sind einen genaueren Blick wert.
+						</em>
+					</p>
+				{% else %}
+					<p>
+						<strong>IPFire</strong> was designed with both modularity and a high-level of
+						flexibility in mind. You can easily deploy many variations of it, such as a firewall,
+						a proxy server or a VPN gateway.
+						The modular design ensures that it runs exactly what you've configured it for and
+						nothing more. Everything is simple to manage and update through the package manager,
+						making maintenance a breeze.
+					</p>
+					<p>
+						The IPFire development team understands that security means different things to
+						different people and certainly can change over time.
+						The fact that IPFire is modular and flexible make it perfect for integrating
+						into any existing security architecture.
+						Don't forget that ease-of-use is a key principle.
+						If all this sounds a little too much for you, IPFire comes with great default
+						settings out-of-the-box, meaning it's a snap to get going quickly!
+					</p>
+					<p>
+						<em>
+							Above are some links that we encourage you to click through.
+							Please take a look at all of the features and possibilities
+							which IPFire offers for your network. 
+						</em>
+					</p>
+				{% end %}
+			</section>
+
+			<section id="security">
+				<div class="page-header">
+					<h1>{{ _("Security") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						Das Hauptaugenmerk von IPFire liegt bei Sicherheit.
+						Gerade bei einem solch umfangreichen Thema gibt es nicht nur einen einzigen
+						Weg, um ein maximales Maß an Sicherheit zu erlangen. Mindestens genauso
+						wichtig ist es für den Netzwerkadministrator seine Bedürfnisse zu verstehen
+						und entsprechend zu handeln. IPFire stellt für diesen Zweck eine Basis bereit,
+						die einzelne Netzwerksegmente nach ihren Sicherheitslevels unterteilt und erlaubt diese
+						anschließend nach eigenen Erfordernissen anzupassen
+						(mehr dazu unter <a href="/features/firewall">Firewall</a>).
+					</p>
+					<p>
+						Eine ebenso hohe Priorität genießt die Sicherheit der modularen Komponenten.
+						Aktualisierungen werden digital signiert, verschlüsselt
+						und können automatisch über das <a href="/features/pakfire">Pakfire
+						Paketmanagement-System</a> installiert werden.
+						Typischerweise ist IPFire direkt mit dem Internet verbunden und macht es
+						somit zu einem Ziel für Hacker und andere Gefahren.
+						Das Paketmanagement-System unterstützt den Administrator darin,
+						sicher zu sein, dass alle wichtigen Lücken gestopft und Fehler
+						in allen eingesetzten Komponenten beseitigt sind.
+					</p>
+				{% else %}
+					<p>
+						The primary objective of IPFire is security.
+						As there is of course no one, single way to achieve network security, it is important
+						for a network administrator to understand their environment and what the term
+						<em>security</em> means in the context of their own network.
+						IPFire forms the base of a secure network.
+						It has the power to segment networks based on their respective security levels
+						and makes it easy to create custom policies that manage each segment
+						(see the Firewall page for more information).
+					</p>
+					<p>
+						Security of the modular components is a top priority.
+						Updates are digitally signed and encrypted, as well as can be automatically installed
+						by Pakfire (<a href="/features/updates">the IPFire package management system</a>).
+						Since IPFire is typically directly connected to the Internet, it is going to be a
+						primary target for hackers and other threats.
+						The simple Pakfire package manager helps administrators feel confident that
+						they are running the latest security updates and bug fixes for all of the
+						components they utilize.
+					</p>
+				{% end %}
+			</section>
+
+			<section id="firewall">
+				<div class="page-header">
+					<h1>{{ _("Firewall") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						IPFire nutzt eine Stateful-Packet-Inspection-Firewall (SPI),
+						welche auf das Linux Paketfilter-Framework <em>netfilter</em> aufsetzt.
+					</p>
+					<p>
+						Während des IPFire Installationsprozesses, wird das Netzwerk in
+						mehrere separate Segmente unterteilt.
+						Dieses Sicherheitsschema impliziert einen perfekten Platz für
+						jedes System im Netzwerk.
+						Jedes Segment kann nach Bedarf zugeschaltet werden, abhängig vom
+						Einsatzort und -zweck und alle Systeme in einem Segment werden
+						mit der gleichen Sicherheitspolicy behandelt:
+					</p>
+
+					<table class="table table-striped table-bordered">
+						<tbody>
+							<tr>
+								<td style="background-color: green; color: white;">
+									<strong>Green</strong>
+								</td>
+								<td>
+									Grün repräsentiert die "sichere" Zone.
+									In diese Zone gelangen alle herkömmlichen
+									Clients, welche meist mit dem Kabelnetzwerk
+									verbunden sind. Von hier aus können die Clients
+									uneingeschränkt auf alle anderen Zonen zugreifen.
+								</td>
+							</tr>
+							<tr>
+								<td style="background-color: red; color: white;">
+									<strong>Red</strong>
+								</td>
+								<td>
+									Rot impliziert "Gefahr" - also die Verbindung zum
+									Internet.
+									Nichts von hier aus darf die Firewall passieren,
+									außer dies ist explizit vom Administrator erlaubt.
+								</td>
+							</tr>
+							<tr>
+								<td style="background-color: darkblue; color: white;">
+									<strong>Blue</strong>
+								</td>
+								<td>
+									Blau repräsentiert das drahtlose Segment des
+									Netzwerks (aufgrund der Farbe des Himmels).
+									Da Wireless-Clients von Natur aus ein größeres
+									Gefahrenpotential sind, muss für jedes System
+									in diesem Teil der Zugang zum Internet gesondert
+									erlaubt werden.
+								</td>
+							</tr>
+							<tr>
+								<td style="background-color: orange; color: white;">
+									<strong>Orange</strong>
+								</td>
+								<td>
+									Das orangene Netzwerk wird auch als demilitarisierte
+									Zone (DMZ) bezeichnet.
+									Alle Server, die aus dem Internet erreichbar sind
+									gehören in dieses Netz um kein Sicherheitsrisiko
+									für andere lokale Systeme zu sein.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p>
+						Zusätzlich zu den oben genannten Policies kann auch der ausgehende
+						Netzwerkverkehr für jedes Segment geregelt werden.
+						Diese Funktion gibt dem Netzwerkadministrator vollständige
+						Kontrolle über das Netzwerk.
+					</p>
+				{% else %}
+					<p>
+						IPFire employs a Stateful Packet Inspection (SPI) firewall,
+						which is built on top of netfilter (the Linux packet filtering framework).
+					</p>
+					<p>
+						During the installation of IPFire, the network is configured into different,
+						separate segments.
+						This segmented security scheme means that there is a perfect place for each
+						machine in the network.
+						These different segments may be enabled separately, depending on your requirements.
+						Each segment represents a group of computers who share a common security level:
+					</p>
+
+					<table class="table table-striped table-bordered">
+						<tbody>
+							<tr>
+								<td style="background-color: green; color: white;">
+									<strong>Green</strong>
+								</td>
+								<td>
+									Green represents a "safe" area.
+									This is where all regular clients will reside.
+									It is usually comprised of a wired, local network.
+									Clients on Green can access all other network
+									segments without restriction.
+								</td>
+							</tr>
+							<tr>
+								<td style="background-color: red; color: white;">
+									<strong>Red</strong>
+								</td>
+								<td>
+									Red indicates "danger" or the connection to the Internet.
+									Nothing from Red is permitted to pass through the
+									firewall unless specifically configured by the
+									administrator.
+								</td>
+							</tr>
+							<tr>
+								<td style="background-color: darkblue; color: white;">
+									<strong>Blue</strong>
+								</td>
+								<td>
+									Blue represents the "wireless" part of the local
+									network (chosen because it's the color of the sky).
+									Since the wireless network has the potential for abuse,
+									it is uniquely identified and specific rules govern
+									clients on it.
+									Clients on this network segment must be explicitly
+									allowed before they may access the network.
+								</td>
+							</tr>
+							<tr>
+								<td style="background-color: orange; color: white;">
+									<strong>Orange</strong>
+								</td>
+								<td>
+									Orange is referred to as the "demilitarized zone" (DMZ).
+									Any servers which are publicly accessible are separated
+									from the rest of the network here to limit security
+									breaches.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p>
+						Additionally, the firewall can be used to control outbound Internet
+						access from any segment.
+						This feature gives the network administrator complete control
+						over how their network is configured and secured. 
+					</p>
+				{% end %}
+
+				<hr class="separator">
+
+				<ul class="thumbnails">
+					<li class="span3">
+						<a class="thumbnail" href="{{ static_url("images/screenshots/en/firewall/edit-portfw-rule-1.png") }}">
+							<img src="{{ static_url("images/screenshots/en/firewall/edit-portfw-rule-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+						</a>
+					</li>
+					<li class="span3">
+						<a class="thumbnail" href="{{ static_url("images/screenshots/en/firewall/dmz-holes-1.png") }}">
+							<img src="{{ static_url("images/screenshots/en/firewall/dmz-holes-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+						</a>
+					</li>
+					<li class="span3">
+						<a class="thumbnail" href="{{ static_url("images/screenshots/en/firewall/connections-1.png") }}">
+							<img src="{{ static_url("images/screenshots/en/firewall/connections-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+						</a>
+					</li>
+				</ul>
+			</section>
+
+			<section id="pakfire">
+				<div class="page-header">
+					<h1>
+						Pakfire <small>{{ _("The IPFire package management system") }}</small>
+					</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						Vom technischen Standpunkt aus ist IPFire ein schlankes, gehärtetes
+						Firewall-System, welches den Paketmanager Pakfire mitbringt.
+						Die primäre Aufgabe von Pakfire ist es, Systemupdates mit nur einem Klick
+						einspielen zu können.
+						Somit ist es ganz leicht <a href="/features/updates">Sicherheitslücken
+						zu schließen und Bugfixes sowie neue Funktionen zu installieren</a>.
+						Dies macht IPFIre sicherer und schneller - oder einfach: besser.
+					</p>
+					<p>
+						Eine weitere Aufgabe ist es, zusätzliche Addons zu installieren, welche die
+						Funktionen des Systems erweitern.
+
+						Einige beliebte sind unter anderen:
+
+						<ul>
+							<li>Datei- und Druckdienste wie <em>samba</em> und <em>vsftpd</em></li>
+							<li>Kommunikationslösungen wie <em>Asterisk</em></li>
+							<li>
+								Verschiedene Kommandozeilenhelfer wie
+								<em>tcpdump</em>, <em>nmap</em>, <em>traceroute</em>
+								und viele mehr.
+							</li>
+						</ul>
+					</p>
+
+					<hr class="separator">
+
+					<h2>Pakfire als Buildsystem</h2>
+					<p>
+						Das kommende Major-Release von IPFire wird eine neue
+						Generation des Pakfire Paketmanagementsystems mitbringen.
+						Diese ist schneller, sicherer und einfacher zu bedienen.
+						Dazu kommen unzählige neue Funktionen.
+					</p>
+					<p>
+						Eine der neuen Funktionen ist, dass <em>pakfire</em>
+						nun auch als Buildsystem fungiert.
+						Ein auf die IPFire-Distribution angepasstes Buildsystem
+						hat die Produktivität der Entwickler immens gesteigert.
+						Neue Pakete zu bauen ist nun einfacher und nimmt weniger
+						Zeit in Anspruch.
+					</p>
+					<p>
+						Qualitätssicherung ist jetzt eine Aufgabe für alle.
+						Mehr dazu auf <a href="http://pakfire.ipfire.org/">pakfire.ipfire.org</a>.
+					</p>
+				{% else %}
+					<p>
+						From a technical point of view, IPFire is a minimalistic, hardened firewall system
+						which comes with an integrated package manager called Pakfire.
+						The primary task of Pakfire is to update the system with only a single click.
+						It is very easy to install <a href="/features/updates">security patches,
+						bugfixes and feature enhancements</a>, which make IPFire safer and faster
+						- or simply: better.
+					</p>
+					<p>
+						Another task of Pakfire is to install additional software that adds new
+						functionality to the IPFire system.
+
+						Some useful of them are:
+					
+						<ul>
+							<li>File sharing services such as Samba and vsftpd</li>
+							<li>Communications server using Asterisk</li>
+							<li>
+								Various command-line tools as <em>tcpdump</em>,
+								<em>nmap</em>, <em>traceroute</em> and many more.
+							</li>
+						</ul>
+					</p>
+
+					<hr class="separator">
+
+					<h2>Pakfire as a build system</h2>
+					<p>
+						The next major release of IPFire will also ship a new generation
+						of the Pakfire packagement system.
+						This new generation has been made faster, more secure, more
+						easy to handle and adds a whole bunch of new features.
+					</p>
+					<p>
+						One of this features is that <em>pakfire</em> is now the
+						buildsystem as well. Having a customized build system for
+						the needs of IPFire and the IPFire developers improved
+						the development process very much. Building new packages
+						became a lot more easy and less time-consuming.
+					</p>
+					<p>
+						Quality assurance became more social right now. Check it
+						out at <a href="http://pakfire.ipfire.org/">pakfire.ipfire.org</a>.
+					</p>
+				{% end %}
+
+				<hr class="separator">
+
+				<ul class="thumbnails">
+					<li class="span3">
+						<a class="thumbnail" href="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1.png") }}">
+							<img src="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+						</a>
+					</li>
+					<li class="span3">
+						<a class="thumbnail" href="{{ static_url("images/screenshots/en/pakfire/addon-services-1.png") }}">
+							<img src="{{ static_url("images/screenshots/en/pakfire/addon-services-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+						</a>
+					</li>
+				</ul>
+			</section>
+
+			<section id="updates">
+				<div class="page-header">
+					<h1>{{ _("Updates") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						IPFire basiert auf Linux, dem besten Open-Source-Kernel, den es gibt.
+						Ebenso basiert IPFire <strong>nicht</strong> auf irgendeiner Distribution
+						wie z.B. Knoppix auf Debian basiert sondern wird aus den Sourcen einer
+						großen Anzahl von Paketen gebaut. Dieser Prozess der Entwicklung kostet
+						viel Zeit, gibt allerdings die Möglichkeit nicht von Updatezyklen anderer
+						abzuhängen. Dagegen hat es den Vorteil besonders zuverlässige Versionen
+						eines Softwarepakets auszuwählen und den größten Teil der Distribution
+						daraus aufzubauen. Der Kernel hingegen wird laufend aktualisiert und
+						gepatcht um aktuelle und eine möglichst breite Palette an Hardware zu
+						unterstützen - und viel wichtiger, Sicherheitsupdates zeitnah zur
+						Verfügung zu stellen.
+					</p>
+					<p>
+						Das macht IPFire zu einem sehr leistungsfähigen und gleichzeitig
+						gehärtetem System.
+					</p>
+					<p>
+						Um dies beizubehalten und kompatibel zu der Vielzahl an Hardware auf
+						dem Markt zu bleiben, werden sogenannte "Core Updates" in einem Abstand
+						von etwa vier Wochen herausgegegen, um gesammelte Patches auszuliefern.
+						Im Falle eines kritischen Sicherheitsproblems in einem der Pakete gibt
+						es Sicherheitsupdates innerhalb weniger als 24 Stunden.
+					</p>
+					<p>
+						Alle Updates können mittels des Paketmanagementsystems eingespielt werden
+						und die Benutzer werden per Email über eben diese informiert. So ist
+						in allen Fällen das Update nach einem einzigen Klick installiert und
+						das System ist wieder gesichert im Internet.
+					</p>
+				{% else %}
+					<p>
+						IPFire is based on Linux, which is the best Open Source kernel around.
+						Additionally, IPFire is <strong>not</strong> based on any other
+						distribution like Knoppix is on Debian. It is compiled from the sources
+						of every single package. This comsumes a lot of work, but finally
+						gives the opportunity to not rely on the update cycles of others.
+						The advantages we gain is that we are able to select very stable
+						versions of software and build the distribution from them. For example
+						is the most part of the distribution quite well tested and long maintained
+						- in contrast to the kernel which is very recent and regularly updated
+						with patches to support as much hardware as possible and more importantly
+						fix security errors.
+					</p>
+					<p>
+						This is what makes IPFire a very strong and hardened system.
+					</p>
+					<p>
+						To keep up that strength and be prepared for new
+						<a href="/features/hardware">hardware</a>, we give
+						out the so called <strong>Core Updates</strong> which are issued in
+						about every four weeks and updating collected fixes. If there is a
+						security emergency,	we provide updates in less than a day to overcome
+						zero-day holes in the system.
+					</p>
+					<p>
+						All of the updates can be installed by the
+						<a href="/features/pakfire">package management system</a>
+						and users are notified by mail. So in all cases, the update is just
+						a simple click and your system is running safe again.
+					</p>
+				{% end %}
+			</section>
+
+			<section id="dialup">
+				<div class="page-header">
+					<h1>{{ _("Dialup") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						IPFire ist als Internet-Gateway in der Lage über verschiedene
+						(Einwahl-)Techniken eine Verbindung zum Internet aufzubauen.
+					</p>
+					<p>
+						Es werden alle gängigen Breitbandzugangsarten wie auch mobile Zugänge unterstützt:
+					</p>
+
+					<table class="table table-striped table-bordered">
+						<tbody>
+							<tr>
+								<td>
+									<strong>VDSL</strong>
+								</td>
+								<td>
+									VDSL ist die Abkürzung für <em>Very High Data Rate Digital Subscriber Line</em> und
+									bietet in Deutschland derzeit Bandbreiten bis zu 50 MBit/s im Downstream und 10 MBit/s im Upstream.
+									Damit eignet sich VDSL für die Zukunft und bringt auch IPTV mit sich. Mit IPFire kann der herkömmliche
+									Router ausgetauscht werden und auf ein vollwertiges System gesetzt werden, das den IPTV-Stream ins
+									eigene Netz bringt.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>ADSL/SDSL</strong>
+								</td>
+								<td>
+									Selbstverständlich wird auch herkömmliches DSL unterstützt, wobei es sich
+									technisch um PPPoE oder PPPoA handelt. In einigen Ländern ist auch PPTP als Protokoll verbreitet und
+									wird ebenso unterstützt.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>Ethernet</strong>
+								</td>
+								<td>
+									Über Ethernet kann IPFire ebenfalls mit dem Internet verbunden werden und
+									eine IP-Adresse entweder per DHCP beziehen oder statisch konfiguriert werden. Das wird u.a. bei
+									Verbindungen über Kabel genutzt.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>3. Generation</strong>
+								</td>
+								<td>
+									Über USB-Modems wird auch jede Art von mobilen Breitbandverbindungen
+									unterstützt, welche bekannt sind unter den Bezeichnungen UMTS, 3G, CDMA, HSDPA oder LTE.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				{% else %}
+					<p>
+						IPFire as an Internet Gateway is able to dialup through various techniques
+						to connect to the Internet.
+					</p>
+					<p>
+						It supports all popular types of broadband access, as well as mobile access:
+					</p>
+
+					<table class="table table-striped table-bordered">
+						<tbody>
+							<tr>
+								<td>
+									<strong>VDSL</strong>
+								</td>
+								<td>
+									VDSL is short for <em>Very High Data Rate Digital Subscriber Line</em> and
+									it currently offers bandwidth up to 50 Mbit/s downstream and 10 Mbit/s upstream.
+									VDSL brings the possibility of using new technologies such as IPTV. With IPFire, a conventional
+									router can be replaced by a full-fledged system that brings the IPTV stream into your own home network.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>ADSL/SDSL</strong>
+								</td>
+								<td>
+									Conventional DSL is also supported, although it is technically
+									called also PPPoE or PPPoA. In some countries, the PPTP protocol is also widely used and it is also fully
+									supported by IPFire.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>Ethernet</strong>
+								</td>
+								<td>
+									Over Ethernet, IPFire can also be connected to the Internet and obtain
+									an IP address either via DHCP or static configuration.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>3rd Generation</strong>
+								</td>
+								<td>
+									Mobile broadband connections over USB modems, which are also known by the names
+									UMTS, 3G, CDMA, HSDPA or LTE are also supported by IPFire.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				{% end %}
+			</section>
+
+			<section id="proxy">
+				<div class="page-header">
+					<h1>{{ _("Web proxy") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						Der Webproxy in IPFire, die Open-Source-Software Squid, ist der Linux und UNIX-Welt nicht unbekannt
+						und steht unter der GNU General Public License. Nicht nur ISPs, Universitäten, Schulen und grosse
+						Firmen nutzen diesen Proxy, denn seine Vielfältigkeit, Stabilität und ausgereifte Entwicklung macht
+						ihn auch für kleine Heimnetzwerke zu einem nutzvollen Partner. Ergänzend zur zustandsgesteuerten
+						Paketfilterung auf TCP/IP Ebene der Firewall können somit auch Inhalte, die über das HTTP-Protokoll
+						übertragen werden, analysiert und geregelt werden. Dabei können sowohl  HTTP-, HTTPS- sowie
+						FTP-Inhalte über Squid angefordert werden.
+					</p>
+					<ul>
+						<li>
+							<strong>Sicherheit:</strong> Der Client fragt nicht selbst, er lässt seinen Proxy fragen.
+							Die Antwort des Servers geht wieder an den Proxy und nicht an den Client. Der Client tritt
+							somit nicht selbst in Erscheinung. Ein damit verbundener Angriff würde also in erster Linie
+							den Proxy und nicht den Client treffen. Es stehen auch Funktionen zum Datenschutz zur Verfügung,
+							was einen Vorteil gegenüber einem reinen NAT Router darstellt.
+						</li>
+						<li>
+							<strong>Authentifizierung:</strong> Über Access-Listen kann Squid auch veranlasst werden,
+							Zugriffe nur nach einer Benutzerauthentifizierung zuzulassen. Hierbei stehen LDAP, identd,
+							Windows, Radius oder Lokale Authentifizierungsmethoden zur Verfügung, womit sich der Webproxy
+							zum Beispiel an einen Microsoft Windows Domänencontroller anbinden lässt und nur Mitarbeitern
+							der Zugang zum Internet gewährt werden kann.
+						</li>
+						<li>
+							<strong>Kontrolle der Zugriffe:</strong> Soll der Internetzugriff nur zu speziellen Tageszeiten
+							oder auch komplett für einzelne oder mehrere Clients eingeschränkt werden, kann dies über die
+							“Netzwerkbasierten Zugriffskontrolle” geschehen, welche man im Webinterface findet. Ein sinnvoller
+							Anwendungsbereich dafür sind z.B. Schulen.
+						</li>
+						<li>
+							<strong>Protokollierung:</strong> Da jeder Zugriff über den Proxy protokolliert werden kann, bieten
+							sich Möglichkeiten zur Überprüfung der Zugriffe im Nachhinein an und es können auch Statistiken
+							und Abrechnungen erstellt werden. Durch das Analyseprogramm Calamaris lassen sich die Logdateien
+							in unterschiedlichsten Kriterien über das IPFire Webinterface übersichtlich darstellen.
+						</li>
+						<li>
+							<strong>Bandbreitenmanagement:</strong> Das Downloadmanagement lässt eine Kontrolle der Bandbreite
+							für spezifizierte Bereiche zu. So können inhaltsbasierte Drosselungen zum Beispiel für Binärdateien,
+							CD-Images oder Multimediadaten ebenso konfiguriert werden wie eine Download Drosselung der einzelnen
+							Zonen oder für Hosts in den jeweiligen Zonen.
+						</li>
+					</ul>
+				{% else %}
+					<p>
+						IPFire includes a full-fledged web proxy, which is the well-known, open-source software Squid. It is used by ISPs, universities, schools and large companies use because of its diversity, stability and mature development. Even for small home networks, it
+						is a useful feature. In addition to the stateful paket inspection (SPI) filtering by the firewall on
+						the TCP/IP layer, the web content which is transmitted over HTTP, HTTPS or FTP can be analyzed
+						and filtered as well.
+					</p>
+					<ul>
+						<li>
+							<strong>Security:</strong> The client does not query web servers directly, it queries the proxy first.
+							The server response goes back to the proxy and not to the client, which actually does not technically even appear on the
+							Internet. A related attack would therefore primarily reach the proxy and not the client. There are also
+							functions available for data privacy, which is an significant advantage in comparison to a pure NAT router.
+						</li>
+						<li>
+							<strong>Authentication:</strong> Using the access lists, the web proxy can also be configured to allow
+							access only after a user has been authenticated. At this point you have the choice between LDAP, identd,
+							Windows, Radius or local authentication methods. The web proxy can connect, for example to a
+							Microsoft Windows domain controller and only the users of that Windows domain can be granted access to the Internet.
+						</li>
+						<li>
+							<strong>Authorization:</strong> If the Internet access needs to  be limited to specific time of a day,
+							or if it should be even completely disabled for any clients, is this easily configured by the
+							“network-based access control”, which can also be found on the IPFire web interface. A useful application for this feature can be for example, a school classroom.
+						</li>
+						<li>
+							<strong>Logging:</strong> Since each access can be logged over the proxy, possibilities for the
+							examination of the accessed content can be very useful, as well as statistics and bills can be issued afterwards.
+							Through the use of a logfile analyzer named Calamaris, log files can be charted by varying criteria
+							on the IPFire web interface.
+						</li>
+						<li>
+							<strong>Bandwidth management:</strong> The download management function allows for control of the bandwidth
+							to specified zones. Thus, content-based throttling (for example for binary files, CD images or
+							multimedia content) is configurable with bandwidth limitations for individual zones or for each host
+							in a particular zone.
+						</li>
+					</ul>
+				{% end %}
+
+				<hr class="separator">
+
+				<h2>{{ _("Content filter") }}</h2>
+
+				{% if lang == "de" %}
+					<p>
+						SquidGuard ist ein URL-Filter, der über den Redirektor-Mechanismus an den Proxy angebunden wird.
+						Das Herz stellen sogenannte Blacklists dar, die von offizieller Seite erstellt, eine Reihe von
+						klassifizierten Webseiten enthalten und über das Webinterface automatisch auf dem neuesten Stand
+						gehalten werden. Es stehen unterschiedliche, freie Quellen für vorgefertigte Blacklists zur Verfügung,
+						die erlauben unter anderem jugendgefährdende Inhalte, Shopping-, Warez-, Social-Networking- oder
+						gewaltverherrlichende Seiten zu filtern.
+					</p>
+					<p>
+						Individuelle Erweiterungen einzelner Domains oder URLs können für Blacklists und ebenso für Whitelists
+						über das Webinterface eingerichtet werden. IPFire bietet auch einen Blacklist-Editor, der das Editieren
+						und erstellen eigener Blacklists über das Webinterface anbietet.
+					</p>
+					<p>
+						Mögliche Anwendungsbereiche für SquidGuard auf dem IPFire sind:
+					</p>
+					<ul>
+						<li>
+							Sperren oder Einschränken spezieller Internet Inhalte in Abhängigkeit von Uhrzeit, Benutzer
+							und verwendetem Rechner.
+						</li>
+						<li>
+							Verhinderung des Zugriffs auf bestimmte (z.B. jugendgefährdende) Seiten.
+						</li>
+						<li>
+							Ausblenden von Werbung.
+						</li>
+					</ul>
+				{% else %}
+					<p>
+						SquidGuard is a URL filter add-on which is connected via the redirector mechanism of the proxy.
+						The heart of SquidGuard is something called a "blacklist." This is a content control list created by the official site. These lists contain a number of categorically-classified websites and can be kept up-to-date automatically. There are different, independent
+						sources for pre-built blacklists available, which allow among other classes filtering for adult
+						content, shopping, warez, social networking, or sites containing violent/abusive content.
+					</p>
+					<p>
+						Individual extensions for particular domains or URLs can be set up on the IPFire web interface for
+						blacklists and whitelists as well. IPFire also offers a black list editor, that makes the editing
+						and creating your own blacklists quite easy.
+					</p>
+					<p>
+						Possible areas of application for the SquidGuard on IPFire are:
+					</p>
+					<ul>
+						<li>
+							Block or restrict Internet content conditionally by time, user and/or computers.
+						</li>
+						<li>
+							Preventing access to certain (eg. youth-endangering) pages and content categories.
+						</li>
+						<li>
+							Hiding advertising.
+						</li>
+					</ul>
+				{% end %}
+
+				<hr class="separator">
+
+				<h2>{{ _("Update accelerator") }}</h2>
+
+				{% if lang == "de" %}
+					<p>
+						Der Update-Accelerator ist ein System, das Updates für z.B. Betriebssysteme erheblich beschleunigen
+						kann. Dazu werden alle heruntergeladenen Updates zwischengespeichert und bei einem weiteren Download
+						aus dem lokalen Cache ausgeliefert.
+					</p>
+					<p>
+						Bei Service Packs für Microsoft Windows, die oft einige hundert Megabytes haben, lohnt sich dieses
+						Speichern massiv, aber auch Virenscanner und andere Produkte profitieren hiervon und machen ein Update von
+						allen Workstations in der Firma zu einer schnell erledigten Aufgabe.
+					</p>
+				{% else %}
+					<p>
+						The Update Accelerator is a feature that can greatly accelerate deploying updates for operating systems.
+						All downloaded updates are cached and if requested another time, are delivered from the cache.
+					</p>
+					<p>
+						For example, Service Packs for Microsoft Windows (which often are several hundred megabytes) are cached for future retrieval, as well as virus scanner definition updates and other product updates which the system automatically identifies. This saves a massive amount of time when updating large amounts of computers (such as corporate networks). 
+					</p>
+				{% end %}
+
+				<hr class="separator">
+
+				<h2>{{ _("Transparent virus scanner") }}</h2>
+
+				{% if lang == "de" %}
+					<p>
+						Das Paketmanagement bietet das Addon “SquidClamAV” zur Erweiterung an. Somit steht dem Webproxy
+						ein Virenscanner zur Verfügung, der in Echtzeit den Datenverkehr nach Viren mit Hilfe des bekannten
+						ClamAV prüft.
+					</p>
+					<p>
+						Der zusätzliche Schutz zu einem herkömmlichen Virenscanner besteht vor allem darin, dass die Dateien
+						nicht erst auf den Client-Rechner gelangen, bevor der Virenscan ausgeführt werden kann. Potentielle
+						Schädlinge werden vor dem Download durch SquidClamAV geblockt.
+					</p>
+				{% else %}
+					<p>
+						The package manager Pakfire offers the addon SquidClamAV - a virus scanner for the web proxy. This checks in real-time all web traffic for viruses, utilizing the ClamAV virus definitions and scanning engine.
+					</p>
+					<p>
+						The additional protection to a conventional virus scanner lies in the fact that the files are transparently checked before ever making it to the client machine before the client machine's virus scan can be performed. So potentially-malicious files are blocked by
+						SquidClamAV before the client's actual download.
+					</p>
+				{% end %}
+			</section>
+
+			<section id="vpn">
+				<div class="page-header">
+					<h1>
+						{{ _("VPN") }} <small>{{ _("Virtual Private Networks") }}</small>
+					</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						IPFire kann zu einem VPN-Gateway (virtal private network - virtuelles, privates Netzwerk)
+						ausgebaut werden, welches Personen mit unterschiedlichem Standort untereinander verbindet.
+						Dies können zum Beispiel Mitarbeiter, Freunde oder Personen sein mit denen man Daten sicher
+						austauschen möchte, aber auch eine Filiale, Außenstelle, wichtige Kunden oder andere Unternehmen
+						mit denen kommuniziert wird.
+					</p>
+					<p>
+						Um sich über verschiedene Technologien verbinden zu können unterstützt IPFire die VPN Protokolle
+						IPsec und OpenVPN. Dies erlaubt dem Administrator große Freiheiten bei der Konfiguration des VPNs.
+						Die Verwendung dieser Protokolle erlaubt es IPFire auch sich mit VPN Endpunkten verschiedenster
+						Hardwarehersteller, wie Cisco, Juniper, Checkpoint, etc. zu verbinden.
+					</p>
+				{% else %}
+					<p>
+						IPFire also includes functionality to create virtual private networks (VPN).
+						A VPN is a gateway which connects remote networks to the local one using an
+						encrypted link.
+						Uses for a VPN include business connections to branch offices or datacenters,
+						as well as providing traveling staff with a secure portal to the corporate network.
+					</p>
+					<p>
+						For maximum flexibility, IPFire uses both IPsec and OpenVPN protocols,
+						giving administrators maximum flexibility when configuring their VPN.
+						Use of these protocols allows IPFire to connect to a variety of VPN endpoint
+						devices by manufacturers such as Cisco, Juniper, Checkpoint, etc. 
+					</p>
+				{% end %}
+
+				<hr class="separator">
+
+				<h2>{{ _("IPsec") }}</h2>
+
+				{% if lang == "de" %}
+					<p>
+						IPsec ist ein Standard, der unter den VPN-Technologien weit bekannt
+						ist und im IPv6-Protokoll entwickelt wurde. Da IPv6 allerdings erst
+						langsam seinen Weg in die Welt findet, wurde das IPsec-Protokoll
+						auf IPv4 zurückzuportiert.
+					</p>
+
+					<p>
+						Im Gegensatz zu den ebenfalls eingesetzten SSL-VPNs gilt IPsec als
+						schwer einzurichten. Diese Hürde wurde in IPFire beseitigt - zur
+						Verfügung steht ein einfach zu bedienendes User-Interface,
+						in welches man einige Konfigurationsparameter eingibt, welches dann
+						den Rest übernimmt. Ebenso wird automatsich dafür gesorgt, dass die
+						Tunnel geöffnet sind und, dass diese von allein wieder aufgebaut werden,
+						sollte einmal ein Tunnelpartner seine Internetverbindung verlieren.
+						So wird eine sichere und stabile Verbindung zu Filialen, Partnern oder
+						dem Zuhause innerhalb von Minuten eingerichtet und sie ist auch
+						kompatibel zu denen anderer Anbieter.
+					</p>
+
+					<p>
+						Der hohe Grad der Kompatibilität zu anderen Herstellern wird durch
+						die Verwendung der freien Implementierung 
+						<a href="http://www.strongswan.org" target="_blank">strongSwan</a>
+						möglich, welches von Andreas Steffen, einem Professor für Sicherheit
+						in der Kommunikationstechnik und Leiter des Instituts für
+						Internetechnologien und -applikationen an der Universität der
+						angewandten Wissenschaften Rapperswil in der Schweiz entwickelt wird.
+						StrongSwan arbeitet besonders gut mit Produkten wie Microsoft Windows 7,
+						Microsoft Windows Vista und Mac OS X zusammen.
+					</p>
+				{% else %}
+					<p>
+						IPsec is a widely-deployed VPN solution that was originally developed to be used in conjunction with IPv6. Because it was so secure and IPv6 was so slowly deployed, it was backported to secure IPv4 traffic as well.
+					</p>
+
+					<p>
+						In contrast to SSL-VPNs, IPsec is hard to set-up. In IPFire, we
+						thought about how to make this technology easy-to-use and as a result, there
+						is a web user interface that handles all settings and takes care of the rest
+						of the configuration for you. It also keeps the tunnels alive and
+						re-establishes them automatically after a remote site has lost the connection. A secure connection to a branch office, a
+						business partner, or a home office is done within a couple of minutes
+						and compatible with all other implementations.
+					</p>
+
+					<p>
+						This high-level of compatibility is achieved by using the free
+						implementation called
+						<a href="http://www.strongswan.org" target="_blank">strongSwan</a>. It is maintained by Andreas Steffen, who is a professor for security in communications and head of the Institute for Internet Technologies
+						and Applications at the University of Applied Sciences Rapperswil, in
+						Switzerland. StrongSwan also works with all current, major operating systems, such as Microsoft
+						Windows 7, Microsoft Windows Vista and Mac OS X.
+					</p>
+				{% end %}
+
+				<hr class="separator">
+
+				<h2>{{ _("OpenVPN") }}</h2>
+
+				{% if lang == "de" %}
+					<p>
+						Unter den Open Source SSL-VPNs ist OpenVPN ein häufig angetroffener und
+						beliebter Vertreter, dessen einfache Konfiguration über das IPFire-
+						Webinterface noch einmal erleichtert wird. Die Firewall-Einstellungen
+						werden von IPFire automatisch geregelt, ebenso werden die benötigten
+						Zertifikate mit wenigen Mausklicks erzeugt und können als kompaktes
+						Client-Paket heruntergeladen, verteilt und mit einem weiteren Klick
+						ausgeführt werden.
+					</p>
+					<p>
+						Durch die hohe Kompatibilität zu anderen Betriebssystemen
+						(Microsoft Windows, Mac OSX, Linux, Android, uvam.)
+						eignet sich OpenVPN bestens zur Anbindung sogenannter Roadwarrior-Clients.
+						Eine leicht zu konfigurierende, durch Zertifikate gesicherte,
+						verschlüsselte Anbindung aus dem Internet
+						auf Firmendaten oder das Zuhause liegende Netzwerk kann nicht
+						nur über Notebooks, sondern unter anderem auch über PDAs, Smartphones
+						oder Tablets hergestellt werden.
+					</p>
+					<p>
+						Doch neben der Anbindung von Laptops und anderen Handgeräten, kann
+						mit OpenVPN auch eine transparente Verbindung zu Filialen, Partnern
+						und für jeden beliebigen anderen Einsatz erstellt werden.
+						Das ermöglicht sicheren Zugriff auf ein gesamtes Netzwerk ohne
+						aufwändige Konfiguration.
+					</p>
+				{% else %}
+					<p>
+						OpenVPN is a frequently-encountered and most popular representative
+						of the class of Open Source SSL VPNs.
+						Its relative ease of configuration has again, been made easier
+						by the IPFire web interface. The firewall settings are controlled
+						by IPFire automatically, as well as the required certificates will be
+						generated with a few mouse clicks and can be downloaded and distributed
+						as a very compact client package.
+					</p>
+					<p>
+						Due to its high compatibility to all sorts of operating systems,
+						such as Microsoft Windows, Mac OSX, Linux, Android and many more,
+						it is perfectly useful for roadwarrior connections.
+						With those, it is easy to connect your laptop, phone, tablet or
+						other devices to your company network, which makes it easy to
+						work from anywhere in the world.
+					</p>
+					<p>
+						But besides connecting portable devices, OpenVPN can also be used
+						to securely connect branches to the headquater.
+						This makes it easy to access resources on other networks
+						remotely without any complicated configuration on each client
+						on your local network.
+					</p>
+				{% end %}
+			</section>
+
+			<section id="ids">
+				<div class="page-header">
+					<h1>{{ _("Intrusion detection system") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						Ein Intrusion Dection System, kurz IDS, dient zur Erkennung von Angriffen gegen Computersysteme
+						oder Computernetze. Dabei analysiert das IDS den Netzwerktraffic und durchsucht diesen nach Angriffsmustern.
+						Wird zum Beispiel ein einfacher Portscan auf ein IPFire-System ausgeführt um angebotene Dienste auszuspähen,
+						dann wird dies sofort erkannt.
+					</p>
+					<p>
+						Ein IPS, Intrusion Prevention System, hat zusätzlich zu der Erkennung die Aufgabe Aktionen auszuführen.
+						Dabei nimmt es Informationen zum Angriff vom IDS entgegen und handelt entsprechend. Bei dem Beispiel des
+						Portscans würde es den Angreifer blocken damit keine Daten mehr ausgetauscht werden.
+					</p>
+					<p>
+						Arbeiten wie in IPFire beide Systeme zusammen nennt man dies ein IDPS (Intrusion detection and prevention
+						system). Ein sehr bekannter Vertreter dafür ist Snort. Das freie Netzwerk Intrusion Dection System (NIDS)
+						analysiert den Datenverkehr und sofern es etwas Auffälliges findet, logt es dieses. IPFire bietet die
+						Möglichkeit die erkannten Angriffe im Webinterface detailliert durchzusehen.
+					</p>
+					<p>
+						Automatische Gegenmaßnahmen verrichtet in IPFire Guardian, was optional nachinstalliert werden kann.
+					</p>
+					<p>
+						Somit ist ein IDPS ein sinnvoller Zusatz zum herkömmlichen Paketfilter um intelligente Entscheidungen
+						über einkommende Daten zu treffen.
+					</p>
+				{% else %}
+					<p>
+						An Intrusion Dection System (or IDS), is a piece of software designed to detect attacks against computer systems
+						and networks. Thereby the IDS will analyze the network traffic and search for attack samples. If someone
+						scans the ports of the IPFire-System to see which services are available, the IDS will immediately notice it.
+					</p>
+					<p>
+						An Intrusion Prevention System (or IPS), in addition to the detection system, will perform actions.
+						The IPS gets the information from the IDS and reacts accordingly. That means, recalling the example above with
+						the portscan, the system would automatically block the attacker immediately in order to prevent further inquiries.
+					</p>
+					<p>
+						It is possible to use IDS and IPS on the IPFire system. We call this system "Intrusion Detection
+						and Prevention System" (or IDPS). A very important deputy of this system is Snort, the free Network Intrusion Dection System
+						(NIDS). It analyzes the network traffic and if something abnormal happens, it will log the event. IPFire gives you
+						the possibility to see it very explicitly in the web interface.
+					</p>
+					<p>
+						For automatic prevention, IPFire has an add-on called Guardian which can be installed optionally.
+					</p>
+					<p>
+						An IDPS is a wise addition to the normal packet filter. It makes intelligent decisions about
+						incoming and outgoing network traffic and how to deal with it.
+					</p>
+				{% end %}
+			</section>
+
+			<section id="qos">
+				<div class="page-header">
+					<h1>{{ _("Quality of Service") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						Ein Quality of Service, oder kurz QoS, ist in der Lage die Qualität eines Dienstes über eine
+						Internetleitung sicherzustellen. Das bedeutet, dass auf einer stark belasteten Internetverbindung
+						einem Dienst, wie zum Beispiel einem VoIP-Telefonats, ein gewisses Maß an Bandbreite zugesichert
+						werden kann, damit alle Sprachdaten ohne Verzögerung und verlustfrei übertragen werden können.
+						Das geht allerdings zu Lasten der anderen Datenströme auf der Leitung, welche es aber durchaus
+						vertragen, dass Daten langsamer übertragen werden, wie z.B. ein Upload auf einen FTP-Server.
+					</p>
+					<p>
+						Ein QoS bietet aber nicht nur bei Echtzeitdiensten Vorteile und macht sie besser benutzbar, sondern
+						bringt auch kleine Verbesserungen mit, die sich angenehm bemerkbar machen. Dazu gehören unter anderem:
+					</p>
+					<ul>
+						<li>
+							<strong>Schnellerer Verbindungsaufbau:</strong> Verbindungen werden immer rasch aufgebaut und
+							dann nach Dienst eingeordnet und wenn möglich abgebremst. Das verbessert das Arbeitsgefühl.
+						</li>
+						<li>
+							<strong>Stabilere Verbindungen:</strong> da jedem Dienst ein Mindestmaß an Bandbreite zugesichert wird.
+						</li>
+					</ul>
+					<p>
+						Für die Klassifizierung der Pakete, die das System wissen lässt mit welcher Art von Daten es zu tun hat,
+						kommt ein Layer-7-Filter zum Einsatz. Dabei wird auch der Inhalt und nicht nur Quell-Ports, -IPs und
+						Ziel-Ports und -IPs eines Pakets untersucht. Mit dem Wissen, ob es sich z.B. um einen langen Download
+						oder um ein Echtzeitprotokoll handelt, kann es Entscheidungen zur optimalen Auslastung der
+						Internetverbindung treffen.
+					</p>
+					<p>
+						Zusammengefasst ist das Endergebnis eines QoS, eine Leitung mit geringer Latenzzeit und geringer
+						Paketverlustrate. Eine Funktion, die man schnell nicht mehr vermissen möchte, wo die Bandbreite knapp ist.
+					</p>
+					<p>
+						Perfekte Kontrolle über die getätigten Einstellungen, findet man in der graphischen Darstellung der
+						Leitungsauslastung.
+					</p>
+				{% else %}
+					<p>
+						Quality of Service (QoS) is able to save the quality of a service on one internet connection. This
+						means that on a highly-utilized internet connection, a service (for example VoIP) gets a stable size of bandwidth,
+						to transfer the information without delay and without loss. This is at the expense of the other
+						data flows on the line, which is tolerated, albeit transmitted more slowly (such as a file upload to an FTP server).
+					</p>
+					<p>
+						QoS does not only increase the functionality of real-time services, but also offers a little bit of overall improvement. For example:
+					</p>
+					<ul>
+						<li>
+							<strong>Connections establish much faster.</strong>
+							This is works very well on busy links.
+						</li>
+						<li>
+							<strong>Connections are much more stable.</strong>
+							Every service gets a minimum, guaranteed amount of bandwidth.
+						</li>
+					</ul>
+					<p>
+						For the classification of the packets, a Level-7-Filter is used. It also analyses the content, as well as the source-ports/IPs, and destination-ports/IPs of the packets. With that analysis, it will decide if it's a long download or a real-time
+						protocol and then subsequently determines the optimal use of the connection.
+					</p>
+					<p>
+						To put all in a nutshell, QoS reduces the latency and packet loss of an
+						internet connection. This is certainly a function that you don't want to miss where bandwidth is limited.
+					</p>
+				{% end %}
+			</section>
+
+			<section id="hardware">
+				<div class="page-header">
+					<h1>{{ _("Hardware") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						Da IPFire auf einer aktuellen Version des Linux Kernels basiert, ist es möglich
+						eine Breite Palette an neuer Hardware, wie 10-Gigabit-Netzwerkkarten und
+						Wireless-Hardware, ohne zusätzlichen Aufwand zu betreiben.
+						Den Entwicklern ist es ein Anliegen, IPFire auf einer möglichst breiten Palette von
+						Hardware lauffähig zu machen. Dadurch lässt sich IPFire auf alter, günster Hardware
+						genauso hervoragend verwenden, wie auf High-Performance-Systemen.
+					</p>
+					<p>
+						Dabei belaufen sich die Mindestanforderungen bei einem Pentium I (i568), 128MB RAM
+						und 2 GB Festplattenspeicher.
+					</p>
+					<p>
+						Einige Erweiterungen haben zuätzliche Anforderungen an die Hardware um korrekt
+						funktionieren zu können. Ein System welches alle Anforderungen erfüllt, ist in der
+						Lage hunderte Clients zur selben Zeit zu bedienen.
+					</p>
+					<h3>Heads up: Zusätzliche Architekturen in Entwicklung</h3>
+					<p>
+						Das IPFire Projekt ist auch interessiert Ressorcen schonende Systeme zu unterstützen.
+						In diesem Zusammenhang, ist die ARM Architektur erwähnenswert, welche äußerst wenig Strom
+						benötigt und ein großes Zukunftspotential aufweist.
+					</p>
+					<!-- <p>
+						Mehr zu diesem Thema kann auf der <a href="/features/ports/arm">ARM Projekt Seite</a> gefunden 
+						werden.
+					</p> -->
+				{% else %}
+					<p>
+						Since IPFire is based on a recent version of the Linux kernel, it supports most
+						of the latest hardware such as 10Gbit network cards and a variety of wireless
+						hardware out of the box.
+						The IPFire developers are very concerned with the ability to run IPFire as many
+						system variations as possible.
+						This helps IPFire to run on older or cheap hardware, as well as high-performance systems.
+					</p>
+					<p>
+						Minimum system requirements are an Intel Pentium I (i586),
+						128MB RAM and 2GB hard drive space.
+					</p>
+					<p>
+						Some add-ons have extra requirements to perform smoothly.
+						On a system that fits the hardware requirements, IPFire
+						is able to serve hundreds of clients simultaneously.
+					</p>
+
+					<h3>Heads up: More architectures in development!</h3>
+					<p>
+						The IPFire project is always interested in creating systems
+						which save the environment. The ARM architecture consumes
+						much less power and certainly has a lot of potentional.
+					</p>
+					<!-- <p>
+						More about this may be found on the
+						<a href="/features/ports/arm">ARM project page</a>.
+					</p> -->
+				{% end %}
+
+				<hr class="separator">
+
+				<ul class="thumbnails">
+					<li class="span3">
+						<a class="thumbnail" href="{{ static_url("images/screenshots/en/hardware/hwtemp-1.png") }}">
+							<img src="{{ static_url("images/screenshots/en/hardware/hwtemp-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+						</a>
+					</li>
+				</ul>
+			</section>
+
+			<section id="virtualization">
+				<div class="page-header">
+					<h1>{{ _("Virtualization") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						IPFire bringt einige Frontend-Treiber für High-Performance-Virtualisierung
+						mit sich und arbeitet hervorragend als Gast auf den folgenden
+						Virtualisierungsplattformen.
+					</p>
+
+					<h2>Unterstützte Hypervisoren</h2>
+					<h3>KVM</h3>
+					<p>
+						<a href="http://www.linux-kvm.org">KVM</a> ist die Abkürzung
+						für Kernel-based Virtual Machine und wird von
+						<a href="http://www.redhat.com">Red Hat Inc.</a> entwickelt.
+						Es ist die derzeit am häufigsten eingesetzte, freie Virtualisierungslösung
+						und löst Xen zunehmend ab.
+					</p>
+					<p>
+						Der IPFire-Kernel verfügt über die <em>virtio</em> Module,
+						welche hervorragende Leistung bei wenig Virtualisierungsoverhead
+						bieten.
+					</p>
+
+					<h3>VMware</h3>
+					<p>
+						IPFire arbeitet auf verschiedenen VMware Produkten wie
+						<em>vSphere</em>, <em>ESXi</em> und <em>VMware workstation</em>.
+						Das optionale Paket <em>open-vm-tools</em> verbessert die
+						Integration zusätzlich.
+					</p>
+
+					<h3>Xen</h3>
+					<p>
+						Xen war der de-facto Open-Source-Hypervisor, wird
+						allerdings immer öfter durch KVM ersetzt.
+					</p>
+					<p>
+						IPFire bringt für den Einsatz auf einem Xen-Host einen
+						paravirtualisierten Kernel mit.
+						Die Installation ist sehr einfach, da bereits ein
+						vorinstalliertes Image auf der Downloadseite heruntergeladen
+						werden kann.
+					</p>
+
+					<h3>Andere</h3>
+					<p>
+						IPFire ist nicht auf die oben genannten Lösungen beschränkt.
+						Ebenso läuft die Distribution auch unter <em>Qemu</em>,
+						<em>Microsoft Hyper-V</em> und <em>Oracle Virtualbox</em>.
+					</p>
+
+					<h3>Ein Hinweis zu Virtualisierung</h3>
+					<p>
+						Virtualisierung hat Vorteile, allerdings nicht ohne Nachteile.
+						Es besteht die Möglichkeit, dass die VM-Container-Sicherheit
+						umgangen werden kann und somit ein Angreifer Zugang über die
+						virtuelle Maschine heraus erlangen kann.
+						Aus diesen Gründen empfehlen wir nicht IPFire virtuell
+						in produktiven Umgebungen einzusetzen.
+					</p>
+				{% else %}
+					<p>
+						IPFire brings many front-end drivers for high-performance virtualization
+						and can be run as virtual guest operating system on the following
+						virtualization platforms.
+						It has also been optimized to some of the mostly distributed ones to bring
+						the best possible performance without impacting the hardware very much.
+					</p>
+
+					<h2>Supported hypervisors</h2>
+					<h3>KVM</h3>
+					<p>
+						<a href="http://www.linux-kvm.org">KVM</a> is short for
+						Kernel-based Virtual Machine and is developed by
+						<a href="http://www.redhat.com">Red Hat Inc.</a>.
+						It is becoming the most advanced hypervisor and succeeding Xen, which
+						has been used so far.
+					</p>
+					<p>
+						IPFire is coming with the <em>virtio</em> kernel modules, that have best
+						performance due to very less virtualization overhead.
+					</p>
+
+					<h3>VMware</h3>
+					<p>
+						IPFire runs on different VMware products like <em>vSphere</em>,
+						<em>ESXi</em> and <em>VMware workstation</em>. The additional package
+						<em>open-vm-tools</em> offers tools for a better integration.
+					</p>
+
+					<h3>Xen</h3>
+					<p>
+						Xen has recently been the de-facto Open Source hypervisor but is now
+						succeeded by KVM.
+					</p>
+					<p>
+						IPFire can optionally be run with a paravirtualized kernel, which has very
+						less virtualization overhead as well. To make the installation very easy,
+						a pregenerated Xen image can be downloaded from the download page.
+					</p>
+
+					<h3>Others</h2>
+					<p>
+						IPFire is not limited to the hypervisors described above. It runs perfectly on
+						<em>Qemu</em>, <em>Microsoft Hyper-V</em> or <em>Oracle VirtualBox</em>, too.
+					</p>
+
+					<h3>A note on virtualization</h3>
+					<p>
+						Virtualization does have advantages, but it is not without disadavantages.
+						There is always the possibility that the VM container security can be
+						bypassed in some way and a hacker can gain access beyond the VM.
+						Because of this, it is not suggested to use IPFire as a virtual machine
+						in a production-level environment.
+					</p>
+				{% end %}
+
+				<hr class="separator">
+
+				<ul class="thumbnails">
+					<li class="span3">
+						<a class="thumbnail" href="{{ static_url("images/screenshots/en/virtualization/virt-manager-1.png") }}">
+							<img src="{{ static_url("images/screenshots/en/virtualization/virt-manager-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
+						</a>
+					</li>
+				</ul>
+			</section>
+
+			<section id="wlanap">
+				<div class="page-header">
+					<h1>{{ _("Wireless Access Point") }}</h1>
+				</div>
+
+				{% if lang == "de" %}
+					<p>
+						IPFire bietet mehrere Möglichkeiten zur Einbindung von Wireless-Clients. Zum einen kann ein
+						Accesspoint über eine LAN Karte angeschlossen werden. Hier bietet IPFire einen MAC/IP Addressfilter,
+						um nur erlaubte Clients zuzulassen. Die Clients dürfen in der Standardeinstellung zwar ins Internet,
+						aber nicht auf das lokale Lan zugreifen. Als zweite Möglichkeit kann man eine WLAN-Karte in den IPFire
+						einbauen, die über das Addon “hostapd” Funktionalität des Accesspoints übernimmt. Unterstützt werden
+						dann unverschlüsselte sowie WPA/WPA2 verschlüsselte Verbindungen. Auch die Nutzung des 5 GHz Bandes
+						(802.11a) ist möglich, wenn die WLAN-Karte dies unterstützt.
+					</p>
+					<p>
+						Die Unterstützung von Wireless-Karten in IPFire ist exzellent, da in dem stabilen Kernel die Treiber
+						trotzdem auf neuestem Stand sind und somit möglichst viele Karten unterstützt werden.
+					</p>
+				{% else %}
+					<p>
+						IPFire offers several options for the integration of wireless clients. First, an access point can
+						be connected via a LAN card. In this scenario, IPFire offers MAC/IP address filtering to allow only authorized
+						clients. The clients are allowed by default to access the Internet, but they are not allowed access the local LAN.
+						The second option is to install a wireless LAN (WLAN) card in the IPFire machine that takes the functionality of the access
+						point over, using the add-on "hostapd". This add-on supports both unencrypted and WPA/WPA2-encrypted connections. Also
+						the use of 5 GHz (802.11a standard) is possible if the wireless card supports it.
+					</p>
+					<p>
+						Wireless card support in IPFire is excellent. The drivers in the stable kernel are very up-to-date
+						and IPFire therefore supports a significant amount of WLAN cards.
+					</p>
+				{% end %}
+			</section>
+		</div>
+
+		<div class="span3 sidebar">
+			<ul class="nav nav-list sidenav">
+				<li>
+					<a href="#about">
+						<i class="icon-chevron-left"></i> {{ _("About IPFire") }}
+					</a>
+				</li>
+				<li>
+					<a href="#security">
+						<i class="icon-chevron-left"></i> {{ _("Security") }}
+					</a>
+				</li>
+				<li>
+					<a href="#firewall">
+						<i class="icon-chevron-left"></i> {{ _("Firewall") }}
+					</a>
+				</li>
+				<li>
+					<a href="#pakfire">
+						<i class="icon-chevron-left"></i> {{ _("Pakfire") }}
+					</a>
+				</li>
+				<li>
+					<a href="#updates">
+						<i class="icon-chevron-left"></i> {{ _("Updates") }}
+					</a>
+				</li>
+				<li>
+					<a href="#dialup">
+						<i class="icon-chevron-left"></i> {{ _("Dialup") }}
+					</a>
+				</li>
+				<li>
+					<a href="#proxy">
+						<i class="icon-chevron-left"></i> {{ _("Web Proxy") }}
+					</a>
+				</li>
+				<li>
+					<a href="#vpn">
+						<i class="icon-chevron-left"></i> {{ _("VPN") }}
+					</a>
+				</li>
+				<li>
+					<a href="#ids">
+						<i class="icon-chevron-left"></i> {{ _("Intrusion Detection") }}
+					</a>
+				</li>
+				<li>
+					<a href="#qos">
+						<i class="icon-chevron-left"></i> {{ _("Quality of Service") }}
+					</a>
+				</li>
+				<li>
+					<a href="#hardware">
+						<i class="icon-chevron-left"></i> {{ _("Hardware") }}
+					</a>
+				</li>
+				<li>
+					<a href="#virtualization">
+						<i class="icon-chevron-left"></i> {{ _("Virtualization") }}
+					</a>
+				</li>
+				<li>
+					<a href="#wlanap">
+						<i class="icon-chevron-left"></i> {{ _("Wireless Access Point") }}
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 {% end block %}

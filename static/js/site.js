@@ -10,6 +10,15 @@ $("a.download-splash").click(function(event) {
 	window.location = "http://downloads.ipfire.org/download-splash?file="+linkLocation;
 });
 
+var $window = $(window);
+
+$(".sidenav").affix({
+	offset: {
+		top: function () { return $window.width() <= 980 ? 290 : 210 }
+		, bottom: 270
+	}
+});
+
 if (/.*download-splash.*/i.test(window.location.href)) {
 	$("p.download-path").ready(function(){
 		var valid = false;

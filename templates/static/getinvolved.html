@@ -2,19 +2,18 @@
 
 {% block title %}{{ _("Get involved") }}{% end block %}
 
-{% block body %}
-	<div class="page-header">
-		<h1>
-			{% if lang == "de" %}
-				{{ _("Get involved") }},
-				<small>weil es so leicht sein kann etwas zu bewirken</small>
-			{% else %}
-				{{ _("Get involved") }}
-				<small>because making a difference is easy</small>
-			{% end %}
-		</h1>
-	</div>
+{% block header %}
+	<header class="jumbotron subhead" id="overview">
+		<div class="container">
+			<h1>{{ _("Get involved") }}</h1>
+			<p class="lead">
+				{{ _("Because making a difference is easy") }}
+			</p>
+		</div>
+	</header>
+{% end header %}
 
+{% block body %}
 	<div class="row">
 		<div class="span7">
 			{% if lang == "de" %}
