@@ -11,7 +11,7 @@
 				<a href="/wish/{{ wish.slug }}">{{ escape(wish.title) }}</a>
 			</h3>
 
-			{{ wish.description }}
+			{% raw wish.description %}
 			<hr>
 		{% end %}
 
@@ -37,7 +37,7 @@
 							</div>
 
 						<div class="span4 ac">
-							<p class="lead">{{ _("%s &euro;") % wish.donated }}</p>
+							<p class="lead">{% raw _("%s &euro;") % wish.donated %}</p>
 							<p>{{ _("donated") }}</p>
 						</div>
 

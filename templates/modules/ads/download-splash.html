@@ -2,7 +2,8 @@
 	<div class="span6 offset3">
 		<div class="alert alert-info ac">
 			<strong>{{ _("Advertisement") }}</strong><br>
-			{{ _("This download is sponsored by %s!") % ad.who }}
+			{{ _("This download is sponsored by:") }}
+			{% raw ad.who %}!
 		</div>
 	</div>
 </div>

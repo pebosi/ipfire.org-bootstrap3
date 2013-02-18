@@ -78,16 +78,16 @@ class BaseHandler(tornado.web.RequestHandler):
 		kwargs.update(_kwargs)
 		return tornado.web.RequestHandler.render_string(self, *args, **kwargs)
 
-	def get_error_html(self, status_code, **kwargs):
+	def write_error(self, status_code, **kwargs):
 		if status_code in (404, 500):
 			render_args = ({
 				"code"      : status_code,
 				"exception" : kwargs.get("exception", None),
 				"message"   : httplib.responses[status_code],
 			})
-			return self.render_string("error-%s.html" % status_code, **render_args)
+			self.render("error-%s.html" % status_code, **render_args)
 		else:
-			return tornado.web.RequestHandler.get_error_html(self, status_code, **kwargs)
+			return tornado.web.RequestHandler.write_error(self, status_code, **kwargs)
 
 	def static_url(self, path, static=True):
 		ret = tornado.web.RequestHandler.static_url(self, path)

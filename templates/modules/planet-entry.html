@@ -10,7 +10,7 @@
 			<a href="/post/{{ entry.slug }}">{{ entry.title }}</a>
 		</h2>
 
-		{{ entry.text }}
+		{% raw entry.text %}
 
 		<p class="pull-right" style="clear: both;">
 			{{ _("Posted by") }} <a href="/user/{{ entry.author.uid }}">{{ entry.author.cn }}</a>

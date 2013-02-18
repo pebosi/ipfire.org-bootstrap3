@@ -14,11 +14,17 @@ class Memcached(object):
 
 		self._connection = memcache.Client(hosts, debug=0)
 
-	def get(self, *args, **kwargs):
-		return self._connection.get(*args, **kwargs)
+	def get(self, key, *args, **kwargs):
+		key = str(key)
 
-	def set(self, *args, **kwargs):
-		return self._connection.set(*args, **kwargs)
+		return self._connection.get(key, *args, **kwargs)
 
-	def delete(self, *args, **kwargs):
-		return self._connection.delete(*args, **kwargs)
+	def set(self, key, *args, **kwargs):
+		key = str(key)
+
+		return self._connection.set(key, *args, **kwargs)
+
+	def delete(self, key, *args, **kwargs):
+		key = str(key)
+
+		return self._connection.delete(key, *args, **kwargs)
