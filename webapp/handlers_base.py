@@ -27,55 +27,36 @@ class BaseHandler(tornado.web.RequestHandler):
 		# Find the name of the author
 		return self.accounts.find(uid)
 
-	def get_supported_locales(self):
-		for l in tornado.locale.get_supported_locales(None):
-			yield tornado.locale.get(l)
-
-	def valid_locale(self, locale):
-		if not locale:
-			return False
-
-		for l in self.get_supported_locales():
-			if l.code.startswith(locale):
-				return True
-
-		return False
-
 	def get_query_locale(self):
 		locale = self.get_argument("locale", None)
 
 		if locale is None:
 			return
 
-		if self.valid_locale(locale):
-			return locale
+		return tornado.locale.get(locale)
 
 	def prepare(self):
 		locale = self.get_query_locale()
 		if locale:
-			self.set_cookie("locale", locale)
+			self.set_cookie("locale", locale.code)
 
 	def get_user_locale(self):
-		default_locale = tornado.locale.get("en_US")
-
 		# The planet is always in english.
 		if self.request.host == "planet.ipfire.org":
-			return default_locale
+			return tornado.locale.get("en_US")
 
 		# Get the locale from the query.
 		locale = self.get_query_locale()
-		if not locale:
-			# Read the locale from the cookies.
-			locale = self.get_cookie("locale", None)
+		if locale:
+			return locale
 
-			if not locale:
-				locale = self.get_browser_locale().code
+		# Read the locale from the cookies.
+		locale = self.get_cookie("locale", None)
+		if locale:
+			return tornado.locale.get(locale)
 
-		for l in self.get_supported_locales():
-			if l.code.startswith(locale):
-				return l
-
-		return default_locale
+		# Otherwise take the browser locale.
+		return self.get_browser_locale()
 
 	@property
 	def render_args(self):
