@@ -15,6 +15,13 @@
 			</a>
 			<ul class="dropdown-menu">
 				<li>
+					<a href="http://www.lightningwirelabs.com" target="_blank">
+						<i class="icon-star-empty"></i>
+						{{ _("Commercial support") }}
+					</a>
+				</li>
+				<li class="divider"></li>
+				<li>
 					<a href="http://wiki.ipfire.org/">
 						<i class="icon-align-justify"></i>
 						{{ _("Wiki") }}
@@ -132,7 +139,15 @@
 	{% end %}
 </ul>
 
-{% if not hostname == "www.ipfire.org" and not hostname == "dev.ipfire.org" %}
+{% if hostname == "www.ipfire.org" or hostname == "dev.ipfire.org" %}
+	<ul class="nav pull-right">
+		<li>
+			<a href="http://www.lightningwirelabs.com" target="_blank">
+				<strong>{{ _("Commercial support available!") }}</strong>
+			</a>
+		</li>
+	</ul>
+{% else  %}
 	<ul class="nav pull-right">
 		<li>
 			<a href="http://www.ipfire.org">
