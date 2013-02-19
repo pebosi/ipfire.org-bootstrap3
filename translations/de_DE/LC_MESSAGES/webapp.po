@@ -3,14 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-02 18:28+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-02-19 12:41+0100\n"
+"PO-Revision-Date: 2013-02-19 12:38+0100\n"
+"Last-Translator: Michael Tremer <michael.tremer@ipfire.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,9 +52,9 @@ msgid "Only a few days left!"
 msgstr "Nur noch wenige Tage!"
 
 #: templates/wishlist/modules/wish.html:26 templates/wishlist/donate.html:3
-#: templates/download-splash.html:37 templates/modules/menu.html:40
-#: templates/static/features/itsfree.html:86
-#: templates/static/getinvolved.html:121
+#: templates/download-splash.html:37 templates/modules/menu.html:47
+#: templates/static/getinvolved.html:120 templates/static/donation.html:3
+#: templates/static/donation.html:8 templates/index.html:30
 msgid "Donate"
 msgstr "Spenden"
 
@@ -105,7 +104,7 @@ msgstr "Crowdfunding für das IPFire-Projekt"
 
 #: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
 #: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
-#: templates/base.html:74
+#: templates/base.html:78 www/templates/base.html:81
 msgid "Terms & Conditions"
 msgstr "Allgemeine Bedingungen"
 
@@ -138,15 +137,11 @@ msgstr "Veröffentlichungsdatum"
 msgid "Stable"
 msgstr "Stabil"
 
-#: templates/downloads-index.html:50 templates/modules/menu.html:58
-#: templates/static/development.html:3 templates/static/development.html:9
-#: templates/static/getinvolved.html:154
+#: templates/downloads-index.html:50 templates/modules/menu.html:65
+#: templates/static/development.html:3 templates/static/development.html:8
+#: templates/static/getinvolved.html:153
 msgid "Development"
 msgstr "Entwicklung"
-
-#: templates/stasy-profile.html:3 templates/stasy-profile.html:6
-msgid "Profile lookup"
-msgstr "Profilsuche"
 
 #: templates/admin-downloads-base.html:5
 msgid "Back to home"
@@ -209,13 +204,13 @@ msgstr "Nicht verfügbar"
 msgid "Out of sync"
 msgstr "Nicht synchronisiert"
 
-#: templates/mirrors-item.html:14 templates/stasy-profile-detail.html:74
-#: templates/stasy-profile-detail.html:82
+#: templates/mirrors-item.html:14 templates/fireinfo/profile-detail.html:74
+#: templates/fireinfo/profile-detail.html:82
 msgid "Unknown"
 msgstr "Unbekannt"
 
 #: templates/mirrors-item.html:22 templates/downloads-mirrors.html:50
-#: templates/stasy-profile-detail.html:231
+#: templates/fireinfo/profile-detail.html:231
 #: templates/download-mirror-detail.html:20 templates/admin-mirrors.html:15
 msgid "Last update"
 msgstr "Letztes Update"
@@ -233,7 +228,7 @@ msgstr "Bevorzugt für"
 
 #: templates/mirrors-item.html:37
 msgid "Your distance to this mirror"
-msgstr ""
+msgstr "Deine Entfernung zu diesem Mirror"
 
 #: templates/mirrors-item.html:43
 msgid "Go to mirror"
@@ -250,15 +245,16 @@ msgstr "Der Mirrorserver <em>%s</em> befindet sich in %s."
 
 #: templates/mirrors-item.html:58
 msgid "View larger map"
-msgstr ""
+msgstr "Größere Karte ansehen"
 
 #: templates/mirrors-item.html:63
 msgid "The location of the mirror server is estimated by the IP address."
 msgstr ""
+"Der Standort dieses Mirrorservers wurde anhand der IP-Adresse geschätzt."
 
 #: templates/mirrors-item.html:66
 msgid "The location of the mirror server could not be estimated."
-msgstr ""
+msgstr "Der Standort dieses Mirrorservers konnte nicht ermittelt werden."
 
 #: templates/admin-downloads-mirrors.html:5 templates/admin-downloads.html:5
 msgid "Download statistics"
@@ -300,29 +296,11 @@ msgstr "Peers"
 msgid "Seeds"
 msgstr "Seeds"
 
-#: templates/stasy-stats-geo.html:3 templates/stasy-stats-geo.html:7
-#: templates/stasy-stats.html:38
-msgid "Geo locations"
-msgstr "Geographischer Standort"
-
-#: templates/stasy-stats-geo.html:28
-msgid "Language selection"
-msgstr "Sprachauswahl"
-
-#: templates/stasy-stats-network.html:3 templates/stasy-stats.html:106
-#: templates/stasy-profile-detail.html:95
-msgid "Network"
-msgstr "Netzwerk"
-
-#: templates/stasy-stats-network.html:7
-msgid "Network configuration"
-msgstr "Netzwerkkonfiguration"
-
 #: templates/sources.html:3
 msgid "Sources"
 msgstr "Quellen"
 
-#: templates/sources.html:6
+#: templates/sources.html:6 templates/static/development.html:263
 msgid "Source Code"
 msgstr "Quellcode"
 
@@ -336,47 +314,6 @@ msgstr "Es befinden sich %s Quelldateien auf dem Server."
 msgid "%s's announcements"
 msgstr "%ss Ankündigungen"
 
-#: templates/planet-main.html:3 templates/planet-main.html:7
-#: templates/planet-user.html:3 templates/planet-posting.html:3
-#: templates/news.html:61
-msgid "IPFire Planet"
-msgstr "IPFire Planet"
-
-#: templates/planet-main.html:43 templates/planet-user.html:19
-msgid "Older posts"
-msgstr "Ältere Beiträge"
-
-#: templates/planet-main.html:47 templates/planet-user.html:23
-msgid "Newer posts"
-msgstr "Neuere Beiträge"
-
-#: templates/planet-main.html:58
-msgid "Subscribe"
-msgstr "Abbonieren"
-
-#: templates/planet-main.html:72
-msgid "Feed"
-msgstr "Feed"
-
-#: templates/planet-main.html:82
-msgid "People on the IPFire planet"
-msgstr "Auf dem IPFire Planet"
-
-#: templates/stasy-stats-virtual.html:3 templates/stasy-stats.html:127
-#: templates/base-feature.html:65
-#: templates/static/features/virtualization.html:3
-#: templates/static/features/virtualization.html:8
-msgid "Virtualization"
-msgstr "Virtualisierung"
-
-#: templates/stasy-stats-virtual.html:7
-msgid "Virtualization support"
-msgstr "Virtualisierungsunterstützung"
-
-#: templates/stasy-stats-virtual.html:35
-msgid "Hypervisors"
-msgstr "Hypervisoren"
-
 #: templates/admin-index.html:5
 msgid "Admin Area"
 msgstr "Adminbereich"
@@ -389,11 +326,11 @@ msgstr "IPFire Adminbereich"
 msgid "Accounts"
 msgstr "Accounts"
 
-#: templates/admin-base.html:10 templates/modules/menu.html:103
+#: templates/admin-base.html:10 templates/modules/menu.html:110
 msgid "Mirrors"
 msgstr "Mirrors"
 
-#: templates/admin-base.html:11 templates/modules/menu.html:85
+#: templates/admin-base.html:11 templates/modules/menu.html:92
 msgid "Planet"
 msgstr "Planet"
 
@@ -408,62 +345,6 @@ msgstr "Neuen Beitrag erstellen"
 #: templates/admin-planet-compose.html:14 templates/admin-planet.html:14
 msgid "Title"
 msgstr "Titel"
-
-#: templates/stasy-stats-cpus.html:3
-msgid "Processors"
-msgstr "Prozessoren"
-
-#: templates/stasy-stats-cpus.html:7 templates/stasy-stats.html:59
-msgid "Hardware: CPUs"
-msgstr "Hardware: CPUs"
-
-#: templates/stasy-stats-cpus.html:12
-msgid "See statistics about common CPU flags"
-msgstr "Statistiken über CPU-Funktionen"
-
-#: templates/stasy-stats-cpus.html:19
-msgid "Vendors"
-msgstr "Hersteller"
-
-#: templates/stasy-stats-cpus.html:36 templates/stasy-profile-detail.html:154
-msgid "Speed"
-msgstr "Geschwindigkeit"
-
-#: templates/stasy-stats-cpus.html:38
-#, python-format
-msgid ""
-"The average speed of all systems in the database is: <strong>%.2f MHz</"
-"strong>."
-msgstr ""
-"Die durchschnittliche Geschwindigkeit aller System ist: <strong>%.2f MHz</"
-"strong>."
-
-#: templates/stasy-stats-cpus.html:40
-#, python-format
-msgid "All together, there are <strong>%s bogomips</strong> out there."
-msgstr "Zusammengenomen sind es <strong>%s Bogomips</strong>."
-
-#: templates/stasy-stats-cpus.html:48
-msgid "CPU core counter"
-msgstr "CPU-Kerne"
-
-#: templates/stasy-stats-cpus.html:50
-msgid ""
-"See a breakdown of the CPU cores that are installed on the IPFire systems."
-msgstr "Eine Übersicht über die CPU Kerne, der IPFire Systeme."
-
-#: templates/stasy-stats-memory.html:3 templates/stasy-stats-memory.html:7
-msgid "Memory"
-msgstr "Arbeitsspeicher"
-
-#: templates/stasy-stats-memory.html:13
-#, python-format
-msgid ""
-"The average amount of memory of all systems in the database is: <strong>%.2f "
-"MB</strong>."
-msgstr ""
-"Die durchschnittliche Menge an Arbeitsspeicher aller System ist: <strong>"
-"%.2f MB</strong>."
 
 #: templates/download-splash.html:3 templates/download-splash.html:7
 msgid "Thanks for downloading IPFire!"
@@ -530,46 +411,305 @@ msgstr "Standort"
 msgid "details"
 msgstr "Details"
 
-#: templates/stasy-stats-cpu-flags.html:3
+#: templates/fireinfo/stats.html:3 templates/modules/menu.html:136
+msgid "Statistics"
+msgstr "Statistiken"
+
+#: templates/fireinfo/stats.html:7
+msgid "fireinfo statistics"
+msgstr "Fireinfo Statistiken"
+
+#: templates/fireinfo/stats.html:17
+msgid "IPFire versions"
+msgstr "IPFire-Versionen"
+
+#: templates/fireinfo/stats.html:38 templates/fireinfo/stats-geo.html:3
+#: templates/fireinfo/stats-geo.html:7
+msgid "Geo locations"
+msgstr "Geographischer Standort"
+
+#: templates/fireinfo/stats.html:59 templates/fireinfo/stats-cpus.html:7
+msgid "Hardware: CPUs"
+msgstr "Hardware: CPUs"
+
+#: templates/fireinfo/stats.html:73
+msgid "CPU features"
+msgstr "CPU-Funktionen"
+
+#: templates/fireinfo/stats.html:85
+msgid "Hardware: Memory"
+msgstr "Hardware: Arbeitsspeicher"
+
+#: templates/fireinfo/stats.html:106 templates/fireinfo/stats-network.html:3
+#: templates/fireinfo/profile-detail.html:95
+msgid "Network"
+msgstr "Netzwerk"
+
+#: templates/fireinfo/stats.html:127 templates/fireinfo/stats-virtual.html:3
+#: templates/base-feature.html:65 templates/static/features.html:1179
+#: templates/static/features.html:1404
+msgid "Virtualization"
+msgstr "Virtualisierung"
+
+#: templates/fireinfo/stats-network.html:7
+msgid "Network configuration"
+msgstr "Netzwerkkonfiguration"
+
+#: templates/fireinfo/stats-oses.html:3
+#: templates/fireinfo/profile-detail.html:12
+msgid "Operating system"
+msgstr "Betriebssystem"
+
+#: templates/fireinfo/stats-oses.html:7
+msgid "Releases"
+msgstr "Releases"
+
+#: templates/fireinfo/stats-oses.html:18
+msgid "Architectures"
+msgstr "Architekturen"
+
+#: templates/fireinfo/stats-oses.html:25
+msgid "Kernels"
+msgstr "Kernel"
+
+#: templates/fireinfo/profile-notfound.html:3
+#: templates/fireinfo/profile-notfound.html:8
+msgid "Profile not found"
+msgstr "Profil nicht gefunden"
+
+#: templates/fireinfo/stats-virtual.html:7
+msgid "Virtualization support"
+msgstr "Virtualisierungsunterstützung"
+
+#: templates/fireinfo/stats-virtual.html:35
+msgid "Hypervisors"
+msgstr "Hypervisoren"
+
+#: templates/fireinfo/profile-detail.html:3
+#: templates/fireinfo/profile-detail.html:7
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/fireinfo/profile-detail.html:16
+msgid "Version"
+msgstr "Version"
+
+#: templates/fireinfo/profile-detail.html:24
+msgid "Architecture"
+msgstr "Architektur"
+
+#: templates/fireinfo/profile-detail.html:32
+msgid "Kernel version"
+msgstr "Kernelversion"
+
+#: templates/fireinfo/profile-detail.html:43
+msgid "Hypervisor"
+msgstr "Hypervisor"
+
+#: templates/fireinfo/profile-detail.html:45
+msgid "This machine is running in a virtual environment."
+msgstr "Diese Maschine läuft in einer virtuellen Umgebung."
+
+#: templates/fireinfo/profile-detail.html:51
+#: templates/fireinfo/profile-detail.html:71
+#: templates/fireinfo/profile-detail.html:130
+msgid "Vendor"
+msgstr "Hersteller"
+
+#: templates/fireinfo/profile-detail.html:59
+msgid "Type"
+msgstr "Typ"
+
+#: templates/fireinfo/profile-detail.html:67
+msgid "Hardware vendor"
+msgstr "Hardwarehersteller"
+
+#: templates/fireinfo/profile-detail.html:79
+#: templates/fireinfo/profile-detail.html:138
+msgid "Model"
+msgstr "Modell"
+
+#: templates/fireinfo/profile-detail.html:97
+msgid "Enabled network zones"
+msgstr "Eingeschaltete Netzwerkzonen"
+
+#: templates/fireinfo/profile-detail.html:119 templates/base-feature.html:62
+#: templates/static/features.html:1104 templates/static/features.html:1399
+msgid "Hardware"
+msgstr "Hardware"
+
+#: templates/fireinfo/profile-detail.html:125
+msgid "CPU"
+msgstr "CPU"
+
+#: templates/fireinfo/profile-detail.html:141
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+#: templates/fireinfo/profile-detail.html:146
+msgid "Cores"
+msgstr "Kerne"
+
+#: templates/fireinfo/profile-detail.html:154
+#: templates/fireinfo/stats-cpus.html:36
+msgid "Speed"
+msgstr "Geschwindigkeit"
+
+#: templates/fireinfo/profile-detail.html:166
+msgid "Supported features"
+msgstr "Unterstützte Funktionen"
+
+#: templates/fireinfo/profile-detail.html:170
+msgid "64 bit capable"
+msgstr "64-Bit fähig"
+
+#: templates/fireinfo/profile-detail.html:174
+msgid "PAE capable"
+msgstr "PAE fähig"
+
+#: templates/fireinfo/profile-detail.html:178
+msgid "VT-x/AMD-V"
+msgstr "VT-x/AMD-V"
+
+#: templates/fireinfo/profile-detail.html:190
+msgid "Memory size"
+msgstr "Arbeitsspeichergröße"
+
+#: templates/fireinfo/profile-detail.html:198
+msgid "System disk size"
+msgstr "Systemplattengröße"
+
+#: templates/fireinfo/profile-detail.html:211
+msgid "Peripherial devices"
+msgstr "Peripheriegeräte"
+
+#: templates/fireinfo/profile-detail.html:216
+msgid "Signature images"
+msgstr "Signaturbilder"
+
+#: templates/fireinfo/base.html:6 templates/modules/menu.html:98
+msgid "Fireinfo"
+msgstr "Fireinfo"
+
+#: templates/fireinfo/base.html:7
+msgid "A hardware data collection tool for IPFire"
+msgstr "Ein Hardwaredatensammeltool für IPFire"
+
+#: templates/fireinfo/stats-cpus.html:3
+msgid "Processors"
+msgstr "Prozessoren"
+
+#: templates/fireinfo/stats-cpus.html:12
+msgid "See statistics about common CPU flags"
+msgstr "Statistiken über CPU-Funktionen"
+
+#: templates/fireinfo/stats-cpus.html:19
+msgid "Vendors"
+msgstr "Hersteller"
+
+#: templates/fireinfo/stats-cpus.html:38
+#, python-format
+msgid ""
+"The average speed of all systems in the database is: <strong>%.2f MHz</"
+"strong>."
+msgstr ""
+"Die durchschnittliche Geschwindigkeit aller System ist: <strong>%.2f MHz</"
+"strong>."
+
+#: templates/fireinfo/stats-cpus.html:40
+#, python-format
+msgid "All together, there are <strong>%s bogomips</strong> out there."
+msgstr "Zusammengenomen sind es <strong>%s Bogomips</strong>."
+
+#: templates/fireinfo/stats-cpus.html:48
+msgid "CPU core counter"
+msgstr "CPU-Kerne"
+
+#: templates/fireinfo/stats-cpus.html:50
+msgid ""
+"See a breakdown of the CPU cores that are installed on the IPFire systems."
+msgstr "Eine Übersicht über die CPU Kerne, der IPFire Systeme."
+
+#: templates/fireinfo/index.html:52
+msgid "Show"
+msgstr "Anzeigen"
+
+#: templates/fireinfo/model-detail.html:11
+#, python-format
+msgid "This device is installed on approximately %.2f%% of all systems."
+msgstr "Dieses Gerät ist in etwa %.2f%% aller Systeme installiert."
+
+#: templates/fireinfo/model-detail.html:14
+msgid "Feedback"
+msgstr "Feedback"
+
+#: templates/fireinfo/model-detail.html:28
+msgid "Go to the wiki"
+msgstr "Zum Wiki"
+
+#: templates/fireinfo/stats-memory.html:3
+#: templates/fireinfo/stats-memory.html:7
+msgid "Memory"
+msgstr "Arbeitsspeicher"
+
+#: templates/fireinfo/stats-memory.html:13
+#, python-format
+msgid ""
+"The average amount of memory of all systems in the database is: <strong>%.2f "
+"MB</strong>."
+msgstr ""
+"Die durchschnittliche Menge an Arbeitsspeicher aller System ist: <strong>"
+"%.2f MB</strong>."
+
+#: templates/fireinfo/stats-geo.html:28
+msgid "Language selection"
+msgstr "Sprachauswahl"
+
+#: templates/fireinfo/stats-cpu-flags.html:3
 msgid "CPU flags"
 msgstr "CPU Flags"
 
-#: templates/stasy-stats-cpu-flags.html:7
+#: templates/fireinfo/stats-cpu-flags.html:7
 msgid "Processor flags"
 msgstr "Prozessor-Flags"
 
-#: templates/stasy-stats-cpu-flags.html:30
+#: templates/fireinfo/stats-cpu-flags.html:30
 msgid "CPUs that support 64 bits"
 msgstr "CPUs, die 64 Bit unterstützen"
 
-#: templates/stasy-stats-cpu-flags.html:46
+#: templates/fireinfo/stats-cpu-flags.html:46
 msgid "CPUs with PAE"
 msgstr "CPUs mit PAE"
 
-#: templates/stasy-stats-cpu-flags.html:62
+#: templates/fireinfo/stats-cpu-flags.html:62
 msgid "CPUs that support virtualization"
 msgstr "CPUs, die Virtualisierung unterstützen"
 
-#: templates/planet-user.html:30
-#, python-format
-msgid "%s did not write any posts, yet."
-msgstr "%s hat bisher noch keine Beiträge verfasst."
+#: templates/fireinfo/stats-admin.html:3
+msgid "Admin"
+msgstr "Administrator"
 
-#: templates/planet-user.html:44 templates/static/press.html:31
-#: templates/static/imprint.html:25 templates/static/imprint.html:37
-#: templates/static/imprint.html:49 templates/static/imprint.html:61
-msgid "Mail"
-msgstr "Mail"
+#: templates/fireinfo/stats-admin.html:11
+msgid "Sending profiles"
+msgstr "Senden Profile"
 
-#: templates/downloads.html:3 templates/downloads.html:7
+#: templates/fireinfo/stats-admin.html:19
+msgid "Archive size"
+msgstr "Archivgröße"
+
+#: templates/downloads.html:3 templates/downloads.html:8
 msgid "Get IPFire"
 msgstr "IPFire herunterladen"
 
-#: templates/downloads.html:27
+#: templates/downloads.html:10
+msgid "IPFire is completely free to download and use"
+msgstr "IPFire darf kostenlos heruntergeladen und genutzt werden"
+
+#: templates/downloads.html:23
 msgid "More download options"
 msgstr "Weitere Downloadoptionen"
 
-#: templates/downloads.html:63
+#: templates/downloads.html:55
 msgid "Get yourself involved"
 msgstr "Selbst mitmachen"
 
@@ -615,14 +755,6 @@ msgstr "Pakfire 3 Mirror"
 msgid "Disabled?"
 msgstr "Ausgeschaltet?"
 
-#: templates/planet-posting.html:18 templates/modules/planet-entry.html:16
-msgid "Posted by"
-msgstr "Erstellt von"
-
-#: templates/planet-posting.html:19 templates/modules/planet-entry.html:17
-msgid "on"
-msgstr "am"
-
 #: templates/admin-downloads.html:7
 msgid "Download counters"
 msgstr "Downloadzähler"
@@ -643,26 +775,6 @@ msgstr "Insgesamt"
 msgid "Downloads by country"
 msgstr "Downloads pro Land"
 
-#: templates/stasy-stats.html:3 templates/modules/menu.html:129
-msgid "Statistics"
-msgstr "Statistiken"
-
-#: templates/stasy-stats.html:7
-msgid "fireinfo statistics"
-msgstr "Fireinfo Statistiken"
-
-#: templates/stasy-stats.html:17
-msgid "IPFire versions"
-msgstr "IPFire-Versionen"
-
-#: templates/stasy-stats.html:73
-msgid "CPU features"
-msgstr "CPU-Funktionen"
-
-#: templates/stasy-stats.html:85
-msgid "Hardware: Memory"
-msgstr "Hardware: Arbeitsspeicher"
-
 #: templates/news.html:7
 msgid "What is new on the IPFire project?"
 msgstr "Was gibt es neues im IPFire Projekt?"
@@ -671,31 +783,38 @@ msgstr "Was gibt es neues im IPFire Projekt?"
 msgid "Stay up to date"
 msgstr "Informiere dich"
 
+#: templates/news.html:61 templates/planet/user.html:3
+#: templates/planet/base.html:6 templates/planet/index.html:3
+#: templates/planet/posting.html:3
+msgid "IPFire Planet"
+msgstr "IPFire Planet"
+
 #: templates/news.html:85
 msgid "Latest news"
 msgstr "Aktuelle Neuigkeiten"
 
 #: templates/base-feature.html:6 templates/modules/menu.html:7
-#: templates/static/features.html:3 templates/static/features.html:7
+#: templates/static/features.html:3 templates/static/features.html:8
+#: templates/static/features.html:1349
 msgid "About IPFire"
 msgstr "Über IPFire"
 
-#: templates/base-feature.html:9 templates/static/features/security.html:3
-#: templates/static/features/security.html:9 templates/index.html:122
+#: templates/base-feature.html:9 templates/static/features.html:88
+#: templates/static/features.html:1354 templates/index.html:104
 msgid "Security"
 msgstr "Sicherheit"
 
-#: templates/base-feature.html:12 templates/static/features/firewall.html:3
-#: templates/static/features/firewall.html:9
+#: templates/base-feature.html:12 templates/static/features.html:139
+#: templates/static/features.html:1359
 msgid "Firewall"
 msgstr "Firewall"
 
-#: templates/base-feature.html:15 templates/static/features/pakfire.html:3
+#: templates/base-feature.html:15 templates/static/features.html:1364
 msgid "Pakfire"
 msgstr "Pakfire"
 
-#: templates/base-feature.html:18 templates/static/features/updates.html:3
-#: templates/static/features/updates.html:7
+#: templates/base-feature.html:18 templates/static/features.html:432
+#: templates/static/features.html:1369
 msgid "Updates"
 msgstr "Updates"
 
@@ -707,23 +826,20 @@ msgstr "IPFire ist frei"
 msgid "Features"
 msgstr "Funktionen"
 
-#: templates/base-feature.html:28 templates/static/features/dialup.html:3
-#: templates/static/features/dialup.html:7
+#: templates/base-feature.html:28 templates/static/features.html:502
+#: templates/static/features.html:1374
 msgid "Dialup"
 msgstr "Einwahl"
 
-#: templates/base-feature.html:31 templates/static/features/proxy.html:3
-#: templates/static/features/proxy.html:7
+#: templates/base-feature.html:31 templates/static/features.html:616
 msgid "Web proxy"
 msgstr "Webproxy"
 
-#: templates/base-feature.html:35
-#: templates/static/features/proxy/content-filter.html:3
+#: templates/base-feature.html:35 templates/static/features.html:705
 msgid "Content filter"
 msgstr "Inhaltsfilter"
 
-#: templates/base-feature.html:38
-#: templates/static/features/proxy/update-accelerator.html:3
+#: templates/base-feature.html:38 templates/static/features.html:766
 msgid "Update accelerator"
 msgstr "Update Accelerator"
 
@@ -731,17 +847,16 @@ msgstr "Update Accelerator"
 msgid "Virus scan"
 msgstr "Virusscanner"
 
-#: templates/base-feature.html:45 templates/static/features/vpn/ipsec.html:3
-#: templates/static/features/vpn/openvpn.html:3
-#: templates/static/features/vpn.html:3 templates/static/features/vpn.html:9
+#: templates/base-feature.html:45 templates/static/features.html:818
+#: templates/static/features.html:1384
 msgid "VPN"
 msgstr "VPN"
 
-#: templates/base-feature.html:49 templates/static/features/vpn/ipsec.html:3
+#: templates/base-feature.html:49 templates/static/features.html:854
 msgid "IPsec"
 msgstr "IPsec"
 
-#: templates/base-feature.html:52 templates/static/features/vpn/openvpn.html:3
+#: templates/base-feature.html:52 templates/static/features.html:915
 msgid "OpenVPN"
 msgstr "OpenVPN"
 
@@ -749,115 +864,14 @@ msgstr "OpenVPN"
 msgid "Intrusion detection"
 msgstr "Einbruchsdetektion"
 
-#: templates/base-feature.html:59 templates/static/features/qos.html:3
-#: templates/static/features/qos.html:7
+#: templates/base-feature.html:59 templates/static/features.html:1031
+#: templates/static/features.html:1394
 msgid "Quality of Service"
 msgstr "Quality of Service"
-
-#: templates/base-feature.html:62 templates/stasy-profile-detail.html:119
-#: templates/static/features/hardware.html:3
-#: templates/static/features/hardware.html:8
-msgid "Hardware"
-msgstr "Hardware"
 
 #: templates/base-feature.html:68
 msgid "Wireless AP"
 msgstr "WLAN-Access-Point"
-
-#: templates/stasy-profile-detail.html:3 templates/stasy-profile-detail.html:7
-msgid "Profile"
-msgstr "Profil"
-
-#: templates/stasy-profile-detail.html:12 templates/stasy-stats-oses.html:3
-msgid "Operating system"
-msgstr "Betriebssystem"
-
-#: templates/stasy-profile-detail.html:16
-msgid "Version"
-msgstr "Version"
-
-#: templates/stasy-profile-detail.html:24
-msgid "Architecture"
-msgstr "Architektur"
-
-#: templates/stasy-profile-detail.html:32
-msgid "Kernel version"
-msgstr "Kernelversion"
-
-#: templates/stasy-profile-detail.html:43
-msgid "Hypervisor"
-msgstr "Hypervisor"
-
-#: templates/stasy-profile-detail.html:45
-msgid "This machine is running in a virtual environment."
-msgstr "Diese Maschine läuft in einer virtuellen Umgebung."
-
-#: templates/stasy-profile-detail.html:51
-#: templates/stasy-profile-detail.html:71
-#: templates/stasy-profile-detail.html:130
-msgid "Vendor"
-msgstr "Hersteller"
-
-#: templates/stasy-profile-detail.html:59
-msgid "Type"
-msgstr "Typ"
-
-#: templates/stasy-profile-detail.html:67
-msgid "Hardware vendor"
-msgstr "Hardwarehersteller"
-
-#: templates/stasy-profile-detail.html:79
-#: templates/stasy-profile-detail.html:138
-msgid "Model"
-msgstr "Modell"
-
-#: templates/stasy-profile-detail.html:97
-msgid "Enabled network zones"
-msgstr "Eingeschaltete Netzwerkzonen"
-
-#: templates/stasy-profile-detail.html:125
-msgid "CPU"
-msgstr "CPU"
-
-#: templates/stasy-profile-detail.html:141
-msgid "Not available"
-msgstr "Nicht verfügbar"
-
-#: templates/stasy-profile-detail.html:146
-msgid "Cores"
-msgstr "Kerne"
-
-#: templates/stasy-profile-detail.html:166
-msgid "Supported features"
-msgstr "Unterstützte Funktionen"
-
-#: templates/stasy-profile-detail.html:170
-msgid "64 bit capable"
-msgstr "64-Bit fähig"
-
-#: templates/stasy-profile-detail.html:174
-msgid "PAE capable"
-msgstr "PAE fähig"
-
-#: templates/stasy-profile-detail.html:178
-msgid "VT-x/AMD-V"
-msgstr "VT-x/AMD-V"
-
-#: templates/stasy-profile-detail.html:190
-msgid "Memory size"
-msgstr "Arbeitsspeichergröße"
-
-#: templates/stasy-profile-detail.html:198
-msgid "System disk size"
-msgstr "Systemplattengröße"
-
-#: templates/stasy-profile-detail.html:211
-msgid "Peripherial devices"
-msgstr "Peripheriegeräte"
-
-#: templates/stasy-profile-detail.html:216
-msgid "Signature images"
-msgstr "Signaturbilder"
 
 #: templates/download-mirror-detail.html:24
 msgid "Number of files"
@@ -871,66 +885,61 @@ msgstr "Liste aller Mirrorserver."
 msgid "Ancient Downloads"
 msgstr "Veraltete Downloads"
 
-#: templates/downloads-all.html:7
+#: templates/downloads-all.html:7 templates/index.html:18
 msgid "Download IPFire"
 msgstr "IPFire herunterladen"
-
-#: templates/nopaste-index.html:3 templates/nopaste-index.html:6
-msgid "IPFire nopaste service"
-msgstr "IPFire nopaste Service"
-
-#: templates/nopaste-index.html:14
-msgid "Subject"
-msgstr "Betreff"
 
 #: templates/admin-accounts-edit.html:5 templates/admin-accounts.html:5
 msgid "Account Administrator"
 msgstr "Accountadministrator"
 
-#: templates/stasy-index.html:8
-msgid "A hardware data collection tool for IPFire"
-msgstr "Ein Hardwaredatensammeltool für IPFire"
+#: templates/planet/user.html:22 templates/planet/index.html:30
+msgid "Older posts"
+msgstr "Ältere Beiträge"
 
-#: templates/stasy-index.html:53
-msgid "Show"
-msgstr "Anzeigen"
+#: templates/planet/user.html:26 templates/planet/index.html:34
+msgid "Newer posts"
+msgstr "Neuere Beiträge"
 
-#: templates/stasy-model-detail.html:11
+#: templates/planet/user.html:33
 #, python-format
-msgid "This device is installed on approximately %.2f%% of all systems."
-msgstr "Dieses Gerät ist in etwa %.2f%% aller Systeme installiert."
+msgid "%s did not write any posts, yet."
+msgstr "%s hat bisher noch keine Beiträge verfasst."
 
-#: templates/stasy-model-detail.html:14
-msgid "Feedback"
-msgstr "Feedback"
+#: templates/planet/user.html:48 templates/static/press.html:31
+#: templates/static/imprint.html:29 templates/static/imprint.html:41
+#: templates/static/imprint.html:53 templates/static/imprint.html:65
+msgid "Mail"
+msgstr "Mail"
 
-#: templates/stasy-model-detail.html:28
-msgid "Go to the wiki"
-msgstr "Zum Wiki"
+#: templates/planet/base.html:7
+msgid "The official blog of the IPFire team"
+msgstr "Das offizielle Blog des IPFire-Team"
 
-#: templates/stasy-stats-admin.html:3
-msgid "Admin"
-msgstr "Administrator"
+#: templates/planet/posting.html:18 templates/modules/planet-entry.html:14
+msgid "Posted by"
+msgstr "Erstellt von"
 
-#: templates/stasy-stats-admin.html:11
-msgid "Sending profiles"
-msgstr "Senden Profile"
+#: templates/planet/posting.html:19 templates/modules/planet-entry.html:15
+msgid "on"
+msgstr "am"
 
-#: templates/stasy-stats-admin.html:19
-msgid "Archive size"
-msgstr "Archivgröße"
-
-#: templates/base.html:4
+#: templates/base.html:4 www/templates/base.html:4
 msgid "No title given"
 msgstr "Kein Titel"
 
+#: templates/base.html:63
+msgid "IPFire is free software"
+msgstr "IPFire ist freie Software"
+
 #: templates/base.html:69 templates/static/press.html:3
-#: templates/static/press.html:7
+#: templates/static/press.html:7 www/templates/base.html:76
 msgid "Press"
 msgstr "Presse"
 
-#: templates/base.html:71
-msgid "imprint"
+#: templates/base.html:73 templates/static/imprint.html:3
+#: templates/static/imprint.html:8
+msgid "Imprint"
 msgstr "Impressum"
 
 #: templates/admin-mirrors.html:5
@@ -1004,7 +1013,6 @@ msgstr "BLZ"
 
 #: templates/modules/release-item.html:2
 #: templates/modules/sidebar-release.html:4 templates/index.html:24
-#: templates/index.html:47
 msgid "Latest release"
 msgstr "Neuestes Release"
 
@@ -1071,9 +1079,8 @@ msgid "Advertisement"
 msgstr "Werbung"
 
 #: templates/modules/ads/download-splash.html:5
-#, python-format
-msgid "This download is sponsored by %s!"
-msgstr "Dieser Download wurde gesponsort von %s!"
+msgid "This download is sponsored by:"
+msgstr "Dieser Download wurde gesponsort von:"
 
 #: templates/modules/menu.html:4
 msgid "Download"
@@ -1088,62 +1095,66 @@ msgid "Support"
 msgstr "Support"
 
 #: templates/modules/menu.html:20
+msgid "Commercial support"
+msgstr "Kommerzieller Support"
+
+#: templates/modules/menu.html:27
 msgid "Wiki"
 msgstr "Wiki"
 
-#: templates/modules/menu.html:26
+#: templates/modules/menu.html:33
 msgid "Forum"
 msgstr "Forum"
 
-#: templates/modules/menu.html:32 templates/static/chat.html:3
-#: templates/static/chat.html:7
+#: templates/modules/menu.html:39 templates/static/chat.html:3
+#: templates/static/chat.html:8
 msgid "Chat"
 msgstr "Chat"
 
-#: templates/modules/menu.html:46 templates/static/getinvolved.html:127
+#: templates/modules/menu.html:53 templates/static/getinvolved.html:126
 msgid "Wishlist"
 msgstr "Wunschliste"
 
-#: templates/modules/menu.html:54
+#: templates/modules/menu.html:61
 msgid "More"
 msgstr "Mehr"
 
-#: templates/modules/menu.html:63
+#: templates/modules/menu.html:70
 msgid "Overview"
 msgstr "Übersicht"
 
-#: templates/modules/menu.html:69
+#: templates/modules/menu.html:76
 msgid "Pakfire Build Service"
 msgstr "Pakfire Buildsystem"
 
-#: templates/modules/menu.html:75 templates/static/development.html:47
+#: templates/modules/menu.html:82 templates/static/development.html:55
 msgid "Bugtracker"
 msgstr "Bugtracker"
 
-#: templates/modules/menu.html:80
+#: templates/modules/menu.html:87
 msgid "Miscellaneous"
 msgstr "Verschiedenes"
 
-#: templates/modules/menu.html:91 templates/static/features/hardware.html:80
-msgid "Fireinfo"
-msgstr "Fireinfo"
-
-#: templates/modules/menu.html:97
+#: templates/modules/menu.html:104
 msgid "Mailing lists"
 msgstr "Mailinglisten"
 
-#: templates/modules/menu.html:109 templates/static/artwork.html:3
-#: templates/static/artwork.html:7
+#: templates/modules/menu.html:116 templates/static/artwork.html:3
+#: templates/static/artwork.html:8
 msgid "Artwork"
 msgstr "Artwork"
 
-#: templates/modules/menu.html:115
+#: templates/modules/menu.html:122
 msgid "CeBIT"
 msgstr "CeBIT"
 
-#: templates/modules/menu.html:121
+#: templates/modules/menu.html:128
 msgid "Tracker"
 msgstr "Tracker"
+
+#: templates/modules/menu.html:146
+msgid "Commercial support available!"
+msgstr "Kommerzieller Support verfügbar!"
 
 #: templates/modules/news-item.html:6
 msgid "Announcement"
@@ -1153,143 +1164,95 @@ msgstr "Ankündigung"
 msgid "Logo"
 msgstr "Logo"
 
-#: templates/static/development.html:31
-msgid "Development tools"
-msgstr "Entwicklungstools"
+#: templates/static/features.html:10
+msgid "Because IPFire is more than just a firewall"
+msgstr "Weil IPFire mehr als nur eine Firewall ist"
 
-#: templates/static/development.html:68
-msgid "Development Mailing List"
-msgstr "Entwicklungsmailingliste"
+#: templates/static/features.html:22
+msgid "IPFire"
+msgstr "IPFire"
 
-#: templates/static/development.html:87
-msgid "Source code"
-msgstr "Quellcode"
+#: templates/static/features.html:22
+msgid "An Open Source Firewall Distribution"
+msgstr "An Open Source Firewall Solution"
 
-#: templates/static/development.html:90
-msgid "Git"
-msgstr "Git"
-
-#: templates/static/development.html:109
-msgid "IPFire Git repositories"
-msgstr "IPFire Git-Repositorien"
-
-#: templates/static/development.html:115
-msgid "GitHub"
-msgstr "GitHub"
-
-#: templates/static/development.html:134
-msgid "ipfire on GitHub"
-msgstr "ipfire auf GitHub"
-
-#: templates/static/development.html:144
-msgid "How to build IPFire?"
-msgstr "Wie kompiliert man IPFire?"
-
-#: templates/static/development.html:178
-msgid "How to submit patches?"
-msgstr "Wie sendet man Patches?"
-
-#: templates/static/development.html:206
-msgid "How to translate IPFire?"
-msgstr "Wie übersetzt man IPFire?"
-
-#: templates/static/features/vpn/ipsec.html:7
-msgid "VPN: IPsec"
-msgstr "VPN: IPsec"
-
-#: templates/static/features/vpn/openvpn.html:7
-msgid "VPN: OpenVPN"
-msgstr "VPN: OpenVPN"
-
-#: templates/static/features/proxy/update-accelerator.html:7
-msgid "Web proxy: Update accelerator"
-msgstr "Webproxy: Update Accelerator"
-
-#: templates/static/features/proxy/virus-scanner.html:3
-msgid "Virus scanner"
-msgstr "Virenscanner"
-
-#: templates/static/features/proxy/virus-scanner.html:7
-msgid "Web proxy: Transparent virus scanner"
-msgstr "Webproxy: Transparenter Virenscanner"
-
-#: templates/static/features/proxy/content-filter.html:7
-msgid "Web proxy: Content filter"
-msgstr "Webproxy: Inhaltsfilter"
-
-#: templates/static/features/pakfire.html:11
+#: templates/static/features.html:315
 msgid "The IPFire package management system"
 msgstr "Das IPFire Paketmanagementsystem"
 
-#: templates/static/features/pakfire.html:113
-#: templates/static/features/hardware.html:77
-#: templates/static/features/firewall.html:168
-msgid "Further reading"
-msgstr "Mehr zum Lesen"
+#: templates/static/features.html:791
+msgid "Transparent virus scanner"
+msgstr "Transparenter Virenscanner"
 
-#: templates/static/features/pakfire.html:117
-msgid "How to install a package?"
-msgstr "Wie installiert man ein Paket?"
-
-#: templates/static/features/pakfire.html:122
-msgid "List of add-ons"
-msgstr "Liste der Addons"
-
-#: templates/static/features/pakfire.html:127
-msgid "Pakfire Build System"
-msgstr "Pakfire Buildsystem"
-
-#: templates/static/features/itsfree.html:3
-#: templates/static/features/itsfree.html:10
-msgid "IPFire is free software"
-msgstr "IPFire ist freie Software"
-
-#: templates/static/features/itsfree.html:11
-msgid "Free as in freedom"
-msgstr "Frei wie in Freiheit"
-
-#: templates/static/features/wireless.html:3
-#: templates/static/features/wireless.html:7
-msgid "Wireless Access Point"
-msgstr "WLAN-Access-Point"
-
-#: templates/static/features/hardware.html:84
-msgid "Hardware section on the wiki"
-msgstr "Hardwarebereich im Wiki"
-
-#: templates/static/features/hardware.html:89
-msgid "Hardware compatibility list"
-msgstr "Hardwarekompatibilitätsliste"
-
-#: templates/static/features/hardware.html:89
-msgid "networking"
-msgstr "Netzwerk"
-
-#: templates/static/features/ids.html:3 templates/static/features/ids.html:7
-msgid "Intrusion detection system"
-msgstr "Einbruchsdetektierung"
-
-#: templates/static/features/firewall.html:171
-msgid "Outgoing firewall configuration"
-msgstr "Ausgehende Firewall-Konfiguration"
-
-#: templates/static/features/vpn.html:10
+#: templates/static/features.html:818
 msgid "Virtual Private Networks"
 msgstr "Virtuelle private Netzwerke"
 
-#: templates/static/features/vpn.html:50
-msgid "Learn more about configuring a VPN connection"
-msgstr "Mehr über die Konfiguration einer VPN-Verbindung"
+#: templates/static/features.html:974
+msgid "Intrusion detection system"
+msgstr "Einbruchsdetektierung"
 
-#: templates/static/chat.html:29
+#: templates/static/features.html:1311 templates/static/features.html:1409
+msgid "Wireless Access Point"
+msgstr "WLAN-Access-Point"
+
+#: templates/static/features.html:1379
+msgid "Web Proxy"
+msgstr "Webproxy"
+
+#: templates/static/features.html:1389
+msgid "Intrusion Detection"
+msgstr "Einbruchsdetektierung"
+
+#: templates/static/development.html:37 templates/static/development.html:258
+msgid "Development tools"
+msgstr "Entwicklungstools"
+
+#: templates/static/development.html:77
+msgid "Development Mailing List"
+msgstr "Entwicklungsmailingliste"
+
+#: templates/static/development.html:96
+msgid "Source code"
+msgstr "Quellcode"
+
+#: templates/static/development.html:99
+msgid "Git"
+msgstr "Git"
+
+#: templates/static/development.html:118
+msgid "IPFire Git repositories"
+msgstr "IPFire Git-Repositorien"
+
+#: templates/static/development.html:124
+msgid "GitHub"
+msgstr "GitHub"
+
+#: templates/static/development.html:143
+msgid "ipfire on GitHub"
+msgstr "ipfire auf GitHub"
+
+#: templates/static/development.html:150 templates/static/development.html:268
+msgid "How to build IPFire?"
+msgstr "Wie kompiliert man IPFire?"
+
+#: templates/static/development.html:186
+msgid "How to submit patches?"
+msgstr "Wie sendet man Patches?"
+
+#: templates/static/development.html:214
+msgid "How to translate IPFire?"
+msgstr "Wie übersetzt man IPFire?"
+
+#: templates/static/chat.html:33
 msgid "Server"
 msgstr "Server"
 
-#: templates/static/chat.html:32
+#: templates/static/chat.html:36
 msgid "Channel"
 msgstr "Channel"
 
-#: templates/static/chat.html:37
+#: templates/static/chat.html:41
 msgid "Use the web client"
 msgstr "Web-Client benutzen"
 
@@ -1297,96 +1260,87 @@ msgstr "Web-Client benutzen"
 msgid "CeBIT special"
 msgstr "CeBIT-Spezial"
 
-#: templates/static/cebit.html:7
+#: templates/static/cebit.html:8
 msgid "IPFire at CeBIT 2010"
 msgstr "IPFire auf der CeBIT 2010"
 
-#: templates/static/getinvolved.html:3 templates/static/getinvolved.html:9
-#: templates/static/getinvolved.html:12
+#: templates/static/getinvolved.html:3 templates/static/getinvolved.html:8
 msgid "Get involved"
 msgstr "Mitmachen"
 
-#: templates/static/getinvolved.html:48
+#: templates/static/getinvolved.html:10
+msgid "Because making a difference is easy"
+msgstr "Weil es so leicht ist etwas Gutes zu tun"
+
+#: templates/static/getinvolved.html:47
 msgid "First steps"
 msgstr "Erste Schritte"
 
-#: templates/static/getinvolved.html:98
+#: templates/static/getinvolved.html:97
 msgid "Donations"
 msgstr "Spenden"
 
-#: templates/static/getinvolved.html:143
+#: templates/static/getinvolved.html:142
 msgid "Make a wish"
 msgstr "Wünsch dir was"
 
-#: templates/static/getinvolved.html:150
+#: templates/static/getinvolved.html:149
 msgid "Contribute yourself"
 msgstr "Bring dich selbst ein"
 
-#: templates/static/getinvolved.html:176
+#: templates/static/getinvolved.html:175
 msgid "Translation"
 msgstr "Übersetzung"
 
-#: templates/static/getinvolved.html:191
+#: templates/static/getinvolved.html:190
 msgid "Translation team"
 msgstr "Übersetzungsteam"
 
-#: templates/static/getinvolved.html:197
+#: templates/static/getinvolved.html:196
 msgid "Promotion"
 msgstr "Promotion"
 
-#: templates/static/artwork.html:31
+#: templates/static/artwork.html:36
 msgid "The IPFire Logo"
 msgstr "Das IPFire-Logo"
 
-#: templates/static/artwork.html:43
+#: templates/static/artwork.html:50
 msgid "Flyers, Rollups, CDs and more"
 msgstr "Flyer, Rollups, CDs und mehr"
 
-#: templates/static/imprint.html:3 templates/static/imprint.html:7
-msgid "Imprint"
-msgstr "Impressum"
+#: templates/static/donation.html:10
+msgid "We need your help!"
+msgstr "Wir brauchen Deine Hilfe!"
 
-#: templates/static/donation.html:3 templates/static/donation.html:7
-msgid "Donation"
-msgstr "Spende"
-
-#: templates/static/donation.html:63
+#: templates/static/donation.html:68
 msgid "Did you know...?"
 msgstr "Schon gewusst?"
 
-#: templates/static/donation.html:79
+#: templates/static/donation.html:84
 msgid "How do we use financial support?"
 msgstr "Wofür werden Spenden eingesetzt?"
 
-#: templates/static/donation.html:131
+#: templates/static/donation.html:132
 msgid "Research & Development"
 msgstr "Forschung & Entwicklung"
 
-#: templates/index.html:19 templates/index.html:42
-msgid "An Open Source Firewall Solution"
-msgstr "An Open Source Firewall Solution"
-
-#: templates/index.html:57
+#: templates/index.html:43
 msgid "New!"
 msgstr "Neu!"
 
-#: templates/index.html:103
+#: templates/index.html:89
 msgid "What's new?"
 msgstr "Neuigkeiten"
 
-#: templates/index.html:116
-msgid "Support this project with your donation!"
-msgstr "Unterstütze dieses Projekt mit deiner Spende!"
-
-#: templates/index.html:139
+#: templates/index.html:121
 msgid "Flexibility"
 msgstr "Flexibilität"
 
-#: templates/index.html:156
+#: templates/index.html:138
 msgid "Open Source"
 msgstr "Open Source"
 
-#: templates/index.html:173
+#: templates/index.html:155
 msgid "Read more"
 msgstr "Mehr erfahren"
 
@@ -1406,18 +1360,6 @@ msgstr "GeoIP Standort"
 msgid "Filelist"
 msgstr "Dateiliste"
 
-#: templates/stasy-stats-oses.html:7
-msgid "Releases"
-msgstr "Releases"
-
-#: templates/stasy-stats-oses.html:18
-msgid "Architectures"
-msgstr "Architekturen"
-
-#: templates/stasy-stats-oses.html:25
-msgid "Kernels"
-msgstr "Kernel"
-
 #: templates/admin-accounts.html:8
 msgid "Create new account"
 msgstr "Neuen Account erstellen"
@@ -1433,31 +1375,6 @@ msgstr "Nahgelegene Mirrorserver"
 #: templates/mirrors.html:28 templates/mirrors.html:31
 msgid "Worldwide mirror servers"
 msgstr "Weltweite Mirrorserver"
-
-#: templates/builds.html:3
-msgid "Builds"
-msgstr "Builds"
-
-#: templates/builds.html:6
-msgid "Nightly builds"
-msgstr "Nightly Builds"
-
-#: templates/builds.html:13
-msgid "Less than 12 hours ago"
-msgstr "Vor weniger als 12 Stunden"
-
-#: templates/builds.html:24
-msgid "More than 12 hours ago"
-msgstr "Mehr als 12 Stunden"
-
-#: templates/builds.html:35
-msgid "More than a day ago"
-msgstr "Vor mehr als einem Tag"
-
-#: templates/stasy-profile-notfound.html:3
-#: templates/stasy-profile-notfound.html:8
-msgid "Profile not found"
-msgstr "Profil nicht gefunden"
 
 #: webapp/handlers_news.py:43 webapp/ui_modules.py:76
 msgid "Unknown author"
@@ -1564,6 +1481,18 @@ msgstr "HDD: %s"
 #, python-format
 msgid "Networks: %s"
 msgstr "Netzwerke: %s"
+
+#: www/templates/nopaste-index.html:3 www/templates/nopaste-index.html:6
+msgid "IPFire nopaste service"
+msgstr "IPFire nopaste Service"
+
+#: www/templates/nopaste-index.html:14
+msgid "Subject"
+msgstr "Betreff"
+
+#: www/templates/base.html:78
+msgid "imprint"
+msgstr "Impressum"
 
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:225
 msgid "January"
@@ -1717,6 +1646,84 @@ msgstr "%(weekday)s, %(day)s. %(month_name)s"
 msgid "%(commas)s and %(last)s"
 msgstr "%(commas)s und %(last)s"
 
+#~ msgid "Profile lookup"
+#~ msgstr "Profilsuche"
+
+#~ msgid "Subscribe"
+#~ msgstr "Abbonieren"
+
+#~ msgid "Feed"
+#~ msgstr "Feed"
+
+#~ msgid "People on the IPFire planet"
+#~ msgstr "Auf dem IPFire Planet"
+
+#~ msgid "VPN: IPsec"
+#~ msgstr "VPN: IPsec"
+
+#~ msgid "VPN: OpenVPN"
+#~ msgstr "VPN: OpenVPN"
+
+#~ msgid "Web proxy: Update accelerator"
+#~ msgstr "Webproxy: Update Accelerator"
+
+#~ msgid "Virus scanner"
+#~ msgstr "Virenscanner"
+
+#~ msgid "Web proxy: Content filter"
+#~ msgstr "Webproxy: Inhaltsfilter"
+
+#~ msgid "Further reading"
+#~ msgstr "Mehr zum Lesen"
+
+#~ msgid "How to install a package?"
+#~ msgstr "Wie installiert man ein Paket?"
+
+#~ msgid "List of add-ons"
+#~ msgstr "Liste der Addons"
+
+#~ msgid "Pakfire Build System"
+#~ msgstr "Pakfire Buildsystem"
+
+#~ msgid "Free as in freedom"
+#~ msgstr "Frei wie in Freiheit"
+
+#~ msgid "Hardware section on the wiki"
+#~ msgstr "Hardwarebereich im Wiki"
+
+#~ msgid "Hardware compatibility list"
+#~ msgstr "Hardwarekompatibilitätsliste"
+
+#~ msgid "networking"
+#~ msgstr "Netzwerk"
+
+#~ msgid "Outgoing firewall configuration"
+#~ msgstr "Ausgehende Firewall-Konfiguration"
+
+#~ msgid "Learn more about configuring a VPN connection"
+#~ msgstr "Mehr über die Konfiguration einer VPN-Verbindung"
+
+#~ msgid "Donation"
+#~ msgstr "Spende"
+
+#~ msgid "Support this project with your donation!"
+#~ msgstr "Unterstütze dieses Projekt mit deiner Spende!"
+
+#~ msgid "Builds"
+#~ msgstr "Builds"
+
+#~ msgid "Nightly builds"
+#~ msgstr "Nightly Builds"
+
+#~ msgid "Less than 12 hours ago"
+#~ msgstr "Vor weniger als 12 Stunden"
+
+#~ msgid "More than 12 hours ago"
+#~ msgstr "Mehr als 12 Stunden"
+
+#~ msgid "More than a day ago"
+#~ msgstr "Vor mehr als einem Tag"
+
 #~ msgid "Ended"
 #~ msgstr "Beendet"
 
@@ -1806,9 +1813,6 @@ msgstr "%(commas)s und %(last)s"
 
 #~ msgid "Hash"
 #~ msgstr "Hash"
-
-#~ msgid "Getting support"
-#~ msgstr "Support bekommen"
 
 #~ msgid "Go to the IPFire Wiki"
 #~ msgstr "Zum IPFire Wiki"
