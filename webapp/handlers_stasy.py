@@ -223,10 +223,10 @@ class StasyProfileSendHandler(StasyBaseHandler):
 class StasyIndexHandler(StasyBaseHandler):
 	def _profile_not_found(self, profile_id):
 		self.set_status(404)
-		self.render("stasy-profile-notfound.html", profile_id=profile_id)
+		self.render("fireinfo/profile-notfound.html", profile_id=profile_id)
 
 	def get(self):
-		self.render("stasy-index.html")
+		self.render("fireinfo/index.html")
 
 	def post(self):
 		profile_id = self.get_argument("profile_id", None)
@@ -247,17 +247,17 @@ class StasyProfileDetailHandler(StasyIndexHandler):
 			self._profile_not_found(profile_id)
 			return
 
-		self.render("stasy-profile-detail.html", profile=profile)
+		self.render("fireinfo/profile-detail.html", profile=profile)
 
 
 class StasyStatsHandler(StasyBaseHandler):
 	def get(self):
-		self.render("stasy-stats.html")
+		self.render("fireinfo/stats.html")
 
 
 class StasyStatsCPUHandler(StasyBaseHandler):
 	def get(self):
-		return self.render("stasy-stats-cpus.html",
+		return self.render("fireinfo/stats-cpus.html",
 			cpu_vendors=self.stasy.cpu_vendors_map,
 			average_speed=self.stasy.cpu_speed_average,
 			cpu_speeds=self.stasy.cpu_speed_map,
@@ -278,18 +278,18 @@ class StasyStatsCPUFlagsHandler(StasyBaseHandler):
 		for name, flag in flags:
 			kwargs["cpus_" + name] = self.stasy.get_cpu_flag_map(flag)
 
-		return self.render("stasy-stats-cpu-flags.html", **kwargs)
+		return self.render("fireinfo/stats-cpu-flags.html", **kwargs)
 
 class StasyStatsMemoryHandler(StasyBaseHandler):
 	def get(self):
-		return self.render("stasy-stats-memory.html",
+		return self.render("fireinfo/stats-memory.html",
 			average_memory=self.stasy.memory_average,
 			memory=self.stasy.get_memory_map())
 
 
 class StasyStatsOSesHandler(StasyBaseHandler):
 	def get(self):
-		return self.render("stasy-stats-oses.html",
+		return self.render("fireinfo/stats-oses.html",
 			arches=self.stasy.arch_map,
 			kernels=self.stasy.kernel_map,
 			releases=self.stasy.release_map)
@@ -297,20 +297,20 @@ class StasyStatsOSesHandler(StasyBaseHandler):
 
 class StasyStatsVirtualHandler(StasyBaseHandler):
 	def get(self):
-		return self.render("stasy-stats-virtual.html",
+		return self.render("fireinfo/stats-virtual.html",
 			hypervisor_vendors = self.stasy.hypervisor_map,
 			is_virtual = self.stasy.virtual_map)
 
 class StasyStatsGeoHandler(StasyBaseHandler):
 	def get(self):
-		return self.render("stasy-stats-geo.html",
+		return self.render("fireinfo/stats-geo.html",
 			languages = self.stasy.get_language_map(),
 			geo_locations = self.stasy.get_geo_location_map())
 
 
 class StasyStatsNetworkHandler(StasyBaseHandler):
 	def get(self):
-		return self.render("stasy-stats-network.html",
+		return self.render("fireinfo/stats-network.html",
 			network_zones=self.stasy.get_network_zones_map())
 
 
@@ -327,7 +327,7 @@ class StasyStatsVendorDetail(StasyBaseHandler):
 		# Get a list of all models we know from this vendor
 		models = self.stasy.get_models_by_vendor(bus, vendor_id)
 
-		self.render("stasy-vendor-detail.html",
+		self.render("fireinfo/vendor-detail.html",
 			vendor_name=vendor_name, models=models)
 
 
@@ -346,7 +346,7 @@ class StasyStatsModelDetail(StasyBaseHandler):
 		percentage = \
 			self.stasy.get_device_percentage(bus, vendor_id, model_id) * 100
 
-		self.render("stasy-model-detail.html",
+		self.render("fireinfo/model-detail.html",
 			vendor_id=vendor_id,
 			vendor_name=vendor_name,
 			model_id=model_id,
@@ -372,5 +372,5 @@ class AdminFireinfoStatsHandler(StasyBaseHandler):
 		#updates[_("All versions")] = self.stasy.get_updated_since(since).count()
 		#data["updated_since_24h"] = updates
 
-		self.render("stasy-stats-admin.html", **data)
+		self.render("fireinfo/stats-admin.html", **data)
 
