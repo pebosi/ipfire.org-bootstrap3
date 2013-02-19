@@ -1,12 +1,12 @@
-{% extends "planet-user.html" %}
+{% extends "user.html" %}
 
 {% block title %}{{ _("IPFire Planet") }} - {{ entry.title }}{% end block %}
 
 {% block bodyA %}
 	<div class="page-header">
-		<h2>
+		<h1>
 			<a href="/post/{{ entry.slug }}">{{ entry.title }}</a>
-		</h2>
+		</h1>
 	</div>
 
 	<div class="row">

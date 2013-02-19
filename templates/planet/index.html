@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("IPFire Planet") }}{% end block %}
+
+{% block body %}
+	<div class="ac">
+		<p class="lead">
+			The <strong>IPFire Planet</strong> is a place for the people
+			who are involved in the project to tell the community about
+			new progress in the development or make some minor announcements.
+		</p>
+
+		<p>
+			<a class="btn btn-primary btn-large" href="http://planet.ipfire.org/rss">
+				Subscribe to our RSS feed to stay up to date.
+			</a>
+		</p>
+	</div>
+
+	<hr class="separator">
+
+	{% for entry in entries %}
+		{% module PlanetEntry(entry) %}
+	{% end %}
+
+	<div class="row">
+		<div class="span9">
+			<ul class="pager">
+				<li class="previous">
+					<a href="?offset={{ offset }}">&larr; {{ _("Older posts") }}</a>
+				</li>
+				{% if offset - limit %}
+					<li class="next">
+						<a href="?offset={{ offset - (2 * limit) }}">{{ _("Newer posts") }} &rarr;</a>
+					</li>
+				{% end %}
+			</ul>
+		</div>
+	</div>
+{% end block %}

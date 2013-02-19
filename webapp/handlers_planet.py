@@ -27,8 +27,7 @@ class PlanetMainHandler(PlanetBaseHandler):
 
 		entries = self.planet.get_entries(offset=offset, limit=limit)
 
-		self.render("planet-main.html", entries=entries,
-			authors=self.planet.get_authors(),
+		self.render("planet/index.html", entries=entries,
 			offset=offset + limit, limit=limit)
 
 
@@ -44,7 +43,7 @@ class PlanetUserHandler(PlanetBaseHandler):
 		entries = self.planet.get_entries_by_author(author.uid,
 			offset=offset, limit=limit)
 
-		self.render("planet-user.html", author=author, entries=entries,
+		self.render("planet/user.html", author=author, entries=entries,
 			offset=offset + limit, limit=limit, rss_url="/user/%s/rss" % author.uid)
 
 
@@ -55,5 +54,5 @@ class PlanetPostingHandler(PlanetBaseHandler):
 		if not entry:
 			raise tornado.web.HTTPError(404)
 
-		self.render("planet-posting.html",
+		self.render("planet/posting.html",
 			author=entry.author, entry=entry)

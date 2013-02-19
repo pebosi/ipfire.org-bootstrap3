@@ -16,7 +16,7 @@
 				<pubDate>{{ item.date.strftime("%a, %d %b %Y %H:%M:%S +0200") }}</pubDate>
 				<description>
 					<![CDATA[
-						{{ item.text }}
+						{% raw item.text %}
 					]]>
 				</description>
 			</item>

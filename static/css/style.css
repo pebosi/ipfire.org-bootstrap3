@@ -15,6 +15,18 @@ body {
 	text-align: center;
 }
 
+.clear {
+	clear: both;
+}
+
+.separator {
+  margin: 40px 0 39px;
+}
+
+.img-padding {
+	padding: 10px;
+}
+
 table.table-fireinfo td.bar {
 	width: 70%;
 }
