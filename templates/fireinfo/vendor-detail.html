@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ vendor_name }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ vendor_name }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			{% if lang == "de" %}
+				<p>
+					Dies ist eine Aufstellung über alle Geräte von
+					<strong>{{ vendor_name }}</strong> in der Datenbank.
+			{% else %}
+				<p>
+					This is a list of all devices this database knows about from
+					<strong>{{ vendor_name }}</strong>.
+				</p>
+			{% end %}
+
+			{% module StasyDeviceTable(models) %}
+		</div>
+	</div>
+{% end block %}

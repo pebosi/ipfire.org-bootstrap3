@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Processors") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Hardware: CPUs") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<a href="/stats/cpuflags">{{ _("See statistics about common CPU flags") }}</a>
+			<hr>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<h2>{{ _("Vendors") }}</h2>
+			{% if lang == "de" %}
+				<p>
+					Eine Aufstellung über den beliebtesten Prozessor-Hersteller:
+				</p>
+			{% else %}
+				<p>
+					This chart shows us which vendors is the most favorite for the CPUs
+					used in IPFire.
+				</p>
+			{% end %}
+			{% module StasyTable(cpu_vendors, sortby="percentage") %}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<h2>{{ _("Speed") }}</h2>
+			<p>
+				{{ _("The average speed of all systems in the database is: <strong>%.2f MHz</strong>.") % average_speed }}
+				<br>
+				{{ _("All together, there are <strong>%s bogomips</strong> out there.") % locale.friendly_number(bogomips) }}
+			</p>
+			{% module StasyTable(cpu_speeds) %}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<h2>{{ _("CPU core counter") }}</h2>
+			<p>
+				{{ _("See a breakdown of the CPU cores that are installed on the IPFire systems.") }}
+			</p>
+			{% module StasyCPUCoreTable(cpu_cores) %}
+		</div>
+	</div>
+{% end block %}

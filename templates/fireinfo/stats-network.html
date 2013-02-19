@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Network") }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h1>{{ _("Network configuration") }}</h1>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			{% if lang == "de" %}
+				<p>
+					Diese Grafik zeigt uns die beliebteste Netzwerkkonfiguration.
+				</p>
+			{% else %}
+				<p>
+					This chart shows us which is the most favourite network configuration.
+				</p>
+			{% end %}
+			{% module StasyTable(network_zones, sortby="percentage", percentage=True) %}
+		</div>
+	</div>
+{% end block %}
+

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Fireinfo{% end block %}
+
+{% block body %}
+	<div class="row">
+		<div class="span12">
+			{% if lang == "de" %}
+				<p class="lead">
+					<strong>Fireinfo</strong> ist ein Tool, welches anonym Informationen
+					über die in IPFire-Systemen verbaute Hardware sammelt.
+				</p>
+				<p class="lead">
+					Diese Daten sollen den Entwicklern helfen zu erkennen, welche
+					Hardware am häufigsten eingesetzt wird und sind auch hilfreich
+					um Hardware-Probleme ausfindig zu machen.
+				</p>
+			{% else %}
+				<p class="lead">
+					<strong>Fireinfo</strong> is a tool that anonymously collects statistical
+					data from IPFire systems.
+				</p>
+				<p class="lead">
+					These data should help the developers to learn
+					which hardware is used most often to run an IPFire system, but is also
+					handy when it comes to debugging hardware problems.
+				</p>
+			{% end %}
+			<hr>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span8 offset2 well">
+			{% if lang == "de" %}
+				<p>
+					Bitte geben Sie die Profil-ID von ihrem System ein, welche
+					Sie auf der Fireinfo-Seite des Webinterfaces finden können:
+				</p>
+			{% else %}
+				<p>
+					Please enter the profile ID of your system, which can be found
+					on the fireinfo page on the web interface, to see your profile:
+				</p>
+			{% end %}
+
+			<hr>
+
+			<form method="POST" action="">
+				<div class="input-append">
+					<input type="text" class="span7" name="profile_id" value=""
+						placeholder="{{ _("Profile ID") }}"><button type="submit" class="btn">{{ _("Show") }}</button>
+				</div>
+				{% raw xsrf_form_html() %}
+			</form>
+		</div>
+	</div>
+{% end block %}
