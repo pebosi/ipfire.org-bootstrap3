@@ -90,7 +90,7 @@ class MenuCfgHandler(BootBaseHandler):
 
 		menu = self._menu_string(self.netboot.get_menu(1))
 
-		self.render("menu.cfg", menu=menu)
+		self.render("netboot/menu.cfg", menu=menu)
 
 
 class BootGPXEHandler(BootBaseHandler):
