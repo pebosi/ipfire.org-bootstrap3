@@ -23,7 +23,7 @@
 							<li>
 								{{ _("Latest release") }}:
 								{{ latest_release.name }}<br>
-								{{ locale.format_date(latest_release.date, relative=False, shorter=True) }}
+								{{ locale.format_date(latest_release.date, relative=True, shorter=True) }}
 							</li>
 						{% end %}
 						<li>
