@@ -56,3 +56,15 @@ class PlanetPostingHandler(PlanetBaseHandler):
 
 		self.render("planet/posting.html",
 			author=entry.author, entry=entry)
+
+
+class PlanetSearchHandler(PlanetBaseHandler):
+	def get(self):
+		query = self.get_argument("q", "")
+
+		if query:
+			entries = self.planet.search(query)
+		else:
+			entries = []
+
+		self.render("planet/search.html", entries=entries, query=query)

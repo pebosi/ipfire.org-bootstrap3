@@ -160,3 +160,8 @@ class Planet(object):
 			"VALUES(%s, %s, %s, %s, UTC_TIMESTAMP())", entry.author.uid, entry.title,
 			slug, entry.markdown)
 
+	def search(self, what):
+		entries = self.db.query("SELECT *, MATCH(markdown, title) AGAINST(%s) AS score \
+			FROM planet WHERE MATCH(markdown, title) AGAINST(%s) ORDER BY score DESC", what, what)
+
+		return [PlanetEntry(e) for e in entries]

@@ -122,6 +122,7 @@ class Application(tornado.web.Application):
 			(r"/", PlanetMainHandler),
 			(r"/post/([A-Za-z0-9_-]+)", PlanetPostingHandler),
 			(r"/user/([a-z0-9_-]+)", PlanetUserHandler),
+			(r"/search", PlanetSearchHandler),
 
 			# RSS
 			(r"/rss", RSSPlanetAllHandler),

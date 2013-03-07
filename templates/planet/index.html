@@ -10,11 +10,14 @@
 			new progress in the development or make some minor announcements.
 		</p>
 
-		<p>
-			<a class="btn btn-primary btn-large" href="http://planet.ipfire.org/rss">
-				Subscribe to our RSS feed to stay up to date.
-			</a>
-		</p>
+		<br>
+
+		<form action="/search" method="GET">
+			<div class="input-append">
+				<input type="text" class="input-medium" name="q" placeholder="{{ _("Search") }}">
+				<button type="submit" class="btn"><i class="icon-search"></i></button>
+			</div>
+		</form>
 	</div>
 
 	<hr class="separator">

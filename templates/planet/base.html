@@ -4,7 +4,11 @@
 	<header class="jumbotron subhead" id="overview">
 		<div class="container">
 			<h1>{{ _("IPFire Planet") }}</h1>
-			<p class="lead">{{ _("The official blog of the IPFire team") }}</p>
+			<p class="lead">
+				{% block subtitle %}
+					{{ _("The official blog of the IPFire team") }}
+				{% end block %}
+			</p>
 		</div>
 	</header>
-{% end header %}
+{% end block %}
