@@ -45,6 +45,14 @@ class PlanetEntry(object):
 		return self.__entry.published
 
 	@property
+	def year(self):
+		return self.published.year
+
+	@property
+	def month(self):
+		return self.published.month
+
+	@property
 	def updated(self):
 		return self.__entry.updated
 
@@ -83,6 +91,12 @@ class Planet(object):
 				authors.append(author)
 
 		return sorted(authors)
+
+	def get_years(self):
+		res = self.db.query("SELECT DISTINCT YEAR(published) AS year \
+			FROM planet ORDER BY year DESC")
+
+		return [row.year for row in res]
 
 	def get_entry_by_slug(self, slug):
 		entry = self.db.get("SELECT * FROM planet WHERE slug = %s", slug)
@@ -125,6 +139,12 @@ class Planet(object):
 		query += self._limit_and_offset_query(limit=limit, offset=offset)
 
 		entries = self.db.query(query)
+
+		return [PlanetEntry(e) for e in entries]
+
+	def get_entries_by_year(self, year):
+		entries = self.db.query("SELECT * FROM planet \
+			WHERE YEAR(published) = %s ORDER BY published DESC", year)
 
 		return [PlanetEntry(e) for e in entries]
 

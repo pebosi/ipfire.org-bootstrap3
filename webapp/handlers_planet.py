@@ -26,8 +26,9 @@ class PlanetMainHandler(PlanetBaseHandler):
 		limit = int(self.get_argument("limit", 4))
 
 		entries = self.planet.get_entries(offset=offset, limit=limit)
+		years = self.planet.get_years()
 
-		self.render("planet/index.html", entries=entries,
+		self.render("planet/index.html", entries=entries, years=years,
 			offset=offset + limit, limit=limit)
 
 
@@ -68,3 +69,20 @@ class PlanetSearchHandler(PlanetBaseHandler):
 			entries = []
 
 		self.render("planet/search.html", entries=entries, query=query)
+
+
+class PlanetYearHandler(PlanetBaseHandler):
+	def get(self, year):
+		entries = self.planet.get_entries_by_year(year)
+
+		months = {}
+		for entry in entries:
+			try:
+				months[entry.month].append(entry)
+			except KeyError:
+				months[entry.month] = [entry]
+
+		months = months.items()
+		months.sort(reverse=True)
+
+		self.render("planet/year.html", months=months, year=year)

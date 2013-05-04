@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-19 12:41+0100\n"
+"POT-Creation-Date: 2013-05-04 11:38+0200\n"
 "PO-Revision-Date: 2013-02-19 12:38+0100\n"
 "Last-Translator: Michael Tremer <michael.tremer@ipfire.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,172 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: webapp/handlers_news.py:43 webapp/ui_modules.py:76
+msgid "Unknown author"
+msgstr "Unbekannter Autor"
+
+#: webapp/__init__.py:278
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
+msgid "January"
+msgstr "Januar"
+
+#: webapp/__init__.py:280
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
+msgid "February"
+msgstr "Februar"
+
+#: webapp/__init__.py:282
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
+msgid "March"
+msgstr "März"
+
+#: webapp/__init__.py:284
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
+msgid "April"
+msgstr "April"
+
+#: webapp/__init__.py:286
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
+msgid "May"
+msgstr "Mai"
+
+#: webapp/__init__.py:288
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
+msgid "June"
+msgstr "Juni"
+
+#: webapp/__init__.py:290
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
+msgid "July"
+msgstr "Juli"
+
+#: webapp/__init__.py:292
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
+msgid "August"
+msgstr "August"
+
+#: webapp/__init__.py:294
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
+msgid "September"
+msgstr "September"
+
+#: webapp/__init__.py:296
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
+msgid "October"
+msgstr "Oktober"
+
+#: webapp/__init__.py:298
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
+msgid "November"
+msgstr "November"
+
+#: webapp/__init__.py:300
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
+msgid "December"
+msgstr "Dezember"
+
+#: webapp/ui_modules.py:239
+#, python-format
+msgid "%s to %s"
+msgstr "%s nach %s"
+
+#: webapp/backend/wishlist.py:153
+msgid "Checkout this crowdfunding wish from #ipfire:"
+msgstr ""
+
+#: webapp/backend/releases.py:96
+msgid "Image for the armv5tel architecture"
+msgstr "Image für die armv5tel-Architektur"
+
+#: webapp/backend/releases.py:97
+msgid "armv5tel image for boards with serial console"
+msgstr "armv5tel-Image für Boards mit serieller Konsole"
+
+#: webapp/backend/releases.py:98
+msgid "Installable CD image"
+msgstr "Bootbares CD-Image"
+
+#: webapp/backend/releases.py:99
+msgid "Torrent file"
+msgstr "Torrentdatei"
+
+#: webapp/backend/releases.py:100
+msgid "Flash image"
+msgstr "Flash-Image"
+
+#: webapp/backend/releases.py:101
+msgid "Alix image"
+msgstr "Alix-Image"
+
+#: webapp/backend/releases.py:102
+msgid "USB FDD Image"
+msgstr "USB-FDD-Image"
+
+#: webapp/backend/releases.py:103
+msgid "USB HDD Image"
+msgstr "USB-HDD-Image"
+
+#: webapp/backend/releases.py:104
+msgid "Pregenerated Xen image"
+msgstr "Vorgefertigtes Xen-Image"
+
+#: webapp/backend/releases.py:110 webapp/backend/releases.py:150
+msgid "Unknown image type"
+msgstr "Unbekanntes Imageformat"
+
+#: webapp/backend/releases.py:136
+msgid "This image runs on many ARM-based boards"
+msgstr "Dieses Image läuft auf vielen ARM-basierten Boards"
+
+#: webapp/backend/releases.py:137
+msgid "This image runs on ARM boards with a serial console"
+msgstr "Dieses Image läuft auf ARM-Boards mit serieller Konsole"
+
+#: webapp/backend/releases.py:138
+msgid "Use this image to burn a CD and install IPFire from it."
+msgstr ""
+"Nutze dieses Image um eine CD zu erstellen und IPFire von dieser zu "
+"installieren."
+
+#: webapp/backend/releases.py:139
+msgid "Download the CD image from the torrent network."
+msgstr "CD-Image mit aus dem Torrentnetzwerk laden"
+
+#: webapp/backend/releases.py:140
+msgid "An image that is meant to run on embedded devices."
+msgstr "Ein Image, das für eingebettete Systeme optimiert ist."
+
+#: webapp/backend/releases.py:141
+msgid "Flash image where a serial console is enabled by default."
+msgstr "Image, bei welchem die serielle Konsole eingeschaltet ist."
+
+#: webapp/backend/releases.py:142
+msgid "Install IPFire from a floppy-formated USB key."
+msgstr "IPFire von einem Floppy-formatiertem USB-Stick installieren."
+
+#: webapp/backend/releases.py:143
+msgid "If the floppy image doesn't work, use this image instead."
+msgstr "Wenn das Floppy-Image nicht funktioniert, dieses verwenden."
+
+#: webapp/backend/releases.py:144
+msgid "A ready-to-run image for Xen."
+msgstr "Ein fertiges Image für Xen."
+
+#: webapp/backend/iuse.py:165
+#, python-format
+msgid "Mem: %s"
+msgstr "RAM: %s"
+
+#: webapp/backend/iuse.py:168
+#, python-format
+msgid "Disk: %s"
+msgstr "HDD: %s"
+
+#: webapp/backend/iuse.py:180
+#, python-format
+msgid "Networks: %s"
+msgstr "Netzwerke: %s"
 
 #: templates/wishlist/wish.html:3
 msgid "Wish"
@@ -104,7 +270,7 @@ msgstr "Crowdfunding für das IPFire-Projekt"
 
 #: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
 #: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
-#: templates/base.html:78 www/templates/base.html:81
+#: templates/base.html:78
 msgid "Terms & Conditions"
 msgstr "Allgemeine Bedingungen"
 
@@ -783,7 +949,8 @@ msgstr "Was gibt es neues im IPFire Projekt?"
 msgid "Stay up to date"
 msgstr "Informiere dich"
 
-#: templates/news.html:61 templates/planet/user.html:3
+#: templates/news.html:61 templates/planet/year.html:3
+#: templates/planet/user.html:3 templates/planet/search.html:3
 #: templates/planet/base.html:6 templates/planet/index.html:3
 #: templates/planet/posting.html:3
 msgid "IPFire Planet"
@@ -893,11 +1060,16 @@ msgstr "IPFire herunterladen"
 msgid "Account Administrator"
 msgstr "Accountadministrator"
 
-#: templates/planet/user.html:22 templates/planet/index.html:30
+#: templates/planet/year.html:6
+#, python-format
+msgid "Year %s"
+msgstr ""
+
+#: templates/planet/user.html:22 templates/planet/index.html:44
 msgid "Older posts"
 msgstr "Ältere Beiträge"
 
-#: templates/planet/user.html:26 templates/planet/index.html:34
+#: templates/planet/user.html:26 templates/planet/index.html:48
 msgid "Newer posts"
 msgstr "Neuere Beiträge"
 
@@ -912,9 +1084,23 @@ msgstr "%s hat bisher noch keine Beiträge verfasst."
 msgid "Mail"
 msgstr "Mail"
 
-#: templates/planet/base.html:7
+#: templates/planet/search.html:6
+#, python-format
+msgid "Search results for '%s'"
+msgstr ""
+
+#: templates/planet/search.html:16
+#, python-format
+msgid "No results found for '%s'"
+msgstr ""
+
+#: templates/planet/base.html:9
 msgid "The official blog of the IPFire team"
 msgstr "Das offizielle Blog des IPFire-Team"
+
+#: templates/planet/index.html:23
+msgid "All posts from"
+msgstr ""
 
 #: templates/planet/posting.html:18 templates/modules/planet-entry.html:14
 msgid "Posted by"
@@ -924,7 +1110,7 @@ msgstr "Erstellt von"
 msgid "on"
 msgstr "am"
 
-#: templates/base.html:4 www/templates/base.html:4
+#: templates/base.html:4
 msgid "No title given"
 msgstr "Kein Titel"
 
@@ -933,7 +1119,7 @@ msgid "IPFire is free software"
 msgstr "IPFire ist freie Software"
 
 #: templates/base.html:69 templates/static/press.html:3
-#: templates/static/press.html:7 www/templates/base.html:76
+#: templates/static/press.html:7
 msgid "Press"
 msgstr "Presse"
 
@@ -1376,172 +1562,6 @@ msgstr "Nahgelegene Mirrorserver"
 msgid "Worldwide mirror servers"
 msgstr "Weltweite Mirrorserver"
 
-#: webapp/handlers_news.py:43 webapp/ui_modules.py:76
-msgid "Unknown author"
-msgstr "Unbekannter Autor"
-
-#: webapp/ui_modules.py:239
-#, python-format
-msgid "%s to %s"
-msgstr "%s nach %s"
-
-#: webapp/backend/wishlist.py:153
-msgid "Checkout this crowdfunding wish from #ipfire:"
-msgstr ""
-
-#: webapp/backend/releases.py:96
-msgid "Image for the armv5tel architecture"
-msgstr "Image für die armv5tel-Architektur"
-
-#: webapp/backend/releases.py:97
-msgid "armv5tel image for boards with serial console"
-msgstr "armv5tel-Image für Boards mit serieller Konsole"
-
-#: webapp/backend/releases.py:98
-msgid "Installable CD image"
-msgstr "Bootbares CD-Image"
-
-#: webapp/backend/releases.py:99
-msgid "Torrent file"
-msgstr "Torrentdatei"
-
-#: webapp/backend/releases.py:100
-msgid "Flash image"
-msgstr "Flash-Image"
-
-#: webapp/backend/releases.py:101
-msgid "Alix image"
-msgstr "Alix-Image"
-
-#: webapp/backend/releases.py:102
-msgid "USB FDD Image"
-msgstr "USB-FDD-Image"
-
-#: webapp/backend/releases.py:103
-msgid "USB HDD Image"
-msgstr "USB-HDD-Image"
-
-#: webapp/backend/releases.py:104
-msgid "Pregenerated Xen image"
-msgstr "Vorgefertigtes Xen-Image"
-
-#: webapp/backend/releases.py:110 webapp/backend/releases.py:150
-msgid "Unknown image type"
-msgstr "Unbekanntes Imageformat"
-
-#: webapp/backend/releases.py:136
-msgid "This image runs on many ARM-based boards"
-msgstr "Dieses Image läuft auf vielen ARM-basierten Boards"
-
-#: webapp/backend/releases.py:137
-msgid "This image runs on ARM boards with a serial console"
-msgstr "Dieses Image läuft auf ARM-Boards mit serieller Konsole"
-
-#: webapp/backend/releases.py:138
-msgid "Use this image to burn a CD and install IPFire from it."
-msgstr ""
-"Nutze dieses Image um eine CD zu erstellen und IPFire von dieser zu "
-"installieren."
-
-#: webapp/backend/releases.py:139
-msgid "Download the CD image from the torrent network."
-msgstr "CD-Image mit aus dem Torrentnetzwerk laden"
-
-#: webapp/backend/releases.py:140
-msgid "An image that is meant to run on embedded devices."
-msgstr "Ein Image, das für eingebettete Systeme optimiert ist."
-
-#: webapp/backend/releases.py:141
-msgid "Flash image where a serial console is enabled by default."
-msgstr "Image, bei welchem die serielle Konsole eingeschaltet ist."
-
-#: webapp/backend/releases.py:142
-msgid "Install IPFire from a floppy-formated USB key."
-msgstr "IPFire von einem Floppy-formatiertem USB-Stick installieren."
-
-#: webapp/backend/releases.py:143
-msgid "If the floppy image doesn't work, use this image instead."
-msgstr "Wenn das Floppy-Image nicht funktioniert, dieses verwenden."
-
-#: webapp/backend/releases.py:144
-msgid "A ready-to-run image for Xen."
-msgstr "Ein fertiges Image für Xen."
-
-#: webapp/backend/iuse.py:165
-#, python-format
-msgid "Mem: %s"
-msgstr "RAM: %s"
-
-#: webapp/backend/iuse.py:168
-#, python-format
-msgid "Disk: %s"
-msgstr "HDD: %s"
-
-#: webapp/backend/iuse.py:180
-#, python-format
-msgid "Networks: %s"
-msgstr "Netzwerke: %s"
-
-#: www/templates/nopaste-index.html:3 www/templates/nopaste-index.html:6
-msgid "IPFire nopaste service"
-msgstr "IPFire nopaste Service"
-
-#: www/templates/nopaste-index.html:14
-msgid "Subject"
-msgstr "Betreff"
-
-#: www/templates/base.html:78
-msgid "imprint"
-msgstr "Impressum"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "January"
-msgstr "Januar"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "February"
-msgstr "Februar"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "March"
-msgstr "März"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "April"
-msgstr "April"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "May"
-msgstr "Mai"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "June"
-msgstr "Juni"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "July"
-msgstr "Juli"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "August"
-msgstr "August"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "September"
-msgstr "September"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "October"
-msgstr "Oktober"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "November"
-msgstr "November"
-
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "December"
-msgstr "Dezember"
-
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:229
 msgid "Monday"
 msgstr "Montag"
@@ -1645,6 +1665,15 @@ msgstr "%(weekday)s, %(day)s. %(month_name)s"
 #, python-format
 msgid "%(commas)s and %(last)s"
 msgstr "%(commas)s und %(last)s"
+
+#~ msgid "IPFire nopaste service"
+#~ msgstr "IPFire nopaste Service"
+
+#~ msgid "Subject"
+#~ msgstr "Betreff"
+
+#~ msgid "imprint"
+#~ msgstr "Impressum"
 
 #~ msgid "Profile lookup"
 #~ msgstr "Profilsuche"

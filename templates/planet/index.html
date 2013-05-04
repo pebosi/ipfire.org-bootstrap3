@@ -3,21 +3,34 @@
 {% block title %}{{ _("IPFire Planet") }}{% end block %}
 
 {% block body %}
-	<div class="ac">
-		<p class="lead">
-			The <strong>IPFire Planet</strong> is a place for the people
-			who are involved in the project to tell the community about
-			new progress in the development or make some minor announcements.
-		</p>
+	<p class="lead ac">
+		The <strong>IPFire Planet</strong> is a place for the people
+		who are involved in the project to tell the community about
+		new progress in the development or make some minor announcements.
+	</p>
+	<br>
 
-		<br>
+	<div class="row">
+		<div class="span4 offset4">
+			<form class="form-inline" action="/search" method="GET">
+				<div class="input-append">
+					<input type="text" class="input-medium" name="q" placeholder="{{ _("Search") }}">
+					<button type="submit" class="btn"><i class="icon-search"></i></button>
+				</div>
 
-		<form action="/search" method="GET">
-			<div class="input-append">
-				<input type="text" class="input-medium" name="q" placeholder="{{ _("Search") }}">
-				<button type="submit" class="btn"><i class="icon-search"></i></button>
-			</div>
-		</form>
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						{{ _("All posts from") }}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						{% for y in years %}
+							<li><a href="/year/{{ y }}">{{ y }}</a></li>
+						{% end %}
+					</ul>
+				</div>
+			</form>
+		</div>
 	</div>
 
 	<hr class="separator">
@@ -26,18 +39,14 @@
 		{% module PlanetEntry(entry) %}
 	{% end %}
 
-	<div class="row">
-		<div class="span9">
-			<ul class="pager">
-				<li class="previous">
-					<a href="?offset={{ offset }}">&larr; {{ _("Older posts") }}</a>
-				</li>
-				{% if offset - limit %}
-					<li class="next">
-						<a href="?offset={{ offset - (2 * limit) }}">{{ _("Newer posts") }} &rarr;</a>
-					</li>
-				{% end %}
-			</ul>
-		</div>
-	</div>
+	<ul class="pager">
+		<li class="previous">
+			<a href="?offset={{ offset }}">&larr; {{ _("Older posts") }}</a>
+		</li>
+		{% if offset - limit %}
+			<li class="next">
+				<a href="?offset={{ offset - (2 * limit) }}">{{ _("Newer posts") }} &rarr;</a>
+			</li>
+		{% end %}
+	</ul>
 {% end block %}

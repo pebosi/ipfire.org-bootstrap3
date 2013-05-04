@@ -3,7 +3,7 @@ PO_PATH = translations
 POTFILE = $(PO_PATH)/webapp.pot
 POFILES = $(wildcard $(PO_PATH)/*/LC_MESSAGES/*.po)
 
-ALL_FILES = $(shell find . /usr/lib*/python*/site-packages/tornado -name "*.py" -or -name "*.html")
+ALL_FILES = $(shell find webapp templates /usr/lib*/python*/site-packages/tornado -name "*.py" -or -name "*.html")
 
 .PHONY: pot
 pot: $(POTFILE)

@@ -3,6 +3,7 @@
 from __future__ import division
 
 import httplib
+import datetime
 import time
 import tornado.locale
 import tornado.web
@@ -60,12 +61,14 @@ class BaseHandler(tornado.web.RequestHandler):
 
 	@property
 	def render_args(self):
+		today = datetime.date.today()
+
 		return {
 			"format_size" : format_size,
 			"hostname" : self.request.host,
 			"lang" : self.locale.code[:2],
 			"rss_url" : self.rss_url,
-			"year" : time.strftime("%Y"),
+			"year" : today.year,
 		}
 
 	def render(self, *args, **_kwargs):
