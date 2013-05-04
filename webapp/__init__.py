@@ -129,7 +129,7 @@ class Application(tornado.web.Application):
 			(r"/year/(\d+)", PlanetYearHandler),
 
 			# API
-			(r"/api/search/autocomplete", PlanetAPISearchAutocomplete),
+			(r"/api/planet/search/autocomplete", PlanetAPISearchAutocomplete),
 
 			# RSS
 			(r"/rss", RSSPlanetAllHandler),
@@ -229,6 +229,7 @@ class Application(tornado.web.Application):
 			(r"/downloads", AdminDownloadsHandler),
 			(r"/downloads/mirrors", AdminDownloadsMirrorsHandler),
 			# API
+			(r"/api/planet/search/autocomplete", PlanetAPISearchAutocomplete),
 			(r"/api/planet/render", AdminApiPlanetRenderMarkupHandler)
 		] + static_handlers)
 

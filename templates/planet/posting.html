@@ -15,6 +15,12 @@
 		</div>
 
 		<p class="pull-right" style="clear: both;">
+			{% if entry.tags %}
+				{{ _("Tags") }}:
+				{% for tag in entry.tags %}
+					<a href="/search?q={{ tag }}">{{ tag }}</a>
+				{% end %} &bull;
+			{% end %}
 			{{ _("Posted by") }} <a href="/user/{{ entry.author.uid }}">{{ entry.author.cn }}</a>
 			{{ _("on") }} {{ locale.format_date(entry.published, shorter=True) }}
 		</p>

@@ -48,7 +48,7 @@ if (/.*download-splash.*/i.test(window.location.href)) {
 
 $(".planet-search-autocomplete").typeahead({
 	source: function(query, process) {
-		$.get("http://planet.ipfire.org/api/search/autocomplete", { q: query }, function(data) {
+		$.get("/api/planet/search/autocomplete", { q: query }, function(data) {
 			if (data.query == query) {
 				process(data.results);
 			}
