@@ -181,7 +181,34 @@ class Planet(object):
 			slug, entry.markdown)
 
 	def search(self, what):
-		entries = self.db.query("SELECT *, MATCH(markdown, title) AGAINST(%s) AS score \
-			FROM planet WHERE MATCH(markdown, title) AGAINST(%s) ORDER BY score DESC", what, what)
+		# Split tags.
+		tags = what.split()
+
+		query = "SELECT * FROM planet WHERE id IN ( \
+			SELECT DISTINCT post_id FROM planet_tags"
+
+		clauses = []
+		args = []
+
+		for tag in tags:
+			clauses.append("tag = %s")
+			args.append(tag)
+
+		query += " WHERE %s" % " OR ".join(clauses)
+		query += " ORDER BY COUNT(*) DESC)"
+
+		entries = self.db.query(query, *args)
 
 		return [PlanetEntry(e) for e in entries]
+
+	def search_autocomplete(self, what):
+		tags = what.split()
+		last_tag = tags.pop()
+
+		res = self.db.query("SELECT tag, COUNT(tag) AS count FROM planet_tags \
+			WHERE tag LIKE %s GROUP BY tag ORDER BY count DESC", "%s%%" % last_tag)
+
+		if tags:
+			return ["%s %s" % (" ".join(tags), row.tag) for row in res]
+
+		return [row.tag for row in res]

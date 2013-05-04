@@ -86,3 +86,18 @@ class PlanetYearHandler(PlanetBaseHandler):
 		months.sort(reverse=True)
 
 		self.render("planet/year.html", months=months, year=year)
+
+
+class PlanetAPISearchAutocomplete(PlanetBaseHandler):
+	def get(self):
+		query = self.get_argument("q")
+		if not query:
+			raise tornado.web.HTTPError(400)
+
+		results = self.planet.search_autocomplete(query)
+
+		res = {
+			"query"   : query,
+			"results" : results,
+		}
+		self.write(res)

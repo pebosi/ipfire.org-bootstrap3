@@ -128,6 +128,9 @@ class Application(tornado.web.Application):
 			(r"/search", PlanetSearchHandler),
 			(r"/year/(\d+)", PlanetYearHandler),
 
+			# API
+			(r"/api/search/autocomplete", PlanetAPISearchAutocomplete),
+
 			# RSS
 			(r"/rss", RSSPlanetAllHandler),
 			(r"/user/([a-z0-9_-]+)/rss", RSSPlanetUserHandler),
