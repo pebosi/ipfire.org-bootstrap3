@@ -134,6 +134,7 @@ class Application(tornado.web.Application):
 			# RSS
 			(r"/rss", RSSPlanetAllHandler),
 			(r"/user/([a-z0-9_-]+)/rss", RSSPlanetUserHandler),
+			(r"/news.rss", tornado.web.RedirectHandler, { "url" : "/rss" }),
 		] + static_handlers)
 
 		# stasy.ipfire.org
