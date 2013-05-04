@@ -46,6 +46,17 @@ if (/.*download-splash.*/i.test(window.location.href)) {
 	});
 }
 
+$(".planet-search-autocomplete").typeahead({
+	source: function(query, process) {
+		$.get("/api/planet/search/autocomplete", { q: query }, function(data) {
+			if (data.query == query) {
+				process(data.results);
+			}
+		});
+	},
+});
+
+
 function getCookie(name) {
 	var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
 	return r ? r[1] : undefined;

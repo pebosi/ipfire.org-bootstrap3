@@ -76,7 +76,7 @@ class AdminPlanetHandler(AdminBaseHandler):
 class AdminPlanetComposeHandler(AdminBaseHandler):
 	@tornado.web.authenticated
 	def get(self, id=None):
-		entry = backend.PlanetEntry()
+		entry = backend.PlanetEntry(self.planet.db)
 
 		if id:
 			entry = self.planet.get_entry_by_id(id)
@@ -87,7 +87,7 @@ class AdminPlanetComposeHandler(AdminBaseHandler):
 	def post(self, id=None):
 		id = self.get_argument("id", id)
 
-		entry = backend.PlanetEntry()
+		entry = backend.PlanetEntry(self.planet.db)
 
 		if id:
 			entry = self.planet.get_entry_by_id(id)
@@ -95,6 +95,9 @@ class AdminPlanetComposeHandler(AdminBaseHandler):
 		entry.set("title", self.get_argument("title"))
 		entry.set("markdown", self.get_argument("markdown"))
 		entry.set("author_id", self.current_user)
+
+		tags = self.get_argument("tags", "")
+		entry.tags = tags.split()
 
 		if id:
 			self.planet.update_entry(entry)

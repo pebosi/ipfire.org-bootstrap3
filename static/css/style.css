@@ -372,3 +372,11 @@ section > ul li {
 		padding-bottom: 20px;
 	}
 }
+
+.planet-table td.date {
+	width: 10em;
+}
+
+.planet-table td.author {
+	width: 10em;
+}

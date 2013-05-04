@@ -160,7 +160,7 @@ class Account(object):
 		name = name.replace("ü", "ue")
 
 		for mail in self.mail:
-			if mail.startswith(name + "@"):
+			if mail.startswith("%s@ipfire.org" % name):
 				return mail
 
 		raise Exception, "Cannot figure out email address"

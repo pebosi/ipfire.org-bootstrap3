@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("IPFire Planet") }}{% end block %}
+
+{% block subtitle %}
+	{{ _("Year %s") % year }}</p>
+{% end block %}
+
+{% block body %}
+	{% for month, entries in months %}
+		<h3>{{ format_month_name(month) }}</h3>
+
+		<table class="table planet-table">
+			{% for entry in entries %}
+				<tr>
+					<td class="date">
+						{{ locale.format_date(entry.published, shorter=True) }}
+					</td>
+					<td class="title">
+						<a href="/post/{{ entry.slug }}">{{ entry.title }}</a>
+					</td>
+					<td class="author">
+						<a href="/user/{{ entry.author.uid }}">{{ entry.author.cn }}</a>
+					</td>
+				</tr>
+			{% end %}
+		</table>
+	{% end %}
+{% end block %}

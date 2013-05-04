@@ -28,6 +28,9 @@ class Application(tornado.web.Application):
 			gzip = True,
 			login_url = "/login",
 			template_path = os.path.join(BASEDIR, "templates"),
+			ui_methods = {
+				"format_month_name" : self.format_month_name,
+			},
 			ui_modules = {
 				"Advertisement"  : AdvertisementModule,
 				"DonationBox"    : DonationBoxModule,
@@ -122,10 +125,16 @@ class Application(tornado.web.Application):
 			(r"/", PlanetMainHandler),
 			(r"/post/([A-Za-z0-9_-]+)", PlanetPostingHandler),
 			(r"/user/([a-z0-9_-]+)", PlanetUserHandler),
+			(r"/search", PlanetSearchHandler),
+			(r"/year/(\d+)", PlanetYearHandler),
+
+			# API
+			(r"/api/planet/search/autocomplete", PlanetAPISearchAutocomplete),
 
 			# RSS
 			(r"/rss", RSSPlanetAllHandler),
 			(r"/user/([a-z0-9_-]+)/rss", RSSPlanetUserHandler),
+			(r"/news.rss", tornado.web.RedirectHandler, { "url" : "/rss" }),
 		] + static_handlers)
 
 		# stasy.ipfire.org
@@ -220,6 +229,7 @@ class Application(tornado.web.Application):
 			(r"/downloads", AdminDownloadsHandler),
 			(r"/downloads/mirrors", AdminDownloadsMirrorsHandler),
 			# API
+			(r"/api/planet/search/autocomplete", PlanetAPISearchAutocomplete),
 			(r"/api/planet/render", AdminApiPlanetRenderMarkupHandler)
 		] + static_handlers)
 
@@ -267,3 +277,33 @@ class Application(tornado.web.Application):
 
 	def reload(self):
 		logging.debug("Caught reload signal")
+
+	def format_month_name(self, handler, month):
+		_ = handler.locale.translate
+
+		if month == 1:
+			return _("January")
+		elif month == 2:
+			return _("February")
+		elif month == 3:
+			return _("March")
+		elif month == 4:
+			return _("April")
+		elif month == 5:
+			return _("May")
+		elif month == 6:
+			return _("June")
+		elif month == 7:
+			return _("July")
+		elif month == 8:
+			return _("August")
+		elif month == 9:
+			return _("September")
+		elif month == 10:
+			return _("October")
+		elif month == 11:
+			return _("November")
+		elif month == 12:
+			return _("December")
+
+		return month

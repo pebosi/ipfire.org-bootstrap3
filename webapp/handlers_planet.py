@@ -26,8 +26,9 @@ class PlanetMainHandler(PlanetBaseHandler):
 		limit = int(self.get_argument("limit", 4))
 
 		entries = self.planet.get_entries(offset=offset, limit=limit)
+		years = self.planet.get_years()
 
-		self.render("planet/index.html", entries=entries,
+		self.render("planet/index.html", entries=entries, years=years,
 			offset=offset + limit, limit=limit)
 
 
@@ -56,3 +57,47 @@ class PlanetPostingHandler(PlanetBaseHandler):
 
 		self.render("planet/posting.html",
 			author=entry.author, entry=entry)
+
+
+class PlanetSearchHandler(PlanetBaseHandler):
+	def get(self):
+		query = self.get_argument("q", "")
+
+		if query:
+			entries = self.planet.search(query)
+		else:
+			entries = []
+
+		self.render("planet/search.html", entries=entries, query=query)
+
+
+class PlanetYearHandler(PlanetBaseHandler):
+	def get(self, year):
+		entries = self.planet.get_entries_by_year(year)
+
+		months = {}
+		for entry in entries:
+			try:
+				months[entry.month].append(entry)
+			except KeyError:
+				months[entry.month] = [entry]
+
+		months = months.items()
+		months.sort(reverse=True)
+
+		self.render("planet/year.html", months=months, year=year)
+
+
+class PlanetAPISearchAutocomplete(PlanetBaseHandler):
+	def get(self):
+		query = self.get_argument("q")
+		if not query:
+			raise tornado.web.HTTPError(400)
+
+		results = self.planet.search_autocomplete(query)
+
+		res = {
+			"query"   : query,
+			"results" : results,
+		}
+		self.write(res)

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("IPFire Planet") }}{% end block %}
+
+{% block subtitle %}
+	{{ _("Search results for '%s'") % query }}</p>
+{% end block %}
+
+{% block body %}
+	{% if entries %}
+		{% for entry in entries %}
+			{% module PlanetEntry(entry) %}
+		{% end %}
+	{% else %}
+		<p class="lead muted ac">
+			{{ _("No results found for '%s'") % query }}
+		</p>
+	{% end %}
+{% end block %}

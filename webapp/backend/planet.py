@@ -11,7 +11,9 @@ from databases import Databases
 from misc import Singleton
 
 class PlanetEntry(object):
-	def __init__(self, entry=None):
+	def __init__(self, db, entry=None):
+		self.db = db
+
 		if entry:
 			self.__entry = entry
 		else:
@@ -19,6 +21,7 @@ class PlanetEntry(object):
 				"id" : None,
 				"title" : "",
 				"markdown" : "",
+				"tags" : [],
 			})
 
 	def set(self, key, val):
@@ -45,6 +48,14 @@ class PlanetEntry(object):
 		return self.__entry.published
 
 	@property
+	def year(self):
+		return self.published.year
+
+	@property
+	def month(self):
+		return self.published.month
+
+	@property
 	def updated(self):
 		return self.__entry.updated
 
@@ -67,6 +78,31 @@ class PlanetEntry(object):
 	def author(self):
 		return Accounts().search(self.__entry.author_id)
 
+	# Tags
+
+	def get_tags(self):
+		if not hasattr(self, "__tags"):
+			res = self.db.query("SELECT tag FROM planet_tags \
+				WHERE post_id = %s ORDER BY tag", self.id)
+			self.__tags = []
+			for row in res:
+				self.__tags.append(row.tag)
+
+		return self.__tags
+
+	def set_tags(self, tags):
+		# Delete all existing tags.
+		self.db.execute("DELETE FROM planet_tags WHERE post_id = %s", self.id)
+
+		self.db.executemany("INSERT INTO planet_tags(post_id, tag) VALUES(%s, %s)",
+			((self.id, tag) for tag in tags))
+
+		# Update cache.
+		self.__tags = tags
+		self.__tags.sort()
+
+	tags = property(get_tags, set_tags)
+
 
 class Planet(object):
 	__metaclass__ = Singleton
@@ -84,15 +120,21 @@ class Planet(object):
 
 		return sorted(authors)
 
+	def get_years(self):
+		res = self.db.query("SELECT DISTINCT YEAR(published) AS year \
+			FROM planet ORDER BY year DESC")
+
+		return [row.year for row in res]
+
 	def get_entry_by_slug(self, slug):
 		entry = self.db.get("SELECT * FROM planet WHERE slug = %s", slug)
 		if entry:
-			return PlanetEntry(entry)
+			return PlanetEntry(self.db, entry)
 
 	def get_entry_by_id(self, id):
 		entry = self.db.get("SELECT * FROM planet WHERE id = %s", id)
 		if entry:
-			return PlanetEntry(entry)
+			return PlanetEntry(self.db, entry)
 
 	def _limit_and_offset_query(self, limit=None, offset=None):
 		query = " "
@@ -113,7 +155,7 @@ class Planet(object):
 
 		entries = []
 		for entry in self.db.query(query):
-			entries.append(PlanetEntry(entry))
+			entries.append(PlanetEntry(self.db, entry))
 
 		return entries
 
@@ -126,7 +168,13 @@ class Planet(object):
 
 		entries = self.db.query(query)
 
-		return [PlanetEntry(e) for e in entries]
+		return [PlanetEntry(self.db, e) for e in entries]
+
+	def get_entries_by_year(self, year):
+		entries = self.db.query("SELECT * FROM planet \
+			WHERE YEAR(published) = %s ORDER BY published DESC", year)
+
+		return [PlanetEntry(self.db, e) for e in entries]
 
 	def render(self, text, limit=0):
 		if limit and len(text) >= limit:
@@ -160,3 +208,34 @@ class Planet(object):
 			"VALUES(%s, %s, %s, %s, UTC_TIMESTAMP())", entry.author.uid, entry.title,
 			slug, entry.markdown)
 
+	def search(self, what):
+		# Split tags.
+		tags = what.split()
+
+		query = "SELECT planet.* FROM planet INNER JOIN ( \
+				SELECT post_id FROM planet_tags \
+				INNER JOIN planet ON planet_tags.post_id = planet.id \
+				WHERE %s GROUP BY post_id HAVING COUNT(post_id) = %%s \
+			) pt ON planet.id = pt.post_id ORDER BY published DESC"
+
+		args = (tags, len(tags))
+
+		clauses, args = [], tags
+		for tag in tags:
+			clauses.append("planet_tags.tag = %s")
+		args.append(len(tags))
+
+		entries = self.db.query(query % " OR ".join(clauses), *args)
+		return [PlanetEntry(self.db, e) for e in entries]
+
+	def search_autocomplete(self, what):
+		tags = what.split()
+		last_tag = tags.pop()
+
+		res = self.db.query("SELECT tag, COUNT(tag) AS count FROM planet_tags \
+			WHERE tag LIKE %s GROUP BY tag ORDER BY count DESC", "%s%%" % last_tag)
+
+		if tags:
+			return ["%s %s" % (" ".join(tags), row.tag) for row in res]
+
+		return [row.tag for row in res]

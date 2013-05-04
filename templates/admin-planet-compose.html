@@ -1,41 +1,54 @@
 {% extends "admin-base.html" %}
 
-{% block bodyA %}
-	<div class="post">
-		<h3>{{ _("Compose new entry") }}</h3>
-		<form name="entry" method="post">
-			{% raw xsrf_form_html() %}
-			{% if entry.id %}
-				<input type="hidden" name="id" value="{{ entry.id }}">
-			{% end %}
-
-			<table>
-				<tr>
-					<td>{{ _("Title") }}</td>
-					<td><input type="text" name="title" value="{{ entry.title }}"
-						size="50" /></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>
-						<textarea id="markdown" name="markdown" rows="20" cols="80">{{ entry.markdown }}</textarea>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<input type="button" onClick="preview()" value="{{ _("Preview") }}" />
-						<input type="submit" value="{{ _("Save") }}" />
-					</td>
-				</tr>
-			</table>
-		</form>
+{% block body %}
+	<div class="page-header">
+		<h2>{{ _("Compose new entry") }}</h2>
 	</div>
+
+	<form class="form-horizontal" action="" method="POST" name="entry">
+		{% raw xsrf_form_html() %}
+
+		{% if entry.id %}
+			<input type="hidden" name="id" value="{{ entry.id }}">
+		{% end %}
+
+		<div class="control-group">
+			<label class="control-label" for="inputTitle">{{ _("Title") }}</label>
+			<div class="controls">
+				<input class="input-block-level" type="text" name="title" id="inputTitle"
+					value="{{ entry.title }}" placeholder="{{ _("Title") }}">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				<textarea class="input-block-level" name="markdown" rows="12" id="inputMarkdown"
+					placeholder="{{ _("Content") }}">{{ entry.markdown }}</textarea>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="control-group">
+			<label class="control-label" for="inputTags">{{ _("Tags") }}</label>
+			<div class="controls">
+				<input class="input-block-level planet-search-autocomplete" type="text"
+					name="tags" id="inputTags" value="{{ " ".join(entry.tags) }}"
+					placeholder="{{ _("Tags") }}" autocomplete="off">
+			</div>
+		</div>
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">{{ _("Save") }}</button>
+			<a class="btn" href="javascript:preview();">{{ _("Preview") }}</a>
+			<a class="btn" href="/planet">{{ _("Cancel") }}</a>
+		</div>
+	</form>
 
 	<div id="preview"></div>
 
 	<script type="text/javascript">
 		preview = function() {
-			$.postJSON("/api/planet/render", { text : $("#markdown").val() },
+			$.postJSON("/api/planet/render", { text : $("#inputMarkdown").val() },
 				function(data) {
 					$("#preview").html(data.html);
 				}
