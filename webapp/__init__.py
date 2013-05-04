@@ -250,11 +250,13 @@ class Application(tornado.web.Application):
 
 		http_server = tornado.httpserver.HTTPServer(self, xheaders=True)
 
+		num_processes = multiprocessing.cpu_count() / 2
+
 		# If we are not running in debug mode, we can actually run multiple
 		# frontends to get best performance out of our service.
 		if not self.settings["debug"]:
 			http_server.bind(port)
-			http_server.start(num_processes=multiprocessing.cpu_count())
+			http_server.start(num_processes=num_processes)
 		else:
 			http_server.listen(port)
 		
