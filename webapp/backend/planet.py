@@ -204,9 +204,11 @@ class Planet(object):
 	def save_entry(self, entry):
 		slug = self._generate_slug(entry.title)
 
-		self.db.execute("INSERT INTO planet(author_id, title, slug, markdown, published) "
+		id = self.db.execute("INSERT INTO planet(author_id, title, slug, markdown, published) "
 			"VALUES(%s, %s, %s, %s, UTC_TIMESTAMP())", entry.author.uid, entry.title,
 			slug, entry.markdown)
+
+		return id
 
 	def search(self, what):
 		# Split tags.

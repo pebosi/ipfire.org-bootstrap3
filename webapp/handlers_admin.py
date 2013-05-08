@@ -96,13 +96,14 @@ class AdminPlanetComposeHandler(AdminBaseHandler):
 		entry.set("markdown", self.get_argument("markdown"))
 		entry.set("author_id", self.current_user)
 
-		tags = self.get_argument("tags", "")
-		entry.tags = tags.split()
-
 		if id:
 			self.planet.update_entry(entry)
 		else:
-			self.planet.save_entry(entry)
+			id = self.planet.save_entry(entry)
+			entry.id = id
+
+		tags = self.get_argument("tags", "")
+		entry.tags = tags.split()
 
 		self.redirect("/planet")
 
