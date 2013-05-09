@@ -1,12 +1,8 @@
-{% extends "../base-1.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ _("Home") }}{% end block %}
 
 {% block body %}
-	<div class="page-header">
-		<h1>{{ _("Crowd funding for the IPFire project") }}</h1>
-	</div>
-
 	{% if lang == "de" %}
 		<p>
 			Dies ist die IPFire Crowdfunding-Platform, auf welcher du mittels 
