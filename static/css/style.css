@@ -15,6 +15,10 @@ body {
 	text-align: center;
 }
 
+.ar {
+	text-align: right;
+}
+
 .clear {
 	clear: both;
 }
@@ -379,4 +383,13 @@ section > ul li {
 
 .planet-table td.author {
 	width: 10em;
+}
+
+.news-entries td.date {
+	width: 8em;
+	text-align: right;
+}
+
+.well-white {
+	background-color: white;
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-04 11:38+0200\n"
+"POT-Creation-Date: 2013-05-13 11:46+0200\n"
 "PO-Revision-Date: 2013-02-19 12:38+0100\n"
 "Last-Translator: Michael Tremer <michael.tremer@ipfire.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,62 +21,62 @@ msgstr ""
 msgid "Unknown author"
 msgstr "Unbekannter Autor"
 
-#: webapp/__init__.py:278
+#: webapp/__init__.py:285
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:225
 msgid "January"
 msgstr "Januar"
 
-#: webapp/__init__.py:280
+#: webapp/__init__.py:287
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:225
 msgid "February"
 msgstr "Februar"
 
-#: webapp/__init__.py:282
+#: webapp/__init__.py:289
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:225
 msgid "March"
 msgstr "März"
 
-#: webapp/__init__.py:284
+#: webapp/__init__.py:291
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:225
 msgid "April"
 msgstr "April"
 
-#: webapp/__init__.py:286
+#: webapp/__init__.py:293
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:226
 msgid "May"
 msgstr "Mai"
 
-#: webapp/__init__.py:288
+#: webapp/__init__.py:295
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:226
 msgid "June"
 msgstr "Juni"
 
-#: webapp/__init__.py:290
+#: webapp/__init__.py:297
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:226
 msgid "July"
 msgstr "Juli"
 
-#: webapp/__init__.py:292
+#: webapp/__init__.py:299
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:226
 msgid "August"
 msgstr "August"
 
-#: webapp/__init__.py:294
+#: webapp/__init__.py:301
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:227
 msgid "September"
 msgstr "September"
 
-#: webapp/__init__.py:296
+#: webapp/__init__.py:303
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:227
 msgid "October"
 msgstr "Oktober"
 
-#: webapp/__init__.py:298
+#: webapp/__init__.py:305
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:227
 msgid "November"
 msgstr "November"
 
-#: webapp/__init__.py:300
+#: webapp/__init__.py:307
 #: /usr/lib/python2.7/site-packages/tornado/locale.py:227
 msgid "December"
 msgstr "Dezember"
@@ -213,6 +213,14 @@ msgstr "Älter"
 msgid "Newer"
 msgstr "Neuer"
 
+#: templates/wishlist/base.html:6
+msgid "IPFire Wishlist"
+msgstr "IPFire Wunschliste"
+
+#: templates/wishlist/base.html:8
+msgid "Crowd funding for the IPFire project"
+msgstr "Crowdfunding für das IPFire-Projekt"
+
 #: templates/wishlist/modules/wish.html:6
 msgid "Only a few days left!"
 msgstr "Nur noch wenige Tage!"
@@ -220,7 +228,7 @@ msgstr "Nur noch wenige Tage!"
 #: templates/wishlist/modules/wish.html:26 templates/wishlist/donate.html:3
 #: templates/download-splash.html:37 templates/modules/menu.html:47
 #: templates/static/getinvolved.html:120 templates/static/donation.html:3
-#: templates/static/donation.html:8 templates/index.html:30
+#: templates/static/donation.html:8
 msgid "Donate"
 msgstr "Spenden"
 
@@ -263,10 +271,6 @@ msgstr ""
 #: templates/wishlist/index.html:3 templates/index.html:3
 msgid "Home"
 msgstr "Startseite"
-
-#: templates/wishlist/index.html:7
-msgid "Crowd funding for the IPFire project"
-msgstr "Crowdfunding für das IPFire-Projekt"
 
 #: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
 #: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
@@ -508,9 +512,25 @@ msgstr "Downloads"
 msgid "Compose new entry"
 msgstr "Neuen Beitrag erstellen"
 
-#: templates/admin-planet-compose.html:14 templates/admin-planet.html:14
+#: templates/admin-planet-compose.html:16 templates/admin-planet.html:14
 msgid "Title"
 msgstr "Titel"
+
+#: templates/admin-planet-compose.html:33 templates/planet/posting.html:19
+msgid "Tags"
+msgstr "Tags"
+
+#: templates/admin-planet-compose.html:41
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/admin-planet-compose.html:42
+msgid "Preview"
+msgstr "Vorschau"
+
+#: templates/admin-planet-compose.html:43
+msgid "Cancel"
+msgstr "Abbrechen"
 
 #: templates/download-splash.html:3 templates/download-splash.html:7
 msgid "Thanks for downloading IPFire!"
@@ -952,7 +972,7 @@ msgstr "Informiere dich"
 #: templates/news.html:61 templates/planet/year.html:3
 #: templates/planet/user.html:3 templates/planet/search.html:3
 #: templates/planet/base.html:6 templates/planet/index.html:3
-#: templates/planet/posting.html:3
+#: templates/planet/posting.html:3 templates/index.html:154
 msgid "IPFire Planet"
 msgstr "IPFire Planet"
 
@@ -967,7 +987,7 @@ msgid "About IPFire"
 msgstr "Über IPFire"
 
 #: templates/base-feature.html:9 templates/static/features.html:88
-#: templates/static/features.html:1354 templates/index.html:104
+#: templates/static/features.html:1354 templates/index.html:75
 msgid "Security"
 msgstr "Sicherheit"
 
@@ -1063,13 +1083,13 @@ msgstr "Accountadministrator"
 #: templates/planet/year.html:6
 #, python-format
 msgid "Year %s"
-msgstr ""
+msgstr "Jahr %s"
 
-#: templates/planet/user.html:22 templates/planet/index.html:44
+#: templates/planet/user.html:22 templates/planet/index.html:45
 msgid "Older posts"
 msgstr "Ältere Beiträge"
 
-#: templates/planet/user.html:26 templates/planet/index.html:48
+#: templates/planet/user.html:26 templates/planet/index.html:49
 msgid "Newer posts"
 msgstr "Neuere Beiträge"
 
@@ -1087,26 +1107,26 @@ msgstr "Mail"
 #: templates/planet/search.html:6
 #, python-format
 msgid "Search results for '%s'"
-msgstr ""
+msgstr "Suchergebnisse für '%s'"
 
 #: templates/planet/search.html:16
 #, python-format
 msgid "No results found for '%s'"
-msgstr ""
+msgstr "Keine Resultate gefunden für '%s'"
 
 #: templates/planet/base.html:9
 msgid "The official blog of the IPFire team"
 msgstr "Das offizielle Blog des IPFire-Team"
 
-#: templates/planet/index.html:23
+#: templates/planet/index.html:24
 msgid "All posts from"
-msgstr ""
+msgstr "Alle Posts aus"
 
-#: templates/planet/posting.html:18 templates/modules/planet-entry.html:14
+#: templates/planet/posting.html:24 templates/modules/planet-entry.html:14
 msgid "Posted by"
 msgstr "Erstellt von"
 
-#: templates/planet/posting.html:19 templates/modules/planet-entry.html:15
+#: templates/planet/posting.html:25 templates/modules/planet-entry.html:15
 msgid "on"
 msgstr "am"
 
@@ -1510,25 +1530,33 @@ msgstr "Wofür werden Spenden eingesetzt?"
 msgid "Research & Development"
 msgstr "Forschung & Entwicklung"
 
-#: templates/index.html:43
-msgid "New!"
-msgstr "Neu!"
-
-#: templates/index.html:89
-msgid "What's new?"
-msgstr "Neuigkeiten"
-
-#: templates/index.html:121
+#: templates/index.html:92
 msgid "Flexibility"
 msgstr "Flexibilität"
 
-#: templates/index.html:138
+#: templates/index.html:109
 msgid "Open Source"
 msgstr "Open Source"
 
-#: templates/index.html:155
+#: templates/index.html:126
 msgid "Read more"
 msgstr "Mehr erfahren"
+
+#: templates/index.html:134
+msgid "What's new?"
+msgstr "Neuigkeiten"
+
+#: templates/index.html:175
+msgid "Please support us with your donation!"
+msgstr "Unterstütze dieses Projekt mit deiner Spende!"
+
+#: templates/index.html:189
+msgid "IPFire Hardware Appliances & Consulting"
+msgstr "IPFire Hardware Appliances & Consulting"
+
+#: templates/index.html:189
+msgid "by Lightning Wire Labs"
+msgstr "von Lightning Wire Labs"
 
 #: templates/admin-mirrors-details.html:8
 msgid "All mirrors"
@@ -1666,6 +1694,15 @@ msgstr "%(weekday)s, %(day)s. %(month_name)s"
 msgid "%(commas)s and %(last)s"
 msgstr "%(commas)s und %(last)s"
 
+#~ msgid "Please donate!"
+#~ msgstr "Spenden!"
+
+#~ msgid "Support, Services & Consulting"
+#~ msgstr "Support, Services & Consulting"
+
+#~ msgid "New!"
+#~ msgstr "Neu!"
+
 #~ msgid "IPFire nopaste service"
 #~ msgstr "IPFire nopaste Service"
 
@@ -1735,9 +1772,6 @@ msgstr "%(commas)s und %(last)s"
 #~ msgid "Donation"
 #~ msgstr "Spende"
 
-#~ msgid "Support this project with your donation!"
-#~ msgstr "Unterstütze dieses Projekt mit deiner Spende!"
-
 #~ msgid "Builds"
 #~ msgstr "Builds"
 
@@ -1767,9 +1801,6 @@ msgstr "%(commas)s und %(last)s"
 
 #~ msgid "Twitter"
 #~ msgstr "Twitter"
-
-#~ msgid "IPFire Wishlist"
-#~ msgstr "IPFire Wunschliste"
 
 #~ msgid "Turning an idea into a new feature"
 #~ msgstr "Verwandle eine Idee in ein neues Feature"

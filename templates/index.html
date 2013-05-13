@@ -21,14 +21,11 @@
 					<ul class="masthead-links">
 						{% if latest_release %}
 							<li>
-								{{ _("Latest release") }}:
-								{{ latest_release.name }}<br>
+								{{ _("Latest release") }}:<br>
+								{{ latest_release.name }} &dash;
 								{{ locale.format_date(latest_release.date, relative=True, shorter=True) }}
 							</li>
 						{% end %}
-						<li>
-							<a href="/donate">{{ _("Donate") }}</a>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -39,19 +36,8 @@
 {% block body %}
 	<br>
 
-	<p class="ac muted">
-		<strong>{{ _("New!") }}</strong>
-		{% if lang == "de" %}
-			IPFire <a href="http://wishlist.ipfire.org/">Wunschliste</a> - Die Crowdfunding-Plattform des IPFire-Projekts.
-		{% else %}
-			IPFire <a href="http://wishlist.ipfire.org">wishlist</a> - the crowd funding platform for the IPFire project.
-		{% end %}
-	</p>
-
-	<hr>
-
 	<div class="row">
-		<div class="span6">
+		<div class="span6 objectives">
 			{% if lang == "de" %}
 				<p>
 					<strong>IPFire</strong> ist eine gehärtete Linux-Appliance-Distribution
@@ -83,23 +69,8 @@
 				</p>
 			{% end %}
 
-			<br>
+			<hr>
 
-			<div class="well">
-				<h4>{{ _("What's new?") }}</h4>
-
-				<ul class="unstyled">
-					{% for item in latest_news %}
-						<li>
-							[{{ locale.format_date(item.date, relative=True, shorter=True) }}] &dash;
-							<a href="/news/{{ item.slug }}">{{ item.title }}</a>
-						</li>
-					{% end %}
-				</ul>
-			</div>
-		</div>
-
-		<div class="span6 objectives">
 			<img class="icon pull-left" src="{{ static_url("images/icons/security.png") }}" alt="{{ _("Security") }}" />
 			<h4>{{ _("Security") }}</h4>
 
@@ -145,7 +116,7 @@
 			{% else %}
 				<p>
 					IPFire is free software and developed by an open community,
-					that makes IPFire better every single day.
+					that improves it every single day.
 				</p>
 			{% end %}
 
@@ -154,6 +125,103 @@
 			<p class="ac">
 				<a href="/features">{{ _("Read more") }} &raquo;</a>
 			</p>
+
+		</div>
+
+		<div class="span6">
+			<div class="well">
+				<h4>
+					{{ _("What's new?") }}
+					<a class="pull-right" href="http://www.ipfire.org/news.rss"><small>[RSS]</small></a>
+				</h4>
+
+				<table class="news-entries">
+					{% for item in latest_news %}
+						<tr>
+							<td class="date">
+								{{ locale.format_date(item.date, relative=True, shorter=True) }} &dash;
+							</td>
+							<td class="link">
+								<a href="/news/{{ item.slug }}">{{ item.title }}</a>
+							</td>
+						</tr>
+					{% end %}
+				</table>
+
+				<hr>
+
+				<h4>
+					<a href="http://planet.ipfire.org">{{ _("IPFire Planet") }}</a>
+					<a class="pull-right" href="http://planet.ipfire.org/rss"><small>[RSS]</small></a>
+				</h4>
+
+				<table class="news-entries">
+					{% for item in planet_posts %}
+						<tr>
+							<td class="date">
+								{{ locale.format_date(item.published, relative=True, shorter=True) }} &dash;
+							</td>
+							<td class="link">
+								<a href="http://planet.ipfire.org/post/{{ item.slug }}">{{ item.title }}</a>
+							</td>
+						</tr>
+					{% end %}
+				</table>
+
+				<hr>
+
+				<div class="row-fluid">
+					<div class="span10">
+						<a href="/donate"><strong>{{ _("Please support us with your donation!") }}</strong></a>
+					</div>
+
+					<div class="span2">
+						<div class="pull-right">
+							<a href="https://www.facebook.com/IPFire.org"><img src="{{ static_url("images/icons/social/facebook.png") }}" alt="Facebook"></a>
+							<a href="https://twitter.com/ipfire"><img src="{{ static_url("images/icons/social/twitter.png") }}" alt="Twitter"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="well well-white">
+				<h4>
+					{{ _("IPFire Hardware Appliances & Consulting") }} <small>{{ _("by Lightning Wire Labs") }}</small>
+				</h4>
+
+				<br>
+
+				{% if lang == "de" %}
+					<p>
+						Lightning Wire Labs bietet mit IPFire vorinstallierte Hardware-Appliances an.
+						Dazu bieten sie professionellen Service &amp; Support durch qualifizierte Consultants.
+					</p>
+				{% else %}
+					<p>
+						Lightning Wire Labs offers hardware appliances that come pre-installed
+						with the latest version of IPFire.
+						They also provide professional services &amp; support through their certified consultants.
+					</p>
+				{% end %}
+
+				<hr>
+
+				<div class="ac">
+					<a href="http://www.lightningwirelabs.com/products/ipfire/appliances" target="_blank">
+						<img src="{{ static_url("images/LWL/appliance-pro.jpg") }}" alt="Appliance Professional">
+					</a>
+					<br>
+					<a href="http://www.lightningwirelabs.com/products/ipfire/appliances" target="_blank">
+						<img src="{{ static_url("images/LWL/appliance-eco.jpg") }}" alt="Appliance Eco">
+					</a>
+				</div>
+
+				<hr>
+
+				<p class="ac">
+					<a href="http://www.lightningwirelabs.com/" target="_blank">www.lightningwirelabs.com</a>
+				</p>
+			</div>
 		</div>
 	</div>
 {% end block %}

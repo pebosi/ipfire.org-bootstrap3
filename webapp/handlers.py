@@ -57,13 +57,16 @@ class IndexHandler(BaseHandler):
 	"""
 	def get(self):
 		# Get a list of the most recent news items and put them on the page.		
-		latest_news = self.news.get_latest(limit=1, locale=self.locale)
+		latest_news = self.news.get_latest(limit=3, locale=self.locale)
+
+		# Get a list of the most recent planet posts.
+		planet_posts = self.planet.get_entries(limit=3)
 
 		# Get the latest release.
 		latest_release = self.releases.get_latest()
 
 		return self.render("index.html", latest_news=latest_news,
-			latest_release=latest_release)
+			planet_posts=planet_posts, latest_release=latest_release)
 
 
 class StaticHandler(BaseHandler):
