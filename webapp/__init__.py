@@ -181,7 +181,6 @@ class Application(tornado.web.Application):
 			# Configurations
 			(r"/menu.gpxe", MenuGPXEHandler),
 			(r"/menu.cfg", MenuCfgHandler),
-			(r"/config/([0-9]+)/boot.gpxe", BootGPXEHandler),
 
 			# Static files
 			(r"/(boot\.png|premenu\.cfg|pxelinux\.0|menu\.c32|vesamenu\.c32)",

@@ -128,27 +128,3 @@ class MenuCfgHandler(BootBaseHandler):
 		menu = self._menu_string(self.netboot.get_menu(1))
 
 		self.render("netboot/menu.cfg", menu=menu)
-
-
-class BootGPXEHandler(BootBaseHandler):
-	def get(self, id):
-		config = self.netboot.get_config(id)
-		if not config:
-			raise tornado.web.HTTPError(404, "Configuration with ID '%s' was not found" % id)
-
-		lines = ["#!gpxe", "imgfree",]
-
-		line = "kernel -n img %s" % config.image1
-		if line.endswith(".iso"):
-			line += " iso"
-		if config.args:
-			line += " %s" % config.args
-		lines.append(line)
-
-		if config.image2:
-			lines.append("initrd -n img %s" % config.image2)
-
-		lines.append("boot img")
-
-		for line in lines:
-			self.write("%s\n" % line)
