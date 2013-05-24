@@ -110,7 +110,15 @@ class MenuCfgHandler(BootBaseHandler):
 				lines.append(ident + "\ttext help")
 				lines.append(word_wrap(entry.description))
 				lines.append(ident + "\tendtext")
-			lines.append(ident + "\tkernel /config/%s/boot.gpxe" % entry.item)
+
+			config = self.netboot.get_config(entry.item)
+			if not config: return ""
+
+			lines.append(ident + "\tkernel %s" % config.image1)
+			if config.image2:
+				lines.append(ident + "\tinitrd %s" % config.image2)
+			if config.args:
+				lines.append(ident + "\tappend %s" % config.args)
 
 		return "\n".join(lines + [""])
 

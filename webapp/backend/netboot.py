@@ -46,19 +46,20 @@ class NetBoot(object):
 	def get_menu(self, level=0):
 		menu = []
 
-		for m in self.db.query("SELECT * FROM boot_menu WHERE level = %d ORDER by level,prio" % level):
+		for m in self.db.query("SELECT * FROM boot_menu WHERE level = %s ORDER by level,prio", level):
 			m = MenuEntry(m)
 
 			if m.type == "header":
 				m.submenu = self.get_menu(m.submenu_level)
 
 			elif m.type == "config":
-				m._data.update(self.db.get("SELECT title, description FROM boot WHERE id = %s" % m.item))
+				c = self.db.get("SELECT * FROM boot WHERE id = %s", m.item)
+				if c:
+					m._data.update(c)
 
 			menu.append(m)
 
 		return menu
 
 	def get_config(self, id):
-		id = int(id)
 		return self.db.get("SELECT * FROM boot WHERE id = %s", id)
