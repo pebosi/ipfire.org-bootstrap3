@@ -184,7 +184,7 @@ class Application(tornado.web.Application):
 			(r"/config/([0-9]+)/boot.gpxe", BootGPXEHandler),
 
 			# Static files
-			(r"/(boot.png|custom.gpxe|premenu.cfg|vesamenu.c32|menu.c32)",
+			(r"/(boot\.png|premenu\.cfg|pxelinux\.0|menu\.c32|vesamenu\.c32)",
 				tornado.web.StaticFileHandler, { "path" : BOOT_STATIC_PATH }),
 		])
 

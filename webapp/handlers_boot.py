@@ -36,12 +36,41 @@ class MenuGPXEHandler(BootBaseHandler):
 		menu.gpxe
 	"""
 	def get(self):
-		# XXX Check if version of the bootloader is allright
+		# Check if version of the bootloader is recent enough.
+		# Otherwise send the latest version of the PXE loader.
+		user_agent = self.request.headers.get("User-Agent", None)
+		if user_agent:
+			try:
+				client, version = user_agent.split("/")
+			except:
+				pass
+			else:
+				# We replaced gPXE by iPXE.
+				if client == "gPXE":
+					return self.serve_update()
+
+				# Everything under version 1.0.0 should be
+				# updated.
+				if version < "1.0.0":
+					return self.serve_update()
 
 		# Devliver content
 		self.set_header("Content-Type", "text/plain")
 		self.write("#!gpxe\n")
-		self.write("chain menu.c32 premenu.cfg\n")
+
+		self.write("set 209:string premenu.cfg\n")
+		self.write("set 210:string http://boot.ipfire.org/\n")
+		self.write("chain pxelinux.0\n")
+
+	def serve_update(self):
+		self.set_header("Content-Type", "text/plain")
+		self.write("#!gpxe\n")
+
+		# Small warning
+		self.write("echo\necho Your copy of gPXE/iPXE is too old. ")
+		self.write("Upgrade to avoid seeing this every boot!\n")
+
+		self.write("chain http://mirror0.ipfire.org/releases/ipfire-boot/latest/ipxe.kpxe\n")
 
 
 class MenuCfgHandler(BootBaseHandler):

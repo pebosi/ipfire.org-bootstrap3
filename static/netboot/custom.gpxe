@@ -1,4 +1,0 @@
-#!gpxe
-input id "Enter configuration ID to boot (eg, 1000)"
-imgfree
-chain http://boot.ipfire.org/config/${id}/boot.gpxe
