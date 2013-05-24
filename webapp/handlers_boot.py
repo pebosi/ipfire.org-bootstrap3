@@ -104,15 +104,14 @@ class MenuCfgHandler(BootBaseHandler):
 			lines.append(ident + "menu end")
 
 		elif entry.type == "config":
-			lines.append(ident + "label %d" % entry.id)
-			lines.append(ident + "\tmenu label %s" % entry.title)
-			if entry.description:
-				lines.append(ident + "\ttext help")
-				lines.append(word_wrap(entry.description))
-				lines.append(ident + "\tendtext")
-
 			config = self.netboot.get_config(entry.item)
-			if not config: return ""
+
+			lines.append(ident + "label %d" % config.id)
+			lines.append(ident + "\tmenu label %s" % config.title)
+			if config.description:
+				lines.append(ident + "\ttext help")
+				lines.append(word_wrap(config.description))
+				lines.append(ident + "\tendtext")
 
 			lines.append(ident + "\tkernel %s" % config.image1)
 			if config.image2:
