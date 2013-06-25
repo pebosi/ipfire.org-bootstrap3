@@ -535,3 +535,5 @@ class Mirror(object):
 	def priority(self):
 		return self._info.get("priority", 10)
 
+	def is_pakfire2(self):
+		return self.type in ("full", "pakfire2")

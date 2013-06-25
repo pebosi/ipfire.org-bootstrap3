@@ -51,3 +51,43 @@ class MirrorAllHandler(BaseHandler):
 class MirrorDetailHandler(BaseHandler):
 	def get(self, id):
 		self.render("download-mirror-detail.html", mirror=self.mirrors.get(id))
+
+
+class MirrorListPakfire2Handler(BaseHandler):
+	def get(self):
+		suffix = self.get_argument("suffix", "")
+
+		self.set_header("Content-Type", "text/plain")
+
+		mirrors = self.mirrors.get_all()
+
+		lines = []
+		for m in mirrors:
+			if not m.is_pakfire2():
+				continue
+
+			path = [m.path,]
+
+			if m.type == "full":
+				path.append("pakfire2")
+
+			if suffix:
+				path.append(suffix)
+
+			path = "/".join(path)
+
+			# Remove double slashes.
+			path = path.replace("//", "/")
+
+			# Remove leading slash.
+			if path.startswith("/"):
+				path = path[1:]
+
+			# Remove trailing slash.
+			if path.endswith("/"):
+				path = path[:-1]
+
+			line = ("HTTP", m.hostname, path, "")
+			lines.append(";".join(line))
+
+		self.finish("\r\n".join(lines))

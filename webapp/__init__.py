@@ -118,6 +118,7 @@ class Application(tornado.web.Application):
 		self.add_handlers(r"mirrors\.ipfire\.org", [
 			(r"/", MirrorIndexHandler),
 			(r"/mirror/([0-9]+)", MirrorItemHandler),
+			(r"/lists/pakfire2", MirrorListPakfire2Handler),
 		] + static_handlers)
 
 		# planet.ipfire.org
