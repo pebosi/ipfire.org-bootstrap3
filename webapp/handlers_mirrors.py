@@ -56,14 +56,21 @@ class MirrorDetailHandler(BaseHandler):
 class MirrorListPakfire2Handler(BaseHandler):
 	def get(self):
 		suffix = self.get_argument("suffix", "")
+		development = self.get_argument("development", None)
 
 		self.set_header("Content-Type", "text/plain")
 
-		mirrors = self.mirrors.get_all()
+		# Get all mirror servers that are currently up.
+		mirrors = self.mirrors.get_all_up()
 
 		lines = []
 		for m in mirrors:
-			if not m.is_pakfire2():
+			if not m.mirrorlist or not m.is_pakfire2():
+				continue
+
+			# Skip all non-development mirrors
+			# if we run in development mode.
+			if development and not m.development:
 				continue
 
 			path = [m.path,]

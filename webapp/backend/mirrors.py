@@ -109,6 +109,16 @@ class Mirrors(object):
 	def get_all(self):
 		return MirrorSet(self.list())
 
+	def get_all_up(self):
+		res = self.db.query("SELECT * FROM mirrors WHERE disabled = %s AND state = %s ORDER BY hostname", "N", "UP")
+
+		mirrors = []
+		for row in res:
+			m = Mirror(row.id, row)
+			mirrors.append(m)
+
+		return MirrorSet(mirrors)
+
 	def get_by_hostname(self, hostname):
 		mirror = self.db.get("SELECT id FROM mirrors WHERE hostname=%s", hostname)
 
@@ -270,10 +280,14 @@ class MirrorSet(object):
 
 
 class Mirror(object):
-	def __init__(self, id):
+	def __init__(self, id, data=None):
 		self.id = id
 
-		self.reload()
+		if data:
+			self._info = data
+		else:
+			self._info = self.db.get("SELECT * FROM mirrors WHERE id = %s", self.id)
+		self._info["url"] = self.generate_url()
 
 		self.__location = None
 		self.__country_name = None
@@ -287,20 +301,6 @@ class Mirror(object):
 	@property
 	def db(self):
 		return Databases().webapp
-
-	def reload(self, force=False):
-		memcached = Memcached()
-		mem_id = "mirror-%s" % self.id
-
-		if force:
-			memcached.delete(mem_id)
-
-		self._info = memcached.get(mem_id)
-		if not self._info:
-			self._info = self.db.get("SELECT * FROM mirrors WHERE id=%s", self.id)
-			self._info["url"] = self.generate_url()
-
-			memcached.set(mem_id, self._info, 60)
 
 	def generate_url(self):
 		url = "http://%s" % self.hostname
@@ -397,7 +397,8 @@ class Mirror(object):
 			state, self.id)
 
 		# Reload changed settings
-		self.reload(force=True)
+		if hasattr(self, "_info"):
+			self._info["state"] = state
 
 	def check(self):
 		logging.info("Running check for mirror %s" % self.hostname)
@@ -444,7 +445,8 @@ class Mirror(object):
 			timestamp, self.id)
 
 		# Reload changed settings
-		self.reload(force=True)
+		if hasattr(self, "_info"):
+			self._info["timestamp"] = timestamp
 
 		self.check_state()
 
@@ -537,3 +539,11 @@ class Mirror(object):
 
 	def is_pakfire2(self):
 		return self.type in ("full", "pakfire2")
+
+	@property
+	def development(self):
+		return self._info.get("development", "N") == "Y"
+
+	@property
+	def mirrorlist(self):
+		return self._info.get("mirrorlist", "N") == "Y"
