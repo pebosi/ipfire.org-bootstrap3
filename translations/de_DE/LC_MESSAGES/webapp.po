@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-22 10:42+0200\n"
-"PO-Revision-Date: 2013-02-19 12:38+0100\n"
+"POT-Creation-Date: 2013-07-22 11:43+0200\n"
+"PO-Revision-Date: 2013-07-22 11:44+0100\n"
 "Last-Translator: Michael Tremer <michael.tremer@ipfire.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: webapp/handlers_news.py:43 webapp/ui_modules.py:76
 msgid "Unknown author"
@@ -86,7 +86,7 @@ msgstr "Dezember"
 msgid "%s to %s"
 msgstr "%s nach %s"
 
-#: webapp/backend/wishlist.py:153
+#: webapp/backend/wishlist.py:187
 msgid "Checkout this crowdfunding wish from #ipfire:"
 msgstr ""
 
@@ -213,7 +213,7 @@ msgstr "Älter"
 msgid "Newer"
 msgstr "Neuer"
 
-#: templates/wishlist/base.html:6
+#: templates/wishlist/base.html:6 templates/index.html:175
 msgid "IPFire Wishlist"
 msgstr "IPFire Wunschliste"
 
@@ -1546,15 +1546,35 @@ msgstr "Mehr erfahren"
 msgid "What's new?"
 msgstr "Neuigkeiten"
 
-#: templates/index.html:175
+#: templates/index.html:176
+msgid "The IPFire Crowdfunding Platform"
+msgstr "Die IPFire Crowdfunding-Plattform"
+
+#: templates/index.html:184
+msgid "NEW"
+msgstr "NEU"
+
+#: templates/index.html:187
+#, python-format
+msgid "one day left"
+msgid_plural "%(num)s days left"
+msgstr[0] "noch ein Tag"
+msgstr[1] "noch %(num)s Tage"
+
+#: templates/index.html:191
+#, python-format
+msgid "%d%% funded"
+msgstr "%d%% gesammelt"
+
+#: templates/index.html:212
 msgid "Please support us with your donation!"
 msgstr "Unterstütze dieses Projekt mit deiner Spende!"
 
-#: templates/index.html:189
+#: templates/index.html:232
 msgid "IPFire Hardware Appliances & Consulting"
 msgstr "IPFire Hardware Appliances & Consulting"
 
-#: templates/index.html:189
+#: templates/index.html:232
 msgid "by Lightning Wire Labs"
 msgstr "von Lightning Wire Labs"
 
