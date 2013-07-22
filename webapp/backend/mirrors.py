@@ -421,7 +421,7 @@ class Mirror(object):
 			self.set_state("UP")
 
 	def check_timestamp(self):
-		if self.releases == "N":
+		if not self.type == "full":
 			return
 
 		http = tornado.httpclient.AsyncHTTPClient()
@@ -454,7 +454,7 @@ class Mirror(object):
 
 	def check_filelist(self):
 		# XXX need to remove data from disabled mirrors
-		if self.releases == "N" or self.disabled == "Y" or self.type != "full":
+		if self.disabled == "Y" or self.type != "full":
 			return
 
 		http = tornado.httpclient.AsyncHTTPClient()
