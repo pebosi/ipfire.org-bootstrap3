@@ -279,6 +279,11 @@ section > ul li {
 	margin-bottom: 100px;
 }
 
+.progress-small {
+	margin-top: 6px;
+	height: 6px;
+}
+
 @media (min-width: 768px) and (max-width: 979px) {
 	body {
 		padding-top: 0;
@@ -392,4 +397,12 @@ section > ul li {
 
 .well-white {
 	background-color: white;
+}
+
+.table-wishlist-widget {
+	width: 100%;
+}
+
+.table-wishlist-widget td.progress-bar {
+	width: 40%;
 }

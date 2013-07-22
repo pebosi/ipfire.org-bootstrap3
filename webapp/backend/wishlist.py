@@ -50,6 +50,17 @@ class Wishlist(object):
 
 		return self.get_all_by_query(query, *args)
 
+	def get_hot_wishes(self, limit=3):
+		query = "SELECT * FROM wishlist \
+			WHERE status = %s AND DATE(NOW()) BETWEEN date_start AND date_end AND ( \
+				((UNIX_TIMESTAMP() - UNIX_TIMESTAMP(date_start)) <= 864000) \
+				OR ((UNIX_TIMESTAMP(date_end) - UNIX_TIMESTAMP()) <= 1209600) \
+				OR ((donated / goal) >= 0.9) \
+				OR (goal >= 3000) \
+			) ORDER BY prio ASC, date_end ASC LIMIT %s"
+
+		return self.get_all_by_query(query, "running", limit)
+
 
 class Wish(object):
 	def __init__(self, wishlist, id, data=None):
@@ -57,6 +68,9 @@ class Wish(object):
 		self.id = id
 
 		self.__data = data
+
+	def __repr__(self):
+		return "<%s %s>" % (self.__class__.__name__, self.title)
 
 	def __cmp__(self, other):
 		return cmp(self.date_end, other.date_end)
@@ -76,6 +90,13 @@ class Wish(object):
 	@property
 	def title(self):
 		return self.data.title
+
+	@property
+	def title_short(self):
+		if len(self.title) > 30:
+			return "%s..." % self.title[:30]
+
+		return self.title
 
 	@property
 	def slug(self):
@@ -107,6 +128,16 @@ class Wish(object):
 			return 100
 
 		return self.percentage
+
+	@property
+	def progressbar_colour(self):
+		if self.is_new():
+			return "bar-success"
+
+		if self.percentage >= 90:
+			return "bar-danger"
+
+		return "bar-warning"
 
 	@property
 	def status(self):
@@ -145,6 +176,9 @@ class Wish(object):
 
 		remaining = self.date_end - today
 		return remaining.days
+
+	def is_new(self):
+		return self.running_days <= 10
 
 	def get_tweet(self, locale):
 		_ = locale.translate

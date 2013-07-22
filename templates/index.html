@@ -170,6 +170,43 @@
 
 				<hr>
 
+				{% if wishlist_items %}
+					<h4>
+						<a href="http://wishlist.ipfire.org">{{ _("IPFire Wishlist") }}</a>
+						<small>{{ _("The IPFire Crowdfunding Platform") }}</small>
+					</h4>
+
+					<table class="table-wishlist-widget">
+						{% for item in wishlist_items %}
+							<tr>
+								<td>
+									{% if item.is_new() %}
+										<span class="label label-success pull-right">{{ _("NEW") }}</span>
+									{% elif item.remaining_days <= 10 %}
+										<span class="pull-right">
+											{{ _("one day left", "%(num)s days left", item.remaining_days) % { "num" : item.remaining_days } }}
+										</span>
+									{% else %}
+										<span class="pull-right">
+											{{ _("%d%% funded") % item.percentage }}
+										</span>
+									{% end %}
+
+									<a href="http://wishlist.ipfire.org/wish/{{ item.slug }}" target="_blank">{{ item.title }}</a>
+
+									<br class="separator-small">
+
+									<div class="progress progress-small">
+										<div class="bar {{ item.progressbar_colour }}" style="width: {{ "%.2f%%" % item.percentage_bar }};"></div>
+									</div>
+								</td>
+							</tr>
+						{% end %}
+					</table>
+
+					<hr>
+				{% end %}
+
 				<div class="row-fluid">
 					<div class="span10">
 						<a href="/donate"><strong>{{ _("Please support us with your donation!") }}</strong></a>
@@ -183,36 +220,44 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
+	<br class="separator">
+
+	<div class="row">
+		<div class="span8 offset2">
 			<div class="well well-white">
 				<h4>
 					{{ _("IPFire Hardware Appliances & Consulting") }} <small>{{ _("by Lightning Wire Labs") }}</small>
 				</h4>
 
-				<br>
+				<div class="row-fluid">
+					<div class="span6">
+						{% if lang == "de" %}
+							<p>
+								Lightning Wire Labs bietet mit IPFire vorinstallierte Hardware-Appliances an.
+								Dazu bieten sie professionellen Service &amp; Support durch qualifizierte Consultants.
+							</p>
+						{% else %}
+							<p>
+								Lightning Wire Labs offers hardware appliances that come pre-installed
+								with the latest version of IPFire.
+								They also provide professional services &amp; support through their certified consultants.
+							</p>
+						{% end %}
+					</div>
 
-				{% if lang == "de" %}
-					<p>
-						Lightning Wire Labs bietet mit IPFire vorinstallierte Hardware-Appliances an.
-						Dazu bieten sie professionellen Service &amp; Support durch qualifizierte Consultants.
-					</p>
-				{% else %}
-					<p>
-						Lightning Wire Labs offers hardware appliances that come pre-installed
-						with the latest version of IPFire.
-						They also provide professional services &amp; support through their certified consultants.
-					</p>
-				{% end %}
-
-				<hr>
+					<div class="span6 ac">
+						<a href="http://www.lightningwirelabs.com/products/ipfire/appliances" target="_blank">
+							<img src="{{ static_url("images/LWL/appliance-eco.jpg") }}" alt="Appliance Eco">
+						</a>
+					</div>
+				</div>
 
 				<div class="ac">
 					<a href="http://www.lightningwirelabs.com/products/ipfire/appliances" target="_blank">
 						<img src="{{ static_url("images/LWL/appliance-pro.jpg") }}" alt="Appliance Professional">
-					</a>
-					<br>
-					<a href="http://www.lightningwirelabs.com/products/ipfire/appliances" target="_blank">
-						<img src="{{ static_url("images/LWL/appliance-eco.jpg") }}" alt="Appliance Eco">
 					</a>
 				</div>
 

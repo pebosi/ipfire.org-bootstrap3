@@ -65,8 +65,12 @@ class IndexHandler(BaseHandler):
 		# Get the latest release.
 		latest_release = self.releases.get_latest()
 
+		# Interesting items from the wishlist.
+		wishlist_items = self.wishlist.get_hot_wishes()
+
 		return self.render("index.html", latest_news=latest_news,
-			planet_posts=planet_posts, latest_release=latest_release)
+			planet_posts=planet_posts, latest_release=latest_release,
+			wishlist_items=wishlist_items)
 
 
 class StaticHandler(BaseHandler):
