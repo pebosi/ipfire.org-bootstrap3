@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-13 11:46+0200\n"
+"POT-Creation-Date: 2013-07-22 10:42+0200\n"
 "PO-Revision-Date: 2013-02-19 12:38+0100\n"
 "Last-Translator: Michael Tremer <michael.tremer@ipfire.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1359,8 +1359,8 @@ msgid "Tracker"
 msgstr "Tracker"
 
 #: templates/modules/menu.html:146
-msgid "Commercial support available!"
-msgstr "Kommerzieller Support verfügbar!"
+msgid "Professional support available!"
+msgstr "Professioneller Support verfügbar!"
 
 #: templates/modules/news-item.html:6
 msgid "Announcement"
