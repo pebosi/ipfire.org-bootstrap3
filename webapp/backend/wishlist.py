@@ -57,6 +57,7 @@ class Wishlist(object):
 				OR ((UNIX_TIMESTAMP(date_end) - UNIX_TIMESTAMP()) <= 1209600) \
 				OR ((donated / goal) >= 0.9) \
 				OR (goal >= 3000) \
+				OR (prio <= 5) \
 			) ORDER BY prio ASC, date_end ASC LIMIT %s"
 
 		return self.get_all_by_query(query, "running", limit)
@@ -178,7 +179,7 @@ class Wish(object):
 		return remaining.days
 
 	def is_new(self):
-		return self.running_days <= 10
+		return self.running_days < 10
 
 	def get_tweet(self, locale):
 		_ = locale.translate
