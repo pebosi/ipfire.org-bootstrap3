@@ -85,6 +85,7 @@ class Application(tornado.web.Application):
 			(r"/screenshots", tornado.web.RedirectHandler, { "url" : "/about" }),
 			(r"/about", tornado.web.RedirectHandler, { "url" : "/features" }),
 			(r"/support", tornado.web.RedirectHandler, { "url" : "/getinvolved" }),
+			(r"/features/.*", tornado.web.RedirectHandler, { "url" : "/features" }),
 
 			(r"/donate", tornado.web.RedirectHandler, { "url" : "/donation" }),
 
