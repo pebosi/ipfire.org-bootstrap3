@@ -8,44 +8,33 @@ import unicodedata
 from accounts import Accounts
 from databases import Databases
 
-from misc import Singleton
+from misc import Object
 
-class PlanetEntry(object):
-	def __init__(self, db, entry=None):
-		self.db = db
+class PlanetEntry(Object):
+	def __init__(self, backend, data):
+		Object.__init__(self, backend)
 
-		if entry:
-			self.__entry = entry
-		else:
-			self.__entry = tornado.database.Row({
-				"id" : None,
-				"title" : "",
-				"markdown" : "",
-				"tags" : [],
-			})
-
-	def set(self, key, val):
-		self.__entry[key] = val
-
-	@property
-	def planet(self):
-		return Planet()
+		self.data = data
 
 	@property
 	def id(self):
-		return self.__entry.id
+		return self.data.id
 
 	@property
 	def slug(self):
-		return self.__entry.slug
+		return self.data.slug
 
 	@property
 	def title(self):
-		return self.__entry.title
+		return self.data.title
+
+	@property
+	def url(self):
+		return "http://planet.ipfire.org/post/%s" % self.slug
 
 	@property
 	def published(self):
-		return self.__entry.published
+		return self.data.published
 
 	@property
 	def year(self):
@@ -57,11 +46,18 @@ class PlanetEntry(object):
 
 	@property
 	def updated(self):
-		return self.__entry.updated
+		return self.data.updated
 
 	@property
 	def markdown(self):
-		return self.__entry.markdown
+		return self.data.markdown
+
+	@property
+	def markup(self):
+		if self.data.markup:
+			return self.data.markup
+
+		return self.render(self.markdown)
 
 	@property
 	def abstract(self):
@@ -72,11 +68,15 @@ class PlanetEntry(object):
 
 	@property
 	def text(self):
-		return self.render(self.markdown)
+		# Compat for markup
+		return self.markup
 
 	@property
 	def author(self):
-		return Accounts().search(self.__entry.author_id)
+		if not hasattr(self, "__author"):
+			self.__author = self.accounts.search(self.data.author_id)
+
+		return self.__author
 
 	# Tags
 
@@ -104,17 +104,11 @@ class PlanetEntry(object):
 	tags = property(get_tags, set_tags)
 
 
-class Planet(object):
-	__metaclass__ = Singleton
-
-	@property
-	def db(self):
-		return Databases().webapp
-
+class Planet(Object):
 	def get_authors(self):
 		authors = []
-		for author in self.db.query("SELECT DISTINCT author_id FROM planet"):
-			author = Accounts().search(author.author_id)
+		for author in self.db.query("SELECT DISTINCT author_id FROM planet WHERE status = %s", "published"):
+			author = self.accounts.search(author.author_id)
 			if author:
 				authors.append(author)
 
@@ -122,19 +116,19 @@ class Planet(object):
 
 	def get_years(self):
 		res = self.db.query("SELECT DISTINCT YEAR(published) AS year \
-			FROM planet ORDER BY year DESC")
+			FROM planet WHERE status = %s ORDER BY year DESC", "published")
 
 		return [row.year for row in res]
 
 	def get_entry_by_slug(self, slug):
 		entry = self.db.get("SELECT * FROM planet WHERE slug = %s", slug)
 		if entry:
-			return PlanetEntry(self.db, entry)
+			return PlanetEntry(self.backend, entry)
 
 	def get_entry_by_id(self, id):
 		entry = self.db.get("SELECT * FROM planet WHERE id = %s", id)
 		if entry:
-			return PlanetEntry(self.db, entry)
+			return PlanetEntry(self.backend, entry)
 
 	def _limit_and_offset_query(self, limit=None, offset=None):
 		query = " "
@@ -147,38 +141,53 @@ class Planet(object):
 
 		return query
 
-	def get_entries(self, limit=3, offset=None):
-		query = "SELECT * FROM planet WHERE acknowledged='Y' ORDER BY published DESC"
+	def get_entries(self, limit=3, offset=None, status="published", author_id=None):
+		query = "SELECT * FROM planet"
+		args, clauses = [], []
 
-		# Respect limit and offset		
-		query += self._limit_and_offset_query(limit=limit, offset=offset)
+		if status:
+			clauses.append("status = %s")
+			args.append(status)
+
+		if author_id:
+			clauses.append("author_id = %s")
+			args.append(author_id)
+
+		if clauses:
+			query += " WHERE %s" % " AND ".join(clauses)
+
+		query += " ORDER BY published DESC"
+
+		# Respect limit and offset
+		if limit:
+			if offset:
+				query += " LIMIT %s,%s"
+				args += [offset, limit,]
+			else:
+				query += " LIMIT %s"
+				args.append(limit)
 
 		entries = []
-		for entry in self.db.query(query):
-			entries.append(PlanetEntry(self.db, entry))
+		for entry in self.db.query(query, *args):
+			entry = PlanetEntry(self.backend, entry)
+			entries.append(entry)
 
 		return entries
 
 	def get_entries_by_author(self, author_id, limit=None, offset=None):
-		query = "SELECT * FROM planet WHERE author_id = '%s'" % author_id
-		query += " AND acknowledged='Y' ORDER BY published DESC"
-
-		# Respect limit and offset		
-		query += self._limit_and_offset_query(limit=limit, offset=offset)
-
-		entries = self.db.query(query)
-
-		return [PlanetEntry(self.db, e) for e in entries]
+		return self.get_entries(limit=limit, offset=offset, author_id=author_id)
 
 	def get_entries_by_year(self, year):
 		entries = self.db.query("SELECT * FROM planet \
-			WHERE YEAR(published) = %s ORDER BY published DESC", year)
+			WHERE status = %s AND YEAR(published) = %s ORDER BY published DESC",
+			"published", year)
 
-		return [PlanetEntry(self.db, e) for e in entries]
+		return [PlanetEntry(self.backend, e) for e in entries]
 
 	def render(self, text, limit=0):
 		if limit and len(text) >= limit:
 			text = text[:limit] + "..."
+
 		return textile.textile(text)
 
 	def _generate_slug(self, title):
@@ -228,7 +237,7 @@ class Planet(object):
 		args.append(len(tags))
 
 		entries = self.db.query(query % " OR ".join(clauses), *args)
-		return [PlanetEntry(self.db, e) for e in entries]
+		return [PlanetEntry(self.backend, e) for e in entries]
 
 	def search_autocomplete(self, what):
 		tags = what.split()

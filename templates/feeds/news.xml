@@ -1,0 +1,5 @@
+{% extends "base.xml" %}
+
+{% block title %}IPFire.org - News{% end block%}
+{% block url %}http://www.ipfire.org/{% end block %}
+{% block description %}IPFire News Feed{% end block %}

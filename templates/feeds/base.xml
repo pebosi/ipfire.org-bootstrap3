@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>{% block title %}{% end block %}</title>
+		<link>{% block url %}{% end block %}</link>
+		<description>{% block description %}{% end block %}</description>
+		<language>{{ lang }}</language>
+		<copyright>{% block copyright %}IPFire Team{% end block %}</copyright>
+		<pubDate>Thu, 8 Nov 2007 00:00:00 +0200</pubDate>
+		{% for item in items %}
+			<item>
+				<title>{{ item.title }}</title>
+				<link>{{ item.url }}</link>
+				<author>{{ item.author.email }} ({{ item.author.name }})</author>
+				<guid>{{ item.url }}</guid>
+				<pubDate>{{ item.published.strftime("%a, %d %b %Y %H:%M:%S +0200") }}</pubDate>
+				<description>
+					<![CDATA[{% raw item.markup %}]]>
+				</description>
+			</item>
+		{% end %}
+	</channel>
+</rss>

@@ -6,17 +6,16 @@ import ldap
 import logging
 import urllib
 
-from misc import Singleton
+from misc import Object
 from settings import Settings
 
-class Accounts(object):
-	__metaclass__ = Singleton
-
+class Accounts(Object):
 	@property
 	def settings(self):
 		return Settings()
 
-	def __init__(self):
+	def __init__(self, backend):
+		Object.__init__(self, backend)
 		self.__db = None
 
 		self._init()
@@ -51,7 +50,7 @@ class Accounts(object):
 
 		for dn, attrs in results:
 			#if attrs["loginShell"] == ["/bin/bash"]:
-			self._accounts[dn] = Account(dn)
+			self._accounts[dn] = Account(self.backend, dn)
 
 	def list(self):
 		return sorted(self._accounts.values())
@@ -68,8 +67,9 @@ class Accounts(object):
 	search = find
 
 
-class Account(object):
-	def __init__(self, dn):
+class Account(Object):
+	def __init__(self, backend, dn):
+		Object.__init__(self, backend)
 		self.dn = dn
 
 		self.__attributes = {}
@@ -82,7 +82,7 @@ class Account(object):
 
 	@property
 	def db(self):
-		return Accounts().db
+		return self.accounts.db
 
 	@property
 	def attributes(self):
@@ -147,6 +147,10 @@ class Account(object):
 	@property
 	def is_admin(self):
 		return True # XXX todo
+
+	@property
+	def name(self):
+		return self.cn
 
 	@property
 	def email(self):

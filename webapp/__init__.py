@@ -22,6 +22,8 @@ tornado.locale.load_gettext_translations(os.path.join(BASEDIR, "translations"), 
 
 class Application(tornado.web.Application):
 	def __init__(self):
+		self.__backend = None
+
 		settings = dict(
 			cookie_secret = "aXBmaXJlY29va2llc2VjcmV0Cg==",
 			debug = options.debug,
@@ -245,6 +247,13 @@ class Application(tornado.web.Application):
 
 	def __del__(self):
 		logging.info("Shutting down application")
+
+	@property
+	def backend(self):
+		if self.__backend is None:
+			self.__backend = backend.Backend()
+
+		return self.__backend
 
 	@property
 	def ioloop(self):

@@ -1,0 +1,5 @@
+{% extends "base.xml" %}
+
+{% block title %}planet.ipfire.org{% end block%}
+{% block url %}http://planet.ipfire.org/{% end block %}
+{% block description %}IPFire Planet Feed{% end block %}

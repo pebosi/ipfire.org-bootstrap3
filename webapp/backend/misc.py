@@ -1,5 +1,22 @@
 #!/usr/bin/python
 
+class Object(object):
+	def __init__(self, backend):
+		self.backend = backend
+
+	@property
+	def db(self):
+		return self.backend.db
+
+	@property
+	def accounts(self):
+		return self.backend.accounts
+
+	@property
+	def planet(self):
+		return self.backend.planet
+
+
 class Singleton(type):
 	"""
 		A class for using the singleton pattern
