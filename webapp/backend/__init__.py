@@ -6,6 +6,8 @@ from tornado.options import define, options, parse_command_line
 define("debug", default=False, help="Run in debug mode", type=bool)
 parse_command_line()
 
+from base import Backend
+
 from ads	import Advertisements
 from accounts	import Accounts
 from banners	import Banners

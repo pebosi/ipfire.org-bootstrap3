@@ -4,18 +4,8 @@ import tornado.web
 
 from handlers_base import *
 
-import backend
-
-from backend.databases import Databases
-
 class PlanetBaseHandler(BaseHandler):
-	@property
-	def db(self):
-		return Databases().webapp
-
-	@property
-	def planet(self):
-		return backend.Planet()
+	pass
 
 
 class PlanetMainHandler(PlanetBaseHandler):

@@ -104,12 +104,16 @@ class BaseHandler(tornado.web.RequestHandler):
 		return ret
 
 	@property
+	def backend(self):
+		return self.application.backend
+
+	@property
 	def advertisements(self):
 		return backend.Advertisements()
 
 	@property
 	def accounts(self):
-		return backend.Accounts()
+		return self.backend.accounts
 
 	@property
 	def banners(self):
@@ -149,7 +153,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
 	@property
 	def planet(self):
-		return backend.Planet()
+		return self.backend.planet
 
 	@property
 	def wishlist(self):
