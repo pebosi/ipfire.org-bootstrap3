@@ -98,7 +98,10 @@ class BaseHandler(tornado.web.RequestHandler):
 		if self.settings.get("debug", False):
 			return ret
 
-		if static:
+		elif self.request.host == "admin.ipfire.org":
+			return ret
+
+		elif static:
 			return "http://static.ipfire.org%s" % ret
 
 		return ret
