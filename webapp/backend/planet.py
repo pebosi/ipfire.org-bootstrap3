@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import datetime
 import re
 import textile
 import tornado.database
@@ -24,17 +25,28 @@ class PlanetEntry(Object):
 	def slug(self):
 		return self.data.slug
 
-	@property
-	def title(self):
-		return self.data.title
+	def set_title(self, title):
+		if self.title == title:
+			return
+
+		self.db.execute("UPDATE planet SET title = %s WHERE id = %s", title, self.id)
+		self.data["title"] = title
+
+	title = property(lambda s: s.data.title, set_title)
 
 	@property
 	def url(self):
 		return "http://planet.ipfire.org/post/%s" % self.slug
 
-	@property
-	def published(self):
-		return self.data.published
+	def set_published(self, published):
+		if self.published == published:
+			return
+
+		self.db.execute("UPDATE planet SET published = %s WHERE id = %s",
+			published, self.id)
+		self.data["published"] = published
+
+	published = property(lambda s: s.data.published, set_published)
 
 	@property
 	def year(self):
@@ -48,9 +60,23 @@ class PlanetEntry(Object):
 	def updated(self):
 		return self.data.updated
 
-	@property
-	def markdown(self):
+	def get_markdown(self):
 		return self.data.markdown
+
+	def set_markdown(self, markdown):
+		if self.markdown == markdown:
+			return
+
+		markup = self.render(markdown)
+		self.db.execute("UPDATE planet SET markdown = %s, markup = %s WHERE id = %s",
+			markdown, markup, self.id)
+
+		self.data.update({
+			"markdown" : markdown,
+			"markup"   : markup,
+		})
+
+	markdown = property(get_markdown, set_markdown)
 
 	@property
 	def markup(self):
@@ -77,6 +103,21 @@ class PlanetEntry(Object):
 			self.__author = self.accounts.search(self.data.author_id)
 
 		return self.__author
+
+	def set_status(self, status):
+		if self.status == status:
+			return
+
+		self.db.execute("UPDATE planet SET status = %s WHERE id = %s", status, self.id)
+		self.data["status"] = status
+
+	status = property(lambda s: s.data.status, set_status)
+
+	def is_draft(self):
+		return self.status == "draft"
+
+	def is_published(self):
+		return self.status == "published"
 
 	# Tags
 
@@ -205,6 +246,24 @@ class Planet(Object):
 			slug += "-"
 
 		return slug
+
+	def create(self, title, markdown, author, status="published", tags=None, published=None):
+		slug = self._generate_slug(title)
+		markup = self.render(markdown)
+
+		if published is None:
+			published = datetime.datetime.utcnow()
+
+		id = self.db.execute("INSERT INTO planet(author_id, slug, title, status, \
+			markdown, markup, published) VALUES(%s, %s, %s, %s, %s, %s, %s)",
+			author.uid, slug, title, status, markdown, markup, published)
+
+		entry = self.get_entry_by_id(id)
+
+		if tags:
+			entry.tags = tags
+
+		return entry
 
 	def update_entry(self, entry):
 		self.db.execute("UPDATE planet SET title = %s, markdown = %s WHERE id = %s",

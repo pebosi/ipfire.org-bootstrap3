@@ -218,7 +218,8 @@ class Application(tornado.web.Application):
 			# Planet
 			(r"/planet", AdminPlanetHandler),
 			(r"/planet/compose", AdminPlanetComposeHandler),
-			(r"/planet/edit/([0-9]+)", AdminPlanetEditHandler),
+			(r"/planet/edit/(.*)", AdminPlanetEditHandler),
+			(r"/planet/publish/(.*)", AdminPlanetPublishHandler),
 			# Mirrors
 			(r"/mirrors", AdminMirrorsHandler),
 			(r"/mirrors/create", AdminMirrorsCreateHandler),

@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import datetime
 import tornado.web
 
 from handlers_base import *
@@ -7,14 +8,6 @@ from handlers_base import *
 import backend
 
 class AdminBaseHandler(BaseHandler):
-	@property
-	def accounts(self):
-		return backend.Accounts()
-
-	@property
-	def planet(self):
-		return backend.Planet()
-
 	@property
 	def downloads(self):
 		return backend.Downloads()
@@ -61,55 +54,72 @@ class AdminApiPlanetRenderMarkupHandler(AdminBaseHandler):
 		output = {
 			"html" : self.planet.render(text),
 		}
-		self.write(output)
-		self.finish()
+		self.finish(output)
 
 
 class AdminPlanetHandler(AdminBaseHandler):
 	@tornado.web.authenticated
 	def get(self):
-		entries = self.planet.get_entries(limit=100)
+		entries = self.planet.get_entries(status=None, limit=100)
 
 		self.render("admin-planet.html", entries=entries)
 
 
 class AdminPlanetComposeHandler(AdminBaseHandler):
 	@tornado.web.authenticated
-	def get(self, id=None):
-		entry = backend.PlanetEntry(self.planet.db)
+	def get(self, slug=None):
+		entry = None
 
-		if id:
-			entry = self.planet.get_entry_by_id(id)
+		if slug:
+			entry = self.planet.get_entry_by_slug(slug)
+			if not entry:
+				raise tornado.web.HTTPError(404)
 
 		self.render("admin-planet-compose.html", entry=entry)
 
 	@tornado.web.authenticated
-	def post(self, id=None):
-		id = self.get_argument("id", id)
-
-		entry = backend.PlanetEntry(self.planet.db)
-
-		if id:
-			entry = self.planet.get_entry_by_id(id)
-
-		entry.set("title", self.get_argument("title"))
-		entry.set("markdown", self.get_argument("markdown"))
-		entry.set("author_id", self.current_user)
-
-		if id:
-			self.planet.update_entry(entry)
-		else:
-			id = self.planet.save_entry(entry)
-			entry.id = id
-
+	def post(self):
+		title = self.get_argument("title")
+		markdown = self.get_argument("markdown")
 		tags = self.get_argument("tags", "")
-		entry.tags = tags.split()
+
+		status = self.get_argument("status", "draft")
+
+		author = self.accounts.find(self.current_user)
+
+		entry = self.planet.create(title=title, markdown=markdown,
+			author=author, status=status, tags=tags.split())
 
 		self.redirect("/planet")
 
 
 class AdminPlanetEditHandler(AdminPlanetComposeHandler):
-	pass
+	@tornado.web.authenticated
+	def post(self, slug):
+		entry = self.planet.get_entry_by_slug(slug)
+		if not entry:
+			raise tornado.web.HTTPError(404)
+
+		entry.title = self.get_argument("title")
+		entry.markdown = self.get_argument("markdown")
+		entry.tags = self.get_argument("tags", "").split()
+
+		entry.status = self.get_argument("status", "draft")
+
+		self.redirect("/planet")
+
+
+class AdminPlanetPublishHandler(AdminBaseHandler):
+	@tornado.web.authenticated
+	def get(self, slug):
+		entry = self.planet.get_entry_by_slug(slug)
+		if not entry:
+			raise tornado.web.HTTPError(404)
+
+		entry.status = "published"
+		entry.published = datetime.datetime.utcnow()
+
+		self.redirect("/planet")
 
 
 class AdminAccountsBaseHandler(AdminBaseHandler):

@@ -8,7 +8,7 @@
 	<form class="form-horizontal" action="" method="POST" name="entry">
 		{% raw xsrf_form_html() %}
 
-		{% if entry.id %}
+		{% if entry %}
 			<input type="hidden" name="id" value="{{ entry.id }}">
 		{% end %}
 
@@ -16,14 +16,14 @@
 			<label class="control-label" for="inputTitle">{{ _("Title") }}</label>
 			<div class="controls">
 				<input class="input-block-level" type="text" name="title" id="inputTitle"
-					value="{{ entry.title }}" placeholder="{{ _("Title") }}">
+					{% if entry %}value="{{ entry.title }}"{% end %} placeholder="{{ _("Title") }}">
 			</div>
 		</div>
 
 		<div class="control-group">
 			<div class="controls">
 				<textarea class="input-block-level" name="markdown" rows="12" id="inputMarkdown"
-					placeholder="{{ _("Content") }}">{{ entry.markdown }}</textarea>
+					placeholder="{{ _("Content") }}">{% if entry %}{{ entry.markdown }}{% end %}</textarea>
 			</div>
 		</div>
 
@@ -33,10 +33,27 @@
 			<label class="control-label" for="inputTags">{{ _("Tags") }}</label>
 			<div class="controls">
 				<input class="input-block-level planet-search-autocomplete" type="text"
-					name="tags" id="inputTags" value="{{ " ".join(entry.tags) }}"
+					name="tags" id="inputTags" {% if entry %}value="{{ " ".join(entry.tags) }}"{% end %}
 					placeholder="{{ _("Tags") }}" autocomplete="off">
 			</div>
 		</div>
+
+		<hr>
+
+		<div class="control-group">
+			<label class="control-label" for="inputStatus">{{ _("Status") }}</label>
+			<div class="controls">
+				<label class="radio inline">
+					<input type="radio" name="inputStatus" value="draft" {% if not entry or not entry.is_published() %}checked{% end %}>
+					{{ _("Draft") }}
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="inputStatus" value="published" {% if entry and entry.is_published() %}checked{% end %}>
+					{{ _("Published") }}
+				</label>
+			</div>
+		</div>
+
 		<div class="form-actions">
 			<button type="submit" class="btn btn-primary">{{ _("Save") }}</button>
 			<a class="btn" href="javascript:preview();">{{ _("Preview") }}</a>
