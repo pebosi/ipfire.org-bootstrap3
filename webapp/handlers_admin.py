@@ -84,6 +84,7 @@ class AdminPlanetComposeHandler(AdminBaseHandler):
 		tags = self.get_argument("tags", "")
 
 		status = self.get_argument("status", "draft")
+		assert status in ("draft", "published")
 
 		author = self.accounts.find(self.current_user)
 

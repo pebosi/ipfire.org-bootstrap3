@@ -41,14 +41,14 @@
 		<hr>
 
 		<div class="control-group">
-			<label class="control-label" for="inputStatus">{{ _("Status") }}</label>
+			<label class="control-label">{{ _("Status") }}</label>
 			<div class="controls">
 				<label class="radio inline">
-					<input type="radio" name="inputStatus" value="draft" {% if not entry or not entry.is_published() %}checked{% end %}>
+					<input type="radio" name="status" value="draft" {% if not entry or not entry.is_published() %}checked{% end %}>
 					{{ _("Draft") }}
 				</label>
 				<label class="radio inline">
-					<input type="radio" name="inputStatus" value="published" {% if entry and entry.is_published() %}checked{% end %}>
+					<input type="radio" name="status" value="published" {% if entry and entry.is_published() %}checked{% end %}>
 					{{ _("Published") }}
 				</label>
 			</div>
