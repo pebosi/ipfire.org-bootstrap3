@@ -8,7 +8,7 @@ import logging
 import pymongo
 import re
 
-from misc import Singleton
+from misc import Object
 
 DATABASE_HOST = ["wilhelmina.ipfire.org", "miranda.ipfire.org", "falco.ipfire.org",]
 DATABASE_NAME = "stasy"
@@ -27,9 +27,11 @@ CPU_VENDORS = {
 	"Geode by NSC" : "NSC",
 	"NexGenDriven" : "NexGen",
 	"RiseRiseRise" : "Rise",
+	"SiS SiS SiS"  : "SiS",
 	"SiS SiS SiS " : "SiS",
 	"UMC UMC UMC " : "UMC",
 	"VIA VIA VIA " : "VIA",
+	"Vortex86 SoC" : "Vortex86",
 }
 
 CPU_STRINGS = (
@@ -397,10 +399,8 @@ class Profile(ProfileDict):
 			return ProfileNetwork(network)
 
 
-class Stasy(object):
-	__metaclass__ = Singleton
-
-	def __init__(self):
+class Stasy(Object):
+	def init(self):
 		# Initialize database connection
 		self._conn = pymongo.Connection(DATABASE_HOST)
 		self._db = self._conn[DATABASE_NAME]
@@ -809,8 +809,3 @@ class Stasy(object):
 				{ "profile.system.release" : release }).count()
 
 		return updates
-
-
-if __name__ == "__main__":
-	s = Stasy()
-

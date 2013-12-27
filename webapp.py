@@ -14,7 +14,7 @@ import tornado.options
 from webapp import Application
 
 if __name__ == "__main__":
-	app = Application()
+	app = Application(configfile="webapp.conf")
 
 	context = daemon.DaemonContext(
 		working_directory=os.getcwd(),

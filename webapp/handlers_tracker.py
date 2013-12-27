@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import re
 import tornado.web
 
 from backend.tracker import bencode, bdecode, decode_hex
@@ -41,33 +42,7 @@ class TrackerDownloadHandler(BaseHandler):
 		self.redirect("http://downloads.ipfire.org/%s.torrent" % file.filename)
 
 
-#class TrackerTorrentsHandler(BaseHandler):
-#	@property
-#	def tracker(self):
-#		return self.tracker
-#
-#	def get(self):		
-#		releases = []
-#
-#		for release in self.releases.get_all():
-#			if not release.torrent_hash:
-#				continue
-#
-#			release.torrent_hash = release.torrent_hash.lower()
-#
-#			release.torrent_peers = self.tracker.incomplete(release.torrent_hash)
-#			release.torrent_seeds = self.tracker.complete(release.torrent_hash)
-#
-#			releases.append(release)
-#
-#		self.render("tracker-torrents.html", releases=releases)
-
-
-class TrackerBaseHandler(tornado.web.RequestHandler):
-	@property
-	def tracker(self):
-		return backend.Tracker()
-
+class TrackerBaseHandler(BaseHandler):
 	def get_hexencoded_argument(self, name, all=False):
 		try:
 			arguments = self.request.arguments[name]
@@ -86,74 +61,133 @@ class TrackerBaseHandler(tornado.web.RequestHandler):
 		return arguments[0]
 
 	def send_tracker_error(self, error_message):
-		self.write(bencode({"failure reason" : error_message }))
-		self.finish()
+		msg = bencode({"failure reason" : error_message })
+		self.finish(msg)
 
 
 class TrackerAnnounceHandler(TrackerBaseHandler):
-	def get(self):
+	def prepare(self):
 		self.set_header("Content-Type", "text/plain")
 
+	def get_ipv6_address(self, default_port):
+		# Get the external IP address of the client.
+		addr = self.get_remote_ip()
+
+		if ":" in addr:
+			return addr, default_port
+
+		# IPv6
+		ipv6 = self.get_argument("ipv6", None)
+		if ipv6:
+			port = default_port
+
+			m = re.match("^\[(.*)\]\:(\d)$", ipv6)
+			if m:
+				ipv6, port = (m.group(1), m.group(2))
+
+			return ipv6, port
+
+		return None, None
+
+	def get_ipv4_address(self, default_port):
+		# Get the external IP address of the client.
+		addr = self.get_remote_ip()
+
+		if not ":" in addr:
+			return addr, default_port
+
+		# IPv4
+		ipv4 = self.get_argument("ipv4", None)
+		if ipv4:
+			return ipv4, default_port
+
+		ip = self.get_argument("ip", None)
+		if ip:
+			return ip, default_port
+
+		return None, None
+
+	def get_port(self):
+		# Get the port and check it for sanity
+		port = self.get_argument("port", None)
+
+		try:
+			port = int(port)
+
+			if port < 0 or port > 65535:
+				raise ValueError
+		except (TypeError, ValueError):
+			port = None
+
+		return port
+
+	def get(self):
+		# Get the info hash
 		info_hash = self.get_hexencoded_argument("info_hash")
 		if not info_hash:
-			self.send_tracker_error("Your client forgot to send your torrent's info_hash.")
+			self.send_tracker_error("Your client forgot to send your torrent's info_hash")
 			return
 
-		# Fix for clients behind a proxy that sends "X-Forwarded-For".
-		ip_addr = self.request.remote_ip.split(", ")
-		if ip_addr:
-			ip_addr = ip_addr[-1]
+		# Get the peer id
+		peer_id = self.get_hexencoded_argument("peer_id")
 
-		peer = {
-			"id" : self.get_hexencoded_argument("peer_id"),
-			"ip" : ip_addr,
-			"port" : self.get_argument("port", None),
-			"downloaded" : self.get_argument("downloaded", 0),
-			"uploaded" : self.get_argument("uploaded", 0),
-			"left" : self.get_argument("left", 0),
-		}
-
-		event = self.get_argument("event", "")
-		if not event in ("started", "stopped", "completed", ""):
-			self.send_tracker_error("Got unknown event")
+		# Get the port and check it for sanity
+		port = self.get_port()
+		if not port:
+			self.send_tracker_error("Invalid port number or port number missing")
 			return
 
-		if peer["port"]:
-			peer["port"] = int(peer["port"])
+		addr_ipv6, port_ipv6 = self.get_ipv6_address(port)
+		addr_ipv4, port_ipv4 = self.get_ipv4_address(port)
 
-			if peer["port"] < 0 or peer["port"] > 65535:
-				self.send_tracker_error("Port number is not in valid range")
+		# Handle events
+		event = self.get_argument("event", None)
+		if event:
+			if not event in ("started", "stopped", "completed"):
+				self.send_tracker_error("Got unknown event")
 				return
 
-		eventhandlers = {
-			"started" : self.tracker.event_started,
-			"stopped" : self.tracker.event_stopped,
-			"completed" : self.tracker.event_completed,
+			self.tracker.handle_event(event, peer_id, info_hash,
+				address6=addr_ipv6, port6=port_ipv6, address4=addr_ipv4, port4=port_ipv4)
+
+		peer_info = {
+			"address6"   : addr_ipv6,
+			"port6"      : port_ipv6,
+			"address4"   : addr_ipv4,
+			"port4"      : port_ipv4,
+			"downloaded" : self.get_argument("downloaded", 0),
+			"uploaded"   : self.get_argument("uploaded", 0),
+			"left_data"  : self.get_argument("left", 0),
 		}
 
-		if event:
-			eventhandlers[event](info_hash, peer["id"])
-
-		self.tracker.update(hash=info_hash, **peer)
+		self.tracker.update_peer(peer_id, info_hash, **peer_info)
 
 		no_peer_id = self.get_argument("no_peer_id", False)
 		numwant = self.get_argument("numwant", self.tracker.numwant)
 
-		self.write(bencode({
-			"tracker id" : self.tracker.id,
-			"interval" : self.tracker.interval,
+		peers = self.tracker.get_peers(info_hash, limit=numwant, no_peer_id=no_peer_id)
+
+		response = bencode({
+			"tracker id"   : self.tracker.tracker_id,
+			"interval"     : self.tracker.interval,
 			"min interval" : self.tracker.min_interval,
-			"peers" : self.tracker.get_peers(info_hash, limit=numwant,
-				random=True, no_peer_id=no_peer_id),
-			"complete" : self.tracker.complete(info_hash),
-			"incomplete" : self.tracker.incomplete(info_hash),
-		}))
-		self.finish()
+			"peers"        : peers,
+			"complete"     : self.tracker.complete(info_hash),
+			"incomplete"   : self.tracker.incomplete(info_hash),
+		})
+		self.finish(response)
+
+	def on_finish(self):
+		"""
+			Cleanup after every request.
+		"""
+		self.tracker.cleanup_peers()
 
 
 class TrackerScrapeHandler(TrackerBaseHandler):
 	def get(self):
 		info_hashes = self.get_hexencoded_argument("info_hash", all=True)
 
-		self.write(bencode(self.tracker.scrape(hashes=info_hashes)))
-		self.finish()
+		response = self.tracker.scrape(info_hashes)
+
+		self.finish(bencode(response))

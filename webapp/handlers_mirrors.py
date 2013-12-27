@@ -7,35 +7,39 @@ from handlers_base import *
 
 class MirrorIndexHandler(BaseHandler):
 	def get(self):
-		ip_addr = self.get_argument("addr", self.request.remote_ip)
+		ip_addr = self.get_argument("addr", None)
+		if not ip_addr:
+			ip_addr = self.get_remote_ip()
+
+		location = self.geoip.get_location(ip_addr)
 
 		# Get a list of all mirrors.
-		all_mirrors = self.mirrors.get_all()
+		mirrors = self.mirrors.get_all()
 
 		# Choose the preferred ones by their location.
-		preferred_mirrors = all_mirrors.get_for_location(ip_addr)
-
-		# Remove the preferred ones from the list of the rest.
-		other_mirrors = all_mirrors - preferred_mirrors
+		preferred_mirrors = mirrors.get_for_location(location)
 
 		self.render("mirrors.html",
-			preferred_mirrors=preferred_mirrors, other_mirrors=other_mirrors)
+			preferred_mirrors=preferred_mirrors, mirrors=mirrors)
 
 
 class MirrorItemHandler(BaseHandler):
-	def get(self, id):
-		mirror = self.mirrors.get(id)
+	def get(self, what):
+		mirror = self.mirrors.get_by_hostname(what)
 		if not mirror:
-			raise tornado.web.HTTPError(404)
+			mirror = self.mirrors.get(id)
 
-		ip_addr = self.get_argument("addr", self.request.remote_ip)
-		client_location = self.geoip.get_all(ip_addr)
+		if not mirror:
+			raise tornado.web.HTTPError(404, what)
+
+		ip_addr = self.get_argument("addr", None)
+		if not ip_addr:
+			ip_addr = self.get_remote_ip()
+		client_location = self.geoip.get_location(ip_addr)
 
 		client_distance = mirror.distance_to(client_location, ignore_preference=True)
-		client_distance *= 111.32 # to km
 
-		self.render("mirrors-item.html", item=mirror,
-			client_distance=client_distance)
+		self.render("mirrors-item.html", item=mirror, client_distance=client_distance)
 
 
 class MirrorHandler(BaseHandler):
@@ -65,7 +69,7 @@ class MirrorListPakfire2Handler(BaseHandler):
 
 		lines = []
 		for m in mirrors:
-			if not m.mirrorlist or not m.is_pakfire2():
+			if not m.mirrorlist:
 				continue
 
 			# Skip all non-development mirrors
@@ -73,10 +77,7 @@ class MirrorListPakfire2Handler(BaseHandler):
 			if development and not m.development:
 				continue
 
-			path = [m.path,]
-
-			if m.type == "full":
-				path.append("pakfire2")
+			path = [m.path, "pakfire2"]
 
 			if suffix:
 				path.append(suffix)

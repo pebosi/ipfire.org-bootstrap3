@@ -17,52 +17,87 @@
 		<h1>{{ item.hostname }}</h1>
 	</div>
 
-	<table class="table">
-		<tr>
-			<td>{{ _("Last update") }}</td>
-			<td>{{ locale.format_date(item.last_update, full_format=True) }}</td>
-		</tr>
-		<tr>
-			<td>{{ _("Owner") }}</td>
-			<td>{{ item.owner }}</td>
-		</tr>
-		{% if item.prefer_for_countries %}
-			<tr>
-				<td>{{ _("Preferred for") }}</td>
-				<td>{{ locale.list(item.prefer_for_countries_names) }}</td>
-			</tr>
-		{% end %}
-		{% if client_distance %}
-			<tr>
-				<td>{{ _("Your distance to this mirror") }}</td>
-				<td>{{ "%.1f km" % client_distance }}</td>
-			</tr>
-		{% end %}
-	</table>
+	<div class="row">
+		<div class="span4">
+			{% if item.owner %}
+				<dt>{{ _("Owner") }}</dt>
+				<dd>{{ item.owner }}</dd>
+			{% end %}
 
-	<a class="btn pull-right" href="{{ item.url }}">{{ _("Go to mirror") }}</a>
+			{% if item.location_str %}
+				<hr>
 
-	<br style="clear: both;">
-	<hr>
+				<dt>{{ _("Location") }}</dt>
+				<dd>{{ item.location_str }}</dd>
+			{% elif item.location %}
+				<hr>
 
-	<h3>{{ _("Mirror location") }}</h3>
-	<p>
-		{{ _("The mirror <em>%s</em> is located in %s.") % (item.hostname, item.location_str) }}
-	</p>
+				{% if item.country_name %}
+					<dt>{{ _("Country") }}</dt>
+					<dd>{{ item.country_name }}</dd>
+				{% end %}
 
-	{% if item.longitude and item.latitude %}
-		<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-			src="http://www.openstreetmap.org/export/embed.html?bbox={{ item.longitude - 4 }},{{ item.latitude - 4 }},{{ item.longitude + 4 }},{{ item.latitude + 4 }}&amp;layer=mapquest&amp;marker={{ item.latitude }},{{ item.longitude }}" style="border: 1px solid black">
-		</iframe>
-		<p>
-			<a href="http://www.openstreetmap.org/?lat={{ item.latitude }}&amp;lon={{ item.longitude }}&amp;zoom=8&amp;layers=M&amp;mlat={{ item.latitude }}&amp;mlon={{ item.longitude }}" target="_blank">{{ _("View larger map") }}</a>
-			-
-			&copy; <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA
-		</p>
-		<p class="muted ac">
-			{{ _("The location of the mirror server is estimated by the IP address.") }}
-		</p>
-	{% else %}
-		{{ _("The location of the mirror server could not be estimated.") }}
-	{% end %}
+				{% if item.location.city %}
+					<dt>{{ _("City") }}</dt>
+					<dd>{{ item.location.city }}</dd>
+				{% end %}
+			{% end %}
+
+			{% if item.prefer_for_countries %}
+				<dt>{{ _("Preferred for") }}</dt>
+				<dd>
+					{{ locale.list(item.prefer_for_countries_names) }}
+				</dd>
+			{% end %}
+
+			{% if client_distance %}
+				<dt>{{ _("Estimated distance to you") }}</dt>
+				<dd>{{ "%.0fkm" % client_distance }}</dd>
+			{% end %}
+
+			<hr>
+
+			{% if item.asn %}
+				<dt>{{ _("Autonomous System") }}</dt>
+				<dd>{{ item.asn }}</dd>
+			{% end %}
+
+			<dt>{{ _("IP Addresses") }}</dt>
+			<dd>
+				{% for addr in item.addresses6 + item.addresses4 %}
+					{{ addr }}<br>
+				{% end %}
+			</dd>
+
+			{% if item.enabled %}
+				<hr>
+
+				<dt>{{ _("Last updated") }}</dt>
+				<dd>
+					<abbr title="{{ locale.format_date(item.last_update, full_format=True) }} UTC">
+						{{ locale.format_date(item.last_update, relative=True) }}
+					</abbr>
+				</dd>
+			{% end %}
+
+			<hr>
+
+			<p class="ac">
+				<a class="btn" href="{{ item.url }}">{{ _("Go to mirror") }}</a>
+			</p>
+		</div>
+
+		<div class="span8">
+			{% if item.location %}
+				{% module Map(item.latitude, item.longitude) %}
+				<p class="muted ac">
+					{{ _("The location of the mirror server is estimated by the IP address.") }}
+				</p>
+			{% else %}
+				<p class="ac muted">
+					{{ _("The location of this mirror server could not be estimated.") }}
+				</p>
+			{% end %}
+		</div>
+	</div>
 {% end block %}

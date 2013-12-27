@@ -1,71 +1,56 @@
 #!/usr/bin/python
 
-from databases import Databases
-from misc import Singleton
+from misc import Object
 
-class News(object):
-	__metaclass__ = Singleton
-
-	@property
-	def db(self):
-		return Databases().webapp
-
-	def list(self):
-		return [i.uuid for i in self.db.query("SELECT DISTINCT uuid FROM news ORDER BY date")]
-
+class News(Object):
 	def get(self, uuid, lang="en"):
-		return self.db.get("SELECT * FROM news WHERE uuid=%s AND lang=%s",
-			uuid, lang)
+		return self.db.get("SELECT * FROM news WHERE uuid = %s AND lang = %s \
+			AND published IS NOT NULL AND published <= NOW()", uuid, lang)
 
 	def get_by_slug(self, slug):
-		return self.db.get("SELECT * FROM news WHERE slug=%s", slug)
+		return self.db.get("SELECT * FROM news WHERE slug = %s \
+			AND published IS NOT NULL AND published <= NOW()", slug)
 
 	def get_latest(self, author=None, locale=None, limit=1, offset=0):
-		query = "SELECT * FROM news WHERE published='Y'"
+		query = "SELECT * FROM news WHERE published IS NOT NULL AND published <= NOW()"
+		args = []
 
 		if author:
-			query += " AND author_id='%s'" % author
+			query += " AND author_id = %s"
+			args.append(author)
 
 		if locale:
-			query += " AND lang='%s'" % locale.code[:2]
+			query += " AND lang = %s"
+			args.append(locale.code[:2])
 
-		query += " ORDER BY date DESC"
+		query += " ORDER BY published DESC"
 
 		if limit:
+			query += " LIMIT %s"
+			args.append(limit)
+
 			if offset:
-				query += " LIMIT %d,%d" % (offset, limit)
-			else:
-				query += " LIMIT %d" % limit
+				query += " OFFSET %s"
+				args.append(offset)
 
-		news = self.db.query(query)
-
-		return news
+		return self.db.query(query, *args)
 
 	def get_by_year(self, year, locale=None):
-		query = "SELECT * FROM news WHERE published = 'Y' AND YEAR(date) = %s"
+		query = "SELECT * FROM news WHERE published IS NOT NULL AND published <= NOW() \
+			AND EXTRACT(YEAR FROM published) = %s"
 		args  = [year,]
 
 		if locale:
 			query += " AND lang = %s"
 			args.append(locale.code[:2])
 
-		query += " ORDER BY date DESC"
+		query += " ORDER BY published DESC"
 
 		return self.db.query(query, *args)
 
 	@property
 	def years(self):
-		years = []
+		query = self.db.query("SELECT DISTINCT EXTRACT(YEAR FROM published)::integer AS year FROM news \
+			WHERE published IS NOT NULL AND published <= NOW() ORDER BY year DESC")
 
-		for row in self.db.query("SELECT DISTINCT YEAR(date) AS year FROM news \
-				WHERE published = 'Y' ORDER BY year DESC"):
-			years.append(row.year)
-
-		return years
-
-
-if __name__ == "__main__":
-	n = News()
-
-	print n.list()
-	print n.get_latest()
+		return [r.year for r in query]

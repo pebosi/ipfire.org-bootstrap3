@@ -7,436 +7,1209 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-22 11:43+0200\n"
+"POT-Creation-Date: 2013-12-27 11:53+0100\n"
 "PO-Revision-Date: 2013-07-22 11:44+0100\n"
 "Last-Translator: Michael Tremer <michael.tremer@ipfire.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: webapp/handlers_news.py:43 webapp/ui_modules.py:76
-msgid "Unknown author"
-msgstr "Unbekannter Autor"
-
-#: webapp/__init__.py:285
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "January"
-msgstr "Januar"
-
-#: webapp/__init__.py:287
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "February"
-msgstr "Februar"
-
-#: webapp/__init__.py:289
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "March"
-msgstr "März"
-
-#: webapp/__init__.py:291
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:225
-msgid "April"
-msgstr "April"
-
-#: webapp/__init__.py:293
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "May"
-msgstr "Mai"
-
-#: webapp/__init__.py:295
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "June"
-msgstr "Juni"
-
-#: webapp/__init__.py:297
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "July"
-msgstr "Juli"
-
-#: webapp/__init__.py:299
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:226
-msgid "August"
-msgstr "August"
-
-#: webapp/__init__.py:301
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "September"
-msgstr "September"
-
-#: webapp/__init__.py:303
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "October"
-msgstr "Oktober"
-
-#: webapp/__init__.py:305
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "November"
-msgstr "November"
-
-#: webapp/__init__.py:307
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:227
-msgid "December"
-msgstr "Dezember"
-
-#: webapp/ui_modules.py:239
+#: webapp/backend/iuse.py:162
 #, python-format
-msgid "%s to %s"
-msgstr "%s nach %s"
+msgid "Mem: %s"
+msgstr "RAM: %s"
 
-#: webapp/backend/wishlist.py:187
+#: webapp/backend/iuse.py:165
+#, python-format
+msgid "Disk: %s"
+msgstr "HDD: %s"
+
+#: webapp/backend/iuse.py:177
+#, python-format
+msgid "Networks: %s"
+msgstr "Netzwerke: %s"
+
+#: webapp/backend/countries.py:7
+#, fuzzy
+msgid "Andorra"
+msgstr "Hersteller"
+
+#: webapp/backend/countries.py:8
+msgid "United Arab Emirates"
+msgstr ""
+
+#: webapp/backend/countries.py:9
+msgid "Afghanistan"
+msgstr ""
+
+#: webapp/backend/countries.py:10
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: webapp/backend/countries.py:11
+msgid "Aanguilla"
+msgstr ""
+
+#: webapp/backend/countries.py:12
+msgid "Albania"
+msgstr ""
+
+#: webapp/backend/countries.py:13
+msgid "Armenia"
+msgstr ""
+
+#: webapp/backend/countries.py:14
+msgid "Angola"
+msgstr ""
+
+#: webapp/backend/countries.py:15
+msgid "Antarctica"
+msgstr ""
+
+#: webapp/backend/countries.py:16
+msgid "Argentina"
+msgstr ""
+
+#: webapp/backend/countries.py:17
+msgid "American Samoa"
+msgstr ""
+
+#: webapp/backend/countries.py:18
+msgid "Austria"
+msgstr ""
+
+#: webapp/backend/countries.py:19
+msgid "Australia"
+msgstr ""
+
+#: webapp/backend/countries.py:20
+msgid "Aruba"
+msgstr ""
+
+#: webapp/backend/countries.py:21
+msgid "Åland Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:22
+msgid "Azerbaijan"
+msgstr ""
+
+#: webapp/backend/countries.py:23
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: webapp/backend/countries.py:24
+msgid "Barbados"
+msgstr ""
+
+#: webapp/backend/countries.py:25
+msgid "Bangladesh"
+msgstr ""
+
+#: webapp/backend/countries.py:26
+msgid "Belgium"
+msgstr ""
+
+#: webapp/backend/countries.py:27
+msgid "Burkina Faso"
+msgstr ""
+
+#: webapp/backend/countries.py:28
+msgid "Bulgaria"
+msgstr ""
+
+#: webapp/backend/countries.py:29
+msgid "Bahrain"
+msgstr ""
+
+#: webapp/backend/countries.py:30
+msgid "Burundi"
+msgstr ""
+
+#: webapp/backend/countries.py:31
+msgid "Benin"
+msgstr ""
+
+#: webapp/backend/countries.py:32
+msgid "Saint Barthélemy"
+msgstr ""
+
+#: webapp/backend/countries.py:33
+msgid "Bermuda"
+msgstr ""
+
+#: webapp/backend/countries.py:34
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: webapp/backend/countries.py:35
+msgid "Plurinational State of Bolivia"
+msgstr ""
+
+#: webapp/backend/countries.py:36
+msgid "Sint Eustatius and Saba Bonaire"
+msgstr ""
+
+#: webapp/backend/countries.py:37
+msgid "Brazil"
+msgstr ""
+
+#: webapp/backend/countries.py:38
+msgid "Bahamas"
+msgstr ""
+
+#: webapp/backend/countries.py:39
+msgid "Bhutan"
+msgstr ""
+
+#: webapp/backend/countries.py:40
+msgid "Bouvet Island"
+msgstr ""
+
+#: webapp/backend/countries.py:41
+msgid "Botswana"
+msgstr ""
+
+#: webapp/backend/countries.py:42
+msgid "Belarus"
+msgstr ""
+
+#: webapp/backend/countries.py:43
+msgid "Belize"
+msgstr ""
+
+#: webapp/backend/countries.py:44
+msgid "Canada"
+msgstr ""
+
+#: webapp/backend/countries.py:45
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:46
+msgid "The Democratic Republic of the Congo"
+msgstr ""
+
+#: webapp/backend/countries.py:47
+msgid "Central African Republic"
+msgstr ""
+
+#: webapp/backend/countries.py:48
+msgid "Congo"
+msgstr ""
+
+#: webapp/backend/countries.py:49
+msgid "Switzerland"
+msgstr ""
+
+#: webapp/backend/countries.py:50
+msgid "Côte d'Ivoire"
+msgstr ""
+
+#: webapp/backend/countries.py:51
+msgid "Cook Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:52
+msgid "Chile"
+msgstr ""
+
+#: webapp/backend/countries.py:53
+msgid "Cameroon"
+msgstr ""
+
+#: webapp/backend/countries.py:54
+msgid "China"
+msgstr ""
+
+#: webapp/backend/countries.py:55
+msgid "Colombia"
+msgstr ""
+
+#: webapp/backend/countries.py:56
+msgid "Costa Rica"
+msgstr ""
+
+#: webapp/backend/countries.py:57
+msgid "Cuba"
+msgstr ""
+
+#: webapp/backend/countries.py:58
+msgid "Cape Verde"
+msgstr ""
+
+#: webapp/backend/countries.py:59
+msgid "Curaçao"
+msgstr ""
+
+#: webapp/backend/countries.py:60
+msgid "Chrismas Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:61
+msgid "Cyprus"
+msgstr ""
+
+#: webapp/backend/countries.py:62
+msgid "Czech Republic"
+msgstr ""
+
+#: webapp/backend/countries.py:63
+msgid "Germany"
+msgstr ""
+
+#: webapp/backend/countries.py:64
+#, fuzzy
+msgid "Djibouti"
+msgstr "Über"
+
+#: webapp/backend/countries.py:65
+msgid "Denmark"
+msgstr ""
+
+#: webapp/backend/countries.py:66
+msgid "Dominica"
+msgstr ""
+
+#: webapp/backend/countries.py:67
+msgid "Dominican Republic"
+msgstr ""
+
+#: webapp/backend/countries.py:68
+msgid "Algeria"
+msgstr ""
+
+#: webapp/backend/countries.py:69
+msgid "Ecuador"
+msgstr ""
+
+#: webapp/backend/countries.py:70
+msgid "Estonia"
+msgstr ""
+
+#: webapp/backend/countries.py:71
+msgid "Egypt"
+msgstr ""
+
+#: webapp/backend/countries.py:72
+msgid "Western Sahara"
+msgstr ""
+
+#: webapp/backend/countries.py:73
+msgid "Eritrea"
+msgstr ""
+
+#: webapp/backend/countries.py:74
+msgid "Spain"
+msgstr ""
+
+#: webapp/backend/countries.py:75
+msgid "Ethiopia"
+msgstr ""
+
+#: webapp/backend/countries.py:76
+msgid "Finland"
+msgstr ""
+
+#: webapp/backend/countries.py:77
+msgid "Fiji"
+msgstr ""
+
+#: webapp/backend/countries.py:78
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: webapp/backend/countries.py:79
+msgid "Federated States of Micronesia"
+msgstr ""
+
+#: webapp/backend/countries.py:80
+msgid "Faroe Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:81
+#, fuzzy
+msgid "France"
+msgstr "Abbrechen"
+
+#: webapp/backend/countries.py:82
+msgid "Gabon"
+msgstr ""
+
+#: webapp/backend/countries.py:83
+msgid "United Kingdom"
+msgstr ""
+
+#: webapp/backend/countries.py:84
+msgid "Grenada"
+msgstr ""
+
+#: webapp/backend/countries.py:85
+msgid "Georgia"
+msgstr ""
+
+#: webapp/backend/countries.py:86
+msgid "French Guiana"
+msgstr ""
+
+#: webapp/backend/countries.py:87
+msgid "Guersey"
+msgstr ""
+
+#: webapp/backend/countries.py:88
+msgid "Ghana"
+msgstr ""
+
+#: webapp/backend/countries.py:89
+msgid "Gibraltar"
+msgstr ""
+
+#: webapp/backend/countries.py:90
+msgid "Greenland"
+msgstr ""
+
+#: webapp/backend/countries.py:91
+msgid "Gambia"
+msgstr ""
+
+#: webapp/backend/countries.py:92
+msgid "Guinea"
+msgstr ""
+
+#: webapp/backend/countries.py:93
+msgid "Guadeloupe"
+msgstr ""
+
+#: webapp/backend/countries.py:94
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: webapp/backend/countries.py:95
+msgid "Greece"
+msgstr ""
+
+#: webapp/backend/countries.py:96
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:97
+msgid "Guatemala"
+msgstr ""
+
+#: webapp/backend/countries.py:98
+msgid "Guam"
+msgstr ""
+
+#: webapp/backend/countries.py:99
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: webapp/backend/countries.py:100
+msgid "Guyana"
+msgstr ""
+
+#: webapp/backend/countries.py:101
+msgid "Hong Kong"
+msgstr ""
+
+#: webapp/backend/countries.py:102
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:103
+msgid "Honduras"
+msgstr ""
+
+#: webapp/backend/countries.py:104
+msgid "Croatia"
+msgstr ""
+
+#: webapp/backend/countries.py:105
+msgid "Haiti"
+msgstr ""
+
+#: webapp/backend/countries.py:106
+msgid "Hungary"
+msgstr ""
+
+#: webapp/backend/countries.py:107
+msgid "Indonesia"
+msgstr ""
+
+#: webapp/backend/countries.py:108
+msgid "Ireland"
+msgstr ""
+
+#: webapp/backend/countries.py:109
+msgid "Israel"
+msgstr ""
+
+#: webapp/backend/countries.py:110
+msgid "Isle of Man"
+msgstr ""
+
+#: webapp/backend/countries.py:111
+msgid "India"
+msgstr ""
+
+#: webapp/backend/countries.py:112
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: webapp/backend/countries.py:113
+msgid "Iraq"
+msgstr ""
+
+#: webapp/backend/countries.py:114
+msgid "Islamic Republic of Iran"
+msgstr ""
+
+#: webapp/backend/countries.py:115
+msgid "Iceland"
+msgstr ""
+
+#: webapp/backend/countries.py:116
+msgid "Italy"
+msgstr ""
+
+#: webapp/backend/countries.py:117
+msgid "Jersey"
+msgstr ""
+
+#: webapp/backend/countries.py:118
+msgid "Jamaica"
+msgstr ""
+
+#: webapp/backend/countries.py:119
+msgid "Jordan"
+msgstr ""
+
+#: webapp/backend/countries.py:120
+msgid "Japan"
+msgstr ""
+
+#: webapp/backend/countries.py:121
+msgid "Kenya"
+msgstr ""
+
+#: webapp/backend/countries.py:122
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: webapp/backend/countries.py:123
+msgid "Cambodia"
+msgstr ""
+
+#: webapp/backend/countries.py:124
+msgid "Kiribati"
+msgstr ""
+
+#: webapp/backend/countries.py:125
+msgid "Comoros"
+msgstr ""
+
+#: webapp/backend/countries.py:126
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: webapp/backend/countries.py:127
+msgid "Democratic People's Republic of Korea"
+msgstr ""
+
+#: webapp/backend/countries.py:128
+msgid "Republic of Korea"
+msgstr ""
+
+#: webapp/backend/countries.py:129
+msgid "Kuwait"
+msgstr ""
+
+#: webapp/backend/countries.py:130
+msgid "Cayman Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:131
+msgid "Kazakhstan"
+msgstr ""
+
+#: webapp/backend/countries.py:132
+msgid "Lao People's Democratic Public"
+msgstr ""
+
+#: webapp/backend/countries.py:133
+msgid "Lebanon"
+msgstr ""
+
+#: webapp/backend/countries.py:134
+msgid "Saint Lucia"
+msgstr ""
+
+#: webapp/backend/countries.py:135
+msgid "Liechtenstein"
+msgstr ""
+
+#: webapp/backend/countries.py:136
+msgid "Sri Lanka"
+msgstr ""
+
+#: webapp/backend/countries.py:137
+msgid "Liberia"
+msgstr ""
+
+#: webapp/backend/countries.py:138
+msgid "Lesotho"
+msgstr ""
+
+#: webapp/backend/countries.py:139
+msgid "Lithuania"
+msgstr ""
+
+#: webapp/backend/countries.py:140
+msgid "Luxembourg"
+msgstr ""
+
+#: webapp/backend/countries.py:141
+msgid "Latvia"
+msgstr ""
+
+#: webapp/backend/countries.py:142
+msgid "Libya"
+msgstr ""
+
+#: webapp/backend/countries.py:143
+msgid "Morocco"
+msgstr ""
+
+#: webapp/backend/countries.py:144
+msgid "Monaco"
+msgstr ""
+
+#: webapp/backend/countries.py:145
+msgid "Republic of Moldova"
+msgstr ""
+
+#: webapp/backend/countries.py:146
+msgid "Montenegro"
+msgstr ""
+
+#: webapp/backend/countries.py:147
+msgid "Saint Martin (French Part)"
+msgstr ""
+
+#: webapp/backend/countries.py:148
+msgid "Madagascar"
+msgstr ""
+
+#: webapp/backend/countries.py:149
+msgid "Marshall Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:150
+msgid "The former Yugoslav Republic of Macedonia"
+msgstr ""
+
+#: webapp/backend/countries.py:151
+msgid "Mali"
+msgstr ""
+
+#: webapp/backend/countries.py:152
+msgid "Myanmar"
+msgstr ""
+
+#: webapp/backend/countries.py:153
+msgid "Mongolia"
+msgstr ""
+
+#: webapp/backend/countries.py:154
+msgid "Macao"
+msgstr ""
+
+#: webapp/backend/countries.py:155
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:156
+msgid "Martinique"
+msgstr ""
+
+#: webapp/backend/countries.py:157
+msgid "Mauritania"
+msgstr ""
+
+#: webapp/backend/countries.py:158
+msgid "Montserrat"
+msgstr ""
+
+#: webapp/backend/countries.py:159
+msgid "Malta"
+msgstr ""
+
+#: webapp/backend/countries.py:160
+msgid "Mauritius"
+msgstr ""
+
+#: webapp/backend/countries.py:161
+msgid "Maldives"
+msgstr ""
+
+#: webapp/backend/countries.py:162
+msgid "Malawi"
+msgstr ""
+
+#: webapp/backend/countries.py:163
+msgid "Mexico"
+msgstr ""
+
+#: webapp/backend/countries.py:164
+msgid "Malaysia"
+msgstr ""
+
+#: webapp/backend/countries.py:165
+msgid "Mozambique"
+msgstr ""
+
+#: webapp/backend/countries.py:166
+msgid "Namibia"
+msgstr ""
+
+#: webapp/backend/countries.py:167
+msgid "New Caledonia"
+msgstr ""
+
+#: webapp/backend/countries.py:168
+msgid "Niger"
+msgstr ""
+
+#: webapp/backend/countries.py:169
+msgid "Norfolk Island"
+msgstr ""
+
+#: webapp/backend/countries.py:170
+msgid "Nigeria"
+msgstr ""
+
+#: webapp/backend/countries.py:171
+msgid "Nicaragua"
+msgstr ""
+
+#: webapp/backend/countries.py:172
+msgid "Netherlands"
+msgstr ""
+
+#: webapp/backend/countries.py:173
+msgid "Norway"
+msgstr ""
+
+#: webapp/backend/countries.py:174
+msgid "Nepal"
+msgstr ""
+
+#: webapp/backend/countries.py:175
+msgid "Nauru"
+msgstr ""
+
+#: webapp/backend/countries.py:176
+msgid "Niue"
+msgstr ""
+
+#: webapp/backend/countries.py:177
+msgid "New Zealand"
+msgstr ""
+
+#: webapp/backend/countries.py:178
+msgid "Oman"
+msgstr ""
+
+#: webapp/backend/countries.py:179
+msgid "Panama"
+msgstr ""
+
+#: webapp/backend/countries.py:180
+msgid "Peru"
+msgstr ""
+
+#: webapp/backend/countries.py:181
+msgid "French Polynesia"
+msgstr ""
+
+#: webapp/backend/countries.py:182
+msgid "Papua New Guinea"
+msgstr ""
+
+#: webapp/backend/countries.py:183
+msgid "Philipplines"
+msgstr ""
+
+#: webapp/backend/countries.py:184
+msgid "Pakistan"
+msgstr ""
+
+#: webapp/backend/countries.py:185
+msgid "Poland"
+msgstr ""
+
+#: webapp/backend/countries.py:186
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: webapp/backend/countries.py:187
+msgid "Pitcairn"
+msgstr ""
+
+#: webapp/backend/countries.py:188
+msgid "Puerto Rico"
+msgstr ""
+
+#: webapp/backend/countries.py:189
+msgid "Palestinian Territory, occupied"
+msgstr ""
+
+#: webapp/backend/countries.py:190
+msgid "Portugal"
+msgstr ""
+
+#: webapp/backend/countries.py:191
+msgid "Palau"
+msgstr ""
+
+#: webapp/backend/countries.py:192
+msgid "Paraguay"
+msgstr ""
+
+#: webapp/backend/countries.py:193
+msgid "Qatar"
+msgstr ""
+
+#: webapp/backend/countries.py:194
+msgid "Réunion"
+msgstr ""
+
+#: webapp/backend/countries.py:195
+msgid "Romania"
+msgstr ""
+
+#: webapp/backend/countries.py:196
+msgid "Serbia"
+msgstr ""
+
+#: webapp/backend/countries.py:197
+msgid "Russian Federation"
+msgstr ""
+
+#: webapp/backend/countries.py:198
+msgid "Rwanda"
+msgstr ""
+
+#: webapp/backend/countries.py:199
+msgid "Saudi Arabia"
+msgstr ""
+
+#: webapp/backend/countries.py:200
+msgid "Solomon Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:201
+msgid "Seychelles"
+msgstr ""
+
+#: webapp/backend/countries.py:202
+msgid "Sudan"
+msgstr ""
+
+#: webapp/backend/countries.py:203
+msgid "Sweden"
+msgstr ""
+
+#: webapp/backend/countries.py:204
+msgid "Singapore"
+msgstr ""
+
+#: webapp/backend/countries.py:205
+msgid "Saint Helena, Ascension and Tristan Da Cunha"
+msgstr ""
+
+#: webapp/backend/countries.py:206
+msgid "Slovenia"
+msgstr ""
+
+#: webapp/backend/countries.py:207
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: webapp/backend/countries.py:208
+msgid "Slovakia"
+msgstr ""
+
+#: webapp/backend/countries.py:209
+msgid "Sierra Leone"
+msgstr ""
+
+#: webapp/backend/countries.py:210
+msgid "San Marino"
+msgstr ""
+
+#: webapp/backend/countries.py:211
+msgid "Senegal"
+msgstr ""
+
+#: webapp/backend/countries.py:212
+msgid "Somalia"
+msgstr ""
+
+#: webapp/backend/countries.py:213
+msgid "Suriname"
+msgstr ""
+
+#: webapp/backend/countries.py:214
+msgid "South Sudan"
+msgstr ""
+
+#: webapp/backend/countries.py:215
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: webapp/backend/countries.py:216
+msgid "El Salvador"
+msgstr ""
+
+#: webapp/backend/countries.py:217
+msgid "Sint Maarten (Dutch Part)"
+msgstr ""
+
+#: webapp/backend/countries.py:218
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: webapp/backend/countries.py:219
+msgid "Swaziland"
+msgstr ""
+
+#: webapp/backend/countries.py:220
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: webapp/backend/countries.py:221
+msgid "Chad"
+msgstr ""
+
+#: webapp/backend/countries.py:222
+msgid "French Southern Territories"
+msgstr ""
+
+#: webapp/backend/countries.py:223
+msgid "Togo"
+msgstr ""
+
+#: webapp/backend/countries.py:224
+msgid "Thailand"
+msgstr ""
+
+#: webapp/backend/countries.py:225
+msgid "Tajikistan"
+msgstr ""
+
+#: webapp/backend/countries.py:226
+msgid "Tokelau"
+msgstr ""
+
+#: webapp/backend/countries.py:227
+msgid "Timor-Leste"
+msgstr ""
+
+#: webapp/backend/countries.py:228
+msgid "Turkmenistan"
+msgstr ""
+
+#: webapp/backend/countries.py:229
+msgid "Tunisia"
+msgstr ""
+
+#: webapp/backend/countries.py:230
+msgid "Tonga"
+msgstr ""
+
+#: webapp/backend/countries.py:231
+msgid "Turkey"
+msgstr ""
+
+#: webapp/backend/countries.py:232
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: webapp/backend/countries.py:233
+msgid "Tuvalu"
+msgstr ""
+
+#: webapp/backend/countries.py:234
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: webapp/backend/countries.py:235
+msgid "United Republic of Tanzania"
+msgstr ""
+
+#: webapp/backend/countries.py:236
+msgid "Ukraine"
+msgstr ""
+
+#: webapp/backend/countries.py:237
+msgid "Uganda"
+msgstr ""
+
+#: webapp/backend/countries.py:238
+msgid "Unites States minor outlying islands"
+msgstr ""
+
+#: webapp/backend/countries.py:239
+msgid "Unites States"
+msgstr ""
+
+#: webapp/backend/countries.py:240
+msgid "Uruguay"
+msgstr ""
+
+#: webapp/backend/countries.py:241
+msgid "Uzbekistan"
+msgstr ""
+
+#: webapp/backend/countries.py:242
+msgid "Vatican City State"
+msgstr ""
+
+#: webapp/backend/countries.py:243
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: webapp/backend/countries.py:244
+msgid "Bolivarian Republic of Venezuela"
+msgstr ""
+
+#: webapp/backend/countries.py:245
+msgid "Virgin Islands, British"
+msgstr ""
+
+#: webapp/backend/countries.py:246
+msgid "Virgin Islands, U.S."
+msgstr ""
+
+#: webapp/backend/countries.py:247
+msgid "Viet Nam"
+msgstr ""
+
+#: webapp/backend/countries.py:248
+msgid "Vanuatu"
+msgstr ""
+
+#: webapp/backend/countries.py:249
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: webapp/backend/countries.py:250
+msgid "Samoa"
+msgstr ""
+
+#: webapp/backend/countries.py:251
+msgid "Yemen"
+msgstr ""
+
+#: webapp/backend/countries.py:252
+msgid "Mayotte"
+msgstr ""
+
+#: webapp/backend/countries.py:253
+msgid "South Africa"
+msgstr ""
+
+#: webapp/backend/countries.py:254
+msgid "Zambia"
+msgstr ""
+
+#: webapp/backend/countries.py:255
+msgid "Zimbabwe"
+msgstr ""
+
+#: webapp/backend/wishlist.py:207
 msgid "Checkout this crowdfunding wish from #ipfire:"
 msgstr ""
 
-#: webapp/backend/releases.py:96
+#: webapp/backend/releases.py:89
 msgid "Image for the armv5tel architecture"
 msgstr "Image für die armv5tel-Architektur"
 
-#: webapp/backend/releases.py:97
+#: webapp/backend/releases.py:90
 msgid "armv5tel image for boards with serial console"
 msgstr "armv5tel-Image für Boards mit serieller Konsole"
 
-#: webapp/backend/releases.py:98
+#: webapp/backend/releases.py:91
 msgid "Installable CD image"
 msgstr "Bootbares CD-Image"
 
-#: webapp/backend/releases.py:99
+#: webapp/backend/releases.py:92
 msgid "Torrent file"
 msgstr "Torrentdatei"
 
-#: webapp/backend/releases.py:100
+#: webapp/backend/releases.py:93
 msgid "Flash image"
 msgstr "Flash-Image"
 
-#: webapp/backend/releases.py:101
+#: webapp/backend/releases.py:94
 msgid "Alix image"
 msgstr "Alix-Image"
 
-#: webapp/backend/releases.py:102
+#: webapp/backend/releases.py:95
 msgid "USB FDD Image"
 msgstr "USB-FDD-Image"
 
-#: webapp/backend/releases.py:103
+#: webapp/backend/releases.py:96
 msgid "USB HDD Image"
 msgstr "USB-HDD-Image"
 
-#: webapp/backend/releases.py:104
+#: webapp/backend/releases.py:97
 msgid "Pregenerated Xen image"
 msgstr "Vorgefertigtes Xen-Image"
 
-#: webapp/backend/releases.py:110 webapp/backend/releases.py:150
+#: webapp/backend/releases.py:103 webapp/backend/releases.py:143
 msgid "Unknown image type"
 msgstr "Unbekanntes Imageformat"
 
-#: webapp/backend/releases.py:136
+#: webapp/backend/releases.py:129
 msgid "This image runs on many ARM-based boards"
 msgstr "Dieses Image läuft auf vielen ARM-basierten Boards"
 
-#: webapp/backend/releases.py:137
+#: webapp/backend/releases.py:130
 msgid "This image runs on ARM boards with a serial console"
 msgstr "Dieses Image läuft auf ARM-Boards mit serieller Konsole"
 
-#: webapp/backend/releases.py:138
+#: webapp/backend/releases.py:131
 msgid "Use this image to burn a CD and install IPFire from it."
 msgstr ""
 "Nutze dieses Image um eine CD zu erstellen und IPFire von dieser zu "
 "installieren."
 
-#: webapp/backend/releases.py:139
+#: webapp/backend/releases.py:132
 msgid "Download the CD image from the torrent network."
 msgstr "CD-Image mit aus dem Torrentnetzwerk laden"
 
-#: webapp/backend/releases.py:140
+#: webapp/backend/releases.py:133
 msgid "An image that is meant to run on embedded devices."
 msgstr "Ein Image, das für eingebettete Systeme optimiert ist."
 
-#: webapp/backend/releases.py:141
+#: webapp/backend/releases.py:134
 msgid "Flash image where a serial console is enabled by default."
 msgstr "Image, bei welchem die serielle Konsole eingeschaltet ist."
 
-#: webapp/backend/releases.py:142
+#: webapp/backend/releases.py:135
 msgid "Install IPFire from a floppy-formated USB key."
 msgstr "IPFire von einem Floppy-formatiertem USB-Stick installieren."
 
-#: webapp/backend/releases.py:143
+#: webapp/backend/releases.py:136
 msgid "If the floppy image doesn't work, use this image instead."
 msgstr "Wenn das Floppy-Image nicht funktioniert, dieses verwenden."
 
-#: webapp/backend/releases.py:144
+#: webapp/backend/releases.py:137
 msgid "A ready-to-run image for Xen."
 msgstr "Ein fertiges Image für Xen."
 
-#: webapp/backend/iuse.py:165
+#: webapp/__init__.py:311
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:235
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:235
+msgid "January"
+msgstr "Januar"
+
+#: webapp/__init__.py:313
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:235
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:235
+msgid "February"
+msgstr "Februar"
+
+#: webapp/__init__.py:315
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:235
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:235
+msgid "March"
+msgstr "März"
+
+#: webapp/__init__.py:317
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:235
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:235
+msgid "April"
+msgstr "April"
+
+#: webapp/__init__.py:319
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:236
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:236
+msgid "May"
+msgstr "Mai"
+
+#: webapp/__init__.py:321
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:236
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:236
+msgid "June"
+msgstr "Juni"
+
+#: webapp/__init__.py:323
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:236
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:236
+msgid "July"
+msgstr "Juli"
+
+#: webapp/__init__.py:325
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:236
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:236
+msgid "August"
+msgstr "August"
+
+#: webapp/__init__.py:327
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:237
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:237
+msgid "September"
+msgstr "September"
+
+#: webapp/__init__.py:329
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:237
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:237
+msgid "October"
+msgstr "Oktober"
+
+#: webapp/__init__.py:331
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:237
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:237
+msgid "November"
+msgstr "November"
+
+#: webapp/__init__.py:333
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:237
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:237
+msgid "December"
+msgstr "Dezember"
+
+#: webapp/ui_modules.py:114 webapp/handlers_news.py:43
+msgid "Unknown author"
+msgstr "Unbekannter Autor"
+
+#: webapp/ui_modules.py:265
 #, python-format
-msgid "Mem: %s"
-msgstr "RAM: %s"
+msgid "%s to %s"
+msgstr "%s nach %s"
 
-#: webapp/backend/iuse.py:168
-#, python-format
-msgid "Disk: %s"
-msgstr "HDD: %s"
+#: templates/downloads.html:3 templates/downloads.html:8
+msgid "Get IPFire"
+msgstr "IPFire herunterladen"
 
-#: webapp/backend/iuse.py:180
-#, python-format
-msgid "Networks: %s"
-msgstr "Netzwerke: %s"
+#: templates/downloads.html:10
+msgid "IPFire is completely free to download and use"
+msgstr "IPFire darf kostenlos heruntergeladen und genutzt werden"
 
-#: templates/wishlist/wish.html:3
-msgid "Wish"
-msgstr "Wunsch"
+#: templates/downloads.html:23
+msgid "More download options"
+msgstr "Weitere Downloadoptionen"
 
-#: templates/wishlist/wish.html:18
-#, python-format
-msgid "Launched: %s"
-msgstr "Gestarted: %s"
-
-#: templates/wishlist/wish.html:23
-#, python-format
-msgid "Funding ends: %s"
-msgstr "Sammlung endet: %s"
-
-#: templates/wishlist/closed.html:3 templates/wishlist/closed.html:13
-msgid "Closed wishes"
-msgstr "Beendete Wünsche"
-
-#: templates/wishlist/closed.html:9
-msgid "Wishes open for donation"
-msgstr "Noch laufende Wünsche"
-
-#: templates/wishlist/closed.html:36 templates/wishlist/closed.html:40
-msgid "Older"
-msgstr "Älter"
-
-#: templates/wishlist/closed.html:46 templates/wishlist/closed.html:50
-msgid "Newer"
-msgstr "Neuer"
-
-#: templates/wishlist/base.html:6 templates/index.html:175
-msgid "IPFire Wishlist"
-msgstr "IPFire Wunschliste"
-
-#: templates/wishlist/base.html:8
-msgid "Crowd funding for the IPFire project"
-msgstr "Crowdfunding für das IPFire-Projekt"
-
-#: templates/wishlist/modules/wish.html:6
-msgid "Only a few days left!"
-msgstr "Nur noch wenige Tage!"
-
-#: templates/wishlist/modules/wish.html:26 templates/wishlist/donate.html:3
-#: templates/download-splash.html:37 templates/modules/menu.html:47
-#: templates/static/getinvolved.html:120 templates/static/donation.html:3
-#: templates/static/donation.html:8
-msgid "Donate"
-msgstr "Spenden"
-
-#: templates/wishlist/modules/wish.html:36
-msgid "funded"
-msgstr "gesammelt"
-
-#: templates/wishlist/modules/wish.html:40
-#, python-format
-msgid "%s &euro;"
-msgstr "%s &euro;"
-
-#: templates/wishlist/modules/wish.html:41
-msgid "donated"
-msgstr "gespendet"
-
-#: templates/wishlist/modules/wish.html:47
-msgid "day to go"
-msgid_plural "days to go"
-msgstr[0] "Tag übrig"
-msgstr[1] "Tage übrig"
-
-#: templates/wishlist/modules/wish.html:49
-msgid "In progress"
-msgstr "In Entwicklung"
-
-#: templates/wishlist/modules/wish.html:51
-msgid "Finished"
-msgstr "Beendet"
-
-#: templates/wishlist/modules/wish.html:53
-msgid "Funding ended"
-msgstr "Sammlung beendet"
-
-#: templates/wishlist/modules/wish.html:63
-msgid "Share this wish with your friends and help us promote it!"
-msgstr ""
-"Teile diesen Wunsch mit deinen Freunden und hilf diesen bekannter zu machen!"
-
-#: templates/wishlist/index.html:3 templates/index.html:3
-msgid "Home"
-msgstr "Startseite"
-
-#: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
-#: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
-#: templates/base.html:78
-msgid "Terms & Conditions"
-msgstr "Allgemeine Bedingungen"
-
-#: templates/downloads-index.html:3
-msgid "Download Center"
-msgstr "Downloadcenter"
-
-#: templates/downloads-index.html:7
-msgid "IPFire Download Center"
-msgstr "IPFire Download-Center"
-
-#: templates/downloads-index.html:30
-msgid "Available releases"
-msgstr "Verfügbare Releases"
-
-#: templates/downloads-index.html:35 templates/downloads-older.html:25
-#: templates/tracker-torrents.html:32
-msgid "Release"
-msgstr "Release"
-
-#: templates/downloads-index.html:36
-msgid "Release type"
-msgstr "Release-Typ"
-
-#: templates/downloads-index.html:37
-msgid "Release date"
-msgstr "Veröffentlichungsdatum"
-
-#: templates/downloads-index.html:48
-msgid "Stable"
-msgstr "Stabil"
-
-#: templates/downloads-index.html:50 templates/modules/menu.html:65
-#: templates/static/development.html:3 templates/static/development.html:8
-#: templates/static/getinvolved.html:153
-msgid "Development"
-msgstr "Entwicklung"
-
-#: templates/admin-downloads-base.html:5
-msgid "Back to home"
-msgstr "Zurück zur Startseite"
-
-#: templates/admin-downloads-base.html:8 templates/admin-base.html:6
-msgid "Options"
-msgstr "Optionen"
-
-#: templates/admin-downloads-base.html:11
-msgid "Mirror stats"
-msgstr "Mirrorstatistiken"
-
-#: templates/downloads-older.html:3 templates/downloads-older.html:7
-msgid "Ancient downloads"
-msgstr "Veraltete Downloads"
-
-#: templates/downloads-older.html:9 templates/downloads-all.html:9
-msgid ""
-"These are the ancient downloads of IPFire. They are just saved for "
-"historical reasons and should not be used in a productive environment."
-msgstr ""
-"Dieses sind veraltete Downloads von IPFire. Sie wurden hier archiviert und "
-"sollten nicht in produktiven Umgebungen eingesetzt werden."
-
-#: templates/downloads-older.html:13
-msgid ""
-"Beware that these releases could lack possible security-fixes\tand so it is "
-"recommended to use the <em>latest</em> version."
-msgstr ""
-"Achtung! Diese Releases könnten potentielle Sicherheitsprobleme aufweisen. "
-"Daher wird empfohlen die <em>neueste</em> Version einzusetzen."
-
-#: templates/downloads-older.html:17 templates/downloads-all.html:13
-msgid "Go back to latest stable downloads."
-msgstr "Zurück zu den neuesten stabilen Downloads."
-
-#: templates/downloads-older.html:26
-msgid "Published on"
-msgstr "Veröffentlicht am"
-
-#: templates/admin-login.html:3
-msgid "Please login"
-msgstr "Bitte einloggen"
-
-#: templates/mirrors-item.html:3
-#, python-format
-msgid "Mirror %s"
-msgstr "Mirror %s"
-
-#: templates/mirrors-item.html:8
-msgid "Up"
-msgstr "Verfügbar"
-
-#: templates/mirrors-item.html:10
-msgid "Down"
-msgstr "Nicht verfügbar"
-
-#: templates/mirrors-item.html:12
-msgid "Out of sync"
-msgstr "Nicht synchronisiert"
-
-#: templates/mirrors-item.html:14 templates/fireinfo/profile-detail.html:74
-#: templates/fireinfo/profile-detail.html:82
-msgid "Unknown"
-msgstr "Unbekannt"
-
-#: templates/mirrors-item.html:22 templates/downloads-mirrors.html:50
-#: templates/fireinfo/profile-detail.html:231
-#: templates/download-mirror-detail.html:20 templates/admin-mirrors.html:15
-msgid "Last update"
-msgstr "Letztes Update"
-
-#: templates/mirrors-item.html:26 templates/downloads-mirrors.html:47
-#: templates/admin-mirrors-create.html:20
-#: templates/download-mirror-detail.html:16
-#: templates/admin-mirrors-details.html:21
-msgid "Owner"
-msgstr "Eigentümer"
-
-#: templates/mirrors-item.html:31
-msgid "Preferred for"
-msgstr "Bevorzugt für"
-
-#: templates/mirrors-item.html:37
-msgid "Your distance to this mirror"
-msgstr "Deine Entfernung zu diesem Mirror"
-
-#: templates/mirrors-item.html:43
-msgid "Go to mirror"
-msgstr "Zum Mirror"
-
-#: templates/mirrors-item.html:48
-msgid "Mirror location"
-msgstr "Mirrorort"
-
-#: templates/mirrors-item.html:50
-#, python-format
-msgid "The mirror <em>%s</em> is located in %s."
-msgstr "Der Mirrorserver <em>%s</em> befindet sich in %s."
-
-#: templates/mirrors-item.html:58
-msgid "View larger map"
-msgstr "Größere Karte ansehen"
-
-#: templates/mirrors-item.html:63
-msgid "The location of the mirror server is estimated by the IP address."
-msgstr ""
-"Der Standort dieses Mirrorservers wurde anhand der IP-Adresse geschätzt."
-
-#: templates/mirrors-item.html:66
-msgid "The location of the mirror server could not be estimated."
-msgstr "Der Standort dieses Mirrorservers konnte nicht ermittelt werden."
-
-#: templates/admin-downloads-mirrors.html:5 templates/admin-downloads.html:5
-msgid "Download statistics"
-msgstr "Downloadstatistiken"
-
-#: templates/admin-downloads-mirrors.html:7
-msgid "Mirror load from today"
-msgstr "Mirrorauslastung von heute"
-
-#: templates/admin-downloads-mirrors.html:10
-msgid "Mirror load"
-msgstr "Mirrorauslastung"
+#: templates/downloads.html:55
+msgid "Get yourself involved"
+msgstr "Selbst mitmachen"
 
 #: templates/news-year.html:3 templates/news.html:3
 msgid "News"
@@ -447,155 +1220,9 @@ msgstr "Neuigkeiten"
 msgid "News from %(year)s"
 msgstr "Neuigkeiten aus %(year)s"
 
-#: templates/tracker-torrent-detail.html:3
-#: templates/tracker-torrent-detail.html:18
-#: templates/modules/release-item.html:115
-msgid "Torrent download"
-msgstr "Torrent-Download"
-
-#: templates/tracker-torrent-detail.html:15
-#: templates/modules/release-item.html:114
-msgid "Magnet link"
-msgstr "Magnet-Link"
-
-#: templates/tracker-torrent-detail.html:23 templates/tracker-torrents.html:34
-msgid "Peers"
-msgstr "Peers"
-
-#: templates/tracker-torrent-detail.html:28
-msgid "Seeds"
-msgstr "Seeds"
-
-#: templates/sources.html:3
-msgid "Sources"
-msgstr "Quellen"
-
-#: templates/sources.html:6 templates/static/development.html:263
-msgid "Source Code"
-msgstr "Quellcode"
-
-#: templates/sources.html:9
-#, python-format
-msgid "There are %s source files on the server."
-msgstr "Es befinden sich %s Quelldateien auf dem Server."
-
-#: templates/news-author.html:7
-#, python-format
-msgid "%s's announcements"
-msgstr "%ss Ankündigungen"
-
 #: templates/admin-index.html:5
 msgid "Admin Area"
 msgstr "Adminbereich"
-
-#: templates/admin-base.html:3
-msgid "IPFire Admin Area"
-msgstr "IPFire Adminbereich"
-
-#: templates/admin-base.html:9
-msgid "Accounts"
-msgstr "Accounts"
-
-#: templates/admin-base.html:10 templates/modules/menu.html:110
-msgid "Mirrors"
-msgstr "Mirrors"
-
-#: templates/admin-base.html:11 templates/modules/menu.html:92
-msgid "Planet"
-msgstr "Planet"
-
-#: templates/admin-base.html:12
-msgid "Downloads"
-msgstr "Downloads"
-
-#: templates/admin-planet-compose.html:5 templates/admin-planet.html:8
-msgid "Compose new entry"
-msgstr "Neuen Beitrag erstellen"
-
-#: templates/admin-planet-compose.html:16 templates/admin-planet.html:14
-msgid "Title"
-msgstr "Titel"
-
-#: templates/admin-planet-compose.html:33 templates/planet/posting.html:19
-msgid "Tags"
-msgstr "Tags"
-
-#: templates/admin-planet-compose.html:41
-msgid "Save"
-msgstr "Speichern"
-
-#: templates/admin-planet-compose.html:42
-msgid "Preview"
-msgstr "Vorschau"
-
-#: templates/admin-planet-compose.html:43
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: templates/download-splash.html:3 templates/download-splash.html:7
-msgid "Thanks for downloading IPFire!"
-msgstr "Vielen Dank, für das Herunterladen von IPFire! "
-
-#: templates/download-splash.html:61
-msgid "Next steps"
-msgstr "Nächste Schritte"
-
-#: templates/download-splash.html:66
-msgid "Install IPFire"
-msgstr "IPFire installieren"
-
-#: templates/download-splash.html:82
-msgid "Access documentation"
-msgstr "Dokumentation lesen"
-
-#: templates/download-splash.html:100
-msgid "Join the community"
-msgstr "Der Community beitreten"
-
-#: templates/downloads-development.html:3
-#: templates/downloads-development.html:6
-msgid "Development Downloads"
-msgstr "Development Downloads"
-
-#: templates/error-500.html:6
-msgid "Detailed information"
-msgstr "Mehr Informationen"
-
-#: templates/admin-planet.html:5
-msgid "Planet Administrator"
-msgstr "Planet Administrator"
-
-#: templates/admin-planet.html:13
-msgid "Author"
-msgstr "Autor"
-
-#: templates/admin-planet.html:21 templates/admin-mirrors.html:24
-#: templates/admin-accounts.html:20
-msgid "Edit"
-msgstr "Bearbeiten"
-
-#: templates/downloads-mirrors.html:3 templates/download-mirror-detail.html:3
-msgid "Mirror-Server"
-msgstr "Mirrorserver"
-
-#: templates/downloads-mirrors.html:8 templates/download-mirror-detail.html:8
-msgid "IPFire Mirrors"
-msgstr "IPFire Mirrors"
-
-#: templates/downloads-mirrors.html:48 templates/admin-mirrors-create.html:12
-#: templates/download-mirror-detail.html:12 templates/admin-mirrors.html:14
-#: templates/admin-mirrors-details.html:13
-msgid "Hostname"
-msgstr "Hostname"
-
-#: templates/downloads-mirrors.html:49 templates/admin-mirrors-create.html:24
-#: templates/admin-mirrors-details.html:25
-msgid "Location"
-msgstr "Standort"
-
-#: templates/downloads-mirrors.html:63
-msgid "details"
-msgstr "Details"
 
 #: templates/fireinfo/stats.html:3 templates/modules/menu.html:136
 msgid "Statistics"
@@ -637,9 +1264,77 @@ msgstr "Netzwerk"
 msgid "Virtualization"
 msgstr "Virtualisierung"
 
-#: templates/fireinfo/stats-network.html:7
-msgid "Network configuration"
-msgstr "Netzwerkkonfiguration"
+#: templates/fireinfo/stats-memory.html:3
+#: templates/fireinfo/stats-memory.html:7
+msgid "Memory"
+msgstr "Arbeitsspeicher"
+
+#: templates/fireinfo/stats-memory.html:13
+#, python-format
+msgid ""
+"The average amount of memory of all systems in the database is: <strong>%.2f "
+"MB</strong>."
+msgstr ""
+"Die durchschnittliche Menge an Arbeitsspeicher aller System ist: <strong>"
+"%.2f MB</strong>."
+
+#: templates/fireinfo/model-detail.html:11
+#, python-format
+msgid "This device is installed on approximately %.2f%% of all systems."
+msgstr "Dieses Gerät ist in etwa %.2f%% aller Systeme installiert."
+
+#: templates/fireinfo/model-detail.html:14
+msgid "Feedback"
+msgstr "Feedback"
+
+#: templates/fireinfo/model-detail.html:28
+msgid "Go to the wiki"
+msgstr "Zum Wiki"
+
+#: templates/fireinfo/stats-admin.html:3
+msgid "Admin"
+msgstr "Administrator"
+
+#: templates/fireinfo/stats-admin.html:11
+msgid "Sending profiles"
+msgstr "Senden Profile"
+
+#: templates/fireinfo/stats-admin.html:19
+msgid "Archive size"
+msgstr "Archivgröße"
+
+#: templates/fireinfo/profile-notfound.html:3
+#: templates/fireinfo/profile-notfound.html:8
+msgid "Profile not found"
+msgstr "Profil nicht gefunden"
+
+#: templates/fireinfo/stats-cpu-flags.html:3
+msgid "CPU flags"
+msgstr "CPU Flags"
+
+#: templates/fireinfo/stats-cpu-flags.html:7
+msgid "Processor flags"
+msgstr "Prozessor-Flags"
+
+#: templates/fireinfo/stats-cpu-flags.html:30
+msgid "CPUs that support 64 bits"
+msgstr "CPUs, die 64 Bit unterstützen"
+
+#: templates/fireinfo/stats-cpu-flags.html:46
+msgid "CPUs with PAE"
+msgstr "CPUs mit PAE"
+
+#: templates/fireinfo/stats-cpu-flags.html:62
+msgid "CPUs that support virtualization"
+msgstr "CPUs, die Virtualisierung unterstützen"
+
+#: templates/fireinfo/stats-virtual.html:7
+msgid "Virtualization support"
+msgstr "Virtualisierungsunterstützung"
+
+#: templates/fireinfo/stats-virtual.html:35
+msgid "Hypervisors"
+msgstr "Hypervisoren"
 
 #: templates/fireinfo/stats-oses.html:3
 #: templates/fireinfo/profile-detail.html:12
@@ -658,18 +1353,57 @@ msgstr "Architekturen"
 msgid "Kernels"
 msgstr "Kernel"
 
-#: templates/fireinfo/profile-notfound.html:3
-#: templates/fireinfo/profile-notfound.html:8
-msgid "Profile not found"
-msgstr "Profil nicht gefunden"
+#: templates/fireinfo/stats-cpus.html:3
+msgid "Processors"
+msgstr "Prozessoren"
 
-#: templates/fireinfo/stats-virtual.html:7
-msgid "Virtualization support"
-msgstr "Virtualisierungsunterstützung"
+#: templates/fireinfo/stats-cpus.html:12
+msgid "See statistics about common CPU flags"
+msgstr "Statistiken über CPU-Funktionen"
 
-#: templates/fireinfo/stats-virtual.html:35
-msgid "Hypervisors"
-msgstr "Hypervisoren"
+#: templates/fireinfo/stats-cpus.html:19
+msgid "Vendors"
+msgstr "Hersteller"
+
+#: templates/fireinfo/stats-cpus.html:36
+#: templates/fireinfo/profile-detail.html:154
+msgid "Speed"
+msgstr "Geschwindigkeit"
+
+#: templates/fireinfo/stats-cpus.html:38
+#, python-format
+msgid ""
+"The average speed of all systems in the database is: <strong>%.2f MHz</"
+"strong>."
+msgstr ""
+"Die durchschnittliche Geschwindigkeit aller System ist: <strong>%.2f MHz</"
+"strong>."
+
+#: templates/fireinfo/stats-cpus.html:40
+#, python-format
+msgid "All together, there are <strong>%s bogomips</strong> out there."
+msgstr "Zusammengenomen sind es <strong>%s Bogomips</strong>."
+
+#: templates/fireinfo/stats-cpus.html:48
+msgid "CPU core counter"
+msgstr "CPU-Kerne"
+
+#: templates/fireinfo/stats-cpus.html:50
+msgid ""
+"See a breakdown of the CPU cores that are installed on the IPFire systems."
+msgstr "Eine Übersicht über die CPU Kerne, der IPFire Systeme."
+
+#: templates/fireinfo/stats-network.html:7
+msgid "Network configuration"
+msgstr "Netzwerkkonfiguration"
+
+#: templates/fireinfo/index.html:52
+msgid "Show"
+msgstr "Anzeigen"
+
+#: templates/fireinfo/stats-geo.html:28
+msgid "Language selection"
+msgstr "Sprachauswahl"
 
 #: templates/fireinfo/profile-detail.html:3
 #: templates/fireinfo/profile-detail.html:7
@@ -710,6 +1444,11 @@ msgstr "Typ"
 msgid "Hardware vendor"
 msgstr "Hardwarehersteller"
 
+#: templates/fireinfo/profile-detail.html:74
+#: templates/fireinfo/profile-detail.html:82 templates/mirrors-item.html:14
+msgid "Unknown"
+msgstr "Unbekannt"
+
 #: templates/fireinfo/profile-detail.html:79
 #: templates/fireinfo/profile-detail.html:138
 msgid "Model"
@@ -735,11 +1474,6 @@ msgstr "Nicht verfügbar"
 #: templates/fireinfo/profile-detail.html:146
 msgid "Cores"
 msgstr "Kerne"
-
-#: templates/fireinfo/profile-detail.html:154
-#: templates/fireinfo/stats-cpus.html:36
-msgid "Speed"
-msgstr "Geschwindigkeit"
 
 #: templates/fireinfo/profile-detail.html:166
 msgid "Supported features"
@@ -773,6 +1507,12 @@ msgstr "Peripheriegeräte"
 msgid "Signature images"
 msgstr "Signaturbilder"
 
+#: templates/fireinfo/profile-detail.html:231 templates/admin-mirrors.html:15
+#: templates/download-mirror-detail.html:20
+#: templates/downloads-mirrors.html:50
+msgid "Last update"
+msgstr "Letztes Update"
+
 #: templates/fireinfo/base.html:6 templates/modules/menu.html:98
 msgid "Fireinfo"
 msgstr "Fireinfo"
@@ -781,185 +1521,104 @@ msgstr "Fireinfo"
 msgid "A hardware data collection tool for IPFire"
 msgstr "Ein Hardwaredatensammeltool für IPFire"
 
-#: templates/fireinfo/stats-cpus.html:3
-msgid "Processors"
-msgstr "Prozessoren"
+#: templates/sources.html:3
+msgid "Sources"
+msgstr "Quellen"
 
-#: templates/fireinfo/stats-cpus.html:12
-msgid "See statistics about common CPU flags"
-msgstr "Statistiken über CPU-Funktionen"
+#: templates/sources.html:6 templates/static/development.html:263
+msgid "Source Code"
+msgstr "Quellcode"
 
-#: templates/fireinfo/stats-cpus.html:19
-msgid "Vendors"
-msgstr "Hersteller"
-
-#: templates/fireinfo/stats-cpus.html:38
+#: templates/sources.html:9
 #, python-format
-msgid ""
-"The average speed of all systems in the database is: <strong>%.2f MHz</"
-"strong>."
-msgstr ""
-"Die durchschnittliche Geschwindigkeit aller System ist: <strong>%.2f MHz</"
-"strong>."
+msgid "There are %s source files on the server."
+msgstr "Es befinden sich %s Quelldateien auf dem Server."
 
-#: templates/fireinfo/stats-cpus.html:40
-#, python-format
-msgid "All together, there are <strong>%s bogomips</strong> out there."
-msgstr "Zusammengenomen sind es <strong>%s Bogomips</strong>."
+#: templates/downloads-all.html:3
+msgid "Ancient Downloads"
+msgstr "Veraltete Downloads"
 
-#: templates/fireinfo/stats-cpus.html:48
-msgid "CPU core counter"
-msgstr "CPU-Kerne"
-
-#: templates/fireinfo/stats-cpus.html:50
-msgid ""
-"See a breakdown of the CPU cores that are installed on the IPFire systems."
-msgstr "Eine Übersicht über die CPU Kerne, der IPFire Systeme."
-
-#: templates/fireinfo/index.html:52
-msgid "Show"
-msgstr "Anzeigen"
-
-#: templates/fireinfo/model-detail.html:11
-#, python-format
-msgid "This device is installed on approximately %.2f%% of all systems."
-msgstr "Dieses Gerät ist in etwa %.2f%% aller Systeme installiert."
-
-#: templates/fireinfo/model-detail.html:14
-msgid "Feedback"
-msgstr "Feedback"
-
-#: templates/fireinfo/model-detail.html:28
-msgid "Go to the wiki"
-msgstr "Zum Wiki"
-
-#: templates/fireinfo/stats-memory.html:3
-#: templates/fireinfo/stats-memory.html:7
-msgid "Memory"
-msgstr "Arbeitsspeicher"
-
-#: templates/fireinfo/stats-memory.html:13
-#, python-format
-msgid ""
-"The average amount of memory of all systems in the database is: <strong>%.2f "
-"MB</strong>."
-msgstr ""
-"Die durchschnittliche Menge an Arbeitsspeicher aller System ist: <strong>"
-"%.2f MB</strong>."
-
-#: templates/fireinfo/stats-geo.html:28
-msgid "Language selection"
-msgstr "Sprachauswahl"
-
-#: templates/fireinfo/stats-cpu-flags.html:3
-msgid "CPU flags"
-msgstr "CPU Flags"
-
-#: templates/fireinfo/stats-cpu-flags.html:7
-msgid "Processor flags"
-msgstr "Prozessor-Flags"
-
-#: templates/fireinfo/stats-cpu-flags.html:30
-msgid "CPUs that support 64 bits"
-msgstr "CPUs, die 64 Bit unterstützen"
-
-#: templates/fireinfo/stats-cpu-flags.html:46
-msgid "CPUs with PAE"
-msgstr "CPUs mit PAE"
-
-#: templates/fireinfo/stats-cpu-flags.html:62
-msgid "CPUs that support virtualization"
-msgstr "CPUs, die Virtualisierung unterstützen"
-
-#: templates/fireinfo/stats-admin.html:3
-msgid "Admin"
-msgstr "Administrator"
-
-#: templates/fireinfo/stats-admin.html:11
-msgid "Sending profiles"
-msgstr "Senden Profile"
-
-#: templates/fireinfo/stats-admin.html:19
-msgid "Archive size"
-msgstr "Archivgröße"
-
-#: templates/downloads.html:3 templates/downloads.html:8
-msgid "Get IPFire"
+#: templates/downloads-all.html:7 templates/index.html:18
+msgid "Download IPFire"
 msgstr "IPFire herunterladen"
 
-#: templates/downloads.html:10
-msgid "IPFire is completely free to download and use"
-msgstr "IPFire darf kostenlos heruntergeladen und genutzt werden"
+#: templates/downloads-all.html:9 templates/downloads-older.html:9
+msgid ""
+"These are the ancient downloads of IPFire. They are just saved for "
+"historical reasons and should not be used in a productive environment."
+msgstr ""
+"Dieses sind veraltete Downloads von IPFire. Sie wurden hier archiviert und "
+"sollten nicht in produktiven Umgebungen eingesetzt werden."
 
-#: templates/downloads.html:23
-msgid "More download options"
-msgstr "Weitere Downloadoptionen"
+#: templates/downloads-all.html:13 templates/downloads-older.html:17
+msgid "Go back to latest stable downloads."
+msgstr "Zurück zu den neuesten stabilen Downloads."
 
-#: templates/downloads.html:55
-msgid "Get yourself involved"
-msgstr "Selbst mitmachen"
+#: templates/admin-accounts-edit.html:5 templates/admin-accounts.html:5
+msgid "Account Administrator"
+msgstr "Accountadministrator"
 
-#: templates/admin-mirrors-create.html:5 templates/admin-mirrors.html:8
+#: templates/news-author.html:7
+#, python-format
+msgid "%s's announcements"
+msgstr "%ss Ankündigungen"
+
+#: templates/admin-mirrors.html:5
+msgid "Mirror Administrator"
+msgstr "Mirroradministrator"
+
+#: templates/admin-mirrors.html:8 templates/admin-mirrors-create.html:5
 msgid "Create new mirror"
 msgstr "Neuen Mirror erstellen"
 
-#: templates/admin-mirrors-create.html:16
-msgid "Path"
-msgstr "Pfad"
+#: templates/admin-mirrors.html:9
+msgid "Re-check now"
+msgstr "Jetzt neu prüfen"
 
-#: templates/admin-mirrors-create.html:28
-#: templates/admin-mirrors-details.html:33
-msgid "File mirror"
-msgstr "Dateimirror"
+#: templates/admin-mirrors.html:14 templates/download-mirror-detail.html:12
+#: templates/admin-mirrors-create.html:12 templates/downloads-mirrors.html:48
+#: templates/admin-mirrors-details.html:13
+msgid "Hostname"
+msgstr "Hostname"
 
-#: templates/admin-mirrors-create.html:31
-#: templates/admin-mirrors-create.html:40
-#: templates/admin-mirrors-create.html:49
-#: templates/admin-mirrors-create.html:58
-msgid "yes"
-msgstr "Ja"
+#: templates/admin-mirrors.html:23 templates/admin-mirrors-details.html:5
+msgid "Details"
+msgstr "Details"
 
-#: templates/admin-mirrors-create.html:32
-#: templates/admin-mirrors-create.html:41
-#: templates/admin-mirrors-create.html:50
-#: templates/admin-mirrors-create.html:59
-msgid "no"
-msgstr "Nein"
+#: templates/admin-mirrors.html:24 templates/admin-planet.html:29
+#: templates/admin-accounts.html:20
+msgid "Edit"
+msgstr "Bearbeiten"
 
-#: templates/admin-mirrors-create.html:37
-#: templates/admin-mirrors-details.html:37
-msgid "Pakfire 2 mirror"
-msgstr "Pakfire 2 Mirror"
+#: templates/admin-mirrors.html:25 templates/admin-accounts.html:21
+msgid "Delete"
+msgstr "Löschen"
 
-#: templates/admin-mirrors-create.html:46
-#: templates/admin-mirrors-details.html:41
-msgid "Pakfire 3 mirror"
-msgstr "Pakfire 3 Mirror"
+#: templates/error-500.html:6
+msgid "Detailed information"
+msgstr "Mehr Informationen"
 
-#: templates/admin-mirrors-create.html:55
-#: templates/admin-mirrors-details.html:45
-msgid "Disabled?"
-msgstr "Ausgeschaltet?"
+#: templates/download-mirror-detail.html:3 templates/downloads-mirrors.html:3
+msgid "Mirror-Server"
+msgstr "Mirrorserver"
 
-#: templates/admin-downloads.html:7
-msgid "Download counters"
-msgstr "Downloadzähler"
+#: templates/download-mirror-detail.html:8 templates/downloads-mirrors.html:8
+msgid "IPFire Mirrors"
+msgstr "IPFire Mirrors"
 
-#: templates/admin-downloads.html:10
-msgid "Today"
-msgstr "Heute"
+#: templates/download-mirror-detail.html:16 templates/mirrors-item.html:23
+#: templates/admin-mirrors-create.html:20 templates/downloads-mirrors.html:47
+#: templates/admin-mirrors-details.html:21
+msgid "Owner"
+msgstr "Eigentümer"
 
-#: templates/admin-downloads.html:14
-msgid "Yesterday"
-msgstr "Gestern"
+#: templates/download-mirror-detail.html:24
+msgid "Number of files"
+msgstr "Anzahl von Dateien"
 
-#: templates/admin-downloads.html:18
-msgid "Total"
-msgstr "Insgesamt"
-
-#: templates/admin-downloads.html:23
-msgid "Downloads by country"
-msgstr "Downloads pro Land"
+#: templates/download-mirror-detail.html:32
+msgid "View list of all mirror servers."
+msgstr "Liste aller Mirrorserver."
 
 #: templates/news.html:7
 msgid "What is new on the IPFire project?"
@@ -969,10 +1628,10 @@ msgstr "Was gibt es neues im IPFire Projekt?"
 msgid "Stay up to date"
 msgstr "Informiere dich"
 
-#: templates/news.html:61 templates/planet/year.html:3
-#: templates/planet/user.html:3 templates/planet/search.html:3
-#: templates/planet/base.html:6 templates/planet/index.html:3
-#: templates/planet/posting.html:3 templates/index.html:154
+#: templates/news.html:61 templates/planet/search.html:3
+#: templates/planet/year.html:3 templates/planet/user.html:3
+#: templates/planet/posting.html:3 templates/planet/index.html:3
+#: templates/planet/base.html:6 templates/index.html:154
 msgid "IPFire Planet"
 msgstr "IPFire Planet"
 
@@ -980,9 +1639,185 @@ msgstr "IPFire Planet"
 msgid "Latest news"
 msgstr "Aktuelle Neuigkeiten"
 
-#: templates/base-feature.html:6 templates/modules/menu.html:7
-#: templates/static/features.html:3 templates/static/features.html:8
-#: templates/static/features.html:1349
+#: templates/admin-planet-compose.html:5 templates/admin-planet.html:8
+msgid "Compose new entry"
+msgstr "Neuen Beitrag erstellen"
+
+#: templates/admin-planet-compose.html:16 templates/admin-planet.html:14
+msgid "Title"
+msgstr "Titel"
+
+#: templates/admin-planet-compose.html:33 templates/planet/posting.html:26
+msgid "Tags"
+msgstr "Tags"
+
+#: templates/admin-planet-compose.html:44
+#: templates/admin-mirrors-details.html:17
+msgid "Status"
+msgstr "Status"
+
+#: templates/admin-planet-compose.html:48 templates/admin-planet.html:25
+msgid "Draft"
+msgstr ""
+
+#: templates/admin-planet-compose.html:52
+#, fuzzy
+msgid "Published"
+msgstr "Veröffentlicht am"
+
+#: templates/admin-planet-compose.html:58
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/admin-planet-compose.html:59
+msgid "Preview"
+msgstr "Vorschau"
+
+#: templates/admin-planet-compose.html:60
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: templates/mirrors-item.html:3
+#, python-format
+msgid "Mirror %s"
+msgstr "Mirror %s"
+
+#: templates/mirrors-item.html:8
+msgid "Up"
+msgstr "Verfügbar"
+
+#: templates/mirrors-item.html:10
+msgid "Down"
+msgstr "Nicht verfügbar"
+
+#: templates/mirrors-item.html:12
+msgid "Out of sync"
+msgstr "Nicht synchronisiert"
+
+#: templates/mirrors-item.html:30 templates/admin-mirrors-create.html:24
+#: templates/downloads-mirrors.html:49 templates/admin-mirrors-details.html:25
+msgid "Location"
+msgstr "Standort"
+
+#: templates/mirrors-item.html:36 templates/geoip/index.html:19
+msgid "Country"
+msgstr ""
+
+#: templates/mirrors-item.html:41 templates/geoip/index.html:29
+msgid "City"
+msgstr ""
+
+#: templates/mirrors-item.html:47
+msgid "Preferred for"
+msgstr "Bevorzugt für"
+
+#: templates/mirrors-item.html:54
+msgid "Estimated distance to you"
+msgstr ""
+
+#: templates/mirrors-item.html:61 templates/geoip/index.html:15
+msgid "Autonomous System"
+msgstr ""
+
+#: templates/mirrors-item.html:65
+msgid "IP Addresses"
+msgstr ""
+
+#: templates/mirrors-item.html:75
+#, fuzzy
+msgid "Last updated"
+msgstr "Letztes Update"
+
+#: templates/mirrors-item.html:86
+msgid "Go to mirror"
+msgstr "Zum Mirror"
+
+#: templates/mirrors-item.html:94
+msgid "The location of the mirror server is estimated by the IP address."
+msgstr ""
+"Der Standort dieses Mirrorservers wurde anhand der IP-Adresse geschätzt."
+
+#: templates/mirrors-item.html:98
+#, fuzzy
+msgid "The location of this mirror server could not be estimated."
+msgstr "Der Standort dieses Mirrorservers konnte nicht ermittelt werden."
+
+#: templates/tracker-torrents.html:3
+msgid "Torrent Downloads"
+msgstr "Torrent-Downloads"
+
+#: templates/tracker-torrents.html:7
+msgid "IPFire Torrent Tracker"
+msgstr "IPFire Torrent-Tracker"
+
+#: templates/tracker-torrents.html:32 templates/downloads-older.html:25
+#: templates/downloads-index.html:35
+msgid "Release"
+msgstr "Release"
+
+#: templates/tracker-torrents.html:33
+msgid "Seeders"
+msgstr "Seeders"
+
+#: templates/tracker-torrents.html:34 templates/tracker-torrent-detail.html:23
+msgid "Peers"
+msgstr "Peers"
+
+#: templates/downloads-older.html:3 templates/downloads-older.html:7
+msgid "Ancient downloads"
+msgstr "Veraltete Downloads"
+
+#: templates/downloads-older.html:13
+msgid ""
+"Beware that these releases could lack possible security-fixes\tand so it is "
+"recommended to use the <em>latest</em> version."
+msgstr ""
+"Achtung! Diese Releases könnten potentielle Sicherheitsprobleme aufweisen. "
+"Daher wird empfohlen die <em>neueste</em> Version einzusetzen."
+
+#: templates/downloads-older.html:26
+msgid "Published on"
+msgstr "Veröffentlicht am"
+
+#: templates/admin-downloads-mirrors.html:5 templates/admin-downloads.html:5
+msgid "Download statistics"
+msgstr "Downloadstatistiken"
+
+#: templates/admin-downloads-mirrors.html:7
+msgid "Mirror load from today"
+msgstr "Mirrorauslastung von heute"
+
+#: templates/admin-downloads-mirrors.html:10
+msgid "Mirror load"
+msgstr "Mirrorauslastung"
+
+#: templates/admin-base.html:3
+msgid "IPFire Admin Area"
+msgstr "IPFire Adminbereich"
+
+#: templates/admin-base.html:6 templates/admin-downloads-base.html:8
+msgid "Options"
+msgstr "Optionen"
+
+#: templates/admin-base.html:9
+msgid "Accounts"
+msgstr "Accounts"
+
+#: templates/admin-base.html:10 templates/modules/menu.html:110
+msgid "Mirrors"
+msgstr "Mirrors"
+
+#: templates/admin-base.html:11 templates/modules/menu.html:92
+msgid "Planet"
+msgstr "Planet"
+
+#: templates/admin-base.html:12
+msgid "Downloads"
+msgstr "Downloads"
+
+#: templates/base-feature.html:6 templates/static/features.html:3
+#: templates/static/features.html:8 templates/static/features.html:1349
+#: templates/modules/menu.html:7
 msgid "About IPFire"
 msgstr "Über IPFire"
 
@@ -1060,315 +1895,168 @@ msgstr "Quality of Service"
 msgid "Wireless AP"
 msgstr "WLAN-Access-Point"
 
-#: templates/download-mirror-detail.html:24
-msgid "Number of files"
-msgstr "Anzahl von Dateien"
+#: templates/downloads-development.html:3
+#: templates/downloads-development.html:6
+msgid "Development Downloads"
+msgstr "Development Downloads"
 
-#: templates/download-mirror-detail.html:32
-msgid "View list of all mirror servers."
-msgstr "Liste aller Mirrorserver."
+#: templates/admin-mirrors-create.html:16
+msgid "Path"
+msgstr "Pfad"
 
-#: templates/downloads-all.html:3
-msgid "Ancient Downloads"
-msgstr "Veraltete Downloads"
+#: templates/admin-mirrors-create.html:28
+#: templates/admin-mirrors-details.html:33
+msgid "File mirror"
+msgstr "Dateimirror"
 
-#: templates/downloads-all.html:7 templates/index.html:18
-msgid "Download IPFire"
-msgstr "IPFire herunterladen"
+#: templates/admin-mirrors-create.html:31
+#: templates/admin-mirrors-create.html:40
+#: templates/admin-mirrors-create.html:49
+#: templates/admin-mirrors-create.html:58
+msgid "yes"
+msgstr "Ja"
 
-#: templates/admin-accounts-edit.html:5 templates/admin-accounts.html:5
-msgid "Account Administrator"
-msgstr "Accountadministrator"
+#: templates/admin-mirrors-create.html:32
+#: templates/admin-mirrors-create.html:41
+#: templates/admin-mirrors-create.html:50
+#: templates/admin-mirrors-create.html:59
+msgid "no"
+msgstr "Nein"
 
-#: templates/planet/year.html:6
+#: templates/admin-mirrors-create.html:37
+#: templates/admin-mirrors-details.html:37
+msgid "Pakfire 2 mirror"
+msgstr "Pakfire 2 Mirror"
+
+#: templates/admin-mirrors-create.html:46
+#: templates/admin-mirrors-details.html:41
+msgid "Pakfire 3 mirror"
+msgstr "Pakfire 3 Mirror"
+
+#: templates/admin-mirrors-create.html:55
+#: templates/admin-mirrors-details.html:45
+msgid "Disabled?"
+msgstr "Ausgeschaltet?"
+
+#: templates/geoip/index.html:3 templates/geoip/index.html:7
 #, python-format
-msgid "Year %s"
-msgstr "Jahr %s"
+msgid "GeoIP for %s"
+msgstr ""
 
-#: templates/planet/user.html:22 templates/planet/index.html:45
-msgid "Older posts"
-msgstr "Ältere Beiträge"
+#: templates/geoip/index.html:33
+msgid "Postal Code"
+msgstr ""
 
-#: templates/planet/user.html:26 templates/planet/index.html:49
-msgid "Newer posts"
-msgstr "Neuere Beiträge"
-
-#: templates/planet/user.html:33
+#: templates/geoip/index.html:46
 #, python-format
-msgid "%s did not write any posts, yet."
-msgstr "%s hat bisher noch keine Beiträge verfasst."
+msgid "No GeoIP information could be found for the IP address '%s'."
+msgstr ""
 
-#: templates/planet/user.html:48 templates/static/press.html:31
-#: templates/static/imprint.html:29 templates/static/imprint.html:41
-#: templates/static/imprint.html:53 templates/static/imprint.html:65
-msgid "Mail"
-msgstr "Mail"
+#: templates/downloads-index.html:3
+msgid "Download Center"
+msgstr "Downloadcenter"
 
-#: templates/planet/search.html:6
-#, python-format
-msgid "Search results for '%s'"
-msgstr "Suchergebnisse für '%s'"
+#: templates/downloads-index.html:7
+msgid "IPFire Download Center"
+msgstr "IPFire Download-Center"
 
-#: templates/planet/search.html:16
-#, python-format
-msgid "No results found for '%s'"
-msgstr "Keine Resultate gefunden für '%s'"
+#: templates/downloads-index.html:30
+msgid "Available releases"
+msgstr "Verfügbare Releases"
 
-#: templates/planet/base.html:9
-msgid "The official blog of the IPFire team"
-msgstr "Das offizielle Blog des IPFire-Team"
+#: templates/downloads-index.html:36
+msgid "Release type"
+msgstr "Release-Typ"
 
-#: templates/planet/index.html:24
-msgid "All posts from"
-msgstr "Alle Posts aus"
+#: templates/downloads-index.html:37
+msgid "Release date"
+msgstr "Veröffentlichungsdatum"
 
-#: templates/planet/posting.html:24 templates/modules/planet-entry.html:14
-msgid "Posted by"
-msgstr "Erstellt von"
+#: templates/downloads-index.html:48
+msgid "Stable"
+msgstr "Stabil"
 
-#: templates/planet/posting.html:25 templates/modules/planet-entry.html:15
-msgid "on"
-msgstr "am"
+#: templates/downloads-index.html:50 templates/static/getinvolved.html:153
+#: templates/static/development.html:3 templates/static/development.html:8
+#: templates/modules/menu.html:65
+msgid "Development"
+msgstr "Entwicklung"
 
-#: templates/base.html:4
-msgid "No title given"
-msgstr "Kein Titel"
-
-#: templates/base.html:63
-msgid "IPFire is free software"
-msgstr "IPFire ist freie Software"
-
-#: templates/base.html:69 templates/static/press.html:3
-#: templates/static/press.html:7
-msgid "Press"
-msgstr "Presse"
-
-#: templates/base.html:73 templates/static/imprint.html:3
-#: templates/static/imprint.html:8
-msgid "Imprint"
-msgstr "Impressum"
-
-#: templates/admin-mirrors.html:5
-msgid "Mirror Administrator"
-msgstr "Mirroradministrator"
-
-#: templates/admin-mirrors.html:9
-msgid "Re-check now"
-msgstr "Jetzt neu prüfen"
-
-#: templates/admin-mirrors.html:23 templates/admin-mirrors-details.html:5
-msgid "Details"
+#: templates/downloads-mirrors.html:63
+msgid "details"
 msgstr "Details"
 
-#: templates/admin-mirrors.html:25 templates/admin-accounts.html:21
-msgid "Delete"
-msgstr "Löschen"
+#: templates/admin-planet.html:5
+msgid "Planet Administrator"
+msgstr "Planet Administrator"
 
-#: templates/tracker-torrents.html:3
-msgid "Torrent Downloads"
-msgstr "Torrent-Downloads"
+#: templates/admin-planet.html:13
+msgid "Author"
+msgstr "Autor"
 
-#: templates/tracker-torrents.html:7
-msgid "IPFire Torrent Tracker"
-msgstr "IPFire Torrent-Tracker"
-
-#: templates/tracker-torrents.html:33
-msgid "Seeders"
-msgstr "Seeders"
+#: templates/admin-planet.html:31
+#, fuzzy
+msgid "Publish"
+msgstr "Veröffentlicht am"
 
 #: templates/error.html:3
 msgid "Error"
 msgstr "Error"
 
-#: templates/modules/donation-box.html:4
-msgid "Donate with PayPal or Credit Card"
-msgstr "Mit PayPal oder Kreditkarte spenden"
+#: templates/admin-downloads-base.html:5
+msgid "Back to home"
+msgstr "Zurück zur Startseite"
 
-#: templates/modules/donation-box.html:64
-msgid "Donate by Bank Transfer"
-msgstr "Per Banküberweisung spenden"
+#: templates/admin-downloads-base.html:11
+msgid "Mirror stats"
+msgstr "Mirrorstatistiken"
 
-#: templates/modules/donation-box.html:81
-msgid "IBAN"
-msgstr "IBAN"
-
-#: templates/modules/donation-box.html:82
-msgid "BIC-/SWIFT-Code"
-msgstr "BIC-/SWIFT-Code"
-
-#: templates/modules/donation-box.html:85
-#: templates/modules/donation-box.html:100
-msgid "Reason for transfer"
-msgstr "Verwendungszweck"
-
-#: templates/modules/donation-box.html:92
-msgid "bank transfer within Germany"
-msgstr "Überweisung innerhalb Deutschlands"
-
-#: templates/modules/donation-box.html:95
-msgid "Bank account owner"
-msgstr "Kontoinhaber"
-
-#: templates/modules/donation-box.html:96
-msgid "Bank account number"
-msgstr "Kontonummer"
-
-#: templates/modules/donation-box.html:97
-msgid "Bank code"
-msgstr "BLZ"
-
-#: templates/modules/release-item.html:2
-#: templates/modules/sidebar-release.html:4 templates/index.html:24
-msgid "Latest release"
-msgstr "Neuestes Release"
-
-#: templates/modules/release-item.html:10
-msgid "Choose an architecture:"
-msgstr "Architektur auswählen:"
-
-#: templates/modules/release-item.html:55
-msgid "Caution!"
-msgstr "Achtung!"
-
-#: templates/modules/release-item.html:79
-msgid "Image type"
-msgstr "Imagetyp"
-
-#: templates/modules/release-item.html:80
-msgid "Size"
-msgstr "Größe"
-
-#: templates/modules/release-item.html:101
-msgid "SHA1 checksum"
-msgstr "SHA1-Prüfsumme"
-
-#: templates/modules/release-item.html:113
-msgid "Legend:"
-msgstr "Legende:"
-
-#: templates/modules/release-item.html:123
-#: templates/modules/release-item-short.html:13
-msgid "There are no downloads available for this release."
-msgstr "Es gibt keine Downloads für dieses Release."
-
-#: templates/modules/sidebar-release.html:9
-msgid "Download now"
-msgstr "Jetzt herunterladen"
-
-#: templates/modules/release-item-short.html:4
-msgid "Here you will find the downloads for the version"
-msgstr "Hier gibt es alle Downloads für diese Version"
-
-#: templates/modules/news-preview.html:6
-msgid "by"
-msgstr "von"
-
-#: templates/modules/download-button.html:2
-#, python-format
-msgid "Download %s"
-msgstr "%s herunterladen"
-
-#: templates/modules/stasy-table-devices.html:6
-msgid "Kernel module"
-msgstr "Kernelmodul"
-
-#: templates/modules/news-year-nav.html:3
-msgid "Jump to"
-msgstr "Springe zu"
-
-#: templates/modules/news-year-nav.html:6
-msgid "Most recent"
-msgstr "Aktuellste"
-
-#: templates/modules/ads/download-splash.html:4
-msgid "Advertisement"
-msgstr "Werbung"
-
-#: templates/modules/ads/download-splash.html:5
-msgid "This download is sponsored by:"
-msgstr "Dieser Download wurde gesponsort von:"
-
-#: templates/modules/menu.html:4
-msgid "Download"
-msgstr "Download"
-
-#: templates/modules/menu.html:10
-msgid "Get Involved"
+#: templates/static/getinvolved.html:3 templates/static/getinvolved.html:8
+msgid "Get involved"
 msgstr "Mitmachen"
 
-#: templates/modules/menu.html:14
-msgid "Support"
-msgstr "Support"
+#: templates/static/getinvolved.html:10
+msgid "Because making a difference is easy"
+msgstr "Weil es so leicht ist etwas Gutes zu tun"
 
-#: templates/modules/menu.html:20
-msgid "Commercial support"
-msgstr "Kommerzieller Support"
+#: templates/static/getinvolved.html:47
+msgid "First steps"
+msgstr "Erste Schritte"
 
-#: templates/modules/menu.html:27
-msgid "Wiki"
-msgstr "Wiki"
+#: templates/static/getinvolved.html:97
+msgid "Donations"
+msgstr "Spenden"
 
-#: templates/modules/menu.html:33
-msgid "Forum"
-msgstr "Forum"
+#: templates/static/getinvolved.html:120 templates/static/donation.html:3
+#: templates/static/donation.html:8 templates/modules/menu.html:47
+#: templates/wishlist/donate.html:3 templates/wishlist/modules/wish.html:26
+#: templates/download-splash.html:37
+msgid "Donate"
+msgstr "Spenden"
 
-#: templates/modules/menu.html:39 templates/static/chat.html:3
-#: templates/static/chat.html:8
-msgid "Chat"
-msgstr "Chat"
-
-#: templates/modules/menu.html:53 templates/static/getinvolved.html:126
+#: templates/static/getinvolved.html:126 templates/modules/menu.html:53
 msgid "Wishlist"
 msgstr "Wunschliste"
 
-#: templates/modules/menu.html:61
-msgid "More"
-msgstr "Mehr"
+#: templates/static/getinvolved.html:142
+msgid "Make a wish"
+msgstr "Wünsch dir was"
 
-#: templates/modules/menu.html:70
-msgid "Overview"
-msgstr "Übersicht"
+#: templates/static/getinvolved.html:149
+msgid "Contribute yourself"
+msgstr "Bring dich selbst ein"
 
-#: templates/modules/menu.html:76
-msgid "Pakfire Build Service"
-msgstr "Pakfire Buildsystem"
+#: templates/static/getinvolved.html:175
+msgid "Translation"
+msgstr "Übersetzung"
 
-#: templates/modules/menu.html:82 templates/static/development.html:55
-msgid "Bugtracker"
-msgstr "Bugtracker"
+#: templates/static/getinvolved.html:190
+msgid "Translation team"
+msgstr "Übersetzungsteam"
 
-#: templates/modules/menu.html:87
-msgid "Miscellaneous"
-msgstr "Verschiedenes"
-
-#: templates/modules/menu.html:104
-msgid "Mailing lists"
-msgstr "Mailinglisten"
-
-#: templates/modules/menu.html:116 templates/static/artwork.html:3
-#: templates/static/artwork.html:8
-msgid "Artwork"
-msgstr "Artwork"
-
-#: templates/modules/menu.html:122
-msgid "CeBIT"
-msgstr "CeBIT"
-
-#: templates/modules/menu.html:128
-msgid "Tracker"
-msgstr "Tracker"
-
-#: templates/modules/menu.html:146
-msgid "Professional support available!"
-msgstr "Professioneller Support verfügbar!"
-
-#: templates/modules/news-item.html:6
-msgid "Announcement"
-msgstr "Ankündigung"
-
-#: templates/static/press.html:35
-msgid "Logo"
-msgstr "Logo"
+#: templates/static/getinvolved.html:196
+msgid "Promotion"
+msgstr "Promotion"
 
 #: templates/static/features.html:10
 msgid "Because IPFire is more than just a firewall"
@@ -1410,9 +2098,26 @@ msgstr "Webproxy"
 msgid "Intrusion Detection"
 msgstr "Einbruchsdetektierung"
 
+#: templates/static/artwork.html:3 templates/static/artwork.html:8
+#: templates/modules/menu.html:116
+msgid "Artwork"
+msgstr "Artwork"
+
+#: templates/static/artwork.html:36
+msgid "The IPFire Logo"
+msgstr "Das IPFire-Logo"
+
+#: templates/static/artwork.html:50
+msgid "Flyers, Rollups, CDs and more"
+msgstr "Flyer, Rollups, CDs und mehr"
+
 #: templates/static/development.html:37 templates/static/development.html:258
 msgid "Development tools"
 msgstr "Entwicklungstools"
+
+#: templates/static/development.html:55 templates/modules/menu.html:82
+msgid "Bugtracker"
+msgstr "Bugtracker"
 
 #: templates/static/development.html:77
 msgid "Development Mailing List"
@@ -1450,6 +2155,31 @@ msgstr "Wie sendet man Patches?"
 msgid "How to translate IPFire?"
 msgstr "Wie übersetzt man IPFire?"
 
+#: templates/static/press.html:3 templates/static/press.html:7
+#: templates/base.html:69
+msgid "Press"
+msgstr "Presse"
+
+#: templates/static/press.html:31 templates/static/imprint.html:29
+#: templates/static/imprint.html:41 templates/static/imprint.html:53
+#: templates/static/imprint.html:65 templates/planet/user.html:48
+msgid "Mail"
+msgstr "Mail"
+
+#: templates/static/press.html:35
+msgid "Logo"
+msgstr "Logo"
+
+#: templates/static/imprint.html:3 templates/static/imprint.html:8
+#: templates/base.html:73
+msgid "Imprint"
+msgstr "Impressum"
+
+#: templates/static/chat.html:3 templates/static/chat.html:8
+#: templates/modules/menu.html:39
+msgid "Chat"
+msgstr "Chat"
+
 #: templates/static/chat.html:33
 msgid "Server"
 msgstr "Server"
@@ -1461,58 +2191,6 @@ msgstr "Channel"
 #: templates/static/chat.html:41
 msgid "Use the web client"
 msgstr "Web-Client benutzen"
-
-#: templates/static/cebit.html:3
-msgid "CeBIT special"
-msgstr "CeBIT-Spezial"
-
-#: templates/static/cebit.html:8
-msgid "IPFire at CeBIT 2010"
-msgstr "IPFire auf der CeBIT 2010"
-
-#: templates/static/getinvolved.html:3 templates/static/getinvolved.html:8
-msgid "Get involved"
-msgstr "Mitmachen"
-
-#: templates/static/getinvolved.html:10
-msgid "Because making a difference is easy"
-msgstr "Weil es so leicht ist etwas Gutes zu tun"
-
-#: templates/static/getinvolved.html:47
-msgid "First steps"
-msgstr "Erste Schritte"
-
-#: templates/static/getinvolved.html:97
-msgid "Donations"
-msgstr "Spenden"
-
-#: templates/static/getinvolved.html:142
-msgid "Make a wish"
-msgstr "Wünsch dir was"
-
-#: templates/static/getinvolved.html:149
-msgid "Contribute yourself"
-msgstr "Bring dich selbst ein"
-
-#: templates/static/getinvolved.html:175
-msgid "Translation"
-msgstr "Übersetzung"
-
-#: templates/static/getinvolved.html:190
-msgid "Translation team"
-msgstr "Übersetzungsteam"
-
-#: templates/static/getinvolved.html:196
-msgid "Promotion"
-msgstr "Promotion"
-
-#: templates/static/artwork.html:36
-msgid "The IPFire Logo"
-msgstr "Das IPFire-Logo"
-
-#: templates/static/artwork.html:50
-msgid "Flyers, Rollups, CDs and more"
-msgstr "Flyer, Rollups, CDs und mehr"
 
 #: templates/static/donation.html:10
 msgid "We need your help!"
@@ -1529,6 +2207,388 @@ msgstr "Wofür werden Spenden eingesetzt?"
 #: templates/static/donation.html:132
 msgid "Research & Development"
 msgstr "Forschung & Entwicklung"
+
+#: templates/static/cebit.html:3
+msgid "CeBIT special"
+msgstr "CeBIT-Spezial"
+
+#: templates/static/cebit.html:8
+msgid "IPFire at CeBIT 2010"
+msgstr "IPFire auf der CeBIT 2010"
+
+#: templates/admin-accounts.html:8
+msgid "Create new account"
+msgstr "Neuen Account erstellen"
+
+#: templates/admin-accounts.html:13
+msgid "Name (Nickname)"
+msgstr "Name (Nickname)"
+
+#: templates/modules/sidebar-release.html:4
+#: templates/modules/release-item.html:2 templates/index.html:24
+msgid "Latest release"
+msgstr "Neuestes Release"
+
+#: templates/modules/sidebar-release.html:9
+msgid "Download now"
+msgstr "Jetzt herunterladen"
+
+#: templates/modules/release-item-short.html:4
+msgid "Here you will find the downloads for the version"
+msgstr "Hier gibt es alle Downloads für diese Version"
+
+#: templates/modules/release-item-short.html:13
+#: templates/modules/release-item.html:123
+msgid "There are no downloads available for this release."
+msgstr "Es gibt keine Downloads für dieses Release."
+
+#: templates/modules/download-button.html:2
+#, python-format
+msgid "Download %s"
+msgstr "%s herunterladen"
+
+#: templates/modules/map.html:5
+msgid "View larger map"
+msgstr "Größere Karte ansehen"
+
+#: templates/modules/ads/download-splash.html:4
+msgid "Advertisement"
+msgstr "Werbung"
+
+#: templates/modules/ads/download-splash.html:5
+msgid "This download is sponsored by:"
+msgstr "Dieser Download wurde gesponsort von:"
+
+#: templates/modules/news-preview.html:6
+msgid "by"
+msgstr "von"
+
+#: templates/modules/mirrors-table.html:37
+#, fuzzy, python-format
+msgid "Last update: %s"
+msgstr "Letztes Update"
+
+#: templates/modules/news-year-nav.html:3
+msgid "Jump to"
+msgstr "Springe zu"
+
+#: templates/modules/news-year-nav.html:6
+msgid "Most recent"
+msgstr "Aktuellste"
+
+#: templates/modules/stasy-table-devices.html:6
+msgid "Kernel module"
+msgstr "Kernelmodul"
+
+#: templates/modules/donation-box.html:4
+msgid "Donate with PayPal or Credit Card"
+msgstr "Mit PayPal oder Kreditkarte spenden"
+
+#: templates/modules/donation-box.html:64
+msgid "Donate by Bank Transfer"
+msgstr "Per Banküberweisung spenden"
+
+#: templates/modules/donation-box.html:81
+msgid "IBAN"
+msgstr "IBAN"
+
+#: templates/modules/donation-box.html:82
+msgid "BIC-/SWIFT-Code"
+msgstr "BIC-/SWIFT-Code"
+
+#: templates/modules/donation-box.html:85
+#: templates/modules/donation-box.html:100
+msgid "Reason for transfer"
+msgstr "Verwendungszweck"
+
+#: templates/modules/donation-box.html:92
+msgid "bank transfer within Germany"
+msgstr "Überweisung innerhalb Deutschlands"
+
+#: templates/modules/donation-box.html:95
+msgid "Bank account owner"
+msgstr "Kontoinhaber"
+
+#: templates/modules/donation-box.html:96
+msgid "Bank account number"
+msgstr "Kontonummer"
+
+#: templates/modules/donation-box.html:97
+msgid "Bank code"
+msgstr "BLZ"
+
+#: templates/modules/planet-entry.html:14 templates/planet/posting.html:31
+msgid "Posted by"
+msgstr "Erstellt von"
+
+#: templates/modules/planet-entry.html:15 templates/planet/posting.html:32
+msgid "on"
+msgstr "am"
+
+#: templates/modules/news-item.html:6
+msgid "Announcement"
+msgstr "Ankündigung"
+
+#: templates/modules/release-item.html:10
+msgid "Choose an architecture:"
+msgstr "Architektur auswählen:"
+
+#: templates/modules/release-item.html:55
+msgid "Caution!"
+msgstr "Achtung!"
+
+#: templates/modules/release-item.html:79
+msgid "Image type"
+msgstr "Imagetyp"
+
+#: templates/modules/release-item.html:80
+msgid "Size"
+msgstr "Größe"
+
+#: templates/modules/release-item.html:101
+msgid "SHA1 checksum"
+msgstr "SHA1-Prüfsumme"
+
+#: templates/modules/release-item.html:113
+msgid "Legend:"
+msgstr "Legende:"
+
+#: templates/modules/release-item.html:114
+#: templates/tracker-torrent-detail.html:15
+msgid "Magnet link"
+msgstr "Magnet-Link"
+
+#: templates/modules/release-item.html:115
+#: templates/tracker-torrent-detail.html:3
+#: templates/tracker-torrent-detail.html:18
+msgid "Torrent download"
+msgstr "Torrent-Download"
+
+#: templates/modules/menu.html:4
+msgid "Download"
+msgstr "Download"
+
+#: templates/modules/menu.html:10
+msgid "Get Involved"
+msgstr "Mitmachen"
+
+#: templates/modules/menu.html:14
+msgid "Support"
+msgstr "Support"
+
+#: templates/modules/menu.html:20
+msgid "Commercial support"
+msgstr "Kommerzieller Support"
+
+#: templates/modules/menu.html:27
+msgid "Wiki"
+msgstr "Wiki"
+
+#: templates/modules/menu.html:33
+msgid "Forum"
+msgstr "Forum"
+
+#: templates/modules/menu.html:61
+msgid "More"
+msgstr "Mehr"
+
+#: templates/modules/menu.html:70
+msgid "Overview"
+msgstr "Übersicht"
+
+#: templates/modules/menu.html:76
+msgid "Pakfire Build Service"
+msgstr "Pakfire Buildsystem"
+
+#: templates/modules/menu.html:87
+msgid "Miscellaneous"
+msgstr "Verschiedenes"
+
+#: templates/modules/menu.html:104
+msgid "Mailing lists"
+msgstr "Mailinglisten"
+
+#: templates/modules/menu.html:122
+msgid "CeBIT"
+msgstr "CeBIT"
+
+#: templates/modules/menu.html:128
+msgid "Tracker"
+msgstr "Tracker"
+
+#: templates/modules/menu.html:146
+msgid "Professional support available!"
+msgstr "Professioneller Support verfügbar!"
+
+#: templates/admin-login.html:3
+msgid "Please login"
+msgstr "Bitte einloggen"
+
+#: templates/planet/search.html:6
+#, python-format
+msgid "Search results for '%s'"
+msgstr "Suchergebnisse für '%s'"
+
+#: templates/planet/search.html:16
+#, python-format
+msgid "No results found for '%s'"
+msgstr "Keine Resultate gefunden für '%s'"
+
+#: templates/planet/year.html:6
+#, python-format
+msgid "Year %s"
+msgstr "Jahr %s"
+
+#: templates/planet/user.html:22 templates/planet/index.html:45
+msgid "Older posts"
+msgstr "Ältere Beiträge"
+
+#: templates/planet/user.html:26 templates/planet/index.html:49
+msgid "Newer posts"
+msgstr "Neuere Beiträge"
+
+#: templates/planet/user.html:33
+#, python-format
+msgid "%s did not write any posts, yet."
+msgstr "%s hat bisher noch keine Beiträge verfasst."
+
+#: templates/planet/posting.html:17
+msgid "Heads up!"
+msgstr ""
+
+#: templates/planet/posting.html:17
+msgid "This post is a draft and has not been published, yet."
+msgstr ""
+
+#: templates/planet/index.html:24
+msgid "All posts from"
+msgstr "Alle Posts aus"
+
+#: templates/planet/base.html:9
+msgid "The official blog of the IPFire team"
+msgstr "Das offizielle Blog des IPFire-Team"
+
+#: templates/admin-downloads.html:7
+msgid "Download counters"
+msgstr "Downloadzähler"
+
+#: templates/admin-downloads.html:10
+msgid "Today"
+msgstr "Heute"
+
+#: templates/admin-downloads.html:14
+msgid "Yesterday"
+msgstr "Gestern"
+
+#: templates/admin-downloads.html:18
+msgid "Total"
+msgstr "Insgesamt"
+
+#: templates/admin-downloads.html:23
+msgid "Downloads by country"
+msgstr "Downloads pro Land"
+
+#: templates/tracker-torrent-detail.html:28
+msgid "Seeds"
+msgstr "Seeds"
+
+#: templates/wishlist/closed.html:3 templates/wishlist/closed.html:13
+msgid "Closed wishes"
+msgstr "Beendete Wünsche"
+
+#: templates/wishlist/closed.html:9
+msgid "Wishes open for donation"
+msgstr "Noch laufende Wünsche"
+
+#: templates/wishlist/closed.html:36 templates/wishlist/closed.html:40
+msgid "Older"
+msgstr "Älter"
+
+#: templates/wishlist/closed.html:46 templates/wishlist/closed.html:50
+msgid "Newer"
+msgstr "Neuer"
+
+#: templates/wishlist/donate.html:13 templates/wishlist/donate.html:23
+#: templates/wishlist/terms.html:3 templates/wishlist/terms.html:7
+#: templates/base.html:78
+msgid "Terms & Conditions"
+msgstr "Allgemeine Bedingungen"
+
+#: templates/wishlist/modules/wish.html:6
+msgid "Only a few days left!"
+msgstr "Nur noch wenige Tage!"
+
+#: templates/wishlist/modules/wish.html:36
+msgid "funded"
+msgstr "gesammelt"
+
+#: templates/wishlist/modules/wish.html:40
+#: templates/wishlist/modules/wish.html:50
+#, python-format
+msgid "%s &euro;"
+msgstr "%s &euro;"
+
+#: templates/wishlist/modules/wish.html:41
+msgid "donated"
+msgstr "gespendet"
+
+#: templates/wishlist/modules/wish.html:48
+msgid "day to go"
+msgid_plural "days to go"
+msgstr[0] "Tag übrig"
+msgstr[1] "Tage übrig"
+
+#: templates/wishlist/modules/wish.html:51
+#, fuzzy
+msgid "to go"
+msgstr "Tag übrig"
+
+#: templates/wishlist/modules/wish.html:54
+msgid "In progress"
+msgstr "In Entwicklung"
+
+#: templates/wishlist/modules/wish.html:56
+msgid "Finished"
+msgstr "Beendet"
+
+#: templates/wishlist/modules/wish.html:58
+msgid "Funding ended"
+msgstr "Sammlung beendet"
+
+#: templates/wishlist/modules/wish.html:68
+msgid "Share this wish with your friends and help us promote it!"
+msgstr ""
+"Teile diesen Wunsch mit deinen Freunden und hilf diesen bekannter zu machen!"
+
+#: templates/wishlist/index.html:3 templates/index.html:3
+msgid "Home"
+msgstr "Startseite"
+
+#: templates/wishlist/wish.html:3
+msgid "Wish"
+msgstr "Wunsch"
+
+#: templates/wishlist/wish.html:18
+#, python-format
+msgid "Launched: %s"
+msgstr "Gestarted: %s"
+
+#: templates/wishlist/wish.html:24
+#, python-format
+msgid "Funding ends: %s"
+msgstr "Sammlung endet: %s"
+
+#: templates/wishlist/wish.html:26
+msgid "This funding runs until the goal is reached."
+msgstr ""
+
+#: templates/wishlist/base.html:6 templates/index.html:175
+msgid "IPFire Wishlist"
+msgstr "IPFire Wunschliste"
+
+#: templates/wishlist/base.html:8
+msgid "Crowd funding for the IPFire project"
+msgstr "Crowdfunding für das IPFire-Projekt"
 
 #: templates/index.html:92
 msgid "Flexibility"
@@ -1582,10 +2642,6 @@ msgstr "von Lightning Wire Labs"
 msgid "All mirrors"
 msgstr "Alle Mirrors"
 
-#: templates/admin-mirrors-details.html:17
-msgid "Status"
-msgstr "Status"
-
 #: templates/admin-mirrors-details.html:29
 msgid "GeoIP Location"
 msgstr "GeoIP Standort"
@@ -1594,125 +2650,174 @@ msgstr "GeoIP Standort"
 msgid "Filelist"
 msgstr "Dateiliste"
 
-#: templates/admin-accounts.html:8
-msgid "Create new account"
-msgstr "Neuen Account erstellen"
+#: templates/base.html:4
+msgid "No title given"
+msgstr "Kein Titel"
 
-#: templates/admin-accounts.html:13
-msgid "Name (Nickname)"
-msgstr "Name (Nickname)"
+#: templates/base.html:63
+msgid "IPFire is free software"
+msgstr "IPFire ist freie Software"
 
-#: templates/mirrors.html:25
-msgid "Mirror servers nearby"
-msgstr "Nahgelegene Mirrorserver"
+#: templates/download-splash.html:3 templates/download-splash.html:7
+msgid "Thanks for downloading IPFire!"
+msgstr "Vielen Dank, für das Herunterladen von IPFire! "
 
-#: templates/mirrors.html:28 templates/mirrors.html:31
-msgid "Worldwide mirror servers"
-msgstr "Weltweite Mirrorserver"
+#: templates/download-splash.html:61
+msgid "Next steps"
+msgstr "Nächste Schritte"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:229
+#: templates/download-splash.html:66
+msgid "Install IPFire"
+msgstr "IPFire installieren"
+
+#: templates/download-splash.html:82
+msgid "Access documentation"
+msgstr "Dokumentation lesen"
+
+#: templates/download-splash.html:100
+msgid "Join the community"
+msgstr "Der Community beitreten"
+
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:239
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:239
 msgid "Monday"
 msgstr "Montag"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:229
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:239
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:239
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:229
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:239
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:239
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:229
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:239
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:239
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:230
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:240
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:240
 msgid "Friday"
 msgstr "Freitag"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:230
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:240
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:240
 msgid "Saturday"
 msgstr "Samstag"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:230
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:240
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:240
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:274
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:290
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:290
 #, python-format
 msgid "1 second ago"
 msgid_plural "%(seconds)d seconds ago"
 msgstr[0] "vor einer Sekunde"
 msgstr[1] "vor %(seconds)d Sekunden"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:279
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:295
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:295
 #, python-format
 msgid "1 minute ago"
 msgid_plural "%(minutes)d minutes ago"
 msgstr[0] "vor einer Minute"
 msgstr[1] "vor %(minutes)d Minuten"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:283
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:299
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:299
 #, python-format
 msgid "1 hour ago"
 msgid_plural "%(hours)d hours ago"
 msgstr[0] "vor einer Stunde"
 msgstr[1] "vor %(hours)d Stunden"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:287
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:303
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:303
 #, python-format
 msgid "%(time)s"
 msgstr "%(time)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:290
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:306
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:306
 msgid "yesterday"
 msgstr "gestern"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:291
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:307
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:307
 #, python-format
 msgid "yesterday at %(time)s"
 msgstr "gestern um %(time)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:293
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:309
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:309
 #, python-format
 msgid "%(weekday)s"
 msgstr "%(weekday)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:294
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:310
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:310
 #, python-format
 msgid "%(weekday)s at %(time)s"
 msgstr "%(weekday)s um %(time)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:296
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:338
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:312
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:354
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:312
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:354
 #, python-format
 msgid "%(month_name)s %(day)s"
 msgstr "%(day)s. %(month_name)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:297
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:313
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:313
 #, python-format
 msgid "%(month_name)s %(day)s at %(time)s"
 msgstr "%(day)s. %(month_name)s um %(time)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:300
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:316
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:316
 #, python-format
 msgid "%(month_name)s %(day)s, %(year)s"
 msgstr "%(day)s %(month_name)s %(year)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:301
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:317
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:317
 #, python-format
 msgid "%(month_name)s %(day)s, %(year)s at %(time)s"
 msgstr "%(day)s. %(month_name)s %(year)s um %(time)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:332
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:348
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:348
 #, python-format
 msgid "%(weekday)s, %(month_name)s %(day)s"
 msgstr "%(weekday)s, %(day)s. %(month_name)s"
 
-#: /usr/lib/python2.7/site-packages/tornado/locale.py:353
+#: /usr/lib/python2.7/site-packages/tornado/locale.py:369
+#: /usr/lib/python3.3/site-packages/tornado/locale.py:369
 #, python-format
 msgid "%(commas)s and %(last)s"
 msgstr "%(commas)s und %(last)s"
+
+#~ msgid "Your distance to this mirror"
+#~ msgstr "Deine Entfernung zu diesem Mirror"
+
+#~ msgid "Mirror location"
+#~ msgstr "Mirrorort"
+
+#~ msgid "The mirror <em>%s</em> is located in %s."
+#~ msgstr "Der Mirrorserver <em>%s</em> befindet sich in %s."
+
+#~ msgid "Mirror servers nearby"
+#~ msgstr "Nahgelegene Mirrorserver"
+
+#~ msgid "Worldwide mirror servers"
+#~ msgstr "Weltweite Mirrorserver"
 
 #~ msgid "Please donate!"
 #~ msgstr "Spenden!"
@@ -1866,9 +2971,6 @@ msgstr "%(commas)s und %(last)s"
 
 #~ msgid "Join the IRC channel"
 #~ msgstr "Dem IRC-Channel beitreten"
-
-#~ msgid "About"
-#~ msgstr "Über"
 
 #~ msgid "Updates in the last 24 hours"
 #~ msgstr "Updates innerhalb der vergangenen 24 Stunden"

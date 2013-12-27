@@ -97,3 +97,22 @@ class StaticHandler(BaseHandler):
 			raise tornado.web.HTTPError(404)
 
 		self.render("static/%s" % name, lang=self.locale.code[:2])
+
+
+class GeoIPHandler(BaseHandler):
+	def get_address(self):
+		addr = self.get_argument("addr", None)
+
+		if not addr:
+			addr = self.get_remote_ip()
+
+		return addr
+
+	def get(self):
+		addr = self.get_address()
+
+		peer = self.geoip.get_all(addr)
+		if peer:
+			peer["country_name"] = self.geoip.get_country_name(peer.country)
+
+		self.render("geoip/index.html", addr=addr, peer=peer)

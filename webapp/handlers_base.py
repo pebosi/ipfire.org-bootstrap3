@@ -8,8 +8,6 @@ import time
 import tornado.locale
 import tornado.web
 
-import backend
-
 def format_size(b):
 	units = ["B", "k", "M", "G"]
 	unit_pointer = 0
@@ -106,53 +104,82 @@ class BaseHandler(tornado.web.RequestHandler):
 
 		return ret
 
+	def get_remote_ip(self):
+		# Fix for clients behind a proxy that sends "X-Forwarded-For".
+		ip_addr = self.request.remote_ip.split(", ")
+
+		if ip_addr:
+			ip_addr = ip_addr[-1]
+
+		return ip_addr
+
+	def get_remote_location(self):
+		if not hasattr(self, "__remote_location"):
+			remote_ip = self.get_remote_ip()
+
+			self.__remote_location = self.geoip.get_location(remote_ip)
+
+		return self.__remote_location
+
 	@property
 	def backend(self):
 		return self.application.backend
 
 	@property
+	def db(self):
+		return self.backend.db
+
+	@property
 	def advertisements(self):
-		return backend.Advertisements()
+		return self.backend.advertisements
 
 	@property
 	def accounts(self):
 		return self.backend.accounts
 
 	@property
-	def banners(self):
-		return backend.Banners()
+	def downloads(self):
+		return self.backend.downloads
+
+	@property
+	def iuse(self):
+		return self.backend.iuse
 
 	@property
 	def memcached(self):
-		return backend.Memcached()
+		return self.backend.memcache
 
 	@property
 	def mirrors(self):
-		return backend.Mirrors()
+		return self.backend.mirrors
+
+	@property
+	def netboot(self):
+		return self.backend.netboot
 
 	@property
 	def news(self):
-		return backend.News()
+		return self.backend.news
 
 	@property
 	def config(self):
-		return backend.Config()
+		return self.backend.settings
 
 	@property
 	def releases(self):
-		return backend.Releases()
-
-	@property
-	def banners(self):
-		return backend.Banners()
+		return self.backend.releases
 
 	@property
 	def geoip(self):
-		return backend.GeoIP()
+		return self.backend.geoip
+
+	@property
+	def stasy(self):
+		return self.backend.stasy
 
 	@property
 	def tracker(self):
-		return backend.Tracker()
+		return self.backend.tracker
 
 	@property
 	def planet(self):
@@ -160,4 +187,4 @@ class BaseHandler(tornado.web.RequestHandler):
 
 	@property
 	def wishlist(self):
-		return backend.Wishlist()
+		return self.backend.wishlist

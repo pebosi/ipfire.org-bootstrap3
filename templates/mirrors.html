@@ -21,14 +21,7 @@
 		</p>
 	{% end %}
 
-	{% if preferred_mirrors %}
-		<h2>{{ _("Mirror servers nearby") }}</h2>
-		{% module MirrorsTable(preferred_mirrors) %}
+	<hr>
 
-		<h2>{{ _("Worldwide mirror servers") }}</h2>
-		{% module MirrorsTable(other_mirrors) %}
-	{% else %}
-		<h2>{{ _("Worldwide mirror servers") }}</h2>
-		{% module MirrorsTable(other_mirrors) %}
-	{% end %}
+	{% module MirrorsTable(mirrors, preferred_mirrors) %}
 {% end block %}

@@ -5,11 +5,13 @@ from __future__ import division
 import hashlib
 import logging
 import operator
+import re
 import socket
 import textile
 import tornado.escape
 import tornado.locale
 import tornado.web
+import unicodedata
 
 from tornado.database import Row
 
@@ -60,9 +62,45 @@ class AdvertisementModule(UIModule):
 		return self.render_string("modules/ads/%s.html" % where, ad=ad)
 
 
+class MapModule(UIModule):
+	def render(self, latitude, longitude):
+		return self.render_string("modules/map.html", latitude=latitude, longitude=longitude)
+
+
 class MenuModule(UIModule):
 	def render(self):
 		return self.render_string("modules/menu.html")
+
+
+class MirrorItemModule(UIModule):
+	def render(self, item):
+		return self.render_string("modules/mirror-item.html", item=item)
+
+
+class MirrorsTableModule(UIModule):
+	def render(self, mirrors, preferred_mirrors=[]):
+		return self.render_string("modules/mirrors-table.html",
+			mirrors=mirrors, preferred_mirrors=preferred_mirrors)
+
+
+class NetBootMenuConfigModule(UIModule):
+	def render(self, release):
+		return self.render_string("netboot/menu-config.cfg", release=release)
+
+
+class NetBootMenuHeaderModule(UIModule):
+	def render(self, title, releases):
+		id = unicodedata.normalize("NFKD", unicode(title)).encode("ascii", "ignore")
+		id = re.sub(r"[^\w]+", " ", id)
+		id = "-".join(id.lower().strip().split())
+
+		return self.render_string("netboot/menu-header.cfg", id=id,
+			title=title, releases=releases)
+
+
+class NetBootMenuSeparatorModule(UIModule):
+	def render(self):
+		return self.render_string("netboot/menu-separator.cfg")
 
 
 class NewsItemModule(UIModule):
@@ -83,14 +121,7 @@ class NewsItemModule(UIModule):
 			item.text = item.text[:400] + "..."
 
 		# Render text
-		text_id = "news-%s" % hashlib.md5(item.text.encode("utf-8")).hexdigest()
-
-		text = self.memcached.get(text_id)
-		if not text:
-			text = textile.textile(item.text)
-			self.memcached.set(text_id, text, 60)
-
-		item.text = text
+		item.text = textile.textile(item.text)
 
 		return self.render_string("modules/news-item.html", item=item,
 			uncut=uncut, announcement=announcement, show_heading=show_heading)
@@ -115,11 +146,6 @@ class NewsYearNavigationModule(UIModule):
 
 		return self.render_string("modules/news-year-nav.html",
 			active=active, years=self.news.years)
-
-
-class MirrorItemModule(UIModule):
-	def render(self, item):
-		return self.render_string("modules/mirror-item.html", item=item)
 
 
 class SidebarItemModule(UIModule):
@@ -298,11 +324,6 @@ class StasyGeoTableModule(UIModule):
 			countries.append(country)
 
 		return self.render_string("modules/stasy-table-geo.html", countries=countries)
-
-
-class MirrorsTableModule(UIModule):
-	def render(self, mirrors):
-		return self.render_string("modules/mirrors-table.html", mirrors=mirrors)
 
 
 class WishlistModule(UIModule):

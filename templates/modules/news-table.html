@@ -3,7 +3,7 @@
 		<li>
 			<a href="/news/{{ n.slug }}"><strong>{{ n.title }}</strong></a>
 			<br>
-			&nbsp;&nbsp;{{ locale.format_date(n.date, shorter=True) }}
+			&nbsp;&nbsp;{{ locale.format_date(n.published, shorter=True) }}
 			<br>&nbsp;
 		</li>
 	{% end %}

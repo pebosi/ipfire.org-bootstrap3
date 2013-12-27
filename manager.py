@@ -12,6 +12,8 @@ class Daemon(object):
 		
 		self.ioloop.set_blocking_log_threshold(900)
 
+		self.backend = backend.Backend("webapp.conf")
+
 	@property
 	def ioloop(self):
 		return tornado.ioloop.IOLoop.instance()
@@ -54,6 +56,14 @@ class Manager(object):
 			(self.pc.callback_time / 1000))
 
 	@property
+	def backend(self):
+		return self.daemon.backend
+
+	@property
+	def settings(self):
+		return self.backend.settings
+
+	@property
 	def timeout(self):
 		"""
 			Return a new callback timeout in seconds.
@@ -68,11 +78,11 @@ class Manager(object):
 class MirrorManager(Manager):
 	@property
 	def mirrors(self):
-		return backend.Mirrors()
+		return self.backend.mirrors
 
 	@property
 	def timeout(self):
-		return backend.Config().get_int("mirror_check_interval")
+		return self.backend.settings.get_int("mirror_check_interval", 3600)
 
 	def do(self):
 		# Check status of all mirror servers.
@@ -82,14 +92,14 @@ class MirrorManager(Manager):
 class ReleaseFilesManager(Manager):
 	@property
 	def releases(self):
-		return backend.Releases()
+		return self.backend.releases
 
 	@property
 	def timeout(self):
-		return backend.Config().get_int("releasefiles_check_interval")
+		return self.settings.get_int("releasefiles_check_interval", 3600)
 
 	def do(self):
-		for release in self.releases.list():
+		for release in self.releases.get_all():
 			release.scan_files()
 
 

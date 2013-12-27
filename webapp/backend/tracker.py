@@ -1,13 +1,10 @@
 #!/usr/bin/python
 
-import os
+from __future__ import division
+
 import random
-import time
 
-import releases
-
-from databases import Databases, Row
-from misc import Singleton
+from misc import Object
 
 def decode_hex(s):
 	ret = []
@@ -20,150 +17,183 @@ def decode_hex(s):
 
 	return "".join(ret)
 
-class Tracker(object):
-	id = "TheIPFireTorrentTracker"
-
-	# Intervals # XXX needs to be in Settings
-	_interval = 60*60
-	_min_interval = 30*60
-
-	random_interval = -60, 60
-
-	numwant = 50
-
+class Tracker(Object):
 	@property
-	def db(self):
-		return Databases().webapp
+	def tracker_id(self):
+		return self.settings.get("tracker_id", "TheIPFireTorrentTracker")
 
-	def _fetch(self, hash, limit=None, random=False, completed=False, no_peer_id=False):
-		query = "SELECT * FROM tracker_peers WHERE last_update >= %d" % self.since
-
-		if hash:
-			query += " AND hash = '%s'" % hash
-
-		if completed:
-			query += " AND left_data = 0"
-		else:
-			query += " AND left_data != 0"
-
-		if random:
-			query += " ORDER BY RAND()"
-
-		if limit:
-			query += " LIMIT %s" % limit
-
-		peers = []
-		for peer in self.db.query(query):
-			if not peer.ip or not peer.port:
-				continue
-
-			peer_dict = {
-				"ip" : str(peer.ip),
-				"port" : int(peer.port),
-			}
-
-			if not no_peer_id:
-				peer_dict["peer id"] = str(peer.id),
-
-			peers.append(peer_dict)
-
-		return peers
-
-	def get_peers(self, hash, **kwargs):
-		return self._fetch(hash, **kwargs)
-
-	def get_seeds(self, hash, **kwargs):
-		kwargs.update({"completed" : True})
-		return self._fetch(hash, **kwargs)
-
-	def complete(self, hash):
-		return len(self.get_seeds(hash))
-
-	def incomplete(self, hash):
-		return len(self.get_peers(hash))
-
-	def event_started(self, hash, peer_id):
-		# Damn, mysql does not support INSERT IF NOT EXISTS...
-		if not self.db.query("SELECT id FROM tracker_peers WHERE hash = '%s' AND peer_id = '%s'" % (hash, peer_id)):
-			self.db.execute("INSERT INTO tracker_peers(hash, peer_id) VALUES('%s', '%s')" % (hash, peer_id))
-
-		if not hash in self.hashes:
-			self.db.execute("INSERT INTO tracker_hashes(hash) VALUES('%s')" % hash)
-
-	def event_stopped(self, hash, peer_id):
-		self.db.execute("DELETE FROM tracker_peers WHERE hash = '%s' AND peer_id = '%s'" % (hash, peer_id))
-
-	def event_completed(self, hash, peer_id):
-		self.db.execute("UPDATE tracker_hashes SET completed=completed+1 WHERE hash = '%s'" % hash)
-
-	def scrape(self, hashes=[]):
-		ret = {}
-		for hash in self.db.query("SELECT hash, completed FROM tracker_hashes"):
-			hash, completed = hash.hash, hash.completed
-
-			if hashes and hash not in hashes:
-				continue
-
-			ret[hash] = {
-				"complete" : self.complete(hash),
-				"downloaded" : completed or 0,
-				"incomplete" : self.incomplete(hash),
-			}
-
-		return ret
-
-	def update(self, hash, id, ip=None, port=None, downloaded=None, uploaded=None, left=None):
-		args = [ "last_update = '%s'" % self.now ]
-
-		if ip:
-			if ip.startswith("172.28.1."):
-				ip = "178.63.73.246"
-
-			args.append("ip='%s'" % ip)
-
-		if port:
-			args.append("port='%s'" % port)
-
-		if downloaded:
-			args.append("downloaded='%s'" % downloaded)
-
-		if uploaded:
-			args.append("uploaded='%s'" % uploaded)
-
-		if left:
-			args.append("left_data='%s'" % left)
-
-		if not args:
-			return
-
-		query = "UPDATE tracker_peers SET " + ", ".join(args) + \
-			" WHERE hash = '%s' AND peer_id = '%s'" % (hash, id)
-
-		self.db.execute(query)
-
-	@property
-	def hashes(self):
-		hashes = []
-		for h in self.db.query("SELECT hash FROM tracker_hashes"):
-			hashes.append(h["hash"].lower())
-
-		return hashes
-
-	@property
-	def now(self):
-		return int(time.time())
-
-	@property
-	def since(self):
-		return int(time.time() - self.interval)
+	def _fuzzy_interval(self, interval, fuzz=60):
+		return interval + random.randint(-fuzz, fuzz)
 
 	@property
 	def interval(self):
-		return self._interval + random.randint(*self.random_interval)
+		return self.settings.get_int("tracker_interval", 3600)
 
 	@property
 	def min_interval(self):
-		return self._min_interval + random.randint(*self.random_interval)
+		interval = self.settings.get_int("tracker_min_interval", self.interval // 2)
+
+		return self._fuzzy_interval(interval)
+
+	@property
+	def numwant(self):
+		return self.settings.get_int("tracker_numwant", 50)
+
+	def get_peers(self, info_hash, limit=None, random=True, no_peer_id=False, ipfamily=None):
+		query = "SELECT * FROM tracker WHERE last_update >= NOW() - INTERVAL '%ss'"
+		args = [self.interval,]
+
+		if info_hash:
+			query += " AND hash = %s"
+			args.append(info_hash)
+
+		if random:
+			query += " ORDER BY RANDOM()"
+
+		if limit:
+			query += " LIMIT %s"
+			args.append(limit)
+
+		peers = []
+		for row in self.db.query(query, *args):
+			peer6 = None
+			peer4 = None
+
+			if row.address6 and row.port6:
+				peer6 = {
+					"ip" : row.address6,
+					"port" : row.port6,
+				}
+
+			if row.address4 and row.port4:
+				peer4 = {
+					"ip" : row.address4,
+					"port" : row.port4,
+				}
+
+			if not no_peer_id:
+				if peer6:
+					peer6["peer id"] = row.id
+
+				if peer4:
+					peer6["peer id"] = row.id
+
+			if peer6:
+				peers.append(peer6)
+
+			if peer4:
+				peers.append(peer4)
+
+		return peers
+
+	def cleanup_peers(self):
+		"""
+			Remove all peers that have timed out.
+		"""
+		self.db.execute("DELETE FROM tracker \
+			WHERE last_update < NOW() - INTERVAL '%ss'", self.interval)
+
+	def update_peer(self, peer_id, info_hash, address6=None, port6=None,
+			address4=None, port4=None, downloaded=None, uploaded=None, left_data=None):
+		if address4 and address4.startswith("172.28.1."):
+			address = "178.63.73.246"
+
+		query = "UPDATE tracker SET last_update = NOW()"
+		args = []
+
+		if address6:
+			query += ", address6 = %s"
+			args.append(address6)
+
+		if port6:
+			query += ", port6 = %s"
+			args.append(port6)
+
+		if address4:
+			query += ", address4 = %s"
+			args.append(address4)
+
+		if port4:
+			query += ", port4 = %s"
+			args.append(port4)
+
+		if downloaded:
+			query += ", downloaded = %s"
+			args.append(downloaded)
+
+		if uploaded:
+			query += ", uploaded = %s"
+			args.append(uploaded)
+
+		if left_data:
+			query += ", left_data = %s"
+			args.append(left_data)
+
+		query += " WHERE id = %s AND hash = %s"
+		args += [peer_id, info_hash]
+
+		self.db.execute(query, *args)
+
+	def complete(self, info_hash):
+		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
+			WHERE hash = %s AND left_data = 0", info_hash)
+
+		if ret:
+			return ret.c
+
+	def incomplete(self, info_hash):
+		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
+			WHERE hash = %s AND left_data > 0", info_hash)
+
+		if ret:
+			return ret.c
+
+	def handle_event(self, event, peer_id, info_hash, **kwargs):
+		# started
+		if event == "started":
+			self.insert_peer(peer_id, info_hash, **kwargs)
+
+		# stopped
+		elif event == "stopped":
+			self.remove_peer(peer_id, info_hash)
+
+	def peer_exists(self, peer_id, info_hash):
+		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
+			WHERE id = %s AND hash = %s", peer_id, info_hash)
+
+		if ret and ret.c > 0:
+			return True
+
+		return False
+
+	def insert_peer(self, peer_id, info_hash, address6=None, port6=None, address4=None, port4=None):
+		exists = self.peer_exists(peer_id, info_hash)
+		if exists:
+			return
+
+		self.db.execute("INSERT INTO tracker(id, hash, address6, port6, address4, port4) \
+			VALUES(%s, %s, %s, %s, %s, %s)", peer_id, info_hash, address6, port6, address4, port4)
+
+	def remove_peer(self, peer_id, info_hash):
+		self.db.execute("DELETE FROM tracker \
+			WHERE id = %s AND hash = %s", peer_id, info_hash)
+
+	def scrape(self, info_hashes):
+		ret = {
+			"files" : {},
+			"flags" : {
+				"min_request_interval" : self.interval,
+			}
+		}
+
+		for info_hash in info_hashes:
+			ret["files"][info_hash] = {
+				"complete"   : self.complete(info_hash),
+				"incomplete" : self.incomplete(info_hash),
+				"downloaded" : 0,
+			}
+
+		return ret
 
 
 ##### This is borrowed from the bittorrent client libary #####

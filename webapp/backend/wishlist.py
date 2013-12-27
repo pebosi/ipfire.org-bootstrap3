@@ -5,16 +5,9 @@ from __future__ import division
 import datetime
 import textile
 
-from databases import Databases
-from misc import Singleton
+from misc import Object
 
-class Wishlist(object):
-	__metaclass__ = Singleton
-
-	@property
-	def db(self):
-		return Databases().webapp
-
+class Wishlist(Object):
 	def get(self, slug):
 		wish = self.db.get("SELECT * FROM wishlist WHERE slug = %s", slug)
 
@@ -32,33 +25,59 @@ class Wishlist(object):
 
 	def get_all_running(self):
 		return self.get_all_by_query("SELECT * FROM wishlist \
-			WHERE DATE(NOW()) >= date_start AND DATE(NOW()) <= date_end AND status = 'running' \
+			WHERE (CASE \
+				WHEN date_end IS NULL THEN \
+					NOW() >= date_start AND goal >= donated \
+				ELSE \
+					NOW() BETWEEN date_start AND date_end \
+				END) AND status = 'running' \
 			ORDER BY prio ASC, date_end ASC")
 
 	def get_all_finished(self, limit=5, offset=None):
-		query = "SELECT * FROM wishlist WHERE DATE(NOW()) > date_end AND status IS NOT NULL \
+		query = "SELECT * FROM wishlist \
+			WHERE (CASE \
+				WHEN date_end IS NULL THEN \
+					donated >= goal \
+				ELSE \
+					NOW() > date_end \
+				END) AND status IS NOT NULL \
 			ORDER BY date_end DESC"
 		args = []
 
 		if limit:
+			query += " LIMIT %s"
+			args.append(limit)
+
 			if offset:
-				query += " LIMIT %s,%s"
-				args += [limit, offset]
-			else:
-				query += " LIMIT %s"
-				args.append(limit)
+				query += " OFFSET %s"
+				args.append(offset)
 
 		return self.get_all_by_query(query, *args)
 
 	def get_hot_wishes(self, limit=3):
 		query = "SELECT * FROM wishlist \
-			WHERE status = %s AND DATE(NOW()) BETWEEN date_start AND date_end AND ( \
-				((UNIX_TIMESTAMP() - UNIX_TIMESTAMP(date_start)) <= 864000) \
-				OR ((UNIX_TIMESTAMP(date_end) - UNIX_TIMESTAMP()) <= 1209600) \
-				OR ((donated / goal) >= 0.9) \
-				OR (goal >= 3000) \
-				OR (prio <= 5) \
-			) ORDER BY prio ASC, date_end ASC LIMIT %s"
+			WHERE \
+				status = %s \
+			AND \
+				date_start <= NOW() \
+			AND \
+				(CASE WHEN date_end IS NOT NULL THEN \
+					NOW() BETWEEN date_start AND date_end \
+				ELSE \
+					TRUE \
+				END) \
+			AND \
+				(AGE(NOW(), date_start) <= INTERVAL '10 days' \
+				OR \
+					AGE(date_end, NOW()) <= INTERVAL '14 days' \
+				OR \
+					(donated / goal) >= 0.85 \
+				OR \
+					goal >= 3000 \
+				OR \
+					prio <= 5 \
+				) \
+			ORDER BY prio ASC, date_end ASC LIMIT %s"
 
 		return self.get_all_by_query(query, "running", limit)
 
@@ -149,8 +168,13 @@ class Wish(object):
 
 	@property
 	def running(self):
-		if self.remaining_days < 0:
-			return False
+		if self.date_end:
+			if self.remaining_days and self.remaining_days < 0:
+				return False
+
+		else:
+			if self.donated >= self.goal:
+				return False
 
 		return True
 
@@ -164,19 +188,14 @@ class Wish(object):
 
 	@property
 	def running_days(self):
-		today = datetime.datetime.today()
-		today = today.date()
-
-		running = today - self.date_start
+		running = datetime.datetime.today() - self.date_start
 		return running.days
 
 	@property
 	def remaining_days(self):
-		today = datetime.datetime.today()
-		today = today.date()
-
-		remaining = self.date_end - today
-		return remaining.days
+		if self.date_end:
+			remaining = self.date_end - datetime.datetime.today()
+			return remaining.days
 
 	def is_new(self):
 		return self.running_days < 10

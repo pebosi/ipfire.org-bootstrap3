@@ -42,9 +42,14 @@
 						</div>
 
 						<div class="span4 ac">
-							{% if wish.remaining_days >= 0 %}
-								<p class="lead">{{ wish.remaining_days }}</p>
-								<p>{{ _("day to go", "days to go", wish.remaining_days) }}</p>
+							{% if wish.status == "running" %}
+								{% if wish.remaining_days %}
+									<p class="lead">{{ wish.remaining_days }}</p>
+									<p>{{ _("day to go", "days to go", wish.remaining_days) }}</p>
+								{% else %}
+									<p class="lead">{% raw _("%s &euro;") % (wish.goal - wish.donated) %}</p>
+									<p>{{ _("to go") }}</p>
+								{% end %}
 							{% elif wish.status == "in_progress" %}
 								<p class="lead">{{ _("In progress") }}</p>
 							{% elif wish.status == "finished" %}

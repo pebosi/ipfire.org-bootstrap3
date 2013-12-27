@@ -15,11 +15,15 @@
 
 	<p class="ac">
 		<i class="icon-calendar"></i>
-		{{ _("Launched: %s") % wish.date_start }}
+		{{ _("Launched: %s") % locale.format_date(wish.date_start, full_format=True) }}
 
 		&bull;
 
-		<i class="icon-time"></i>
-		{{ _("Funding ends: %s") % wish.date_end }}
+		{% if wish.date_end %}
+			<i class="icon-time"></i>
+			{{ _("Funding ends: %s") % locale.format_date(wish.date_end, full_format=True) }}
+		{% else %}
+			{{ _("This funding runs until the goal is reached.") }}
+		{% end %}
 	</p>
 {% end block %}

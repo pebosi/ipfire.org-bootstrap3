@@ -11,7 +11,7 @@ body {
 	padding-bottom: 10px;
 }
 
-.ac {
+.ac, td.ac {
 	text-align: center;
 }
 

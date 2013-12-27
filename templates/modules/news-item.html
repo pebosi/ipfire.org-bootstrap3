@@ -5,7 +5,7 @@
 				{% if announcement %}
 					{{ _("Announcement") }}:
 				{% end %}
-				<a href="/news/{{ escape(item.slug) }}">{{ escape(item.title) }}</a>
+				<a href="/news/{{ item.slug }}">{{ item.title }}</a>
 			</h2>
 		{% end %}
 
@@ -16,7 +16,7 @@
 	<div class="span12">
 		<p class="pull-right">
 			<a href="/author/{{ item.author_id }}">{{ item.author }}</a> -
-			{{ locale.format_date(item.date, full_format=True) }}
+			{{ locale.format_date(item.published, full_format=True) }}
 		</p>
 	</div>
 </div>

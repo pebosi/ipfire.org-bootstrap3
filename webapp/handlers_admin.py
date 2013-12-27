@@ -8,10 +8,6 @@ from handlers_base import *
 import backend
 
 class AdminBaseHandler(BaseHandler):
-	@property
-	def downloads(self):
-		return backend.Downloads()
-
 	def get_current_user(self):
 		return self.get_secure_cookie("account")
 
@@ -156,15 +152,13 @@ class AdminAccountsDeleteHandler(AdminAccountsBaseHandler):
 
 
 class AdminMirrorsBaseHandler(AdminBaseHandler):
-	@property
-	def mirrors(self):
-		return backend.Mirrors()
+	pass
 
 
 class AdminMirrorsHandler(AdminMirrorsBaseHandler):
 	@tornado.web.authenticated
 	def get(self):
-		mirrors = self.mirrors.list()
+		mirrors = self.mirrors.get_all()
 
 		self.render("admin-mirrors.html", mirrors=mirrors)
 
@@ -180,7 +174,7 @@ class AdminMirrorsCreateHandler(AdminMirrorsBaseHandler):
 	@tornado.web.authenticated
 	def get(self, id=None):
 		if id:
-			mirror = self.db.get("SELECT * FROM mirrors WHERE id = '%s'", int(id))
+			mirror = self.db.get("SELECT * FROM mirrors WHERE id = %s", id)
 		else:
 			mirror = tornado.database.Row(
 				id="",
@@ -259,7 +253,7 @@ class AdminNewsBaseHandler(AdminBaseHandler):
 class AdminNewsHandler(AdminNewsBaseHandler):
 	@tornado.web.authenticated
 	def get(self):
-		news = self.news.list()
+		news = self.news.get_all()
 
 		self.render("admin-news.html", news=news)
 

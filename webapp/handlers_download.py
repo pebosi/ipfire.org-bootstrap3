@@ -17,7 +17,11 @@ class DownloadsIndexHandler(BaseHandler):
 
 class DownloadsReleaseHandler(BaseHandler):
 	def get(self, release):
-		release = self.releases.get_by_id(release)
+		release = self.releases.get_by_sname(release)
+
+		if not release:
+			release = self.releases.get_by_id(release)
+
 		if not release:
 			raise tornado.web.HTTPError(404)
 
@@ -69,9 +73,16 @@ class DownloadDevelopmentHandler(BaseHandler):
 
 
 class DownloadFileHandler(BaseHandler):
-	def head(self, filename):
+	def prepare(self):
 		self.set_header("Pragma", "no-cache")
 
+	def head(self, filename):
+		self.redirect_to_mirror(filename)
+
+	def get(self, filename):
+		self.redirect_to_mirror(filename, log_download=True)
+
+	def find_mirror(self, filename):
 		# Get all mirrors...
 		mirrors = self.mirrors.get_all()
 		mirrors = mirrors.get_with_file(filename)
@@ -82,22 +93,37 @@ class DownloadFileHandler(BaseHandler):
 
 		# Find mirrors located near to the user.
 		# If we have not found any, we use all.
-		mirrors_nearby = mirrors.get_for_location(self.request.remote_ip)
-		if mirrors_nearby:
-			mirrors = mirrors_nearby
+		remote_location = self.get_remote_location()
 
-		mirror = mirrors.get_random()
+		if remote_location:
+			mirrors_nearby = mirrors.get_for_location(remote_location)
 
-		self.redirect(mirror.url + filename[len(mirror.prefix):])
-		return mirror
+			if mirrors_nearby:
+				mirrors = mirrors_nearby
 
-	def get(self, filename):
-		mirror = self.head(filename)
+		return mirrors.get_random()
 
-		# Record the download.
-		country_code = self.geoip.get_country(self.request.remote_ip)
-		self.mirrors.db.execute("INSERT INTO log_download(filename, mirror, country_code) VALUES(%s, %s, %s)",
-			filename, mirror.id, country_code)
+	def redirect_to_mirror(self, filename, log_download=False):
+		# Find a random mirror.
+		mirror = self.find_mirror(filename)
+
+		# Construct the redirection URL.
+		download_url = mirror.build_url(filename)
+
+		# Redirect the request.
+		self.redirect(download_url)
+
+		if not log_download:
+			return
+
+		remote_location = self.get_remote_location()
+		if remote_location:
+			country_code = remote_location.country
+		else:
+			country_code = None
+
+		self.db.execute("INSERT INTO log_download(filename, mirror, country_code) \
+			VALUES(%s, %s, %s)", filename, mirror.id, country_code)
 
 
 class DownloadCompatHandler(BaseHandler):
@@ -113,6 +139,7 @@ class DownloadCompatHandler(BaseHandler):
 			raise tornado.web.HTTPError(404)
 
 		self.redirect("/%s" % _filename)
+
 
 class DownloadSplashHandler(BaseHandler):
 	def get(self):

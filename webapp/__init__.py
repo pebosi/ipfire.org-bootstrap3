@@ -21,7 +21,7 @@ BASEDIR = os.path.join(os.path.dirname(__file__), "..")
 tornado.locale.load_gettext_translations(os.path.join(BASEDIR, "translations"), "webapp")
 
 class Application(tornado.web.Application):
-	def __init__(self):
+	def __init__(self, **kwargs):
 		self.__backend = None
 
 		settings = dict(
@@ -34,30 +34,35 @@ class Application(tornado.web.Application):
 				"format_month_name" : self.format_month_name,
 			},
 			ui_modules = {
-				"Advertisement"  : AdvertisementModule,
-				"DonationBox"    : DonationBoxModule,
-				"DownloadButton" : DownloadButtonModule,
-				"Menu"           : MenuModule,
-				"MirrorItem"     : MirrorItemModule,
-				"MirrorsTable"   : MirrorsTableModule,
-				"NewsItem"       : NewsItemModule,
-				"NewsLine"       : NewsLineModule,
-				"NewsTable"      : NewsTableModule,
-				"NewsYearNavigation": NewsYearNavigationModule,
-				"PlanetEntry"    : PlanetEntryModule,
-				"ReleaseItem"    : ReleaseItemModule,
-				"SidebarBanner"  : SidebarBannerModule,
-				"SidebarRelease" : SidebarReleaseModule,
-				"StasyTable"     : StasyTableModule,
-				"StasyCPUCoreTable" : StasyCPUCoreTableModule,
-				"StasyDeviceTable" : StasyDeviceTableModule,
-				"StasyGeoTable"  : StasyGeoTableModule,
-				"TrackerPeerList": TrackerPeerListModule,
-				"Wish"           : WishModule,
-				"Wishlist"       : WishlistModule,
+				"Advertisement"        : AdvertisementModule,
+				"DonationBox"          : DonationBoxModule,
+				"DownloadButton"       : DownloadButtonModule,
+				"Map"                  : MapModule,
+				"Menu"                 : MenuModule,
+				"MirrorItem"           : MirrorItemModule,
+				"MirrorsTable"         : MirrorsTableModule,
+				"NetBootMenuConfig"    : NetBootMenuConfigModule,
+				"NetBootMenuHeader"    : NetBootMenuHeaderModule,
+				"NetBootMenuSeparator" : NetBootMenuSeparatorModule,
+				"NewsItem"             : NewsItemModule,
+				"NewsLine"             : NewsLineModule,
+				"NewsTable"            : NewsTableModule,
+				"NewsYearNavigation"   : NewsYearNavigationModule,
+				"PlanetEntry"          : PlanetEntryModule,
+				"ReleaseItem"          : ReleaseItemModule,
+				"SidebarBanner"        : SidebarBannerModule,
+				"SidebarRelease"       : SidebarReleaseModule,
+				"StasyTable"           : StasyTableModule,
+				"StasyCPUCoreTable"    : StasyCPUCoreTableModule,
+				"StasyDeviceTable"     : StasyDeviceTableModule,
+				"StasyGeoTable"        : StasyGeoTableModule,
+				"TrackerPeerList"      : TrackerPeerListModule,
+				"Wish"                 : WishModule,
+				"Wishlist"             : WishlistModule,
 			},
 			xsrf_cookies = True,
 		)
+		settings.update(kwargs)
 
 		tornado.web.Application.__init__(self, **settings)
 
@@ -106,7 +111,8 @@ class Application(tornado.web.Application):
 		self.add_handlers(r"downloads?\.ipfire\.org", [
 			(r"/", DownloadsIndexHandler),
 			(r"/latest", DownloadsLatestHandler),
-			(r"/release/([0-9]+)", DownloadsReleaseHandler),
+			(r"/release/(\d)", DownloadsReleaseHandler),
+			(r"/release/([\w\.\-]*)", DownloadsReleaseHandler),
 			(r"/older", DownloadsOlderHandler),
 			(r"/development", DownloadsDevelopmentHandler),
 			(r"/mirrors", tornado.web.RedirectHandler, { "url" : "http://mirrors.ipfire.org/" }),
@@ -120,7 +126,7 @@ class Application(tornado.web.Application):
 		# mirrors.ipfire.org
 		self.add_handlers(r"mirrors\.ipfire\.org", [
 			(r"/", MirrorIndexHandler),
-			(r"/mirror/([0-9]+)", MirrorItemHandler),
+			(r"/mirror/(.*)", MirrorItemHandler),
 			(r"/lists/pakfire2", MirrorListPakfire2Handler),
 		] + static_handlers)
 
@@ -206,6 +212,11 @@ class Application(tornado.web.Application):
 			(r"/terms", WishlistTermsHandler),
 		] + static_handlers)
 
+		# geoip.ipfire.org
+		self.add_handlers(r"geoip\.ipfire\.org", [
+			(r"/", GeoIPHandler),
+		] + static_handlers)
+
 		# admin.ipfire.org
 		self.add_handlers(r"admin\.ipfire\.org", [
 			(r"/", AdminIndexHandler),
@@ -252,7 +263,11 @@ class Application(tornado.web.Application):
 	@property
 	def backend(self):
 		if self.__backend is None:
-			self.__backend = backend.Backend()
+			configfile = self.settings.get("configfile", None)
+			if not configfile:
+				raise RuntimeException("Could not find configuration file")
+
+			self.__backend = backend.Backend(configfile=configfile)
 
 		return self.__backend
 

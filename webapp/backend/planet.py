@@ -3,11 +3,7 @@
 import datetime
 import re
 import textile
-import tornado.database
 import unicodedata
-
-from accounts import Accounts
-from databases import Databases
 
 from misc import Object
 
@@ -147,8 +143,11 @@ class PlanetEntry(Object):
 
 class Planet(Object):
 	def get_authors(self):
+		query = self.db.query("SELECT DISTINCT author_id FROM planet WHERE status = %s \
+			AND published IS NOT NULL AND published <= NOW()", "published")
+
 		authors = []
-		for author in self.db.query("SELECT DISTINCT author_id FROM planet WHERE status = %s", "published"):
+		for author in query:
 			author = self.accounts.search(author.author_id)
 			if author:
 				authors.append(author)
@@ -156,31 +155,22 @@ class Planet(Object):
 		return sorted(authors)
 
 	def get_years(self):
-		res = self.db.query("SELECT DISTINCT YEAR(published) AS year \
+		res = self.db.query("SELECT DISTINCT EXTRACT(YEAR FROM published)::integer AS year \
 			FROM planet WHERE status = %s ORDER BY year DESC", "published")
 
 		return [row.year for row in res]
 
 	def get_entry_by_slug(self, slug):
 		entry = self.db.get("SELECT * FROM planet WHERE slug = %s", slug)
+
 		if entry:
 			return PlanetEntry(self.backend, entry)
 
 	def get_entry_by_id(self, id):
 		entry = self.db.get("SELECT * FROM planet WHERE id = %s", id)
+
 		if entry:
 			return PlanetEntry(self.backend, entry)
-
-	def _limit_and_offset_query(self, limit=None, offset=None):
-		query = " "
-
-		if limit:
-			if offset:
-				query += "LIMIT %d,%d" % (offset, limit)
-			else:
-				query += "LIMIT %d" % limit
-
-		return query
 
 	def get_entries(self, limit=3, offset=None, status="published", author_id=None):
 		query = "SELECT * FROM planet"
@@ -201,12 +191,12 @@ class Planet(Object):
 
 		# Respect limit and offset
 		if limit:
+			query += " LIMIT %s"
+			args.append(limit)
+
 			if offset:
-				query += " LIMIT %s,%s"
-				args += [offset, limit,]
-			else:
-				query += " LIMIT %s"
-				args.append(limit)
+				query += " OFFSET %s"
+				args.append(offset)
 
 		entries = []
 		for entry in self.db.query(query, *args):
@@ -220,8 +210,8 @@ class Planet(Object):
 
 	def get_entries_by_year(self, year):
 		entries = self.db.query("SELECT * FROM planet \
-			WHERE status = %s AND YEAR(published) = %s ORDER BY published DESC",
-			"published", year)
+			WHERE status = %s AND EXTRACT(YEAR FROM published) = %s \
+			ORDER BY published DESC", "published", year)
 
 		return [PlanetEntry(self.backend, e) for e in entries]
 
@@ -272,9 +262,8 @@ class Planet(Object):
 	def save_entry(self, entry):
 		slug = self._generate_slug(entry.title)
 
-		id = self.db.execute("INSERT INTO planet(author_id, title, slug, markdown, published) "
-			"VALUES(%s, %s, %s, %s, UTC_TIMESTAMP())", entry.author.uid, entry.title,
-			slug, entry.markdown)
+		id = self.db.execute("INSERT INTO planet(author_id, title, slug, markdown, published) \
+			VALUES(%s, %s, %s, %s, NOW())", entry.author.uid, entry.title, slug, entry.markdown)
 
 		return id
 

@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
-from databases import Databases
-from misc import Singleton
-
+from misc import Object
 
 class MenuEntry(object):
 	def __init__(self, _data):
@@ -36,13 +34,7 @@ class MenuEntry(object):
 			return int(self._data.get("item"))
 
 
-class NetBoot(object):
-	__metaclass__ = Singleton
-
-	@property
-	def db(self):
-		return Databases().webapp
-
+class NetBoot(Object):
 	def get_menu(self, level=0):
 		menu = []
 

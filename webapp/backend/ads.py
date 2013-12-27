@@ -5,42 +5,31 @@ from __future__ import division
 import datetime
 import textile
 
-from databases import Databases
-from misc import Singleton
+from misc import Object
 
-class Advertisements(object):
-	__metaclass__ = Singleton
-
-	@property
-	def db(self):
-		return Databases().webapp
-
+class Advertisements(Object):
 	def get(self, where=None):
-		args = []
 		query = "SELECT * FROM advertisements \
-			WHERE DATE(NOW()) >= date_start AND DATE(NOW()) <= date_end AND published = 'Y'"
+			WHERE NOW() BETWEEN date_start AND date_end AND published = %s"
+		args = [True]
 
 		if where:
-			query += " AND `where` = %s"
+			query += " AND location = %s"
 			args.append(where)
 
-		query += " ORDER BY RAND() LIMIT 1"
+		query += " ORDER BY RANDOM() LIMIT 1"
 
 		ad = self.db.get(query, *args)
 		if ad:
-			return Advert(self, ad.id, ad)
+			return Advert(self.backend, ad.id, ad)
 
 
-class Advert(object):
-	def __init__(self, advertisements, id, data=None):
-		self.advertisements = advertisements
+class Advert(Object):
+	def __init__(self, backend, id, data=None):
+		Object.__init__(self, backend)
+
 		self.id = id
-
 		self.__data = data
-
-	@property
-	def db(self):
-		return self.advertisements.db
 
 	@property
 	def data(self):

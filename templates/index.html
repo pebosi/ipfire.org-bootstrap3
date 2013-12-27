@@ -139,7 +139,7 @@
 					{% for item in latest_news %}
 						<tr>
 							<td class="date">
-								{{ locale.format_date(item.date, relative=True, shorter=True) }} &dash;
+								{{ locale.format_date(item.published, relative=True, shorter=True) }} &dash;
 							</td>
 							<td class="link">
 								<a href="/news/{{ item.slug }}">{{ item.title }}</a>

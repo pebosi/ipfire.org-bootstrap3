@@ -7,13 +7,8 @@ import logging
 import urllib
 
 from misc import Object
-from settings import Settings
 
 class Accounts(Object):
-	@property
-	def settings(self):
-		return Settings()
-
 	def __init__(self, backend):
 		Object.__init__(self, backend)
 		self.__db = None
@@ -22,7 +17,7 @@ class Accounts(Object):
 
 	@property
 	def search_base(self):
-		return Settings().get("ldap_search_base")
+		return self.settings.get("ldap_search_base")
 
 	@property
 	def db(self):
@@ -34,7 +29,7 @@ class Accounts(Object):
 			bind_dn = self.settings.get("ldap_bind_dn")
 
 			if bind_dn:
-				bind_pw = self.settings.get("ldap_bind_pw")
+				bind_pw = self.settings.get("ldap_bind_pw", "")
 
 				self.__db.simple_bind(bind_dn, bind_pw)
 

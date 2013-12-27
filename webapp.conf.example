@@ -1,0 +1,7 @@
+[global]
+
+[database]
+server     = pgsql-master.ipfire.org
+database   = webapp
+username   = webapp
+password   = ...

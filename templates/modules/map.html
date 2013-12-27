@@ -1,0 +1,20 @@
+<iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+	src="http://www.openstreetmap.org/export/embed.html?bbox={{ longitude - 4 }},{{ latitude - 4 }},{{ longitude + 4 }},{{ latitude + 4 }}&amp;layer=mapquest&amp;marker={{ latitude }},{{ longitude }}" style="border: 1px solid black">
+</iframe>
+<p>
+	<a href="http://www.openstreetmap.org/?lat={{ latitude }}&amp;lon={{ longitude }}&amp;zoom=8&amp;layers=M&amp;mlat={{ latitude }}&amp;mlon={{ longitude }}" target="_blank">{{ _("View larger map") }}</a>
+	-
+	&copy; <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA
+	<span class="pull-right">
+		{% if latitude >= 0 %}
+			{{ latitude }} N,
+		{% else %}
+			{{ -latitude }} S,
+		{% end %}
+		{% if longitude >= 0 %}
+			{{ longitude }} E
+		{% else %}
+			{{ -longitude }} W
+		{% end %}
+	</span>
+</p>

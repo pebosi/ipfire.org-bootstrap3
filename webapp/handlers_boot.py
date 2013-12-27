@@ -10,6 +10,8 @@ import tornado.web
 
 import backend
 
+from handlers_base import BaseHandler
+
 BASEDIR = os.path.dirname(__file__)
 
 def word_wrap(s, width=45):
@@ -25,10 +27,8 @@ def word_wrap(s, width=45):
 		lines.append(paragraph.lstrip())
 	return '\n'.join(lines)
 
-class BootBaseHandler(tornado.web.RequestHandler):
-	@property
-	def netboot(self):
-		return backend.NetBoot()
+class BootBaseHandler(BaseHandler):
+	pass
 
 
 class MenuGPXEHandler(BootBaseHandler):
@@ -74,56 +74,17 @@ class MenuGPXEHandler(BootBaseHandler):
 
 
 class MenuCfgHandler(BootBaseHandler):
-	def _menu_string(self, menu, level=0):
-		s = ""
-
-		for entry in menu:
-			s += self._menu_entry(entry, level=level)
-
-		return s
-
-	def _menu_entry(self, entry, level=0):
-		lines = []
-
-		ident = "\t" * level
-
-		if entry.type == "seperator":
-			lines.append(ident + "menu separator")
-
-		elif entry.type == "header":
-			lines.append(ident + "menu begin %d" % entry.id)
-			lines.append(ident + "\tmenu title %s" % entry.title)
-
-			# Add "Back..." entry
-			lines.append(ident + "\tlabel %d.back" % entry.id)
-			lines.append(ident + "\t\tmenu label Back...")
-			lines.append(ident + "\t\tmenu exit")
-			lines.append(ident + "\tmenu separator")
-
-			lines.append("%s" % self._menu_string(entry.submenu, level=level+1))
-			lines.append(ident + "menu end")
-
-		elif entry.type == "config":
-			config = self.netboot.get_config(entry.item)
-
-			lines.append(ident + "label %d" % config.id)
-			lines.append(ident + "\tmenu label %s" % config.title)
-			if config.description:
-				lines.append(ident + "\ttext help")
-				lines.append(word_wrap(config.description))
-				lines.append(ident + "\tendtext")
-
-			lines.append(ident + "\tkernel %s" % config.image1)
-			if config.image2:
-				lines.append(ident + "\tinitrd %s" % config.image2)
-			if config.args:
-				lines.append(ident + "\tappend %s" % config.args)
-
-		return "\n".join(lines + [""])
-
 	def get(self):
 		self.set_header("Content-Type", "text/plain")
 
-		menu = self._menu_string(self.netboot.get_menu(1))
+		latest_release = self.releases.get_latest()
+		stable_releases = self.releases.get_stable()
+		try:
+			stable_releases.remove(latest_release)
+		except ValueError:
+			pass
 
-		self.render("netboot/menu.cfg", menu=menu)
+		development_releases = self.releases.get_unstable()
+
+		self.render("netboot/menu.cfg", latest_release=latest_release,
+			stable_releases=stable_releases, development_releases=development_releases)

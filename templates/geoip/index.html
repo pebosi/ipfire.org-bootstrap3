@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% block title %}{{ _("GeoIP for %s") % addr }}{% end block %}
+
+{% block body %}
+	<div class="page-header">
+		<h3>{{ _("GeoIP for %s") % addr }}</h3>
+	</div>
+
+	{% if peer %}
+		<div class="row">
+			<div class="span4">
+				<dl>
+					{% if peer.asn %}
+						<dt>{{ _("Autonomous System") }}</dt>
+						<dd>{{ peer.asn }}</dd>
+					{% end %}
+
+					<dt>{{ _("Country") }}</dt>
+					<dd>
+						{% if peer.country_name %}
+							{{ peer.country_name }} ({{ peer.country }})
+						{% else %}
+							{{ peer.country_name }}
+						{% end %}
+					</dd>
+
+					{% if peer.city %}
+						<dt>{{ _("City") }}</dt>
+						<dd>{{ peer.city }}</dd>
+
+						{% if peer.postal_code %}
+							<dt>{{ _("Postal Code") }}</dt>
+							<dd>{{ peer.postal_code }}</dd>
+						{% end %}
+					{% end %}
+				</dl>
+			</div>
+
+			<div class="span8">
+				{% module Map(peer.latitude, peer.longitude) %}
+			</div>
+		</div>
+	{% else %}
+		<div class="alert alert-info">
+			{{ _("No GeoIP information could be found for the IP address '%s'.") % addr }}
+		</div>
+	{% end %}
+
+{% end block %}

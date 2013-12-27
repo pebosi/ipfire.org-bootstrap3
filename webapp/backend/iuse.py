@@ -8,25 +8,20 @@ import os.path
 
 from PIL import Image, ImageDraw, ImageFont, PngImagePlugin
 
-from misc import Singleton
+from misc import Object
 
-class IUse(object):
-	__metaclass__ = Singleton
+image_types = []
 
-	images = []
-
-	def add_imagetype(self, type):
-		self.images.append(type)
-
+class IUse(Object):
 	def get_imagetype(self, id):
 		id = int(id)
 
-		for image in self.images:
-			if image.id == id:
-				return image
+		for image_type in image_types:
+			if image_type.id == id:
+				return image_type
 
 
-class ImageObject(object):
+class ImageObject(Object):
 	default_mode = "RGBA"
 	default_size = 100, 100
 
@@ -34,7 +29,9 @@ class ImageObject(object):
 	_font = "DejaVuSans.ttf"
 	_font_size = 10
 
-	def __init__(self, request, profile):
+	def __init__(self, backend, request, profile):
+		Object.__init__(self, backend)
+
 		self.request = request
 		self.profile = profile
 
@@ -183,10 +180,4 @@ class Image1(ImageObject):
 		self.draw_text((225, 32), "%s" % " - ".join(line3))
 
 
-IUse().add_imagetype(Image1)
-
-
-if __name__ == "__main__":
-	image = Image1("123")
-	image.save("picture.png")
-
+image_types.append(Image1)

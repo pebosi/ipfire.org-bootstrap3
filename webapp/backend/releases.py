@@ -7,27 +7,22 @@ import re
 import urllib
 import urlparse
 
+import database
 import tracker
+from misc import Object
 
-from databases import Databases
-from misc import Singleton
-from settings import Settings
+class File(Object):
+	def __init__(self, backend, release, id, data=None):
+		Object.__init__(self, backend)
 
-class File(object):
-	def __init__(self, release, id):
 		self.id = id
 		self._release = release
 
 		# get all data from database
-		self.__data = None
+		self.__data = data
 
-	@property
-	def db(self):
-		return Databases().webapp
-
-	@property
-	def tracker(self):
-		return self.release.tracker
+	def __cmp__(self, other):
+		return cmp(self.prio, other.prio)
 
 	@property
 	def data(self):
@@ -84,7 +79,7 @@ class File(object):
 
 	@property
 	def url(self):
-		baseurl = Settings().get("download_url")
+		baseurl = self.settings.get("download_url", "http://downloads.ipfire.org")
 
 		return urlparse.urljoin(baseurl, self.filename)
 
@@ -209,29 +204,14 @@ class File(object):
 
 		return self.tracker.get_peers(self.torrent_hash)
 
-	@property
-	def completed(self):
-		if not self.torrent_hash:
-			return
 
-		return self.tracker.complete(self.torrent_hash)
-
-
-class Release(object):
-	@property
-	def db(self):
-		return Releases().db
-
-	@property
-	def tracker(self):
-		return tracker.Tracker()
-
-	def __init__(self, id):
+class Release(Object):
+	def __init__(self, backend, id, data=None):
+		Object.__init__(self, backend)
 		self.id = id
 
 		# get all data from database
-		self.__data = \
-			self.db.get("SELECT * FROM releases WHERE id = %s", self.id)
+		self.__data = data or self.db.get("SELECT * FROM releases WHERE id = %s", self.id)
 		assert self.__data
 
 		self.__files = []
@@ -239,14 +219,17 @@ class Release(object):
 	def __repr__(self):
 		return "<%s %s>" % (self.__class__.__name__, self.name)
 
+	def __cmp__(self, other):
+		return cmp(self.id, other.id)
+
 	@property
 	def files(self):
 		if not self.__files:
-			files = self.db.query("SELECT id, filename FROM files WHERE releases = %s \
-					AND loadable = 'Y' AND NOT filename LIKE '%%.torrent'", self.id)
+			files = self.db.query("SELECT * FROM files WHERE releases = %s \
+				AND NOT filename LIKE '%%.torrent'", self.id)
 
-			self.__files = [File(self, f.id) for f in files]
-			self.__files.sort(lambda a, b: cmp(a.prio, b.prio))
+			self.__files = [File(self.backend, self, f.id, f) for f in files]
+			self.__files.sort()
 
 		return self.__files
 
@@ -264,23 +247,25 @@ class Release(object):
 
 	@property
 	def name(self):
-		return self.__data.get("name")
+		return self.__data.name
+
+	@property
+	def sname(self):
+		return self.__data.sname
 
 	@property
 	def stable(self):
-		return self.__data.get("stable") == "Y"
+		return self.__data.stable
 
 	@property
 	def published(self):
-		return self.__data.get("published") == "Y"
+		return self.__data.published
 
-	@property
-	def date(self):
-		return self.__data.get("date")
+	date = published
 
 	@property
 	def path(self):
-		return self.__data.get("path")
+		return self.__data.path
 
 	def get_file(self, type):
 		for file in self.files:
@@ -329,6 +314,7 @@ class Release(object):
 			if filename.endswith(".md5"):
 				continue
 
+			logging.info("Hashing %s..." % filename)
 			filehash = self.__file_hash(filename)
 			filesize = os.path.getsize(filename)
 
@@ -373,54 +359,77 @@ class Release(object):
 			if f:
 				f.close()
 
-
-class Releases(object):
-	__metaclass__ = Singleton
+	def is_netboot_capable(self):
+		return self.path and "ipfire-2.x" in self.path
 
 	@property
-	def db(self):
-		return Databases().webapp
+	def netboot_kernel(self):
+		return "http://downloads.ipfire.org/%s/images/vmlinuz" % self.path
 
-	def list(self):
-		return [Release(r.id) for r in self.db.query("SELECT id FROM releases ORDER BY date DESC")]
+	@property
+	def netboot_initrd(self):
+		return "http://downloads.ipfire.org/%s/images/instroot" % self.path
 
+	@property
+	def netboot_append(self):
+		return "ro"
+
+
+class Releases(Object):
 	def get_by_id(self, id):
-		id = int(id)
-		if id in [r.id for r in self.db.query("SELECT id FROM releases")]:
-			return Release(id)
+		ret = self.db.get("SELECT * FROM releases WHERE id = %s", id)
 
-	def get_latest(self, stable=1):
-		query = "SELECT id FROM releases WHERE published='Y' AND"
-		if stable:
-			query += " stable='Y'"
-		else:
-			query += " stable='N'"
+		if ret:
+			return Release(self.backend, ret.id, data=ret)
 
-		query += " ORDER BY date DESC LIMIT 1"
+	def get_by_sname(self, sname):
+		ret = self.db.get("SELECT * FROM releases WHERE sname = %s", sname)
 
-		release = self.db.get(query)
-		if release:
-			return Release(release.id)
+		if ret:
+			return Release(self.backend, ret.id, data=ret)
+
+	def get_latest(self, stable=True):
+		ret = self.db.get("SELECT * FROM releases WHERE published IS NOT NULL AND published <= NOW() \
+			AND stable = %s ORDER BY published DESC LIMIT 1", stable)
+
+		if ret:
+			return Release(self.backend, ret.id, data=ret)
 
 	def get_stable(self):
-		releases = self.db.query("""SELECT id FROM releases
-			WHERE published='Y' AND stable='Y'
-			ORDER BY date DESC""")
+		query = self.db.query("SELECT * FROM releases \
+			WHERE published IS NOT NULL AND published <= NOW() AND stable = TRUE \
+			ORDER BY published DESC")
 
-		return [Release(r.id) for r in releases]
+		releases = []
+		for row in query:
+			release = Release(self.backend, row.id, data=row)
+			releases.append(release)
+
+		return releases
 
 	def get_unstable(self):
-		releases = self.db.query("""SELECT id FROM releases
-			WHERE published='Y' AND stable='N'
-			ORDER BY date DESC""")
+		query = self.db.query("SELECT * FROM releases \
+			WHERE published IS NOT NULL AND published <= NOW() AND stable = FALSE \
+			ORDER BY published DESC")
 
-		return [Release(r.id) for r in releases]
+		releases = []
+		for row in query:
+			release = Release(self.backend, row.id, data=row)
+			releases.append(release)
+
+		return releases
 
 	def get_all(self):
-		releases = self.db.query("""SELECT id FROM releases
-			WHERE published='Y' ORDER BY date DESC""")
+		query = self.db.query("SELECT * FROM releases \
+			WHERE published IS NOT NULL AND published <= NOW() \
+			ORDER BY published DESC")
 
-		return [Release(r.id) for r in releases]
+		releases = []
+		for row in query:
+			release = Release(self.backend, row.id, data=row)
+			releases.append(release)
+
+		return releases
 
 	def get_file_for_torrent_hash(self, torrent_hash):
 		file = self.db.get("SELECT id, releases FROM files WHERE torrent_hash = %s LIMIT 1",
@@ -433,12 +442,3 @@ class Releases(object):
 		file = File(release, file.id)
 
 		return file
-
-
-if __name__ == "__main__":
-	r = Releases()
-
-	for release in r.get_all():
-		print release.name
-
-	print r.get_latest()

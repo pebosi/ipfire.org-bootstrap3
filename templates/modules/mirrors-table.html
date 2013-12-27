@@ -1,6 +1,19 @@
 <table class="table table-striped">
 	{% for mirror in mirrors %}
 		<tr>
+			<td class="ac">
+				{% if mirror.country_code %}
+					<img src="{{ static_url("images/flags/%s.png" % mirror.country_code.lower()) }}" alt="{{ mirror.country_code }}" />
+					<br>
+					{% if mirror.country_name %}
+						<abbr title="{{ mirror.country_name }}">{{ mirror.country_code }}</abbr>
+					{% else %}
+						{{ mirror.country_code }}
+					{% end %}
+					{% if mirror in preferred_mirrors %}*{% end %}
+				{% end %}
+			</td>
+
 			{% if mirror.state == "UP" %}
 				<td style="background-color: green;">
 					&nbsp;
@@ -15,17 +28,18 @@
 				</td>
 			{% else %}
 				<td style="background-color: grey;">
-					&nbsp;
+					&nbsp; {{ mirror.state }}
 				</td>
 			{% end %}
 			<td>
-				<a href="/mirror/{{ mirror.id }}">{{ mirror.hostname }}</a>
-			</td>
-			<td>
-				{{ mirror.owner }}
-				<br>
-				<img src="{{ static_url("images/flags/%s.png" % mirror.country_code) }}" alt="{{ mirror.country_code }}" />
-				{{ mirror.location_str }}
+				{% if mirror.state in ("OUTOFSYNC", "DOWN") %}
+					<span class="text-error pull-right">
+						{{ _("Last update: %s") % locale.format_date(mirror.last_update, relative=True) }}
+					</span>
+				{% end %}
+
+				<a href="/mirror/{{ mirror.hostname }}">{{ mirror.hostname }}</a>
+				<br>{{ mirror.owner }}
 			</td>
 		</tr>
 	{% end %}

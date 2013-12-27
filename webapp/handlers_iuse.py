@@ -9,14 +9,6 @@ from handlers_base import *
 import backend
 
 class IUseImage(BaseHandler):
-	@property
-	def iuse(self):
-		return backend.IUse()
-
-	@property
-	def stasy(self):
-		return backend.Stasy()
-
 	def get_error_html(self, status_code, **kwargs):
 		"""
 			Select a random image from the errors directory
@@ -59,7 +51,7 @@ class IUseImage(BaseHandler):
 				raise tornado.web.HTTPError(404, "Profile '%s' was not found." % profile_id)
 
 			# Render the image
-			image = image_cls(self, profile).to_string()
+			image = image_cls(self.backend, self, profile).to_string()
 
 			# Save the image to the memcache for 15 minutes
 			self.memcached.set(mem_id, image, 15*60)
