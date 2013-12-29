@@ -438,7 +438,7 @@ class Releases(Object):
 		if not file:
 			return
 
-		release = Release(file.releases)
-		file = File(release, file.id)
+		release = Release(self.backend, file.releases)
+		file = File(self.backend, release, file.id)
 
 		return file

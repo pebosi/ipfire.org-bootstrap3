@@ -15,10 +15,6 @@ import backend
 from handlers_base import *
 
 class StasyBaseHandler(BaseHandler):
-	@property
-	def stasy(self):
-		return backend.Stasy()
-
 	def format_size(self, s):
 		units = ("K", "M", "G", "T")
 		unit = 0
@@ -195,7 +191,14 @@ class StasyProfileSendHandler(StasyBaseHandler):
 			if addr.is_private:
 				continue
 
-			profile.geoip = self.geoip.get_all(remote_ip)
+			location = self.geoip.get_location(remote_ip)
+			if location:
+				profile.geoip = {
+					"country_code" : location.country,
+				}
+			else:
+				profile.geoip = None
+
 			break
 
 		# Move previous profiles to archive and keep only the latest one

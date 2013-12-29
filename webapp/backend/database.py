@@ -71,6 +71,9 @@ class Connection(object):
 		self._db = psycopg2.connect(**self._db_args)
 		self._db.autocommit = True
 
+		# Initialize the timezone setting.
+		self.execute("SET TIMEZONE TO 'UTC'")
+
 	def query(self, query, *parameters, **kwparameters):
 		"""
 			Returns a row list for the given query and parameters.

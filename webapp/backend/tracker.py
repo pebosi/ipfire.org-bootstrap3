@@ -76,7 +76,7 @@ class Tracker(Object):
 					peer6["peer id"] = row.id
 
 				if peer4:
-					peer6["peer id"] = row.id
+					peer4["peer id"] = row.id
 
 			if peer6:
 				peers.append(peer6)
@@ -91,7 +91,7 @@ class Tracker(Object):
 			Remove all peers that have timed out.
 		"""
 		self.db.execute("DELETE FROM tracker \
-			WHERE last_update < NOW() - INTERVAL '%ss'", self.interval)
+			WHERE last_update < NOW() - INTERVAL '%ss'", self.interval + 600)
 
 	def update_peer(self, peer_id, info_hash, address6=None, port6=None,
 			address4=None, port4=None, downloaded=None, uploaded=None, left_data=None):
@@ -186,12 +186,13 @@ class Tracker(Object):
 			}
 		}
 
-		for info_hash in info_hashes:
-			ret["files"][info_hash] = {
-				"complete"   : self.complete(info_hash),
-				"incomplete" : self.incomplete(info_hash),
-				"downloaded" : 0,
-			}
+		if info_hashes:
+			for info_hash in info_hashes:
+				ret["files"][info_hash] = {
+					"complete"   : self.complete(info_hash),
+					"incomplete" : self.incomplete(info_hash),
+					"downloaded" : 0,
+				}
 
 		return ret
 

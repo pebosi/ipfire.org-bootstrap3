@@ -474,7 +474,7 @@ class Mirror(Object):
 		except ValueError:
 			timestamp = 0
 
-		timestamp = datetime.datetime.fromtimestamp(timestamp)
+		timestamp = datetime.datetime.utcfromtimestamp(timestamp)
 
 		self.db.execute("UPDATE mirrors SET last_update = %s WHERE id = %s",
 			timestamp, self.id)
@@ -594,7 +594,7 @@ class Mirror(Object):
 
 	@property
 	def development(self):
-		return self._info.get("development", False)
+		return self._info.get("mirrorlist_devel", False)
 
 	@property
 	def mirrorlist(self):

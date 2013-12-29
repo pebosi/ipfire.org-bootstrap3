@@ -68,7 +68,7 @@ class RSSNewsHandler(RSSHandler):
 			item = tornado.database.Row({
 				"title"     : n.title,
 				"author"    : n.author,
-				"published" : n.date,
+				"published" : n.published,
 				"url"       : "http://www.ipfire.org/news/%s" % n.slug,
 				"markup"    : n.text,
 			})

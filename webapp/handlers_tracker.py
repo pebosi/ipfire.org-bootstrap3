@@ -93,6 +93,9 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 		# Get the external IP address of the client.
 		addr = self.get_remote_ip()
 
+		if addr.startswith("172.28.1."):
+			addr = "178.63.73.246"
+
 		if not ":" in addr:
 			return addr, default_port
 
