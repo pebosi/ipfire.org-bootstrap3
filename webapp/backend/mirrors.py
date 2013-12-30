@@ -314,7 +314,11 @@ class Mirror(Object):
 
 	@property
 	def address(self):
-		return socket.gethostbyname(self.hostname)
+		for addr in self.addresses4:
+			return addr
+
+		for addr in self.addresses6:
+			return addr
 
 	@property
 	def owner(self):
@@ -603,7 +607,10 @@ class Mirror(Object):
 	@property
 	def addresses(self):
 		if not hasattr(self, "__addresses"):
-			addrinfo = socket.getaddrinfo(self.hostname, 0, socket.AF_UNSPEC, socket.SOCK_STREAM)
+			try:
+				addrinfo = socket.getaddrinfo(self.hostname, 0, socket.AF_UNSPEC, socket.SOCK_STREAM)
+			except:
+				raise Exception("Could not resolve %s" % self.hostname)
 
 			ret = []
 			for family, socktype, proto, canonname, address in addrinfo:
