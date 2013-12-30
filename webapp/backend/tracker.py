@@ -22,18 +22,20 @@ class Tracker(Object):
 	def tracker_id(self):
 		return self.settings.get("tracker_id", "TheIPFireTorrentTracker")
 
-	def _fuzzy_interval(self, interval, fuzz=60):
-		return interval + random.randint(-fuzz, fuzz)
+	def _fuzzy_interval(self, interval, fuzz=120):
+		return interval - random.randint(0, fuzz)
 
 	@property
-	def interval(self):
+	def _interval(self):
 		return self.settings.get_int("tracker_interval", 3600)
 
 	@property
-	def min_interval(self):
-		interval = self.settings.get_int("tracker_min_interval", self.interval // 2)
+	def interval(self):
+		return self._fuzzy_interval(self._interval)
 
-		return self._fuzzy_interval(interval)
+	@property
+	def min_interval(self):
+		return self.settings.get_int("tracker_min_interval", self._interval // 2)
 
 	@property
 	def numwant(self):
@@ -41,7 +43,7 @@ class Tracker(Object):
 
 	def get_peers(self, info_hash, limit=None, random=True, no_peer_id=False, ipfamily=None):
 		query = "SELECT * FROM tracker WHERE last_update >= NOW() - INTERVAL '%ss'"
-		args = [self.interval,]
+		args = [self._interval,]
 
 		if info_hash:
 			query += " AND hash = %s"
@@ -91,7 +93,7 @@ class Tracker(Object):
 			Remove all peers that have timed out.
 		"""
 		self.db.execute("DELETE FROM tracker \
-			WHERE last_update < NOW() - INTERVAL '%ss'", self.interval + 600)
+			WHERE last_update < NOW() - INTERVAL '%s s'", int(self._interval * 1.1))
 
 	def update_peer(self, peer_id, info_hash, address6=None, port6=None,
 			address4=None, port4=None, downloaded=None, uploaded=None, left_data=None):
