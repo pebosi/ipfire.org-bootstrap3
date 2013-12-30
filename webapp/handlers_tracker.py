@@ -3,7 +3,7 @@
 import re
 import tornado.web
 
-from backend.tracker import bencode, bdecode, decode_hex
+from backend.tracker import bencode, bdecode, encode_hex, decode_hex
 from handlers_base import *
 
 
@@ -51,7 +51,7 @@ class TrackerBaseHandler(BaseHandler):
 
 		arguments_new = []
 		for argument in arguments:
-			arguments_new.append(decode_hex(argument))
+			arguments_new.append(encode_hex(argument))
 
 		arguments = arguments_new
 

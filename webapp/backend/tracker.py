@@ -6,16 +6,12 @@ import random
 
 from misc import Object
 
+def encode_hex(s):
+	return s.encode("hex")
+
 def decode_hex(s):
-	ret = []
-	for c in s:
-		for i in range(256):
-			if not c == chr(i):
-				continue
+	return s.decode("hex")
 
-			ret.append("%02x" % i)
-
-	return "".join(ret)
 
 class Tracker(Object):
 	@property
@@ -75,10 +71,10 @@ class Tracker(Object):
 
 			if not no_peer_id:
 				if peer6:
-					peer6["peer id"] = row.id
+					peer6["peer id"] = decode_hex(row.id)
 
 				if peer4:
-					peer4["peer id"] = row.id
+					peer4["peer id"] = decode_hex(row.id)
 
 			if peer6:
 				peers.append(peer6)
