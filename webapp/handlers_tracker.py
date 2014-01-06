@@ -152,6 +152,9 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 
 			self.tracker.handle_event(event, peer_id, info_hash)
 
+			if event == "stopped":
+				return
+
 		peer_info = {
 			"address6"   : addr_ipv6,
 			"port6"      : port_ipv6,
