@@ -89,13 +89,55 @@ class Tracker(Object):
 			Remove all peers that have timed out.
 		"""
 		self.db.execute("DELETE FROM tracker \
-			WHERE last_update < NOW() - INTERVAL '%s s'", int(self._interval * 1.1))
+			WHERE last_update < NOW() - INTERVAL '%s s'", int(self._interval * 1.2))
 
-	def update_peer(self, peer_id, info_hash, address6=None, port6=None,
-			address4=None, port4=None, downloaded=None, uploaded=None, left_data=None):
+	def update_peer(self, peer_id, info_hash, **kwargs):
+		# Translate the location IP address
+		address4 = kwargs.get("address4", None)
 		if address4 and address4.startswith("172.28.1."):
-			address = "178.63.73.246"
+			kwargs.update({
+				"address4" : "178.63.73.246",
+			})
 
+		if self.peer_exists(peer_id, info_hash):
+			self.__update_peer(peer_id, info_hash, **kwargs)
+		else:
+			self.__insert_peer(peer_id, info_hash, **kwargs)
+
+	def complete(self, info_hash):
+		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
+			WHERE hash = %s AND left_data = 0", info_hash)
+
+		if ret:
+			return ret.c
+
+	def incomplete(self, info_hash):
+		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
+			WHERE hash = %s AND left_data > 0", info_hash)
+
+		if ret:
+			return ret.c
+
+	def handle_event(self, event, peer_id, info_hash, **kwargs):
+		# stopped
+		if event == "stopped":
+			self.remove_peer(peer_id, info_hash)
+
+	def peer_exists(self, peer_id, info_hash):
+		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
+			WHERE id = %s AND hash = %s", peer_id, info_hash)
+
+		if ret and ret.c > 0:
+			return True
+
+		return False
+
+	def __insert_peer(self, peer_id, info_hash, address6=None, port6=None, address4=None, port4=None, **kwargs):
+		self.db.execute("INSERT INTO tracker(id, hash, address6, port6, address4, port4) \
+			VALUES(%s, %s, %s, %s, %s, %s)", peer_id, info_hash, address6, port6, address4, port4)
+
+	def __update_peer(self, peer_id, info_hash, address6=None, port6=None,
+			address4=None, port4=None, downloaded=None, uploaded=None, left_data=None):
 		query = "UPDATE tracker SET last_update = NOW()"
 		args = []
 
@@ -131,46 +173,6 @@ class Tracker(Object):
 		args += [peer_id, info_hash]
 
 		self.db.execute(query, *args)
-
-	def complete(self, info_hash):
-		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
-			WHERE hash = %s AND left_data = 0", info_hash)
-
-		if ret:
-			return ret.c
-
-	def incomplete(self, info_hash):
-		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
-			WHERE hash = %s AND left_data > 0", info_hash)
-
-		if ret:
-			return ret.c
-
-	def handle_event(self, event, peer_id, info_hash, **kwargs):
-		# started
-		if event == "started":
-			self.insert_peer(peer_id, info_hash, **kwargs)
-
-		# stopped
-		elif event == "stopped":
-			self.remove_peer(peer_id, info_hash)
-
-	def peer_exists(self, peer_id, info_hash):
-		ret = self.db.get("SELECT COUNT(*) AS c FROM tracker \
-			WHERE id = %s AND hash = %s", peer_id, info_hash)
-
-		if ret and ret.c > 0:
-			return True
-
-		return False
-
-	def insert_peer(self, peer_id, info_hash, address6=None, port6=None, address4=None, port4=None):
-		exists = self.peer_exists(peer_id, info_hash)
-		if exists:
-			return
-
-		self.db.execute("INSERT INTO tracker(id, hash, address6, port6, address4, port4) \
-			VALUES(%s, %s, %s, %s, %s, %s)", peer_id, info_hash, address6, port6, address4, port4)
 
 	def remove_peer(self, peer_id, info_hash):
 		self.db.execute("DELETE FROM tracker \

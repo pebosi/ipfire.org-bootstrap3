@@ -150,8 +150,7 @@ class TrackerAnnounceHandler(TrackerBaseHandler):
 				self.send_tracker_error("Got unknown event")
 				return
 
-			self.tracker.handle_event(event, peer_id, info_hash,
-				address6=addr_ipv6, port6=port_ipv6, address4=addr_ipv4, port4=port_ipv4)
+			self.tracker.handle_event(event, peer_id, info_hash)
 
 		peer_info = {
 			"address6"   : addr_ipv6,
