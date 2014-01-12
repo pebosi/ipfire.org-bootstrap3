@@ -182,7 +182,7 @@
 								<td>
 									{% if item.is_new() %}
 										<span class="label label-success pull-right">{{ _("NEW") }}</span>
-									{% elif item.remaining_days <= 10 %}
+									{% elif item.remaining_days and item.remaining_days <= 10 %}
 										<span class="pull-right">
 											{{ _("one day left", "%(num)s days left", item.remaining_days) % { "num" : item.remaining_days } }}
 										</span>
