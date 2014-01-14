@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="row">
-		<div class="span6">
+		<div class="col-lg-6 col-md-6">
 			{% if lang == "de" %}
 				<p>
 					Auf diesen Seiten findest du alle Ankündigungen,
@@ -30,7 +30,7 @@
 			{% end %}
 		</div>
 
-		<div class="span3">
+		<div class="col-lg-3 col-md-3">
 			<h4>{{ _("Stay up to date") }}</h4>
 
 			{% if lang == "de" %}
@@ -57,7 +57,7 @@
 			{% end %}
 		</div>
 
-		<div class="span3">
+		<div class="col-lg-3 col-md-3">
 			<h4>{{ _("IPFire Planet") }}</h4>
 
 			{% if lang == "de" %}
@@ -81,7 +81,7 @@
 	<hr>
 
 	<div class="row">
-		<div class="span6 offset3">
+		<div class="col-lg-6 col-md-6 col-lg-offset-3">
 			<h3>{{ _("Latest news") }}</h3>
 			{% module NewsTable(news) %}
 		</div>
