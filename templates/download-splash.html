@@ -3,7 +3,7 @@
 {% block title %}{{ _("Thanks for downloading IPFire!") }}{% end block %}
 
 {% block body %}
-	<div class="hero-unit">
+	<div class="jumbotron">
 		<h2>{{ _("Thanks for downloading IPFire!") }}</h2>
 
 		{% if lang == "de" %}
@@ -33,14 +33,14 @@
 
 		<div class="ac">
 			<br>
-			<a class="btn btn-success btn-large" href="http://www.ipfire.org/donate">
+			<a class="btn btn-success btn-lg" href="http://www.ipfire.org/donate">
 				{{ _("Donate") }}
 			</a>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="span12">
+		<div class="col-lg-12 col-md-12">
 			<h4>
 				{% if lang == "de" %}
 					Der Download beginnt in Kürze.
@@ -60,7 +60,7 @@
 
 	<h3>{{ _("Next steps") }}</h3>
 	<div class="row">
-		<div class="span4">
+		<div class="col-lg-4 col-md-4">
 			<h4>
 				<a href="http://wiki.ipfire.org/{{ lang }}/installation/start">
 					{{ _("Install IPFire") }}
@@ -77,7 +77,7 @@
 			</p>
 		</div>
 
-		<div class="span4">
+		<div class="col-lg-4 col-md-4">
 			<h4>
 				<a href="http://wiki.ipfire.org/">{{ _("Access documentation") }}</a>
 			</h4>
@@ -95,7 +95,7 @@
 			</p>
 		</div>
 
-		<div class="span4">
+		<div class="col-lg-4 col-md-4">
 			<h4>
 				<a href="http://www.ipfire.org/getinvolved">{{ _("Join the community") }}</a>
 			</h4>
