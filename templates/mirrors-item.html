@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="row">
-		<div class="span4">
+		<div class="col-lg-4 col-md-4">
 			{% if item.owner %}
 				<dt>{{ _("Owner") }}</dt>
 				<dd>{{ item.owner }}</dd>
@@ -83,18 +83,18 @@
 			<hr>
 
 			<p class="ac">
-				<a class="btn" href="{{ item.url }}">{{ _("Go to mirror") }}</a>
+				<a class="btn btn-default" href="{{ item.url }}">{{ _("Go to mirror") }}</a>
 			</p>
 		</div>
 
-		<div class="span8">
+		<div class="col-lg-8 col-md-8">
 			{% if item.location %}
 				{% module Map(item.latitude, item.longitude) %}
-				<p class="muted ac">
+				<p class="text-muted ac">
 					{{ _("The location of the mirror server is estimated by the IP address.") }}
 				</p>
 			{% else %}
-				<p class="ac muted">
+				<p class="ac text-muted">
 					{{ _("The location of this mirror server could not be estimated.") }}
 				</p>
 			{% end %}

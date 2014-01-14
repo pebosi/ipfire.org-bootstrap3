@@ -6,16 +6,16 @@
 	<div class="jumbotron masthead">
 		<div class="container">
 			<div class="row">
-				<div class="span4">
+				<div class="col-lg-4 col-md-4">
 					<img src="{{ static_url("images/tux/ipfire_tux_512x512.png") }}" alt="IPFire Logo" />
 				</div>
 
-				<div class="span8">
+				<div class="col-lg-8 col-md-8">
 					<h1>IPFire</h1>
 					<p class="lead">An Open Source Firewall Distribution</p>
 
 					<p>
-						<a class="btn btn-primary btn-large" href="/download">{{ _("Download IPFire") }}</a>
+						<a class="btn btn-primary btn-lg" href="/download">{{ _("Download IPFire") }}</a>
 					</p>
 
 					<ul class="masthead-links">
@@ -37,7 +37,7 @@
 	<br>
 
 	<div class="row">
-		<div class="span6 objectives">
+		<div class="col-lg-6 col-md-6 objectives">
 			{% if lang == "de" %}
 				<p>
 					<strong>IPFire</strong> ist eine gehärtete Linux-Appliance-Distribution
@@ -128,7 +128,7 @@
 
 		</div>
 
-		<div class="span6">
+		<div class="col-lg-6 col-md-6">
 			<div class="well">
 				<h4>
 					<a href="/news">{{ _("What's new?") }}</a>
@@ -182,7 +182,7 @@
 								<td>
 									{% if item.is_new() %}
 										<span class="label label-success pull-right">{{ _("NEW") }}</span>
-									{% elif item.remaining_days and item.remaining_days <= 10 %}
+									{% elif item.remaining_days <= 10 %}
 										<span class="pull-right">
 											{{ _("one day left", "%(num)s days left", item.remaining_days) % { "num" : item.remaining_days } }}
 										</span>
@@ -197,7 +197,7 @@
 									<br class="separator-small">
 
 									<div class="progress progress-small">
-										<div class="bar {{ item.progressbar_colour }}" style="width: {{ "%.2f%%" % item.percentage_bar }};"></div>
+										<div class="progress-bar progress-{{ item.progressbar_colour }}" style="width: {{ "%.2f%%" % item.percentage_bar }};"></div>
 									</div>
 								</td>
 							</tr>
@@ -207,12 +207,12 @@
 					<hr>
 				{% end %}
 
-				<div class="row-fluid">
-					<div class="span10">
+				<div class="row">
+					<div class="col-lg-10 col-md-10">
 						<a href="/donate"><strong>{{ _("Please support us with your donation!") }}</strong></a>
 					</div>
 
-					<div class="span2">
+					<div class="col-lg-2 col-md-2">
 						<div class="pull-right">
 							<a href="https://www.facebook.com/IPFire.org"><img src="{{ static_url("images/icons/social/facebook.png") }}" alt="Facebook"></a>
 							<a href="https://twitter.com/ipfire"><img src="{{ static_url("images/icons/social/twitter.png") }}" alt="Twitter"></a>
@@ -226,14 +226,15 @@
 	<br class="separator">
 
 	<div class="row">
-		<div class="span8 offset2">
-			<div class="well well-white">
+		<div class="col-lg-offset-2 col-lg-8 col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-body">
 				<h4>
 					{{ _("IPFire Hardware Appliances & Consulting") }} <small>{{ _("by Lightning Wire Labs") }}</small>
 				</h4>
 
-				<div class="row-fluid">
-					<div class="span6">
+				<div class="row">
+					<div class="col-lg-6 col-md-6">
 						{% if lang == "de" %}
 							<p>
 								Lightning Wire Labs bietet mit IPFire vorinstallierte Hardware-Appliances an.
@@ -248,7 +249,7 @@
 						{% end %}
 					</div>
 
-					<div class="span6 ac">
+					<div class="col-lg-6 col-md-6 ac">
 						<a href="http://www.lightningwirelabs.com/products/ipfire/appliances" target="_blank">
 							<img src="{{ static_url("images/LWL/appliance-eco.jpg") }}" alt="Appliance Eco">
 						</a>
@@ -266,6 +267,7 @@
 				<p class="ac">
 					<a href="http://www.lightningwirelabs.com/" target="_blank">www.lightningwirelabs.com</a>
 				</p>
+			</div>
 			</div>
 		</div>
 	</div>
