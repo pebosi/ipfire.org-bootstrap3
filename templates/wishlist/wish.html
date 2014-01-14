@@ -1,73 +1,29 @@
-<li class="col-lg-12 col-md-12">
-	<div class="thumbnail">
-		{% if not short %}
-			{% if wish.remaining_days <= 10 and wish.remaining_days >= 0 %}
-				<span class="label label-failure pull-right">
-					{{ _("Only a few days left!") }}
-				</span>
-			{% end %}
+{% extends "base.html" %}
 
-			<h3>
-				<a href="/wish/{{ wish.slug }}">{{ escape(wish.title) }}</a>
-			</h3>
+{% block title %}{{ wish.title }} - {{ _("Wish") }}{% end block %}
 
-			{% raw wish.description %}
-			<hr>
-		{% end %}
-
-		<div class="progress {{ progress_bar }}">
-			<div class="progress-bar" style="width: {{ "%.2f%%" % wish.percentage_bar }};"></div>
-		</div>
-
-		<div class="row">
-			<div class="col-lg-3 col-md-3 ac">
-				<br><br>
-				<a class="btn btn-lg btn-primary" href="/wish/{{ wish.slug }}/donate">
-					{{ _("Donate") }}
-				</a>
-				<br><br>
-			</div>
-
-			<div class="col-lg-6 col-md-6">
-				<div class="well">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 ac">
-							<p class="lead">{{ "%d%%" % wish.percentage }}</p>
-							<p>{{ _("funded") }}</p>
-							</div>
-
-						<div class="col-lg-4 col-md-4 ac">
-							<p class="lead">{% raw _("%s &euro;") % wish.donated %}</p>
-							<p>{{ _("donated") }}</p>
-						</div>
-
-						<div class="col-lg-4 col-md-4 ac">
-							{% if wish.status == "running" %}
-								{% if wish.remaining_days %}
-									<p class="lead">{{ wish.remaining_days }}</p>
-									<p>{{ _("day to go", "days to go", wish.remaining_days) }}</p>
-								{% else %}
-									<p class="lead">{% raw _("%s &euro;") % (wish.goal - wish.donated) %}</p>
-									<p>{{ _("to go") }}</p>
-								{% end %}
-							{% elif wish.status == "in_progress" %}
-								<p class="lead">{{ _("In progress") }}</p>
-							{% elif wish.status == "finished" %}
-								<p class="lead">{{ _("Finished") }}</p>
-							{% else %}
-								<p class="lead">{{ _("Funding ended") }}</p>
-							{% end %}
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 col-md-3">
-				<br>
-				<p class="ac">
-					{{ _("Share this wish with your friends and help us promote it!") }}
-				</p>
-			</div>
-		</div>
+{% block body %}
+	<div class="page-header">
+		<h1>{{ wish.title }}</h1>
 	</div>
-</li>
+
+	{% module Wishlist([wish,], short=True) %}
+
+	{% raw wish.description %}
+
+	<hr>
+
+	<p class="ac">
+		<i class="glyphicon glyphicon-calendar"></i>
+		{{ _("Launched: %s") % locale.format_date(wish.date_start, full_format=True) }}
+
+		&bull;
+
+		{% if wish.date_end %}
+			<i class="glyphicon glyphicon-time"></i>
+			{{ _("Funding ends: %s") % locale.format_date(wish.date_end, full_format=True) }}
+		{% else %}
+			{{ _("This funding runs until the goal is reached.") }}
+		{% end %}
+	</p>
+{% end block %}
