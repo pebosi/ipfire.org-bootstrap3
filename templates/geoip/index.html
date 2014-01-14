@@ -9,7 +9,7 @@
 
 	{% if peer %}
 		<div class="row">
-			<div class="span4">
+			<div class="col-lg-4 col-md-4">
 				<dl>
 					{% if peer.asn %}
 						<dt>{{ _("Autonomous System") }}</dt>
@@ -37,7 +37,7 @@
 				</dl>
 			</div>
 
-			<div class="span8">
+			<div class="col-lg-8 col-md-8">
 				{% module Map(peer.latitude, peer.longitude) %}
 			</div>
 		</div>
