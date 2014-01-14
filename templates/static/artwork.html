@@ -36,15 +36,15 @@
 		<h1>{{ _("The IPFire Logo") }}</h1>
 	</div>
 
-	<ul class="thumbnails">
+	<div class="row">
 		{% for i in ("512x512", "256x256", "128x128", "64x64", "32x32") %}
-			<li class="col-lg-4 col-md-4">
+			<div class="col-lg-4 col-md-4">
 				<a class="thumbnail" href="{{ static_url("images/tux/ipfire_tux_%s.png" % i) }}">
 					<img src="{{ static_url("images/tux/ipfire_tux_%s.png" % i) }}" alt="{{ _("Logo") }}">
 				</a>
-			</li>
+			</div>
 		{% end %}
-	</ul>
+	</div>
 
 	<div class="page-header">
 		<h2>{{ _("Flyers, Rollups, CDs and more") }}</h2>
@@ -62,13 +62,13 @@
 		</p>
 	{% end %}
 
-	<ul class="thumbnails">
+	<div class="row">
 		{% for i in ("rollup", "flyer", "cd_schuber", "cd_label") %}
-			<li class="col-lg-6 col-md-6">
+			<div class="col-lg-6 col-md-6">
 				<a class="thumbnail" href="{{ static_url("images/artwork/%s.pdf" % i) }}">
 					<img src="{{ static_url("images/artwork/%s_tn.png" % i) }}" alt="{{ _("Artwork") }}">
 				</a>
-			</li>
+			</div>
 		{% end %}
-	</ul>
+	</div>
 {% end block %}
