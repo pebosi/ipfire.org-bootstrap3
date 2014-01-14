@@ -4,7 +4,7 @@
 
 {% block body %}
 	<div class="row">
-		<div class="span9">
+		<div class="col-lg-9 col-md-9">
 			{% block bodyA %}
 				<div class="page-header">
 					<h1>{{ author.cn }}'s posts</h1>
@@ -16,7 +16,7 @@
 					{% end %}
 
 					<div class="row">
-						<div class="span9">
+						<div class="col-lg-9 col-md-9">
 							<ul class="pager">
 								<li class="previous">
 									<a href="?offset={{ offset }}">&larr; {{ _("Older posts") }}</a>
@@ -35,17 +35,17 @@
 			{% end block %}
 		</div>
 
-		<div class="span3">
+		<div class="col-lg-3 col-md-3">
 			<div class="well">
 				<img class="img-rounded" src="{{ author.gravatar_icon(232) }}" alt="{{ author.cn }}" />
 				<hr>
 				<a href="/user/{{ author.uid }}">
-					<i class="icon-user"></i>
+					<i class="glyphicon glyphicon-user"></i>
 					{{ escape(author.cn) }}
 				</a>
 				<hr>
 				<a href="mailto:{{ author.email }}">
-					<i class="icon-envelope"></i> {{ _("Mail") }}
+					<i class="glyphicon glyphicon-envelope"></i> {{ _("Mail") }}
 				</a>
 			</div>
 		</div>

@@ -11,16 +11,16 @@
 	<br>
 
 	<div class="row">
-		<div class="span4 offset4">
+		<div class="col-lg-4 col-md-4 col-lg-offset-4">
 			<form class="form-inline" action="/search" method="GET">
 				<div class="input-append">
-					<input type="text" class="input-medium planet-search-autocomplete" name="q"
+					<input type="text" class="form-control input-medium planet-search-autocomplete" name="q"
 						placeholder="{{ _("Search") }}" autocomplete="off">
-					<button type="submit" class="btn"><i class="icon-search"></i></button>
+					<button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
 				</div>
 
 				<div class="btn-group">
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+					<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
 						{{ _("All posts from") }}
 						<span class="caret"></span>
 					</a>
