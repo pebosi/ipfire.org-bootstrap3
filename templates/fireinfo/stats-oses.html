@@ -8,20 +8,20 @@
 	</div>
 
 	<div class="row">
-		<div class="span12">
+		<div class="col-lg-12 col-md-12">
 			{% module StasyTable(releases, sortby="percentage") %}
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="span12">
+		<div class="col-lg-12 col-md-12">
 			<h2>{{ _("Architectures") }}</h2>
 			{% module StasyTable(arches, sortby="percentage") %}
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="span12">
+		<div class="col-lg-12 col-md-12">
 			<h3>{{ _("Kernels") }}</h3>
 			{% if lang == "de" %}
 				<p>

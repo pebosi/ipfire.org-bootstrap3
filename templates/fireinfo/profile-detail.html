@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="row">
-		<div class="span6">
+		<div class="col-lg-6 col-md-6">
 			<h3>{{ _("Operating system") }}</h3>
 			<table class="table">
 				<tr>
@@ -38,7 +38,7 @@
 			</table>
 		</div>
 
-		<div class="span6">
+		<div class="col-lg-6 col-md-6">
 			{% if profile.hypervisor %}
 				<h3>{{ _("Hypervisor") }}</h3>
 				<p>
@@ -91,7 +91,7 @@
 
 	{% if profile.network %}
 		<div class="row">
-			<div class="span12">
+			<div class="col-lg-12 col-md-12">
 				<h2>{{ _("Network") }}</h2>
 				<p>
 					{{ _("Enabled network zones") }}
@@ -118,7 +118,7 @@
 
 	<h2>{{ _("Hardware") }}</h2>
 	<div class="row">
-		<div class="span6">
+		<div class="col-lg-6 col-md-6">
 			<table class="table">
 				<tr>
 					<td colspan="2">
@@ -183,7 +183,7 @@
 			</table>
 		</div>
 
-		<div class="span6">
+		<div class="col-lg-6 col-md-6">
 			<table class="table">
 				<tr>
 					<td>
@@ -214,7 +214,7 @@
 	{% end %}
 
 	<h3>{{ _("Signature images") }}</h3>
-	<ul class="unstyled">
+	<ul class="list-unstyled">
 		{% for i in range(1) %}
 			<li>
 				<!-- XXX need some bbcode here -->
