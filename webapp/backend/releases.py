@@ -431,6 +431,16 @@ class Releases(Object):
 
 		return releases
 
+	def _get_all(self):
+		query = self.db.query("SELECT * FROM releases ORDER BY published DESC")
+
+		releases = []
+		for row in query:
+			release = Release(self.backend, row.id, data=row)
+			releases.append(release)
+
+		return releases
+
 	def get_file_for_torrent_hash(self, torrent_hash):
 		file = self.db.get("SELECT id, releases FROM files WHERE torrent_hash = %s LIMIT 1",
 			torrent_hash)

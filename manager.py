@@ -99,7 +99,7 @@ class ReleaseFilesManager(Manager):
 		return self.settings.get_int("releasefiles_check_interval", 3600)
 
 	def do(self):
-		for release in self.releases.get_all():
+		for release in self.releases._get_all():
 			release.scan_files()
 
 
