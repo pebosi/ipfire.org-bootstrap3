@@ -50,7 +50,7 @@
 					<hr>
 
 					<div class="row">
-						<div class="span6 offset3">
+						<div class="col-lg-6 col-md-6col-lg-offset-3">
 							<div class="alert alert-error">
 								<strong>{{ _("Caution!") }}</strong>
 
@@ -87,10 +87,10 @@
 										{% if file.torrent_hash %}
 											<p class="pull-right">
 												<a href="{{ file.magnet_link }}">
-													<i class="icon-magnet"></i>
+													<i class="glyphicon glyphicon-magnet"></i>
 												</a>
 												<a href="http://tracker.ipfire.org/{{ file.torrent_hash }}/download">
-													<i class="icon-download-alt"></i>
+													<i class="glyphicon glyphicon-download-alt"></i>
 												</a>
 											</p>
 										{% end %}
@@ -111,15 +111,15 @@
 
 					<p class="pull-right">
 						<strong>{{ _("Legend:") }}</strong>
-						<i class="icon-magnet"></i> {{ _("Magnet link") }},
-						<i class="icon-download-alt"></i> {{ _("Torrent download") }}
+						<i class="glyphicon glyphicon-magnet"></i> {{ _("Magnet link") }},
+						<i class="glyphicon glyphicon-download-alt"></i> {{ _("Torrent download") }}
 					</p>
 				</div>
 			{% end %}
 		</div>
 	</div>
 {% else %}
-	<div class="alert">
+	<div class="alert alert-warning">
 		{{ _("There are no downloads available for this release.") }}
 	</div>
 {% end %}

@@ -1,5 +1,5 @@
-<ul class="nav">
-	{% if hostname in ("www.ipfire.org", "dev.ipfire.org") %}
+<ul class="navbar-nav nav">
+	{% if hostname in ("www.ipfire.org:8001", "www.ipfire.org", "dev.ipfire.org") %}
 		<li>
 			<a href="/download">{{ _("Download") }}</a>
 		</li>
@@ -16,26 +16,26 @@
 			<ul class="dropdown-menu">
 				<li>
 					<a href="http://www.lightningwirelabs.com" target="_blank">
-						<i class="icon-star-empty"></i>
+						<i class="glyphicon glyphicon-star-empty"></i>
 						{{ _("Commercial support") }}
 					</a>
 				</li>
 				<li class="divider"></li>
 				<li>
 					<a href="http://wiki.ipfire.org/">
-						<i class="icon-align-justify"></i>
+						<i class="glyphicon glyphicon-align-justify"></i>
 						{{ _("Wiki") }}
 					</a>
 				</li>
 				<li>
 					<a href="http://forum.ipfire.org/">
-						<i class="icon-question-sign"></i>
+						<i class="glyphicon glyphicon-question-sign"></i>
 						{{ _("Forum") }}
 					</a>
 				</li>
 				<li>
 					<a href="/chat">
-						<i class="icon-comment"></i>
+						<i class="glyphicon glyphicon-comment"></i>
 						{{ _("Chat") }}
 					</a>
 				</li>
@@ -43,13 +43,13 @@
 				<li class="divider"></li>
 				<li>
 					<a href="/donate">
-						<i class="icon-arrow-right"></i>
+						<i class="glyphicon glyphicon-arrow-right"></i>
 						{{ _("Donate") }}
 					</a>
 				</li>
 				<li>
 					<a href="http://wishlist.ipfire.org/">
-						<i class="icon-gift"></i>
+						<i class="glyphicon glyphicon-gift"></i>
 						{{ _("Wishlist") }}
 					</a>
 				</li>
@@ -61,70 +61,70 @@
 				{{ _("More") }} <b class="caret"></b>
 			</a>
 			<ul class="dropdown-menu">
-				<li class="nav-header">
+				<li class="dropdown-header">
 					{{ _("Development") }}
 				</li>
 				<li>
 					<a href="/development">
-						<i class="icon-info-sign"></i>
+						<i class="glyphicon glyphicon-info-sign"></i>
 						{{ _("Overview") }}
 					</a>
 				</li>
 				<li>
 					<a href="https://pakfire.ipfire.org/">
-						<i class="icon-cog"></i>
+						<i class="glyphicon glyphicon-cog"></i>
 						{{ _("Pakfire Build Service") }}
 					</a>
 				</li>
 				<li>
 					<a href="https://bugzilla.ipfire.org/">
-						<i class="icon-th-list"></i>
+						<i class="glyphicon glyphicon-th-list"></i>
 						{{ _("Bugtracker") }}
 					</a>
 				</li>
 
-				<li class="nav-header">
+				<li class="dropdown-header">
 					 {{ _("Miscellaneous") }}
 				</li>
 				<li>
 					<a href="http://planet.ipfire.org/">
-						<i class="icon-globe"></i>
+						<i class="glyphicon glyphicon-globe"></i>
 						{{ _("Planet") }}
 					</a>
 				</li>
 				<li>
 					<a href="http://fireinfo.ipfire.org/">
-						<i class="icon-signal"></i>
+						<i class="glyphicon glyphicon-signal"></i>
 						{{ _("Fireinfo") }}
 					</a>
 				</li>
 				<li>
 					<a href="http://lists.ipfire.org/">
-						<i class="icon-envelope"></i>
+						<i class="glyphicon glyphicon-envelope"></i>
 						{{ _("Mailing lists") }}
 					</a>
 				</li>
 				<li>
 					<a href="http://mirrors.ipfire.org/">
-						<i class="icon-download-alt"></i>
+						<i class="glyphicon glyphicon-download-alt"></i>
 						{{ _("Mirrors") }}
 					</a>
 				</li>
 				<li>
 					<a href="/artwork">
-						<i class="icon-pencil"></i>
+						<i class="glyphicon glyphicon-pencil"></i>
 						{{ _("Artwork") }}
 					</a>
 				</li>
 				<li>
 					<a href="/cebit">
-						<i class="icon-eye-open"></i>
+						<i class="glyphicon glyphicon-eye-open"></i>
 						{{ _("CeBIT") }} 2010
 					</a>
 				</li>
 				<li>
 					<a href="http://tracker.ipfire.org/">
-						<i class="icon-download-alt"></i>
+						<i class="glyphicon glyphicon-download-alt"></i>
 						{{ _("Tracker") }}
 					</a>
 				</li>
@@ -139,21 +139,21 @@
 	{% end %}
 </ul>
 
-{% if hostname == "www.ipfire.org" or hostname == "dev.ipfire.org" %}
-	<ul class="nav pull-right">
-		<li>
-			<a href="http://www.lightningwirelabs.com" target="_blank">
-				<strong>{{ _("Professional support available!") }}</strong>
-			</a>
-		</li>
-	</ul>
+{% if hostname in ("www.ipfire.org:8001", "www.ipfire.org", "dev.ipfire.org") %}
+<ul class="nav navbar-nav navbar-right">
+	<li>
+	<a href="http://www.lightningwirelabs.com" target="_blank">
+	<strong>{{ _("Professional support available!") }}</strong>
+	</a>
+	</li>
+</ul>	
 {% else  %}
-	<ul class="nav pull-right">
-		<li>
-			<a href="http://www.ipfire.org">
-				<i class="icon-home icon-white"></i> &nbsp;
-				www.ipfire.org
-			</a>
-		</li>
-	</ul>
+<ul class="nav navbar-nav navbar-right">
+	<li>
+	<a href="http://www.ipfire.org">
+		<i class="glyphicon glyphicon-home glyphicon-white"></i> &nbsp;
+		www.ipfire.org
+	</a>
+	</li>
+</ul>	
 {% end %}
