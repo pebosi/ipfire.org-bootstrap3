@@ -15,7 +15,7 @@
 
 {% block body %}
 	<div class="row">
-		<div class="span9">
+		<div class="col-lg-9 col-md-9">
 			<section id="about">
 				<div class="page-header">
 					<h1>
@@ -291,17 +291,17 @@
 				<hr class="separator">
 
 				<ul class="thumbnails">
-					<li class="span3">
+					<li class="col-lg-3 col-md-3">
 						<a class="thumbnail" href="{{ static_url("images/screenshots/en/firewall/edit-portfw-rule-1.png") }}">
 							<img src="{{ static_url("images/screenshots/en/firewall/edit-portfw-rule-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
 						</a>
 					</li>
-					<li class="span3">
+					<li class="col-lg-3 col-md-3">
 						<a class="thumbnail" href="{{ static_url("images/screenshots/en/firewall/dmz-holes-1.png") }}">
 							<img src="{{ static_url("images/screenshots/en/firewall/dmz-holes-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
 						</a>
 					</li>
-					<li class="span3">
+					<li class="col-lg-3 col-md-3">
 						<a class="thumbnail" href="{{ static_url("images/screenshots/en/firewall/connections-1.png") }}">
 							<img src="{{ static_url("images/screenshots/en/firewall/connections-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
 						</a>
@@ -414,12 +414,12 @@
 				<hr class="separator">
 
 				<ul class="thumbnails">
-					<li class="span3">
+					<li class="col-lg-3 col-md-3">
 						<a class="thumbnail" href="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1.png") }}">
 							<img src="{{ static_url("images/screenshots/en/pakfire/pakfire-overview-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
 						</a>
 					</li>
-					<li class="span3">
+					<li class="col-lg-3 col-md-3">
 						<a class="thumbnail" href="{{ static_url("images/screenshots/en/pakfire/addon-services-1.png") }}">
 							<img src="{{ static_url("images/screenshots/en/pakfire/addon-services-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
 						</a>
@@ -1166,7 +1166,7 @@
 				<hr class="separator">
 
 				<ul class="thumbnails">
-					<li class="span3">
+					<li class="col-lg-3 col-md-3">
 						<a class="thumbnail" href="{{ static_url("images/screenshots/en/hardware/hwtemp-1.png") }}">
 							<img src="{{ static_url("images/screenshots/en/hardware/hwtemp-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
 						</a>
@@ -1298,7 +1298,7 @@
 				<hr class="separator">
 
 				<ul class="thumbnails">
-					<li class="span3">
+					<li class="col-lg-3 col-md-3">
 						<a class="thumbnail" href="{{ static_url("images/screenshots/en/virtualization/virt-manager-1.png") }}">
 							<img src="{{ static_url("images/screenshots/en/virtualization/virt-manager-1_thumb.png") }}" alt="{{ _("Screenshot") }}">
 						</a>
@@ -1342,71 +1342,71 @@
 			</section>
 		</div>
 
-		<div class="span3 sidebar">
+		<div class="col-lg-3 col-md-3 sidebar">
 			<ul class="nav nav-list sidenav">
 				<li>
 					<a href="#about">
-						<i class="icon-chevron-left"></i> {{ _("About IPFire") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("About IPFire") }}
 					</a>
 				</li>
 				<li>
 					<a href="#security">
-						<i class="icon-chevron-left"></i> {{ _("Security") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Security") }}
 					</a>
 				</li>
 				<li>
 					<a href="#firewall">
-						<i class="icon-chevron-left"></i> {{ _("Firewall") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Firewall") }}
 					</a>
 				</li>
 				<li>
 					<a href="#pakfire">
-						<i class="icon-chevron-left"></i> {{ _("Pakfire") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Pakfire") }}
 					</a>
 				</li>
 				<li>
 					<a href="#updates">
-						<i class="icon-chevron-left"></i> {{ _("Updates") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Updates") }}
 					</a>
 				</li>
 				<li>
 					<a href="#dialup">
-						<i class="icon-chevron-left"></i> {{ _("Dialup") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Dialup") }}
 					</a>
 				</li>
 				<li>
 					<a href="#proxy">
-						<i class="icon-chevron-left"></i> {{ _("Web Proxy") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Web Proxy") }}
 					</a>
 				</li>
 				<li>
 					<a href="#vpn">
-						<i class="icon-chevron-left"></i> {{ _("VPN") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("VPN") }}
 					</a>
 				</li>
 				<li>
 					<a href="#ids">
-						<i class="icon-chevron-left"></i> {{ _("Intrusion Detection") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Intrusion Detection") }}
 					</a>
 				</li>
 				<li>
 					<a href="#qos">
-						<i class="icon-chevron-left"></i> {{ _("Quality of Service") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Quality of Service") }}
 					</a>
 				</li>
 				<li>
 					<a href="#hardware">
-						<i class="icon-chevron-left"></i> {{ _("Hardware") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Hardware") }}
 					</a>
 				</li>
 				<li>
 					<a href="#virtualization">
-						<i class="icon-chevron-left"></i> {{ _("Virtualization") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Virtualization") }}
 					</a>
 				</li>
 				<li>
 					<a href="#wlanap">
-						<i class="icon-chevron-left"></i> {{ _("Wireless Access Point") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Wireless Access Point") }}
 					</a>
 				</li>
 			</ul>

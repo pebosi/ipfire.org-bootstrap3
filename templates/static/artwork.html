@@ -38,7 +38,7 @@
 
 	<ul class="thumbnails">
 		{% for i in ("512x512", "256x256", "128x128", "64x64", "32x32") %}
-			<li class="span4">
+			<li class="col-lg-4 col-md-4">
 				<a class="thumbnail" href="{{ static_url("images/tux/ipfire_tux_%s.png" % i) }}">
 					<img src="{{ static_url("images/tux/ipfire_tux_%s.png" % i) }}" alt="{{ _("Logo") }}">
 				</a>
@@ -64,7 +64,7 @@
 
 	<ul class="thumbnails">
 		{% for i in ("rollup", "flyer", "cd_schuber", "cd_label") %}
-			<li class="span6">
+			<li class="col-lg-6 col-md-6">
 				<a class="thumbnail" href="{{ static_url("images/artwork/%s.pdf" % i) }}">
 					<img src="{{ static_url("images/artwork/%s_tn.png" % i) }}" alt="{{ _("Artwork") }}">
 				</a>

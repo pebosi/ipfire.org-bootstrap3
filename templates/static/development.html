@@ -12,7 +12,7 @@
 
 {% block body %}
 	<div class="row">
-		<div class="span9">
+		<div class="col-lg-9 col-md-9">
 			<section id="intro">
 				{% if lang == "de" %}	
 					<p>
@@ -114,7 +114,7 @@
 				{% end %}
 
 				<p class="ac">
-					<a class="btn" href="http://git.ipfire.org/" target="_blank">
+					<a class="btn btn-default" href="http://git.ipfire.org/" target="_blank">
 						{{ _("IPFire Git repositories") }}
 					</a>
 				</p>
@@ -139,7 +139,7 @@
 				{% end %}
 
 				<p class="ac">
-					<a class="btn" href="https://github.com/ipfire" target="_blank">
+					<a class="btn btn-default" href="https://github.com/ipfire" target="_blank">
 						{{ _("ipfire on GitHub") }}
 					</a>
 				</p>
@@ -251,21 +251,21 @@
 			</section>
 		</div>
 
-		<div class="span3 sidebar">
+		<div class="col-lg-3 col-md-3 sidebar">
 			<ul class="nav nav-list sidenav">
 				<li>
 					<a href="#tools">
-						<i class="icon-chevron-left"></i> {{ _("Development tools") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Development tools") }}
 					</a>
 				</li>
 				<li>
 					<a href="#sources">
-						<i class="icon-chevron-left"></i> {{ _("Source Code") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("Source Code") }}
 					</a>
 				</li>
 				<li>
 					<a href="#build">
-						<i class="icon-chevron-left"></i> {{ _("How to build IPFire?") }}
+						<i class="glyphicon glyphicon-chevron-left"></i> {{ _("How to build IPFire?") }}
 					</a>
 				</li>
 			</ul>

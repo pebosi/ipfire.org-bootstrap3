@@ -15,7 +15,7 @@
 
 {% block body %}
 	<div class="row">
-		<div class="span7">
+		<div class="col-lg-7 col-md-7">
 			{% if lang == "de" %}
 				<p>
 					Die Basis des IPFire-Projekts sind seine Nutzer und
@@ -91,7 +91,7 @@
 			</ul>
 		</div>
 
-		<div class="span5">
+		<div class="col-lg-5 col-md-5">
 			<div class="well">
 				<h4>
 					<a href="/donate">{{ _("Donations") }}</a>
@@ -149,7 +149,7 @@
 	<h3>{{ _("Contribute yourself") }}</h3>
 
 	<div class="row">
-		<div class="span4">
+		<div class="col-lg-4 col-md-4">
 			<h4>{{ _("Development") }}</h4>
 			{% if lang == "de" %}
 				<p>
@@ -171,7 +171,7 @@
 			{% end %}
 		</div>
 
-		<div class="span4">
+		<div class="col-lg-4 col-md-4">
 			<h4>{{ _("Translation") }}</h4>
 			{% if lang == "de" %}
 				<p>
@@ -186,13 +186,13 @@
 			{% end %}
 
 			<p class="ac">
-				<a class="btn" href="http://wiki.ipfire.org/projects/translation/start">
-					<i class="icon-user"></i> {{ _("Translation team") }}
+				<a class="btn btn-default" href="http://wiki.ipfire.org/projects/translation/start">
+					<i class="glyphicon glyphicon-user"></i> {{ _("Translation team") }}
 				</a>
 			</p>
 		</div>
 
-		<div class="span4">
+		<div class="col-lg-4 col-md-4">
 			<h4>{{ _("Promotion") }}</h4>
 			{% if lang == "de" %}
 				<p>

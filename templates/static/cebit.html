@@ -51,7 +51,7 @@
 	<hr>
 
 	<div class="row">
-		<div class="span8 offset2 ac">
+		<div class="col-lg-8 col-md-8 col-lg-offset-2 ac">
 			<iframe width="640" height="360" src="http://www.youtube.com/embed/9zUcQouQ1sE?rel=0" frameborder="0" allowfullscreen></iframe>
 			<br>
 			<a href="http://eine-minute.blogspot.com/2010/03/ipfire-eine-utm-auf-opensource-basis.html">"eine-minute" Blog</a>
@@ -60,13 +60,13 @@
 
 	<hr>
 
-	<ul class="thumbnails">
+	<div class="row">
 		{% for i in range(1, 5) %}
-			<li class="span3">
+			<div class="col-lg-3 col-md-3 col-sm-6">
 				<a class="thumbnail" href="{{ static_url("images/cebit/cebit_2010_%d.jpg" % i) }}">
 					<img src="{{ static_url("images/cebit/cebit_2010_%d_tn.jpg" % i) }}" alt="{{ _("CeBIT") }}">
 				</a>
-			</li>
+			</div>
 		{% end %}
-	</ul>
+	</div>
 {% end block %}
