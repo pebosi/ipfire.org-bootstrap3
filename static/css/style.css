@@ -66,6 +66,10 @@ padding: 1.2em;
 .thumbnails .download-box {
 padding: 2em 2em 0 2em;
 }
+section > .page-header {
+margin:0;
+padding:40px 0 20px;
+}
 section > .page-header, section > .lead {
 color: #5a5a5a;
 }

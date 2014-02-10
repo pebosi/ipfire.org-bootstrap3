@@ -3,7 +3,7 @@
 from __future__ import division
 
 import datetime
-import hwdata
+#import hwdata
 import logging
 import pymongo
 import re
@@ -191,8 +191,8 @@ class ProfileNetwork(ProfileDict):
 
 class ProfileDevice(ProfileDict):
 	subsystem2class = {
-		"pci" : hwdata.PCI,
-		"usb" : hwdata.USB,
+#		"pci" : hwdata.PCI,
+#		"usb" : hwdata.USB,
 	}
 
 	classid2name = {

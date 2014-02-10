@@ -3,7 +3,7 @@
 from __future__ import division
 
 import datetime
-import hwdata
+#import hwdata
 import ipaddr
 import logging
 import re
@@ -321,8 +321,8 @@ class StasyStatsVendorDetail(StasyBaseHandler):
 	def get(self, bus, vendor_id):
 		# XXX some way ugly
 		bus2cls = {
-			"pci" : hwdata.PCI,
-			"usb" : hwdata.USB
+#			"pci" : hwdata.PCI,
+#			"usb" : hwdata.USB
 		}
 		cls = bus2cls[bus.lower()]
 		vendor_name = cls().get_vendor(vendor_id)
@@ -337,8 +337,8 @@ class StasyStatsVendorDetail(StasyBaseHandler):
 class StasyStatsModelDetail(StasyBaseHandler):
 	def get(self, bus, vendor_id, model_id):
 		bus2cls = {
-			"pci" : hwdata.PCI,
-			"usb" : hwdata.USB
+#			"pci" : hwdata.PCI,
+#			"usb" : hwdata.USB
 		}
 		
 		cls = bus2cls[bus.lower()]
